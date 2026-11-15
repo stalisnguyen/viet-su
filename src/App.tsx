@@ -633,6 +633,7 @@ export default function App() {
             <div className="cta">
               {resume && <button className="primary" onClick={() => jump(resume.id)}>{lang === 'vi' ? 'Đọc tiếp: ' : 'Continue: '}{resume.title[lang]}</button>}
               <button className={resume ? 'ghost' : 'primary'} onClick={() => jump('p-' + periods[0].slug)}>{lang === 'vi' ? 'Bắt đầu từ thời đồ đá' : 'Start from the Stone Age'}</button>
+              {periodBySlug['bien-dao'] && <button className="ghost sea" onClick={() => jump('p-bien-dao')}>{lang === 'vi' ? 'Chuyên đề: Hoàng Sa - Trường Sa' : 'Topic: Hoàng Sa and Trường Sa'}</button>}
               <button className="ghost" onClick={() => setAuto(true)}>{lang === 'vi' ? 'Tự cuộn trang' : 'Auto-scroll'}</button>
             </div>
             <div className="zones">
