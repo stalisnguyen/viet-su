@@ -324,7 +324,10 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       hit.userData.slug = e.slug;
       hits.push(hit);
       // Tên di tích ngay trên bản đồ, để người xem thấy bản đồ và thẻ nội dung đang nói về cùng một nơi
-      const short = e.name[lang].split(' (')[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
+      // Nhãn trên bản đồ phải ngắn: bỏ phần trong ngoặc, phần sau dấu hai chấm hoặc dấu phẩy, và cắt ở chữ "và" nếu còn dài
+      let short = e.name[lang].split(/ \(|: |, /)[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
+      if (short.length > 26) short = short.split(/ và | and /)[0];
+      if (short.length > 30) short = short.slice(0, 28).replace(/\s+\S*$/, '') + '...';
       const tag = label(short, '#d6ccb8', 30, 700); // màu ngà dịu để chữ không bị lóa
       const tagY = 1.75 + (i % 3) * 0.34;
       tag.position.y = tagY;
@@ -543,7 +546,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const want2 = !three && reg ? reg[lang].toUpperCase() : '';
         if (want2 && !z.alt.has(want2)) {
           const sp2 = label(want2, '#f1e6cf', 36, 800, 3);
-          sp2.position.copy(z.sp.position);
+          const at2 = z.id === 'dongson' ? [104.0, 20.5] : z.id === 'sahuynh' ? [107.9, 14.4] : [105.5, 9.5];
+          sp2.position.set(X(at2[0]), 1.1, Z(at2[1]));
           sp2.material.opacity = 0;
           scene.add(sp2);
           z.alt.set(want2, sp2);

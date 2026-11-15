@@ -4,12 +4,12 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import ts from 'typescript';
+import { stripTypeScriptTypes } from 'node:module';
 
 const file = process.argv[2];
 if (!file) { console.error('Thiếu đường dẫn file'); process.exit(2); }
 const src = fs.readFileSync(file, 'utf8');
-let js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+let js = stripTypeScriptTypes(src);
 js = js.replace(/import\s*\{[^}]*\}\s*from\s*['"]\.\.\/types['"];?/g, 'const l = (vi, en) => ({ vi, en });');
 if (/\bimport\b[^;]*from/.test(js)) { console.error('LỖI: chỉ được import từ ../types'); process.exit(1); }
 const tmp = path.join(os.tmpdir(), 'chapter-' + process.pid + '.mjs');
