@@ -85,7 +85,8 @@ const STEPS: { id: string; title: L }[] = [
 ];
 
 function Badges({ ev, lang }: { ev: Evidence[]; lang: Lang }) {
-  return <span className="badges">{ev.map((e) => <span key={e} className={'badge ' + e}>{EV[e][lang]}</span>)}</span>;
+  // Mỗi mức chứng cứ có ký hiệu riêng (khảo cổ: hình thoi đặc, sử cũ: ô vuông rỗng, truyền thuyết: vòng chấm) để không phải dựa vào màu
+  return <span className="badges">{ev.map((e) => <span key={e} className={'badge ' + e}><i aria-hidden="true" />{EV[e][lang]}</span>)}</span>;
 }
 
 function SourceList({ ids, lang }: { ids: string[]; lang: Lang }) {
@@ -274,11 +275,11 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
   const idx = journey.indexOf(e);
   return (
     <section ref={box} className="step" id={'e-' + e.slug} data-step data-era={e.period} data-focus={e.slug} style={{ ['--c' as string]: periodBySlug[e.period].color }}>
-      <div className={'panel' + (seen ? ' seen' : '')}>
+      <div className={'panel ev-' + (e.evidence.includes('arch') ? 'arch' : e.evidence.includes('chron') ? 'chron' : 'legend') + (seen ? ' seen' : '')}>
         <p className="eyebrow">{pad(idx + 1)} / {journey.length} - {KIND[e.kind][lang]} - {e.date[lang]}</p>
         <h2>{e.name[lang]}</h2>
         <p className="hook">{hooks[e.slug][lang]}</p>
-        <div className="meta"><Badges ev={e.evidence} lang={lang} />{e.place && <span>{e.place[lang]}</span>}</div>
+        <div className="meta"><Badges ev={e.evidence} lang={lang} /><span className="srcn">{lang === 'vi' ? `${e.sources.length} nguồn` : `${e.sources.length} sources`}</span>{e.place && <span>{e.place[lang]}</span>}</div>
         <p className="lead">{e.summary[lang]}</p>
         {/* Mỗi thẻ một hình chính: có mô hình 3D thì ảnh thật nằm trong phần chi tiết, không thì ảnh thật là hình chính */}
         {!e.model && <RealPhoto slug={e.slug} lang={lang} />}
@@ -450,6 +451,10 @@ export default function App() {
     return () => io.disconnect();
   }, []);
   const setLang = (l: Lang) => { setLangS(l); store.set('annalis-lang', l); };
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title = lang === 'vi' ? 'Việt Sử Toàn Đồ - Lịch sử Việt Nam trên một bản đồ sống' : 'Việt Sử Toàn Đồ - The history of Vietnam on one living map';
+  }, [lang]);
   const setDepth = (d: Depth) => { setDepthS(d); store.set('annalis-depth', d); };
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
@@ -584,7 +589,7 @@ export default function App() {
             <p className="lead">
               {lang === 'vi'
                 ? 'Cuộn xuống để đi qua lịch sử Việt Nam từ chiếc rìu đá đầu tiên. Bản đồ sẽ đổi theo từng thời kỳ và bay tới từng di tích. Bạn cũng có thể chạm vào một cột sáng trên bản đồ để tới thẳng di tích đó.'
-                : 'Scroll down to travel through the history of Vietnam from the first stone axe. The map changes with each period and flies to each site. You can also tap a beam of light on the map to go straight to that site.'}
+                : 'Vietnam lies on the eastern edge of mainland Southeast Asia, between China and the sea. Scroll down to travel through its history from the first stone axe. The map changes with each period and flies to each site. You can also tap a beam of light on the map to go straight to that site.'}
             </p>
             <div className="cta">
               {resume && <button className="primary" onClick={() => jump(resume.id)}>{lang === 'vi' ? 'Đọc tiếp: ' : 'Continue: '}{resume.title[lang]}</button>}
@@ -630,10 +635,17 @@ export default function App() {
           <img src={mark} alt="" />
           <strong>VIỆT SỬ TOÀN ĐỒ</strong>
           <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam trên một bản đồ sống' : '800,000 years of Vietnamese history on one living map'}</span>
+          <em>{lang === 'vi' ? 'Chạm để vào ngay' : 'Tap to enter'}</em>
         </button>
       )}
       <nav className="dock" aria-label={lang === 'vi' ? 'Di chuyển trong trang' : 'Page navigation'}>
-        <i className="prog" style={{ width: (idx / (STEPS.length - 1)) * 100 + '%' }} />
+        {/* Dải 23 thời kỳ luôn hiện: thời kỳ đã có nội dung mang màu của nó, thời kỳ sắp có để mờ */}
+        <div className="eras" role="presentation">
+          {periods.map((p) => (
+            <button key={p.slug} tabIndex={-1} aria-hidden="true" onClick={() => jump('p-' + p.slug)} className={active.era === p.slug ? 'on' : ''} style={{ ['--c' as string]: p.color }} />
+          ))}
+          {upcoming.map((u, i) => <i key={i} />)}
+        </div>
         <button className="navb" onClick={() => go(-1)} disabled={idx <= 0} aria-label={lang === 'vi' ? 'Phần trước' : 'Previous section'}>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg><span>{lang === 'vi' ? 'Trước' : 'Back'}</span>
         </button>

@@ -50,6 +50,7 @@ button:disabled { cursor: default; }
 .intro { position: fixed; inset: 0; z-index: 30; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 24px; background: #090708; text-align: center; animation: introout 0.7s ease-in 3.5s both; }
 .intro img { width: min(62vw, 300px); height: auto; filter: drop-shadow(0 0 22px #e6b450) sepia(1) saturate(4) hue-rotate(-12deg); animation: drumin 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both, spin 40s linear infinite; }
 .intro strong { font-size: clamp(1.4rem, 6vw, 2.2rem); font-weight: 800; letter-spacing: 0.22em; color: #f6f1e7; animation: fadeup 1s ease-out 0.9s both; }
+.intro em { font-style: normal; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #e6b450; animation: fadeup 1s ease-out 2.2s both; }
 .intro span { max-width: 30ch; color: #b5ab9c; font-size: 0.98rem; animation: fadeup 1s ease-out 1.5s both; }
 @keyframes drumin { from { opacity: 0; scale: 0.4; filter: drop-shadow(0 0 0 #e6b450) sepia(1) saturate(4) hue-rotate(-12deg) blur(8px); } }
 @keyframes fadeup { from { opacity: 0; transform: translateY(12px); } }
@@ -128,10 +129,19 @@ h3 { font-size: 0.74rem; letter-spacing: 0.13em; text-transform: uppercase; colo
 .zones i { width: 10px; height: 10px; border-radius: 3px; }
 
 .badges { display: inline-flex; flex-wrap: wrap; gap: 6px; }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; background: rgba(255, 255, 255, 0.07); }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; background: rgba(255, 255, 255, 0.07); }
 .badge.arch { color: var(--arch); }
 .badge.chron { color: var(--chron); }
 .badge.legend { color: var(--legend); }
+.badge i { width: 8px; height: 8px; flex: none; background: currentColor; }
+.badge.arch i { transform: rotate(45deg); }
+.badge.chron i { background: none; border: 2px solid currentColor; }
+.badge.legend i { background: none; border: 2px dotted currentColor; border-radius: 50%; width: 10px; height: 10px; }
+.srcn { font-size: 0.78rem; color: var(--muted); }
+/* Viền trái của thẻ theo mức chứng cứ chính: liền là khảo cổ, gạch là sử cũ, chấm là truyền thuyết */
+.panel.ev-arch { border-left: 3px solid var(--arch); }
+.panel.ev-chron { border-left: 3px dashed var(--chron); }
+.panel.ev-legend { border-left: 3px dotted var(--legend); }
 .block { display: grid; gap: 12px; }
 .block p { color: #d9d1c2; }
 .block.scholar { padding: 16px; border-radius: 4px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--edge); }
@@ -203,7 +213,11 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
   padding: 10px max(14px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
   background: rgba(9, 7, 8, 0.96); border-top: 1px solid var(--edge);
 }
-.dock .prog { position: absolute; left: 0; top: -1px; height: 2px; background: var(--c); transition: width 0.4s; }
+.eras { position: absolute; left: 0; right: 0; top: -4px; height: 7px; display: flex; gap: 2px; padding: 0 max(14px, env(safe-area-inset-left)); }
+.eras > * { flex: 1; height: 3px; margin-top: 2px; background: rgba(255, 255, 255, 0.16); border-radius: 2px; padding: 0; }
+.eras button { background: color-mix(in srgb, var(--c) 55%, transparent); position: relative; }
+.eras button::after { content: ''; position: absolute; inset: -12px 0; }
+.eras button.on { background: var(--c); height: 7px; margin-top: 0; box-shadow: 0 0 10px var(--c); }
 .navb {
   flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 4px; height: 48px; min-width: 48px; padding: 0 12px;
   border-radius: 4px; border: 1px solid var(--edge); background: rgba(255, 255, 255, 0.06); font-weight: 700; font-size: 0.9rem;
