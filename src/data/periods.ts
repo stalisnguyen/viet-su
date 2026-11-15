@@ -34,7 +34,6 @@ export const periods: Period[] = [
         'Vietnamese archaeologists usually call Sơn Vi, Hòa Bình and Bắc Sơn "archaeological cultures". Many international researchers treat the Hoabinhian only as a stone-working "industry" found across Southeast Asia, not tied to one specific community. The two terms reflect two readings of the same assemblages.',
       ),
     ],
-    model: 'cave',
     sources: ['derev2018', 'ciochon1996', 'nmh-hoabinh', 'vss2021', 'wiki-hoabinh'],
   },
   {
@@ -70,7 +69,6 @@ export const periods: Period[] = [
         'Linking an archaeological culture to a people named in texts calls for caution. Đông Sơn is usually linked to the Lạc Việt and Sa Huỳnh to the ancestors of the Cham. These are widely accepted hypotheses, but artefacts do not by themselves reveal the language or name of their makers.',
       ),
     ],
-    model: 'village',
     sources: ['nmh-predongson', 'wiki-dongson', 'britannica', 'wiki-sahuynh', 'manh2014'],
   },
   {
@@ -102,7 +100,6 @@ export const periods: Period[] = [
         'The Hùng kings story appears in texts from the 14th century (Việt điện u linh tập, 1329) and entered the official chronicle in the late 15th century. Scholars today usually see Văn Lang as a blend of oral memory and a real Đông Sơn society led by regional chiefs, not quite a centralised dynasty.',
       ),
     ],
-    model: 'paddy',
     sources: ['toanthu', 'vietsuluoc', 'linhnam', 'wiki-hung', 'hungmyth', 'wiki-dongson'],
   },
   {
@@ -134,7 +131,6 @@ export const periods: Period[] = [
         'Excavations of the ramparts since 2007 show that the earliest construction layers predate the Han presence in the region by centuries. This supports the reading that Cổ Loa was built by a local society.',
       ),
     ],
-    model: 'coloa',
     sources: ['toanthu', 'suky', 'wiki-aulac', 'kim2010', 'kim2016'],
   },
 ];

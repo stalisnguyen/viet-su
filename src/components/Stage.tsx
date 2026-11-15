@@ -9,6 +9,7 @@ import geo from '../data/geo.json';
 import { entries } from '../data/entries';
 import { periodBySlug } from '../data/periods';
 import type { Lang } from '../data/types';
+import { drawDrum } from '../drum';
 
 type Ring = number[][];
 const G = geo as { zones: Record<string, Ring[]>; nb: Record<string, Ring[]> };
@@ -20,7 +21,7 @@ export const ZONES = [
 ];
 // Tông nền của từng thời kỳ: đá vôi và tro bếp, gỉ đồng, ruộng lúa, đất lũy và chiến trận
 const THEMES: Record<string, { bg: string; grid: string; land: string }> = {
-  intro: { bg: '#060817', grid: '#2a3b8a', land: '#3b4d8f' },
+  intro: { bg: '#090708', grid: '#5a4320', land: '#6b5a3a' }, // sơn then và vàng: nền sơn mài
   'do-da': { bg: '#120e0a', grid: '#6b5843', land: '#b3a48c' },
   'kim-khi': { bg: '#05110e', grid: '#1f5a4c', land: '#2f6f60' },
   'van-lang': { bg: '#051008', grid: '#1f5a33', land: '#2c6b45' },
@@ -105,7 +106,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     el.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
-    const BG = 0x060817;
+    const BG = 0x090708;
     scene.background = new THREE.Color(BG);
     scene.fog = new THREE.Fog(BG, 26, 70);
     const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 200);
@@ -128,7 +129,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const hg = hx.createRadialGradient(128, 128, 0, 128, 128, 128);
     hg.addColorStop(0, 'rgba(255,255,255,0.55)'); hg.addColorStop(0.45, 'rgba(255,255,255,0.16)'); hg.addColorStop(1, 'rgba(255,255,255,0)');
     hx.fillStyle = hg; hx.fillRect(0, 0, 256, 256);
-    const haloMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(haloC), color: 0x7c8cff, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false });
+    const haloMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(haloC), color: 0xe6b450, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false });
     const halo = new THREE.Mesh(new THREE.PlaneGeometry(26, 34), haloMat);
     halo.rotation.x = -Math.PI / 2;
     halo.position.set(0.6, -0.02, 0.2);
@@ -184,8 +185,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
           float sh=clamp(dot(n,normalize(vec3(-0.55,0.62,0.45))),0.0,1.0);
           float c=vH/200.0; float line=1.0-clamp(abs(fract(c-0.5)-0.5)/max(fwidth(c),1e-4),0.0,1.0);
           float elev=clamp(vH/2200.0,0.0,1.0);
-          vec3 col=zc*(0.10+0.62*sh*sh+0.22*elev);
-          col+=zc*line*step(40.0,vH)*mix(0.10,0.42,vn);
+          vec3 col=zc*(0.07+0.78*sh*sh*sh+0.30*elev*elev);
+          col+=zc*line*step(40.0,vH)*mix(0.10,0.55,vn);
           col+=zc*smoothstep(0.7,0.0,abs(vP.z-uSweep))*0.55*vn;
           float d=distance(vP.xz,uFocus.xy);
           col+=zc*smoothstep(0.86,1.0,sin(d*7.0-uT*2.2)*0.5+0.5)*smoothstep(3.6,0.3,d)*uFocus.z*0.4;
@@ -262,7 +263,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     }).catch(() => { /* giữ bản đồ phẳng */ });
 
     // Hoàng Sa, Trường Sa, Biển Đông
-    const isle = new THREE.MeshBasicMaterial({ color: 0x9fb4ff });
+    const isle = new THREE.MeshBasicMaterial({ color: 0xd9c79a });
     const islands: [string, string, number, number, number[][]][] = [
       ['Q.đ. Hoàng Sa', 'Hoàng Sa (Paracel) Is.', 112.0, 16.5, [[0, 0], [0.35, 0.2], [-0.3, 0.25], [0.15, -0.3], [-0.25, -0.15]]],
       ['Q.đ. Trường Sa', 'Trường Sa (Spratly) Is.', 114.0, 9.9, [[0, 0], [0.5, 0.4], [-0.45, 0.3], [0.3, -0.5], [-0.35, -0.4], [0.7, -0.1], [-0.1, 0.7]]],
@@ -273,11 +274,11 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         d.position.set(X(lon) + dx, 0.03, Z(lat) + dz);
         scene.add(d);
       });
-      const sp = label(lang === 'vi' ? vi : en, '#b9c6ff', 28, 600);
+      const sp = label(lang === 'vi' ? vi : en, '#e8dcc0', 28, 600);
       sp.position.set(X(lon), 0.7, Z(lat));
       scene.add(sp);
     });
-    const seaLabel = label(lang === 'vi' ? 'BIỂN ĐÔNG' : 'EAST SEA', '#4a5cb8', 30, 600, 6);
+    const seaLabel = label(lang === 'vi' ? 'BIỂN ĐÔNG' : 'EAST SEA', '#8a7448', 30, 600, 6);
     seaLabel.position.set(X(111.4), 0.3, Z(13.0));
     scene.add(seaLabel);
 
@@ -315,6 +316,16 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       scene.add(g);
       pins.push({ slug: e.slug, period: e.period, pos, group: g, head, beam, ring, ringMat, phase: i * 0.37, tag, tagY, ll: e.coord!, solo: !pins.some((q) => q.period === e.period && q.solo && q.pos.distanceTo(pos) < 2.2) });
     });
+
+    // Mặt trống đồng chiếu xuống đất quanh di tích đang xem, quay chậm
+    const dc = document.createElement('canvas');
+    dc.width = dc.height = 512;
+    drawDrum(dc.getContext('2d')!, 512);
+    const discMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(dc), transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false });
+    const disc = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), discMat);
+    disc.rotation.x = -Math.PI / 2;
+    disc.renderOrder = 2;
+    scene.add(disc);
 
     // Đường cong sáng nối di tích vừa xem với di tích đang xem
     const ARC = 48;
@@ -472,6 +483,11 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       tU.uT.value = t;
       if (tU.uSweep.value < 12) tU.uSweep.value += dt * 9;
       const fp = s.focus ? pins.find((x) => x.slug === s.focus) : null;
+      if (fp) { disc.position.set(fp.pos.x, fp.pos.y + 0.04, fp.pos.z); discMat.color.set(periodBySlug[fp.period].color); }
+      discMat.opacity += ((fp ? 0.6 : 0) - discMat.opacity) * 0.07;
+      const ds = 1.5 + discMat.opacity * 1.8;
+      disc.scale.set(ds, ds, 1);
+      if (!reduce) disc.rotation.z += dt * 0.12;
       tU.uFocus.value.set(fp ? fp.pos.x : 0, fp ? fp.pos.z : 0, tU.uFocus.value.z + ((fp ? 1 : 0) - tU.uFocus.value.z) * 0.08);
       nbEdge.color.copy(cGrid);
       const three = !s.era || s.era === 'kim-khi';
@@ -489,7 +505,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         z.sp.material.opacity += (so - z.sp.material.opacity) * 0.1;
       });
 
-      haloMat.color.lerp(tmp.set(s.era ? periodBySlug[s.era].color : '#7c8cff'), 0.05);
+      haloMat.color.lerp(tmp.set(s.era ? periodBySlug[s.era].color : '#e6b450'), 0.05);
       pins.forEach((p) => {
         const inEra = !s.era || p.period === s.era;
         const isFocus = p.slug === s.focus;

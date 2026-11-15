@@ -40,7 +40,6 @@ export const entries: Entry[] = [
         'An Khê matters for a major debate: the "Movius Line" hypothesis held that Palaeolithic East Asia lacked the handaxe industries of Africa and Europe. The An Khê and Bose handaxes are evidence against it. Derevianko and colleagues argue that this industry arose independently in the region.',
       ),
     ],
-    model: 'biface',
     sources: ['derev2018', 'derev2020', 'bvh-ankhe', 'tt-ankhe', 'nd-ankhe'],
   },
   {
@@ -109,6 +108,7 @@ export const entries: Entry[] = [
         'For that reason this site does not give Núi Đọ a firm age. The figure of 400,000 - 300,000 years follows the museum label.',
       ),
     ],
+    model: 'biface',
     sources: ['boriskovsky', 'nmh-handaxe', 'derev2018', 'derev2020'],
   },
   {
@@ -387,7 +387,6 @@ export const entries: Entry[] = [
         'On origins, the classic debate is between the external-origin theories of early 20th-century European scholars and the local-development view of Vietnamese archaeologists. The pre-Đông Sơn sequence found from the 1960s gives the local view a firmer base. Another line of research sees bronze drums as a shared tradition of indigenous peoples in northern Vietnam and Yunnan.',
       ),
     ],
-    model: 'drum',
     sources: ['wiki-dongson', 'ht-dongson', 'wiki-drum', 'britannica', 'nmh-predongson'],
   },
   {

@@ -7,6 +7,7 @@ import { sourceById, sources } from './data/sources';
 import { hooks } from './data/hooks';
 import { badges, quiz, world } from './data/extras';
 import { photos } from './data/photos';
+import { drumUrl } from './drum';
 import { sound } from './sound';
 import type { Entry, Evidence, L, Lang, Period } from './data/types';
 
@@ -279,10 +280,12 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
         <p className="hook">{hooks[e.slug][lang]}</p>
         <div className="meta"><Badges ev={e.evidence} lang={lang} />{e.place && <span>{e.place[lang]}</span>}</div>
         <p className="lead">{e.summary[lang]}</p>
-        <RealPhoto slug={e.slug} lang={lang} />
+        {/* Mỗi thẻ một hình chính: có mô hình 3D thì ảnh thật nằm trong phần chi tiết, không thì ảnh thật là hình chính */}
+        {!e.model && <RealPhoto slug={e.slug} lang={lang} />}
         {e.model && <Model3D kind={e.model} lang={lang} />}
         {open && (
           <>
+            {e.model && <RealPhoto slug={e.slug} lang={lang} />}
             <Depths depth={depth} setDepth={setDepth} lang={lang} />
             <More detail={e.detail} scholarly={e.scholarly} depth={depth} lang={lang} />
             <SourceList ids={e.sources} lang={lang} />
@@ -361,8 +364,8 @@ function Sources({ lang }: { lang: Lang }) {
         <p><span className="badge legend">{EV.legend[lang]}</span> {lang === 'vi' ? 'Chuyện kể truyền miệng, có giá trị văn hóa nhưng không dùng làm chứng cứ cho niên đại.' : 'Oral tradition, culturally valuable but not used as evidence for dates.'}</p>
         <p className="muted">
           {lang === 'vi'
-            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Các cảnh 3D là phỏng dựng giản lược. Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
-            : 'Zone boundaries on the map are illustrative. The 3D scenes are simplified reconstructions. Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
+            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Địa hình trên bản đồ dùng dữ liệu độ cao mở (Terrain Tiles trên AWS, tổng hợp từ SRTM và các nguồn khác). Các mô hình 3D là phỏng dựng giản lược, hiển thị kiểu hologram. Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
+            : 'Zone boundaries on the map are illustrative. Map terrain uses open elevation data (Terrain Tiles on AWS, compiled from SRTM and other sources). The 3D models are simplified reconstructions shown as holograms. Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
         </p>
       </section>
       {groups.map(([g, name]) => (
@@ -407,7 +410,12 @@ function Drawer({ lang, onClose, children }: { lang: Lang; onClose: () => void; 
 }
 
 export default function App() {
-  const [lang, setLangS] = useState<Lang>(() => (store.get('annalis-lang', 'vi') === 'en' ? 'en' : 'vi'));
+  const [lang, setLangS] = useState<Lang>(() => {
+    // Chưa chọn ngôn ngữ thì theo trình duyệt: máy tiếng Việt xem bản Việt, còn lại xem bản Anh
+    const saved = store.get('annalis-lang', '');
+    if (saved === 'vi' || saved === 'en') return saved;
+    return (navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en';
+  });
   const [depth, setDepthS] = useState<Depth>(() => store.get('annalis-depth', 'full') as Depth);
   const [seen, setSeen] = useState<Set<string>>(() => new Set(store.get('annalis-seen', '').split(',').filter((s) => entryBySlug[s])));
   const [got, setGot] = useState<Set<string>>(() => new Set(store.get('annalis-badges', '').split(',').filter((s) => periodBySlug[s])));
@@ -417,6 +425,27 @@ export default function App() {
   const [toc, setToc] = useState(false);
   const [resume] = useState(() => { const r = store.get('annalis-last', ''); return STEPS.find((x) => x.id === r && x.id !== 'top') || null; });
   const split = useMedia(SPLIT);
+  const [intro, setIntro] = useState(() => { try { return !sessionStorage.getItem('vstd-intro') && !location.hash; } catch { return false; } });
+  useEffect(() => {
+    if (!intro) return;
+    try { sessionStorage.setItem('vstd-intro', '1'); } catch { /* bỏ qua */ }
+    const t = window.setTimeout(() => setIntro(false), 4200);
+    return () => window.clearTimeout(t);
+  }, [intro]);
+  // Mỗi phần có đường dẫn riêng (#p-..., #e-...) để chia sẻ; mở đường dẫn đó là tới thẳng phần ấy
+  useEffect(() => {
+    const id = location.hash.slice(1);
+    if (id && STEPS.some((x) => x.id === id)) window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'start' }), 350);
+  }, []);
+  useEffect(() => {
+    try { history.replaceState(null, '', active.id === 'top' ? location.pathname : '#' + active.id); } catch { /* bỏ qua */ }
+  }, [active.id]);
+  // Thẻ nội dung hiện dần lên khi cuộn tới
+  useEffect(() => {
+    const io = new IntersectionObserver((list) => list.forEach((e) => { if (e.isIntersecting) (e.target as HTMLElement).dataset.in = '1'; }), { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.panel').forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
   const setLang = (l: Lang) => { setLangS(l); store.set('annalis-lang', l); };
   const setDepth = (d: Depth) => { setDepthS(d); store.set('annalis-depth', d); };
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
@@ -495,7 +524,14 @@ export default function App() {
     if (got.has(slug)) return;
     const n = new Set(got); n.add(slug); setGot(n); store.set('annalis-badges', [...n].join(','));
   };
-  const color = active.era ? periodBySlug[active.era].color : '#7c8cff';
+  const fe = active.focus ? entryBySlug[active.focus] : null;
+  const fp = active.era ? periodBySlug[active.era] : null;
+  const coord = fe?.coord
+    ? (lang === 'vi'
+      ? `${fe.coord[1].toFixed(2).replace('.', ',')}° B - ${fe.coord[0].toFixed(2).replace('.', ',')}° Đ`
+      : `${fe.coord[1].toFixed(2)}° N - ${fe.coord[0].toFixed(2)}° E`)
+    : '';
+  const color = active.era ? periodBySlug[active.era].color : '#e6b450';
 
   return (
     <div className="app" style={{ ['--c' as string]: color }}>
@@ -503,7 +539,7 @@ export default function App() {
       <div className="shade" />
 
       <header className="bar">
-        <button className="brand" onClick={() => jump('top')}>VIỆT SỬ TOÀN ĐỒ</button>
+        <button className="brand" onClick={() => jump('top')}><img className="mark" src={drumUrl()} alt="" /><span>VIỆT SỬ TOÀN ĐỒ</span></button>
         <button className="pill progress" onClick={() => setToc(true)} aria-haspopup="dialog" aria-label={lang === 'vi' ? `Mở mục lục, đã khám phá ${seen.size} trên ${journey.length} mục` : `Open contents, ${seen.size} of ${journey.length} explored`}>
           <svg viewBox="0 0 36 36" aria-hidden="true">
             <circle cx="18" cy="18" r="15" />
@@ -523,6 +559,19 @@ export default function App() {
           <button className={lang === 'en' ? 'on' : ''} onClick={() => setLang('en')}>EN</button>
         </div>
       </header>
+
+      {(fe || fp) && (
+        <aside className="hud" aria-hidden="true" key={active.id}>
+          {fe ? (
+            <>
+              {coord && <p><span>{lang === 'vi' ? 'Tọa độ' : 'Position'}</span><b>{coord}</b></p>}
+              <p><span>{lang === 'vi' ? 'Niên đại' : 'Date'}</span><b>{fe.date[lang]}</b></p>
+            </>
+          ) : (
+            <p><span>{lang === 'vi' ? 'Thời kỳ' : 'Period'}</span><b>{fp!.range[lang]}</b></p>
+          )}
+        </aside>
+      )}
 
       <main className="flow">
         <section className="step hero" id="top" data-step>
@@ -573,6 +622,13 @@ export default function App() {
         </section>
       </main>
 
+      {intro && (
+        <button className="intro" onClick={() => setIntro(false)} aria-label={lang === 'vi' ? 'Bỏ qua phần mở đầu' : 'Skip the opening'}>
+          <img src={drumUrl()} alt="" />
+          <strong>VIỆT SỬ TOÀN ĐỒ</strong>
+          <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam trên một bản đồ sống' : '800,000 years of Vietnamese history on one living map'}</span>
+        </button>
+      )}
       <nav className="dock" aria-label={lang === 'vi' ? 'Di chuyển trong trang' : 'Page navigation'}>
         <i className="prog" style={{ width: (idx / (STEPS.length - 1)) * 100 + '%' }} />
         <button className="navb" onClick={() => go(-1)} disabled={idx <= 0} aria-label={lang === 'vi' ? 'Phần trước' : 'Previous section'}>

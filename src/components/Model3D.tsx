@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { Lang, ModelKind } from '../data/types';
-import { buildCave, buildPaddy, buildVillage, decorateCoLoa } from './Scenes';
+import { buildCave, buildPaddy, buildVillage } from './Scenes';
+import { drawDrum } from '../drum';
 
 const SCENES: ModelKind[] = ['cave', 'village', 'paddy', 'coloa'];
 
@@ -200,7 +201,6 @@ function buildCoLoa(scene: THREE.Scene, lang: Lang) {
   L('Thành Trung', 'Middle rampart', -1.9, -1.6);
   L('Thành Nội', 'Inner citadel', 0, 0, 0.62);
   L('Sông Hoàng Giang', 'Hoàng Giang river', -1.4, 3.7, 0.4);
-  decorateCoLoa(g, [outer, middle]);
   g.scale.setScalar(0.42);
   scene.add(g);
   return { target: g, cam: [0, 2.3, 2.9] };
@@ -276,6 +276,36 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     const built: { target: THREE.Object3D; cam: number[]; update?: (t: number) => void } =
       kind === 'drum' ? buildDrum(scene) : kind === 'coloa' ? buildCoLoa(scene, lang) : kind === 'jar' ? buildJar(scene)
       : kind === 'cave' ? buildCave(scene) : kind === 'village' ? buildVillage(scene) : kind === 'paddy' ? buildPaddy(scene) : buildBiface(scene);
+    // Hiển thị kiểu hologram, cùng ngôn ngữ hình ảnh với bản đồ: khối trong mờ sáng viền, vân quét chạy dọc,
+    // nét cạnh rõ, màu theo thời kỳ của thẻ đang chứa mô hình.
+    const hc = new THREE.Color(getComputedStyle(el).getPropertyValue('--c').trim() || '#e6b450');
+    const uT = { value: 0 };
+    const holo = new THREE.ShaderMaterial({
+      uniforms: { uC: { value: hc }, uT }, transparent: true, side: THREE.DoubleSide,
+      vertexShader: `varying vec3 vN; varying vec3 vV; varying float vY;
+        void main(){ vec4 mv=modelViewMatrix*vec4(position,1.0); vN=normalize(normalMatrix*normal); vV=normalize(-mv.xyz); vY=(modelMatrix*vec4(position,1.0)).y; gl_Position=projectionMatrix*mv; }`,
+      fragmentShader: `uniform vec3 uC; uniform float uT; varying vec3 vN; varying vec3 vV; varying float vY;
+        void main(){ float f=pow(1.0-abs(dot(normalize(vN),normalize(vV))),1.8); float sc=0.5+0.5*sin(vY*70.0-uT*2.4);
+          gl_FragColor=vec4(uC*(0.16+1.05*f+0.12*sc),0.42+0.5*f); }`,
+    });
+    const edge = new THREE.LineBasicMaterial({ color: hc, transparent: true, opacity: 0.55 });
+    const meshes: THREE.Mesh[] = [];
+    scene.traverse((o) => { if ((o as THREE.Mesh).isMesh && (o as THREE.Mesh).material && ((o as THREE.Mesh).material as THREE.Material).visible !== false) meshes.push(o as THREE.Mesh); });
+    meshes.forEach((m) => {
+      if (kind === 'drum' && m.geometry.type === 'CircleGeometry') {
+        // Mặt trống: họa tiết ngôi sao 14 cánh và các vành hoa văn
+        const cv = document.createElement('canvas');
+        cv.width = cv.height = 1024;
+        drawDrum(cv.getContext('2d')!, 1024);
+        const tx = new THREE.CanvasTexture(cv);
+        tx.anisotropy = 8;
+        m.material = new THREE.MeshBasicMaterial({ map: tx, color: hc, transparent: true, side: THREE.DoubleSide });
+        m.scale.setScalar(1.02);
+        return;
+      }
+      m.material = holo;
+      m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 28), edge));
+    });
     camera.position.set(built.cam[0], built.cam[1], built.cam[2]);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enablePan = false; controls.enableZoom = false; controls.enableDamping = true;
@@ -294,7 +324,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     resize();
     const ro = new ResizeObserver(resize); ro.observe(el);
     let raf = 0;
-    const tick = (ms = 0) => { built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
+    const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
     tick();
     return () => { cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); renderer.domElement.remove(); };
   }, [kind, lang, on]);
