@@ -51,7 +51,7 @@ const need = (ids, where, min) => {
 };
 need(p.sources, 'period.sources', 3);
 const es = c.entries || [];
-if (es.length < 4 || es.length > 8) E(`cần 4 đến 8 mục, đang có ${es.length}`);
+if (es.length < 4 || es.length > 9) E(`cần 4 đến 9 mục, đang có ${es.length}`);
 const seen = new Set();
 for (const e of es) {
   const w = `entry ${e.slug}`;
