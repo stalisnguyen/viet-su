@@ -17,7 +17,8 @@ export interface Period {
   // Các trường dưới đây dùng cho những thời kỳ viết sau đợt đầu
   start?: L; // mốc bắt đầu, viết ngắn, hiện trên dải thời kỳ (ví dụ "179 TCN" / "179 BCE")
   question?: L; // một câu hỏi lớn mở đầu thời kỳ
-  view?: 'all' | 'north' | 'central' | 'south'; // bản đồ nhìn vào đâu khi mở thời kỳ
+  view?: 'all' | 'north' | 'central' | 'south' | 'sea'; // bản đồ nhìn vào đâu khi mở thời kỳ (sea: Biển Đông và hai quần đảo)
+  theme?: boolean; // chuyên đề xuyên suốt nhiều thời kỳ, không tính vào 23 thời kỳ
   // Vùng nào sáng lên trong thời kỳ này và mang tên gì. Ba vùng là ước lượng thô: bắc (từ Hoành Sơn trở ra),
   // trung (Hoành Sơn đến khoảng Phan Rang), nam (Nam Bộ và cực Nam Trung Bộ). Không phải biên giới chính xác.
   regions?: { north?: L; central?: L; south?: L };

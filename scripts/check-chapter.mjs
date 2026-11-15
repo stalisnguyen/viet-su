@@ -27,13 +27,13 @@ const scan = (x, where) => {
   else if (x && typeof x === 'object') Object.entries(x).forEach(([k, y]) => scan(y, `${where}.${k}`));
 };
 scan(c, 'chapter');
-if (!c || typeof c.order !== 'number' || c.order < 5 || c.order > 23) E('order phải từ 5 đến 23');
+if (!c || typeof c.order !== 'number' || c.order < 5 || c.order > 24) E('order phải từ 5 đến 24 (24 là chuyên đề biển đảo)');
 const p = c.period || {};
 const slugRe = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 if (!slugRe.test(p.slug || '')) E('period.slug sai dạng');
 for (const k of ['name', 'range', 'summary', 'start', 'question']) if (!isL(p[k])) E(`period.${k} thiếu vi hoặc en`);
 if (!/^#[0-9a-f]{6}$/i.test(p.color || '')) E('period.color phải là mã #rrggbb');
-if (!['all', 'north', 'central', 'south'].includes(p.view)) E('period.view phải là all, north, central hoặc south');
+if (!['all', 'north', 'central', 'south', 'sea'].includes(p.view)) E('period.view phải là all, north, central, south hoặc sea');
 if (!Array.isArray(p.detail) || p.detail.length < 2 || !p.detail.every(isL)) E('period.detail cần ít nhất 2 đoạn song ngữ');
 if (!Array.isArray(p.scholarly) || p.scholarly.length < 2 || !p.scholarly.every(isL)) E('period.scholarly cần ít nhất 2 đoạn song ngữ');
 if (p.regions) for (const [k, v] of Object.entries(p.regions)) { if (!['north', 'central', 'south'].includes(k) || !isL(v)) E(`period.regions.${k} sai`); }
@@ -62,7 +62,7 @@ for (const e of es) {
   for (const k of ['name', 'date', 'summary']) if (!isL(e[k])) E(`${w}: ${k} thiếu vi hoặc en`);
   if (e.place && !isL(e.place)) E(`${w}: place sai`);
   if (typeof e.sort !== 'number') E(`${w}: sort phải là số (số năm trước hiện tại)`);
-  if (e.coord) { const [lon, lat] = e.coord; if (!(lon > 101.5 && lon < 112.4 && lat > 7.6 && lat < 23.9)) E(`${w}: coord [kinh độ, vĩ độ] nằm ngoài khung bản đồ`); }
+  if (e.coord) { const [lon, lat] = e.coord; const sea = p.view === 'sea'; if (!(lon > 101.5 && lon < (sea ? 117.5 : 112.4) && lat > (sea ? 6 : 7.6) && lat < 23.9)) E(`${w}: coord [kinh độ, vĩ độ] nằm ngoài khung bản đồ`); }
   else W(`${w}: không có coord nên không hiện trên bản đồ`);
   if (!Array.isArray(e.evidence) || !e.evidence.length || !e.evidence.every((x) => ['arch', 'chron', 'legend'].includes(x))) E(`${w}: evidence sai`);
   if (!Array.isArray(e.detail) || e.detail.length < 2 || !e.detail.every(isL)) E(`${w}: detail cần ít nhất 2 đoạn`);

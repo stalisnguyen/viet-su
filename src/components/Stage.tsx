@@ -282,20 +282,29 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       tU.uSweep.value = -10; // quét một lượt khi địa hình hiện ra
     }).catch(() => { /* giữ bản đồ phẳng */ });
 
-    // Hoàng Sa, Trường Sa, Biển Đông
-    const isle = new THREE.MeshBasicMaterial({ color: 0xd9c79a });
-    const islands: [string, string, number, number, number[][]][] = [
-      ['Q.đ. Hoàng Sa', 'Hoàng Sa (Paracel) Is.', 112.0, 16.5, [[0, 0], [0.35, 0.2], [-0.3, 0.25], [0.15, -0.3], [-0.25, -0.15]]],
-      ['Q.đ. Trường Sa', 'Trường Sa (Spratly) Is.', 114.0, 9.9, [[0, 0], [0.5, 0.4], [-0.45, 0.3], [0.3, -0.5], [-0.35, -0.4], [0.7, -0.1], [-0.1, 0.7]]],
+    // Quần đảo Hoàng Sa và Trường Sa: vẽ các đảo, đá chính theo vị trí gần đúng, có quầng sáng để luôn nổi bật trên bản đồ
+    const isle = new THREE.MeshBasicMaterial({ color: 0xffe3a3 });
+    const isleGlow = new THREE.MeshBasicMaterial({ map: haloMat.map, color: 0xffc860, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false });
+    const islands: [string, string, number, number, [number, number][]][] = [
+      ['QUẦN ĐẢO HOÀNG SA', 'HOÀNG SA (PARACEL) ISLANDS', 111.9, 17.25, [
+        [112.335, 16.835], [111.603, 16.535], [111.2, 15.78], [112.73, 16.67], [111.7, 16.45], [111.74, 16.46], [111.58, 16.52], [111.75, 16.06], [112.27, 16.98],
+      ]],
+      ['QUẦN ĐẢO TRƯỜNG SA', 'TRƯỜNG SA (SPRATLY) ISLANDS', 113.6, 11.95, [
+        [114.33, 11.43], [114.36, 11.45], [114.36, 10.38], [114.37, 10.18], [114.33, 9.88], [111.92, 8.64], [112.92, 7.87], [114.28, 11.05], [114.42, 10.68], [114.28, 9.72], [115.53, 9.9], [112.89, 9.55],
+      ]],
     ];
-    islands.forEach(([vi, en, lon, lat, dots]) => {
-      dots.forEach(([dx, dz]) => {
-        const d = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.06, 10), isle);
-        d.position.set(X(lon) + dx, 0.03, Z(lat) + dz);
+    islands.forEach(([vi, en, lon, lat, pts]) => {
+      pts.forEach(([plon, plat]) => {
+        const d = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.07, 12), isle);
+        d.position.set(X(plon), 0.04, Z(plat));
         scene.add(d);
+        const g = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.9), isleGlow);
+        g.rotation.x = -Math.PI / 2;
+        g.position.set(X(plon), 0.02, Z(plat));
+        scene.add(g);
       });
-      const sp = label(lang === 'vi' ? vi : en, '#e8dcc0', 28, 600);
-      sp.position.set(X(lon), 0.7, Z(lat));
+      const sp = label(lang === 'vi' ? vi : en, '#ffd27a', 32, 800, 3);
+      sp.position.set(X(lon), 0.9, Z(lat));
       scene.add(sp);
     });
     const seaLabel = label(lang === 'vi' ? 'BIỂN ĐÔNG' : 'EAST SEA', '#8a7448', 30, 600, 6);
@@ -407,7 +416,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     // Góc nhìn mong muốn theo trạng thái
     const want = { t: new THREE.Vector3(), p: new THREE.Vector3() };
     // Bản đồ nhìn vào đâu khi mở một thời kỳ: cả nước, miền Bắc, miền Trung hay miền Nam
-    const CENTER: Record<string, [number, number]> = { north: [105.9, 20.6], central: [108.0, 15.3], south: [106.4, 10.7] };
+    const CENTER: Record<string, [number, number]> = { north: [105.9, 20.6], central: [108.0, 15.3], south: [106.4, 10.7], sea: [111.2, 12.6] };
     const eraView = (era: string | null) => (!era ? 'all' : era === 'van-lang' || era === 'au-lac' ? 'north' : periodBySlug[era]?.view || 'all');
     const view = () => {
       const s = live.current;
@@ -416,7 +425,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       const pin = s.focus ? pins.find((x) => x.slug === s.focus) : null;
       if (s.split) {
         // Khung bản đồ riêng: luôn đặt mục tiêu vào giữa khung, không chừa chỗ cho thẻ
-        const k = Math.max(1, 1.25 / aspect);
+        const k = Math.max(1, 1.25 / aspect) * (vw === 'sea' ? 1.9 : 1);
         if (pin) {
           want.t.copy(pin.pos).setY(0);
           want.t.z -= 1.0; // đẩy điểm đang xem xuống dưới thanh tiêu đề
@@ -436,7 +445,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         if (s.sheet) portrait ? (want.t.z -= 1.2) : (want.t.x -= 2.6);
         want.p.set(want.t.x + 1.4 * k, 6.2 * k, want.t.z + 7.4 * k);
       } else if (vc) {
-        const k = portrait ? 1.5 : 1;
+        const k = (portrait ? 1.5 : 1) * (vw === 'sea' ? 1.8 : 1);
         want.t.set(X(vc[0]) + (portrait ? 0 : aspect > 1.35 ? -2.6 : -1), 0, Z(vc[1]) + 0.4);
         want.p.set(want.t.x + 1.2 * k, 8.5 * k, want.t.z + 9 * k);
       } else {

@@ -256,7 +256,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
   return (
     <section ref={box} className="step era" id={'p-' + p.slug} data-step data-era={p.slug} style={{ ['--c' as string]: p.color }}>
       <div className="panel">
-        <p className="eyebrow">{lang === 'vi' ? 'Thời kỳ' : 'Period'} {pad(i + 1)} / {periods.length + upcoming.length}</p>
+        <p className="eyebrow">{p.theme ? (lang === 'vi' ? 'Chuyên đề' : 'Special topic') : <>{lang === 'vi' ? 'Thời kỳ' : 'Period'} {pad(i + 1)} / {periods.filter((x) => !x.theme).length + upcoming.length}</>}</p>
         <h1>{p.name[lang]}</h1>
         <p className="range">{p.range[lang]}</p>
         {p.question && <p className="ask">{p.question[lang]}</p>}
