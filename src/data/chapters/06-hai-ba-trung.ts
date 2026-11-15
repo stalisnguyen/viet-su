@@ -60,8 +60,8 @@ const chapter: Chapter = {
       coord: [105.733, 21.159],
       evidence: ['chron', 'legend'],
       summary: l(
-        'Hai chị em con Lạc tướng huyện Mê Linh, những người lãnh đạo cuộc khởi nghĩa năm 40. Trưng Trắc là người phụ nữ đầu tiên làm vua trong sử Việt. Bà cũng là nhân vật Việt cổ hiếm hoi được cả sử Trung Hoa lẫn sử Việt chép tên, dù hai bên kể rất khác nhau về đời riêng của bà.',
-        'Two daughters of the Lạc lord of Mê Linh who led the uprising of 40 CE. Trưng Trắc is the first woman to rule as monarch in Vietnamese history. She is also one of the few early Vietnamese figures named in both Chinese and Vietnamese histories, although the two tell her personal story very differently.',
+        'Trưng Trắc và Trưng Nhị là hai chị em, con của Lạc tướng huyện Mê Linh, và là những người lãnh đạo cuộc khởi nghĩa năm 40. Trưng Trắc là người phụ nữ đầu tiên làm vua trong sử Việt. Bà cũng là nhân vật Việt cổ hiếm hoi được cả sử Trung Hoa lẫn sử Việt chép tên, dù hai bên kể rất khác nhau về đời riêng của bà.',
+        'Trưng Trắc and Trưng Nhị were sisters, daughters of the Lạc lord of Mê Linh, and the leaders of the uprising of 40 CE. Trưng Trắc is the first woman to rule as monarch in Vietnamese history. She is also one of the few early Vietnamese figures named in both Chinese and Vietnamese histories, although the two tell her personal story very differently.',
       ),
       detail: [
         l(
@@ -69,8 +69,8 @@ const chapter: Chapter = {
           'The Hou Hanshu is brief: Trưng Trắc was the daughter of the Lạc lord of Mê Linh, married a man of Chu Diên, and was of a very bold character. Her younger sister Trưng Nhị rose with her. The text gives no birth year, no parents\' names and no description. Every other detail about their childhood, martial training and war elephants comes from later legend and temple biographies.',
         ),
         l(
-          'Lạc tướng là những thủ lĩnh cha truyền con nối cai quản từng vùng từ trước khi nhà Hán đến. Sau khi lập quận huyện, nhà Hán vẫn dựa vào họ để trị dân, và cha của hai bà là một người như vậy. Mê Linh và Chu Diên là hai huyện của quận Giao Chỉ. Cuộc hôn nhân của Trưng Trắc vì vậy nối hai gia đình Lạc tướng của hai huyện.',
-          'The Lạc lords were hereditary chiefs who governed their districts before the Han arrived. After setting up commanderies the Han still relied on them to govern, and the sisters\' father was one such lord. Mê Linh and Chu Diên were two counties of Jiaozhi commandery. Trưng Trắc\'s marriage therefore joined the families of the Lạc lords of two counties.',
+          'Cha của hai bà là một Lạc tướng, tức thủ lĩnh bản địa cha truyền con nối mà nhà Hán vẫn dựa vào để trị dân; tầng lớp này được kể ở thời kỳ Nam Việt và Bắc thuộc lần thứ nhất. Mê Linh và Chu Diên là hai huyện của quận Giao Chỉ. Cuộc hôn nhân của Trưng Trắc vì vậy nối hai gia đình Lạc tướng của hai huyện, và khi bà nổi dậy, bà có sau lưng thế lực của cả hai nhà.',
+          'The sisters\' father was a Lạc lord, one of the hereditary local chiefs on whom the Han still relied to govern; that class is described under the Nanyue and first northern domination period. Mê Linh and Chu Diên were two counties of Jiaozhi commandery. Trưng Trắc\'s marriage therefore joined the families of the Lạc lords of two counties, and when she rose she had the standing of both houses behind her.',
         ),
         l(
           'Truyền thống địa phương đặt quê hai bà ở làng Hạ Lôi, nay thuộc Mê Linh, Hà Nội. Đền Hai Bà Trưng ở đây rộng 129.824 mét vuông, nhìn ra đê sông Hồng, thờ hai bà cùng cha mẹ, cha mẹ Thi Sách và các tướng lĩnh. Trong khu đền còn có dấu tích được gọi là thành cổ Mê Linh. Lễ hội chính mở vào mùng 6 tháng Giêng âm lịch.',
@@ -79,8 +79,8 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Tên họ của hai bà là điều chưa rõ. Đại Việt sử ký toàn thư chép Trưng Trắc vốn họ Lạc. Các nhà sử học như Nguyễn Khắc Thuần cho rằng người Việt lúc đó chưa có họ theo kiểu Hán, và những tên cha mẹ ghi trong thần phả nhiều khả năng được thêm vào khoảng thế kỷ 17 - 18. Truyền thống kể hai bà sinh đôi năm 14 và mẹ là bà Man Thiện, nhưng các chi tiết này không có trong Hậu Hán thư.',
-          'The sisters\' family name is uncertain. The Đại Việt sử ký toàn thư says Trưng Trắc was originally surnamed Lạc. Historians such as Nguyễn Khắc Thuần hold that the Việt of that time had no Han-style surnames, and that the parents\' names found in temple genealogies were probably added around the 17th - 18th centuries. Tradition says the sisters were twins born in 14 CE and that their mother was Man Thiện, but none of this is in the Hou Hanshu.',
+          'Tên họ của hai bà là điều chưa rõ. Đại Việt sử ký toàn thư chép Trưng Trắc vốn họ Lạc. Các nhà sử học như Nguyễn Khắc Thuần cho rằng người Việt lúc đó chưa có họ theo kiểu Hán, và những tên cha mẹ ghi trong thần phả nhiều khả năng được thêm vào khoảng thế kỷ 17 - 18. Một số sách ghi Trưng Trắc sinh khoảng năm 14 và truyền thống kể mẹ hai bà là bà Man Thiện, nhưng các chi tiết này không có trong Hậu Hán thư.',
+          'The sisters\' family name is uncertain. The Đại Việt sử ký toàn thư says Trưng Trắc was originally surnamed Lạc. Historians such as Nguyễn Khắc Thuần hold that the Việt of that time had no Han-style surnames, and that the parents\' names found in temple genealogies were probably added around the 17th - 18th centuries. Some books give Trưng Trắc a birth year of about 14 CE and tradition names the sisters\' mother as Man Thiện, but none of this is in the Hou Hanshu.',
         ),
         l(
           'Tên người chồng cũng có vấn đề văn bản. Hậu Hán thư viết "Thi Sách". Thủy kinh chú, khi dẫn Giao Châu ngoại vực ký, lại chép câu có thể đọc là "con trai Lạc tướng Chu Diên tên Thi hỏi con gái Lạc tướng Mê Linh tên Trưng Trắc làm vợ", trong đó chữ "sách" là động từ. Học giả nhà Thanh Triệu Nhất Thanh và tác giả blog sử học Le Minh Khai đều cho cách đọc này hợp ngữ pháp hơn, tức người chồng có thể chỉ tên là Thi.',
@@ -163,8 +163,8 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Vị trí hai chiến trường đều chưa chắc. Lãng Bạc thường được đặt ở vùng đồi Tiên Du (Bắc Ninh), và tọa độ trên bản đồ của trang này theo cách xác định đó; Britannica chỉ ghi chung là gần Hà Nội. Cấm Khê trong Hậu Hán thư được Thủy kinh chú viết là Kim Khê. Ben Kiernan đặt nơi này ở vùng núi Tản Viên, đất gốc của họ Trưng, còn Britannica đặt trận quyết định ở Hát Môn.',
-          'The location of both battlefields is uncertain. Lãng Bạc is usually placed in the Tiên Du hills (Bắc Ninh), and the map point on this site follows that identification; Britannica says only that it was near Hanoi. The Cấm Khê (Jinxi, "Forbidden Gorge") of the Hou Hanshu is written Kim Khê ("Golden Gorge") in the Shuijing zhu. Ben Kiernan places it near Mount Tản Viên, the Trưng family\'s home ground, while Britannica puts the decisive battle at Hát Môn.',
+          'Vị trí hai chiến trường đều chưa chắc. Lãng Bạc thường được đặt ở vùng đồi Tiên Du (Bắc Ninh), như trong sách của Ben Kiernan, và tọa độ trên bản đồ của trang này theo cách xác định đó; Britannica chỉ ghi chung là gần Hà Nội. Cấm Khê trong Hậu Hán thư được Thủy kinh chú viết là Kim Khê. Một số tác giả hiện đại đặt nơi này ở vùng núi Tản Viên, còn Britannica đặt trận quyết định ở Hát Môn.',
+          'The location of both battlefields is uncertain. Lãng Bạc is usually placed in the Tiên Du hills (Bắc Ninh), as in Ben Kiernan\'s account, and the map point on this site follows that identification; Britannica says only that it was near Hanoi. The Cấm Khê (Jinxi, "Forbidden Gorge") of the Hou Hanshu is written Kim Khê ("Golden Gorge") in the Shuijing zhu. Some modern authors place it near Mount Tản Viên, while Britannica puts the decisive battle at Hát Môn.',
         ),
         l(
           'Các nguồn cũng lệch nhau về thời gian. Truyện Mã Viện chép ông đến Lãng Bạc mùa xuân năm Kiến Vũ thứ 18 (42) và chém hai bà vào tháng Giêng năm sau (43). Truyện Nam Man lại ghi việc đó vào tháng Tư mùa hè năm 43. Thủy kinh chú nói Trưng Trắc thu thuế hai quận Giao Chỉ, Cửu Chân trong hai năm và phải ba năm sau Mã Viện mới bắt được. Sử Việt xếp trận Lãng Bạc vào năm Nhâm Dần (42) và kết cục vào năm Quý Mão (43).',
@@ -184,7 +184,7 @@ const chapter: Chapter = {
       coord: [105.606, 21.131],
       evidence: ['chron', 'legend'],
       summary: l(
-        'Hai Bà Trưng mất năm 43, nhưng mất như thế nào thì mỗi nguồn kể một khác. Sử nhà Hán chép hai bà bị bắt, bị chém và đầu bị gửi về Lạc Dương. Truyền thống Việt kể hai bà gieo mình xuống sông Hát để không rơi vào tay giặc. Đền Hát Môn bên cửa sông là nơi ký ức thứ hai được gìn giữ.',
+        'Hai Bà Trưng mất năm 43, nhưng mất như thế nào thì mỗi nguồn kể một khác. Sử nhà Hán chép hai bà bị bắt, bị chém và đầu bị gửi về Lạc Dương. Truyền thống Việt kể hai bà gieo mình xuống sông Hát để không rơi vào tay quân Hán. Đền Hát Môn bên cửa sông là nơi ký ức thứ hai được gìn giữ.',
         'The Trưng sisters died in 43 CE, but how they died depends on the source. The Han history says they were captured and beheaded and their heads sent to Luoyang. Vietnamese tradition says they threw themselves into the Hát river so as not to fall into enemy hands. Hát Môn temple at the river mouth is where the second memory is kept.',
       ),
       detail: [
@@ -197,7 +197,7 @@ const chapter: Chapter = {
           'Folk tradition and temple biographies say the sisters withdrew to Hát Môn and gave up their lives in the Hát river, where the Đáy branches from the Red River. The death anniversary is usually kept on the 6th day of the second lunar month. The Nguyễn-era verse history Đại Nam quốc sử diễn ca says they "gave themselves to the river". Some tales have them become spirits or be carried to heaven by a golden dragon.',
         ),
         l(
-          'Đền Hát Môn nằm trên khu đất cao khoảng 3 hecta bên cửa sông Hát, lưu giữ 293 hiện vật thời Lê, Tây Sơn và Nguyễn. Hội chính mở ngày mùng 6 tháng Ba âm lịch với lễ dâng bánh trôi. Ngày mùng 4 tháng Chín có lễ kỷ niệm hội quân tế cờ, ngày 24 tháng Chạp có lễ mộc dục. Dân làng kiêng màu đỏ trong đền. Năm 2013 đền được xếp hạng di tích quốc gia đặc biệt.',
+          'Đền Hát Môn nằm trên khu đất cao khoảng 3 hecta bên cửa sông Hát, lưu giữ 293 hiện vật thời Lê, Tây Sơn và Nguyễn. Hội chính mở ngày mùng 6 tháng Ba âm lịch với lễ dâng bánh trôi. Ngày mùng 4 tháng Chín có lễ kỷ niệm hội quân tế cờ, ngày 24 tháng Chạp có lễ mộc dục, tức lễ tắm tượng. Dân làng kiêng màu đỏ trong đền. Năm 2013 đền được xếp hạng di tích quốc gia đặc biệt.',
           'Hát Môn temple stands on about 3 hectares of raised ground at the mouth of the Hát river and keeps 293 objects from the Lê, Tây Sơn and Nguyễn periods. The main festival is on the 6th day of the third lunar month, with an offering of bánh trôi rice dumplings. The 4th of the ninth month recalls the mustering of the army, and the 24th of the twelfth is the statue-bathing rite. Villagers avoid the colour red in the temple. In 2013 it was ranked a special national monument.',
         ),
       ],
@@ -217,20 +217,20 @@ const chapter: Chapter = {
       slug: 'sau-nam-43',
       period: 'hai-ba-trung',
       kind: 'event',
-      name: l('Sau năm 43: Lạc tướng, trống đồng và cột đồng', 'After 43 CE: Lạc lords, bronze drums and the bronze pillars'),
+      name: l('Sau năm 43: trống đồng và cột đồng', 'After 43 CE: bronze drums and pillars'),
       date: l('43 - 44', '43 - 44 CE'),
       sort: 1956,
       place: l('quận Cửu Chân (vùng Thanh Hóa ngày nay)', 'Jiuzhen commandery (modern Thanh Hóa area)'),
       coord: [105.73, 19.82],
       evidence: ['chron', 'legend'],
       summary: l(
-        'Thắng trận xong, Mã Viện ở lại sắp đặt việc cai trị. Tầng lớp Lạc tướng cha truyền con nối biến mất khỏi sử sách, hàng trăm gia đình thủ lĩnh bị đày, trống đồng Lạc Việt bị nấu chảy để đúc ngựa. Chuyện ông dựng cột đồng đánh dấu biên giới thì nổi tiếng hơn cả, nhưng lại không có trong phần chính văn của Hậu Hán thư.',
+        'Sau khi thắng trận, Mã Viện ở lại sắp đặt việc cai trị. Tầng lớp Lạc tướng cha truyền con nối biến mất khỏi sử sách, hàng trăm gia đình thủ lĩnh bị đày, trống đồng Lạc Việt bị nấu chảy để đúc ngựa. Chuyện ông dựng cột đồng đánh dấu biên giới thì nổi tiếng hơn cả, nhưng lại không có trong phần chính văn của Hậu Hán thư.',
         'After his victory Ma Yuan stayed to reorganise the administration. The hereditary Lạc lords vanish from the record, hundreds of leading families were deported, and Lạc Việt bronze drums were melted down to cast a horse. The story that he set up bronze pillars to mark the frontier is the most famous of all, yet it is absent from the main text of the Hou Hanshu.',
       ),
       detail: [
         l(
-          'Mã Viện đuổi dư đảng của hai bà do Đô Dương cầm đầu vào tận huyện Cư Phong, quận Cửu Chân. Hậu Hán thư chép hơn 300 thủ lĩnh bị đày sang Linh Lăng. Ben Kiernan ước tính có từ 5.000 đến 10.000 người thuộc giới quý tộc Lạc bị giết. Huyện Tây Vu bị chia thành hai huyện Phong Khê và Vọng Hải.',
-          'Ma Yuan pursued the sisters\' remaining followers under Đô Dương as far as Cư Phong in Jiuzhen commandery. The Hou Hanshu records more than 300 leaders deported to Lingling. Ben Kiernan estimates that 5,000 to 10,000 members of the Lạc aristocracy were killed. Tây Vu county was split into the two counties of Phong Khê and Vọng Hải.',
+          'Mã Viện đuổi dư đảng của hai bà do Đô Dương cầm đầu vào tận huyện Cư Phong, quận Cửu Chân. Hậu Hán thư chép hơn 300 thủ lĩnh bị đày sang Linh Lăng. Ben Kiernan viết rằng quân Hán đã chém từ 5.000 đến 10.000 người. Huyện Tây Vu bị chia thành hai huyện Phong Khê và Vọng Hải.',
+          'Ma Yuan pursued the sisters\' remaining followers under Đô Dương as far as Cư Phong in Jiuzhen commandery. The Hou Hanshu records more than 300 leaders deported to Lingling. Ben Kiernan writes that the Han beheaded five to ten thousand people. Tây Vu county was split into the two counties of Phong Khê and Vọng Hải.',
         ),
         l(
           'Truyện Mã Viện kể ông vốn giỏi xem tướng ngựa. Ở Giao Chỉ, ông thu được trống đồng của người Lạc Việt, đem đúc thành một con ngựa mẫu rồi dâng lên vua khi về triều năm 44. Với người Lạc Việt, trống đồng là biểu tượng quyền lực của thủ lĩnh. Vì vậy việc nấu trống thường được xem là hình ảnh cô đọng của sự thay đổi sau năm 43.',
@@ -243,12 +243,12 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Về cột đồng, Đại Việt sử ký toàn thư chép Mã Viện dựng cột đồng làm giới hạn cuối cùng của nhà Hán, và truyền thuyết thêm lời thề "cột đồng gãy thì Giao Chỉ diệt". Nghiên cứu năm 2024 của Donatella Guida chỉ ra rằng chính văn Hậu Hán thư không nhắc gì đến cột đồng. Ghi chép sớm nhất là sách Quảng Châu ký nay đã mất, được Lý Hiền dẫn lại trong lời chú thế kỷ 7.',
-          'On the pillars, the Đại Việt sử ký toàn thư says Ma Yuan erected bronze pillars as the furthest limit of the Han, and legend adds the oath "if the bronze pillars break, Jiaozhi will be destroyed". A 2024 study by Donatella Guida shows that the main text of the Hou Hanshu never mentions them. The earliest record is the lost Guangzhou ji, quoted in Li Xian\'s 7th-century commentary.',
+          'Về cột đồng, Đại Việt sử ký toàn thư chép Mã Viện dựng cột đồng làm giới hạn cuối cùng của nhà Hán, và truyền thuyết thêm lời thề "cột đồng gãy thì Giao Chỉ diệt". Nghiên cứu năm 2024 của Donatella Guida chỉ ra rằng chính văn Hậu Hán thư không nhắc gì đến cột đồng. Ghi chép sớm nhất mà bà tìm được là sách Quảng Châu ký nay đã mất, được Lý Hiền dẫn lại trong lời chú thế kỷ 7. Còn lời thề thì theo bà chỉ thấy ở các sách muộn hơn nhiều: một dị bản trong Lĩnh ngoại đại đáp (1178) và câu quen thuộc trong An Nam chí lược của Lê Tắc (khoảng năm 1330).',
+          'On the pillars, the Đại Việt sử ký toàn thư says Ma Yuan erected bronze pillars as the furthest limit of the Han, and legend adds the oath "if the bronze pillars break, Jiaozhi will be destroyed". A 2024 study by Donatella Guida shows that the main text of the Hou Hanshu never mentions them. The earliest record she found is the lost Guangzhou ji, quoted in Li Xian\'s 7th-century commentary. The oath, by her account, turns up only in much later books: a variant in the Lingwai daida (1178) and the familiar wording in Lê Tắc\'s An Nam chí lược (about 1330).',
         ),
         l(
-          'Các sách đời sau nói khác nhau về số cột và vị trí. Nam sử đặt cột cách biên giới Lâm Ấp hơn 200 dặm, Cựu Đường thư nói hai cột, Tân Đường thư nói năm cột. Sách Lĩnh ngoại đại đáp (1178) kể người qua đường ném đá vào cho đến khi cột bị vùi thành gò. Guida kết luận không có bằng chứng trực tiếp nào cho thấy có người từng nhìn thấy cột, và cột đồng hoạt động như một biểu tượng hơn là một mốc giới thật.',
-          'Later books disagree on the number and place of the pillars. The Nanshi puts them more than 200 li from the border of Linyi, the Old Tang History speaks of two pillars and the New Tang History of five. The Lingwai daida (1178) says passers-by piled stones on them until they were buried in a mound. Guida concludes there is no direct evidence that anyone ever saw the pillars, and that they worked as a symbol more than as a real boundary marker.',
+          'Các sách đời sau nói khác nhau về số cột và vị trí. Nam sử nói đến hai cột ở cách hơn 200 dặm đường biển, Cựu Đường thư nói hai cột, Tân Đường thư nói năm cột. Sách Lĩnh ngoại đại đáp (1178) kể người qua đường ném đá vào cho đến khi cột bị vùi thành gò. Guida kết luận không có bằng chứng trực tiếp nào cho thấy có người từng nhìn thấy cột, và cột đồng hoạt động như một biểu tượng hơn là một mốc giới thật.',
+          'Later books disagree on the number and place of the pillars. The Nanshi speaks of two pillars more than 200 li away by sea, the Old Tang History speaks of two pillars and the New Tang History of five. The Lingwai daida (1178) says passers-by piled stones on them until they were buried in a mound. Guida concludes there is no direct evidence that anyone ever saw the pillars, and that they worked as a symbol more than as a real boundary marker.',
         ),
         l(
           'Mức độ đứt gãy sau năm 43 cũng còn được bàn. Keith Taylor xem đây là lần đầu nhà Hán xác lập dứt khoát bộ máy cai trị ở châu thổ. Nhiều tác giả nối sự kiện này với sự tàn lụi của truyền thống trống đồng Đông Sơn ở đồng bằng. Catherine Churchman lại lưu ý rằng văn hóa trống đồng vẫn phát triển mạnh ở vùng núi giữa sông Hồng và sông Châu trong nhiều thế kỷ sau, nên không thể nói Hán hóa là một chiều.',
@@ -291,7 +291,7 @@ const chapter: Chapter = {
           'This entry is labelled legend because everything known of Lê Chân comes from temple biographies, steles and royal certificates; the surviving certificates are of the Nguyễn period, nearly two thousand years after the events. The Hou Hanshu, the Shuijing zhu and the Đại Việt sử ký toàn thư name neither her nor any female general other than the two Trưng sisters. Some Vietnamese publications still present her as a real historical figure; that view rests on cult tradition, not on contemporary sources.',
         ),
         l(
-          'Dù vậy, thần tích là tư liệu quý về cách các làng tự kể lịch sử của mình. Bên cạnh Lê Chân, truyện kể và tiểu thuyết lịch sử còn nhắc Thánh Thiên, Bát Nàn, Phùng Vĩnh Hoa. Việc thờ Lê Chân trải trên bốn tỉnh thành gắn với quê gốc, nơi lập làng, nơi luyện quân và nơi mất. Truyền thuyết còn kể bà báo mộng giúp vua Trần đánh giặc, cho thấy tín ngưỡng này được triều đình các đời sau thừa nhận và nuôi dưỡng.',
+          'Dù vậy, thần tích là tư liệu quý về cách các làng tự kể lịch sử của mình. Bên cạnh Lê Chân, truyện kể và tiểu thuyết lịch sử còn nhắc Thánh Thiên, Bát Nàn, Phùng Vĩnh Hoa. Việc thờ Lê Chân trải trên bốn tỉnh thành gắn với quê gốc, nơi lập làng, nơi luyện quân và nơi mất. Truyền thuyết còn kể bà báo mộng giúp vua Trần khi có chiến trận, cho thấy tín ngưỡng này được triều đình các đời sau thừa nhận và nuôi dưỡng.',
           'Even so, temple biographies are valuable evidence of how villages told their own history. Beside Lê Chân, tales and historical novels also name Thánh Thiên, Bát Nàn and Phùng Vĩnh Hoa. The cult of Lê Chân extends over four provinces tied to her birthplace, her settlement, her training ground and her place of death. Legend also has her appear in a dream to help a Trần king in war, which shows how later courts recognised and fostered the cult.',
         ),
       ],
@@ -301,15 +301,15 @@ const chapter: Chapter = {
       slug: 'den-dong-nhan',
       period: 'hai-ba-trung',
       kind: 'site',
-      name: l('Đền Đồng Nhân và ký ức về Hai Bà', 'Đồng Nhân temple and the memory of the sisters'),
+      name: l('Đền Đồng Nhân và ký ức về Hai Bà', 'Đồng Nhân temple and the sisters in memory'),
       date: l('đền dựng thế kỷ 12, dời về chỗ hiện nay năm 1819', 'founded in the 12th century, moved to its present site in 1819'),
       sort: 858,
       place: l('phố Hương Viên, Đồng Nhân, Hà Nội', 'Hương Viên street, Đồng Nhân, Hanoi'),
       coord: [105.861, 21.012],
       evidence: ['chron', 'legend'],
       summary: l(
-        'Ngôi đền thờ Hai Bà Trưng giữa lòng Hà Nội, gắn với truyền thuyết tượng đá trôi sông và với vua Lý Anh Tông ở thế kỷ 12. Cùng với Hát Môn và Hạ Lôi, đây là một trong ba đền lớn nhất thờ hai bà. Lịch sử ngôi đền cho thấy mỗi triều đại, mỗi thời kỳ đã nhớ về hai bà theo một cách riêng.',
-        'A temple to the Trưng sisters in the heart of Hanoi, tied to a legend of stone statues drifting down the river and to King Lý Anh Tông in the 12th century. With Hát Môn and Hạ Lôi it is one of the three great temples of the sisters. Its history shows how each dynasty and each age has remembered them in its own way.',
+        'Đền Đồng Nhân là ngôi đền thờ Hai Bà Trưng giữa lòng Hà Nội, gắn với truyền thuyết tượng đá trôi sông và với vua Lý Anh Tông ở thế kỷ 12. Cùng với Hát Môn và Hạ Lôi, đây là một trong ba đền lớn nhất thờ hai bà. Lịch sử ngôi đền cho thấy mỗi triều đại, mỗi thời kỳ đã nhớ về hai bà theo một cách riêng.',
+        'Đồng Nhân is a temple to the Trưng sisters in the heart of Hanoi, tied to a legend of stone statues drifting down the river and to King Lý Anh Tông in the 12th century. With Hát Môn and Hạ Lôi it is one of the three great temples of the sisters. Its history shows how each dynasty and each age has remembered them in its own way.',
       ),
       detail: [
         l(
@@ -327,8 +327,8 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Năm dựng đền không thống nhất. Cổng thông tin Hà Nội ghi vua Lý Anh Tông cho dựng đền năm 1142; bài Wikipedia về hai bà dẫn truyền thuyết cầu mưa và ghi năm 1158; một tài liệu khác nói khoảng năm 1160. Câu chuyện gốc nằm trong Việt điện u linh, do Lý Tế Xuyên soạn, bài tựa đề năm 1329: gặp hạn, vua sai nhà sư đến đền hai bà cầu mưa, mưa xuống, vua nằm mộng thấy hai bà cưỡi ngựa sắt, rồi cho dựng đền và ban tước hiệu.',
-          'The founding year is not agreed. The Hanoi city portal says King Lý Anh Tông had the temple built in 1142; the Wikipedia article on the sisters cites the rain-prayer legend with the year 1158; another reference says about 1160. The underlying story is in the Việt điện u linh, compiled by Lý Tế Xuyên, with a preface dated 1329: in a drought the king sent a monk to pray for rain at the sisters\' shrine, rain fell, the king dreamed of the sisters riding an iron horse, and he then built a temple and granted them titles.',
+          'Năm dựng đền không thống nhất. Cổng thông tin Hà Nội ghi vua Lý Anh Tông cho dựng đền năm 1142; bài Wikipedia về hai bà dẫn truyền thuyết cầu mưa và ghi năm 1158. Câu chuyện gốc nằm trong Việt điện u linh, do Lý Tế Xuyên soạn, bài tựa đề năm 1329: gặp hạn, vua sai nhà sư đến đền hai bà cầu mưa, mưa xuống, vua nằm mộng thấy hai bà cưỡi ngựa sắt, rồi cho dựng đền và ban tước hiệu.',
+          'The founding year is not agreed. The Hanoi city portal says King Lý Anh Tông had the temple built in 1142; the Wikipedia article on the sisters cites the rain-prayer legend with the year 1158. The underlying story is in the Việt điện u linh, compiled by Lý Tế Xuyên, with a preface dated 1329: in a drought the king sent a monk to pray for rain at the sisters\' shrine, rain fell, the king dreamed of the sisters riding an iron horse, and he then built a temple and granted them titles.',
         ),
         l(
           'Như vậy, ở thời Lý - Trần, hai bà trước hết là thần làm mưa và che chở mùa màng. Đến thế kỷ 13, Lê Văn Hưu đọc cuộc khởi nghĩa như bằng chứng người Việt đủ sức dựng nước, và trách nam giới suốt nghìn năm cúi đầu làm tôi tớ phương Bắc. Ngô Sĩ Liên ở thế kỷ 15 khen khí phách của hai bà và ghi rằng sau khi mất hai bà vẫn giúp dân chống tai ương. Theo Nhung Tuyết Trần, mỗi lớp sử gia đã chỉnh câu chuyện cho hợp với thời mình.',
@@ -498,16 +498,16 @@ const chapter: Chapter = {
       'The Han history spares her one phrase of character: very bold.',
     ),
     'khoi-nghia-nam-40': l(
-      'Thù chồng hay giữ quyền của cả một tầng lớp? Hai bộ sử trả lời khác nhau.',
-      'Revenge for a husband, or the defence of a whole class? Two histories answer differently.',
+      'Bà nổi dậy vì thù chồng hay để giữ quyền của cả một tầng lớp? Hai bộ sử trả lời khác nhau.',
+      'Did she rise to avenge a husband or to defend a whole class? Two histories answer differently.',
     ),
     'ma-vien-lang-bac': l(
       'Đội quân thắng trận trở về Lạc Dương chỉ còn hơn một nửa.',
       'The victorious army that marched back to Luoyang had lost nearly half its men.',
     ),
     'hat-mon': l(
-      'Bị chém đầu hay trầm mình xuống sông Hát? Câu trả lời tùy vào việc bạn mở cuốn sách nào.',
-      'Beheaded, or drowned in the Hát river? The answer depends on which book you open.',
+      'Hai bà bị chém đầu hay trầm mình xuống sông Hát? Câu trả lời tùy vào việc bạn mở cuốn sách nào.',
+      'Were the sisters beheaded, or did they drown in the Hát river? The answer depends on which book you open.',
     ),
     'sau-nam-43': l(
       'Cột đồng nổi tiếng nhất sử Việt lại không có trong chính văn bộ sử chép về người dựng nó.',
@@ -518,8 +518,8 @@ const chapter: Chapter = {
       'A port city counts one of the sisters\' female generals as its founder.',
     ),
     'den-dong-nhan': l(
-      'Hai pho tượng đá trôi sông, và chỉ dải lụa đỏ mới đưa được vào bờ.',
-      'Two stone statues adrift on the river, and only red silk could bring them ashore.',
+      'Truyền thuyết kể hai pho tượng đá trôi trên sông Hồng, và chỉ dải lụa đỏ mới đón được tượng vào bờ.',
+      'Legend tells of two stone statues adrift on the Red River that only red silk could bring ashore.',
     ),
   },
   world: [
@@ -579,8 +579,8 @@ const chapter: Chapter = {
       ],
       answer: 2,
       why: l(
-        'Theo nghiên cứu của Donatella Guida, chính văn Hậu Hán thư không nhắc đến cột đồng. Ghi chép sớm nhất là Quảng Châu ký, được Lý Hiền dẫn khi chú Hậu Hán thư.',
-        'According to Donatella Guida\'s study, the main text of the Hou Hanshu does not mention the pillars. The earliest record is the Guangzhou ji, quoted by Li Xian in his commentary on the Hou Hanshu.',
+        'Theo nghiên cứu của Donatella Guida, chính văn Hậu Hán thư không nhắc đến cột đồng. Ghi chép sớm nhất bà tìm được là Quảng Châu ký, được Lý Hiền dẫn khi chú Hậu Hán thư.',
+        'According to Donatella Guida\'s study, the main text of the Hou Hanshu does not mention the pillars. The earliest record she found is the Guangzhou ji, quoted by Li Xian in his commentary on the Hou Hanshu.',
       ),
     },
   ],

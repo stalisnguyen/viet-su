@@ -15,7 +15,7 @@ const chapter: Chapter = {
       `Who lived in the Mekong delta before the Vietnamese arrived, and what did they leave behind?`,
     ),
     summary: l(
-      `Trong bảy thế kỷ đầu Công nguyên, đồng bằng sông Cửu Long thuộc một vương quốc buôn bán đường biển mà sử Trung Hoa gọi là Phù Nam. Dấu vết của nó là văn hóa Óc Eo: kênh đào, đền gạch, vàng lá, hàng hóa từ La Mã và Ấn Độ. Cư dân ở đây khi ấy không phải là người Việt. Từ thế kỷ 7, vùng này thuộc Chân Lạp.`,
+      `Trong bảy thế kỷ đầu Công nguyên, đồng bằng sông Cửu Long thuộc một vương quốc buôn bán đường biển mà sử Trung Hoa gọi là Phù Nam. Dấu vết của nó là văn hóa Óc Eo: kênh đào, đền gạch, vàng lá, hàng hóa từ La Mã, Ấn Độ và Ba Tư. Cư dân ở đây khi ấy không phải là người Việt. Từ thế kỷ 7, vùng này thuộc Chân Lạp.`,
       `For the first seven centuries CE the Mekong delta belonged to a seafaring trading kingdom that Chinese histories call Funan. Its trace on the ground is the Óc Eo culture: canals, brick temples, gold leaf, and goods from Rome, India and Persia. The people here were not Vietnamese at that time. From the 7th century the region came under Chenla.`,
     ),
     detail: [
@@ -54,7 +54,7 @@ const chapter: Chapter = {
       slug: 'phu-nam-su-trung-hoa',
       period: 'phu-nam',
       kind: 'legend',
-      name: l(`Nước Phù Nam trong sử Trung Hoa và truyền thuyết Hỗn Điền - Liễu Diệp`, `Funan in Chinese histories and the legend of Kaundinya and Liuye (Liễu Diệp)`),
+      name: l(`Phù Nam và truyền thuyết Hỗn Điền - Liễu Diệp`, `Funan and the legend of Hun Tian and Liuye`),
       date: l(`thế kỷ 1 - 7, được ghi chép từ thế kỷ 3`, `1st - 7th century CE, recorded from the 3rd century`),
       sort: 1950,
       place: l(`Hạ lưu sông Mê Kông (kinh đô có thể ở Angkor Borei, Takeo, Campuchia)`, `Lower Mekong (capital possibly at Angkor Borei, Takeo, Cambodia)`),
@@ -105,8 +105,8 @@ const chapter: Chapter = {
       coord: [105.152, 10.233],
       evidence: ['arch'],
       summary: l(
-        `Một đô thị cổ nằm giữa đồng trũng dưới chân núi Ba Thê, nơi nhà khảo cổ Pháp Louis Malleret khai quật năm 1944 và đặt tên cho cả một nền văn hóa. Óc Eo có kênh đào chạy xuyên qua, đền gạch, xưởng hạt chuỗi thủy tinh và hàng hóa từ nhiều miền xa. Việt Nam đã nộp hồ sơ đề cử nơi này làm Di sản thế giới.`,
-        `An ancient town on low-lying plain below Ba Thê mountain, excavated in 1944 by the French archaeologist Louis Malleret, who named a whole culture after it. Óc Eo had canals running through it, brick temples, glass-bead workshops and goods from far away. Vietnam has submitted it for World Heritage listing.`,
+        `Óc Eo là một đô thị cổ nằm giữa đồng trũng dưới chân núi Ba Thê, nơi nhà khảo cổ Pháp Louis Malleret khai quật năm 1944 và đặt tên cho cả một nền văn hóa. Óc Eo có kênh đào chạy xuyên qua, đền gạch, xưởng hạt chuỗi thủy tinh và hàng hóa từ nhiều miền xa. Việt Nam đã nộp hồ sơ đề cử nơi này làm Di sản thế giới.`,
+        `Óc Eo is an ancient town on the low-lying plain below Ba Thê mountain, excavated in 1944 by the French archaeologist Louis Malleret, who named a whole culture after it. Óc Eo had canals running through it, brick temples, glass-bead workshops and goods from far away. Vietnam has submitted it for World Heritage listing.`,
       ),
       detail: [
         l(
@@ -124,7 +124,7 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          `Óc Eo là cảng hay là nơi sản xuất? Malleret mô tả nó là một trung tâm công nghiệp và thương mại, nối với bờ biển bằng kênh, và coi Nền Chùa (ông gọi là Tà Keo) là tiền cảng. Hồ sơ UNESCO ghi Gò Óc Eo ở giai đoạn thế kỷ 5 - 7 là một xưởng hạt chuỗi thủy tinh lớn. Lê Thị Liên dẫn dụng cụ thợ kim hoàn và khuôn đúc để chứng minh đồ vàng được làm tại chỗ. Nguyễn Hoàng Bách Linh (2023) kết luận rằng việc gọi Óc Eo là đô thị, cảng hay trung tâm buôn bán vẫn chưa ngã ngũ. Hà Văn Tấn còn lưu ý rằng hiện vật giống nhau ở nhiều nơi có thể phản ánh buôn bán chứ chưa chắc là một nền văn hóa Phù Nam thống nhất.`,
+          `Óc Eo là cảng hay là nơi sản xuất? Malleret mô tả nó là một trung tâm công nghiệp và thương mại, nối với bờ biển bằng kênh, và coi Nền Chùa (ông gọi là Tà Keo) là tiền cảng, tức bến ngoài nơi thuyền biển cập. Hồ sơ UNESCO ghi Gò Óc Eo ở giai đoạn thế kỷ 5 - 7 là một xưởng hạt chuỗi thủy tinh lớn. Lê Thị Liên dẫn dụng cụ thợ kim hoàn và khuôn đúc để chứng minh đồ vàng được làm tại chỗ. Nguyễn Hoàng Bách Linh (2023) kết luận rằng việc gọi Óc Eo là đô thị, cảng hay trung tâm buôn bán vẫn chưa ngã ngũ. Hà Văn Tấn còn lưu ý rằng hiện vật giống nhau ở nhiều nơi có thể phản ánh buôn bán chứ chưa chắc là một nền văn hóa Phù Nam thống nhất.`,
           `Was Óc Eo a port or a place of manufacture? Malleret described it as an industrial and commercial centre linked to the coast by canal, and treated Nền Chùa (which he called Ta Keo) as its outport. The UNESCO file records Gò Óc Eo in the 5th - 7th centuries as a large glass-bead workshop. Lê Thị Liên cites goldsmiths' tools and moulds to show that goldwork was made on the spot. Nguyễn Hoàng Bách Linh (2023) concludes that whether to call Óc Eo a city, a port or a trading centre is still unresolved. Hà Văn Tấn also cautioned that similar artefacts in many places may reflect trade rather than one unified Funan culture.`,
         ),
         l(
@@ -132,7 +132,7 @@ const chapter: Chapter = {
           `Figures for the canals do not agree. English Wikipedia gives 68 km for the canal linking Óc Eo and Angkor Borei. Zakharov, citing Charles Higham, gives about 90 km. Nguyễn Hoàng Bách Linh gives over 100 km for the whole Lung Lớn line from Angkor Borei down to Nền Chùa. On the Cambodian side, the LOMAP project says that dating and confirming a canal between the two places is still under study. Areas vary too: 450 hectares in Malleret, 433.2 hectares of protected zone in the 2022 tentative file, 453.1 hectares in the nomination.`,
         ),
         l(
-          `Niên đại theo hồ sơ UNESCO: Gò Óc Eo có lớp nhà sàn từ khoảng thế kỷ 1 TCN đến thế kỷ 3, các đền trên núi Ba Thê kéo đến thế kỷ 9. Hồ sơ giải thích sự suy tàn bằng đợt biển tiến thế kỷ 7 - 8 và việc đường buôn chuyển về Palembang của Srivijaya. Wikipedia tiếng Anh ghi cuộc khai quật bắt đầu ngày 10 tháng 2 năm 1942, lệch hai năm so với hồ sơ UNESCO, bài của Coedès năm 1947 và tài liệu của Ban Quản lý di tích, đều ghi năm 1944.`,
+          `Niên đại theo hồ sơ UNESCO: Gò Óc Eo có lớp nhà sàn từ khoảng thế kỷ 1 TCN đến thế kỷ 3, các đền trên núi Ba Thê kéo đến thế kỷ 9. Hồ sơ giải thích sự suy tàn bằng đợt nước biển dâng lấn vào đồng bằng trong thế kỷ 7 - 8 và việc đường buôn chuyển về Palembang của Srivijaya. Wikipedia tiếng Anh ghi cuộc khai quật bắt đầu ngày 10 tháng 2 năm 1942, lệch hai năm so với hồ sơ UNESCO, bài của Coedès năm 1947 và tài liệu của Ban Quản lý di tích, đều ghi năm 1944.`,
           `Dating in the UNESCO file: Gò Óc Eo has stilt-house layers from about the 1st century BCE to the 3rd century CE, and the temples on Ba Thê continue to the 9th century. The file explains the decline by a marine transgression in the 7th - 8th centuries and the shift of trade to Srivijaya's Palembang. English Wikipedia dates the start of excavation to 10 February 1942, two years off from the UNESCO file, Coedès's 1947 article and the site management board, all of which give 1944.`,
         ),
       ],
@@ -185,8 +185,8 @@ const chapter: Chapter = {
       coord: [105.09, 10.15],
       evidence: ['arch'],
       summary: l(
-        `Hai di tích Óc Eo ở phía biển. Nền Chùa nằm cách Óc Eo khoảng 12 km, cuối đường kênh Lung Lớn, thường được coi là cửa ngõ ra biển của đô thị này. Cạnh Đền có khu cư trú, đền, mộ và dấu vết nghề làm đồ trang sức. Cả hai cho thấy Óc Eo không đứng một mình mà thuộc về một mạng lưới.`,
-        `Two Óc Eo sites on the seaward side. Nền Chùa lies about 12 km from Óc Eo at the end of the Lung Lớn canal and is usually seen as the town's gateway to the sea. Cạnh Đền has dwellings, shrines and tombs, and traces of jewellery making. Both show that Óc Eo did not stand alone but belonged to a network.`,
+        `Nền Chùa và Cạnh Đền là hai di tích của văn hóa Óc Eo ở phía biển. Nền Chùa nằm cách Óc Eo khoảng 12 km, cuối đường kênh Lung Lớn, thường được coi là cửa ngõ ra biển của đô thị này. Cạnh Đền có khu cư trú, đền, mộ và dấu vết nghề làm đồ trang sức. Cả hai cho thấy Óc Eo không đứng một mình mà thuộc về một mạng lưới.`,
+        `Nền Chùa and Cạnh Đền are two Óc Eo culture sites on the seaward side. Nền Chùa lies about 12 km from Óc Eo at the end of the Lung Lớn canal and is usually seen as the town's gateway to the sea. Cạnh Đền has dwellings, shrines and tombs, and traces of jewellery making. Both show that Óc Eo did not stand alone but belonged to a network.`,
       ),
       detail: [
         l(
@@ -194,8 +194,8 @@ const chapter: Chapter = {
           `Malleret called Nền Chùa Ta Keo and regarded it as the outport of Óc Eo. Vietnamese archaeologists surveyed and excavated it in 1981 - 1983, finding large stone and brick structures and 19 features labelled cremation graves. Three of them held gold leaf, 23 pieces in all, engraved with the bull Nandin, the trident and deer, symbols tied to the god Shiva.`,
         ),
         l(
-          `Trong các năm 2018 - 2020, Viện Nghiên cứu Kinh thành khai quật thêm khoảng 8.000 mét vuông ở Nền Chùa. Theo kết quả được công bố, thuyền nhỏ chở hàng theo kênh Lung Lớn từ Óc Eo xuống đây để ra thương cảng biển, và việc buôn bán sôi động nhất từ khoảng giữa thế kỷ 2 đến cuối thế kỷ 6. Trong hồ sơ đề cử Di sản thế giới, Nền Chùa là khu D của quần thể Óc Eo - Ba Thê.`,
-          `In 2018 - 2020 the Institute of Imperial Citadel Studies excavated a further 8,000 square metres or so at Nền Chùa. According to the published results, small boats carried goods down the Lung Lớn canal from Óc Eo to reach the sea port here, and trade was busiest from about the mid-2nd to the late 6th century. In the World Heritage nomination, Nền Chùa is zone D of the Óc Eo - Ba Thê complex.`,
+          `Trong các năm 2018 - 2020, Viện Nghiên cứu Kinh thành khai quật thêm khoảng 8.000 mét vuông ở Nền Chùa. Theo kết quả được công bố, thuyền nhỏ chở hàng theo kênh Lung Lớn từ Óc Eo xuống đây để ra thương cảng biển, và việc buôn bán sôi động nhất từ khoảng giữa thế kỷ 2 đến cuối thế kỷ 6. Trong hồ sơ đề cử Di sản thế giới, Nền Chùa là một trong bốn khu của quần thể Óc Eo - Ba Thê.`,
+          `In 2018 - 2020 the Institute of Imperial Citadel Studies excavated a further 8,000 square metres or so at Nền Chùa. According to the published results, small boats carried goods down the Lung Lớn canal from Óc Eo to reach the sea port here, and trade was busiest from about the mid-2nd to the late 6th century. In the World Heritage nomination, Nền Chùa is one of the four areas of the Óc Eo - Ba Thê complex.`,
         ),
         l(
           `Cạnh Đền được khảo sát năm 1981 và nghiên cứu tiếp năm 1986. Ở đây có khu cư trú, kiến trúc tôn giáo và mộ, với vật liệu gạch, đá, gỗ và tượng. Người ta còn gặp giọt chì, mảnh chì, bàn nghiền và cối, tức dấu vết của nghề luyện kim và làm đồ trang sức bằng hợp kim chì - thiếc, một nghề phổ biến trong văn hóa Óc Eo.`,
@@ -208,8 +208,8 @@ const chapter: Chapter = {
           `Are the "graves" at Nền Chùa really graves? Malleret was already unsure whether brick structures with gold leaf at Óc Eo were tombs or places of worship. Lê Thị Liên (2005) writes of "so-called graves". Võ Thị Huỳnh Như and Cao Thu Nga (2024) argue that the gold leaf was a sacred deposit buried in temple foundation rites, not grave goods. They place Nền Chùa in an early group of structures, around the 4th - 6th centuries.`,
         ),
         l(
-          `Sọ người ở Cạnh Đền là một trong số ít tư liệu về hình thể cư dân Óc Eo. Malleret thấy chúng gần với các nhóm người ở Tây Nguyên ngày nay. Lê Trung Khá (1986) xếp sọ Cạnh Đền và Gò Tháp vào một nhóm phụ Indonesien. Nguyễn Lân Cường (2008) lại thấy sọ ở một số di tích gần với người Đông Sơn hơn. Xương người tìm được rất ít nên chưa thể kết luận. Vị trí chính xác và niên đại của Cạnh Đền không được các nguồn mở được trong lúc biên soạn ghi rõ.`,
-          `The skulls from Cạnh Đền are among the few data on the physical make-up of Óc Eo people. Malleret found them close to present-day groups of the Central Highlands. Lê Trung Khá (1986) placed skulls from Cạnh Đền and Gò Tháp in an Indonesian sub-group. Nguyễn Lân Cường (2008) found skulls from several sites closer to Đông Sơn people. Human bone is scarce, so no conclusion is possible. The exact location and date of Cạnh Đền are not stated in the sources that could be opened while compiling this entry.`,
+          `Sọ người ở Cạnh Đền là một trong số ít tư liệu về hình thể cư dân Óc Eo. Malleret thấy chúng gần với các nhóm người ở Tây Nguyên ngày nay. Lê Trung Khá (1986) xếp sọ Cạnh Đền và Gò Tháp vào một nhóm phụ của loại hình mà ngành nhân học khi ấy gọi là Indonesien. Nguyễn Lân Cường (2008) lại thấy sọ ở một số di tích gần với người Đông Sơn hơn. Xương người tìm được rất ít nên chưa thể kết luận. Vị trí chính xác và niên đại của Cạnh Đền không được các nguồn mở được trong lúc biên soạn ghi rõ.`,
+          `The skulls from Cạnh Đền are among the few data on the physical make-up of Óc Eo people. Malleret found them close to present-day groups of the Central Highlands. Lê Trung Khá (1986) placed skulls from Cạnh Đền and Gò Tháp in a sub-group of the type that physical anthropology then called "Indonesian". Nguyễn Lân Cường (2008) found skulls from several sites closer to Đông Sơn people. Human bone is scarce, so no conclusion is possible. The exact location and date of Cạnh Đền are not stated in the sources that could be opened while compiling this entry.`,
         ),
       ],
       sources: ['pn-linh2023', 'pn-nhu2024', 'pn-lien2005', 'pn-nd-dothi2022', 'pn-phuong2016', 'pn-bql-oceo'],
@@ -225,8 +225,8 @@ const chapter: Chapter = {
       coord: [109.14, 12.262],
       evidence: ['arch', 'chron'],
       summary: l(
-        `Một khối đá cao khoảng 2,5 mét, khắc chữ Phạn trên ba mặt, tìm thấy gần Nha Trang. Bia nhắc đến dòng dõi vua Sri Mara và thường được coi là văn bản chữ Phạn sớm nhất còn lại ở Đông Nam Á. Giới nghiên cứu chưa thống nhất bia được khắc lúc nào, và nó thuộc về Phù Nam hay buổi đầu của Champa.`,
-        `A stone block about 2.5 metres tall, inscribed in Sanskrit on three faces and found near Nha Trang. It mentions the lineage of a king Sri Mara and is usually regarded as the earliest surviving Sanskrit text in Southeast Asia. Scholars disagree on when it was carved and on whether it belongs to Funan or to the beginnings of Champa.`,
+        `Bia Võ Cạnh là một khối đá cao khoảng 2,5 mét, khắc chữ Phạn trên ba mặt, được tìm thấy gần Nha Trang. Bia nhắc đến dòng dõi vua Sri Mara và thường được coi là văn bản chữ Phạn sớm nhất còn lại ở Đông Nam Á. Giới nghiên cứu chưa thống nhất bia được khắc lúc nào, và nó thuộc về Phù Nam hay buổi đầu của Champa.`,
+        `The Võ Cạnh stele is a stone block about 2.5 metres tall, inscribed in Sanskrit on three faces and found near Nha Trang. It mentions the lineage of a king Sri Mara and is usually regarded as the earliest surviving Sanskrit text in Southeast Asia. Scholars disagree on when it was carved and on whether it belongs to Funan or to the beginnings of Champa.`,
       ),
       detail: [
         l(
@@ -261,8 +261,8 @@ const chapter: Chapter = {
       coord: [105.826, 10.606],
       evidence: ['arch', 'chron'],
       summary: l(
-        `Một cụm gò cao giữa Đồng Tháp Mười, nơi có đền thờ thần Vishnu, Shiva và thần Mặt Trời, mộ chứa hàng trăm lá vàng, tượng Phật bằng gỗ, và tấm bia chữ Phạn K.5. Bia này là văn bản sớm nhất được biết ở châu thổ sông Cửu Long, kể chuyện một hoàng tử Phù Nam cai quản vùng đất giành được từ bùn lầy.`,
-        `A cluster of mounds in the middle of the Plain of Reeds, with temples to Vishnu, Shiva and the Sun god, tombs holding hundreds of gold leaves, wooden Buddha statues, and the Sanskrit inscription K.5. That inscription is the earliest known text from the Mekong delta and tells of a Funan prince set to govern land won from the mud.`,
+        `Gò Tháp là một cụm gò cao giữa Đồng Tháp Mười, nơi có đền thờ thần Vishnu, Shiva và thần Mặt Trời, mộ chứa hàng trăm lá vàng, tượng Phật bằng gỗ, và tấm bia chữ Phạn K.5. Bia này là văn bản sớm nhất được biết ở châu thổ sông Cửu Long, kể chuyện một hoàng tử Phù Nam cai quản vùng đất giành được từ bùn lầy.`,
+        `Gò Tháp is a cluster of mounds in the middle of the Plain of Reeds, with temples to Vishnu, Shiva and the Sun god, tombs holding hundreds of gold leaves, wooden Buddha statues, and the Sanskrit inscription K.5. That inscription is the earliest known text from the Mekong delta and tells of a Funan prince set to govern land won from the mud.`,
       ),
       detail: [
         l(
@@ -349,8 +349,8 @@ const chapter: Chapter = {
       coord: [107.38, 11.52],
       evidence: ['arch'],
       summary: l(
-        `Một quần thể đền tháp gạch thờ thần Ấn Độ giáo nằm dọc bờ sông Đồng Nai, giữa vùng rừng núi nam Tây Nguyên, được phát hiện năm 1985. Nơi đây có bộ linga - yoni bằng đá rất lớn và hàng trăm lá vàng khắc hình thần. Chưa ai biết chắc ai đã xây nó: Phù Nam, Chân Lạp, hay một tiểu quốc riêng.`,
-        `A complex of brick Hindu temples strung along the Đồng Nai river in the forested hills of the southern Central Highlands, discovered in 1985. It has a very large stone linga and yoni and hundreds of gold leaves engraved with gods. No one knows for sure who built it: Funan, Chenla, or a small kingdom of its own.`,
+        `Cát Tiên là một quần thể đền tháp gạch thờ thần Ấn Độ giáo nằm dọc bờ sông Đồng Nai, giữa vùng rừng núi nam Tây Nguyên, được phát hiện năm 1985. Nơi đây có bộ linga - yoni bằng đá rất lớn và hàng trăm lá vàng khắc hình thần. Chưa ai biết chắc ai đã xây nó: Phù Nam, Chân Lạp, hay một tiểu quốc riêng.`,
+        `Cát Tiên is a complex of brick Hindu temples strung along the Đồng Nai river in the forested hills of the southern Central Highlands, discovered in 1985. It has a very large stone linga and yoni and hundreds of gold leaves engraved with gods. No one knows for sure who built it: Funan, Chenla, or a small kingdom of its own.`,
       ),
       detail: [
         l(
@@ -450,16 +450,16 @@ const chapter: Chapter = {
       `Two Chinese histories name two different kings as the one who took Funan.`,
     ),
     'thanh-dia-cat-tien': l(
-      `Một thánh địa Ấn Độ giáo giữa rừng mà đến nay chưa ai biết chắc ai đã xây.`,
-      `A Hindu sanctuary in the forest, and still no one knows for sure who built it.`,
+      `Giữa rừng có một thánh địa Ấn Độ giáo mà đến nay chưa ai biết chắc ai đã xây.`,
+      `A Hindu sanctuary stands in the forest, and still no one knows for sure who built it.`,
     ),
   },
 
   world: [
     {
       text: l(
-        `Năm 166, sử nhà Hán chép có sứ đoàn của "An Đôn" (có lẽ là hoàng đế La Mã Marcus Aurelius) đến Trung Hoa, mang theo ngà voi, sừng tê và đồi mồi, những thứ có lẽ được mua dọc đường ở Đông Nam Á.`,
-        `In 166 the Han histories record an embassy from "Andun" (probably the Roman emperor Marcus Aurelius) reaching China with ivory, rhinoceros horn and tortoise shell, goods probably acquired on the way in Southeast Asia.`,
+        `Năm 166, sử nhà Hán chép có sứ đoàn của "An Đôn" (có lẽ là hoàng đế La Mã Marcus Aurelius) đến Trung Hoa, mang theo ngà voi, sừng tê và đồi mồi, những thứ có lẽ được mua dọc đường ở Đông Nam Á. Sự kiện này được kể kỹ ở thời Bắc thuộc lần thứ hai.`,
+        `In 166 the Han histories record an embassy from "Andun" (probably the Roman emperor Marcus Aurelius) reaching China with ivory, rhinoceros horn and tortoise shell, goods probably acquired on the way in Southeast Asia. The episode is told in full under the second northern domination.`,
       ),
       source: 'pn-kim2021',
     },

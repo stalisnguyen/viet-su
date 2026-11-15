@@ -42,8 +42,8 @@ const chapter: Chapter = {
         'Even the name of the period is a choice. The Toàn thư has "Annals of the Triệu" as a legitimate dynasty and counts the Western Han period only from 110 BCE. Most Vietnamese historians today treat the Triệu as an outside power and date northern rule from 179 BCE. This site follows the now common 179 BCE periodisation and sets out the debate in the entry on Zhao Tuo.',
       ),
       l(
-        'Số liệu duy nhất về dân số là cuộc điều tra năm 2 chép trong Hán thư: ba quận có 143.643 hộ, 981.755 người. K.W. Taylor ngờ rằng con số này không đến từ việc đăng ký dân thật sự, nhưng vẫn coi đó là chứng cứ hợp lý về một cư dân định cư đông đúc. Jennifer Holmgren thì nhấn mạnh rằng trước thời Vương Mãng (9 - 23), chính quyền hầu như để các thủ lĩnh bản địa tự quản.',
-        'The only population figure is the census of 2 CE in the Hanshu: 143,643 households and 981,755 people in the three commanderies. K.W. Taylor doubts that these numbers came from a real registration, yet treats them as plausible evidence of a large settled population. Jennifer Holmgren stresses that before Wang Mang\'s time (9 - 23 CE) the authorities largely left native chiefs to run their own areas.',
+        'Số liệu duy nhất về dân số là cuộc điều tra năm 2 chép trong Hán thư: ba quận có 143.643 hộ, 981.735 người. K.W. Taylor ngờ rằng con số này không đến từ việc đăng ký dân thật sự, nhưng vẫn coi đó là chứng cứ hợp lý về một cư dân định cư đông đúc. Jennifer Holmgren thì nhấn mạnh rằng trước thời Vương Mãng (9 - 23), chính quyền hầu như để các thủ lĩnh bản địa tự quản.',
+        'The only population figure is the census of 2 CE in the Hanshu: 143,643 households and 981,735 people in the three commanderies. K.W. Taylor doubts that these numbers came from a real registration, yet treats them as plausible evidence of a large settled population. Jennifer Holmgren stresses that before Wang Mang\'s time (9 - 23 CE) the authorities largely left native chiefs to run their own areas.',
       ),
     ],
     sources: ['nv-taylor2013', 'nv-toanthu-nk2', 'nv-toanthu-nk3', 'suky', 'nv-holmgren1980', 'nv-nhandan2005', 'nv-wiki-first'],
@@ -65,8 +65,8 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          'Triệu Đà quê ở Chân Định (nay thuộc Hà Bắc, Trung Quốc), theo quân Tần xuống phương nam. Khi nhà Tần sụp đổ, ông tự lập làm vua Nam Việt, đóng đô ở Phiên Ngung. Nhà Hán sai Lục Giả sang công nhận ông làm Nam Việt vương, đổi lấy việc ông thần phục trên danh nghĩa. Lãnh thổ Nam Việt gồm phần lớn Quảng Đông, Quảng Tây và miền bắc Việt Nam ngày nay.',
-          'Zhao Tuo came from Zhending (now in Hebei, China) and went south with the Qin armies. When Qin collapsed he made himself king of Nanyue with his capital at Panyu. The Han sent Lu Jia to recognise him as king of Nanyue in return for nominal submission. The kingdom covered most of modern Guangdong and Guangxi and the north of present-day Vietnam.',
+          'Triệu Đà quê ở Chân Định (nay thuộc Hà Bắc, Trung Quốc), theo quân Tần xuống phương nam. Khi nhà Tần sụp đổ, ông tự lập làm vua Nam Việt, đóng đô ở Phiên Ngung. Năm 196 TCN, nhà Hán sai Lục Giả sang công nhận ông làm Nam Việt vương, đổi lấy việc ông thần phục trên danh nghĩa. Lãnh thổ Nam Việt gồm phần lớn Quảng Đông, Quảng Tây và miền bắc Việt Nam ngày nay.',
+          'Zhao Tuo came from Zhending (now in Hebei, China) and went south with the Qin armies. When Qin collapsed he made himself king of Nanyue with his capital at Panyu. In 196 BCE the Han sent Lu Jia to recognise him as king of Nanyue in return for nominal submission. The kingdom covered most of modern Guangdong and Guangxi and the north of present-day Vietnam.',
         ),
         l(
           'Dưới thời Lữ hậu (187 - 180 TCN), nhà Hán cấm bán đồ sắt và gia súc cho Nam Việt. Triệu Đà đoạn tuyệt với nhà Hán và xưng đế. Cuộc tiến đánh của nhà Hán năm 181 TCN thất bại. Sau khi Lữ hậu mất, ông dùng cả binh lực lẫn của cải để khiến Mân Việt, Tây Âu và Lạc thần phục. Với Hán Văn Đế, ông bỏ đế hiệu trong thư từ nhưng ở trong nước vẫn giữ.',
@@ -83,8 +83,8 @@ const chapter: Chapter = {
           'The basic source is the account of Zhao Tuo in the Shiji, written less than a century after Nanyue fell. Founding dates differ: the Toàn thư and Britannica give 207 BCE, many other works 204 or 203 BCE. On his lifespan, the Toàn thư says he reigned 71 years and lived to 121, which is hard to credit. The Shiji counts five reigns and 93 years for the house of Zhao; the Toàn thư counts 97 years, from 207 to 111 BCE.',
         ),
         l(
-          'Thế kỷ 13, Lê Văn Hưu khen Triệu Vũ Đế mở mang nước Việt, tự làm đế một cõi và chống lại nhà Hán. Ngô Sĩ Liên giữ "Kỷ nhà Triệu" trong Toàn thư, và Bình Ngô đại cáo của Nguyễn Trãi (1428) xếp họ Triệu đứng đầu các triều dựng nước. Đến thế kỷ 18, Ngô Thì Sĩ là người đầu tiên coi nhà Triệu là một chính quyền riêng của người phương bắc chứ không phải triều đại chính thống của nước Việt.',
-          'In the 13th century Lê Văn Hưu praised Emperor Wu of Triệu for enlarging Việt, ruling as emperor in his own realm and standing up to the Han. Ngô Sĩ Liên kept the "Annals of the Triệu" in the Toàn thư, and Nguyễn Trãi\'s Bình Ngô đại cáo (1428) put the Triệu first among the dynasties that built the country. In the 18th century Ngô Thì Sĩ was the first to treat the Triệu as a separate northern regime rather than a legitimate Vietnamese dynasty.',
+          'Thế kỷ 13, Lê Văn Hưu khen Triệu Vũ Đế mở mang nước Việt, tự làm đế một cõi và chống lại nhà Hán. Ngô Sĩ Liên giữ "Kỷ nhà Triệu" trong Toàn thư, và Bình Ngô đại cáo của Nguyễn Trãi (1428) xếp họ Triệu đứng đầu các triều dựng nước. Đến thế kỷ 18, Ngô Thì Sĩ thường được nhắc đến như người đầu tiên coi nhà Triệu là một chính quyền riêng của người phương bắc chứ không phải triều đại chính thống của nước Việt.',
+          'In the 13th century Lê Văn Hưu praised Emperor Wu of Triệu for enlarging Việt, ruling as emperor in his own realm and standing up to the Han. Ngô Sĩ Liên kept the "Annals of the Triệu" in the Toàn thư, and Nguyễn Trãi\'s Bình Ngô đại cáo (1428) put the Triệu first among the dynasties that built the country. In the 18th century Ngô Thì Sĩ is usually credited as the first to treat the Triệu as a separate northern regime rather than a legitimate Vietnamese dynasty.',
         ),
         l(
           'Sử học chính thống ở Việt Nam ngày nay theo hướng của Ngô Thì Sĩ. Một bài trên báo Nhân Dân năm 2005 gọi đây là cuộc xâm lược và mô tả Nam Việt là nhà nước cát cứ của tướng lĩnh, quan lại người Hán. Cũng có ý kiến đề nghị nhìn lại, như Trần Ngọc Vương (2021), người nhắc rằng nhiều bậc tiền nhân từng tính lịch sử dựng nước từ họ Triệu. Lập luận hai bên xoay quanh gốc gác của vua, nơi đặt kinh đô và việc ông chống nhà Hán.',
@@ -133,7 +133,7 @@ const chapter: Chapter = {
       slug: 'ba-quan-giao-chi-cuu-chan-nhat-nam',
       period: 'nam-viet',
       kind: 'event',
-      name: l('Ba quận Giao Chỉ, Cửu Chân, Nhật Nam', 'The three commanderies: Jiaozhi, Jiuzhen, Rinan'),
+      name: l('Ba quận Giao Chỉ, Cửu Chân, Nhật Nam', 'Jiaozhi, Jiuzhen and Rinan commanderies'),
       date: l('từ 111 TCN', 'from 111 BCE'),
       sort: 2110,
       place: l('Bắc Bộ, Bắc Trung Bộ và dải ven biển phía nam Hoành Sơn', 'Northern Vietnam, the north-central coast and the coast south of Hoành Sơn'),
@@ -148,8 +148,8 @@ const chapter: Chapter = {
           'The nine were Nanhai, Hepu, Cangwu, Yulin, Zhuya, Dan\'er, Jiaozhi, Jiuzhen and Rinan. According to the Hanshu, Jiaozhi had 10 counties, Jiuzhen 7 and Rinan 5, 22 in all. The counties of Jiaozhi included Leilou (Luy Lâu), Miling (Mê Linh) and Longbian (Long Biên), names that recur for centuries. The Han set up two frontier garrisons, one at Mê Linh facing up the Red River and one in Rinan.',
         ),
         l(
-          'Cuộc điều tra dân số năm 2 ghi Giao Chỉ có 92.440 hộ với 746.237 người, Cửu Chân 35.743 hộ với 166.013 người, Nhật Nam 15.460 hộ với 69.485 người. Cộng lại là 143.643 hộ và 981.755 người. Cùng lúc đó, vùng Quảng Đông và Quảng Tây chỉ ghi 71.805 hộ với 390.555 người, tức chưa bằng một nửa số hộ của ba quận phía nam.',
-          'The census of 2 CE recorded 92,440 households and 746,237 people in Jiaozhi, 35,743 households and 166,013 people in Jiuzhen, and 15,460 households and 69,485 people in Rinan: 143,643 households and 981,755 people in all. At the same date Guangdong and Guangxi recorded only 71,805 households and 390,555 people, less than half the households of the three southern commanderies.',
+          'Cuộc điều tra dân số năm 2 ghi Giao Chỉ có 92.440 hộ với 746.237 người, Cửu Chân 35.743 hộ với 166.013 người, Nhật Nam 15.460 hộ với 69.485 người. Cộng lại là 143.643 hộ và 981.735 người. Cùng lúc đó, vùng Quảng Đông và Quảng Tây chỉ ghi 71.805 hộ với 390.555 người, tức chưa bằng một nửa số hộ của ba quận phía nam.',
+          'The census of 2 CE recorded 92,440 households and 746,237 people in Jiaozhi, 35,743 households and 166,013 people in Jiuzhen, and 15,460 households and 69,485 people in Rinan: 143,643 households and 981,735 people in all. At the same date Guangdong and Guangxi recorded only 71,805 households and 390,555 people, less than half the households of the three southern commanderies.',
         ),
       ],
       scholarly: [
@@ -184,8 +184,8 @@ const chapter: Chapter = {
           'Under Nanyue the two legates supervised from a distance and set up trading posts open to the sea. The Han kept the arrangement. Lạc chiefs headed the counties and were given seals and ribbons as marks of rank. What they handed over they regarded as tribute to an overlord. Over time Han officials came to see it as tax to be collected.',
         ),
         l(
-          'Sự khác biệt về gia đình và ruộng đất cũng gây căng thẳng. Người Hán truyền đất theo dòng cha. Trong xã hội Lạc, địa vị và quyền thừa kế đi theo dòng mẹ, và ruộng thường được dùng chung. Khi quan lại, binh lính, thợ và nông dân từ phương bắc đến lấy vợ người địa phương và tìm cách có đất, hai nếp ấy va chạm nhau. Mê Linh, nơi có đồn binh Hán, cũng là đất gốc của Hai Bà Trưng.',
-          'Differences over family and land also caused strain. The Han passed land down the male line. In Lạc society status and inheritance ran through the mother\'s line and land was often used in common. When northern officials, soldiers, craftsmen and farmers married local women and sought land, the two customs collided. Mê Linh, where a Han garrison stood, was also the home ground of the Trưng Sisters.',
+          'Sự khác biệt về gia đình và ruộng đất cũng gây căng thẳng. Người Hán truyền đất theo dòng cha. Trong xã hội Lạc, địa vị và quyền thừa kế đi theo dòng mẹ, và ruộng thường được dùng chung. Khi quan lại, binh lính, thợ và nông dân từ phương bắc đến lấy vợ người địa phương và tìm cách có đất, hai nếp ấy va chạm nhau. Mê Linh, nơi có đồn binh Hán, cũng là đất gốc của Hai Bà Trưng, những người được kể ở thời kỳ kế tiếp.',
+          'Differences over family and land also caused strain. The Han passed land down the male line. In Lạc society status and inheritance ran through the mother\'s line and land was often used in common. When northern officials, soldiers, craftsmen and farmers married local women and sought land, the two customs collided. Mê Linh, where a Han garrison stood, was also the home ground of the Trưng Sisters, whose story is told in the next period.',
         ),
       ],
       scholarly: [
@@ -204,45 +204,37 @@ const chapter: Chapter = {
       slug: 'luy-lau',
       period: 'nam-viet',
       kind: 'site',
-      name: l('Thành Luy Lâu', 'Luy Lâu citadel'),
-      date: l('trị sở quận Giao Chỉ thời Hán', 'seat of Jiaozhi commandery in Han times'),
+      name: l('Luy Lâu, trị sở buổi đầu của Giao Chỉ', 'Luy Lâu, early seat of Jiaozhi'),
+      date: l('từ khoảng 111 TCN', 'from about 111 BCE'),
       sort: 2090,
-      place: l('Thanh Khương, Thuận Thành, Bắc Ninh', 'Thanh Khương, Thuận Thành, Bắc Ninh'),
-      coord: [106.05, 21.038],
-      evidence: ['arch', 'chron'],
+      place: l('Vùng Dâu, Thuận Thành, Bắc Ninh', 'The Dâu area, Thuận Thành, Bắc Ninh'),
+      coord: [106.045, 21.038],
+      evidence: ['chron', 'arch'],
       summary: l(
-        'Luy Lâu là tòa thành đất bên sông Dâu, nơi quan lại nhà Hán đặt trị sở của quận Giao Chỉ và điều hành cả vùng. Đây là một trong những đô thị sớm và lớn nhất miền bắc Việt Nam. Điều bất ngờ là ngay trong tòa thành ấy, các nhà khảo cổ tìm thấy hàng nghìn mảnh khuôn đúc trống đồng Đông Sơn.',
-        'Luy Lâu is an earthen citadel on the Dâu river where Han officials placed the seat of Jiaozhi commandery and ran the whole region. It is one of the earliest and largest urban centres of northern Vietnam. Unexpectedly, inside this very citadel archaeologists have found thousands of fragments of moulds for casting Đông Sơn bronze drums.',
+        'Luy Lâu nằm bên sông Dâu ở Bắc Ninh và thường được coi là nơi nhà Hán đặt trị sở quận Giao Chỉ sau năm 111 TCN. Từ đây quan lại phương bắc trông coi cả vùng qua đường sông thông ra biển. Tuy vậy, sử cũ không thống nhất về nơi đặt trị sở, và khảo cổ học chưa tìm được dấu tích chắc chắn của tòa thành buổi đầu.',
+        'Luy Lâu lies on the Dâu river in Bắc Ninh and is usually taken as the place where the Han put the seat of Jiaozhi commandery after 111 BCE. From here northern officials oversaw the region along a river route to the sea. Yet the old histories disagree about where the seat was, and archaeology has not found secure traces of the earliest citadel.',
       ),
       detail: [
         l(
-          'Theo đợt đo vẽ năm 1986, thành ngoại có tường bắc dài 680 m, tường nam 520 m, tường đông 320 m và tường tây 328 m. Tường còn cao 2 đến 5 m, chân rộng 20 đến 40 m, bao quanh là hào rộng 20 đến 40 m. Hào phía tây chính là dòng sông Dâu. Taylor mô tả Luy Lâu thời Hán là một bến cảng giữa đồng ruộng, có đường sông thông ra bờ biển.',
-          'According to the 1986 survey, the outer citadel has a north wall of 680 m, a south wall of 520 m, an east wall of 320 m and a west wall of 328 m. The walls still stand 2 to 5 m high on a base 20 to 40 m wide, ringed by a moat 20 to 40 m across. The western moat is the Dâu river itself. Taylor describes Han-period Luy Lâu as a seaport amidst fields, linked by river to the coast.',
+          'Taylor mô tả Luy Lâu thời Hán là một bến cảng giữa đồng ruộng, có đường sông thông ra bờ biển. Vị trí ấy đặt quan lại nhà Hán vào giữa vùng đông dân nhất của Giao Chỉ mà vẫn giữ được đường thuyền về phương bắc. Luy Lâu cũng là tên một trong mười huyện của quận Giao Chỉ, bên cạnh Mê Linh và Long Biên. Theo nhóm nghiên cứu của Bảo tàng Lịch sử Quốc gia, tên Luy Lâu là dạng phiên âm cổ của tên Dâu, tên vùng đất và con sông còn dùng đến nay.',
+          'Taylor describes Han-period Luy Lâu as a seaport amidst fields, linked by river to the coast. The position placed Han officials in the most populous part of Jiaozhi while keeping their boat route to the north. Luy Lâu was also the name of one of the ten counties of Jiaozhi, alongside Mê Linh and Long Biên. According to researchers at the Vietnam National Museum of History, the name Luy Lâu is an old transcription of Dâu, the name the area and its river still bear.',
         ),
         l(
-          'Từ năm 1998 đến 2019 đã có 16 cuộc khai quật ở đây. Cuối năm 1998, nhà khảo cổ Nhật Bản Nishimura Masanari nhặt được mảnh khuôn đúc trống đồng đầu tiên. Đợt khai quật do Bảo tàng Lịch sử Quốc gia và Đại học Đông Á (Nhật Bản) thực hiện, công bố năm 2015, thu thêm 38 mảnh khuôn nằm trong tầng văn hóa ổn định. Các đợt đến năm 2019 thống kê được 923 mảnh. Một đợt gần đây, theo Việt Nam News, thu hơn 2.300 mảnh.',
-          'Sixteen excavations took place here between 1998 and 2019. In late 1998 the Japanese archaeologist Nishimura Masanari picked up the first drum-mould fragment. An excavation by the Vietnam National Museum of History and the University of East Asia (Japan), published in 2015, added 38 fragments from a stable layer. The digs up to 2019 yielded 923 fragments in all. A more recent one, reported by Việt Nam News, collected over 2,300 pieces.',
-        ),
-        l(
-          'Cuộc khảo sát năm 2012 còn ghi nhận 32 ngôi mộ gạch ở phía đông thành, được cho là có liên hệ với trị sở này. Đồ gốm, gạch ngói, lò nấu kim loại, xỉ đồng, chì lưới và dọi xe chỉ cho thấy trong thành có cả nghề gốm, luyện kim, đánh cá và dệt. Hiện vật thu được có niên đại trải từ thời Đông Sơn, Hán, Lục triều đến Tùy Đường.',
-          'A 2012 survey also recorded 32 brick tombs east of the citadel, thought to be connected with the seat. Pottery, bricks and tiles, a metal furnace, slag, net sinkers and spindle whorls show that potting, metalworking, fishing and weaving all went on inside. The finds range in date from the Đông Sơn, Han and Six Dynasties periods to Sui and Tang.',
+          'Trong thời kỳ này nhà Hán cai trị chủ yếu qua các Lạc tướng, nên sử cũ hầu như không tả gì về trị sở. Hiện vật thu được ở khu di tích có lớp sớm nhất thuộc thời Đông Sơn và thời Hán. Các lũy đất còn thấy hôm nay, những đợt khai quật và các khuôn đúc trống đồng tìm thấy trong thành đều thuộc những thế kỷ sau. Phần đó được kể ở mục Thành Luy Lâu của thời Bắc thuộc lần thứ hai.',
+          'In this period the Han governed mainly through the Lạc lords, so the old histories say almost nothing about the seat itself. The earliest finds from the site belong to the Đông Sơn and Han periods. The ramparts visible today, the excavations and the drum moulds found inside the citadel all belong to later centuries. That part of the story is told in the entry on Luy Lâu citadel under the second northern domination.',
         ),
       ],
       scholarly: [
         l(
-          'Sử chép và khảo cổ chưa khớp hẳn với nhau. Các tác giả của Bảo tàng Lịch sử Quốc gia viết rằng Luy Lâu là trị sở từ Tây Hán sang Đông Hán. Nhưng các lớp tường thành đã định được tuổi ở Lũng Khê cho thấy thành được đắp và sửa nhiều lần từ thế kỷ 2 đến thế kỷ 6. Tức là phần nhìn thấy hôm nay chủ yếu thuộc giai đoạn sau thời kỳ này, còn dấu tích của trị sở buổi đầu thời Tây Hán vẫn cần tìm thêm.',
-          'Texts and archaeology do not yet match fully. The National Museum of History authors write that Luy Lâu was the seat from Western into Eastern Han. But the dated wall layers at Lũng Khê show building and repair from the 2nd to the 6th century. What is visible today therefore belongs mostly to the time after this period, and traces of the earliest Western Han seat still need to be found.',
+          'Sử liệu không thống nhất về trị sở. Toàn thư chép trị sở thời Tây Hán là Long Uyên, tức Long Biên. Taylor đặt đầu não của Giao Chỉ và cả vùng ở Luy Lâu. Holmgren viết rằng trong phần lớn thời Hậu Hán trị sở quận ở Luy Lâu, có giai đoạn ở Long Biên. Các tác giả của Bảo tàng Lịch sử Quốc gia cho rằng Luy Lâu là trị sở từ Tây Hán sang Đông Hán, nhưng cũng thừa nhận hệ thống hành chính thời này chưa được nghiên cứu sâu.',
+          'The sources disagree about the seat. The Toàn thư gives the Western Han seat as Longyuan, that is Long Biên. Taylor places the headquarters of Jiaozhi and of the whole region at Luy Lâu. Holmgren writes that for most of the Later Han the commandery seat was Luy Lâu, with a stage at Long Biên. The National Museum of History authors hold that Luy Lâu was the seat from Western into Eastern Han, while admitting that the administration of the period is still poorly studied.',
         ),
         l(
-          'Tuổi của các khuôn trống cũng đang được bàn. Nishimura xếp mảnh khuôn năm 1998 vào thế kỷ 2. Trương Đắc Chiến năm 2015 nêu giả thuyết thế kỷ 4 - 2 TCN cho lô 38 mảnh, dựa vào hoa văn thuần hình học. Đến năm 2022, sau khi xét các hiện vật đi kèm, chính ông kết luận các khuôn thuộc thế kỷ 3 - 6, trong khi hai mẫu carbon 14 cho kết quả trái ngược nhau. Dù theo niên đại nào, trống Đông Sơn đã được đúc ngay tại trung tâm cai trị của phương bắc.',
-          'The date of the drum moulds is also debated. Nishimura placed the 1998 fragment in the 2nd century CE. In 2015 Trương Đắc Chiến suggested the 4th - 2nd century BCE for the 38 pieces, on the basis of their purely geometric decoration. In 2022, after weighing the associated finds, he himself concluded that the moulds date to the 3rd - 6th centuries CE, while two radiocarbon samples gave conflicting results. On any dating, Đông Sơn drums were cast in the very centre of northern administration.',
-        ),
-        l(
-          'Đợt khai quật năm 1986 từng cho rằng trong thành là văn hóa Hán còn bãi Đồng Dâu bên ngoài là văn hóa Việt. Kết quả công bố năm 2015 bác giả thuyết này: hiện vật trong và ngoài thành không khác nhau, và cư dân bản địa chiếm phần đông. Về tên gọi, Toàn thư chép trị sở thời Tây Hán là Long Uyên, tức Long Biên, khác với Luy Lâu trong các nghiên cứu hiện nay.',
-          'The 1986 excavation had proposed that the citadel was Han in culture and the Đồng Dâu area outside it Việt. The results published in 2015 reject this: finds inside and outside do not differ, and local people formed the bulk of the population. As for the name, the Toàn thư gives the Western Han seat as Longyuan, that is Long Biên, unlike the Luy Lâu of current research.',
+          'Khảo cổ học chưa lấp được khoảng trống này. Các lớp tường thành đã định được tuổi cho thấy thành được đắp và sửa nhiều lần từ thế kỷ 2 đến thế kỷ 6, tức sau thời kỳ đang xét. Các khuôn đúc trống đồng trong thành từng được đoán thuộc thế kỷ 4 - 2 TCN, nhưng năm 2022 Trương Đắc Chiến kết luận chúng thuộc thế kỷ 3 - 6. Vì vậy dấu tích của trị sở thời Tây Hán vẫn cần được tìm thêm, và điểm trên bản đồ chỉ đánh dấu khu di tích Luy Lâu nói chung.',
+          'Archaeology has not yet closed the gap. The dated wall layers show building and repair from the 2nd to the 6th century CE, after the period covered here. The drum moulds from the citadel were once guessed to be of the 4th - 2nd century BCE, but in 2022 Trương Đắc Chiến concluded that they date to the 3rd - 6th centuries CE. Traces of the Western Han seat therefore still need to be found, and the map marker shows only the Luy Lâu site in general.',
         ),
       ],
-      sources: ['nv-doan2015', 'nv-nmh-luylau2015', 'nv-chien2022', 'nv-vnn-luylau', 'nv-taylor2013', 'nv-wiki-luylau'],
+      sources: ['nv-doan2015', 'nv-nmh-luylau2015', 'nv-chien2022', 'nv-taylor2013', 'nv-holmgren1980', 'nv-toanthu-nk3', 'nv-wiki-luylau'],
     },
     {
       slug: 'dong-son-thoi-han',
@@ -270,8 +262,8 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Câu hỏi còn mở là mộ gạch kiểu Hán xuất hiện từ lúc nào. Sách tra cứu của Oxford viết rằng mộ gạch kiểu Hán thường gặp ở các di tích Đông Sơn muộn. Taylor đặt bước ngoặt sau cuộc hành quân của Mã Viện (42 - 43): từ đó mộ gạch thay cho mộ Đông Sơn, gần như giống hệt mộ ở khắp đế chế Hán, có mô hình nhà cửa trang trại bằng đất nung, và phân bố xuống đến Quảng Trạch gần đèo Ngang. Theo cách hiểu này, trong thời kỳ đang xét, mộ gạch nếu có thì còn hiếm.',
-          'An open question is when Han-style brick tombs first appear. The Oxford Companion says brick Han-style tombs occur regularly in later Đông Sơn sites. Taylor puts the turning point after Ma Yuan\'s expedition (42 - 43 CE): from then brick tombs replace Đông Sơn graves, nearly identical with tombs across the Han empire, with clay models of farm compounds, and reach south to Quảng Trạch near the Ngang pass. On this reading brick tombs, if present at all, were still rare in the period covered here.',
+          'Câu hỏi còn mở là mộ gạch kiểu Hán xuất hiện từ lúc nào. Sách tra cứu của Oxford viết rằng mộ gạch kiểu Hán thường gặp ở các di tích Đông Sơn muộn. Taylor đặt bước ngoặt sau cuộc hành quân của Mã Viện (42 - 43): từ đó mộ gạch thay cho mộ Đông Sơn, gần như giống hệt mộ ở khắp đế chế Hán, có mô hình nhà cửa trang trại bằng đất nung, và phân bố xuống đến Quảng Trạch gần đèo Ngang. Theo cách hiểu này, trong thời kỳ đang xét, mộ gạch nếu có thì còn hiếm. Loại mộ này được kể kỹ ở thời Bắc thuộc lần thứ hai.',
+          'An open question is when Han-style brick tombs first appear. The Oxford Companion says brick Han-style tombs occur regularly in later Đông Sơn sites. Taylor puts the turning point after Ma Yuan\'s expedition (42 - 43 CE): from then brick tombs replace Đông Sơn graves, nearly identical with tombs across the Han empire, with clay models of farm compounds, and reach south to Quảng Trạch near the Ngang pass. On this reading brick tombs, if present at all, were still rare in the period covered here. The tombs themselves are described under the second northern domination.',
         ),
         l(
           'Việc đúc trống kéo dài đến bao giờ cũng chưa ngã ngũ. Cách phân loại ở Việt Nam thường xếp nhóm trống muộn vào thế kỷ 3 TCN đến thế kỷ 1. Dựa trên khuôn đúc ở Luy Lâu, Trương Đắc Chiến đề nghị xét lại, vì nghề đúc có thể còn tiếp tục đến thế kỷ 3, thậm chí thế kỷ 6. Điểm đánh dấu trên bản đồ là làng Đông Sơn bên sông Mã, di tích mộ táng đã đặt tên cho cả nền văn hóa.',
@@ -363,7 +355,6 @@ const chapter: Chapter = {
 
     // Báo chí
     { id: 'nv-nhandan2005', kind: 'news', cite: 'Báo Nhân Dân điện tử (14/4/2005), "Cuộc xâm lược của nhà Triệu".', url: 'https://nhandan.vn/cuoc-xam-luoc-cua-nha-trieu-post522087.html' },
-    { id: 'nv-vnn-luylau', kind: 'news', cite: 'Việt Nam News, "Over 2,300 pieces of bronze drum moulds discovered at Luy Lâu ancient citadel".', url: 'https://vietnamnews.vn/life-style/1689534/over-2-300-pieces-of-bronze-drum-moulds-discovered-at-luy-lau-ancient-citadel.html' },
   ],
 
   hooks: {
@@ -384,8 +375,8 @@ const chapter: Chapter = {
       'The same load of rice was tribute to those who gave it and tax to those who took it.',
     ),
     'luy-lau': l(
-      'Ngay trong trị sở của quan lại phương bắc có một xưởng đúc trống đồng Đông Sơn.',
-      'Inside the seat of northern officials stood a workshop casting Đông Sơn bronze drums.',
+      'Sử cũ nêu hai cái tên khác nhau cho trị sở đầu tiên của Giao Chỉ, và tòa thành buổi đầu vẫn chưa được tìm thấy.',
+      'The old histories give two different names for the first seat of Jiaozhi, and the earliest citadel has still not been found.',
     ),
     'dong-son-thoi-han': l(
       'Trong mộ có thêm gương Hán, nhưng người chết vẫn nằm trong quan tài hình thuyền.',
@@ -450,29 +441,29 @@ const chapter: Chapter = {
       ],
       answer: 2,
       why: l(
-        'Hán thư ghi 143.643 hộ với 981.755 người. Con số 390.555 là của vùng Quảng Đông và Quảng Tây cùng thời điểm.',
-        'The Hanshu gives 143,643 households and 981,755 people. The figure 390,555 is for Guangdong and Guangxi at the same date.',
+        'Hán thư ghi 143.643 hộ với 981.735 người. Con số 390.555 là của vùng Quảng Đông và Quảng Tây cùng thời điểm.',
+        'The Hanshu gives 143,643 households and 981,735 people. The figure 390,555 is for Guangdong and Guangxi at the same date.',
       ),
     },
     {
       q: l(
-        'Các nhà khảo cổ tìm thấy gì ở thành Luy Lâu cho thấy văn hóa Đông Sơn vẫn tiếp tục dưới quyền cai trị của phương bắc?',
-        'What did archaeologists find at Luy Lâu that shows Đông Sơn culture continuing under northern rule?',
+        'Trong hơn một thế kỷ đầu, nhà Hán cai trị Giao Chỉ và Cửu Chân bằng cách nào?',
+        'How did the Han govern Jiaozhi and Jiuzhen for more than the first century?',
       ),
       options: [
-        l('Khuôn đúc trống đồng Đông Sơn', 'Moulds for casting Đông Sơn bronze drums'),
-        l('Ấn vàng của một vị vua', 'A king\'s gold seal'),
-        l('Kho mũi tên đồng hàng vạn chiếc', 'A hoard of tens of thousands of bronze arrowheads'),
+        l('Trao ấn và dải thao cho các Lạc tướng rồi nhận cống nạp', 'By giving the Lạc lords seals and ribbons and receiving tribute'),
+        l('Thay toàn bộ thủ lĩnh bản địa bằng quan lại phương bắc', 'By replacing every local chief with northern officials'),
+        l('Đóng quân ở từng làng để thu thuế', 'By stationing troops in every village to collect tax'),
       ],
       answer: 0,
       why: l(
-        'Từ mảnh khuôn đầu tiên năm 1998, đến nay đã có hàng nghìn mảnh khuôn đúc trống đồng được tìm thấy ngay trong thành Luy Lâu. Ấn vàng thuộc lăng Triệu Mạt ở Quảng Châu, còn kho mũi tên là của Cổ Loa.',
-        'Since the first fragment in 1998, thousands of drum-mould pieces have been found inside Luy Lâu itself. The gold seal belongs to Zhao Mo\'s tomb in Guangzhou, and the arrowhead hoard to Cổ Loa.',
+        'Các Lạc tướng vẫn cai quản dân và ruộng của mình, nhận ấn và dải thao làm dấu hiệu địa vị. Việc cai trị trực tiếp chỉ đến sau cuộc khởi nghĩa của Hai Bà Trưng.',
+        'The Lạc lords went on governing their own people and fields and received seals and ribbons as marks of rank. Direct rule came only after the Trưng Sisters\' uprising.',
       ),
     },
   ],
 
-  badge: l('Người giữ khuôn trống', 'Keeper of the drum mould'),
+  badge: l('Người giữ ấn Lạc tướng', 'Keeper of the Lạc seal'),
 };
 
 export default chapter;

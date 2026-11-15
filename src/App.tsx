@@ -57,7 +57,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 const jump = (id: string) => {
   const el = document.getElementById(id);
   if (!el) return;
-  const far = Math.abs(el.getBoundingClientRect().top) > window.innerHeight * 2.5;
+  const far = Math.abs(el.getBoundingClientRect().top) > window.innerHeight * 2.5 || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   el.scrollIntoView({ behavior: (far ? 'instant' : 'smooth') as ScrollBehavior, block: 'start' });
 };
 // Khi thu gọn phần chi tiết, đưa thẻ về lại đầu khung nhìn để người đọc không bị lạc chỗ
@@ -139,11 +139,13 @@ function More({ detail, scholarly, depth, lang }: { detail: L[]; scholarly: L[];
 function RealPhoto({ slug, lang }: { slug: string; lang: Lang }) {
   const ph = photos[slug];
   const [bad, setBad] = useState(false);
-  if (!ph || bad) return null;
+  if (!ph) return null;
   const f = encodeURIComponent(ph.file.replace(/ /g, '_'));
   return (
     <figure className={'art photo' + (ph.tall ? ' tall' : '')}>
-      <img src={'https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=960'} loading="lazy" alt={ph.caption[lang]} onError={() => setBad(true)} />
+      {bad
+        ? <div className="nophoto">{lang === 'vi' ? 'Ảnh chưa tải được. Bạn có thể mở ảnh gốc ở liên kết bên dưới.' : 'The photo could not be loaded. You can open the original at the link below.'}</div>
+        : <img src={'https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=960'} loading="lazy" alt={ph.caption[lang]} onError={() => setBad(true)} />}
       <figcaption>
         {ph.caption[lang]} {lang === 'vi' ? 'Ảnh: ' : 'Photo: '}{ph.by}, {ph.license}, <a href={'https://commons.wikimedia.org/wiki/File:' + f} target="_blank" rel="noreferrer">Wikimedia Commons</a>.
       </figcaption>
@@ -152,6 +154,8 @@ function RealPhoto({ slug, lang }: { slug: string; lang: Lang }) {
 }
 
 // Giọng kể phần tóm tắt thời kỳ (tiếng Việt), tệp âm thanh nằm trong thư mục audio của trang
+// Chỉ một giọng kể phát tại một thời điểm: bật cái mới thì cái đang phát dừng lại
+let speaking: HTMLAudioElement | null = null;
 function Narrate({ slug, lang }: { slug: string; lang: Lang }) {
   const ref = useRef<HTMLAudioElement | null>(null);
   const [on, setOn] = useState(false);
@@ -160,9 +164,14 @@ function Narrate({ slug, lang }: { slug: string; lang: Lang }) {
     if (!ref.current) {
       ref.current = new Audio('audio/' + slug + '.mp3');
       ref.current.addEventListener('ended', () => setOn(false));
+      ref.current.addEventListener('pause', () => setOn(false));
     }
     if (on) { ref.current.pause(); setOn(false); }
-    else ref.current.play().then(() => setOn(true)).catch(() => setOn(false));
+    else {
+      if (speaking && speaking !== ref.current) speaking.pause();
+      speaking = ref.current;
+      ref.current.play().then(() => setOn(true)).catch(() => setOn(false));
+    }
   };
   return (
     <button className={'ghost listen' + (on ? ' on' : '')} onClick={toggle} aria-pressed={on}>
@@ -190,6 +199,9 @@ function Quiz({ slug, lang, earned, onPass }: { slug: string; lang: Lang; earned
   const qs = quiz[slug];
   const [i, setI] = useState(0);
   const [pick, setPick] = useState<number | null>(null);
+  // Chọn xong thì đưa nút sang câu tiếp vào tầm nhìn và đặt tiêu điểm vào đó
+  const nextBtn = useRef<HTMLButtonElement>(null);
+  useEffect(() => { if (pick !== null && nextBtn.current) { nextBtn.current.focus({ preventScroll: true }); nextBtn.current.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } }, [pick]);
   const [score, setScore] = useState(0);
   const done = i >= qs.length;
   const pass = score >= 2;
@@ -228,7 +240,7 @@ function Quiz({ slug, lang, earned, onPass }: { slug: string; lang: Lang; earned
       {pick !== null && (
         <>
           <p className="why">{q.why[lang]}</p>
-          <div className="cta"><button className="primary" onClick={() => { setI(i + 1); setPick(null); }}>{i + 1 < qs.length ? (lang === 'vi' ? 'Câu tiếp theo' : 'Next question') : (lang === 'vi' ? 'Xem kết quả' : 'See result')}</button></div>
+          <div className="cta"><button ref={nextBtn} className="primary qnext" onClick={() => { setI(i + 1); setPick(null); }}>{i + 1 < qs.length ? (lang === 'vi' ? 'Câu tiếp theo' : 'Next question') : (lang === 'vi' ? 'Xem kết quả' : 'See result')}</button></div>
         </>
       )}
       {earned && pick === null && i === 0 && <p className="muted">{lang === 'vi' ? 'Bạn đã có huy hiệu của thời kỳ này.' : 'You already have this period\'s badge.'}</p>}
@@ -309,7 +321,9 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
   const [q, setQ] = useState('');
   const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
   const k = norm(q.trim());
-  const match = (e: Entry) => !k || norm(e.name.vi + ' ' + e.name.en + ' ' + (e.place?.vi || '')).includes(k);
+  // Khớp theo đầu từ (gõ "hùng" không ra "Phùng Nguyên"); tên thời kỳ khớp thì hiện mọi mục của thời kỳ đó
+  const hit = (text: string) => (' ' + norm(text)).includes(' ' + k);
+  const match = (e: Entry) => !k || hit(e.name.vi + ' ' + e.name.en + ' ' + (e.place?.vi || '')) || hit(periodBySlug[e.period].name.vi + ' ' + periodBySlug[e.period].name.en);
   const any = useMemo(() => entries.some(match), [k]);
   return (
     <>
@@ -339,7 +353,7 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
         })}
         {!k && upcoming.map((u, i) => (
           <li key={i}>
-            <div className="road-head"><em>{pad(i + 1 + periods.length)}</em><strong>{u.name[lang]}</strong><span>{u.range} - {T.soon[lang]}</span></div>
+            <div className="road-head"><em>{pad(i + 1 + periods.length)}</em><strong>{u.name[lang]}</strong><span>{lang === 'vi' ? u.range : u.range.replace(/TCN/g, 'BCE').replace(/tk /g, 'c. ').replace('nay', 'present')} - {T.soon[lang]}</span></div>
           </li>
         ))}
       </ol>
@@ -392,12 +406,22 @@ function Sources({ lang }: { lang: Lang }) {
 function Drawer({ lang, onClose, children }: { lang: Lang; onClose: () => void; children: ReactNode }) {
   const x = useRef<HTMLButtonElement>(null);
   useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
     x.current?.focus();
     document.querySelector('.drawer .here')?.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
-    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    const k = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key !== 'Tab') return;
+      // Giữ tiêu điểm bàn phím trong mục lục
+      const f = [...document.querySelectorAll<HTMLElement>('.drawer-body button, .drawer-body input, .drawer-body a')].filter((el) => el.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
     window.addEventListener('keydown', k);
     document.documentElement.classList.add('locked');
-    return () => { window.removeEventListener('keydown', k); document.documentElement.classList.remove('locked'); };
+    return () => { window.removeEventListener('keydown', k); document.documentElement.classList.remove('locked'); opener?.focus?.({ preventScroll: true }); };
   }, []);
   return (
     <div className="drawer" role="dialog" aria-modal="true" aria-label={lang === 'vi' ? 'Mục lục' : 'Contents'}>
@@ -445,6 +469,11 @@ export default function App() {
   useEffect(() => {
     const id = location.hash.slice(1);
     if (id && STEPS.some((x) => x.id === id)) window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'start' }), 350);
+  }, []);
+  useEffect(() => {
+    const h = () => { const id = location.hash.slice(1); if (id && STEPS.some((x) => x.id === id)) jump(id); };
+    window.addEventListener('hashchange', h);
+    return () => window.removeEventListener('hashchange', h);
   }, []);
   useEffect(() => {
     try { history.replaceState(null, '', active.id === 'top' ? location.pathname : '#' + active.id); } catch { /* bỏ qua */ }
@@ -500,7 +529,11 @@ export default function App() {
     if (f && snd) sound.hit(/trong-dong|dong-son/.test(f) ? 'drum' : 'step');
   }, [active.focus]);
   useEffect(() => { if (snd) sound.setEra(active.era); }, [snd, active.era]);
-  useEffect(() => { document.querySelector('.scrub button.on')?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }, [active.era]);
+  // Kéo dải thời kỳ tới thời kỳ đang xem. Chỉ cuộn ngang bên trong dải, không dùng scrollIntoView vì nó có thể làm xê dịch cả trang.
+  useEffect(() => {
+    const btn = document.querySelector<HTMLElement>('.scrub button.on'), sc = btn?.parentElement;
+    if (btn && sc) sc.scrollTo({ left: btn.offsetLeft - sc.clientWidth / 2 + btn.clientWidth / 2, behavior: 'smooth' });
+  }, [active.era]);
 
   // Tự cuộn: trang trôi đều xuống như phụ đề phim, dừng ngay khi người xem chạm, lăn chuột hoặc bấm phím
   useEffect(() => {
@@ -521,7 +554,7 @@ export default function App() {
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    const stop = () => setAuto(false);
+    const stop = (e: Event) => { if (e.type === 'keydown' && (e.target as HTMLElement).closest?.('.autob')) return; setAuto(false); };
     window.addEventListener('wheel', stop, { passive: true });
     window.addEventListener('touchstart', stop, { passive: true });
     window.addEventListener('keydown', stop);
@@ -667,6 +700,9 @@ export default function App() {
           <small>{idx + 1}/{STEPS.length} - {lang === 'vi' ? 'chạm để mở mục lục' : 'tap for contents'}</small>
           <b>{STEPS[idx].title[lang]}</b>
         </button>
+  <button className={'autob' + (auto ? ' on' : '')} onClick={() => setAuto(!auto)} aria-pressed={auto} aria-label={auto ? (lang === 'vi' ? 'Dừng tự cuộn' : 'Stop auto-scroll') : (lang === 'vi' ? 'Tự cuộn trang' : 'Auto-scroll the page')}>
+        <svg viewBox="0 0 24 24" aria-hidden="true">{auto ? <path d="M7 5h4v14H7zM13 5h4v14h-4z" /> : <path d="M8 5l11 7-11 7z" />}</svg>
+      </button>
         <button className="navb next" onClick={() => go(1)} disabled={idx >= STEPS.length - 1} aria-label={lang === 'vi' ? 'Phần kế tiếp' : 'Next section'}>
           <span>{lang === 'vi' ? 'Tiếp' : 'Next'}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
         </button>
@@ -680,10 +716,7 @@ export default function App() {
           </div>
         </Drawer>
       )}
-      <button className={'autob' + (auto ? ' on' : '')} onClick={() => setAuto(!auto)} aria-pressed={auto} aria-label={auto ? (lang === 'vi' ? 'Dừng tự cuộn' : 'Stop auto-scroll') : (lang === 'vi' ? 'Tự cuộn trang' : 'Auto-scroll the page')}>
-        <svg viewBox="0 0 24 24" aria-hidden="true">{auto ? <path d="M7 5h4v14H7zM13 5h4v14h-4z" /> : <path d="M8 5l11 7-11 7z" />}</svg>
-        {auto && <span>{lang === 'vi' ? 'Dừng tự cuộn' : 'Stop'}</span>}
-      </button>
+
     </div>
   );
 }

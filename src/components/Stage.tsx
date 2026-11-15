@@ -457,11 +457,21 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const onUp = (ev: PointerEvent) => {
       if (Math.hypot(ev.clientX - down.x, ev.clientY - down.y) > 7) return;
       const r = renderer.domElement.getBoundingClientRect();
-      ray.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), camera);
       const s = live.current;
-      const ok = hits.filter((h) => { const p = pins.find((x) => x.slug === h.userData.slug)!; return !s.era || p.period === s.era; });
-      const hit = ray.intersectObjects(ok)[0];
-      if (hit) s.onPick(hit.object.userData.slug as string);
+      // Chọn ghim có cột sáng gần điểm bấm nhất trên màn hình (không dùng tia chiếu vì các cột đứng sát nhau che lẫn nhau)
+      const px = ev.clientX - r.left, py = ev.clientY - r.top;
+      const toScreen = (v: THREE.Vector3) => { const q = v.clone().project(camera); return { x: (q.x * 0.5 + 0.5) * r.width, y: (-q.y * 0.5 + 0.5) * r.height, ok: q.z < 1 }; };
+      let best: Pin | null = null, bd = 30;
+      pins.forEach((p) => {
+        if (s.era && p.period !== s.era) return;
+        const a0 = toScreen(p.pos), b0 = toScreen(p.pos.clone().setY(p.pos.y + 1.5 * p.group.scale.y));
+        if (!a0.ok || !b0.ok) return;
+        const dx = b0.x - a0.x, dy = b0.y - a0.y, len = dx * dx + dy * dy || 1;
+        const k = Math.max(0, Math.min(1, ((px - a0.x) * dx + (py - a0.y) * dy) / len));
+        const d = Math.hypot(px - (a0.x + dx * k), py - (a0.y + dy * k));
+        if (d < bd) { bd = d; best = p; }
+      });
+      if (best) s.onPick((best as Pin).slug);
     };
     renderer.domElement.addEventListener('pointerdown', onDown);
     renderer.domElement.addEventListener('pointerup', onUp);
@@ -560,11 +570,13 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const inEra = !s.era || p.period === s.era;
         const isFocus = p.slug === s.focus;
         // Nhãn tên: mục đang xem hiện rõ, các mục cùng thời kỳ hiện khi đang xem tổng quan thời kỳ
-        const to = isFocus ? 1 : s.era && inEra && !s.focus && p.solo ? 0.8 : 0; // các điểm nằm sát nhau chỉ hiện một nhãn để không chồng chữ
+        // Khi tên ba vùng văn hóa đang hiện (màn mở đầu và Thời kim khí) thì không hiện thêm tên di tích, tránh lặp chữ như "Sa Huỳnh" hai lần.
+        // Các điểm nằm sát nhau chỉ hiện một nhãn để không chồng chữ.
+        const to = isFocus ? 1 : s.era && !three && inEra && !s.focus && p.solo ? 0.8 : 0;
         p.tag.material.opacity += (to - p.tag.material.opacity) * 0.12;
         // Nhãn giữ cỡ chữ dễ đọc dù máy quay ở gần hay xa
-        const gy = p.group.scale.y, tk = (isFocus ? 1 : 0.85) * Math.min(2.4, Math.max(1, camera.position.distanceTo(p.pos) / 9));
-        p.tag.position.y = (isFocus ? 1.3 : p.tagY * Math.min(2, tk)) / gy;
+        const gy = p.group.scale.y, tk = (isFocus ? 1 : 0.8) * Math.min(1.7, Math.max(1, camera.position.distanceTo(p.pos) / 9));
+        p.tag.position.y = (isFocus ? 1.3 : p.tagY) / gy; // nhãn nằm ngay trên cột sáng của chính nó
         p.tag.scale.set(p.tag.userData.sx * tk, (p.tag.userData.sy * tk) / gy, 1);
         const o = inEra ? 1 : 0; // ghim của thời kỳ khác ẩn hẳn để bản đồ không rối
         p.group.visible = p.head.opacity > 0.02 || inEra;
@@ -589,6 +601,13 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       ro.disconnect();
       controls.dispose();
       composer.dispose();
+      // Giải phóng hình khối, vật liệu và ảnh vân để bộ nhớ không phình lên mỗi lần đổi ngôn ngữ
+      scene.traverse((o) => {
+        const m = o as THREE.Mesh;
+        m.geometry?.dispose?.();
+        const mats = Array.isArray(m.material) ? m.material : m.material ? [m.material] : [];
+        mats.forEach((mt) => { (mt as THREE.MeshBasicMaterial).map?.dispose?.(); mt.dispose?.(); });
+      });
       renderer.dispose();
       renderer.domElement.remove();
     };

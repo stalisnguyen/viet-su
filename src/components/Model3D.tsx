@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { Lang, ModelKind } from '../data/types';
-import { buildCave, buildPaddy, buildVillage } from './Scenes';
 import { drawDrum, loadDrumFace } from '../drum';
 
 const SCENES: ModelKind[] = ['cave', 'village', 'paddy', 'coloa'];
@@ -274,8 +273,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     const rim = new THREE.DirectionalLight(0x7fd4c0, 1.1); rim.position.set(-4, 2, -3); scene.add(rim);
     const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
     const built: { target: THREE.Object3D; cam: number[]; update?: (t: number) => void } =
-      kind === 'drum' ? buildDrum(scene) : kind === 'coloa' ? buildCoLoa(scene, lang) : kind === 'jar' ? buildJar(scene)
-      : kind === 'cave' ? buildCave(scene) : kind === 'village' ? buildVillage(scene) : kind === 'paddy' ? buildPaddy(scene) : buildBiface(scene);
+      kind === 'coloa' ? buildCoLoa(scene, lang) : buildDrum(scene);
     // Hiển thị kiểu hologram, cùng ngôn ngữ hình ảnh với bản đồ: khối trong mờ sáng viền, vân quét chạy dọc,
     // nét cạnh rõ, màu theo thời kỳ của thẻ đang chứa mô hình.
     const hc = new THREE.Color(getComputedStyle(el).getPropertyValue('--c').trim() || '#e6b450');
@@ -341,7 +339,16 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     let raf = 0;
     const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
     tick();
-    return () => { alive = false; cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); renderer.domElement.remove(); };
+    return () => {
+      alive = false; cancelAnimationFrame(raf); ro.disconnect(); controls.dispose();
+      scene.traverse((o) => {
+        const m = o as THREE.Mesh;
+        m.geometry?.dispose?.();
+        const mats = Array.isArray(m.material) ? m.material : m.material ? [m.material] : [];
+        mats.forEach((mt) => { (mt as THREE.MeshBasicMaterial).map?.dispose?.(); mt.dispose?.(); });
+      });
+      renderer.dispose(); renderer.domElement.remove();
+    };
   }, [kind, lang, on]);
 
   const info = MODEL_INFO[kind];

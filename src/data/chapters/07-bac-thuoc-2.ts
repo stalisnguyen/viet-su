@@ -15,13 +15,13 @@ const chapter: Chapter = {
       'What did nearly five hundred years under northern administration change among the ancient Việt, and what did it leave untouched?',
     ),
     summary: l(
-      'Sau khi Mã Viện dẹp Hai Bà Trưng năm 43, nhà Hán rồi các triều Ngô, Tấn, Tống, Tề, Lương cai trị trực tiếp ba quận Giao Chỉ, Cửu Chân, Nhật Nam trong gần năm thế kỷ. Chữ Hán, Nho học và Phật giáo vào sâu, một tầng lớp hào tộc pha trộn Hán - Việt hình thành, nhưng tiếng nói và nhiều phong tục bản địa vẫn còn.',
-      'After Ma Yuan (Mã Viện) crushed the Trưng Sisters in 43 CE, the Han and then the Wu, Jin, Song, Qi and Liang courts ruled the commanderies of Jiaozhi, Jiuzhen and Rinan directly for almost five centuries. Chinese writing, Confucian learning and Buddhism took root and a mixed Han-Việt class of great families emerged, yet the local language and many local customs survived.',
+      'Sau khi Mã Viện đánh bại Hai Bà Trưng năm 43, nhà Hán rồi các triều Ngô, Tấn, Tống, Tề, Lương cai trị trực tiếp ba quận Giao Chỉ, Cửu Chân, Nhật Nam trong gần năm thế kỷ. Chữ Hán, Nho học và Phật giáo vào sâu, một tầng lớp hào tộc pha trộn Hán - Việt hình thành, nhưng tiếng nói và nhiều phong tục bản địa vẫn còn.',
+      'After Ma Yuan (Mã Viện) defeated the Trưng Sisters in 43 CE, the Han and then the Wu, Jin, Song, Qi and Liang courts ruled the commanderies of Jiaozhi, Jiuzhen and Rinan directly for almost five centuries. Chinese writing, Confucian learning and Buddhism took root and a mixed Han-Việt class of great families emerged, yet the local language and many local customs survived.',
     ),
     detail: [
       l(
-        'Đại Việt sử ký toàn thư chép rằng sau khi thắng trận, Mã Viện dựng cột đồng làm mốc biên giới nhà Hán và chia huyện Tây Vu thành hai huyện Phong Khê và Vọng Hải. Đây là lần đầu chính quyền đế chế được áp trực tiếp lên vùng này. Một phần trong số khoảng hai vạn lính Hán ở lại định cư giữa cư dân bản địa. Đến đầu thế kỷ 3, sử đã gọi cả vùng là Giao Châu.',
-        'The Đại Việt sử ký toàn thư records that after his victory Ma Yuan set up bronze pillars to mark the Han frontier and split Tây Vu district into Phong Khê and Vọng Hải. For the first time imperial government was imposed directly on the region. Some of the roughly twenty thousand Han soldiers stayed and settled among the local population. By the early 3rd century the chronicles call the whole region Jiaozhou (Giao Châu).',
+        'Đại Việt sử ký toàn thư chép rằng sau khi thắng trận, Mã Viện dựng cột đồng làm mốc biên giới nhà Hán và chia huyện Tây Vu thành hai huyện Phong Khê và Vọng Hải (chuyện cột đồng được bàn ở thời kỳ Hai Bà Trưng). Đây là lần đầu chính quyền đế chế được áp trực tiếp lên vùng này. Một phần trong số khoảng hai vạn lính Hán ở lại định cư giữa cư dân bản địa. Đến đầu thế kỷ 3, sử đã gọi cả vùng là Giao Châu.',
+        'The Đại Việt sử ký toàn thư records that after his victory Ma Yuan set up bronze pillars to mark the Han frontier and split Tây Vu district into Phong Khê and Vọng Hải (the pillar story is examined under the Trưng Sisters period). For the first time imperial government was imposed directly on the region. Some of the roughly twenty thousand Han soldiers stayed and settled among the local population. By the early 3rd century the chronicles call the whole region Jiaozhou (Giao Châu).',
       ),
       l(
         'Trung tâm của Giao Châu nằm ở vùng Dâu, nay thuộc Bắc Ninh, nơi có thành Luy Lâu và chùa Dâu. Từ năm 187 đến 226, thái thú Sĩ Nhiếp giữ cho vùng này yên ổn giữa lúc Trung Quốc loạn lạc, và hàng trăm danh sĩ nhà Hán chạy sang nương nhờ. Thuyền buôn từ Ấn Độ ghé các cửa biển phía nam, mang theo hàng hóa và Phật giáo. Khắp đồng bằng mọc lên những ngôi mộ gạch cuốn vòm của tầng lớp giàu có.',
@@ -34,12 +34,12 @@ const chapter: Chapter = {
     ],
     scholarly: [
       l(
-        'Khái niệm "Hán hóa" cần được dùng thận trọng. Điều thay đổi rõ là ở tầng trên: chữ Hán thành chữ viết của hành chính và học vấn, lối cưới hỏi và chôn cất kiểu Hán xuất hiện, và tiếng Việt nhận một lớp từ vay mượn sớm về đồ dùng, nông nghiệp, chữ nghĩa. Nhưng sử liệu về trường học thời Hán ở đây chỉ có một câu ngắn trong Hậu Hán thư, và Liam Kelley cho rằng các trường ấy nhiều khả năng chỉ dạy con em thuộc lại. Năm 231, Tiết Tống còn mô tả tục em lấy vợ góa của anh ở Giao Châu.',
+        'Khái niệm "Hán hóa" cần được dùng thận trọng. Điều thay đổi rõ là ở tầng trên: chữ Hán thành chữ viết của hành chính và học vấn, lối cưới hỏi và chôn cất kiểu Hán xuất hiện, và tiếng Việt nhận một lớp từ vay mượn sớm về đồ dùng, nông nghiệp, chữ nghĩa. Nhưng sử liệu về trường học thời Hán ở đây chỉ có một câu ngắn trong Hậu Hán thư, và Liam Kelley cho rằng các trường ấy nhiều khả năng chỉ dạy con em các viên chức cấp thấp. Năm 231, Tiết Tống còn mô tả tục em lấy vợ góa của anh ở Giao Châu.',
         'The idea of "sinicisation" needs care. What clearly changed was the upper layer: Chinese became the script of administration and learning, Chinese-style marriage and burial appeared, and the language took in an early layer of loanwords for household goods, farming and literacy. But the evidence for Han schools here is one short phrase in the Hou Hanshu, and Liam Kelley argues those schools most likely taught only the sons of clerks. In 231 Xue Zong still described levirate marriage in Jiaozhou.',
       ),
       l(
-        'Những gì không đổi cũng để lại dấu vết. Người dân vẫn nói tiếng của mình, và tiếng Việt ngày nay không phải là một phương ngữ Hán. Ở thành Luy Lâu, các nhà khảo cổ tìm thấy hàng trăm mảnh khuôn đúc trống đồng Đông Sơn trong lớp đất được định niên đại khoảng thế kỷ 4, và Li Tana cho rằng việc đúc trống ở miền Bắc kéo dài đến thế kỷ 6. Ở vùng đồi núi giữa Hà Nội và Quảng Châu, Catherine Churchman chỉ ra rằng các thủ lĩnh Lý, Lão vẫn đúc trống lớn nhiều thế kỷ sau khi nhà Hán chinh phục. Tục ăn trầu được truyền thống Việt gắn với thời Hùng Vương, nhưng các sử liệu chương này dùng không cho một mốc niên đại chắc chắn.',
-        'What did not change also left traces. People went on speaking their own language, and Vietnamese today is not a Chinese dialect. At Luy Lâu archaeologists found hundreds of Đông Sơn bronze drum mould fragments in a layer dated to about the 4th century, and Li Tana holds that drum casting in the north continued into the 6th century. In the hills between Hanoi and Guangzhou, Catherine Churchman shows that Li and Lao chieftains were still casting large drums centuries after the Han conquest. Betel chewing is tied by Vietnamese tradition to the Hùng kings, but the sources used in this chapter give no firm date for it.',
+        'Những gì không đổi cũng để lại dấu vết. Người dân vẫn nói tiếng của mình, và tiếng Việt ngày nay không phải là một phương ngữ Hán. Ở thành Luy Lâu, các nhà khảo cổ tìm thấy hơn 900 mảnh khuôn đúc trống đồng Đông Sơn trong lớp đất được báo cáo sơ bộ định vào khoảng thế kỷ 4, và Li Tana cho rằng việc đúc trống ở miền Bắc kéo dài đến thế kỷ 6. Ở vùng đồi núi giữa Hà Nội và Quảng Châu, Catherine Churchman chỉ ra rằng các thủ lĩnh người Lý, người Lão (tên sử Trung Quốc gọi các nhóm dân miền núi) vẫn đúc trống lớn nhiều thế kỷ sau khi nhà Hán chinh phục. Tục ăn trầu được truyền thống Việt gắn với thời Hùng Vương, nhưng các sử liệu chương này dùng không cho một mốc niên đại chắc chắn.',
+        'What did not change also left traces. People went on speaking their own language, and Vietnamese today is not a Chinese dialect. At Luy Lâu archaeologists found more than 900 Đông Sơn bronze drum mould fragments in a layer that the preliminary report dated to about the 4th century, and Li Tana holds that drum casting in the north continued into the 6th century. In the hills between Hanoi and Guangzhou, Catherine Churchman shows that Li and Lao chieftains were still casting large drums centuries after the Han conquest. Betel chewing is tied by Vietnamese tradition to the Hùng kings, but the sources used in this chapter give no firm date for it.',
       ),
       l(
         'Gần như mọi văn bản về thời này đều do sử quan Trung Quốc viết, và Đại Việt sử ký toàn thư (thế kỷ 15) phần lớn chép lại từ đó, nên nhiều mốc năm lệch nhau giữa các bộ sử. Tên "Bắc thuộc lần thứ hai" là cách phân kỳ của sử học Việt Nam. Bảo tàng Lịch sử Quốc gia trình bày thời kỳ này như cuộc chống đồng hóa và giữ gìn văn hóa. Nhiều nhà nghiên cứu phương Tây nhấn mạnh sự hình thành một tầng lớp cầm quyền địa phương pha trộn Hán - Việt (xem mục Sĩ Nhiếp). Churchman thì phản bác ý niệm rằng người phương Nam bị Hán hóa một chiều và không thể đảo ngược.',
@@ -128,15 +128,15 @@ const chapter: Chapter = {
       slug: 'thanh-luy-lau',
       period: 'bac-thuoc-2',
       kind: 'site',
-      name: l('Thành Luy Lâu', 'Luy Lâu Citadel'),
+      name: l('Thành Luy Lâu và xưởng đúc trống đồng', 'Luy Lâu citadel and its drum foundry'),
       date: l('lũy thành đắp và sửa từ thế kỷ 2 đến thế kỷ 6', 'ramparts built and repaired from the 2nd to the 6th century CE'),
       sort: 1820,
       place: l('phường Trí Quả, Bắc Ninh (trước là xã Thanh Khương, Thuận Thành)', 'Trí Quả ward, Bắc Ninh (formerly Thanh Khương commune, Thuận Thành)'),
       coord: [106.0396, 21.0378],
       evidence: ['arch', 'chron'],
       summary: l(
-        'Tòa thành đất bên sông Dâu, được sử cũ coi là trị sở quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Điều bất ngờ là ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
-        'An earthen citadel on the Dâu river, treated by the old histories as the seat of Jiaozhi commandery and the largest town in the north in the first centuries CE. The surprise is that inside this seat of the ruling administration archaeologists found a workshop casting Đông Sơn bronze drums.',
+        'Luy Lâu là tòa thành đất bên sông Dâu, được sử cũ coi là trị sở quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Các lũy đất còn lại được đắp trong chính thời kỳ này. Điều bất ngờ là ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
+        'Luy Lâu is an earthen citadel on the Dâu river, treated by the old histories as the seat of Jiaozhi commandery and the largest town in the north in the first centuries CE. Its surviving ramparts were raised in this very period. The surprise is that inside this seat of the ruling administration archaeologists found a workshop casting Đông Sơn bronze drums.',
       ),
       detail: [
         l(
@@ -144,8 +144,8 @@ const chapter: Chapter = {
           'By measurements made in 1986 the outer enclosure is 680 m on the north side, 520 m on the south, 320 m on the east and 328 m on the west. The rampart still stands 2 to 5 m high on a base 20 to 40 m wide. Inside is an inner citadel about 110 to 117 m on each side. The outer moat is 20 to 40 m wide, and on the west it is the Dâu river itself, the main waterway of the area. The main gate faces west.',
         ),
         l(
-          'Thành được khảo sát từ năm 1968 và khai quật nhiều đợt. Tháng 11 năm 1998, nhà khảo cổ Nhật Bản Nishimura Masanari nhặt được mảnh khuôn đúc trống đồng đầu tiên. Từ năm 2014, Bảo tàng Lịch sử Quốc gia hợp tác với Đại học Đông Á (Nhật Bản) khai quật trong thành nội: đợt đầu thu 38 mảnh khuôn bằng đất nung, đợt năm 2015 thu hơn 900 mảnh cùng nồi nấu đồng, và các đợt sau nâng tổng số lên hơn 2.300 mảnh.',
-          'The site has been surveyed since 1968 and excavated many times. In November 1998 the Japanese archaeologist Nishimura Masanari picked up the first fragment of a drum-casting mould. From 2014 the Vietnam National Museum of History and the University of East Asia (Japan) dug in the inner citadel: the first season gave 38 terracotta mould pieces, the 2015 season more than 900 with crucibles, and later seasons raised the total to over 2,300.',
+          'Thành được khảo sát từ năm 1968 và khai quật nhiều đợt. Cuối năm 1998 (có nguồn ghi 1999), nhà khảo cổ Nhật Bản Nishimura Masanari nhặt được mảnh khuôn đúc trống đồng đầu tiên. Từ năm 2014, Bảo tàng Lịch sử Quốc gia hợp tác với Đại học Đông Á (Nhật Bản) khai quật trong thành nội: đợt đầu thu 38 mảnh khuôn bằng đất nung, đợt năm 2015 thu hơn 900 mảnh cùng nồi nấu đồng, và các đợt sau nâng tổng số lên hơn 2.300 mảnh.',
+          'The site has been surveyed since 1968 and excavated many times. In late 1998 (one report says 1999) the Japanese archaeologist Nishimura Masanari picked up the first fragment of a drum-casting mould. From 2014 the Vietnam National Museum of History and the University of East Asia (Japan) dug in the inner citadel: the first season gave 38 terracotta mould pieces, the 2015 season more than 900 with crucibles, and later seasons raised the total to over 2,300.',
         ),
         l(
           'Gạch ngói trong thành chia hai nhóm: loại xám thuộc thời Đông Hán đến Lục triều và loại đỏ thuộc thời Tùy - Đường trở về sau, ứng với hai đợt xây dựng lớn. Đồ gốm, bếp, chì lưới, dọi xe chỉ cho thấy dân cư sống ở đây liên tục, có nghề luyện kim, đánh cá và dệt. Hiện vật trải từ thế kỷ 1 TCN đến thế kỷ 14.',
@@ -154,15 +154,15 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Niên đại của các khuôn trống là điểm chưa thống nhất. Nishimura xếp mảnh khuôn của ông vào thế kỷ 2. Bài công bố của Bảo tàng Lịch sử Quốc gia về đợt khai quật đầu tạm định các mảnh khuôn vào thế kỷ 4 - 2 TCN, dựa trên hoa văn thuần hình học. Báo cáo sơ bộ đợt 2015 lại cho rằng hơn 900 mảnh nằm trong địa tầng ổn định khoảng thế kỷ 4 và coi đó là bằng chứng văn hóa Đông Sơn còn sống trong thời Bắc thuộc. Người đọc nên coi đây là kết quả đang được chỉnh lý.',
-          'The dating of the drum moulds is not settled. Nishimura placed his fragment in the 2nd century CE. The museum\'s article on the first season tentatively dated the pieces to the 4th - 2nd century BCE on the basis of their purely geometric decoration. The preliminary report of the 2015 season put the 900 and more pieces in an undisturbed layer of about the 4th century and took them as proof that Đông Sơn culture lived on under northern rule. These results should be read as work in progress.',
+          'Niên đại của các khuôn trống là điểm chưa thống nhất. Nishimura xếp mảnh khuôn của ông vào thế kỷ 2. Bài công bố của Bảo tàng Lịch sử Quốc gia về đợt khai quật đầu tạm định các mảnh khuôn vào thế kỷ 4 - 2 TCN, dựa trên hoa văn thuần hình học. Báo cáo sơ bộ đợt 2015 lại cho rằng hơn 900 mảnh nằm trong địa tầng ổn định khoảng thế kỷ 4 và coi đó là bằng chứng văn hóa Đông Sơn còn sống trong thời Bắc thuộc. Năm 2022, Trương Đắc Chiến xét lại 923 mảnh của hai đợt 2014 và 2015 và kết luận chúng thuộc thế kỷ 3 - 6, dựa vào gạch ngói và đồ gốm cùng lớp; hai mẫu carbon 14 cho kết quả quá xa nhau nên ông không dùng. Người đọc nên coi đây là kết quả đang được chỉnh lý.',
+          'The dating of the drum moulds is not settled. Nishimura placed his fragment in the 2nd century CE. The museum\'s article on the first season tentatively dated the pieces to the 4th - 2nd century BCE on the basis of their purely geometric decoration. The preliminary report of the 2015 season put the 900 and more pieces in an undisturbed layer of about the 4th century and took them as proof that Đông Sơn culture lived on under northern rule. In 2022 Trương Đắc Chiến reviewed the 923 pieces from the 2014 and 2015 seasons and concluded that they date to the 3rd - 6th centuries, judging by the bricks, tiles and pottery in the same layer; two radiocarbon samples were too far apart for him to use. These results should be read as work in progress.',
         ),
         l(
-          'Vai trò hành chính của thành cũng còn bàn. Nhiều thư tịch Trung Quốc và Việt Nam coi Luy Lâu là huyện lỵ và trị sở quận Giao Chỉ, và Claude Madrolle (1937) khẳng định như vậy, nhưng trị sở từng nhiều lần dời về Long Biên. Nhóm Nguyễn Văn Đoàn thừa nhận hệ thống hành chính thời Bắc thuộc chưa được nghiên cứu sâu. Các mặt cắt ở đoạn lũy phía bắc cho thấy thành được đắp và sửa từ thế kỷ 2 đến thế kỷ 6. Theo các tác giả này, tên Luy Lâu là dạng phiên âm cổ của tên Dâu.',
-          'Its administrative role is also debated. Many Chinese and Vietnamese texts treat Luy Lâu as a district town and the seat of Jiaozhi commandery, and Claude Madrolle (1937) affirmed this, but the seat moved to Long Biên more than once. Nguyễn Văn Đoàn and colleagues admit that the administrative system of the period is still poorly studied. Sections through the northern rampart show building and repair from the 2nd to the 6th century. According to these authors the name Luy Lâu is an old transcription of the name Dâu.',
+          'Vai trò hành chính của thành cũng còn bàn. Nhiều thư tịch Trung Quốc và Việt Nam coi Luy Lâu là huyện lỵ và trị sở quận Giao Chỉ, và Claude Madrolle (1937) khẳng định như vậy, nhưng trị sở từng nhiều lần dời về Long Biên. Câu hỏi về trị sở buổi đầu thời Tây Hán được bàn ở mục Luy Lâu của thời kỳ Nam Việt. Nhóm Nguyễn Văn Đoàn thừa nhận hệ thống hành chính thời Bắc thuộc chưa được nghiên cứu sâu. Các mặt cắt ở đoạn lũy phía bắc cho thấy thành được đắp và sửa từ thế kỷ 2 đến thế kỷ 6. Theo các tác giả này, tên Luy Lâu là dạng phiên âm cổ của tên Dâu.',
+          'Its administrative role is also debated. Many Chinese and Vietnamese texts treat Luy Lâu as a district town and the seat of Jiaozhi commandery, and Claude Madrolle (1937) affirmed this, but the seat moved to Long Biên more than once. The question of the earliest, Western Han seat is taken up in the Luy Lâu entry of the Nanyue period. Nguyễn Văn Đoàn and colleagues admit that the administrative system of the period is still poorly studied. Sections through the northern rampart show building and repair from the 2nd to the 6th century. According to these authors the name Luy Lâu is an old transcription of the name Dâu.',
         ),
       ],
-      sources: ['bt2-doan-2015', 'bt2-btls-luylau-2014', 'bt2-nhandan-luylau', 'bt2-vns-luylau'],
+      sources: ['bt2-doan-2015', 'bt2-btls-luylau-2014', 'bt2-nhandan-luylau', 'bt2-vns-luylau', 'bt2-chien-2022'],
     },
     {
       slug: 'si-nhiep',
@@ -175,8 +175,8 @@ const chapter: Chapter = {
       coord: [106.0646, 21.0331],
       evidence: ['chron', 'legend'],
       summary: l(
-        'Thái thú Giao Chỉ suốt bốn mươi năm cuối Hán, đầu Tam quốc. Ông giữ cho vùng đất này yên ổn khi Trung Quốc loạn lạc và biến nó thành nơi trú chân của hàng trăm danh sĩ. Người Việt đời sau tôn ông là Sĩ Vương và "Nam Giao học tổ", còn sử Trung Quốc chỉ chép ông là một viên quan nhà Hán.',
-        'Governor of Jiaozhi for forty years at the end of the Han and the start of the Three Kingdoms. He kept the region at peace while China was in chaos and made it a refuge for hundreds of scholars. Later Vietnamese honoured him as King Sĩ and "ancestor of learning in the South", while the Chinese record knows him only as a Han official.',
+        'Sĩ Nhiếp làm thái thú Giao Chỉ suốt bốn mươi năm cuối Hán, đầu Tam quốc. Ông giữ cho vùng đất này yên ổn khi Trung Quốc loạn lạc và biến nó thành nơi trú chân của hàng trăm danh sĩ. Người Việt đời sau tôn ông là Sĩ Vương và "Nam Giao học tổ", còn sử Trung Quốc chỉ chép ông là một viên quan nhà Hán.',
+        'Shi Xie was governor of Jiaozhi for forty years at the end of the Han and the start of the Three Kingdoms. He kept the region at peace while China was in chaos and made it a refuge for hundreds of scholars. Later Vietnamese honoured him as King Sĩ and "ancestor of learning in the South", while the Chinese record knows him only as a Han official.',
       ),
       detail: [
         l(
@@ -224,7 +224,7 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          'Khâm định Việt sử thông giám cương mục chép rằng cuối đời Hán, con một viên công tào huyện Tượng Lâm tên Khu Liên giết huyện lệnh rồi tự lập làm vua. Sử học hiện đại thường lấy năm 192 làm mốc. Sử chính thống Trung Quốc dùng tên Lâm Ấp cho nước này từ đó đến năm 758. Một thuyết đặt kinh đô đầu tiên ở đồi Long Thọ, cách Huế khoảng 3 km về phía tây.',
+          'Khâm định Việt sử thông giám cương mục chép rằng cuối đời Hán, con một viên công tào (chức lại giúp việc huyện lệnh) ở huyện Tượng Lâm tên Khu Liên giết huyện lệnh rồi tự lập làm vua. Sử học hiện đại thường lấy năm 192 làm mốc. Sử chính thống Trung Quốc dùng tên Lâm Ấp cho nước này từ đó đến năm 758. Một thuyết đặt kinh đô đầu tiên ở đồi Long Thọ, cách Huế khoảng 3 km về phía tây.',
           'The Khâm định Việt sử thông giám cương mục records that at the end of the Han the son of a district labour-section official of Xianglin, named Khu Liên (Qu Lian), killed the magistrate and made himself king. Modern historians usually take 192 as the date. The Chinese standard histories use the name Linyi for this state from then until 758. One view places its first capital on Long Thọ hill, about 3 km west of Huế.',
         ),
         l(
@@ -238,8 +238,8 @@ const chapter: Chapter = {
           'Both date and name are uncertain. The Đại Việt sử ký toàn thư records a rising by Khu Liên at Xianglin as early as 137, put down in 138, while the An Nam chí lược speaks only of "barbarians" without a name. Hence the suggestion that Khu Liên was a title used by several leaders. The date 192 is a modern convention, not a year stated in the old histories. Tan Hezhi\'s campaign is also dated differently: the translated Toàn thư places it around 436, studies based on Chinese histories in 446.',
         ),
         l(
-          'Quan hệ giữa Lâm Ấp và Champa là một tranh luận lớn. Georges Maspero từng coi Lâm Ấp là giai đoạn đầu của một nước Champa thống nhất. Rolf Stein (1947) và nhiều học giả sau bác cách nhìn ấy. Michael Vickery cho rằng chưa từng có một Champa duy nhất và cư dân Lâm Ấp có thể chủ yếu nói tiếng Môn - Khmer. Yamagata Mariko (2011) thì coi Lâm Ấp chính là Champa sớm, với trung tâm ở Trà Kiệu. Chương Champa trình bày kỹ hơn.',
-          'The relation between Linyi and Champa is a major debate. Georges Maspero treated Linyi as the first stage of a unified Champa. Rolf Stein (1947) and many later scholars rejected that. Michael Vickery argues there was never a single Champa and that Linyi\'s people may have been largely Mon-Khmer speakers. Yamagata Mariko (2011) holds that Linyi was early Champa, centred on Trà Kiệu. The Champa chapter goes further.',
+          'Nơi đặt kinh đô đầu tiên cũng chưa chắc. Điểm đánh dấu trên bản đồ theo thuyết đồi Long Thọ gần Huế, trong khi trung tâm Trà Kiệu ở Quảng Nam chỉ được ghi nhận từ cuối thế kỷ 4. Lâm Ấp có phải là giai đoạn đầu của Champa hay không là một tranh luận lớn của giới nghiên cứu. Mục này chỉ kể phần liên quan đến Giao Châu, còn cuộc tranh luận ấy được trình bày ở chương Champa.',
+          'The site of the first capital is uncertain too. The map marker follows the view that puts it on Long Thọ hill near Huế, while the centre at Trà Kiệu in Quảng Nam is attested only from the late 4th century. Whether Linyi was the first stage of Champa is a major scholarly debate. This entry covers only what concerns Jiaozhou; the debate itself is set out in the Champa chapter.',
         ),
       ],
       sources: ['bt2-cuongmuc-3', 'bt2-toanthu-nk3', 'bt2-toanthu-nk4', 'bt2-wiki-lamap'],
@@ -332,13 +332,13 @@ const chapter: Chapter = {
       slug: 'giao-chau-luc-trieu',
       period: 'bac-thuoc-2',
       kind: 'event',
-      name: l('Giao Châu thời Lục triều: thứ sử và hào trưởng', 'Jiaozhou in the Six Dynasties: inspectors and local strongmen'),
+      name: l('Giao Châu thời Lục triều', 'Jiaozhou in the Six Dynasties'),
       date: l('264 - 541', '264 - 541 CE'),
       sort: 1736,
       place: l('Giao Châu (Bắc Bộ và Bắc Trung Bộ ngày nay); trị sở ở Long Biên', 'Jiaozhou (today\'s northern and north-central Vietnam); seat at Long Biên'),
       evidence: ['chron'],
       summary: l(
-        'Từ thế kỷ 3 đến thế kỷ 6, sáu triều đại phương Nam Trung Quốc nối nhau nhận Giao Châu là đất của mình, nhưng ở quá xa để nắm chặt. Quyền hành thực tế thuộc về những thứ sử ở lại hàng chục năm và các dòng họ địa phương đủ mạnh để tự xưng thứ sử. Chính từ tầng lớp này mà Lý Bí xuất hiện.',
+        'Từ thế kỷ 3 đến thế kỷ 6, sáu triều đại phương Nam Trung Quốc nối nhau nhận Giao Châu là đất của mình, nhưng ở quá xa để nắm chặt. Quyền hành thực tế thuộc về những thứ sử (quan đứng đầu châu) ở lại hàng chục năm và các dòng họ địa phương đủ mạnh để tự xưng thứ sử. Chính từ tầng lớp này mà Lý Bí xuất hiện.',
         'From the 3rd to the 6th century six southern Chinese dynasties in turn claimed Jiaozhou, but lay too far away to hold it tightly. Real authority belonged to inspectors who stayed for decades and to local families strong enough to appoint themselves inspector. It was from this class that Lý Bí emerged.',
       ),
       detail: [
@@ -389,6 +389,7 @@ const chapter: Chapter = {
     { id: 'bt2-kelley-tuduc', kind: 'reference', cite: 'Liam C. Kelley, "Tự Đức\'s Dismissal of Sĩ Nhiếp", Le Minh Khai\'s SEAsian History Blog.', url: 'https://leminhkhai.blog/t%e1%bb%b1-d%e1%bb%a9cs-dismissal-of-si-nhi%e1%ba%bfp/' },
     { id: 'bt2-churchman-talk', kind: 'paper', cite: 'Catherine Churchman, "The Bronze Drum culture of the Li and Lao and ethnic relations in early South China (200-750 CE)", tóm tắt báo cáo Global China Seminar, Victoria University of Wellington.', url: 'https://www.wgtn.ac.nz/__data/assets/pdf_file/0006/1096989/The-Bronze-Drum-culture-of-the-Li-and-Lao-and-ethnic-relations-in-early-South-China-200-750-CE.pdf' },
     { id: 'bt2-doan-2015', kind: 'paper', cite: 'Nguyễn Văn Đoàn, Lê Văn Chiến, Đinh Thị Lệ Huyền (2015), "Di tích Luy Lâu (Thuận Thành, Bắc Ninh): Kết quả nghiên cứu và định hướng", Thông báo Khoa học, số 2, Bảo tàng Lịch sử Quốc gia.', url: 'https://baotanglichsu.vn/DataFiles/asset/upload/data_hung_/thong_bao_khoa_hoc/so_2_nam_2015/Nguyen_Van_Doan_-_Di_tich_Luy_Lau....pdf' },
+    { id: 'bt2-chien-2022', kind: 'paper', cite: 'Trương Đắc Chiến (2022), "Discovery of Collection of Moulds in Luy Lâu (Bắc Ninh): New Achievements in Research of Đông Sơn Bronze Drums in Vietnam", Vietnam Social Sciences, số 3 (209).', url: 'https://www.vjol.info.vn/index.php/VSS/article/download/74747/63525' },
     { id: 'bt2-btls-luylau-2014', kind: 'museum', cite: 'Trương Đắc Chiến (2015), "More opinions about the results of the excavation in Luy Lau relic site in 2014", Bảo tàng Lịch sử Quốc gia.', url: 'https://baotanglichsu.vn/en/Articles/3188/18382/more-opinions-about-the-results-of-the-excavation-in-luy-lau-relic-site-in-2014.html' },
     { id: 'bt2-btls-vanhoa', kind: 'museum', cite: 'Bảo tàng Lịch sử Quốc gia, "Struggles to preserve and develop the national culture (1st - 10th centuries AD)", giới thiệu phần trưng bày.', url: 'https://baotanglichsu.vn/en/Articles/4197/struggles-to-preserve-and-develop-the-national-culture-1st-10th-centuries-ad' },
     { id: 'bt2-btls-trau', kind: 'museum', cite: 'Bảo tàng Lịch sử Quốc gia (đăng lại VOVworld, 2016), "Betel-areca culture of Vietnam\'s southern region".', url: 'https://baotanglichsu.vn/en/Articles/3181/19134/betel-areca-culture-of-vietnams-southern-region.html' },
