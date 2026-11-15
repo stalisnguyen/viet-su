@@ -83,7 +83,7 @@ interface Props {
 
 interface Pin {
   slug: string; period: string; pos: THREE.Vector3; group: THREE.Group;
-  head: THREE.MeshBasicMaterial; beam: THREE.MeshBasicMaterial; ring: THREE.Mesh; ringMat: THREE.MeshBasicMaterial; phase: number;
+  head: THREE.MeshBasicMaterial; beam: THREE.MeshBasicMaterial; ring: THREE.Mesh; ringMat: THREE.MeshBasicMaterial; phase: number; tag: THREE.Sprite; tagY: number; solo: boolean;
 }
 
 export default function Stage({ lang, era, focus, sheet, onPick, split = false }: Props) {
@@ -118,8 +118,21 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const grid = new THREE.GridHelper(120, 120, 0xffffff, 0x777777);
     grid.position.y = -0.03;
     (grid.material as THREE.Material).transparent = true;
-    (grid.material as THREE.Material).opacity = 0.55;
+    (grid.material as THREE.Material).opacity = 0.26;
     scene.add(grid);
+
+    // Quầng sáng mềm dưới dải đất Việt Nam, đổi màu theo thời kỳ
+    const haloC = document.createElement('canvas');
+    haloC.width = haloC.height = 256;
+    const hx = haloC.getContext('2d')!;
+    const hg = hx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    hg.addColorStop(0, 'rgba(255,255,255,0.55)'); hg.addColorStop(0.45, 'rgba(255,255,255,0.16)'); hg.addColorStop(1, 'rgba(255,255,255,0)');
+    hx.fillStyle = hg; hx.fillRect(0, 0, 256, 256);
+    const haloMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(haloC), color: 0x7c8cff, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false });
+    const halo = new THREE.Mesh(new THREE.PlaneGeometry(26, 34), haloMat);
+    halo.rotation.x = -Math.PI / 2;
+    halo.position.set(0.6, -0.02, 0.2);
+    scene.add(halo);
 
     // Các nước láng giềng
     const nbMat = new THREE.MeshStandardMaterial({ color: 0x0d1330, roughness: 1 });
@@ -139,10 +152,10 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       const mat = new THREE.MeshStandardMaterial({ color: 0x0b1030, emissive: full.clone(), emissiveIntensity: 0.2, roughness: 0.6 });
       const edge = new THREE.LineBasicMaterial({ color: full.clone(), transparent: true });
       G.zones[z.id].forEach((r) => {
-        const m = new THREE.Mesh(new THREE.ExtrudeGeometry(shapeOf(r), { depth: 0.26, bevelEnabled: false }), mat);
+        const m = new THREE.Mesh(new THREE.ExtrudeGeometry(shapeOf(r), { depth: 0.24, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 2 }), mat);
         m.rotation.x = -Math.PI / 2;
         scene.add(m);
-        scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(r.map(([lon, lat]) => new THREE.Vector3(X(lon), 0.268, Z(lat)))), edge));
+        scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(r.map(([lon, lat]) => new THREE.Vector3(X(lon), 0.278, Z(lat)))), edge));
       });
       const sp = label((lang === 'vi' ? z.vi : z.en).toUpperCase(), z.color, 40, 800, 3);
       sp.position.set(X(z.at[0]), 1.5, Z(z.at[1]));
@@ -191,12 +204,38 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       hit.position.y = 0.7;
       hit.userData.slug = e.slug;
       hits.push(hit);
-      g.add(b, h, ring, hit);
+      // Tên di tích ngay trên bản đồ, để người xem thấy bản đồ và thẻ nội dung đang nói về cùng một nơi
+      const short = e.name[lang].split(' (')[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
+      const tag = label(short, '#ffffff', 30, 700);
+      const tagY = 1.75 + (i % 3) * 0.34;
+      tag.position.y = tagY;
+      tag.material.opacity = 0;
+      tag.userData.sx = tag.scale.x; tag.userData.sy = tag.scale.y;
+      g.add(b, h, ring, hit, tag);
       const pos = new THREE.Vector3(X(e.coord![0]), 0.27, Z(e.coord![1]));
       g.position.copy(pos);
       scene.add(g);
-      pins.push({ slug: e.slug, period: e.period, pos, group: g, head, beam, ring, ringMat, phase: i * 0.37 });
+      pins.push({ slug: e.slug, period: e.period, pos, group: g, head, beam, ring, ringMat, phase: i * 0.37, tag, tagY, solo: !pins.some((q) => q.period === e.period && q.solo && q.pos.distanceTo(pos) < 2.2) });
     });
+
+    // Đường cong sáng nối di tích vừa xem với di tích đang xem
+    const ARC = 48;
+    const arcGeo = new THREE.BufferGeometry();
+    arcGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(ARC * 3), 3));
+    const arcMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false });
+    const arc = new THREE.Line(arcGeo, arcMat);
+    arc.frustumCulled = false;
+    scene.add(arc);
+    let arcT = 9, lastFocus: string | null = null;
+    const setArc = (a: THREE.Vector3, b: THREE.Vector3) => {
+      const mid = a.clone().add(b).multiplyScalar(0.5);
+      mid.y = 0.6 + a.distanceTo(b) * 0.3;
+      const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
+      const pos = arcGeo.attributes.position as THREE.BufferAttribute;
+      curve.getPoints(ARC - 1).forEach((v, i) => pos.setXYZ(i, v.x, v.y, v.z));
+      pos.needsUpdate = true;
+      arcT = 0;
+    };
 
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
@@ -213,8 +252,10 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     controls.minPolarAngle = 0.2;
     controls.maxPolarAngle = 1.3;
     controls.enableDamping = true;
-    let flying = true;
+    let flying = true; // false khi người xem tự kéo xoay bản đồ, cho tới khi nội dung chuyển sang phần khác
     controls.addEventListener('start', () => { flying = false; });
+    let lift = 0, lastMs = 0;
+    const goal = new THREE.Vector3();
 
     let aspect = 1;
     const resize = () => {
@@ -241,7 +282,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const k = Math.max(1, 1.25 / aspect);
         if (pin) {
           want.t.copy(pin.pos).setY(0);
-          want.t.z -= 0.7; // đẩy điểm đang xem xuống dưới thanh tiêu đề
+          want.t.z -= 1.0; // đẩy điểm đang xem xuống dưới thanh tiêu đề
           want.p.set(want.t.x + 1.2 * k, 5.4 * k, want.t.z + 6.4 * k);
         } else if (s.era === 'van-lang' || s.era === 'au-lac') {
           want.t.set(X(105.9), 0, Z(20.6) - 0.6);
@@ -294,14 +335,32 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const tick = (ms: number) => {
       const t = ms / 1000;
       const s = live.current;
+      const dt = Math.min(0.05, lastMs ? (ms - lastMs) / 1000 : 0.016);
+      lastMs = ms;
       const key = view();
-      if (key !== s.key) { s.key = key; flying = true; }
-      if (flying) {
-        const a = reduce ? 1 : 0.07;
-        controls.target.lerp(want.t, a);
-        camera.position.lerp(want.p, a);
-        if (camera.position.distanceTo(want.p) < 0.03) flying = false;
+      if (key !== s.key) {
+        s.key = key; flying = true;
+        // Bay xa thì nhấc máy quay lên cao rồi hạ xuống, bay gần thì lướt thẳng
+        lift = reduce ? 0 : Math.min(5, controls.target.distanceTo(want.t) * 0.45);
+        if (s.focus !== lastFocus) {
+          const a = pins.find((x) => x.slug === lastFocus), b = pins.find((x) => x.slug === s.focus);
+          if (a && b && a.period === b.period) { arcMat.color.set(periodBySlug[b.period].color); setArc(a.pos, b.pos); } else arcT = 9;
+          lastFocus = s.focus;
+        }
       }
+      lift *= Math.exp(-dt * 1.5);
+      if (flying) {
+        const a = reduce ? 1 : 1 - Math.exp(-dt * 2.6);
+        goal.copy(want.p);
+        goal.y += lift; goal.z += lift * 0.5;
+        if (!reduce) goal.x += Math.sin(t * 0.3) * 0.3; // đung đưa rất nhẹ để bản đồ không đứng im
+        controls.target.lerp(want.t, a);
+        camera.position.lerp(goal, a);
+      }
+      // Đường nối: vẽ dần trong hơn một giây rồi mờ bớt
+      arcT += dt;
+      arcGeo.setDrawRange(0, Math.max(2, Math.round(Math.min(1, arcT / 1.1) * ARC)));
+      arcMat.opacity = arcT > 8 ? 0 : arcT < 1.1 ? 0.95 : Math.max(0.3, 0.95 - (arcT - 1.1) * 0.4);
       controls.update();
 
       const th = THEMES[s.era || 'intro'];
@@ -323,13 +382,21 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         z.mat.emissiveIntensity = lit ? 0.2 : 0.12;
         z.edge.color.copy(z.cur);
         z.edge.opacity = lit ? 1 : 0.55;
-        const so = three ? 1 : 0;
+        const so = three ? (s.focus ? 0.22 : 1) : 0; // khi đang xem một di tích thì tên vùng lùi xuống, nhường chỗ cho tên di tích
         z.sp.material.opacity += (so - z.sp.material.opacity) * 0.1;
       });
 
+      haloMat.color.lerp(tmp.set(s.era ? periodBySlug[s.era].color : '#7c8cff'), 0.05);
       pins.forEach((p) => {
         const inEra = !s.era || p.period === s.era;
         const isFocus = p.slug === s.focus;
+        // Nhãn tên: mục đang xem hiện rõ, các mục cùng thời kỳ hiện khi đang xem tổng quan thời kỳ
+        const to = isFocus ? 1 : s.era && inEra && !s.focus && p.solo ? 0.8 : 0; // các điểm nằm sát nhau chỉ hiện một nhãn để không chồng chữ
+        p.tag.material.opacity += (to - p.tag.material.opacity) * 0.12;
+        // Nhãn giữ cỡ chữ dễ đọc dù máy quay ở gần hay xa
+        const gy = p.group.scale.y, tk = (isFocus ? 1.2 : 1) * Math.min(2.8, Math.max(1, camera.position.distanceTo(p.pos) / 9));
+        p.tag.position.y = (isFocus ? 1.3 : p.tagY * Math.min(2, tk)) / gy;
+        p.tag.scale.set(p.tag.userData.sx * tk, (p.tag.userData.sy * tk) / gy, 1);
         const o = inEra ? 1 : 0.07;
         p.head.opacity += (o - p.head.opacity) * 0.1;
         p.beam.opacity = p.head.opacity * (isFocus ? 1 : 0.75);
