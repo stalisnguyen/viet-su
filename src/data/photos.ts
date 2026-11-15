@@ -1,4 +1,5 @@
 import type { L } from './types';
+import { chapters } from './more';
 
 // Ảnh thật lấy từ Wikimedia Commons, tải thẳng từ máy chủ của Commons. Mỗi ảnh ghi rõ tác giả và giấy phép.
 export interface Photo { file: string; by: string; license: string; caption: L; tall?: boolean }
@@ -32,3 +33,4 @@ export const photos: Record<string, Photo> = {
   'thanh-co-loa': { file: 'Thanh co loa2.jpg', by: 'Viethavvh', license: 'Public domain',
     caption: l('Một đoạn lũy đất thành Cổ Loa vào mùa lễ hội.', 'A stretch of the Cổ Loa earthen rampart during the festival season.') },
 };
+chapters.forEach((c) => Object.assign(photos, c.photos || {}));

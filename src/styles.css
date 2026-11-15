@@ -138,6 +138,8 @@ h3 { font-size: 0.74rem; letter-spacing: 0.13em; text-transform: uppercase; colo
 .badge.chron i { background: none; border: 2px solid currentColor; }
 .badge.legend i { background: none; border: 2px dotted currentColor; border-radius: 50%; width: 10px; height: 10px; }
 .srcn { font-size: 0.78rem; color: var(--muted); }
+/* Câu hỏi lớn mở đầu thời kỳ */
+.ask { font-size: 1.14rem; font-weight: 600; line-height: 1.45; color: var(--c); padding-left: 12px; border-left: 2px solid var(--c); }
 /* Viền trái của thẻ theo mức chứng cứ chính: liền là khảo cổ, gạch là sử cũ, chấm là truyền thuyết */
 .panel.ev-arch { border-left: 3px solid var(--arch); }
 .panel.ev-chron { border-left: 3px dashed var(--chron); }

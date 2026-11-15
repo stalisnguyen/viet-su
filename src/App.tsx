@@ -38,8 +38,11 @@ const KIND: Record<Entry['kind'], L> = {
   culture: { vi: 'Văn hóa khảo cổ', en: 'Culture' },
   artifact: { vi: 'Hiện vật', en: 'Artefact' },
   figure: { vi: 'Nhân vật', en: 'Figure' },
+  event: { vi: 'Sự kiện', en: 'Event' },
   legend: { vi: 'Truyền thuyết', en: 'Legend' },
 };
+// Bốn thời kỳ đầu có ảnh minh họa và giọng kể riêng; các thời kỳ sau dùng ảnh thật làm hình mở đầu
+const LEGACY = new Set(['do-da', 'kim-khi', 'van-lang', 'au-lac']);
 const START: Record<string, L> = {
   'do-da': { vi: '800.000 năm trước', en: '800,000 years ago' },
   'kim-khi': { vi: '2000 TCN', en: '2000 BCE' },
@@ -174,7 +177,7 @@ function World({ slug, lang }: { slug: string; lang: Lang }) {
     <section className="block world">
       <h3>{lang === 'vi' ? 'Cùng lúc đó trên thế giới' : 'Meanwhile, elsewhere'}</h3>
       <ul>
-        {world[slug].map((w, i) => {
+        {(world[slug] || []).map((w, i) => {
           const s = sourceById[w.source];
           return <li key={i}>{w.text[lang]} {s?.url && <a href={s.url} target="_blank" rel="noreferrer">{lang === 'vi' ? 'Nguồn' : 'Source'}</a>}</li>;
         })}
@@ -244,15 +247,17 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
         <p className="eyebrow">{lang === 'vi' ? 'Thời kỳ' : 'Period'} {pad(i + 1)} / {periods.length + upcoming.length}</p>
         <h1>{p.name[lang]}</h1>
         <p className="range">{p.range[lang]}</p>
+        {p.question && <p className="ask">{p.question[lang]}</p>}
         <p className="lead">{p.summary[lang]}</p>
         <div className="cta">
-          <Narrate slug={p.slug} lang={lang} />
+          {LEGACY.has(p.slug) && <Narrate slug={p.slug} lang={lang} />}
           <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc tổng quan' : 'Read overview')}</button>
         </div>
-        <figure className="art">
+        {!LEGACY.has(p.slug) && <RealPhoto slug={p.slug} lang={lang} />}
+        {LEGACY.has(p.slug) && <figure className="art">
           <img src={'img/' + p.slug + '.jpg'} loading="lazy" alt={lang === 'vi' ? 'Ảnh minh họa thời kỳ ' + p.name.vi : 'Illustration of the period ' + p.name.en} />
           <figcaption>{lang === 'vi' ? 'Ảnh minh họa do AI tạo để gợi không khí thời kỳ, không phải ảnh chụp hay tư liệu khảo cổ.' : 'AI-generated illustration to evoke the period, not a photograph or archaeological record.'}</figcaption>
-        </figure>
+        </figure>}
         {p.model && <Model3D kind={p.model} lang={lang} />}
         {open && (
           <>
@@ -495,6 +500,7 @@ export default function App() {
     if (f && snd) sound.hit(/trong-dong|dong-son/.test(f) ? 'drum' : 'step');
   }, [active.focus]);
   useEffect(() => { if (snd) sound.setEra(active.era); }, [snd, active.era]);
+  useEffect(() => { document.querySelector('.scrub button.on')?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }, [active.era]);
 
   // Tự cuộn: trang trôi đều xuống như phụ đề phim, dừng ngay khi người xem chạm, lăn chuột hoặc bấm phím
   useEffect(() => {
@@ -652,7 +658,7 @@ export default function App() {
         <div className="scrub">
           {periods.map((p) => (
             <button key={p.slug} onClick={() => jump('p-' + p.slug)} className={active.era === p.slug ? 'on' : ''} style={{ ['--c' as string]: p.color }}>
-              <i /><b>{p.name[lang]}</b><span>{START[p.slug][lang]}</span>
+              <i /><b>{p.name[lang]}</b><span>{(START[p.slug] || p.start || p.range)[lang]}</span>
             </button>
           ))}
           <button onClick={() => jump('lo-trinh')} className="more"><i /><b>+{upcoming.length}</b><span>{T.soon[lang]}</span></button>

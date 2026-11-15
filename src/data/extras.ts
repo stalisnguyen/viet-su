@@ -1,4 +1,5 @@
 import { l, type L } from './types';
+import { chapters } from './more';
 
 // Cùng lúc đó trên thế giới: mỗi dòng có nguồn riêng (id trong sources.ts)
 export const world: Record<string, { text: L; source: string }[]> = {
@@ -76,3 +77,4 @@ export const quiz: Record<string, Q[]> = {
       why: l('Đây là kết quả cuộc khai quật lũy Thành Trung năm 2007 - 2008.', 'This is the result of the 2007 - 2008 excavation of the middle rampart.') },
   ],
 };
+chapters.forEach((c) => { world[c.period.slug] = c.world; quiz[c.period.slug] = c.quiz; badges[c.period.slug] = c.badge; });

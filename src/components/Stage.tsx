@@ -217,7 +217,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       const sp = label((lang === 'vi' ? z.vi : z.en).toUpperCase(), z.color, 40, 800, 3);
       sp.position.set(X(z.at[0]), 1.9, Z(z.at[1]));
       scene.add(sp);
-      return { id: z.id, full, edge, sp, cur: full.clone(), u: [tU.uZ1, tU.uZ2, tU.uZ3][zi].value, zi };
+      return { id: z.id, full, edge, sp, cur: full.clone(), u: [tU.uZ1, tU.uZ2, tU.uZ3][zi].value, zi, alt: new Map<string, THREE.Sprite>() };
     });
 
     // Độ cao thật: 8 ô dữ liệu Terrarium (bộ Terrain Tiles công khai trên AWS, tổng hợp từ SRTM và các nguồn mở khác).
@@ -403,8 +403,12 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
 
     // Góc nhìn mong muốn theo trạng thái
     const want = { t: new THREE.Vector3(), p: new THREE.Vector3() };
+    // Bản đồ nhìn vào đâu khi mở một thời kỳ: cả nước, miền Bắc, miền Trung hay miền Nam
+    const CENTER: Record<string, [number, number]> = { north: [105.9, 20.6], central: [108.0, 15.3], south: [106.4, 10.7] };
+    const eraView = (era: string | null) => (!era ? 'all' : era === 'van-lang' || era === 'au-lac' ? 'north' : periodBySlug[era]?.view || 'all');
     const view = () => {
       const s = live.current;
+      const vw = eraView(s.era), vc = CENTER[vw];
       const portrait = aspect < 0.9;
       const pin = s.focus ? pins.find((x) => x.slug === s.focus) : null;
       if (s.split) {
@@ -414,8 +418,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
           want.t.copy(pin.pos).setY(0);
           want.t.z -= 1.0; // đẩy điểm đang xem xuống dưới thanh tiêu đề
           want.p.set(want.t.x + 1.2 * k, 5.4 * k, want.t.z + 6.4 * k);
-        } else if (s.era === 'van-lang' || s.era === 'au-lac') {
-          want.t.set(X(105.9), 0, Z(20.6) - 0.6);
+        } else if (vc) {
+          want.t.set(X(vc[0]), 0, Z(vc[1]) - 0.6);
           want.p.set(want.t.x + 1.2 * k, 7.5 * k, want.t.z + 8 * k);
         } else {
           want.t.set(1.4, 0, -1.9);
@@ -428,9 +432,9 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         want.t.copy(pin.pos).setY(0);
         if (s.sheet) portrait ? (want.t.z -= 1.2) : (want.t.x -= 2.6);
         want.p.set(want.t.x + 1.4 * k, 6.2 * k, want.t.z + 7.4 * k);
-      } else if (s.era === 'van-lang' || s.era === 'au-lac') {
+      } else if (vc) {
         const k = portrait ? 1.5 : 1;
-        want.t.set(X(105.9) + (portrait ? 0 : aspect > 1.35 ? -2.6 : -1), 0, Z(20.6) + 0.4);
+        want.t.set(X(vc[0]) + (portrait ? 0 : aspect > 1.35 ? -2.6 : -1), 0, Z(vc[1]) + 0.4);
         want.p.set(want.t.x + 1.2 * k, 8.5 * k, want.t.z + 9 * k);
       } else {
         const k = portrait ? 2.2 : aspect < 1.35 ? 1.3 : 1.0;
@@ -494,7 +498,16 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       arcMat.opacity = arcT > 8 ? 0 : arcT < 1.1 ? 0.95 : Math.max(0.3, 0.95 - (arcT - 1.1) * 0.4);
       controls.update();
 
-      const th = THEMES[s.era || 'intro'];
+      // Thời kỳ viết sau chưa có bảng màu riêng thì suy ra từ màu của thời kỳ đó
+      let th = THEMES[s.era || 'intro'];
+      if (!th) {
+        const pc = new THREE.Color(periodBySlug[s.era!].color);
+        th = THEMES[s.era!] = {
+          bg: '#' + pc.clone().multiplyScalar(0.07).getHexString(),
+          grid: '#' + pc.clone().multiplyScalar(0.36).getHexString(),
+          land: '#' + pc.clone().multiplyScalar(0.34).lerp(new THREE.Color(0x6b5a3a), 0.35).getHexString(),
+        };
+      }
       cBg.lerp(tmp.set(th.bg), 0.06);
       cGrid.lerp(tmp.set(th.grid), 0.06);
       (scene.background as THREE.Color).copy(cBg);
@@ -512,8 +525,10 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       tU.uFocus.value.set(fp ? fp.pos.x : 0, fp ? fp.pos.z : 0, tU.uFocus.value.z + ((fp ? 1 : 0) - tU.uFocus.value.z) * 0.08);
       nbEdge.color.copy(cGrid);
       const three = !s.era || s.era === 'kim-khi';
+      const regs = s.era ? periodBySlug[s.era]?.regions : undefined;
       zones.forEach((z) => {
-        const lit = three || ((s.era === 'van-lang' || s.era === 'au-lac') && z.id === 'dongson');
+        const reg = regs ? regs[z.id === 'dongson' ? 'north' : z.id === 'sahuynh' ? 'central' : 'south'] : undefined;
+        const lit = three || !!reg || ((s.era === 'van-lang' || s.era === 'au-lac') && z.id === 'dongson');
         if (three) tmp.copy(z.full);
         else if (lit) tmp.set(periodBySlug[s.era!].color);
         else tmp.set(th.land);
@@ -524,6 +539,16 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         z.edge.opacity = lit ? 1 : 0.55;
         const so = three ? (s.focus ? 0.22 : 1) : 0; // khi đang xem một di tích thì tên vùng lùi xuống, nhường chỗ cho tên di tích
         z.sp.material.opacity += (so - z.sp.material.opacity) * 0.1;
+        // Tên vùng riêng của thời kỳ (ví dụ Giao Chỉ, Champa, Phù Nam), tạo khi cần lần đầu
+        const want2 = !three && reg ? reg[lang].toUpperCase() : '';
+        if (want2 && !z.alt.has(want2)) {
+          const sp2 = label(want2, '#f1e6cf', 36, 800, 3);
+          sp2.position.copy(z.sp.position);
+          sp2.material.opacity = 0;
+          scene.add(sp2);
+          z.alt.set(want2, sp2);
+        }
+        z.alt.forEach((sp2, key) => { sp2.material.opacity += ((key === want2 ? (s.focus ? 0.25 : 0.95) : 0) - sp2.material.opacity) * 0.1; });
       });
 
       haloMat.color.lerp(tmp.set(s.era ? periodBySlug[s.era].color : '#e6b450'), 0.05);
@@ -537,7 +562,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const gy = p.group.scale.y, tk = (isFocus ? 1 : 0.85) * Math.min(2.4, Math.max(1, camera.position.distanceTo(p.pos) / 9));
         p.tag.position.y = (isFocus ? 1.3 : p.tagY * Math.min(2, tk)) / gy;
         p.tag.scale.set(p.tag.userData.sx * tk, (p.tag.userData.sy * tk) / gy, 1);
-        const o = inEra ? 1 : 0.07;
+        const o = inEra ? 1 : 0; // ghim của thời kỳ khác ẩn hẳn để bản đồ không rối
+        p.group.visible = p.head.opacity > 0.02 || inEra;
         p.head.opacity += (o - p.head.opacity) * 0.1;
         p.beam.opacity = p.head.opacity * (isFocus ? 1 : 0.75);
         const sc = isFocus ? 1.9 : 1;

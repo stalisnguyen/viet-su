@@ -1,6 +1,7 @@
 import { l, type Entry } from './types';
+import { chapters } from './more';
 
-export const entries: Entry[] = [
+const base: Entry[] = [
   // ---------- THỜI ĐỒ ĐÁ ----------
   {
     slug: 'an-khe',
@@ -646,4 +647,5 @@ export const entries: Entry[] = [
   },
 ];
 
+export const entries: Entry[] = [...base, ...chapters.flatMap((c) => c.entries)];
 export const entryBySlug = Object.fromEntries(entries.map((e) => [e.slug, e]));

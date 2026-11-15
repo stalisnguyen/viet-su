@@ -1,6 +1,7 @@
 import type { Source } from './types';
+import { chapters } from './more';
 
-export const sources: Source[] = [
+const base: Source[] = [
   // Tư liệu gốc
   { id: 'toanthu', kind: 'primary', cite: 'Ngô Sĩ Liên và các sử thần triều Lê, Đại Việt sử ký toàn thư, Ngoại kỷ, quyển 1 (hoàn thành 1479, khắc in 1697).' },
   { id: 'linhnam', kind: 'primary', cite: 'Lĩnh Nam chích quái, truyện Hồng Bàng thị (biên soạn khoảng thời Trần, Vũ Quỳnh và Kiều Phú hiệu chỉnh cuối thế kỷ 15).' },
@@ -66,4 +67,7 @@ export const sources: Source[] = [
   { id: 'kt-docchua', kind: 'news', cite: 'Kiến Thức, bài về tượng thú bằng đồng Dốc Chùa (văn hóa Đồng Nai).', url: 'https://kienthuc.net.vn/kho-tri-thuc/soi-buc-tuong-ti-hon-bang-dong-bi-hiem-nhat-viet-nam-1128703.html' },
 ];
 
+// Nguồn của các thời kỳ sau được gộp vào; trùng id thì giữ bản có trước
+export const sources: Source[] = [...base];
+chapters.forEach((c) => c.sources.forEach((x) => { if (!sources.some((y) => y.id === x.id)) sources.push(x); }));
 export const sourceById = Object.fromEntries(sources.map((s) => [s.id, s]));

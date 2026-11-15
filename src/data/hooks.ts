@@ -1,4 +1,5 @@
 import { l, type L } from './types';
+import { chapters } from './more';
 
 // Câu mở cho từng điểm trong hành trình. Mỗi câu chỉ dùng thông tin đã có trong mục từ.
 export const hooks: Record<string, L> = {
@@ -21,3 +22,4 @@ export const hooks: Record<string, L> = {
   'an-duong-vuong': l('Sử Việt kể về nỏ thần và Mỵ Châu. Sử Trung Hoa kể một chuyện khác.', 'Vietnamese chronicles tell of a magic crossbow and Mỵ Châu. Chinese chronicles tell it differently.'),
   'thanh-co-loa': l('Hơn hai triệu mét khối đất, ba vòng lũy, và câu hỏi ai đã xây nên.', 'More than two million cubic metres of earth, three ramparts, and the question of who built them.'),
 };
+chapters.forEach((c) => Object.assign(hooks, c.hooks));

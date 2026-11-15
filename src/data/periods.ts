@@ -1,6 +1,7 @@
 import { l, type L, type Period } from './types';
+import { chapters } from './more';
 
-export const periods: Period[] = [
+const base: Period[] = [
   {
     slug: 'do-da',
     name: l('Thời đồ đá', 'The Stone Age'),
@@ -135,27 +136,29 @@ export const periods: Period[] = [
   },
 ];
 
+export const periods: Period[] = [...base, ...chapters.map((c) => c.period)];
 export const periodBySlug = Object.fromEntries(periods.map((p) => [p.slug, p]));
 
 // Các thời kỳ sẽ làm ở những đợt sau, theo thứ tự thời gian.
-export const upcoming: { name: L; range: string }[] = [
-  { name: l('Nam Việt và Bắc thuộc lần thứ nhất', 'Nanyue and the first northern domination'), range: '179 TCN - 40' },
-  { name: l('Hai Bà Trưng', 'The Trưng Sisters'), range: '40 - 43' },
-  { name: l('Bắc thuộc lần thứ hai', 'Second northern domination'), range: '43 - 544' },
-  { name: l('Phù Nam - Óc Eo và Chân Lạp', 'Funan - Óc Eo and Chenla'), range: 'tk 1 - tk 8' },
-  { name: l('Champa', 'Champa'), range: '192 - 1832' },
-  { name: l('Vạn Xuân', 'Vạn Xuân'), range: '544 - 602' },
-  { name: l('Bắc thuộc lần thứ ba', 'Third northern domination'), range: '602 - 905' },
-  { name: l('Tự chủ: họ Khúc, Dương, Ngô', 'Autonomy: Khúc, Dương, Ngô'), range: '905 - 967' },
-  { name: l('Đinh và Tiền Lê', 'Đinh and Early Lê'), range: '968 - 1009' },
-  { name: l('Nhà Lý', 'Lý dynasty'), range: '1009 - 1225' },
-  { name: l('Nhà Trần', 'Trần dynasty'), range: '1225 - 1400' },
-  { name: l('Nhà Hồ và thuộc Minh', 'Hồ dynasty and Ming rule'), range: '1400 - 1427' },
-  { name: l('Lê sơ', 'Early Later Lê'), range: '1428 - 1527' },
-  { name: l('Mạc, Lê trung hưng, Trịnh - Nguyễn', 'Mạc, Revival Lê, Trịnh - Nguyễn'), range: '1527 - 1789' },
-  { name: l('Tây Sơn', 'Tây Sơn'), range: '1778 - 1802' },
-  { name: l('Nhà Nguyễn', 'Nguyễn dynasty'), range: '1802 - 1945' },
-  { name: l('Pháp thuộc', 'French colonial period'), range: '1858 - 1945' },
-  { name: l('1945 - 1975', '1945 - 1975'), range: '1945 - 1975' },
-  { name: l('Từ 1975 đến nay', 'From 1975 to the present'), range: '1975 - nay' },
+const planned: { slug: string; name: L; range: string }[] = [
+  { slug: 'nam-viet', name: l('Nam Việt và Bắc thuộc lần thứ nhất', 'Nanyue and the first northern domination'), range: '179 TCN - 40' },
+  { slug: 'hai-ba-trung', name: l('Hai Bà Trưng', 'The Trưng Sisters'), range: '40 - 43' },
+  { slug: 'bac-thuoc-2', name: l('Bắc thuộc lần thứ hai', 'Second northern domination'), range: '43 - 544' },
+  { slug: 'phu-nam', name: l('Phù Nam - Óc Eo và Chân Lạp', 'Funan - Óc Eo and Chenla'), range: 'tk 1 - tk 8' },
+  { slug: 'champa', name: l('Champa', 'Champa'), range: '192 - 1832' },
+  { slug: 'van-xuan', name: l('Vạn Xuân', 'Vạn Xuân'), range: '544 - 602' },
+  { slug: 'bac-thuoc-3', name: l('Bắc thuộc lần thứ ba', 'Third northern domination'), range: '602 - 905' },
+  { slug: 'tu-chu', name: l('Tự chủ: họ Khúc, Dương, Ngô', 'Autonomy: Khúc, Dương, Ngô'), range: '905 - 967' },
+  { slug: 'dinh-tien-le', name: l('Đinh và Tiền Lê', 'Đinh and Early Lê'), range: '968 - 1009' },
+  { slug: 'ly', name: l('Nhà Lý', 'Lý dynasty'), range: '1009 - 1225' },
+  { slug: 'tran', name: l('Nhà Trần', 'Trần dynasty'), range: '1225 - 1400' },
+  { slug: 'ho-minh', name: l('Nhà Hồ và thuộc Minh', 'Hồ dynasty and Ming rule'), range: '1400 - 1427' },
+  { slug: 'le-so', name: l('Lê sơ', 'Early Later Lê'), range: '1428 - 1527' },
+  { slug: 'mac-trinh-nguyen', name: l('Mạc, Lê trung hưng, Trịnh - Nguyễn', 'Mạc, Revival Lê, Trịnh - Nguyễn'), range: '1527 - 1789' },
+  { slug: 'tay-son', name: l('Tây Sơn', 'Tây Sơn'), range: '1778 - 1802' },
+  { slug: 'nguyen', name: l('Nhà Nguyễn', 'Nguyễn dynasty'), range: '1802 - 1945' },
+  { slug: 'phap-thuoc', name: l('Pháp thuộc', 'French colonial period'), range: '1858 - 1945' },
+  { slug: '1945-1975', name: l('1945 - 1975', '1945 - 1975'), range: '1945 - 1975' },
+  { slug: 'sau-1975', name: l('Từ 1975 đến nay', 'From 1975 to the present'), range: '1975 - nay' },
 ];
+export const upcoming = planned.filter((u) => !chapters.some((c) => c.period.slug === u.slug));
