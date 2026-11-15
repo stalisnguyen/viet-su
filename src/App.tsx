@@ -7,7 +7,7 @@ import { sourceById, sources } from './data/sources';
 import { hooks } from './data/hooks';
 import { badges, quiz, world } from './data/extras';
 import { photos } from './data/photos';
-import { drumUrl } from './drum';
+import { drumUrl, loadDrumFace } from './drum';
 import { sound } from './sound';
 import type { Entry, Evidence, L, Lang, Period } from './data/types';
 
@@ -364,8 +364,8 @@ function Sources({ lang }: { lang: Lang }) {
         <p><span className="badge legend">{EV.legend[lang]}</span> {lang === 'vi' ? 'Chuyện kể truyền miệng, có giá trị văn hóa nhưng không dùng làm chứng cứ cho niên đại.' : 'Oral tradition, culturally valuable but not used as evidence for dates.'}</p>
         <p className="muted">
           {lang === 'vi'
-            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Địa hình trên bản đồ dùng dữ liệu độ cao mở (Terrain Tiles trên AWS, tổng hợp từ SRTM và các nguồn khác). Các mô hình 3D là phỏng dựng giản lược, hiển thị kiểu hologram. Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
-            : 'Zone boundaries on the map are illustrative. Map terrain uses open elevation data (Terrain Tiles on AWS, compiled from SRTM and other sources). The 3D models are simplified reconstructions shown as holograms. Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
+            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Địa hình trên bản đồ dùng dữ liệu độ cao mở (Terrain Tiles trên AWS, tổng hợp từ SRTM và các nguồn khác). Các mô hình 3D là phỏng dựng giản lược, hiển thị kiểu hologram. Hoa văn mặt trống đồng dùng làm biểu tượng là bản vẽ mặt trống Ngọc Lũ thuộc phạm vi công cộng trên Wikimedia Commons (NgocLu2.gif). Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
+            : 'Zone boundaries on the map are illustrative. Map terrain uses open elevation data (Terrain Tiles on AWS, compiled from SRTM and other sources). The 3D models are simplified reconstructions shown as holograms. The bronze-drum motif used as the site emblem is a public-domain drawing of the Ngọc Lũ drum face from Wikimedia Commons (NgocLu2.gif). Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
         </p>
       </section>
       {groups.map(([g, name]) => (
@@ -425,6 +425,9 @@ export default function App() {
   const [toc, setToc] = useState(false);
   const [resume] = useState(() => { const r = store.get('annalis-last', ''); return STEPS.find((x) => x.id === r && x.id !== 'top') || null; });
   const split = useMedia(SPLIT);
+  // Biểu tượng mặt trống: dùng bản vẽ giản lược trước, đổi sang hoa văn thật của trống Ngọc Lũ khi tải xong
+  const [mark, setMark] = useState(drumUrl);
+  useEffect(() => { let on = true; loadDrumFace().then((cv) => { if (on) setMark(cv.toDataURL('image/png')); }); return () => { on = false; }; }, []);
   const [intro, setIntro] = useState(() => { try { return !sessionStorage.getItem('vstd-intro') && !location.hash; } catch { return false; } });
   useEffect(() => {
     if (!intro) return;
@@ -539,7 +542,7 @@ export default function App() {
       <div className="shade" />
 
       <header className="bar">
-        <button className="brand" onClick={() => jump('top')}><img className="mark" src={drumUrl()} alt="" /><span>VIỆT SỬ TOÀN ĐỒ</span></button>
+        <button className="brand" onClick={() => jump('top')}><img className="mark" src={mark} alt="" /><span>VIỆT SỬ TOÀN ĐỒ</span></button>
         <button className="pill progress" onClick={() => setToc(true)} aria-haspopup="dialog" aria-label={lang === 'vi' ? `Mở mục lục, đã khám phá ${seen.size} trên ${journey.length} mục` : `Open contents, ${seen.size} of ${journey.length} explored`}>
           <svg viewBox="0 0 36 36" aria-hidden="true">
             <circle cx="18" cy="18" r="15" />
@@ -624,7 +627,7 @@ export default function App() {
 
       {intro && (
         <button className="intro" onClick={() => setIntro(false)} aria-label={lang === 'vi' ? 'Bỏ qua phần mở đầu' : 'Skip the opening'}>
-          <img src={drumUrl()} alt="" />
+          <img src={mark} alt="" />
           <strong>VIỆT SỬ TOÀN ĐỒ</strong>
           <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam trên một bản đồ sống' : '800,000 years of Vietnamese history on one living map'}</span>
         </button>

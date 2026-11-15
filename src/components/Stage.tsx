@@ -9,7 +9,7 @@ import geo from '../data/geo.json';
 import { entries } from '../data/entries';
 import { periodBySlug } from '../data/periods';
 import type { Lang } from '../data/types';
-import { drawDrum } from '../drum';
+import { drawDrum, loadDrumFace } from '../drum';
 
 type Ring = number[][];
 const G = geo as { zones: Record<string, Ring[]>; nb: Record<string, Ring[]> };
@@ -339,6 +339,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const dc = document.createElement('canvas');
     dc.width = dc.height = 512;
     drawDrum(dc.getContext('2d')!, 512);
+    loadDrumFace().then((cv) => { if (!dead) { discMat.map = new THREE.CanvasTexture(cv); discMat.needsUpdate = true; } });
     const discMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(dc), transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false });
     const disc = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), discMat);
     disc.rotation.x = -Math.PI / 2;

@@ -48,3 +48,37 @@ export function drumUrl() {
   cache = cv.toDataURL('image/png');
   return cache;
 }
+
+// Hoa văn thật của mặt trống Ngọc Lũ: bản vẽ nét trắng trên nền đen, thuộc phạm vi công cộng, lấy từ Wikimedia Commons
+// (File:NgocLu2.gif). Nền đen được chuyển thành trong suốt để chỉ còn nét hoa văn phát sáng.
+// Không tải được thì dùng bản vẽ giản lược ở trên.
+export const DRUM_SRC = 'https://commons.wikimedia.org/wiki/File:NgocLu2.gif';
+let face: Promise<HTMLCanvasElement> | null = null;
+export function loadDrumFace(): Promise<HTMLCanvasElement> {
+  if (face) return face;
+  face = new Promise((done) => {
+    const S = 870, cv = document.createElement('canvas');
+    cv.width = cv.height = S;
+    const g = cv.getContext('2d')!;
+    const fallback = () => { drawDrum(g, S); done(cv); };
+    const im = new Image();
+    im.crossOrigin = 'anonymous';
+    im.onerror = fallback;
+    im.onload = () => {
+      try {
+        g.imageSmoothingQuality = 'high';
+        g.drawImage(im, 0, 0, S, S);
+        const d = g.getImageData(0, 0, S, S);
+        for (let i = 0; i < d.data.length; i += 4) {
+          const lum = (d.data[i] + d.data[i + 1] + d.data[i + 2]) / 765;
+          d.data[i] = d.data[i + 1] = d.data[i + 2] = 255;
+          d.data[i + 3] = Math.round(lum * d.data[i + 3]);
+        }
+        g.putImageData(d, 0, 0);
+        done(cv);
+      } catch { g.clearRect(0, 0, S, S); fallback(); }
+    };
+    im.src = 'https://upload.wikimedia.org/wikipedia/commons/b/ba/NgocLu2.gif';
+  });
+  return face;
+}

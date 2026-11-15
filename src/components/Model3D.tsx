@@ -3,15 +3,15 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { Lang, ModelKind } from '../data/types';
 import { buildCave, buildPaddy, buildVillage } from './Scenes';
-import { drawDrum } from '../drum';
+import { drawDrum, loadDrumFace } from '../drum';
 
 const SCENES: ModelKind[] = ['cave', 'village', 'paddy', 'coloa'];
 
 export const MODEL_INFO: Record<ModelKind, { vi: string; en: string; noteVi: string; noteEn: string }> = {
   drum: {
     vi: 'Trống đồng Đông Sơn', en: 'Đông Sơn bronze drum',
-    noteVi: 'Bản dựng giản lược theo kiểu trống Ngọc Lũ: mặt trống có ngôi sao 14 cánh và các vành hoa văn đồng tâm.',
-    noteEn: 'Simplified reconstruction after the Ngọc Lũ type: a 14-rayed star and concentric decorated bands on the face.',
+    noteVi: 'Dáng trống dựng giản lược. Hoa văn trên mặt là bản vẽ mặt trống Ngọc Lũ (Wikimedia Commons, phạm vi công cộng): ngôi sao 14 cánh ở giữa và các vành người, nhà, chim, hươu.',
+    noteEn: 'The drum shape is a simplified build. The face carries a drawing of the Ngọc Lũ tympanum (Wikimedia Commons, public domain): a 14-rayed star and bands of people, houses, birds and deer.',
   },
   coloa: {
     vi: 'Thành Cổ Loa', en: 'Cổ Loa Citadel',
@@ -288,6 +288,16 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
         void main(){ float f=pow(1.0-abs(dot(normalize(vN),normalize(vV))),1.8); float sc=0.5+0.5*sin(vY*70.0-uT*2.4);
           gl_FragColor=vec4(uC*(0.16+1.05*f+0.12*sc),0.42+0.5*f); }`,
     });
+    const holoMap = (map: THREE.Texture) => new THREE.ShaderMaterial({
+      uniforms: { uC: { value: hc }, uT, uMap: { value: map } }, transparent: true, side: THREE.DoubleSide,
+      vertexShader: `varying vec3 vN; varying vec3 vV; varying float vY; varying vec2 vUv;
+        void main(){ vec4 mv=modelViewMatrix*vec4(position,1.0); vN=normalize(normalMatrix*normal); vV=normalize(-mv.xyz); vY=(modelMatrix*vec4(position,1.0)).y; vUv=uv; gl_Position=projectionMatrix*mv; }`,
+      fragmentShader: `uniform vec3 uC; uniform float uT; uniform sampler2D uMap; varying vec3 vN; varying vec3 vV; varying float vY; varying vec2 vUv;
+        void main(){ float f=pow(1.0-abs(dot(normalize(vN),normalize(vV))),1.8); float sc=0.5+0.5*sin(vY*70.0-uT*2.4);
+          vec3 t=texture2D(uMap,vUv).rgb; float p=dot(t,vec3(0.333));
+          gl_FragColor=vec4(uC*(0.10+0.9*f+0.10*sc+0.75*p*p),0.42+0.5*f); }`,
+    });
+    let alive = true;
     const edge = new THREE.LineBasicMaterial({ color: hc, transparent: true, opacity: 0.55 });
     const meshes: THREE.Mesh[] = [];
     scene.traverse((o) => { if ((o as THREE.Mesh).isMesh && (o as THREE.Mesh).material && ((o as THREE.Mesh).material as THREE.Material).visible !== false) meshes.push(o as THREE.Mesh); });
@@ -299,11 +309,16 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
         drawDrum(cv.getContext('2d')!, 1024);
         const tx = new THREE.CanvasTexture(cv);
         tx.anisotropy = 8;
-        m.material = new THREE.MeshBasicMaterial({ map: tx, color: hc, transparent: true, side: THREE.DoubleSide });
+        const fm = new THREE.MeshBasicMaterial({ map: tx, color: hc, transparent: true, side: THREE.DoubleSide });
+        m.material = fm;
+        // Thay bằng hoa văn thật của mặt trống Ngọc Lũ khi tải xong
+        loadDrumFace().then((real) => { if (alive) { const t2 = new THREE.CanvasTexture(real); t2.anisotropy = 8; fm.map = t2; fm.needsUpdate = true; } });
         m.scale.setScalar(1.02);
         return;
       }
-      m.material = holo;
+      // Khối nào vốn có hoa văn (thân trống có các băng trang trí) thì giữ hoa văn đó trong lớp hologram
+      const om = m.material as THREE.MeshStandardMaterial;
+      m.material = om.map ? holoMap(om.map) : holo;
       m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 28), edge));
     });
     camera.position.set(built.cam[0], built.cam[1], built.cam[2]);
@@ -326,7 +341,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     let raf = 0;
     const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
     tick();
-    return () => { cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); renderer.domElement.remove(); };
+    return () => { alive = false; cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); renderer.domElement.remove(); };
   }, [kind, lang, on]);
 
   const info = MODEL_INFO[kind];
