@@ -45,18 +45,20 @@ function label(text: string, color: string, px = 44, weight = 800, spacing = 0) 
   set();
   const w = Math.ceil(ctx.measureText(text).width) + 28;
   c.width = w;
-  c.height = px + 28;
+  // Chừa đủ chỗ phía trên cho chữ hoa có hai tầng dấu (Ồ, Ễ, Ẩ...) và phía dưới cho dấu nặng
+  c.height = Math.round(px * 2 + 24);
+  const by = Math.round(px * 1.42 + 8);
   set();
-  ctx.textBaseline = 'middle';
+  ctx.textBaseline = 'alphabetic';
   ctx.lineWidth = 9;
   ctx.strokeStyle = 'rgba(5,7,20,0.9)';
-  ctx.strokeText(text, 14, c.height / 2);
+  ctx.strokeText(text, 14, by);
   ctx.fillStyle = color;
-  ctx.fillText(text, 14, c.height / 2);
+  ctx.fillText(text, 14, by);
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
-  const h = px / 58;
+  const h = (px / 58) * (c.height / (px + 28)); // giữ nguyên cỡ chữ trên bản đồ dù khung vẽ cao hơn
   sp.scale.set((w / c.height) * h, h, 1);
   sp.renderOrder = 10;
   return sp;

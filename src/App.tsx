@@ -453,7 +453,7 @@ export default function App() {
   const setLang = (l: Lang) => { setLangS(l); store.set('annalis-lang', l); };
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.title = lang === 'vi' ? 'Việt Sử Toàn Đồ - Lịch sử Việt Nam trên một bản đồ sống' : 'Việt Sử Toàn Đồ - The history of Vietnam on one living map';
+    document.title = lang === 'vi' ? 'Việt Sử Toàn Đồ - Lịch sử Việt Nam kể trên bản đồ' : 'Việt Sử Toàn Đồ - The history of Vietnam, told on a map';
   }, [lang]);
   const setDepth = (d: Depth) => { setDepthS(d); store.set('annalis-depth', d); };
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
@@ -585,7 +585,7 @@ export default function App() {
         <section className="step hero" id="top" data-step>
           <div className="panel bare">
             <p className="eyebrow">{lang === 'vi' ? 'Lịch sử Việt Nam' : 'History of Vietnam'}</p>
-            <h1>{lang === 'vi' ? <>800.000 năm<br />trên một bản đồ sống</> : <>800,000 years<br />on one living map</>}</h1>
+            <h1>{lang === 'vi' ? <>800.000 năm<br />kể trên một tấm bản đồ</> : <>800,000 years<br />told on one map</>}</h1>
             <p className="lead">
               {lang === 'vi'
                 ? 'Cuộn xuống để đi qua lịch sử Việt Nam từ chiếc rìu đá đầu tiên. Bản đồ sẽ đổi theo từng thời kỳ và bay tới từng di tích. Bạn cũng có thể chạm vào một cột sáng trên bản đồ để tới thẳng di tích đó.'
@@ -634,7 +634,7 @@ export default function App() {
         <button className="intro" onClick={() => setIntro(false)} aria-label={lang === 'vi' ? 'Bỏ qua phần mở đầu' : 'Skip the opening'}>
           <img src={mark} alt="" />
           <strong>VIỆT SỬ TOÀN ĐỒ</strong>
-          <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam trên một bản đồ sống' : '800,000 years of Vietnamese history on one living map'}</span>
+          <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam, kể trên một tấm bản đồ' : '800,000 years of Vietnamese history, told on one map'}</span>
           <em>{lang === 'vi' ? 'Chạm để vào ngay' : 'Tap to enter'}</em>
         </button>
       )}

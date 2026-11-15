@@ -108,7 +108,6 @@ export const entries: Entry[] = [
         'For that reason this site does not give Núi Đọ a firm age. The figure of 400,000 - 300,000 years follows the museum label.',
       ),
     ],
-    model: 'biface',
     sources: ['boriskovsky', 'nmh-handaxe', 'derev2018', 'derev2020'],
   },
   {
@@ -464,7 +463,6 @@ export const entries: Entry[] = [
         'The Sa Huỳnh - Champa link rests on shared territory and on transitional sites such as Gò Cấm near Trà Kiệu. Sa Huỳnh people most likely spoke an Austronesian language, but this is an inference without direct evidence.',
       ),
     ],
-    model: 'jar',
     sources: ['wiki-sahuynh', 'glover', 'lmd2023'],
   },
   {

@@ -151,14 +151,14 @@ function sprite(text: string) {
   const g = c.getContext('2d')!;
   const font = '500 40px "Be Vietnam Pro", system-ui, sans-serif';
   g.font = font;
-  c.width = Math.ceil(g.measureText(text).width) + 20; c.height = 60;
+  c.width = Math.ceil(g.measureText(text).width) + 20; c.height = 96; // đủ chỗ cho dấu hai tầng
   g.font = font; g.textBaseline = 'middle';
-  g.lineWidth = 7; g.strokeStyle = 'rgba(8,20,22,.9)'; g.strokeText(text, 10, 30);
-  g.fillStyle = '#fff3d6'; g.fillText(text, 10, 30);
+  g.lineWidth = 7; g.strokeStyle = 'rgba(8,20,22,.9)'; g.strokeText(text, 10, 50);
+  g.fillStyle = '#fff3d6'; g.fillText(text, 10, 50);
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, depthTest: false, transparent: true }));
-  s.scale.set((c.width / 60) * 0.26, 0.26, 1);
+  s.scale.set((c.width / 60) * 0.26, 0.26 * (96 / 60), 1);
   s.renderOrder = 5;
   return s;
 }
