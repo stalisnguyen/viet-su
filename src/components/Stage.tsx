@@ -488,11 +488,24 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     const cBg = new THREE.Color(THEMES.intro.bg), cGrid = new THREE.Color(THEMES.intro.grid), tmp = new THREE.Color();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let raf = 0;
+    const slow: number[] = []; let lastTune = 0, quality = 2;
     const tick = (ms: number) => {
       const t = ms / 1000;
       const s = live.current;
-      const dt = Math.min(0.05, lastMs ? (ms - lastMs) / 1000 : 0.016);
+      const raw = lastMs ? ms - lastMs : 16;
+      const dt = Math.min(0.05, raw / 1000);
       lastMs = ms;
+      // Tự hạ chất lượng trên máy yếu: đo thời gian mỗi khung hình, nếu chậm kéo dài thì giảm độ phân giải, rồi tắt hiệu ứng phát sáng
+      if (raw < 250) { slow.push(raw); if (slow.length > 90) slow.shift(); }
+      if (slow.length === 90 && ms - lastTune > 3000) {
+        const med = [...slow].sort((a, b) => a - b)[45];
+        if (med > 24 && quality > 0) {
+          quality--; lastTune = ms; slow.length = 0;
+          if (quality === 1) { renderer.setPixelRatio(1); composer.setPixelRatio(1); renderer.setSize(el.clientWidth, el.clientHeight); composer.setSize(el.clientWidth, el.clientHeight); }
+          else bloom.enabled = false;
+          el.dataset.q = String(quality);
+        }
+      }
       const key = view();
       if (key !== s.key) {
         s.key = key; flying = true;

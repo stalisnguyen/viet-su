@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import type { Lang, ModelKind } from '../data/types';
 import { drawDrum, loadDrumFace } from '../drum';
 import { buildBell, buildChamTower, buildKhueVanCac, buildOnePillar, buildPillar, buildSitula, buildSteles, buildUrn } from './Builds';
@@ -306,7 +307,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
       setFailed(true);
       return;
     }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 900 ? 1.5 : 2));
     el.appendChild(renderer.domElement);
     const scene = new THREE.Scene();
     scene.add(new THREE.HemisphereLight(0xe8fff6, 0x101c1d, 1.3));
@@ -381,8 +382,28 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
       // Khối nào vốn có hoa văn (thân trống có các băng trang trí) thì giữ hoa văn đó trong lớp hologram
       const om = m.material as THREE.MeshStandardMaterial;
       m.material = om.map ? holoMap(om.map) : holo;
-      m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 28), edge));
+      if (scene3d || om.map) m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 28), edge));
     });
+    // Hiện vật: gộp mọi khối cùng chất liệu thành một khối và mọi nét cạnh thành một nét,
+    // từ vài trăm lệnh vẽ mỗi khung hình xuống còn vài lệnh, đỡ nặng cho điện thoại
+    if (!scene3d) {
+      scene.updateMatrixWorld(true);
+      const solid: THREE.BufferGeometry[] = [], lines: THREE.BufferGeometry[] = [];
+      meshes.forEach((m) => {
+        if (m.material !== holo) return;
+        const g = m.geometry.index ? m.geometry.toNonIndexed() : m.geometry.clone();
+        Object.keys(g.attributes).forEach((k) => { if (k !== 'position' && k !== 'normal') g.deleteAttribute(k); });
+        g.applyMatrix4(m.matrixWorld); solid.push(g);
+        const e = new THREE.EdgesGeometry(m.geometry, 28); e.applyMatrix4(m.matrixWorld); lines.push(e);
+        m.parent?.remove(m); m.geometry.dispose();
+      });
+      if (solid.length) {
+        const one = mergeGeometries(solid); solid.forEach((g) => g.dispose());
+        if (one) scene.add(new THREE.Mesh(one, holo));
+        const ln = mergeGeometries(lines); lines.forEach((g) => g.dispose());
+        if (ln) scene.add(new THREE.LineSegments(ln, edge));
+      }
+    }
     const lineMat = new THREE.LineBasicMaterial({ color: hc, transparent: true, opacity: 0.5 });
     let sweep: THREE.Object3D | null = null;
     if (bed) {
@@ -420,7 +441,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     resize();
     const ro = new ResizeObserver(resize); ro.observe(el);
     let raf = 0;
-    const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); if (sweep) sweep.rotation.z = -ms / 2600; controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
+    const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); if (sweep) sweep.rotation.z = -ms / 2600; controls.update(); renderer.render(scene, camera); el.dataset.calls = String(renderer.info.render.calls); raf = requestAnimationFrame(tick); };
     tick();
     return () => {
       alive = false; cancelAnimationFrame(raf); ro.disconnect(); controls.dispose();
