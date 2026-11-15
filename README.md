@@ -2,7 +2,7 @@
 
 Lịch sử Việt Nam kể trên bản đồ 3D, song ngữ Việt - Anh, mỗi thông tin đều có nguồn dẫn.
 
-Đợt 1 gồm 4 thời kỳ: Thời đồ đá, Thời kim khí, Văn Lang, Âu Lạc.
+Hiện có 4 thời kỳ: Thời đồ đá, Thời kim khí, Văn Lang, Âu Lạc.
 
 ## Chạy trên máy
 

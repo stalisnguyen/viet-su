@@ -292,7 +292,7 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
       <input className="search" aria-label={lang === 'vi' ? 'Tìm trong trang' : 'Search this site'} type="search" value={q} onChange={(e) => setQ(e.target.value)}
         placeholder={lang === 'vi' ? 'Tìm di tích, nhân vật, hiện vật' : 'Search sites, people, artefacts'} />
       {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
-      {!any && <p className="muted">{lang === 'vi' ? 'Chưa có mục nào khớp. Đợt 1 mới có nội dung đến hết Âu Lạc.' : 'No match yet. Release 1 covers up to Âu Lạc.'}</p>}
+      {!any && <p className="muted">{lang === 'vi' ? 'Chưa có mục nào khớp. Hiện trang có nội dung đến hết thời Âu Lạc.' : 'No match yet. The site currently covers up to Âu Lạc.'}</p>}
       <ol className="road">
         {periods.map((p, i) => {
           const list = journey.filter((e) => e.period === p.slug && match(e));
@@ -501,7 +501,7 @@ export default function App() {
       <main className="flow">
         <section className="step hero" id="top" data-step>
           <div className="panel bare">
-            <p className="eyebrow">{lang === 'vi' ? 'Lịch sử Việt Nam - đợt 1' : 'History of Vietnam - release 1'}</p>
+            <p className="eyebrow">{lang === 'vi' ? 'Lịch sử Việt Nam' : 'History of Vietnam'}</p>
             <h1>{lang === 'vi' ? <>800.000 năm<br />trên một bản đồ sống</> : <>800,000 years<br />on one living map</>}</h1>
             <p className="lead">
               {lang === 'vi'
