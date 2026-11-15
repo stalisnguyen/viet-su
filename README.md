@@ -2,7 +2,7 @@
 
 Lịch sử Việt Nam kể trên bản đồ 3D, song ngữ Việt - Anh, mỗi thông tin đều có nguồn dẫn.
 
-Hiện có 4 thời kỳ: Thời đồ đá, Thời kim khí, Văn Lang, Âu Lạc.
+Hiện có đủ 23 thời kỳ, từ thời đồ đá đến nay, và một chuyên đề về biển đảo Hoàng Sa, Trường Sa. Mỗi thời kỳ viết sau đợt đầu nằm trong một file ở src/data/chapters và được kiểm bằng scripts/check-chapter.mjs; quy cách viết ở docs/chapter-spec.md.
 
 ## Chạy trên máy
 

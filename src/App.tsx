@@ -57,6 +57,8 @@ const pad = (n: number) => String(n).padStart(2, '0');
 const jump = (id: string) => {
   const el = document.getElementById(id);
   if (!el) return;
+  // Thẻ được nhảy tới thì hiện ngay, không chờ hiệu ứng hiện dần
+  el.querySelectorAll<HTMLElement>('.panel').forEach((p) => { p.dataset.in = '1'; });
   const far = Math.abs(el.getBoundingClientRect().top) > window.innerHeight * 2.5 || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   el.scrollIntoView({ behavior: (far ? 'instant' : 'smooth') as ScrollBehavior, block: 'start' });
 };
@@ -83,7 +85,7 @@ const STEPS: { id: string; title: L }[] = [
     ...journey.filter((e) => e.period === p.slug).map((e) => ({ id: 'e-' + e.slug, title: e.name })),
     { id: 'q-' + p.slug, title: { vi: 'Câu hỏi - ' + p.name.vi, en: 'Quiz - ' + p.name.en } },
   ]),
-  { id: 'lo-trinh', title: { vi: 'Lộ trình 23 thời kỳ', en: 'Roadmap of 23 periods' } },
+  { id: 'lo-trinh', title: { vi: 'Mục lục toàn bộ', en: 'Full index' } },
   { id: 'nguon', title: { vi: 'Nguồn và cách làm', en: 'Sources and method' } },
 ];
 
@@ -327,12 +329,12 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
   const any = useMemo(() => entries.some(match), [k]);
   return (
     <>
-      {!bare && <p className="eyebrow">{lang === 'vi' ? 'Lộ trình' : 'Roadmap'}</p>}
+      {!bare && <p className="eyebrow">{lang === 'vi' ? 'Mục lục toàn bộ' : 'Full index'}</p>}
       {!bare && <h2>{lang === 'vi' ? '23 thời kỳ, từ đồ đá đến hôm nay' : '23 periods, from stone to today'}</h2>}
       <input className="search" aria-label={lang === 'vi' ? 'Tìm trong trang' : 'Search this site'} type="search" value={q} onChange={(e) => setQ(e.target.value)}
         placeholder={lang === 'vi' ? 'Tìm di tích, nhân vật, hiện vật' : 'Search sites, people, artefacts'} />
       {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
-      {!any && <p className="muted">{lang === 'vi' ? 'Chưa có mục nào khớp. Hiện trang có nội dung đến hết thời Âu Lạc.' : 'No match yet. The site currently covers up to Âu Lạc.'}</p>}
+      {!any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
       <ol className="road">
         {periods.map((p, i) => {
           const list = journey.filter((e) => e.period === p.slug && match(e));
@@ -498,6 +500,7 @@ export default function App() {
       list.forEach((e) => {
         if (!e.isIntersecting) return;
         const d = (e.target as HTMLElement).dataset;
+        e.target.querySelectorAll<HTMLElement>('.panel').forEach((p) => { p.dataset.in = '1'; }); // phần đang đọc luôn hiện, kể cả khi hiệu ứng chưa kịp chạy
         setActive({ id: e.target.id, era: d.era || null, focus: d.focus || null });
       });
     }, { rootMargin: split ? '-55% 0px -45% 0px' : '-45% 0px -45% 0px' });
@@ -695,7 +698,7 @@ export default function App() {
               <i /><b>{p.name[lang]}</b><span>{(START[p.slug] || p.start || p.range)[lang]}</span>
             </button>
           ))}
-          <button onClick={() => jump('lo-trinh')} className="more"><i /><b>+{upcoming.length}</b><span>{T.soon[lang]}</span></button>
+          {upcoming.length > 0 && <button onClick={() => jump('lo-trinh')} className="more"><i /><b>+{upcoming.length}</b><span>{T.soon[lang]}</span></button>}
         </div>
         <button className="herebtn" onClick={() => setToc(true)} aria-haspopup="dialog">
           <small>{idx + 1}/{STEPS.length} - {lang === 'vi' ? 'chạm để mở mục lục' : 'tap for contents'}</small>
