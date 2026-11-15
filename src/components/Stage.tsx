@@ -137,7 +137,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
 
     // ĐỊA HÌNH: một tấm lưới phủ cả vùng, nhô cao theo độ cao thật, vẽ theo kiểu bàn chiếu hologram
     // (đường đồng mức, bóng đổ theo sườn núi). Việt Nam sáng theo màu vùng, các nước láng giềng mờ.
-    const LON0 = 101.25, LON1 = 112.5, LAT0 = 7.5, LAT1 = 24, NX = 250, NZ = 366, EX = 0.00036; // EX: mét -> đơn vị bản đồ
+    const LON0 = 101.25, LON1 = 112.5, LAT0 = 7.5, LAT1 = 24, NX = 250, NZ = 366, EX = 0.0003; // EX: mét -> đơn vị bản đồ
     const mask = document.createElement('canvas');
     mask.width = NX + 1; mask.height = NZ + 1;
     const mx = mask.getContext('2d', { willReadFrequently: true })!;
@@ -168,20 +168,21 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     tGeo.setAttribute('aW', new THREE.BufferAttribute(tW, 4));
     tGeo.setAttribute('aH', new THREE.BufferAttribute(tH, 1));
     tGeo.setIndex(new THREE.BufferAttribute(tIdx, 1));
+    tGeo.computeVertexNormals();
     const tU = {
       uZ1: { value: new THREE.Color() }, uZ2: { value: new THREE.Color() }, uZ3: { value: new THREE.Color() }, uNb: { value: new THREE.Color(0x1a2350) },
       uLit: { value: new THREE.Vector3(1, 1, 1) }, uT: { value: 0 }, uSweep: { value: 99 }, uFocus: { value: new THREE.Vector3(0, 0, 0) },
     };
     const terrain = new THREE.Mesh(tGeo, new THREE.ShaderMaterial({
       uniforms: tU, transparent: true,
-      vertexShader: `attribute vec4 aW; attribute float aH; varying vec4 vW; varying float vH; varying vec3 vP;
-        void main(){ vW=aW; vH=aH; vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-      fragmentShader: `uniform vec3 uZ1,uZ2,uZ3,uNb,uLit,uFocus; uniform float uT,uSweep; varying vec4 vW; varying float vH; varying vec3 vP;
+      vertexShader: `attribute vec4 aW; attribute float aH; varying vec4 vW; varying float vH; varying vec3 vP; varying vec3 vNr;
+        void main(){ vW=aW; vH=aH; vP=position; vNr=normal; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+      fragmentShader: `uniform vec3 uZ1,uZ2,uZ3,uNb,uLit,uFocus; uniform float uT,uSweep; varying vec4 vW; varying float vH; varying vec3 vP; varying vec3 vNr;
         void main(){
           float land=vW.x+vW.y+vW.z+vW.w; if(land<0.5) discard;
           float vn=(vW.x+vW.y+vW.z)/land;
           vec3 zc=(uZ1*vW.x*uLit.x+uZ2*vW.y*uLit.y+uZ3*vW.z*uLit.z+uNb*vW.w)/land;
-          vec3 n=normalize(cross(dFdx(vP),dFdy(vP))); if(n.y<0.0) n=-n;
+          vec3 n=normalize(vNr); if(n.y<0.0) n=-n;
           float sh=clamp(dot(n,normalize(vec3(-0.55,0.62,0.45))),0.0,1.0);
           float c=vH/200.0; float line=1.0-clamp(abs(fract(c-0.5)-0.5)/max(fwidth(c),1e-4),0.0,1.0);
           float elev=clamp(vH/2200.0,0.0,1.0);
@@ -250,8 +251,25 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       for (let j = 0; j <= NZ; j++) for (let i = 0; i <= NX; i++) {
         const k = j * (NX + 1) + i;
         const h = hAt(LON0 + (i / NX) * (LON1 - LON0), LAT1 - (j / NZ) * (LAT1 - LAT0));
-        tH[k] = h; tPos[k * 3 + 1] = 0.01 + h * EX;
+        tH[k] = h;
       }
+      // Làm mượt hai lượt để núi thành khối liền, không lởm chởm do dữ liệu chi tiết hơn lưới
+      const tmpH = new Float32Array(nV), W1 = NX + 1;
+      for (let pass = 0; pass < 2; pass++) {
+        for (let j = 0; j <= NZ; j++) for (let i = 0; i <= NX; i++) {
+          let sum = 0, n = 0;
+          for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) {
+            const ii = i + di, jj = j + dj;
+            if (ii < 0 || jj < 0 || ii > NX || jj > NZ) continue;
+            const w = di === 0 && dj === 0 ? 4 : di === 0 || dj === 0 ? 2 : 1;
+            sum += tH[jj * W1 + ii] * w; n += w;
+          }
+          tmpH[j * W1 + i] = sum / n;
+        }
+        tH.set(tmpH);
+      }
+      for (let k = 0; k < nV; k++) tPos[k * 3 + 1] = 0.01 + tH[k] * EX;
+      tGeo.computeVertexNormals();
       tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aH.needsUpdate = true;
       borders.forEach(({ geo, ll }) => {
         const pos = geo.attributes.position as THREE.BufferAttribute;
