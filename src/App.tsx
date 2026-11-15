@@ -6,6 +6,7 @@ import { periodBySlug, periods, upcoming } from './data/periods';
 import { sourceById, sources } from './data/sources';
 import { hooks } from './data/hooks';
 import { badges, quiz, world } from './data/extras';
+import { photos } from './data/photos';
 import { sound } from './sound';
 import type { Entry, Evidence, L, Lang, Period } from './data/types';
 
@@ -126,6 +127,22 @@ function More({ detail, scholarly, depth, lang }: { detail: L[]; scholarly: L[];
         </section>
       )}
     </>
+  );
+}
+
+// Ảnh thật từ Wikimedia Commons. Nếu ảnh không tải được thì ẩn cả khung để không để lại ô trống.
+function RealPhoto({ slug, lang }: { slug: string; lang: Lang }) {
+  const ph = photos[slug];
+  const [bad, setBad] = useState(false);
+  if (!ph || bad) return null;
+  const f = encodeURIComponent(ph.file.replace(/ /g, '_'));
+  return (
+    <figure className="art photo">
+      <img src={'https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=960'} loading="lazy" alt={ph.caption[lang]} onError={() => setBad(true)} />
+      <figcaption>
+        {ph.caption[lang]} {lang === 'vi' ? 'Ảnh: ' : 'Photo: '}{ph.by}, {ph.license}, <a href={'https://commons.wikimedia.org/wiki/File:' + f} target="_blank" rel="noreferrer">Wikimedia Commons</a>.
+      </figcaption>
+    </figure>
   );
 }
 
@@ -262,6 +279,7 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
         <p className="hook">{hooks[e.slug][lang]}</p>
         <div className="meta"><Badges ev={e.evidence} lang={lang} />{e.place && <span>{e.place[lang]}</span>}</div>
         <p className="lead">{e.summary[lang]}</p>
+        <RealPhoto slug={e.slug} lang={lang} />
         {e.model && <Model3D kind={e.model} lang={lang} />}
         {open && (
           <>
@@ -343,8 +361,8 @@ function Sources({ lang }: { lang: Lang }) {
         <p><span className="badge legend">{EV.legend[lang]}</span> {lang === 'vi' ? 'Chuyện kể truyền miệng, có giá trị văn hóa nhưng không dùng làm chứng cứ cho niên đại.' : 'Oral tradition, culturally valuable but not used as evidence for dates.'}</p>
         <p className="muted">
           {lang === 'vi'
-            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Các cảnh 3D là phỏng dựng giản lược. Ảnh minh họa và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
-            : 'Zone boundaries on the map are illustrative. The 3D scenes are simplified reconstructions. Illustrations and narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
+            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Các cảnh 3D là phỏng dựng giản lược. Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
+            : 'Zone boundaries on the map are illustrative. The 3D scenes are simplified reconstructions. Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
         </p>
       </section>
       {groups.map(([g, name]) => (
