@@ -323,6 +323,7 @@ const chapter: Chapter = {
       sort: 516,
       place: l('Văn Miếu - Quốc Tử Giám, Hà Nội', 'Văn Miếu - Quốc Tử Giám (Temple of Literature), Hanoi'),
       coord: [105.8356, 21.0286],
+      model: 'steles',
       evidence: ['arch', 'chron'],
       summary: l(
         `Năm 1484, Lê Thánh Tông cho dựng ở Văn Miếu những tấm bia đá đặt trên lưng rùa, khắc tên người đỗ tiến sĩ từ khoa thi năm 1442 trở đi. Việc dựng bia kéo dài đến năm 1780, nay còn 82 tấm. Đây là bằng chứng bằng đá về cách nhà Lê chọn quan lại qua thi cử, và được UNESCO ghi vào danh mục Ký ức thế giới.`,

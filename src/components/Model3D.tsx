@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { Lang, ModelKind } from '../data/types';
 import { drawDrum, loadDrumFace } from '../drum';
+import { buildBell, buildChamTower, buildKhueVanCac, buildOnePillar, buildPillar, buildSitula, buildSteles, buildUrn } from './Builds';
 
 const SCENES: ModelKind[] = ['cave', 'village', 'paddy', 'coloa'];
 
@@ -26,6 +27,46 @@ export const MODEL_INFO: Record<ModelKind, { vi: string; en: string; noteVi: str
     vi: 'Mộ chum Sa Huỳnh', en: 'Sa Huỳnh burial jar',
     noteVi: 'Hình khối minh họa chum gốm có nắp hình nón cụt dùng để chôn cất.',
     noteEn: 'Illustrative form of a pottery jar with a conical lid used for burial.',
+  },
+  bell: {
+    vi: 'Chuông Thanh Mai (năm 798)', en: 'The Thanh Mai bell (798)',
+    noteVi: 'Dựng giản lược theo dáng chung của chuông: thân tròn chia ô bằng các đai, hai núm đánh chuông, quai trên đỉnh. Không phải số đo chính xác, chữ khắc không được dựng lại.',
+    noteEn: 'A simplified build of the bell\'s general form: a round body divided by bands, two striking bosses and a top handle. Not exact measurements; the inscription is not reproduced.',
+  },
+  situla: {
+    vi: 'Thạp đồng Đông Sơn', en: 'Đông Sơn bronze situla',
+    noteVi: 'Dựng giản lược theo kiểu thạp Đào Thịnh: thân trụ có các băng hoa văn, hai quai và nắp có tượng người. Hoa văn không được dựng lại.',
+    noteEn: 'A simplified build after the Đào Thịnh situla: a cylindrical body with decorated bands, two handles and a lid with human figures. The decoration is not reproduced.',
+  },
+  chamtower: {
+    vi: 'Tháp Chăm (kalan)', en: 'A Cham tower (kalan)',
+    noteVi: 'Dựng giản lược theo bố cục chung của một tháp chính Chăm như Po Nagar: thân vuông có cửa giả, ba tầng mái thu nhỏ có tháp góc. Không mô phỏng riêng một tháp nào.',
+    noteEn: 'A simplified build of the general layout of a Cham main tower such as Po Nagar: a square body with false doors and three diminishing tiers with corner towers. It does not model any single tower.',
+  },
+  pillar: {
+    vi: 'Cột kinh Phật ở Hoa Lư', en: 'A Buddhist sutra pillar from Hoa Lư',
+    noteVi: 'Dựng giản lược dạng cột đá tám mặt trên đế sen. Bài kinh khắc trên các mặt không được dựng lại, tỉ lệ chỉ để minh họa.',
+    noteEn: 'A simplified build of an eight-sided stone pillar on a lotus base. The engraved sutra text is not reproduced and proportions are illustrative.',
+  },
+  onepillar: {
+    vi: 'Chùa Một Cột', en: 'The One Pillar Pagoda',
+    noteVi: 'Dựng giản lược theo dáng chùa ngày nay (dựng lại năm 1955): điện nhỏ trên đài vuông, đặt trên một cột đá giữa hồ.',
+    noteEn: 'A simplified build of the pagoda as it stands today (rebuilt in 1955): a small shrine on a square platform set on one stone pillar in a pond.',
+  },
+  khuevan: {
+    vi: 'Khuê Văn Các, Văn Miếu (1805)', en: 'Khuê Văn pavilion, Temple of Literature (1805)',
+    noteVi: 'Dựng giản lược: bốn trụ gạch, gác gỗ vuông có cửa sổ tròn bốn mặt và mái hai tầng. Gác xây năm 1805, muộn hơn nhiều so với thời Lý.',
+    noteEn: 'A simplified build: four brick piers, a square wooden upper room with round windows on four sides, and a double roof. Built in 1805, long after the Lý period.',
+  },
+  steles: {
+    vi: 'Bia tiến sĩ trên lưng rùa', en: 'Doctoral steles on tortoises',
+    noteVi: 'Dựng giản lược ba tấm bia đá đặt trên lưng rùa như ở Văn Miếu. Chữ khắc và hoa văn không được dựng lại.',
+    noteEn: 'A simplified build of three stone steles on tortoises as at the Temple of Literature. Inscriptions and decoration are not reproduced.',
+  },
+  urn: {
+    vi: 'Một chiếc đỉnh trong Cửu đỉnh Huế', en: 'One of the Nine Dynastic Urns of Huế',
+    noteVi: 'Dựng giản lược dáng đỉnh đồng: thân tròn phình, hai quai trên miệng, ba chân. Các hình chạm nổi trên thân không được dựng lại.',
+    noteEn: 'A simplified build of a bronze urn: a rounded body, two handles on the rim and three legs. The relief images on the body are not reproduced.',
   },
   cave: {
     vi: 'Một hang đá thời đồ đá', en: 'A Stone Age cave',
@@ -273,7 +314,9 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     const rim = new THREE.DirectionalLight(0x7fd4c0, 1.1); rim.position.set(-4, 2, -3); scene.add(rim);
     const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
     const built: { target: THREE.Object3D; cam: number[]; update?: (t: number) => void } =
-      kind === 'coloa' ? buildCoLoa(scene, lang) : buildDrum(scene);
+      kind === 'coloa' ? buildCoLoa(scene, lang) : kind === 'bell' ? buildBell(scene) : kind === 'situla' ? buildSitula(scene)
+      : kind === 'chamtower' ? buildChamTower(scene) : kind === 'pillar' ? buildPillar(scene) : kind === 'onepillar' ? buildOnePillar(scene)
+      : kind === 'khuevan' ? buildKhueVanCac(scene) : kind === 'steles' ? buildSteles(scene) : kind === 'urn' ? buildUrn(scene) : buildDrum(scene);
     // Hiển thị kiểu hologram, cùng ngôn ngữ hình ảnh với bản đồ: khối trong mờ sáng viền, vân quét chạy dọc,
     // nét cạnh rõ, màu theo thời kỳ của thẻ đang chứa mô hình.
     const hc = new THREE.Color(getComputedStyle(el).getPropertyValue('--c').trim() || '#e6b450');

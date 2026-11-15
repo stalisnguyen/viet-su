@@ -15,8 +15,8 @@ const chapter: Chapter = {
       `Over four centuries, from the Hoàng Sa company of the Nguyễn lords to today's Trường Sa special zone, what has Vietnam done to assert and exercise sovereignty over the two offshore archipelagos, and why does that record still matter in a sea that several states claim?`,
     ),
     summary: l(
-      `Hoàng Sa (Paracel) và Trường Sa (Spratly) là hai quần đảo san hô giữa Biển Đông. Việt Nam khẳng định cả hai thuộc chủ quyền của mình và dẫn bản đồ cổ, sử triều Nguyễn, văn bản thời Pháp và các tuyên bố quốc tế làm bằng chứng. Trung Quốc và Đài Loan cũng tuyên bố cả hai quần đảo; Philippines, Malaysia và Brunei tuyên bố một phần Trường Sa. Trung Quốc kiểm soát toàn bộ Hoàng Sa từ năm 1974.`,
-      `Hoàng Sa (the Paracels) and Trường Sa (the Spratlys) are two coral archipelagos in the middle of the East Sea (South China Sea). Vietnam holds that both belong to it and cites old maps, Nguyễn court records, French colonial acts and international statements as evidence. China and Taiwan also claim both groups; the Philippines, Malaysia and Brunei claim parts of the Spratlys. China has controlled all of the Paracels since 1974.`,
+      `Hoàng Sa (Paracel) và Trường Sa (Spratly) là hai quần đảo san hô giữa Biển Đông. Việt Nam khẳng định cả hai thuộc chủ quyền của mình và dẫn bản đồ cổ, sử triều Nguyễn, văn bản thời Pháp và các tuyên bố quốc tế làm bằng chứng. Trung Quốc và Đài Loan cũng tuyên bố cả hai quần đảo; Philippines, Malaysia và Brunei tuyên bố một phần Trường Sa. Từ năm 1974 Trung Quốc chiếm đóng bằng vũ lực toàn bộ Hoàng Sa. Việt Nam không công nhận việc này và vẫn duy trì đơn vị hành chính Hoàng Sa thuộc thành phố Đà Nẵng, nay là đặc khu Hoàng Sa.`,
+      `Hoàng Sa (the Paracels) and Trường Sa (the Spratlys) are two coral archipelagos in the middle of the East Sea (South China Sea). Vietnam holds that both belong to it and cites old maps, Nguyễn court records, French colonial acts and international statements as evidence. China and Taiwan also claim both groups; the Philippines, Malaysia and Brunei claim parts of the Spratlys. Since 1974 China has occupied all of the Paracels by force. Vietnam does not recognise this and still keeps Hoàng Sa as an administrative unit of Đà Nẵng, now the Hoàng Sa special zone.`,
     ),
     detail: [
       l(
@@ -28,8 +28,8 @@ const chapter: Chapter = {
         `This topic follows the layers of evidence Vietnam relies on: the "Golden Sandbank" note on a 17th-century map and the Nguyễn lords' Hoàng Sa company; the voyages, markers and documents of the Nguyễn court; French colonial decrees; the statement at the 1951 San Francisco Conference; administration by the Republic of Vietnam; then the clashes of 1974 and 1988, life on the Spratlys today and the framework of the law of the sea.`,
       ),
       l(
-        `Hiện trạng trên biển khác với các tuyên bố trên giấy. Từ trận đánh ngày 19 tháng 1 năm 1974, Trung Quốc kiểm soát toàn bộ Hoàng Sa. Ở Trường Sa, theo đếm của Alexander Vuving năm 2016, Việt Nam đóng giữ 21 thực thể, nhiều nhất trong các bên; Philippines giữ 9, Trung Quốc 7, Malaysia 5 và Đài Loan 1. Phán quyết trọng tài năm 2016 bác cơ sở pháp lý của "quyền lịch sử" trong đường chín đoạn nhưng không xét chủ quyền đảo.`,
-        `The situation at sea differs from the claims on paper. Since a battle on 19 January 1974, China has controlled all of the Paracels. In the Spratlys, by Alexander Vuving's 2016 count, Vietnam holds 21 features, more than any other party; the Philippines holds 9, China 7, Malaysia 5 and Taiwan 1. The 2016 arbitral award rejected any legal basis for "historic rights" within the nine-dash line but did not rule on sovereignty over the islands.`,
+        `Hiện trạng trên biển khác với các tuyên bố trên giấy. Từ trận đánh ngày 19 tháng 1 năm 1974, Trung Quốc chiếm đóng toàn bộ Hoàng Sa; Việt Nam không có mặt trên các đảo nhưng chưa bao giờ từ bỏ chủ quyền. Huyện đảo Hoàng Sa, lập năm 1982 và thuộc thành phố Đà Nẵng từ năm 1997, trở thành đặc khu Hoàng Sa từ ngày 1 tháng 7 năm 2025 theo Nghị quyết 1659/NQ-UBTVQH15. Ở Trường Sa, theo đếm của Alexander Vuving năm 2016, Việt Nam đóng giữ 21 thực thể, nhiều nhất trong các bên; Philippines giữ 9, Trung Quốc 7, Malaysia 5 và Đài Loan 1. Phán quyết trọng tài năm 2016 bác cơ sở pháp lý của "quyền lịch sử" trong đường chín đoạn nhưng không xét chủ quyền đảo.`,
+        `The situation at sea differs from the claims on paper. Since a battle on 19 January 1974, China has occupied all of the Paracels; Vietnam has no presence on the islands but has never given up its claim. The Hoàng Sa island district, set up in 1982 and part of Đà Nẵng city since 1997, became the Hoàng Sa special zone on 1 July 2025 under Resolution 1659/NQ-UBTVQH15. In the Spratlys, by Alexander Vuving's 2016 count, Vietnam holds 21 features, more than any other party; the Philippines holds 9, China 7, Malaysia 5 and Taiwan 1. The 2016 arbitral award rejected any legal basis for "historic rights" within the nine-dash line but did not rule on sovereignty over the islands.`,
       ),
     ],
     scholarly: [
@@ -46,7 +46,7 @@ const chapter: Chapter = {
         `Two kinds of question need to be kept apart. Sovereignty over islands and rocks is a matter of territorial law, and no court has ruled on it. Rights to the surrounding waters fall under the 1982 UN Convention on the Law of the Sea. The 2016 award belongs to the second kind: the tribunal said expressly that it did not rule on territorial sovereignty. Many figures here, such as how many features each party holds or how many died in 1974, vary by source and are given with their source.`,
       ),
     ],
-    sources: ['mt-nbc-hoangsa', 'bd-mofa-hoangsa', 'ng-brit-paracel', 'bd-brit-spratly', 'bd-pca-award', 'bd-rsis-li', 'bd-diplomat-vuving'],
+    sources: ['mt-nbc-hoangsa', 'bd-mofa-hoangsa', 'ng-brit-paracel', 'bd-brit-spratly', 'bd-pca-award', 'bd-rsis-li', 'bd-diplomat-vuving', 'bd-nq1659'],
   },
   entries: [
     {
@@ -223,8 +223,8 @@ const chapter: Chapter = {
       coord: [111.66, 16.47],
       evidence: ['chron'],
       summary: l(
-        `Sau năm 1954, Việt Nam Cộng hòa quản lý hai quần đảo, đặt Trường Sa thuộc Phước Tuy và Hoàng Sa thuộc Quảng Nam. Ở miền Bắc, công hàm năm 1958 của Thủ tướng Phạm Văn Đồng về sau bị hai nước đọc theo hai cách. Ngày 19 tháng 1 năm 1974, hải quân Việt Nam Cộng hòa giao chiến với hải quân Trung Quốc; từ đó Trung Quốc kiểm soát toàn bộ Hoàng Sa.`,
-        `After 1954 the Republic of Vietnam administered both archipelagos, placing the Spratlys under Phước Tuy and the Paracels under Quảng Nam. In the north, Premier Phạm Văn Đồng's 1958 note is now read in two ways by the two countries. On 19 January 1974 the South Vietnamese navy fought the Chinese navy; since then China has controlled all of the Paracels.`,
+        `Sau năm 1954, Việt Nam Cộng hòa quản lý hai quần đảo, đặt Trường Sa thuộc Phước Tuy và Hoàng Sa thuộc Quảng Nam. Ở miền Bắc, công hàm năm 1958 của Thủ tướng Phạm Văn Đồng về sau bị hai nước đọc theo hai cách. Ngày 19 tháng 1 năm 1974, hải quân Việt Nam Cộng hòa giao chiến với hải quân Trung Quốc; từ đó Trung Quốc chiếm đóng toàn bộ Hoàng Sa.`,
+        `After 1954 the Republic of Vietnam administered both archipelagos, placing the Spratlys under Phước Tuy and the Paracels under Quảng Nam. In the north, Premier Phạm Văn Đồng's 1958 note is now read in two ways by the two countries. On 19 January 1974 the South Vietnamese navy fought the Chinese navy; since then China has occupied all of the Paracels.`,
       ),
       detail: [
         l(
@@ -382,6 +382,7 @@ const chapter: Chapter = {
     { id: 'mt-nqn-hoangsa', cite: 'Nguyễn Quang Ngọc (2011). "Tổ chức các đội Hoàng Sa và Bắc Hải, hình thức độc đáo duy nhất của quá trình xác lập và thực thi chủ quyền trên các vùng quần đảo ngoài Biển Đông trong các thế kỷ XVII - XVIII". Bản tin Đại học Quốc gia Hà Nội, số 245.', url: 'https://files.vnu.edu.vn/data/upload/2011/08/10856/245%20p30-p36_Hoang%20Sa%20Truong%20Sa%20Nhung%20trang%20su%20duoc%20viet%20bang%20mau%20%20_%20GS_TS%20Nguyen%20Quang%20Ngoc.pdf', kind: 'paper' },
     { id: 'ng-tt-hoangsa', kind: 'news', cite: 'Trần Đức Anh Sơn (12/10/2016), "Triều Nguyễn thực thi chủ quyền", Tuổi Trẻ (dẫn Đại Nam thực lục, các quyển 52, 104, 122, 154, 165).', url: 'https://tuoitre.vn/trieu-nguyen-thuc-thi-chu-quyen-1186624.htm' },
     { id: 'ng-brit-paracel', kind: 'reference', cite: 'Encyclopaedia Britannica, "Paracel Islands".', url: 'https://www.britannica.com/place/Paracel-Islands' },
+    { id: 'bd-nq1659', kind: 'primary', cite: 'Ủy ban Thường vụ Quốc hội, Nghị quyết 1659/NQ-UBTVQH15 năm 2025 về sắp xếp đơn vị hành chính cấp xã của thành phố Đà Nẵng (khoản 92: huyện Hoàng Sa thành đặc khu Hoàng Sa), hiệu lực từ 1/7/2025; trích theo Thư viện Pháp luật.', url: 'https://thuvienphapluat.vn/hoi-dap-phap-luat/huyen-dao-hoang-sa-tp-da-nang-doi-thanh-gi-sau-sap-nhap-2025-138064841.html' },
     { id: 'bd-brit-spratly', kind: 'reference', cite: 'Encyclopaedia Britannica, "Spratly Islands", bản in, xem tháng 11/2026.', url: 'https://www.britannica.com/print/article/561209' },
     { id: 'bd-mofa-hoangsa', kind: 'primary', cite: 'Bộ Ngoại giao Việt Nam, "The sovereignty of Viet Nam over the Hoang Sa archipelago" (phản hồi các thư của Trung Quốc gửi Liên Hợp Quốc ngày 22/5 và 9/6/2014, tài liệu A/68/887 và A/68/907).', url: 'https://mofa.gov.vn/en/nr040807104143/nr040807105001/ns140709161305' },
     { id: 'bd-meinheit-taberd', kind: 'paper', cite: 'Harold E. Meinheit (2016), "The Bishop\'s Map: Vietnamese and Western Cartography Converge", The Portolan, số mùa đông 2016, Washington Map Society.', url: 'https://washmapsociety.wildapricot.org/resources/Documents/Articles%20and%20Papers%20Page/Explore%20-%20Articles%20-%20The%20Bishops%20Map%20-%20Vietnamese%20and%20Western%20Cartography%20Converge1.pdf' },
@@ -485,14 +486,14 @@ const chapter: Chapter = {
   quiz: [
     {
       q: l(
-        `Từ năm nào Trung Quốc kiểm soát toàn bộ quần đảo Hoàng Sa?`,
-        `Since what year has China controlled all of the Paracel Islands?`,
+        `Trung Quốc dùng vũ lực chiếm toàn bộ quần đảo Hoàng Sa của Việt Nam vào năm nào?`,
+        `In what year did China seize the whole of Vietnam's Hoàng Sa (Paracel) archipelago by force?`,
       ),
       options: [l('1956', '1956'), l('1974', '1974'), l('1988', '1988')],
       answer: 1,
       why: l(
-        `Theo Bộ Ngoại giao Việt Nam, năm 1956 Trung Quốc chiếm nhóm đảo phía đông; sau trận đánh ngày 19 tháng 1 năm 1974 họ kiểm soát cả quần đảo. Năm 1988 là trận Gạc Ma ở Trường Sa.`,
-        `According to Vietnam's Foreign Ministry, China took the eastern group in 1956; after the battle of 19 January 1974 it controlled the whole archipelago. 1988 is the Gạc Ma clash in the Spratlys.`,
+        `Theo Bộ Ngoại giao Việt Nam, năm 1956 Trung Quốc chiếm nhóm đảo phía đông; sau trận đánh ngày 19 tháng 1 năm 1974 họ chiếm nốt nhóm Lưỡi Liềm và chiếm đóng cả quần đảo đến nay. Việt Nam không công nhận và vẫn quản lý Hoàng Sa trên danh nghĩa là một đặc khu của Đà Nẵng. Năm 1988 là trận Gạc Ma ở Trường Sa.`,
+        `According to Vietnam's Foreign Ministry, China took the eastern group in 1956; after the battle of 19 January 1974 it took the Crescent group as well and has occupied the whole archipelago since. Vietnam does not recognise this and keeps Hoàng Sa as a special zone of Đà Nẵng. 1988 is the Gạc Ma clash in the Spratlys.`,
       ),
     },
     {

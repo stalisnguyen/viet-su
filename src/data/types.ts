@@ -1,7 +1,7 @@
 export type L = { vi: string; en: string };
 export type Lang = 'vi' | 'en';
 export type Evidence = 'arch' | 'chron' | 'legend';
-export type ModelKind = 'drum' | 'coloa' | 'biface' | 'jar' | 'cave' | 'village' | 'paddy';
+export type ModelKind = 'drum' | 'coloa' | 'biface' | 'jar' | 'cave' | 'village' | 'paddy' | 'bell' | 'situla' | 'chamtower' | 'pillar' | 'onepillar' | 'khuevan' | 'steles' | 'urn';
 export type EntryKind = 'site' | 'culture' | 'artifact' | 'figure' | 'legend' | 'event';
 
 export interface Period {

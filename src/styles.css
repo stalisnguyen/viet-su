@@ -47,10 +47,11 @@ button:disabled { cursor: default; }
 @keyframes hudin { from { opacity: 0; clip-path: inset(0 0 0 100%); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
 
 /* Màn mở đầu */
-.intro { position: fixed; inset: 0; z-index: 30; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 24px; background: #090708; text-align: center; animation: introout 0.7s ease-in 3.5s both; }
+.intro { position: fixed; inset: 0; z-index: 30; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 24px; background: #090708; text-align: center; }
 .intro img { width: min(62vw, 300px); height: auto; filter: drop-shadow(0 0 22px #e6b450) sepia(1) saturate(4) hue-rotate(-12deg); animation: drumin 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both, spin 40s linear infinite; }
 .intro strong { font-size: clamp(1.4rem, 6vw, 2.2rem); font-weight: 800; letter-spacing: 0.22em; color: #f6f1e7; animation: fadeup 1s ease-out 0.9s both; }
-.intro em { font-style: normal; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #e6b450; animation: fadeup 1s ease-out 2.2s both; }
+.intro em { font-style: normal; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #e6b450; animation: fadeup 1s ease-out 1.6s both, tapcue 2.4s ease-in-out 2.6s infinite; }
+@keyframes tapcue { 50% { opacity: 0.45; } }
 .intro span { max-width: 30ch; color: #b5ab9c; font-size: 0.98rem; animation: fadeup 1s ease-out 1.5s both; }
 @keyframes drumin { from { opacity: 0; scale: 0.4; filter: drop-shadow(0 0 0 #e6b450) sepia(1) saturate(4) hue-rotate(-12deg) blur(8px); } }
 @keyframes fadeup { from { opacity: 0; transform: translateY(12px); } }

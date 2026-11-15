@@ -186,6 +186,7 @@ const chapter: Chapter = {
       sort: 943,
       place: l('Chùa Phật Tích, Tiên Du, Bắc Ninh', 'Phật Tích pagoda, Tiên Du, Bắc Ninh'),
       coord: [106.0261, 21.0938],
+      model: 'onepillar',
       evidence: ['arch', 'chron'],
       summary: l(
         'Các vua Lý dựng chùa tháp bằng đá và gạch trên những ngọn núi quanh đồng bằng. Chùa Phật Tích còn pho tượng Phật A Di Đà bằng đá và hàng tượng thú. Chùa Dạm còn cột đá chạm rồng. Núi Đọi còn tấm bia năm 1121, cũng là bằng chứng sớm nhất về múa rối nước. Đây là phần nhìn thấy được rõ nhất của mỹ thuật thời Lý.',
@@ -274,6 +275,7 @@ const chapter: Chapter = {
       sort: 930,
       place: l('Văn Miếu - Quốc Tử Giám, Đống Đa, Hà Nội', 'Văn Miếu - Quốc Tử Giám, Đống Đa, Hanoi'),
       coord: [105.8357, 21.0281],
+      model: 'khuevan',
       evidence: ['chron'],
       summary: l(
         'Trong một triều đại sùng Phật, ba việc nối nhau trong sáu năm đã mở đường cho Nho học: lập Văn Miếu thờ Khổng Tử năm 1070, mở khoa thi đầu tiên năm 1075, lập Quốc Tử Giám năm 1076. Khu di tích ở Hà Nội ngày nay đứng trên chính địa điểm ấy, nhưng các công trình và 82 bia tiến sĩ đều thuộc những thời sau.',

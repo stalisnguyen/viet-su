@@ -102,6 +102,7 @@ const chapter: Chapter = {
       sort: 197,
       place: l('Kinh thành Huế, bờ bắc sông Hương, Huế', 'Huế citadel, north bank of the Perfume River, Huế'),
       coord: [107.5778, 16.4697],
+      model: 'urn',
       evidence: ['arch', 'chron'],
       summary: l(
         `Kinh thành Huế là trung tâm quyền lực của triều Nguyễn trong gần một thế kỷ rưỡi. Cùng với các lăng vua dọc sông Hương, nó trở thành di sản văn hóa thế giới đầu tiên của Việt Nam năm 1993. Nhã nhạc cung đình được UNESCO công nhận năm 2003, và chín đỉnh đồng trước Thế Miếu được ghi danh di sản tư liệu khu vực năm 2024.`,

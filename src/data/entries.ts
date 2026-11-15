@@ -362,6 +362,7 @@ const base: Entry[] = [
     sort: 2700,
     place: l('Đông Sơn, Thanh Hóa', 'Đông Sơn, Thanh Hóa'),
     coord: [105.78, 19.85],
+    model: 'situla',
     evidence: ['arch'],
     summary: l(
       'Văn hóa đồ đồng rực rỡ nhất Đông Nam Á cổ đại, phân bố ở lưu vực sông Hồng, sông Mã và sông Cả. Trống đồng Đông Sơn là biểu tượng của nó.',

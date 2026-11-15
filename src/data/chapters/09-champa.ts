@@ -226,6 +226,7 @@ const chapter: Chapter = {
       sort: 1216,
       place: l(`Đồi Cù Lao, Nha Trang, Khánh Hòa`, `Cù Lao hill, Nha Trang, Khánh Hòa`),
       coord: [109.1956, 12.2653],
+      model: 'chamtower',
       evidence: ['arch', 'chron', 'legend'],
       summary: l(
         `Trên đồi Cù Lao ở Nha Trang, người Chăm xứ Kauthara thờ nữ thần Po Nagar, Bà Mẹ Xứ Sở. Đền bị giặc cướp phá vào thế kỷ 8 và được vua Satyavarman dựng lại. Điều ít nơi có là việc thờ cúng ở đây chưa bao giờ dứt: người Việt đến sau tiếp tục thờ bà dưới tên Thiên Y A Na.`,

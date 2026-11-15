@@ -190,6 +190,7 @@ const chapter: Chapter = {
       sort: 1202,
       place: l(`Thôn My Dương, xã Thanh Mai, Thanh Oai, Hà Nội (hiện vật ở Bảo tàng Hà Nội)`, `My Dương hamlet, Thanh Mai, Thanh Oai, Hanoi (now in the Hanoi Museum)`),
       coord: [105.746, 20.888],
+      model: 'bell',
       evidence: ['arch', 'chron'],
       summary: l(
         `Chuông Thanh Mai đúc năm 798 là quả chuông đồng có niên đại sớm nhất tìm thấy ở Việt Nam. Hơn 1.500 chữ Hán khắc trên thân chuông ghi tên những người góp công đúc, cho ta nghe trực tiếp tiếng nói của một cộng đồng Phật tử An Nam thời Đường. Cùng thời, các nhà sư Giao Châu và Ái Châu đã theo đường biển sang tận Ấn Độ cầu pháp.`,

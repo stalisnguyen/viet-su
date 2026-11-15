@@ -464,8 +464,12 @@ export default function App() {
   useEffect(() => {
     if (!intro) return;
     try { sessionStorage.setItem('vstd-intro', '1'); } catch { /* bỏ qua */ }
-    const t = window.setTimeout(() => setIntro(false), 4200);
-    return () => window.clearTimeout(t);
+    // Màn mở đầu đứng yên cho tới khi người xem chạm, cuộn hoặc bấm phím
+    const close = () => setIntro(false);
+    const onKey = (e: KeyboardEvent) => { if (e.key !== 'Tab') close(); };
+    window.addEventListener('wheel', close, { passive: true });
+    window.addEventListener('keydown', onKey);
+    return () => { window.removeEventListener('wheel', close); window.removeEventListener('keydown', onKey); };
   }, [intro]);
   // Mỗi phần có đường dẫn riêng (#p-..., #e-...) để chia sẻ; mở đường dẫn đó là tới thẳng phần ấy
   useEffect(() => {
@@ -678,7 +682,7 @@ export default function App() {
           <img src={mark} alt="" />
           <strong>VIỆT SỬ TOÀN ĐỒ</strong>
           <span>{lang === 'vi' ? '800.000 năm lịch sử Việt Nam, kể trên một tấm bản đồ' : '800,000 years of Vietnamese history, told on one map'}</span>
-          <em>{lang === 'vi' ? 'Chạm để vào ngay' : 'Tap to enter'}</em>
+          <em>{lang === 'vi' ? 'Chạm để vào' : 'Tap to enter'}</em>
         </button>
       )}
       <nav className="dock" aria-label={lang === 'vi' ? 'Di chuyển trong trang' : 'Page navigation'}>

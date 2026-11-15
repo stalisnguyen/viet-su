@@ -318,6 +318,7 @@ const chapter: Chapter = {
       sort: 1013,
       place: l('Chùa Nhất Trụ, Trường Yên, Ninh Bình', 'Nhất Trụ Pagoda, Trường Yên, Ninh Bình'),
       coord: [105.9076, 20.2879],
+      model: 'pillar',
       evidence: ['arch', 'chron'],
       summary: l(
         'Ở Hoa Lư, những người biết chữ và hiểu việc đời nhiều nhất là các nhà sư. Khuông Việt, Pháp Thuận và Vạn Hạnh bàn việc nước, soạn văn thư và tiếp sứ nhà Tống cho vua Đinh, vua Lê. Dấu vết còn lại là những cột đá tám mặt khắc kinh, trong đó có cột cao hơn bốn mét dựng năm 995 ở chùa Nhất Trụ.',
