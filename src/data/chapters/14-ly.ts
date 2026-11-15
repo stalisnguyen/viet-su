@@ -15,8 +15,8 @@ const chapter: Chapter = {
       'Why did a dynasty founded by a man raised in a Buddhist monastery hold the country for more than two centuries, when the three dynasties before it each lasted only a few decades?',
     ),
     summary: l(
-      'Năm 1009, Lý Công Uẩn được triều thần và giới tăng sĩ đưa lên ngôi. Năm sau ông dời đô từ Hoa Lư ra thành Đại La và đặt tên là Thăng Long. Trong 216 năm, nhà Lý đặt tên nước là Đại Việt, lập Văn Miếu, đắp đê, dựng chùa tháp, chặn quân Tống ở sông Như Nguyệt và mở đất về phía nam. Năm 1225 ngôi vua chuyển sang họ Trần.',
-      'In 1009 Lý Công Uẩn was raised to the throne by court officials and Buddhist monks. A year later he moved the capital from Hoa Lư to the old citadel of Đại La and named it Thăng Long. Over 216 years the Lý named the state Đại Việt, founded the Temple of Literature, built dykes, pagodas and towers, stopped a Song army on the Như Nguyệt river and pushed the border south. In 1225 the throne passed to the Trần family.',
+      'Năm 1009, Lý Công Uẩn được triều thần và giới tăng sĩ đưa lên ngôi. Năm sau ông dời đô từ Hoa Lư ra thành Đại La và đặt tên là Thăng Long. Trong 216 năm, nhà Lý đặt tên nước là Đại Việt, lập Văn Miếu, đắp đê, dựng chùa tháp, chặn cuộc xâm lược của nhà Tống ở sông Như Nguyệt và mở đất về phía nam. Năm 1225 ngôi vua chuyển sang họ Trần.',
+      'In 1009 Lý Công Uẩn was raised to the throne by court officials and Buddhist monks. A year later he moved the capital from Hoa Lư to the old citadel of Đại La and named it Thăng Long. Over 216 years the Lý named the state Đại Việt, founded the Temple of Literature, built dykes, pagodas and towers, stopped a Song invasion on the Như Nguyệt river and pushed the border south. In 1225 the throne passed to the Trần family.',
     ),
     detail: [
       l(
@@ -327,8 +327,8 @@ const chapter: Chapter = {
           'Lý Thường Kiệt (1019 - 1105) was a eunuch who served three kings, Thái Tông, Thánh Tông and Nhân Tông. In late 1075, together with the Tày-Nùng leader Tông Đản, he led land and naval forces into Song territory, took Qinzhou and Lianzhou, then besieged Yongzhou, modern Nanning in Guangxi. In early 1076 Yongzhou fell; the Lý army razed it and went home.',
         ),
         l(
-          'Mùa thu năm 1076 vua Tống Thần Tông sai Quách Quỳ và Triệu Tiết đem quân sang. James Anderson ước tính khoảng 100.000 quân cùng 200.000 dân phu. Lý Thường Kiệt đắp lũy đất có rào tre dọc bờ nam sông Như Nguyệt, dài hơn 10 km qua vùng Tam Giang, Tam Đa và Thị Cầu ngày nay, và tập trung khoảng 400 thuyền. Thủy quân Lý đồng thời chặn đường biển.',
-          'In autumn 1076 Emperor Shenzong sent Guo Kui and Zhao Xie south. James Anderson estimates about 100,000 soldiers with 200,000 conscript porters. Lý Thường Kiệt raised an earth rampart with bamboo palisades along the south bank of the Như Nguyệt, more than 10 km long through what are now Tam Giang, Tam Đa and Thị Cầu, and gathered about 400 boats. The Lý fleet also blocked the sea route.',
+          'Mùa thu năm 1076 vua Tống Thần Tông sai Quách Quỳ và Triệu Tiết đem quân sang xâm lược. James Anderson ước tính khoảng 100.000 quân cùng 200.000 dân phu. Lý Thường Kiệt đắp lũy đất có rào tre dọc bờ nam sông Như Nguyệt, dài hơn 10 km qua vùng Tam Giang, Tam Đa và Thị Cầu ngày nay, và tập trung khoảng 400 thuyền. Thủy quân Lý đồng thời chặn đường biển.',
+          'In autumn 1076 Emperor Shenzong sent Guo Kui and Zhao Xie south to invade. James Anderson estimates about 100,000 soldiers with 200,000 conscript porters. Lý Thường Kiệt raised an earth rampart with bamboo palisades along the south bank of the Như Nguyệt, more than 10 km long through what are now Tam Giang, Tam Đa and Thị Cầu, and gathered about 400 boats. The Lý fleet also blocked the sea route.',
         ),
         l(
           'Quân Tống bắc cầu phao, đưa được vài trăm quân sang sông trước khi cầu bị đốt; một toán kỵ binh đã đến cách Thăng Long vài cây số rồi bị đẩy lui. Hai bên giữ nhau khoảng một tháng. Một trận tập kích đêm của quân Lý thất bại, hai hoàng tử chết đuối ở sông Kháo Túc. Quân Tống cũng kiệt sức: tư liệu Trung Hoa ghi họ mất năm, sáu phần mười quân số, phần lớn vì bệnh. Quách Quỳ nhận lời giảng hòa và rút quân.',

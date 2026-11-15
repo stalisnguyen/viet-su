@@ -599,8 +599,8 @@ const base: Entry[] = [
         'Thục Phán\'s origin is unsettled. Old texts call him a son of the king of Shu (modern Sichuan). The Nguyễn court historians in the Cương mục doubted this, since Shu lay thousands of miles of mountain and forest from Văn Lang. A Tày legend from Cao Bằng makes him the son of Thục Chế, king of Nam Cương just north of Văn Lang. In the 1950s Trần Văn Giáp and Đào Duy Anh again defended the Shu origin.',
       ),
       l(
-        'Về niên đại: Toàn thư ghi 257 - 208 TCN, còn Sử ký cho thấy Triệu Đà chỉ thu phục Âu Lạc sau năm 180 TCN. Sử ký cũng không nhắc gì đến nỏ thần hay Mỵ Châu, mà nói Triệu Đà dùng của cải và uy lực để khiến Âu Lạc thần phục. Chuyện tình Mỵ Châu - Trọng Thủy vì vậy được xếp vào truyền thuyết.',
-        'On dates: the Toàn thư gives 257 - 208 BCE, while the Shiji shows that Zhao Tuo subdued Âu Lạc only after 180 BCE. The Shiji also says nothing of a magic crossbow or Mỵ Châu; it states that Zhao Tuo used wealth and power to bring Âu Lạc to submission. The story of Mỵ Châu and Trọng Thủy is therefore classed as legend.',
+        'Về niên đại: Toàn thư ghi 257 - 208 TCN, còn Sử ký cho thấy Triệu Đà chỉ đánh chiếm Âu Lạc sau năm 180 TCN. Sử ký cũng không nhắc gì đến nỏ thần hay Mỵ Châu, mà nói Triệu Đà dùng của cải và uy lực để khiến Âu Lạc thần phục. Chuyện tình Mỵ Châu - Trọng Thủy vì vậy được xếp vào truyền thuyết.',
+        'On dates: the Toàn thư gives 257 - 208 BCE, while the Shiji shows that Zhao Tuo conquered Âu Lạc only after 180 BCE. The Shiji also says nothing of a magic crossbow or Mỵ Châu; it states that Zhao Tuo used wealth and power to bring Âu Lạc to submission. The story of Mỵ Châu and Trọng Thủy is therefore classed as legend.',
       ),
     ],
     sources: ['toanthu', 'suky', 'cuongmuc', 'wiki-adv', 'wiki-aulac'],

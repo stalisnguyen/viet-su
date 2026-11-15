@@ -15,13 +15,13 @@ const chapter: Chapter = {
       `What did three centuries under the Sui and Tang leave in the language, place names and citadels of the Việt, and what did they fail to erase?`,
     ),
     summary: l(
-      `Năm 602, nhà Tùy đánh bại Lý Phật Tử và nhập lại vùng châu thổ sông Hồng vào đế quốc phương Bắc. Nhà Đường kế tiếp, năm 679 lập An Nam đô hộ phủ, đặt trị sở ở Tống Bình, tức Hà Nội ngày nay. Ba thế kỷ sau đó có các cuộc nổi dậy của Mai Thúc Loan, Phùng Hưng, Dương Thanh, có chiến tranh với Nam Chiếu và thành Đại La của Cao Biền. Đến năm 905, quyền lực nhà Đường ở đây chỉ còn trên danh nghĩa.`,
+      `Năm 602, nhà Tùy đánh bại Lý Phật Tử và nhập lại vùng châu thổ sông Hồng vào đế quốc phương Bắc. Nhà Đường kế tiếp, năm 679 lập An Nam đô hộ phủ, đặt thủ phủ ở Tống Bình, tức Hà Nội ngày nay. Ba thế kỷ sau đó có các cuộc nổi dậy của Mai Thúc Loan, Phùng Hưng, Dương Thanh, có chiến tranh với Nam Chiếu và thành Đại La của Cao Biền. Đến năm 905, quyền lực nhà Đường ở đây chỉ còn trên danh nghĩa.`,
       `In 602 the Sui defeated Lý Phật Tử and brought the Red River plain back into the northern empire. The Tang followed and in 679 created the Protectorate General to Pacify the South (Annan, An Nam), seated at Tống Bình, today's Hanoi. The next three centuries saw the risings of Mai Thúc Loan, Phùng Hưng and Dương Thanh, the wars with Nanzhao and Gao Pian's citadel of Đại La. By 905 Tang power here survived in name only.`,
     ),
     detail: [
       l(
-        `Năm 602, tướng Tùy là Lưu Phương đem quân sang, Lý Phật Tử đầu hàng và nước Vạn Xuân chấm dứt. Khi nhà Tùy sụp đổ, viên quan giữ Giao Châu là Khâu Hòa quy phục nhà Đường năm 622. Sau vài lần đổi tên, tháng Tám năm 679 nhà Đường lập An Nam đô hộ phủ. Đô hộ phủ là kiểu cơ quan nhà Đường đặt ở vùng biên có nhiều tộc người, và tên An Nam, nghĩa là phương Nam yên ổn, bắt đầu từ đây.`,
-        `In 602 the Sui general Liu Fang marched south, Lý Phật Tử surrendered and the kingdom of Vạn Xuân ended. When the Sui collapsed, the official holding Jiaozhou, Qiu He (Khâu Hòa), submitted to the Tang in 622. After several renamings, in the eighth month of 679 the Tang set up the Annan Protectorate. A protectorate was the kind of office the Tang used on frontiers with many peoples, and the name Annam, "the pacified south", begins here.`,
+        `Năm 602, tướng Tùy là Lưu Phương đem quân sang xâm lược, Lý Phật Tử đầu hàng và nước Vạn Xuân chấm dứt. Khi nhà Tùy sụp đổ, viên quan giữ Giao Châu là Khâu Hòa quy phục nhà Đường năm 622. Sau vài lần đổi tên, tháng Tám năm 679 nhà Đường lập An Nam đô hộ phủ. Đô hộ phủ là kiểu cơ quan nhà Đường đặt ở vùng biên có nhiều tộc người, và tên An Nam, nghĩa là phương Nam yên ổn, bắt đầu từ đây.`,
+        `In 602 the Sui general Liu Fang invaded, Lý Phật Tử surrendered and the kingdom of Vạn Xuân ended. When the Sui collapsed, the official holding Jiaozhou, Qiu He (Khâu Hòa), submitted to the Tang in 622. After several renamings, in the eighth month of 679 the Tang set up the Annan Protectorate. A protectorate was the kind of office the Tang used on frontiers with many peoples, and the name Annam, "the pacified south", a name that reflects the conqueror's view, begins here.`,
       ),
       l(
         `Người An Nam nổi dậy nhiều lần: Lý Tự Tiên và Đinh Kiến năm 687 vì thuế bị tăng gấp đôi, Mai Thúc Loan ở Hoan Châu đầu thế kỷ 8, Phùng Hưng ở Đường Lâm cuối thế kỷ 8, Dương Thanh năm 819. Giữa thế kỷ 9, nước Nam Chiếu ở Vân Nam liên kết với các thủ lĩnh miền núi, hai lần chiếm phủ thành. Năm 866, Cao Biền lấy lại An Nam, xây lại thành Đại La, và nhà Đường đổi đô hộ phủ thành Tĩnh Hải quân.`,
@@ -64,13 +64,13 @@ const chapter: Chapter = {
       coord: [105.8372, 21.0394],
       evidence: ['chron', 'arch'],
       summary: l(
-        `Năm 679, nhà Đường đổi Giao Châu thành An Nam đô hộ phủ, đặt trị sở ở Tống Bình. Từ đó có tên An Nam, cái tên mà Trung Hoa rồi phương Tây dùng để gọi nước Việt suốt hơn một nghìn năm. Dưới nền Hoàng thành Thăng Long, các nhà khảo cổ đã tìm thấy lớp kiến trúc thế kỷ 7 - 9 của chính trung tâm cai trị này.`,
+        `Năm 679, nhà Đường đổi Giao Châu thành An Nam đô hộ phủ, đặt thủ phủ ở Tống Bình. Từ đó có tên An Nam, cái tên mà Trung Hoa rồi phương Tây dùng để gọi nước Việt suốt hơn một nghìn năm. Dưới nền Hoàng thành Thăng Long, các nhà khảo cổ đã tìm thấy lớp kiến trúc thế kỷ 7 - 9 của chính trung tâm cai trị này.`,
         `In 679 the Tang turned Jiaozhou into the Annan Protectorate, seated at Tống Bình. This is the origin of "Annam", the name China and later the West used for the Việt country for more than a thousand years. Beneath the Thăng Long citadel archaeologists have found the 7th - 9th century architectural layer of this very seat of government.`,
       ),
       detail: [
         l(
-          `Cương mục chép tháng Tám năm Điều Lộ thứ nhất (679), nhà Đường đặt An Nam đô hộ phủ, trị sở ở Giao Châu, quản 12 châu: Giao, Lục, Phong, Ái, Hoan, Trường, Phúc Lộc, Thang, Chi, Vũ Nga, Diễn và Vũ An. Chữ "an" nghĩa là yên, "nam" là phương nam, nên tên này thường được hiểu là phương Nam đã được dẹp yên. Năm 757, giữa loạn An Lộc Sơn, phủ bị đổi thành Trấn Nam, sau đó lấy lại tên cũ.`,
-          `The Cương mục records that in the eighth month of the first Tiaolu year (679) the Tang set up the Annan Protectorate with its seat in Jiaozhou, governing 12 prefectures: Giao, Lục, Phong, Ái, Hoan, Trường, Phúc Lộc, Thang, Chi, Vũ Nga, Diễn and Vũ An. An means "peaceful" and nan "south", so the name is usually read as "the pacified south". In 757, during the An Lushan rebellion, it was renamed Zhennan, and later took back the old name.`,
+          `Cương mục chép tháng Tám năm Điều Lộ thứ nhất (679), nhà Đường đặt An Nam đô hộ phủ, thủ phủ ở Giao Châu, quản 12 châu: Giao, Lục, Phong, Ái, Hoan, Trường, Phúc Lộc, Thang, Chi, Vũ Nga, Diễn và Vũ An. Chữ "an" nghĩa là yên, "nam" là phương nam, nên tên này thể hiện cách nhìn của nhà Đường, coi phương Nam là vùng đất đã bị họ dẹp yên. Năm 757, giữa loạn An Lộc Sơn, phủ bị đổi thành Trấn Nam, sau đó lấy lại tên cũ.`,
+          `The Cương mục records that in the eighth month of the first Tiaolu year (679) the Tang set up the Annan Protectorate with its seat in Jiaozhou, governing 12 prefectures: Giao, Lục, Phong, Ái, Hoan, Trường, Phúc Lộc, Thang, Chi, Vũ Nga, Diễn and Vũ An. An means "peaceful" and nan "south", so the name reflects the Tang view of the south as a land they had brought to heel. In 757, during the An Lushan rebellion, it was renamed Zhennan, and later took back the old name.`,
         ),
         l(
           `Đứng đầu là viên đô hộ do triều đình cử sang. Vi An Lu đếm được 77 viên quan từng trị nhậm ở đây từ năm 622 đến 905, trong đó 58 người giữ chức đô hộ. Người Lý, tức cư dân bản địa theo cách gọi của sử Đường, chỉ nộp nửa mức thuế. Khi đô hộ Lưu Diên Hựu đòi thu đủ năm 687, Lý Tự Tiên rồi Đinh Kiến nổi dậy và giết ông ta.`,
@@ -110,11 +110,11 @@ const chapter: Chapter = {
       detail: [
         l(
           `Theo các bài viết của giáo sư Trần Quốc Vượng và sử triều Nguyễn, ông sinh ở làng Mai Phụ, một làng muối ven biển nay thuộc Thạch Hà, Hà Tĩnh, rồi theo mẹ sang Ngọc Trừng, Nam Đàn. Cương mục giải thích rằng người đương thời gọi ông là Hắc Đế vì da ông rất đen. Căn cứ của nghĩa quân ở Sa Nam bên sông Lam, với thành Vạn An dựa vào núi Hùng Sơn, còn gọi là núi Đụn.`,
-          `According to Professor Trần Quốc Vượng and the Nguyễn histories, he was born in Mai Phụ, a salt-making village on the coast now in Thạch Hà, Hà Tĩnh, and moved with his mother to Ngọc Trừng in Nam Đàn. The Cương mục explains that people called him the Black Emperor because he was very dark-skinned. The rebels' base was at Sa Nam on the Lam river, with the citadel of Vạn An backed by Mount Hùng Sơn, also called Mount Đụn.`,
+          `According to Professor Trần Quốc Vượng and the Nguyễn histories, he was born in Mai Phụ, a salt-making village on the coast now in Thạch Hà, Hà Tĩnh, and moved with his mother to Ngọc Trừng in Nam Đàn. The Cương mục explains that people called him the Black Emperor because he was very dark-skinned. The insurgents' base was at Sa Nam on the Lam river, with the citadel of Vạn An backed by Mount Hùng Sơn, also called Mount Đụn.`,
         ),
         l(
           `Sử nhà Đường, được Cương mục dẫn lại, chép ông xưng Hắc Đế, kêu gọi được 32 châu, liên kết với Lâm Ấp, Chân Lạp và nước Kim Lân, quân số gọi là 40 vạn. Vua Đường Huyền Tông sai hoạn quan Dương Tư Húc cùng đô hộ Quang Sở Khách đem khoảng 10 vạn quân đi theo con đường cũ của Mã Viện, đánh bất ngờ và phá tan nghĩa quân. Xác người chết bị chất thành gò để răn đe.`,
-          `The Tang histories, as quoted in the Cương mục, say he proclaimed himself Black Emperor, roused 32 prefectures, allied with Linyi (Champa), Zhenla and a kingdom called Jinlin, and led forces put at 400,000. Emperor Xuanzong sent the eunuch general Yang Sixu with the protector Guang Chuke and about 100,000 troops along Ma Yuan's old road; they struck by surprise and destroyed the rebel army. The dead were piled into a mound as a warning.`,
+          `The Tang histories, as quoted in the Cương mục, say he proclaimed himself Black Emperor, roused 32 prefectures, allied with Linyi (Champa), Zhenla and a kingdom called Jinlin, and led forces put at 400,000. Emperor Xuanzong sent the eunuch general Yang Sixu with the protector Guang Chuke and about 100,000 troops along Ma Yuan's old road; they struck by surprise and destroyed the insurgent army. The dead were piled into a mound as a warning.`,
         ),
         l(
           `Truyền thuyết địa phương kể rằng ông mất vì bệnh trong rừng, con trai ông nối ngôi một thời gian. Mộ và đền thờ hai cha con nằm ở thung lũng Hùng Sơn, thị trấn Nam Đàn. Lễ hội đền Vua Mai mở vào rằm tháng Giêng. Tối ngày 3 tháng 2 năm 2023, đền nhận bằng xếp hạng di tích quốc gia đặc biệt trong lễ kỷ niệm 1310 năm khởi nghĩa Hoan Châu.`,
@@ -132,7 +132,7 @@ const chapter: Chapter = {
         ),
         l(
           `Chuyện ông nổi dậy khi đang đi phu gánh vải tiến cống cho Dương Quý Phi từng có trong sách giáo khoa. Phan Huy Lê không tìm thấy ghi chép đời Đường nào về việc cống vải từ An Nam, và Dương Quý Phi sinh năm 719, sau mốc 713. Chuyện này nay được coi là truyền thuyết dân gian, còn lưu trong hát chầu văn xứ Nghệ. Việc nghĩa quân chiếm được Tống Bình, như một số bài báo viết, cũng không có trong phần Cương mục chép về cuộc khởi nghĩa.`,
-          `The story that he rebelled while carrying tribute lychees for the consort Yang Guifei used to appear in schoolbooks. Phan Huy Lê found no Tang record of lychee tribute from Annan, and Yang Guifei was born in 719, after the 713 date. The story is now treated as folklore, preserved in the chầu văn ritual songs of Nghệ An. The claim in some newspaper articles that the rebels took Tống Bình is likewise absent from the Cương mục's account of the rising.`,
+          `The story that he rebelled while carrying tribute lychees for the consort Yang Guifei used to appear in schoolbooks. Phan Huy Lê found no Tang record of lychee tribute from Annan, and Yang Guifei was born in 719, after the 713 date. The story is now treated as folklore, preserved in the chầu văn ritual songs of Nghệ An. The claim in some newspaper articles that the insurgents took Tống Bình is likewise absent from the Cương mục's account of the rising.`,
         ),
       ],
       sources: ['bt3-cuongmuc-4', 'bt3-bna-hoanchau', 'bt3-lmc-2013', 'bt3-tp-1300', 'bt3-nd-maihacde', 'bt3-bvh-vuamai', 'bt3-wiki-mai'],
@@ -266,19 +266,19 @@ const chapter: Chapter = {
       slug: 'nam-chieu-danh-an-nam',
       period: 'bac-thuoc-3',
       kind: 'event',
-      name: l(`Từ Dương Thanh đến Nam Chiếu: An Nam rối loạn`, `From Dương Thanh to Nanzhao: Annan in turmoil`),
+      name: l(`Từ Dương Thanh đến Nam Chiếu: nửa thế kỷ chống đô hộ`, `From Dương Thanh to Nanzhao: half a century of resistance`),
       date: l(`819 - 866`, `819 - 866 CE`),
       sort: 1137,
       place: l(`Tống Bình (Hà Nội)`, `Tống Bình (Hanoi)`),
       evidence: ['chron'],
       summary: l(
-        `Năm 819, thứ sử Hoan Châu Dương Thanh giết viên đô hộ tham bạo Lý Tượng Cổ, mở đầu nửa thế kỷ bất ổn. Từ năm 846, nước Nam Chiếu ở Vân Nam liên tiếp tràn xuống, được nhiều thủ lĩnh miền núi An Nam hưởng ứng, và đầu năm 863 chiếm hẳn phủ thành Tống Bình. Nhà Đường mất An Nam ba năm, cho đến khi Cao Biền đánh lại.`,
-        `In 819 Dương Thanh, prefect of Hoan, killed the grasping protector Li Xianggu and opened half a century of instability. From 846 the kingdom of Nanzhao in Yunnan raided south again and again, joined by many upland chiefs of Annan, and early in 863 it took the seat at Tống Bình outright. The Tang lost Annan for three years, until Gao Pian fought his way back.`,
+        `Năm 819, thứ sử Hoan Châu Dương Thanh giết viên đô hộ tham bạo Lý Tượng Cổ, mở đầu nửa thế kỷ người An Nam liên tục nổi dậy chống các viên quan đô hộ. Từ năm 846, nước Nam Chiếu ở Vân Nam liên tiếp tràn xuống, được nhiều thủ lĩnh miền núi An Nam hưởng ứng, và đầu năm 863 chiếm hẳn phủ thành Tống Bình. Nhà Đường mất An Nam ba năm, cho đến khi Cao Biền đánh lại.`,
+        `In 819 Dương Thanh, prefect of Hoan, killed the grasping protector Li Xianggu and opened half a century in which the people of Annan rose again and again against the Tang protectors. From 846 the kingdom of Nanzhao in Yunnan raided south again and again, joined by many upland chiefs of Annan, and early in 863 it took the seat at Tống Bình outright. The Tang lost Annan for three years, until Gao Pian fought his way back.`,
       ),
       detail: [
         l(
           `Cương mục chép Lý Tượng Cổ, người tôn thất nhà Đường, tham lam và hà khắc. Ông ta sai Dương Thanh, vốn dòng dõi tù trưởng, đi đánh giặc Hoàng Động. Dương Thanh nửa đêm quay lại giết Tượng Cổ. Nhà Đường tha tội và đổi ông đi làm thứ sử Quỳnh Châu, cử Quế Trọng Vũ sang làm đô hộ. Dương Thanh không nhận. Quế Trọng Vũ chiêu dụ các tù trưởng, giết được ông và diệt cả họ.`,
-          `The Cương mục describes Li Xianggu, a member of the Tang imperial clan, as greedy and harsh. He sent Dương Thanh, who came from a line of chiefs, against the Huang Grotto rebels. Dương Thanh turned back at night and killed him. The Tang pardoned Thanh and reassigned him as prefect of Qiong, sending Gui Zhongwu as protector. Thanh refused. Gui Zhongwu won over the chiefs, had him beheaded and wiped out his family.`,
+          `The Cương mục describes Li Xianggu, a member of the Tang imperial clan, as greedy and harsh. He sent Dương Thanh, who came from a line of chiefs, against the Huang Grotto insurgents. Dương Thanh turned back at night and killed him. The Tang pardoned Thanh and reassigned him as prefect of Qiong, sending Gui Zhongwu as protector. Thanh refused. Gui Zhongwu won over the chiefs, had him beheaded and wiped out his family.`,
         ),
         l(
           `Năm 854, đô hộ Lý Trác cắt việc đổi muối lấy ngựa với người miền núi ở Phong Châu và giết tù trưởng họ Đỗ là Đỗ Tồn Thành. Các thủ lĩnh quay sang Nam Chiếu. Tháng Chạp năm 860, Nam Chiếu chiếm phủ, đô hộ Lý Hộ bỏ chạy, năm sau mới lấy lại. Đầu năm 863, khoảng năm vạn quân Nam Chiếu và đồng minh hạ thành lần nữa. Kinh lược sứ Sái Tập chết trong lúc tìm thuyền chạy thoát.`,

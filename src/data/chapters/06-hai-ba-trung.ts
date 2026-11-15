@@ -15,8 +15,8 @@ const chapter: Chapter = {
       'Why has an uprising that held the country for only three years been remembered for two thousand years?',
     ),
     summary: l(
-      'Năm 40, Trưng Trắc, con gái Lạc tướng huyện Mê Linh, cùng em là Trưng Nhị nổi dậy chống chính quyền nhà Hán ở Giao Chỉ. Sử chép 65 thành hưởng ứng và Trưng Trắc lên làm vua. Năm 42 - 43, tướng Mã Viện đem quân sang đánh bại hai bà. Từ đó nhà Hán cai trị trực tiếp, còn hai bà được thờ ở nhiều làng Bắc Bộ.',
-      `In 40 CE Trưng Trắc, daughter of the Lạc lord of Mê Linh, rose with her younger sister Trưng Nhị against the Han administration in Jiaozhi. The histories say 65 strongholds joined them and Trưng Trắc was made queen. In 42 - 43 the Han general Ma Yuan (Mã Viện) defeated them. Direct Han rule followed, while the sisters came to be worshipped in many villages of the north.`,
+      'Năm 40, Trưng Trắc, con gái Lạc tướng huyện Mê Linh, cùng em là Trưng Nhị nổi dậy chống chính quyền nhà Hán ở Giao Chỉ. Sử chép 65 thành hưởng ứng và Trưng Trắc lên làm vua. Năm 42 - 43, tướng Mã Viện đem quân sang đàn áp cuộc khởi nghĩa của hai bà. Từ đó nhà Hán đô hộ trực tiếp, còn hai bà được thờ ở nhiều làng Bắc Bộ.',
+      `In 40 CE Trưng Trắc, daughter of the Lạc lord of Mê Linh, rose with her younger sister Trưng Nhị against the Han administration in Jiaozhi. The histories say 65 strongholds joined them and Trưng Trắc was made queen. In 42 - 43 the Han general Ma Yuan (Mã Viện) crushed their uprising. Direct Han domination followed, while the sisters came to be worshipped in many villages of the north.`,
     ),
     detail: [
       l(
@@ -104,13 +104,13 @@ const chapter: Chapter = {
       coord: [106.043, 21.036],
       evidence: ['chron'],
       summary: l(
-        'Mùa xuân năm 40, hai chị em họ Trưng đánh vào trị sở quận Giao Chỉ. Thái thú Tô Định bỏ chạy, người Việt ở bốn quận hưởng ứng, 65 thành về tay nghĩa quân và Trưng Trắc lên làm vua. Sử Trung Hoa và sử Việt giải thích nguyên nhân khác nhau, và sự khác nhau đó cho thấy mỗi thời đọc lại câu chuyện theo cách của mình.',
-        'In spring 40 CE the Trưng sisters attacked the seat of Jiaozhi commandery. The governor Su Ding fled, people in four commanderies joined, 65 strongholds fell to the rebels and Trưng Trắc became queen. Chinese and Vietnamese histories explain the cause differently, and the gap shows how each age reread the story in its own way.',
+        'Mùa xuân năm 40, hai chị em họ Trưng đánh vào thủ phủ quận Giao Chỉ. Thái thú Tô Định bỏ chạy, người Việt ở bốn quận hưởng ứng, 65 thành về tay nghĩa quân và Trưng Trắc lên làm vua. Sử Trung Hoa và sử Việt giải thích nguyên nhân khác nhau, và sự khác nhau đó cho thấy mỗi thời đọc lại câu chuyện theo cách của mình.',
+        'In spring 40 CE the Trưng sisters attacked the seat of Jiaozhi commandery. The governor Su Ding fled, people in four commanderies joined, 65 strongholds fell to the insurgents and Trưng Trắc became queen. Chinese and Vietnamese histories explain the cause differently, and the gap shows how each age reread the story in its own way.',
       ),
       detail: [
         l(
-          'Hậu Hán thư ghi cuộc nổi dậy vào năm Kiến Vũ thứ 16, tức năm 40. Trưng Trắc cùng em đánh phá quận trị. Người Man, người Lý ở Cửu Chân, Nhật Nam và Hợp Phố đều hưởng ứng. Bà lấy được 65 thành và tự lập làm vua. Thứ sử Giao Chỉ và các thái thú chỉ còn giữ được thân mình. Theo Britannica, nghĩa quân chiếm Luy Lâu, trị sở của chính quyền Hán.',
-          'The Hou Hanshu dates the rising to the 16th year of Jianwu, 40 CE. Trưng Trắc and her sister attacked the commandery seat. The Man and Li peoples of Jiuzhen, Rinan and Hepu all responded. She took 65 strongholds and set herself up as queen. The inspector of Jiaozhi and the governors could do no more than save themselves. According to Britannica, the rebels took Luy Lâu (Liên Lâu), the seat of the Han administration.',
+          'Hậu Hán thư ghi cuộc nổi dậy vào năm Kiến Vũ thứ 16, tức năm 40. Trưng Trắc cùng em đánh phá quận trị. Người Man, người Lý ở Cửu Chân, Nhật Nam và Hợp Phố đều hưởng ứng. Bà lấy được 65 thành và tự lập làm vua. Thứ sử Giao Chỉ và các thái thú chỉ còn giữ được thân mình. Theo Britannica, nghĩa quân chiếm Luy Lâu, thủ phủ của chính quyền Hán.',
+          'The Hou Hanshu dates the rising to the 16th year of Jianwu, 40 CE. Trưng Trắc and her sister attacked the commandery seat. The Man and Li peoples of Jiuzhen, Rinan and Hepu all responded. She took 65 strongholds and set herself up as queen. The inspector of Jiaozhi and the governors could do no more than save themselves. According to Britannica, the insurgents took Luy Lâu (Liên Lâu), the seat of the Han administration.',
         ),
         l(
           'Đại Việt sử ký toàn thư chép Trưng Trắc đóng đô ở Mê Linh và xếp các năm 40 - 42 thành ba năm trị vì của Trưng Nữ Vương. Nhà sử học Hans Bielenstein nhận xét rằng bà nắm được vùng nông thôn nhưng không hạ nổi các thành lũy lớn có quân Hán giữ. Trong hơn một năm, triều đình Lạc Dương chưa phản ứng gì, và vùng châu thổ thực tế nằm ngoài tay nhà Hán.',
@@ -542,7 +542,7 @@ const chapter: Chapter = {
     {
       q: l(
         'Theo Hậu Hán thư, vì sao Trưng Trắc nổi dậy?',
-        'According to the Hou Hanshu, why did Trưng Trắc rebel?',
+        'According to the Hou Hanshu, why did Trưng Trắc rise up?',
       ),
       options: [
         l('Vì thái thú Tô Định giết chồng bà là Thi Sách', 'Because the governor Su Ding killed her husband Thi Sách'),

@@ -4,7 +4,7 @@ const chapter: Chapter = {
   order: 16,
   period: {
     slug: 'ho-minh',
-    name: l('Nhà Hồ và thuộc Minh', 'Hồ dynasty and Ming rule'),
+    name: l('Nhà Hồ và thời thuộc Minh', 'Hồ dynasty and Ming occupation'),
     range: l('1400 - 1427', '1400 - 1427 CE'),
     start: l('1400', '1400 CE'),
     color: '#8d99ae',
@@ -15,8 +15,8 @@ const chapter: Chapter = {
       `Why did a reforming court with a stone citadel and good guns lose the country in half a year, while a rising that began in the hills of Thanh Hóa forced the Ming army to go home?`,
     ),
     summary: l(
-      `Năm 1400, Hồ Quý Ly truất ngôi vua Trần và đổi tên nước thành Đại Ngu. Bảy năm sau, quân Minh sang đánh với danh nghĩa khôi phục họ Trần, bắt cha con họ Hồ và biến đất nước thành tỉnh Giao Chỉ. Hai mươi năm thuộc Minh khép lại khi Lê Lợi, khởi binh ở Lam Sơn năm 1418, buộc quân Minh hội thề và rút về nước cuối năm 1427.`,
-      `In 1400 Hồ Quý Ly deposed the Trần king and renamed the country Đại Ngu. Seven years later a Ming army invaded in the name of restoring the Trần, captured Hồ and his sons and turned the country into the province of Jiaozhi. Twenty years of Ming rule ended when Lê Lợi, who rose at Lam Sơn in 1418, brought the Ming to an oath and a withdrawal at the end of 1427.`,
+      `Năm 1400, Hồ Quý Ly truất ngôi vua Trần và đổi tên nước thành Đại Ngu. Bảy năm sau, quân Minh xâm lược, lấy cớ khôi phục họ Trần, bắt cha con họ Hồ và sáp nhập đất nước thành quận Giao Chỉ của nhà Minh. Hai mươi năm bị nhà Minh đô hộ khép lại khi Lê Lợi, khởi binh ở Lam Sơn năm 1418, buộc quân Minh hội thề và rút về nước cuối năm 1427.`,
+      `In 1400 Hồ Quý Ly deposed the Trần king and renamed the country Đại Ngu. Seven years later a Ming army invaded on the pretext of restoring the Trần, captured Hồ and his sons and annexed the country as the Ming province of Jiaozhi. Twenty years of Ming occupation ended when Lê Lợi, who rose at Lam Sơn in 1418, brought the Ming to an oath and a withdrawal at the end of 1427.`,
     ),
     detail: [
       l(
@@ -24,8 +24,8 @@ const chapter: Chapter = {
         `Hồ Quý Ly's rise at the Trần court and the move of the capital to Tây Đô are told in the Trần chapter. In 1400 he took the throne and named the country Đại Ngu, and a year later passed it to his son Hồ Hán Thương while keeping real power. The Hồ carried on reforms begun earlier: paper money, limits on private land and bondservants, a new examination format. In 1402 a Hồ army attacked Champa and took more land in the south.`,
       ),
       l(
-        `Cuối năm 1406, vua Vĩnh Lạc nhà Minh sai Trương Phụ và Mộc Thạnh đem quân sang. Phòng tuyến sông Hồng vỡ ở thành Đa Bang tháng 1 năm 1407, và đến tháng 6 cha con Hồ Quý Ly bị bắt ở vùng Hà Tĩnh ngày nay. Nhà Minh đặt tỉnh Giao Chỉ, đưa quan lại sang, thu thuế, đưa thợ giỏi và sách vở về Trung Hoa. Các tôn thất nhà Trần nổi dậy từ năm 1407 nhưng đến năm 1414 thì bị dập tắt.`,
-        `Late in 1406 the Yongle emperor sent Zhang Fu (Trương Phụ) and Mu Sheng (Mộc Thạnh) south with an army. The Red River defence line broke at Đa Bang in January 1407, and in June Hồ Quý Ly and his sons were captured in what is now Hà Tĩnh. The Ming set up the province of Jiaozhi, brought in officials, collected taxes and carried craftsmen and books back to China. Trần princes rose from 1407 but were crushed by 1414.`,
+        `Cuối năm 1406, vua Vĩnh Lạc nhà Minh sai Trương Phụ và Mộc Thạnh đem quân sang xâm lược. Phòng tuyến sông Hồng vỡ ở thành Đa Bang tháng 1 năm 1407, và đến tháng 6 cha con Hồ Quý Ly bị bắt ở vùng Hà Tĩnh ngày nay. Nhà Minh đặt tỉnh Giao Chỉ, đưa quan lại sang, thu thuế, đưa thợ giỏi và sách vở về Trung Hoa. Các tôn thất nhà Trần nổi dậy từ năm 1407 nhưng đến năm 1414 thì bị dập tắt.`,
+        `Late in 1406 the Yongle emperor sent Zhang Fu (Trương Phụ) and Mu Sheng (Mộc Thạnh) south with an invading army. The Red River defence line broke at Đa Bang in January 1407, and in June Hồ Quý Ly and his sons were captured in what is now Hà Tĩnh. The Ming set up the province of Jiaozhi, brought in officials, collected taxes and carried craftsmen and books back to China. Trần princes rose from 1407 but were crushed by 1414.`,
       ),
       l(
         `Năm 1418, Lê Lợi, một hào trưởng đất Lam Sơn, xưng Bình Định vương. Sáu năm đầu nghĩa quân nhiều lần phải rút lên núi Chí Linh. Bước ngoặt đến khi họ chuyển vào Nghệ An cuối năm 1424, rồi tiến ra Bắc năm 1426. Sau các trận Tốt Động - Chúc Động và Chi Lăng - Xương Giang, tướng Minh Vương Thông hội thề ở Đông Quan và rút quân. Đầu năm 1428, Nguyễn Trãi thay Lê Lợi viết Bình Ngô đại cáo; triều Lê bắt đầu ở thời kỳ sau.`,
@@ -43,7 +43,7 @@ const chapter: Chapter = {
       ),
       l(
         `Về ý nghĩa của hai mươi năm thuộc Minh, giới nghiên cứu không thống nhất. Một cách nhìn quen thuộc coi đây là lúc mô hình Nho giáo kiểu Minh thấm vào Đại Việt. Liam Kelley phản bác: nhà Minh đã lấy đi sách vở, nho sĩ và thợ giỏi, nên nền tảng của nhà nước thời Lê phải tìm ở các triều trước. Sun Laichen nhấn vào kỹ thuật quân sự: hỏa khí Trung Hoa vào Đại Việt từ trước năm 1390, và nghĩa quân Lam Sơn thắng một phần nhờ thu được vũ khí và cách công thành của quân Minh.`,
-        `Scholars disagree about what twenty years of Ming rule meant. A familiar view treats them as the moment when Neo-Confucian models and Ming-style bureaucracy seeped into Đại Việt. Liam Kelley argues the reverse: the Ming carried off books, scholars and craftsmen, so the roots of the Lê state must be sought under the Lý, Trần and Hồ. Sun Laichen stresses military technology: he holds that Chinese firearms reached Đại Việt before 1390, and that the Lam Sơn army won partly with weapons and siege techniques taken from the Ming.`,
+        `Scholars disagree about what twenty years of Ming occupation meant. A familiar view treats them as the moment when Neo-Confucian models and Ming-style bureaucracy seeped into Đại Việt. Liam Kelley argues the reverse: the Ming carried off books, scholars and craftsmen, so the roots of the Lê state must be sought under the Lý, Trần and Hồ. Sun Laichen stresses military technology: he holds that Chinese firearms reached Đại Việt before 1390, and that the Lam Sơn army won partly with weapons and siege techniques taken from the Ming.`,
       ),
     ],
     sources: ['hm-toanthu', 'hm-msl-capture', 'hm-wiki-hodynasty', 'hm-kelley-braindrain', 'hm-sun', 'hm-brit-leloi', 'hm-unesco-decision'],
@@ -142,8 +142,8 @@ const chapter: Chapter = {
       place: l('Thành Đa Bang (vùng Ba Vì, Hà Nội, chưa xác định vị trí chính xác) và Đông Đô', 'Đa Bang fortress (Ba Vì area, Hanoi, exact site not established) and Đông Đô'),
       evidence: ['chron'],
       summary: l(
-        `Lấy cớ họ Hồ cướp ngôi và giết một người tự xưng là con cháu nhà Trần, vua Vĩnh Lạc sai Trương Phụ và Mộc Thạnh đem quân sang cuối năm 1406. Thành Đa Bang vỡ ngày 20 tháng 1 năm 1407, Đông Đô và Tây Đô lần lượt mất. Tháng 6 năm 1407 cha con Hồ Quý Ly bị bắt đưa về Nam Kinh. Chỉ trong bảy tháng, nước Đại Ngu không còn.`,
-        `Citing the Hồ usurpation and the killing of a man who claimed to be a Trần prince, the Yongle emperor sent Zhang Fu and Mu Sheng south late in 1406. The fortress of Đa Bang broke on 20 January 1407, and Đông Đô and Tây Đô fell in turn. In June 1407 Hồ Quý Ly and his sons were captured and taken to Nanjing. Within seven months Đại Ngu had ceased to exist.`,
+        `Lấy cớ họ Hồ cướp ngôi và giết một người tự xưng là con cháu nhà Trần, vua Vĩnh Lạc sai Trương Phụ và Mộc Thạnh đem quân sang xâm lược cuối năm 1406. Thành Đa Bang vỡ ngày 20 tháng 1 năm 1407, Đông Đô và Tây Đô lần lượt mất. Tháng 6 năm 1407 cha con Hồ Quý Ly bị bắt đưa về Nam Kinh. Chỉ trong bảy tháng, nước Đại Ngu không còn.`,
+        `Citing the Hồ usurpation and the killing of a man who claimed to be a Trần prince, the Yongle emperor sent Zhang Fu and Mu Sheng to invade late in 1406. The fortress of Đa Bang broke on 20 January 1407, and Đông Đô and Tây Đô fell in turn. In June 1407 Hồ Quý Ly and his sons were captured and taken to Nanjing. Within seven months Đại Ngu had ceased to exist.`,
       ),
       detail: [
         l(
@@ -225,7 +225,7 @@ const chapter: Chapter = {
       coord: [105.8403, 21.0352],
       evidence: ['chron'],
       summary: l(
-        `Tháng 7 năm 1407, nhà Minh đổi An Nam thành tỉnh Giao Chỉ, chia làm 15 phủ, 41 châu và 210 huyện, trị sở ở Đông Quan. Chính quyền mới thu thuế, buộc dân đổi cách ăn mặc, đưa hàng nghìn thợ giỏi về Trung Hoa. Sách vở người Việt bị thu hoặc bị hủy, nhưng việc này có hệ thống đến đâu thì còn tranh luận.`,
+        `Tháng 7 năm 1407, nhà Minh đổi An Nam thành tỉnh Giao Chỉ, chia làm 15 phủ, 41 châu và 210 huyện, thủ phủ ở Đông Quan. Chính quyền mới thu thuế, buộc dân đổi cách ăn mặc, đưa hàng nghìn thợ giỏi về Trung Hoa. Sách vở người Việt bị thu hoặc bị hủy, nhưng việc này có hệ thống đến đâu thì còn tranh luận.`,
         `In July 1407 the Ming turned Annam into the province of Jiaozhi, divided into 15 prefectures, 41 subprefectures and 210 counties with its seat at Đông Quan. The new government collected taxes, set up salt and gold offices, made people change their dress and sent thousands of craftsmen to China. Vietnamese books were seized or destroyed, though how systematic this was is still debated.`,
       ),
       detail: [

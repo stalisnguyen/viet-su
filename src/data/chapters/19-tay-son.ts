@@ -19,8 +19,8 @@ const chapter: Chapter = {
       `How did three brothers from the hills of Bình Định overthrow both the Nguyễn and the Trịnh lords and drive off Siamese and Qing armies, and why did their regime last little more than twenty years?`,
     ),
     summary: l(
-      `Năm 1771, ba anh em Nguyễn Nhạc, Nguyễn Huệ và Nguyễn Lữ dấy binh ở vùng Tây Sơn, Bình Định. Trong ba mươi năm, phong trào này lật đổ chúa Nguyễn ở Đàng Trong, chúa Trịnh ở Đàng Ngoài và vua Lê, đánh bại quân Xiêm năm 1785 và quân Thanh năm 1789. Năm 1802, Nguyễn Ánh tiêu diệt dòng họ Tây Sơn và lập nhà Nguyễn.`,
-      `In 1771 three brothers, Nguyễn Nhạc, Nguyễn Huệ and Nguyễn Lữ, rose in arms in the Tây Sơn area of Bình Định. Within thirty years their movement overthrew the Nguyễn lords in the south, the Trịnh lords in the north and the Lê kings, and defeated a Siamese army in 1785 and a Qing army in 1789. In 1802 Nguyễn Ánh destroyed the Tây Sơn line and founded the Nguyễn dynasty.`,
+      `Năm 1771, ba anh em Nguyễn Nhạc, Nguyễn Huệ và Nguyễn Lữ dấy binh ở vùng Tây Sơn, Bình Định. Trong ba mươi năm, phong trào này lật đổ chúa Nguyễn ở Đàng Trong, chúa Trịnh ở Đàng Ngoài và vua Lê, đánh bại quân Xiêm xâm lược năm 1785 và quân Thanh xâm lược năm 1789. Năm 1802, Nguyễn Ánh tiêu diệt dòng họ Tây Sơn và lập nhà Nguyễn.`,
+      `In 1771 three brothers, Nguyễn Nhạc, Nguyễn Huệ and Nguyễn Lữ, rose in arms in the Tây Sơn area of Bình Định. Within thirty years their movement overthrew the Nguyễn lords in the south, the Trịnh lords in the north and the Lê kings, and defeated a Siamese invasion in 1785 and a Qing invasion in 1789. In 1802 Nguyễn Ánh destroyed the Tây Sơn line and founded the Nguyễn dynasty.`,
     ),
     detail: [
       l(
@@ -224,8 +224,8 @@ const chapter: Chapter = {
       coord: [105.8245, 21.012],
       evidence: ['chron', 'arch'],
       summary: l(
-        `Cuối năm 1788 quân Thanh vào Thăng Long để đưa Lê Chiêu Thống trở lại ngôi. Nguyễn Huệ lên ngôi hoàng đế ở Phú Xuân, lấy hiệu Quang Trung, rồi tiến quân ra Bắc, dừng ở Nghệ An mộ thêm lính. Đêm mùng 4 rạng mùng 5 Tết Kỷ Dậu, tức cuối tháng 1 năm 1789, quân Tây Sơn phá đồn Ngọc Hồi và Khương Thượng, quân Thanh tháo chạy về nước.`,
-        `Late in 1788 a Qing army entered Thăng Long to restore Lê Chiêu Thống. Nguyễn Huệ took the throne at Phú Xuân as Emperor Quang Trung and marched north, stopping in Nghệ An to raise more troops. On the night of the fourth to the fifth day of the lunar new year, late January 1789, the Tây Sơn stormed the forts at Ngọc Hồi and Khương Thượng and the Qing army fled home.`,
+        `Cuối năm 1788 quân Thanh xâm lược, chiếm Thăng Long, lấy cớ đưa Lê Chiêu Thống trở lại ngôi. Nguyễn Huệ lên ngôi hoàng đế ở Phú Xuân, lấy hiệu Quang Trung, rồi tiến quân ra Bắc, dừng ở Nghệ An mộ thêm lính. Đêm mùng 4 rạng mùng 5 Tết Kỷ Dậu, tức cuối tháng 1 năm 1789, quân Tây Sơn phá đồn Ngọc Hồi và Khương Thượng, quân Thanh tháo chạy về nước.`,
+        `Late in 1788 a Qing army invaded and took Thăng Long, on the pretext of restoring Lê Chiêu Thống. Nguyễn Huệ took the throne at Phú Xuân as Emperor Quang Trung and marched north, stopping in Nghệ An to raise more troops. On the night of the fourth to the fifth day of the lunar new year, late January 1789, the Tây Sơn stormed the forts at Ngọc Hồi and Khương Thượng and the Qing army fled home.`,
       ),
       detail: [
         l(

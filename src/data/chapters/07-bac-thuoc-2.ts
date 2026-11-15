@@ -135,7 +135,7 @@ const chapter: Chapter = {
       coord: [106.0396, 21.0378],
       evidence: ['arch', 'chron'],
       summary: l(
-        'Luy Lâu là tòa thành đất bên sông Dâu, được sử cũ coi là trị sở quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Các lũy đất còn lại được đắp trong chính thời kỳ này. Điều bất ngờ là ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
+        'Luy Lâu là tòa thành đất bên sông Dâu, được sử cũ coi là thủ phủ quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Các lũy đất còn lại được đắp trong chính thời kỳ này. Điều bất ngờ là ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
         'Luy Lâu is an earthen citadel on the Dâu river, treated by the old histories as the seat of Jiaozhi commandery and the largest town in the north in the first centuries CE. Its surviving ramparts were raised in this very period. The surprise is that inside this seat of the ruling administration archaeologists found a workshop casting Đông Sơn bronze drums.',
       ),
       detail: [
@@ -158,7 +158,7 @@ const chapter: Chapter = {
           'The dating of the drum moulds is not settled. Nishimura placed his fragment in the 2nd century CE. The museum\'s article on the first season tentatively dated the pieces to the 4th - 2nd century BCE on the basis of their purely geometric decoration. The preliminary report of the 2015 season put the 900 and more pieces in an undisturbed layer of about the 4th century and took them as proof that Đông Sơn culture lived on under northern rule. In 2022 Trương Đắc Chiến reviewed the 923 pieces from the 2014 and 2015 seasons and concluded that they date to the 3rd - 6th centuries, judging by the bricks, tiles and pottery in the same layer; two radiocarbon samples were too far apart for him to use. These results should be read as work in progress.',
         ),
         l(
-          'Vai trò hành chính của thành cũng còn bàn. Nhiều thư tịch Trung Quốc và Việt Nam coi Luy Lâu là huyện lỵ và trị sở quận Giao Chỉ, và Claude Madrolle (1937) khẳng định như vậy, nhưng trị sở từng nhiều lần dời về Long Biên. Câu hỏi về trị sở buổi đầu thời Tây Hán được bàn ở mục Luy Lâu của thời kỳ Nam Việt. Nhóm Nguyễn Văn Đoàn thừa nhận hệ thống hành chính thời Bắc thuộc chưa được nghiên cứu sâu. Các mặt cắt ở đoạn lũy phía bắc cho thấy thành được đắp và sửa từ thế kỷ 2 đến thế kỷ 6. Theo các tác giả này, tên Luy Lâu là dạng phiên âm cổ của tên Dâu.',
+          'Vai trò hành chính của thành cũng còn bàn. Nhiều thư tịch Trung Quốc và Việt Nam coi Luy Lâu là huyện lỵ và thủ phủ quận Giao Chỉ, và Claude Madrolle (1937) khẳng định như vậy, nhưng thủ phủ từng nhiều lần dời về Long Biên. Câu hỏi về thủ phủ buổi đầu thời Tây Hán được bàn ở mục Luy Lâu của thời kỳ Nam Việt. Nhóm Nguyễn Văn Đoàn thừa nhận hệ thống hành chính thời Bắc thuộc chưa được nghiên cứu sâu. Các mặt cắt ở đoạn lũy phía bắc cho thấy thành được đắp và sửa từ thế kỷ 2 đến thế kỷ 6. Theo các tác giả này, tên Luy Lâu là dạng phiên âm cổ của tên Dâu.',
           'Its administrative role is also debated. Many Chinese and Vietnamese texts treat Luy Lâu as a district town and the seat of Jiaozhi commandery, and Claude Madrolle (1937) affirmed this, but the seat moved to Long Biên more than once. The question of the earliest, Western Han seat is taken up in the Luy Lâu entry of the Nanyue period. Nguyễn Văn Đoàn and colleagues admit that the administrative system of the period is still poorly studied. Sections through the northern rampart show building and repair from the 2nd to the 6th century. According to these authors the name Luy Lâu is an old transcription of the name Dâu.',
         ),
       ],
@@ -234,7 +234,7 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Niên đại và tên người đều chưa chắc. Đại Việt sử ký toàn thư chép một cuộc nổi dậy của Khu Liên ở Tượng Lâm ngay từ năm 137, bị dẹp năm 138, còn An Nam chí lược chỉ nói đến "man di" mà không nêu tên. Vì vậy có ý kiến cho rằng Khu Liên là một danh xưng được nhiều thủ lĩnh dùng. Mốc 192 là quy ước của sử học hiện đại, không phải năm ghi rõ trong sử cũ. Chiến dịch của Đàn Hòa Chi cũng lệch mốc: bản dịch Toàn thư đặt vào khoảng 436, các nghiên cứu dựa trên sử Trung Quốc đặt vào năm 446.',
+          'Niên đại và tên người đều chưa chắc. Đại Việt sử ký toàn thư chép một cuộc nổi dậy của Khu Liên ở Tượng Lâm ngay từ năm 137, bị đàn áp năm 138, còn An Nam chí lược chỉ nói đến "man di" mà không nêu tên. Vì vậy có ý kiến cho rằng Khu Liên là một danh xưng được nhiều thủ lĩnh dùng. Mốc 192 là quy ước của sử học hiện đại, không phải năm ghi rõ trong sử cũ. Chiến dịch của Đàn Hòa Chi cũng lệch mốc: bản dịch Toàn thư đặt vào khoảng 436, các nghiên cứu dựa trên sử Trung Quốc đặt vào năm 446.',
           'Both date and name are uncertain. The Đại Việt sử ký toàn thư records a rising by Khu Liên at Xianglin as early as 137, put down in 138, while the An Nam chí lược speaks only of "barbarians" without a name. Hence the suggestion that Khu Liên was a title used by several leaders. The date 192 is a modern convention, not a year stated in the old histories. Tan Hezhi\'s campaign is also dated differently: the translated Toàn thư places it around 436, studies based on Chinese histories in 446.',
         ),
         l(
@@ -304,8 +304,8 @@ const chapter: Chapter = {
           'The Sanguozhi, in the biography of Lu Yin, records that in 248 the people of Jiaozhi and Jiuzhen rose and seized walled towns, shaking the whole region. Wu appointed Lu Yin (Lục Dận) inspector. He worked by persuasion: the leader Huang Wu at Gaoliang surrendered with 3,000 households, then over a hundred other leaders with 50,000 households submitted. The passage names no woman.',
         ),
         l(
-          'Đại Việt sử ký toàn thư chép dưới năm Mậu Thìn (248): hơn ba vạn nhà ra hàng Lục Dận, rồi người con gái họ Triệu ở Cửu Chân tụ họp dân chúng đánh cướp quận huyện. Bà vú dài ba thước vắt ra sau lưng, thường cưỡi voi ra trận, và bị Lục Dận dẹp yên. Lời chú dẫn Giao Chỉ chí thêm rằng bà không lấy chồng, mặc áo vải thô màu vàng, và sau khi chết hóa thành thần.',
-          'The Đại Việt sử ký toàn thư records under the Mậu Thìn year (248): over thirty thousand households surrendered to Lu Yin, then a woman of the Triệu family in Jiuzhen gathered followers and raided commandery and district seats. She had breasts three chi long thrown over her back, fought from an elephant, and was pacified by Lu Yin. A note citing the Record of Jiaozhi adds that she never married, wore coarse golden cloth, and became a spirit after death.',
+          'Đại Việt sử ký toàn thư chép dưới năm Mậu Thìn (248): hơn ba vạn nhà ra hàng Lục Dận, rồi người con gái họ Triệu ở Cửu Chân tụ họp dân chúng đánh cướp quận huyện. Bà vú dài ba thước vắt ra sau lưng, thường cưỡi voi ra trận, và bị Lục Dận đàn áp. Lời chú dẫn Giao Chỉ chí thêm rằng bà không lấy chồng, mặc áo vải thô màu vàng, và sau khi chết hóa thành thần.',
+          'The Đại Việt sử ký toàn thư records under the Mậu Thìn year (248): over thirty thousand households surrendered to Lu Yin, then a woman of the Triệu family in Jiuzhen gathered followers and raided commandery and district seats. She had breasts three chi long thrown over her back, fought from an elephant, and was crushed by Lu Yin. A note citing the Record of Jiaozhi adds that she never married, wore coarse golden cloth, and became a spirit after death.',
         ),
         l(
           'Hình ảnh quen thuộc ngày nay phần lớn đến từ sách thế kỷ 20. Việt Nam sử lược của Trần Trọng Kim gọi bà là Triệu Thị Chinh (Trinh), quê Nông Cống, cùng anh là Triệu Quốc Đạt khởi nghĩa, xưng Nhụy Kiều tướng quân, chống giữ năm sáu tháng rồi tự vẫn ở Bồ Điền. Đền thờ bà dưới chân núi Gai và lăng trên núi Tùng thuộc xã Triệu Lộc, Thanh Hóa, được xếp hạng di tích quốc gia đặc biệt năm 2014.',
@@ -335,7 +335,7 @@ const chapter: Chapter = {
       name: l('Giao Châu thời Lục triều', 'Jiaozhou in the Six Dynasties'),
       date: l('264 - 541', '264 - 541 CE'),
       sort: 1736,
-      place: l('Giao Châu (Bắc Bộ và Bắc Trung Bộ ngày nay); trị sở ở Long Biên', 'Jiaozhou (today\'s northern and north-central Vietnam); seat at Long Biên'),
+      place: l('Giao Châu (Bắc Bộ và Bắc Trung Bộ ngày nay); thủ phủ ở Long Biên', 'Jiaozhou (today\'s northern and north-central Vietnam); seat at Long Biên'),
       evidence: ['chron'],
       summary: l(
         'Từ thế kỷ 3 đến thế kỷ 6, sáu triều đại phương Nam Trung Quốc nối nhau nhận Giao Châu là đất của mình, nhưng ở quá xa để nắm chặt. Quyền hành thực tế thuộc về những thứ sử (quan đứng đầu châu) ở lại hàng chục năm và các dòng họ địa phương đủ mạnh để tự xưng thứ sử. Chính từ tầng lớp này mà Lý Bí xuất hiện.',
@@ -358,7 +358,7 @@ const chapter: Chapter = {
       scholarly: [
         l(
           'Các bộ sử lệch nhau ở nhiều mốc. Toàn thư nói Đào Hoàng ở Giao Châu ba mươi năm, còn Tấn thư cho thấy ông giữ chức từ năm 271 đến khoảng năm 290. Việc Đỗ Viện giết Lý Tốn, thái thú Cửu Chân nổi dậy, được Toàn thư đặt vào năm 380 - 381, một số niên biểu hiện đại đặt sớm hơn vài năm. Toàn thư còn chép tờ sớ của Đào Hoàng trong một lời chú dưới năm 353, tức rất xa thời điểm thật. Những chỗ này nhắc rằng phần Ngoại kỷ được soạn hơn một nghìn năm sau từ các sử Trung Quốc.',
-          'The chronicles differ on many dates. The Toàn thư says Tao Huang spent thirty years in Jiaozhou, while the Jin shu shows him in office from 271 to about 290. Du Yuan\'s killing of Li Xun (Lý Tốn), the rebel governor of Jiuzhen, is placed by the Toàn thư in 380 - 381 and by some modern timelines a few years earlier. The Toàn thư also quotes Tao Huang\'s memorial in a note under the year 353, far from its real date. These points are a reminder that the Outer Annals were compiled more than a thousand years later from Chinese histories.',
+          'The chronicles differ on many dates. The Toàn thư says Tao Huang spent thirty years in Jiaozhou, while the Jin shu shows him in office from 271 to about 290. Du Yuan\'s killing of Li Xun (Lý Tốn), the insurgent governor of Jiuzhen, is placed by the Toàn thư in 380 - 381 and by some modern timelines a few years earlier. The Toàn thư also quotes Tao Huang\'s memorial in a note under the year 353, far from its real date. These points are a reminder that the Outer Annals were compiled more than a thousand years later from Chinese histories.',
         ),
         l(
           'Câu hỏi lớn hơn là những người như Lý Trường Nhân hay Lý Bí là ai. Toàn thư chép rằng tổ tiên Lý Bí là người phương Bắc chạy loạn cuối đời Tây Hán, đến ông là bảy đời và đã thành người phương Nam. Vì vậy khó xếp họ vào một bên của ranh giới Hán - Việt: họ là hào tộc địa phương, biết chữ Hán, từng làm quan cho triều đình, nhưng có quyền lợi gắn với Giao Châu. Chuyện Tinh Thiều cho thấy giới này bị triều Lương coi thấp, một lý do trực tiếp dẫn đến cuộc khởi nghĩa năm 541, được kể ở chương Vạn Xuân.',

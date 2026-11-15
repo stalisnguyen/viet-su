@@ -15,12 +15,12 @@ const chapter: Chapter = {
       'When power passed to rulers from the north, how much did life in the Red River and Mã River plains really change, and what stayed the same?',
     ),
     summary: l(
-      'Sau khi Âu Lạc thất thủ, vùng đất này thuộc nước Nam Việt của Triệu Đà, rồi từ năm 111 TCN thuộc nhà Hán với ba quận Giao Chỉ, Cửu Chân, Nhật Nam. Trong khoảng một thế kỷ rưỡi, các Lạc tướng vẫn giữ đất của mình và văn hóa Đông Sơn vẫn tiếp tục, cho đến khi quan lại nhà Hán siết chặt dần quyền kiểm soát.',
+      'Sau khi Âu Lạc thất thủ, vùng đất này thuộc nước Nam Việt của Triệu Đà, rồi từ năm 111 TCN thuộc nhà Hán với ba quận Giao Chỉ, Cửu Chân, Nhật Nam. Trong khoảng một thế kỷ rưỡi, các Lạc tướng vẫn giữ đất của mình và văn hóa Đông Sơn vẫn tiếp tục, cho đến khi quan lại nhà Hán siết chặt dần ách đô hộ.',
       'After the fall of Âu Lạc the land belonged to Zhao Tuo\'s (Triệu Đà) kingdom of Nanyue, and from 111 BCE to the Han empire as the commanderies of Jiaozhi (Giao Chỉ), Jiuzhen (Cửu Chân) and Rinan (Nhật Nam). For about a century and a half the Lạc lords kept their lands and Đông Sơn culture carried on, until Han officials gradually tightened their grip.',
     ),
     detail: [
       l(
-        'Triệu Đà vốn là tướng nhà Tần, lập nước Nam Việt với kinh đô Phiên Ngung (Quảng Châu ngày nay). Sau khi thu phục Âu Lạc, ông không đưa quân sang đóng giữ khắp nơi mà cử hai viên sứ giả trông coi Giao Chỉ và Cửu Chân. Các Lạc hầu, Lạc tướng tiếp tục quản dân như trước. Mốc Âu Lạc thất thủ có hai cách tính, 208 TCN hoặc khoảng 179 TCN, đã được trình bày ở thời kỳ Âu Lạc.',
+        'Triệu Đà vốn là tướng nhà Tần, lập nước Nam Việt với kinh đô Phiên Ngung (Quảng Châu ngày nay). Sau khi đánh chiếm Âu Lạc, ông không đưa quân sang đóng giữ khắp nơi mà cử hai viên sứ giả trông coi Giao Chỉ và Cửu Chân. Các Lạc hầu, Lạc tướng tiếp tục quản dân như trước. Mốc Âu Lạc thất thủ có hai cách tính, 208 TCN hoặc khoảng 179 TCN, đã được trình bày ở thời kỳ Âu Lạc.',
         'Zhao Tuo, a former Qin general, founded Nanyue with its capital at Panyu (modern Guangzhou). After subduing Âu Lạc he did not garrison the country but posted two legates to oversee Jiaozhi and Jiuzhen, while the Lạc lords went on governing their people as before. The fall of Âu Lạc is dated either to 208 BCE or to about 179 BCE; the two chronologies are discussed in the Âu Lạc period.',
       ),
       l(
@@ -60,8 +60,8 @@ const chapter: Chapter = {
       place: l('Kinh đô Phiên Ngung (Quảng Châu, Trung Quốc), ngoài khung bản đồ', 'Capital at Panyu (Guangzhou, China), outside the map frame'),
       evidence: ['chron', 'arch'],
       summary: l(
-        'Triệu Đà là viên tướng nhà Tần quê ở Chân Định, người lập nước Nam Việt và thu phục Âu Lạc. Ông vừa xưng đế trong nước vừa chịu làm vương trước nhà Hán. Suốt nhiều thế kỷ, sử Việt tranh luận nên coi ông là vị vua mở nước hay là người đã lấy mất nước của An Dương Vương.',
-        'Zhao Tuo was a Qin general from Zhending who founded Nanyue and subdued Âu Lạc. He called himself emperor at home while accepting the rank of king before the Han. For centuries Vietnamese historians have argued over whether he was a founding ruler or the man who took An Dương Vương\'s country.',
+        'Triệu Đà là viên tướng nhà Tần quê ở Chân Định, người lập nước Nam Việt và đánh chiếm Âu Lạc. Ông vừa xưng đế trong nước vừa chịu làm vương trước nhà Hán. Suốt nhiều thế kỷ, sử Việt tranh luận nên coi ông là vị vua mở nước hay là người đã lấy mất nước của An Dương Vương.',
+        'Zhao Tuo was a Qin general from Zhending who founded Nanyue and conquered Âu Lạc. He called himself emperor at home while accepting the rank of king before the Han. For centuries Vietnamese historians have argued over whether he was a founding ruler or the man who took An Dương Vương\'s country.',
       ),
       detail: [
         l(
@@ -97,7 +97,7 @@ const chapter: Chapter = {
       slug: 'han-diet-nam-viet',
       period: 'nam-viet',
       kind: 'event',
-      name: l('Nhà Hán diệt Nam Việt', 'The Han conquest of Nanyue'),
+      name: l('Nhà Hán đánh chiếm Nam Việt', 'The Han conquest of Nanyue'),
       date: l('112 - 111 TCN', '112 - 111 BCE'),
       sort: 2111,
       place: l('Cổ Loa, Hà Nội (trận chính diễn ra ở Phiên Ngung, ngoài khung bản đồ)', 'Cổ Loa, Hanoi (the main fighting was at Panyu, outside the map frame)'),
@@ -154,7 +154,7 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Các nguồn lệch nhau về thời điểm và trị sở. Sử ký và Hán thư gắn việc lập quận với năm 111 TCN. Toàn thư lại bắt đầu thời thuộc Tây Hán từ năm Tân Mùi (110 TCN), chép Thạch Đái làm thứ sử và nói trị sở ở Long Uyên, tức Long Biên. Taylor thì đặt đầu não của Giao Chỉ và cả vùng ở Luy Lâu. Holmgren viết rằng trong phần lớn thời Hậu Hán trị sở quận Giao Chỉ ở Luy Lâu, có giai đoạn ở Long Biên, và bà không tin Long Biên là Hà Nội như cách nhận định truyền thống.',
+          'Các nguồn lệch nhau về thời điểm và thủ phủ. Sử ký và Hán thư gắn việc lập quận với năm 111 TCN. Toàn thư lại bắt đầu thời thuộc Tây Hán từ năm Tân Mùi (110 TCN), chép Thạch Đái làm thứ sử và nói thủ phủ ở Long Uyên, tức Long Biên. Taylor thì đặt đầu não của Giao Chỉ và cả vùng ở Luy Lâu. Holmgren viết rằng trong phần lớn thời Hậu Hán thủ phủ quận Giao Chỉ ở Luy Lâu, có giai đoạn ở Long Biên, và bà không tin Long Biên là Hà Nội như cách nhận định truyền thống.',
           'Sources differ on date and seat. The Shiji and Hanshu tie the commanderies to 111 BCE. The Toàn thư starts the Western Han period in the Tân Mùi year (110 BCE), names Shi Dai (Thạch Đái) as inspector and puts the seat at Longyuan, that is Long Biên. Taylor places the headquarters of Jiaozhi and of the whole region at Luy Lâu. Holmgren writes that for most of the Later Han the seat of Jiaozhi commandery was Luy Lâu, with a stage at Long Biên, and she doubts the traditional identification of Long Biên with Hanoi.',
         ),
         l(
@@ -204,14 +204,14 @@ const chapter: Chapter = {
       slug: 'luy-lau',
       period: 'nam-viet',
       kind: 'site',
-      name: l('Luy Lâu, trị sở buổi đầu của Giao Chỉ', 'Luy Lâu, early seat of Jiaozhi'),
+      name: l('Luy Lâu, trung tâm đô hộ buổi đầu của nhà Hán ở Giao Chỉ', 'Luy Lâu, early Han seat of rule in Jiaozhi'),
       date: l('từ khoảng 111 TCN', 'from about 111 BCE'),
       sort: 2090,
       place: l('Vùng Dâu, Thuận Thành, Bắc Ninh', 'The Dâu area, Thuận Thành, Bắc Ninh'),
       coord: [106.045, 21.038],
       evidence: ['chron', 'arch'],
       summary: l(
-        'Luy Lâu nằm bên sông Dâu ở Bắc Ninh và thường được coi là nơi nhà Hán đặt trị sở quận Giao Chỉ sau năm 111 TCN. Từ đây quan lại phương bắc trông coi cả vùng qua đường sông thông ra biển. Tuy vậy, sử cũ không thống nhất về nơi đặt trị sở, và khảo cổ học chưa tìm được dấu tích chắc chắn của tòa thành buổi đầu.',
+        'Luy Lâu nằm bên sông Dâu ở Bắc Ninh và thường được coi là nơi nhà Hán đặt thủ phủ quận Giao Chỉ sau năm 111 TCN. Từ đây quan lại phương bắc trông coi cả vùng qua đường sông thông ra biển. Tuy vậy, sử cũ không thống nhất về nơi đặt thủ phủ, và khảo cổ học chưa tìm được dấu tích chắc chắn của tòa thành buổi đầu.',
         'Luy Lâu lies on the Dâu river in Bắc Ninh and is usually taken as the place where the Han put the seat of Jiaozhi commandery after 111 BCE. From here northern officials oversaw the region along a river route to the sea. Yet the old histories disagree about where the seat was, and archaeology has not found secure traces of the earliest citadel.',
       ),
       detail: [
@@ -220,17 +220,17 @@ const chapter: Chapter = {
           'Taylor describes Han-period Luy Lâu as a seaport amidst fields, linked by river to the coast. The position placed Han officials in the most populous part of Jiaozhi while keeping their boat route to the north. Luy Lâu was also the name of one of the ten counties of Jiaozhi, alongside Mê Linh and Long Biên. According to researchers at the Vietnam National Museum of History, the name Luy Lâu is an old transcription of Dâu, the name the area and its river still bear.',
         ),
         l(
-          'Trong thời kỳ này nhà Hán cai trị chủ yếu qua các Lạc tướng, nên sử cũ hầu như không tả gì về trị sở. Hiện vật thu được ở khu di tích có lớp sớm nhất thuộc thời Đông Sơn và thời Hán. Các lũy đất còn thấy hôm nay, những đợt khai quật và các khuôn đúc trống đồng tìm thấy trong thành đều thuộc những thế kỷ sau. Phần đó được kể ở mục Thành Luy Lâu của thời Bắc thuộc lần thứ hai.',
+          'Trong thời kỳ này nhà Hán cai trị chủ yếu qua các Lạc tướng, nên sử cũ hầu như không tả gì về thủ phủ. Hiện vật thu được ở khu di tích có lớp sớm nhất thuộc thời Đông Sơn và thời Hán. Các lũy đất còn thấy hôm nay, những đợt khai quật và các khuôn đúc trống đồng tìm thấy trong thành đều thuộc những thế kỷ sau. Phần đó được kể ở mục Thành Luy Lâu của thời Bắc thuộc lần thứ hai.',
           'In this period the Han governed mainly through the Lạc lords, so the old histories say almost nothing about the seat itself. The earliest finds from the site belong to the Đông Sơn and Han periods. The ramparts visible today, the excavations and the drum moulds found inside the citadel all belong to later centuries. That part of the story is told in the entry on Luy Lâu citadel under the second northern domination.',
         ),
       ],
       scholarly: [
         l(
-          'Sử liệu không thống nhất về trị sở. Toàn thư chép trị sở thời Tây Hán là Long Uyên, tức Long Biên. Taylor đặt đầu não của Giao Chỉ và cả vùng ở Luy Lâu. Holmgren viết rằng trong phần lớn thời Hậu Hán trị sở quận ở Luy Lâu, có giai đoạn ở Long Biên. Các tác giả của Bảo tàng Lịch sử Quốc gia cho rằng Luy Lâu là trị sở từ Tây Hán sang Đông Hán, nhưng cũng thừa nhận hệ thống hành chính thời này chưa được nghiên cứu sâu.',
+          'Sử liệu không thống nhất về thủ phủ. Toàn thư chép thủ phủ thời Tây Hán là Long Uyên, tức Long Biên. Taylor đặt đầu não của Giao Chỉ và cả vùng ở Luy Lâu. Holmgren viết rằng trong phần lớn thời Hậu Hán thủ phủ quận ở Luy Lâu, có giai đoạn ở Long Biên. Các tác giả của Bảo tàng Lịch sử Quốc gia cho rằng Luy Lâu là thủ phủ từ Tây Hán sang Đông Hán, nhưng cũng thừa nhận hệ thống hành chính thời này chưa được nghiên cứu sâu.',
           'The sources disagree about the seat. The Toàn thư gives the Western Han seat as Longyuan, that is Long Biên. Taylor places the headquarters of Jiaozhi and of the whole region at Luy Lâu. Holmgren writes that for most of the Later Han the commandery seat was Luy Lâu, with a stage at Long Biên. The National Museum of History authors hold that Luy Lâu was the seat from Western into Eastern Han, while admitting that the administration of the period is still poorly studied.',
         ),
         l(
-          'Khảo cổ học chưa lấp được khoảng trống này. Các lớp tường thành đã định được tuổi cho thấy thành được đắp và sửa nhiều lần từ thế kỷ 2 đến thế kỷ 6, tức sau thời kỳ đang xét. Các khuôn đúc trống đồng trong thành từng được đoán thuộc thế kỷ 4 - 2 TCN, nhưng năm 2022 Trương Đắc Chiến kết luận chúng thuộc thế kỷ 3 - 6. Vì vậy dấu tích của trị sở thời Tây Hán vẫn cần được tìm thêm, và điểm trên bản đồ chỉ đánh dấu khu di tích Luy Lâu nói chung.',
+          'Khảo cổ học chưa lấp được khoảng trống này. Các lớp tường thành đã định được tuổi cho thấy thành được đắp và sửa nhiều lần từ thế kỷ 2 đến thế kỷ 6, tức sau thời kỳ đang xét. Các khuôn đúc trống đồng trong thành từng được đoán thuộc thế kỷ 4 - 2 TCN, nhưng năm 2022 Trương Đắc Chiến kết luận chúng thuộc thế kỷ 3 - 6. Vì vậy dấu tích của thủ phủ thời Tây Hán vẫn cần được tìm thêm, và điểm trên bản đồ chỉ đánh dấu khu di tích Luy Lâu nói chung.',
           'Archaeology has not yet closed the gap. The dated wall layers show building and repair from the 2nd to the 6th century CE, after the period covered here. The drum moulds from the citadel were once guessed to be of the 4th - 2nd century BCE, but in 2022 Trương Đắc Chiến concluded that they date to the 3rd - 6th centuries CE. Traces of the Western Han seat therefore still need to be found, and the map marker shows only the Luy Lâu site in general.',
         ),
       ],
@@ -375,7 +375,7 @@ const chapter: Chapter = {
       'The same load of rice was tribute to those who gave it and tax to those who took it.',
     ),
     'luy-lau': l(
-      'Sử cũ nêu hai cái tên khác nhau cho trị sở đầu tiên của Giao Chỉ, và tòa thành buổi đầu vẫn chưa được tìm thấy.',
+      'Sử cũ nêu hai cái tên khác nhau cho thủ phủ đầu tiên của Giao Chỉ, và tòa thành buổi đầu vẫn chưa được tìm thấy.',
       'The old histories give two different names for the first seat of Jiaozhi, and the earliest citadel has still not been found.',
     ),
     'dong-son-thoi-han': l(
@@ -398,7 +398,7 @@ const chapter: Chapter = {
     },
     {
       text: l(
-        'Năm 138 TCN, Hán Vũ Đế, vị vua về sau diệt Nam Việt, cử Trương Khiên đi sứ sang Trung Á. Chuyến đi 13 năm ấy mở đường giao thiệp giữa nhà Hán và các nước Trung Á.',
+        'Năm 138 TCN, Hán Vũ Đế, vị vua về sau đem quân đánh chiếm Nam Việt, cử Trương Khiên đi sứ sang Trung Á. Chuyến đi 13 năm ấy mở đường giao thiệp giữa nhà Hán và các nước Trung Á.',
         'In 138 BCE Emperor Wu of Han, who later destroyed Nanyue, sent Zhang Qian as envoy to Central Asia. His 13-year journey opened the way for exchanges between the Han and the Central Asian states.',
       ),
       source: 'nv-brit-zhangqian',

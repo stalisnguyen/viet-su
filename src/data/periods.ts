@@ -124,8 +124,8 @@ const base: Period[] = [
     ],
     scholarly: [
       l(
-        'Có hai khung niên đại. Đại Việt sử ký toàn thư chép An Dương Vương trị vì 50 năm, từ năm Giáp Thìn (257 TCN) đến năm Quý Tỵ (208 TCN). Sử ký của Tư Mã Thiên lại cho biết Triệu Đà chỉ thu phục Âu Lạc sau khi Lữ hậu nhà Hán mất (180 TCN), nên nhiều nhà sử học hiện nay lấy mốc khoảng 179 TCN và cho rằng Âu Lạc thành lập muộn hơn, khoảng 208 TCN.',
-        'There are two chronologies. The Đại Việt sử ký toàn thư records that An Dương Vương ruled for 50 years, from the Giáp Thìn year (257 BCE) to the Quý Tỵ year (208 BCE). Sima Qian\'s Shiji states that Zhao Tuo only subdued Âu Lạc after the death of the Han Empress Lü (180 BCE), so many historians now use about 179 BCE and hold that Âu Lạc was founded later, around 208 BCE.',
+        'Có hai khung niên đại. Đại Việt sử ký toàn thư chép An Dương Vương trị vì 50 năm, từ năm Giáp Thìn (257 TCN) đến năm Quý Tỵ (208 TCN). Sử ký của Tư Mã Thiên lại cho biết Triệu Đà chỉ đánh chiếm Âu Lạc sau khi Lữ hậu nhà Hán mất (180 TCN), nên nhiều nhà sử học hiện nay lấy mốc khoảng 179 TCN và cho rằng Âu Lạc thành lập muộn hơn, khoảng 208 TCN.',
+        'There are two chronologies. The Đại Việt sử ký toàn thư records that An Dương Vương ruled for 50 years, from the Giáp Thìn year (257 BCE) to the Quý Tỵ year (208 BCE). Sima Qian\'s Shiji states that Zhao Tuo only conquered Âu Lạc after the death of the Han Empress Lü (180 BCE), so many historians now use about 179 BCE and hold that Âu Lạc was founded later, around 208 BCE.',
       ),
       l(
         'Các cuộc khai quật lũy thành từ năm 2007 cho thấy những lớp đắp sớm nhất có trước khi nhà Hán có mặt ở vùng này nhiều thế kỷ. Kết quả đó ủng hộ cách hiểu rằng Cổ Loa do một xã hội bản địa xây dựng.',

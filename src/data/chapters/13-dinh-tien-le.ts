@@ -15,7 +15,7 @@ const chapter: Chapter = {
       'How did a court set among limestone hills, lasting only forty years, come to define the Vietnamese imperial throne?',
     ),
     summary: l(
-      'Năm 968, Đinh Bộ Lĩnh dẹp xong các sứ quân, xưng hoàng đế và đóng đô ở Hoa Lư. Năm 979 ông bị ám sát, quyền lực chuyển sang tướng Lê Hoàn, người đánh lui quân Tống năm 981 và đánh Chiêm Thành năm 982. Sau khi Lê Hoàn mất năm 1005, các con ông tranh ngôi, và đến năm 1009 thì nhà Tiền Lê chấm dứt.',
+      'Năm 968, Đinh Bộ Lĩnh dẹp xong các sứ quân, xưng hoàng đế và đóng đô ở Hoa Lư. Năm 979 ông bị ám sát, quyền lực chuyển sang tướng Lê Hoàn, người đánh lui cuộc xâm lược của nhà Tống năm 981 và đánh Chiêm Thành năm 982. Sau khi Lê Hoàn mất năm 1005, các con ông tranh ngôi, và đến năm 1009 thì nhà Tiền Lê chấm dứt.',
       `In 968 Đinh Bộ Lĩnh put down the rival warlords, took the title of emperor and made Hoa Lư his capital. He was assassinated in 979 and power passed to the general Lê Hoàn, who drove back a Song invasion in 981 and attacked Champa in 982. After Lê Hoàn died in 1005 his sons fought over the throne, and in 1009 the Early Lê dynasty came to an end.`,
     ),
     detail: [
@@ -192,8 +192,8 @@ const chapter: Chapter = {
       coord: [106.6317, 20.8442],
       evidence: ['chron'],
       summary: l(
-        'Thấy triều Đinh rối loạn, vua Tống Thái Tông sai quân thủy bộ sang đánh Đại Cồ Việt. Mùa xuân năm 981, Lê Hoàn tự cầm quân, dùng kế trá hàng giết chủ tướng Hầu Nhân Bảo, buộc quân Tống rút về. Đây là lần đầu một triều đình Việt độc lập đẩy lui một đế chế Trung Hoa thống nhất, dù sử hai bên kể khá khác nhau.',
-        'Seeing the Đinh court in disorder, Emperor Taizong of Song sent land and naval forces against Đại Cồ Việt. In spring 981 Lê Hoàn took command in person, used a feigned surrender to kill the Song commander Hou Renbao (Hầu Nhân Bảo) and forced the Song to withdraw. It was the first time an independent Vietnamese court repelled an attack by a unified Chinese empire, though the two sides tell the story rather differently.',
+        'Thấy triều Đinh rối loạn, vua Tống Thái Tông sai quân thủy bộ sang xâm lược Đại Cồ Việt. Mùa xuân năm 981, Lê Hoàn tự cầm quân, dùng kế trá hàng giết chủ tướng Hầu Nhân Bảo, buộc quân Tống rút về. Đây là lần đầu một triều đình Việt độc lập đẩy lui một đế chế Trung Hoa thống nhất, dù sử hai bên kể khá khác nhau.',
+        'Seeing the Đinh court in disorder, Emperor Taizong of Song sent land and naval forces to invade Đại Cồ Việt. In spring 981 Lê Hoàn took command in person, used a feigned surrender to kill the Song commander Hou Renbao (Hầu Nhân Bảo) and forced the Song to withdraw. It was the first time an independent Vietnamese court repelled an attack by a unified Chinese empire, though the two sides tell the story rather differently.',
       ),
       detail: [
         l(

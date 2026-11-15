@@ -185,8 +185,8 @@ const chapter: Chapter = {
       coord: [109.1189, 15.372],
       evidence: ['chron'],
       summary: l(
-        `Đại Nam thực lục chép rằng triều Nguyễn nhiều lần sai người ra quần đảo Hoàng Sa: năm 1815 Phạm Quang Ảnh đi dò đường biển, những năm 1833 - 1836 các đoàn khác vẽ bản đồ, dựng miếu, dựng bia và cắm mốc gỗ. Ngày nay Việt Nam dẫn các ghi chép này làm bằng chứng chủ quyền, còn Trung Quốc kiểm soát quần đảo từ năm 1974.`,
-        `The Đại Nam thực lục records that the Nguyễn court repeatedly sent men to the Paracel (Hoàng Sa) Islands: in 1815 Phạm Quang Ảnh went to explore the sea routes, and in 1833 - 1836 other missions drew maps, built a shrine, set up a stele and planted wooden markers. Vietnam today cites these records as evidence of sovereignty; China has controlled the islands since 1974.`,
+        `Đại Nam thực lục chép rằng triều Nguyễn nhiều lần sai người ra quần đảo Hoàng Sa: năm 1815 Phạm Quang Ảnh đi dò đường biển, những năm 1833 - 1836 các đoàn khác vẽ bản đồ, dựng miếu, dựng bia và cắm mốc gỗ. Ngày nay Việt Nam dẫn các ghi chép này làm bằng chứng chủ quyền, còn Trung Quốc dùng vũ lực chiếm đóng trái phép quần đảo từ năm 1974.`,
+        `The Đại Nam thực lục records that the Nguyễn court repeatedly sent men to the Paracel (Hoàng Sa) Islands: in 1815 Phạm Quang Ảnh went to explore the sea routes, and in 1833 - 1836 other missions drew maps, built a shrine, set up a stele and planted wooden markers. Vietnam today cites these records as evidence of sovereignty; China has unlawfully occupied the islands by force since 1974.`,
       ),
       detail: [
         l(
@@ -208,8 +208,8 @@ const chapter: Chapter = {
           `The Vietnamese sources do not agree in every detail. Đỗ Danh Huấn dates Phạm Quang Ảnh's voyage to 1815; Trần Đức Anh Sơn gives the 1816 order and the shrine of 1833. Both describe the 1835 stele. The figures of five boats and fifty men in 1836, and Phạm Hữu Nhật's real name, come from a genealogy and local tradition rather than the Veritable Records.`,
         ),
         l(
-          `Đây là một vấn đề đang tranh chấp. Britannica ghi quần đảo gồm khoảng 130 đảo san hô nhỏ, cách miền Trung Việt Nam khoảng 400 km, và bị Trung Quốc, Đài Loan, Việt Nam cùng tuyên bố chủ quyền. Pháp tuyên bố sáp nhập năm 1932; năm 1974 Trung Quốc đánh chiếm và kiểm soát toàn bộ quần đảo. Trang này chỉ thuật lại điều các văn bản triều Nguyễn chép, không phân xử tranh chấp pháp lý hiện nay.`,
-          `This is a disputed matter. Britannica describes the group as about 130 small coral islands some 400 km east of central Vietnam, claimed by China, Taiwan and Vietnam. France announced their annexation in 1932; in 1974 China attacked and took control of the whole archipelago. This page reports what the Nguyễn records say and does not rule on the present legal dispute.`,
+          `Đây là một vấn đề đang tranh chấp. Britannica ghi quần đảo gồm khoảng 130 đảo san hô nhỏ, cách miền Trung Việt Nam khoảng 400 km, và bị Trung Quốc, Đài Loan, Việt Nam cùng tuyên bố chủ quyền. Pháp tuyên bố sáp nhập năm 1932; năm 1974 Trung Quốc dùng vũ lực đánh chiếm toàn bộ quần đảo. Các văn bản triều Nguyễn thuật lại ở đây là bằng chứng cho việc nhà nước Việt Nam thực thi chủ quyền liên tục; xem thêm chuyên đề Hoàng Sa và Trường Sa.`,
+          `This is a disputed matter. Britannica describes the group as about 130 small coral islands some 400 km east of central Vietnam, claimed by China, Taiwan and Vietnam. France announced their annexation in 1932; in 1974 China seized the whole archipelago by force. The Nguyễn records set out here are evidence of the Vietnamese state's continuous exercise of sovereignty; see also the topic on Hoàng Sa and Trường Sa.`,
         ),
       ],
       sources: ['ng-vlm-hoangsa', 'ng-tt-hoangsa', 'ng-bpl-phamhuunhat', 'ng-brit-paracel'],

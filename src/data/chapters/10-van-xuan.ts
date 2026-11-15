@@ -24,7 +24,7 @@ const chapter: Chapter = {
         `In the early 6th century Jiaozhou (Giao Châu) was a distant province of the Liang, whose capital was Jiankang (modern Nanjing). Families of northern origin that had lived here for generations held local military and civil posts but found the court closed to them. Lý Bí came from such a family. According to Keith Taylor he had gone to the Liang capital in search of office and had been disappointed.`,
       ),
       l(
-        `Năm 541 ông cùng Tinh Thiều và Triệu Túc khởi binh. Thứ sử Tiêu Tư bỏ chạy về Quảng Châu. Tháng Giêng năm 544, Lý Bí xưng Nam Việt Đế, đặt niên hiệu Thiên Đức, đặt tên nước là Vạn Xuân, nghĩa là muôn mùa xuân. Một năm sau, tướng Lương là Trần Bá Tiên kéo sang. Sau các trận thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, ông lui vào động Khuất Lão và mất ở đó năm 548.`,
+        `Năm 541 ông cùng Tinh Thiều và Triệu Túc khởi binh. Thứ sử Tiêu Tư bỏ chạy về Quảng Châu. Tháng Giêng năm 544, Lý Bí xưng Nam Việt Đế, đặt niên hiệu Thiên Đức, đặt tên nước là Vạn Xuân, nghĩa là muôn mùa xuân. Một năm sau, nhà Lương đem quân sang xâm lược; tướng Lương là Trần Bá Tiên kéo sang. Sau các trận thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, ông lui vào động Khuất Lão và mất ở đó năm 548.`,
         `In 541 he took up arms with Tinh Thiều and Triệu Túc. The inspector Xiao Zi fled to Guangzhou. In the first month of 544 Lý Bí declared himself Emperor of Nam Việt, proclaimed the reign name Thiên Đức and named the realm Vạn Xuân, "ten thousand springs". Only a year later the Liang general Chen Baxian (Trần Bá Tiên) arrived. After defeats at Chu Diên, the mouth of the Tô Lịch river, Gia Ninh citadel and Điển Triệt lake, he withdrew to Khuất Lão cave and died there in 548.`,
       ),
       l(
@@ -184,8 +184,8 @@ const chapter: Chapter = {
       coord: [105.253, 21.298],
       evidence: ['chron', 'legend'],
       summary: l(
-        `Năm 545, nhà Lương cử Dương Phiêu và Trần Bá Tiên đem quân sang. Trong hơn một năm, Lý Bí thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, rồi lui vào động Khuất Lão và mất năm 548. Người thắng ông về sau lập ra nhà Trần ở Trung Hoa. Sử hai bên kể khác nhau về cái chết của ông.`,
-        `In 545 the Liang appointed Yang Piao (Dương Phiêu) inspector and Chen Baxian (Trần Bá Tiên) commander and sent them south. In little more than a year Lý Bí was beaten at Chu Diên, at the mouth of the Tô Lịch, at Gia Ninh citadel and at Điển Triệt lake, then withdrew to Khuất Lão cave and died in 548. His conqueror later founded the Chen dynasty in China, and the two sides tell his death differently.`,
+        `Năm 545, nhà Lương cử Dương Phiêu và Trần Bá Tiên đem quân sang xâm lược. Trong hơn một năm, Lý Bí thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, rồi lui vào động Khuất Lão và mất năm 548. Người thắng ông về sau lập ra nhà Trần ở Trung Hoa. Sử hai bên kể khác nhau về cái chết của ông.`,
+        `In 545 the Liang appointed Yang Piao (Dương Phiêu) inspector and Chen Baxian (Trần Bá Tiên) commander and sent them south to invade. In little more than a year Lý Bí was beaten at Chu Diên, at the mouth of the Tô Lịch, at Gia Ninh citadel and at Điển Triệt lake, then withdrew to Khuất Lão cave and died in 548. His conqueror later founded the Chen dynasty in China, and the two sides tell his death differently.`,
       ),
       detail: [
         l(
@@ -291,7 +291,7 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          `Ở đây hai dòng sử liệu gặp nhau. Truyện Lưu Phương trong Tùy thư quyển 53 chép rằng thời Nhân Thọ có người Lý ở Giao Châu tên Lý Phật Tử làm loạn, và Cương mục dẫn chính Tùy thư cho các chi tiết về 27 doanh quân, núi Đô Long, Long Biên và Ô Diên. Phần của sử Việt thêm vào là danh hiệu Hậu Lý Nam Đế, quan hệ họ hàng với Lý Bí và chuyện đánh tráo móng rồng. Về quan hệ họ hàng, các sách không thống nhất: Toàn thư chỉ nói là tướng cùng họ, Taylor nói là người thân tộc, một số sách phổ thông gọi là anh em họ hoặc cháu.`,
+          `Ở đây hai dòng sử liệu gặp nhau. Truyện Lưu Phương trong Tùy thư quyển 53 chép rằng thời Nhân Thọ có người Lý ở Giao Châu tên Lý Phật Tử "làm loạn", theo cách gọi của sử nhà Tùy, và Cương mục dẫn chính Tùy thư cho các chi tiết về 27 doanh quân, núi Đô Long, Long Biên và Ô Diên. Phần của sử Việt thêm vào là danh hiệu Hậu Lý Nam Đế, quan hệ họ hàng với Lý Bí và chuyện đánh tráo móng rồng. Về quan hệ họ hàng, các sách không thống nhất: Toàn thư chỉ nói là tướng cùng họ, Taylor nói là người thân tộc, một số sách phổ thông gọi là anh em họ hoặc cháu.`,
           `Here the two streams meet. The biography of Liu Fang in Sui shu chapter 53 says that in the Renshou era a Lĩ man of Jiaozhou named Li Fozi (Lý Phật Tử) rebelled, and the Cương mục quotes the Sui shu itself for the 27 army units, Đô Long ridge, Long Biên and Ô Diên. What the Vietnamese chronicles add is the title Later Southern Emperor, the kinship with Lý Bí and the tale of the swapped dragon claw. On the kinship the books disagree: the Toàn thư says only a general of the same lineage, Taylor says a kinsman, and some popular works say cousin or nephew.`,
         ),
         l(

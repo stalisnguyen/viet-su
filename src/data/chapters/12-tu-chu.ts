@@ -73,7 +73,7 @@ const chapter: Chapter = {
           `According to the Cương mục, Khúc Hạo based himself at La Thành, set up circuits, prefectures and districts and appointed officers at each level. He equalised the land tax, remitted corvée and drew up household registers recording names and native places, entrusted to the heads of the giáp. A note quoting the An Nam kỷ yếu says he turned the old townships into giáp, each with a head and a deputy to collect tax. The chronicle praises his rule as lenient and simple.`,
         ),
         l(
-          `Năm 917, Khúc Hạo sai con là Khúc Thừa Mỹ sang Nam Hán, bề ngoài để kết hiếu, thực chất để dò xét tình hình. Sau khi cha mất, Thừa Mỹ nhận chức tiết độ sứ từ nhà Hậu Lương ở phương bắc thay vì thần phục Nam Hán. Vua Nam Hán lấy cớ đó đem quân sang, và bắt ông đem về. Ba đời họ Khúc nay được thờ ở đền Khúc Thừa Dụ tại thôn Cúc Bồ, khánh thành năm 2009.`,
+          `Năm 917, Khúc Hạo sai con là Khúc Thừa Mỹ sang Nam Hán, bề ngoài để kết hiếu, thực chất để dò xét tình hình. Sau khi cha mất, Thừa Mỹ nhận chức tiết độ sứ từ nhà Hậu Lương ở phương bắc thay vì thần phục Nam Hán. Vua Nam Hán lấy cớ đó đem quân sang xâm lược, và bắt ông đem về. Ba đời họ Khúc nay được thờ ở đền Khúc Thừa Dụ tại thôn Cúc Bồ, khánh thành năm 2009.`,
           `In 917 Khúc Hạo sent his son Khúc Thừa Mỹ to Southern Han, outwardly to establish friendly relations and in fact to observe conditions there. After his father's death Thừa Mỹ took the title of jiedushi from the Later Liang in the north instead of submitting to Southern Han. The Southern Han ruler used this as grounds to invade, and carried him off as a prisoner. The three generations are now honoured at the Khúc Thừa Dụ temple in Cúc Bồ village, inaugurated in 2009.`,
         ),
       ],
@@ -241,7 +241,7 @@ const chapter: Chapter = {
           `Ngô Quyền was born around 897 or 898 at Đường Lâm, now in Sơn Tây, Hanoi, into a locally influential family. He served Dương Đình Nghệ, married his daughter and governed Ái Châu. After Bạch Đằng he sought no appointment from any northern court. The Cương mục records that in spring of the Kỷ Hợi year (939) he proclaimed himself king, made Lady Dương his queen and set his capital at Cổ Loa.`,
         ),
         l(
-          `Các sử thần chép thêm rằng ông đặt trăm quan, chế định triều nghi và quy định màu áo của quan lại. Việc chọn Cổ Loa thay cho Đại La, trị sở của các quan cai trị phương Bắc, thường được hiểu là cách nối lại với truyền thống Âu Lạc. Tuy vậy dấu vết vật chất rất ít: các nhà khảo cổ chỉ thấy vài đoạn thành cũ được sửa và đắp thêm. Lịch sử tòa thành thời Âu Lạc được kể ở mục Thành Cổ Loa.`,
+          `Các sử thần chép thêm rằng ông đặt trăm quan, chế định triều nghi và quy định màu áo của quan lại. Việc chọn Cổ Loa thay cho Đại La, thủ phủ của các quan cai trị phương Bắc, thường được hiểu là cách nối lại với truyền thống Âu Lạc. Tuy vậy dấu vết vật chất rất ít: các nhà khảo cổ chỉ thấy vài đoạn thành cũ được sửa và đắp thêm. Lịch sử tòa thành thời Âu Lạc được kể ở mục Thành Cổ Loa.`,
           `The chroniclers add that he appointed the hundred officials, laid down court ritual and regulated the colours of officials' robes. Choosing Cổ Loa over Đại La, the seat of the northern governors, is usually read as a way of reconnecting with the Âu Lạc tradition. Material traces are few, however: archaeologists have found only stretches of the older rampart repaired and built up. The citadel's Âu Lạc history is told in the entry on Cổ Loa Citadel.`,
         ),
         l(
@@ -418,8 +418,8 @@ const chapter: Chapter = {
     },
     {
       text: l(
-        `Năm 960, nhà Tống thành lập và trong hai thập niên sau đó lần lượt thu phục các nước phía nam.`,
-        `In 960 the Song dynasty was founded, and over the next two decades it absorbed the southern kingdoms.`,
+        `Năm 960, nhà Tống thành lập và trong hai thập niên sau đó lần lượt thôn tính các nước ở miền nam Trung Quốc.`,
+        `In 960 the Song dynasty was founded, and over the next two decades it conquered the kingdoms of southern China.`,
       ),
       source: 'tc-brit-china',
     },
