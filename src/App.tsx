@@ -1,3 +1,4 @@
+import { Rich, newSeen } from './components/Rich';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Stage, { ZONES } from './components/Stage';
 import Model3D from './components/Model3D';
@@ -118,19 +119,19 @@ function Depths({ depth, setDepth, lang }: { depth: Depth; setDepth: (d: Depth) 
   );
 }
 
-function More({ detail, scholarly, depth, lang }: { detail: L[]; scholarly: L[]; depth: Depth; lang: Lang }) {
+function More({ detail, scholarly, depth, lang, gl }: { detail: L[]; scholarly: L[]; depth: Depth; lang: Lang; gl?: ReturnType<typeof newSeen> }) {
   return (
     <>
       {depth !== 'quick' && (
         <section className="block">
           <h3>{T.detail[lang]}</h3>
-          {detail.map((p, i) => <p key={i}>{p[lang]}</p>)}
+          {detail.map((p, i) => <p key={i}><Rich text={p[lang]} lang={lang} seen={gl} /></p>)}
         </section>
       )}
       {depth === 'scholar' && (
         <section className="block scholar">
           <h3>{T.scholarH[lang]}</h3>
-          {scholarly.map((p, i) => <p key={i}>{p[lang]}</p>)}
+          {scholarly.map((p, i) => <p key={i}><Rich text={p[lang]} lang={lang} seen={gl} /></p>)}
         </section>
       )}
     </>
@@ -251,6 +252,7 @@ function Quiz({ slug, lang, earned, onPass }: { slug: string; lang: Lang; earned
 }
 
 function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth: Depth; setDepth: (d: Depth) => void }) {
+  const gl = newSeen();
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLElement>(null);
   const toggle = () => { if (open) requestAnimationFrame(() => foldTo(box.current)); setOpen(!open); };
@@ -262,7 +264,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
         <h1>{p.name[lang]}</h1>
         <p className="range">{p.range[lang]}</p>
         {p.question && <p className="ask">{p.question[lang]}</p>}
-        <p className="lead">{p.summary[lang]}</p>
+        <p className="lead"><Rich text={p.summary[lang]} lang={lang} seen={gl} /></p>
         <div className="cta">
           {LEGACY.has(p.slug) && <Narrate slug={p.slug} lang={lang} />}
           <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc tổng quan' : 'Read overview')}</button>
@@ -276,7 +278,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
         {open && (
           <>
             <Depths depth={depth} setDepth={setDepth} lang={lang} />
-            <More detail={p.detail} scholarly={p.scholarly} depth={depth} lang={lang} />
+            <More detail={p.detail} scholarly={p.scholarly} depth={depth} lang={lang} gl={gl} />
             <SourceList ids={p.sources} lang={lang} />
           </>
         )}
@@ -288,6 +290,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
 }
 
 function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; depth: Depth; setDepth: (d: Depth) => void; seen: boolean }) {
+  const gl = newSeen();
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLElement>(null);
   const toggle = () => { if (open) requestAnimationFrame(() => foldTo(box.current)); setOpen(!open); };
@@ -299,7 +302,7 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
         <h2>{e.name[lang]}</h2>
         <p className="hook">{hooks[e.slug][lang]}</p>
         <div className="meta"><Badges ev={e.evidence} lang={lang} /><span className="srcn">{lang === 'vi' ? `${e.sources.length} nguồn` : `${e.sources.length} sources`}</span>{e.place && <span>{e.place[lang]}</span>}</div>
-        <p className="lead">{e.summary[lang]}</p>
+        <p className="lead"><Rich text={e.summary[lang]} lang={lang} seen={gl} /></p>
         {/* Mỗi thẻ một hình chính: có mô hình 3D thì ảnh thật nằm trong phần chi tiết, không thì ảnh thật là hình chính */}
         {!e.model && <RealPhoto slug={e.slug} lang={lang} />}
         {e.model && <Model3D kind={e.model} lang={lang} />}
@@ -307,7 +310,7 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
           <>
             {e.model && <RealPhoto slug={e.slug} lang={lang} />}
             <Depths depth={depth} setDepth={setDepth} lang={lang} />
-            <More detail={e.detail} scholarly={e.scholarly} depth={depth} lang={lang} />
+            <More detail={e.detail} scholarly={e.scholarly} depth={depth} lang={lang} gl={gl} />
             <SourceList ids={e.sources} lang={lang} />
           </>
         )}

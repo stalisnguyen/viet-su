@@ -1,6 +1,6 @@
 # Quy cách viết một thời kỳ cho Việt Sử Toàn Đồ
 
-Mỗi thời kỳ là một file `src/data/chapters/NN-<slug>.ts` (NN là số thứ tự thời kỳ, 05 đến 23), `export default` một đối tượng kiểu `Chapter` (xem `src/data/types.ts`). File chỉ được `import { l, type Chapter } from '../types';`.
+Mỗi thời kỳ là một file `src/data/chapters/NN-<slug>.ts` (NN là số thứ tự thời kỳ, 05 đến 23; từ 24 trở đi là chuyên đề, đặt `theme: true`), `export default` một đối tượng kiểu `Chapter` (xem `src/data/types.ts`). File chỉ được `import { l, type Chapter } from '../types';`.
 
 Người đọc: công chúng quốc tế và người Việt, từ học sinh đến người nghiên cứu. Trang song ngữ, mọi chuỗi hiển thị đều có `vi` và `en` (dùng `l('tiếng Việt', 'English')`).
 
@@ -42,7 +42,8 @@ Chọn những gì một người cần biết để hiểu thời kỳ: nhân v
 
 - Không bịa con số, lời trích, tên người. Nguồn lệch nhau thì nêu cả hai và nói nguồn nào chép gì.
 - Tách rõ điều khảo cổ xác nhận, điều sử chép, điều là truyền thuyết.
-- Với các thời kỳ còn tranh cãi về cách nhìn (Bắc thuộc, Champa và Nam tiến, Pháp thuộc, 1945 đến nay), viết trung tính: nêu sự kiện, số liệu có nguồn, và các cách nhìn khác nhau của các bên, không dùng từ ngữ tuyên truyền hay miệt thị của bất kỳ bên nào.
+- Trang đứng về lập trường của Việt Nam. Các cuộc tấn công của phương Bắc, Pháp, Mỹ vào Việt Nam gọi đúng là xâm lược, đánh chiếm, đô hộ; các cuộc nổi dậy của người Việt là khởi nghĩa, không gọi là "loạn" hay "rebellion" (tiếng Anh dùng uprising, insurgents). Hoàng Sa và Trường Sa là lãnh thổ Việt Nam. Vẫn nêu cách nhìn và tên gọi của các bên khác kèm nguồn, và không dùng từ ngữ miệt thị con người ở bất kỳ phía nào (không dùng "ngụy", "Việt Cộng" trừ khi trích).
+- Thuật ngữ khó (Lạc tướng, thái thú, sứ quân...) viết sao cho người đọc phổ thông hiểu; tránh từ Hán Việt hiếm như "trị sở" khi có từ dễ hơn ("thủ phủ").
 - Tên riêng nước ngoài: tiếng Việt dùng tên quen thuộc trong sử Việt (Triệu Đà, Mã Viện), tiếng Anh dùng dạng quốc tế kèm tên Việt khi cần (Zhao Tuo (Triệu Đà)).
 - Niên đại: tiếng Việt dùng "TCN" và năm trần; tiếng Anh dùng "BCE" và "CE" khi cần phân biệt.
 

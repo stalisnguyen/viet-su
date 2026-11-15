@@ -323,3 +323,14 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
   .flow { padding-bottom: 76px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .intro, .intro * { animation: none !important; } .drawer-body, .mark, .hud { animation: none; } .panel { opacity: 1; transform: none; transition: none; } }
+
+/* Từ khó: gạch chân chấm, chạm để xem giải thích */
+.gloss { position: relative; }
+.term { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: help; text-decoration: underline dotted color-mix(in srgb, var(--c, #e6b450) 80%, transparent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.term:hover, .term[aria-expanded='true'] { color: var(--c, #e6b450); }
+.term:focus-visible { outline: 2px solid var(--c, #e6b450); outline-offset: 2px; border-radius: 2px; }
+.term-pop { position: absolute; left: 50%; bottom: calc(100% + 8px); z-index: 40; width: min(300px, 82vw); transform: translateX(calc(-50% + var(--dx, 0px))); padding: 10px 12px; display: grid; gap: 4px; font-size: 0.86rem; line-height: 1.45; font-weight: 400; color: var(--text, #f1e6cf); background: #17110d; border: 1px solid color-mix(in srgb, var(--c, #e6b450) 55%, transparent); border-radius: 6px; box-shadow: 0 10px 30px #000a; animation: popin 0.16s ease-out; text-align: left; }
+.term-pop b { color: var(--c, #e6b450); font-size: 0.8rem; letter-spacing: 0.04em; }
+@keyframes popin { from { opacity: 0; transform: translate(calc(-50% + var(--dx, 0px)), 4px); } }
+.term-pop.below { bottom: auto; top: calc(100% + 8px); }
+.term { text-decoration-color: color-mix(in srgb, var(--c, #e6b450) 55%, transparent); text-decoration-thickness: 1px; }

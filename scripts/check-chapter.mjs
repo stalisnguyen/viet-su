@@ -27,7 +27,7 @@ const scan = (x, where) => {
   else if (x && typeof x === 'object') Object.entries(x).forEach(([k, y]) => scan(y, `${where}.${k}`));
 };
 scan(c, 'chapter');
-if (!c || typeof c.order !== 'number' || c.order < 5 || c.order > 24) E('order phải từ 5 đến 24 (24 là chuyên đề biển đảo)');
+if (!c || typeof c.order !== 'number' || c.order < 5 || c.order > 27) E('order phải từ 5 đến 27 (24 trở đi là chuyên đề)');
 const p = c.period || {};
 const slugRe = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 if (!slugRe.test(p.slug || '')) E('period.slug sai dạng');
