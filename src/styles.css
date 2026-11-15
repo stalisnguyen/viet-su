@@ -115,6 +115,7 @@ h3 { font-size: 0.74rem; letter-spacing: 0.13em; text-transform: uppercase; colo
 .art { margin-left: 0; margin-right: 0; border-radius: 18px; overflow: hidden; border: 1px solid var(--edge); }
 .art img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .art.photo img { aspect-ratio: 3 / 2; background: rgba(255, 255, 255, 0.05); }
+.art.photo.tall img { aspect-ratio: 4 / 5; object-position: top; }
 .art figcaption a { color: var(--c); }
 .art figcaption { padding: 8px 14px 10px; font-size: 0.76rem; color: var(--muted); }
 .model3d { margin: 0; border-radius: 18px; overflow: hidden; border: 1px solid var(--edge); background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--c) 24%, #0b0f2a), #070a1c 75%); }

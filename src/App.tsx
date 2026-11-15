@@ -137,7 +137,7 @@ function RealPhoto({ slug, lang }: { slug: string; lang: Lang }) {
   if (!ph || bad) return null;
   const f = encodeURIComponent(ph.file.replace(/ /g, '_'));
   return (
-    <figure className="art photo">
+    <figure className={'art photo' + (ph.tall ? ' tall' : '')}>
       <img src={'https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=960'} loading="lazy" alt={ph.caption[lang]} onError={() => setBad(true)} />
       <figcaption>
         {ph.caption[lang]} {lang === 'vi' ? 'Ảnh: ' : 'Photo: '}{ph.by}, {ph.license}, <a href={'https://commons.wikimedia.org/wiki/File:' + f} target="_blank" rel="noreferrer">Wikimedia Commons</a>.
