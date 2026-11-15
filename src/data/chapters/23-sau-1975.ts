@@ -148,17 +148,17 @@ const chapter: Chapter = {
       coord: [104.982, 22.668],
       evidence: ['chron', 'arch'],
       summary: l(
-        `Cuối năm 1978, quân đội Việt Nam tiến vào Campuchia, lật đổ chế độ Khmer Đỏ ngày 7/1/1979 và ở lại đến năm 1989. Tháng 2/1979, Trung Quốc tấn công dọc biên giới phía Bắc trong khoảng một tháng. Giao tranh còn kéo dài ở Vị Xuyên đến năm 1989, và Việt Nam với Trung Quốc chỉ bình thường hóa quan hệ năm 1991.`,
-        `In late 1978 Vietnam's army entered Cambodia, overthrew the Khmer Rouge on 7 January 1979 and stayed until 1989. In February 1979 China attacked along the northern border for about a month. Fighting went on at Vị Xuyên until 1989, and Vietnam and China normalised relations only in 1991.`,
+        `Cuối năm 1978, quân đội Việt Nam tiến vào Campuchia, lật đổ chế độ Khmer Đỏ ngày 7/1/1979 và ở lại đến năm 1989. Tháng 2/1979, Trung Quốc đưa quân xâm lược dọc biên giới phía Bắc trong khoảng một tháng. Giao tranh còn kéo dài ở Vị Xuyên đến năm 1989, và Việt Nam với Trung Quốc chỉ bình thường hóa quan hệ năm 1991.`,
+        `In late 1978 Vietnam's army entered Cambodia, overthrew the Khmer Rouge on 7 January 1979 and stayed until 1989. In February 1979 China invaded along the northern border for about a month. Fighting went on at Vị Xuyên until 1989, and Vietnam and China normalised relations only in 1991.`,
       ),
       detail: [
         l(
-          `Sau nhiều năm quân Khmer Đỏ tấn công các tỉnh biên giới Tây Nam, ngày 22/12/1978 khoảng 120.000 quân Việt Nam mở cuộc tấn công lớn, nhiều tài liệu khác ghi ngày 25/12. Phnom Penh thất thủ ngày 7/1/1979 sau mười bảy ngày. Quân đội Việt Nam ở lại Campuchia mười năm để hỗ trợ chính quyền mới chống lại các lực lượng Khmer Đỏ và các phe khác. Đợt quân cuối cùng rút về nước ngày 26/9/1989.`,
-          `After years of Khmer Rouge raids on the southwestern border provinces, about 120,000 Vietnamese troops launched a major offensive on 22 December 1978; many other sources give 25 December. Phnom Penh fell on 7 January 1979 after seventeen days. Vietnam's army stayed in Cambodia for ten years to back the new government against the Khmer Rouge and other factions. The last units returned home on 26 September 1989.`,
+          `Từ năm 1977, quân Khmer Đỏ nhiều lần đánh sang các tỉnh biên giới Tây Nam và tàn sát dân thường. Ở Ba Chúc, An Giang, từ ngày 18/4/1978 họ giết 3.157 người dân trong khoảng mười hai ngày. Ngày 22/12/1978 khoảng 120.000 quân Việt Nam mở cuộc tấn công lớn, nhiều tài liệu khác ghi ngày 25/12. Phnom Penh thất thủ ngày 7/1/1979 sau mười bảy ngày. Quân đội Việt Nam ở lại Campuchia mười năm để hỗ trợ chính quyền mới chống lại các lực lượng Khmer Đỏ và các phe khác. Đợt quân cuối cùng rút về nước ngày 26/9/1989.`,
+          `From 1977 Khmer Rouge forces repeatedly crossed into the southwestern border provinces and massacred civilians. At Ba Chúc in An Giang, starting on 18 April 1978, they killed 3,157 villagers over about twelve days. About 120,000 Vietnamese troops launched a major offensive on 22 December 1978; many other sources give 25 December. Phnom Penh fell on 7 January 1979 after seventeen days. Vietnam's army stayed in Cambodia for ten years to back the new government against the Khmer Rouge and other factions. The last units returned home on 26 September 1989.`,
         ),
         l(
-          `Ngày 17/2/1979, quân Trung Quốc tấn công dọc biên giới phía Bắc; ngày 16/3, Trung Quốc tuyên bố ngừng bắn và rút quân. Mỗi bên gọi cuộc chiến một cách. Ở Việt Nam, thời đó gọi là chiến tranh chống bành trướng Trung Hoa, nay thường gọi là cuộc chiến bảo vệ biên giới phía Bắc. Trung Quốc gọi là "cuộc phản kích tự vệ đánh Việt Nam" (Duì Yuè zìwèi fǎnjī zhàn). Sách tiếng Anh thường gọi là Chiến tranh Trung - Việt (Sino-Vietnamese War).`,
-          `On 17 February 1979 Chinese forces attacked along the northern border; on 16 March China declared a ceasefire and withdrew. Each side names the war differently. In Vietnam it was called at the time the war against Chinese expansionism and is now usually called the war to defend the northern border. China calls it the "Self-Defensive Counterattack against Vietnam" (Duì Yuè zìwèi fǎnjī zhàn). English-language works usually call it the Sino-Vietnamese War.`,
+          `Ngày 17/2/1979, quân Trung Quốc tấn công dọc biên giới phía Bắc; ngày 16/3, Trung Quốc tuyên bố ngừng bắn và rút quân. Mỗi bên gọi cuộc chiến một cách. Ở Việt Nam, thời đó gọi là chiến tranh chống bành trướng Trung Hoa, nay thường gọi là cuộc chiến bảo vệ biên giới phía Bắc. Trung Quốc gọi là "cuộc phản kích tự vệ đánh Việt Nam" (Duì Yuè zìwèi fǎnjī zhàn). Sách tiếng Anh thường gọi là Chiến tranh Trung - Việt (Sino-Vietnamese War). Trang này gọi đúng bản chất của nó: một cuộc tấn công xâm lược lãnh thổ Việt Nam, và những người lính, dân quân, người dân ở các tỉnh biên giới đã chiến đấu để bảo vệ Tổ quốc.`,
+          `On 17 February 1979 Chinese forces attacked along the northern border; on 16 March China declared a ceasefire and withdrew. Each side names the war differently. In Vietnam it was called at the time the war against Chinese expansionism and is now usually called the war to defend the northern border. China calls it the "Self-Defensive Counterattack against Vietnam" (Duì Yuè zìwèi fǎnjī zhàn). English-language works usually call it the Sino-Vietnamese War. This site calls it what it was: an invasion of Vietnamese territory, against which soldiers, militia and the people of the border provinces fought to defend their country.`,
         ),
         l(
           `Từ tháng 4/1984 đến tháng 5/1989, hai bên giao tranh ác liệt quanh các điểm cao ở Vị Xuyên, Hà Giang, nơi hơn 4.000 người lính Việt Nam hy sinh và hơn 9.000 người bị thương. Nghĩa trang liệt sĩ Vị Xuyên nằm cạnh quốc lộ 2, cách trung tâm Hà Giang khoảng 18 km về phía nam. Cuộc đụng độ trên biển ở đá Gạc Ma năm 1988 được kể riêng trong chuyên đề Hoàng Sa và Trường Sa của trang.`,
@@ -171,15 +171,15 @@ const chapter: Chapter = {
           `Neither Beijing nor Hanoi has published full official casualty figures for the 1979 war. Miles Maochun Yu of the Hoover Institution estimates roughly 30,000 dead and 35,000 wounded on each side and notes that the two governments' published numbers differ widely and cannot be verified. Asia Times cites estimates of Chinese casualties from 21,000 to 63,000, and estimates that tens of thousands of Vietnamese died, most of them civilians because the fighting took place on Vietnamese soil.`,
         ),
         l(
-          `Với Campuchia, một bài tổng quan của EBSCO ước khoảng 23.500 quân Việt Nam chết và 55.000 người bị thương nặng trong mười năm, và cho rằng con số có thể thấp. Việt Nam gọi cuộc chiến là bảo vệ biên giới Tây Nam và giúp nhân dân Campuchia thoát khỏi chế độ diệt chủng; nhiều tài liệu quốc tế gọi đó là cuộc xâm lược và mười năm chiếm đóng.`,
-          `For Cambodia, an EBSCO overview estimates about 23,500 Vietnamese soldiers killed and 55,000 seriously wounded over ten years, and suggests the figures may be low. Vietnam calls the war the defence of the southwestern border and the rescue of the Cambodian people from genocide; many international works call it an invasion followed by ten years of occupation.`,
+          `Với Campuchia, một bài tổng quan của EBSCO ước khoảng 23.500 quân Việt Nam chết và 55.000 người bị thương nặng trong mười năm, và cho rằng con số có thể thấp. Việt Nam gọi cuộc chiến là bảo vệ biên giới Tây Nam và giúp nhân dân Campuchia thoát khỏi chế độ diệt chủng; nhiều tài liệu quốc tế gọi đó là cuộc xâm lược và mười năm chiếm đóng. Trang này theo lập trường của Việt Nam: quân đội Việt Nam vào Campuchia sau nhiều năm Khmer Đỏ tàn sát dân thường ở biên giới Tây Nam, và việc lật đổ Khmer Đỏ đã chấm dứt một chế độ diệt chủng.`,
+          `For Cambodia, an EBSCO overview estimates about 23,500 Vietnamese soldiers killed and 55,000 seriously wounded over ten years, and suggests the figures may be low. Vietnam calls the war the defence of the southwestern border and the rescue of the Cambodian people from genocide; many international works call it an invasion followed by ten years of occupation. This site follows Vietnam's position: the army entered Cambodia after years of Khmer Rouge massacres of civilians on the southwestern border, and overthrowing the Khmer Rouge ended a genocidal regime.`,
         ),
         l(
           `Trong nhiều năm, cuộc chiến năm 1979 và mặt trận Vị Xuyên ít được nhắc trong sách giáo khoa và báo chí Việt Nam. Gần đây, nhất là dịp tròn 40 năm vào năm 2019, báo chí trong nước viết nhiều hơn, và năm 2019 tổng chủ biên sách giáo khoa lịch sử cam kết đưa cuộc chiến vào chương trình đầy đủ hơn. Nghĩa trang Vị Xuyên được nâng cấp thành nghĩa trang quốc gia, công trình cải tạo hoàn thành tháng 7/2025.`,
           `For many years the 1979 war and the Vị Xuyên front were barely mentioned in Vietnamese textbooks and the press. More recently, especially at the 40th anniversary in 2019, the domestic press wrote about them much more, and in 2019 the chief editor of school history textbooks pledged fuller coverage. The Vị Xuyên cemetery was upgraded to a national cemetery, with renovation completed in July 2025.`,
         ),
       ],
-      sources: ['s75-hoover-1979', 's75-asiatimes-1979', 's75-loc-cambodia', 's75-ebsco-withdraw', 's75-tuoitre-1989', 's75-baonghean-vixuyen', 's75-sggp-vixuyen', 's75-baoquocte-vixuyen'],
+      sources: ['s75-vne-bachuc', 's75-hoover-1979', 's75-asiatimes-1979', 's75-loc-cambodia', 's75-ebsco-withdraw', 's75-tuoitre-1989', 's75-baonghean-vixuyen', 's75-sggp-vixuyen', 's75-baoquocte-vixuyen'],
     },
     {
       slug: 'doi-moi-1986',
@@ -375,6 +375,7 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 's75-vne-bachuc', kind: 'news', cite: 'VnExpress International (18/4/2018), "Vietnam remembers over 3,000 killed in Cambodia\'s Pol Pot war" (thảm sát Ba Chúc, 18/4/1978, 3.157 dân thường bị giết).', url: 'https://e.vnexpress.net/news/news/vietnam-remembers-over-3-000-killed-in-cambodia-s-pol-pot-war-3743565.html' },
     {
       id: 's75-britannica-vn',
       kind: 'reference',
