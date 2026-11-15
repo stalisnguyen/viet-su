@@ -564,14 +564,14 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         // Tên vùng riêng của thời kỳ (ví dụ Giao Chỉ, Champa, Phù Nam), tạo khi cần lần đầu
         const want2 = !three && reg ? reg[lang].toUpperCase() : '';
         if (want2 && !z.alt.has(want2)) {
-          const sp2 = label(want2, '#f1e6cf', 36, 800, 3);
+          const sp2 = label(want2, '#f1e6cf', want2.length > 16 ? 24 : want2.length > 10 ? 30 : 36, 800, 3); // tên vùng dài thì chữ nhỏ lại để không lấn bảng chỉ số
           const at2 = z.id === 'dongson' ? [104.0, 20.5] : z.id === 'sahuynh' ? [107.9, 14.4] : [105.5, 9.5];
           sp2.position.set(X(at2[0]), 1.1, Z(at2[1]));
           sp2.material.opacity = 0;
           scene.add(sp2);
           z.alt.set(want2, sp2);
         }
-        z.alt.forEach((sp2, key) => { sp2.material.opacity += ((key === want2 ? (s.focus ? 0.25 : 0.95) : 0) - sp2.material.opacity) * 0.1; });
+        z.alt.forEach((sp2, key) => { sp2.material.opacity += ((key === want2 ? (s.focus ? 0.12 : 0.95) : 0) - sp2.material.opacity) * 0.1; });
       });
 
       haloMat.color.lerp(tmp.set(s.era ? periodBySlug[s.era].color : '#e6b450'), 0.05);
