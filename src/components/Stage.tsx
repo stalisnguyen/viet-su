@@ -78,6 +78,7 @@ interface Props {
   focus: string | null;
   sheet: number; // 0 đóng, 1 thẻ thu gọn, 2 mở hết
   onPick: (slug: string) => void;
+  split?: boolean; // điện thoại dọc: bản đồ là một khung riêng ở trên, không bị thẻ nội dung che
 }
 
 interface Pin {
@@ -85,10 +86,10 @@ interface Pin {
   head: THREE.MeshBasicMaterial; beam: THREE.MeshBasicMaterial; ring: THREE.Mesh; ringMat: THREE.MeshBasicMaterial; phase: number;
 }
 
-export default function Stage({ lang, era, focus, sheet, onPick }: Props) {
+export default function Stage({ lang, era, focus, sheet, onPick, split = false }: Props) {
   const host = useRef<HTMLDivElement>(null);
-  const live = useRef({ era, focus, sheet, onPick, key: '' });
-  live.current.era = era; live.current.focus = focus; live.current.sheet = sheet; live.current.onPick = onPick;
+  const live = useRef({ era, focus, sheet, onPick, split, key: '' });
+  live.current.era = era; live.current.focus = focus; live.current.sheet = sheet; live.current.onPick = onPick; live.current.split = split;
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -100,7 +101,7 @@ export default function Stage({ lang, era, focus, sheet, onPick }: Props) {
       setFailed(true);
       return;
     }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 900 ? 1.5 : 1.75));
     el.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
@@ -235,6 +236,22 @@ export default function Stage({ lang, era, focus, sheet, onPick }: Props) {
       const s = live.current;
       const portrait = aspect < 0.9;
       const pin = s.focus ? pins.find((x) => x.slug === s.focus) : null;
+      if (s.split) {
+        // Khung bản đồ riêng: luôn đặt mục tiêu vào giữa khung, không chừa chỗ cho thẻ
+        const k = Math.max(1, 1.25 / aspect);
+        if (pin) {
+          want.t.copy(pin.pos).setY(0);
+          want.t.z -= 0.7; // đẩy điểm đang xem xuống dưới thanh tiêu đề
+          want.p.set(want.t.x + 1.2 * k, 5.4 * k, want.t.z + 6.4 * k);
+        } else if (s.era === 'van-lang' || s.era === 'au-lac') {
+          want.t.set(X(105.9), 0, Z(20.6) - 0.6);
+          want.p.set(want.t.x + 1.2 * k, 7.5 * k, want.t.z + 8 * k);
+        } else {
+          want.t.set(1.4, 0, -1.9);
+          want.p.set(want.t.x + 1.2 * k, 20 * k, want.t.z + 14 * k);
+        }
+        return `${s.focus}|${s.era}|split|${Math.round(aspect * 10)}`;
+      }
       if (pin) {
         const k = portrait ? 1.15 : 1;
         want.t.copy(pin.pos).setY(0);

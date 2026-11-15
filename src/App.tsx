@@ -49,7 +49,39 @@ const START: Record<string, L> = {
 // Thứ tự hành trình: theo thời kỳ, trong mỗi thời kỳ đi từ xưa đến gần
 const journey = periods.flatMap((p) => entries.filter((e) => e.period === p.slug).sort((a, b) => b.sort - a.sort));
 const pad = (n: number) => String(n).padStart(2, '0');
-const jump = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Đi tới một phần: gần thì trượt mượt, xa thì nhảy thẳng để không phải chờ trang cuộn qua hàng chục màn hình
+const jump = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const far = Math.abs(el.getBoundingClientRect().top) > window.innerHeight * 2.5;
+  el.scrollIntoView({ behavior: (far ? 'instant' : 'smooth') as ScrollBehavior, block: 'start' });
+};
+// Khi thu gọn phần chi tiết, đưa thẻ về lại đầu khung nhìn để người đọc không bị lạc chỗ
+const foldTo = (el: HTMLElement | null) => {
+  if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'start' });
+};
+const SPLIT = '(max-width: 899px) and (orientation: portrait)';
+function useMedia(q: string) {
+  const [m, setM] = useState(() => window.matchMedia(q).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(q);
+    const f = () => setM(mq.matches);
+    mq.addEventListener('change', f);
+    return () => mq.removeEventListener('change', f);
+  }, [q]);
+  return m;
+}
+// Toàn bộ các phần của trang theo đúng thứ tự cuộn, dùng cho nút Trước, Tiếp và mục lục
+const STEPS: { id: string; title: L }[] = [
+  { id: 'top', title: { vi: 'Mở đầu', en: 'Start' } },
+  ...periods.flatMap((p) => [
+    { id: 'p-' + p.slug, title: p.name },
+    ...journey.filter((e) => e.period === p.slug).map((e) => ({ id: 'e-' + e.slug, title: e.name })),
+    { id: 'q-' + p.slug, title: { vi: 'Câu hỏi - ' + p.name.vi, en: 'Quiz - ' + p.name.en } },
+  ]),
+  { id: 'lo-trinh', title: { vi: 'Lộ trình 23 thời kỳ', en: 'Roadmap of 23 periods' } },
+  { id: 'nguon', title: { vi: 'Nguồn và cách làm', en: 'Sources and method' } },
+];
 
 function Badges({ ev, lang }: { ev: Evidence[]; lang: Lang }) {
   return <span className="badges">{ev.map((e) => <span key={e} className={'badge ' + e}>{EV[e][lang]}</span>)}</span>;
@@ -96,18 +128,6 @@ function More({ detail, scholarly, depth, lang }: { detail: L[]; scholarly: L[];
       )}
     </>
   );
-}
-
-// Chỉ dựng cảnh 3D khi nó nằm trong tầm nhìn, để trang không mở quá nhiều khung 3D cùng lúc
-function Lazy({ children }: { children: ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [on, setOn] = useState(false);
-  useEffect(() => {
-    const io = new IntersectionObserver(([e]) => setOn(e.isIntersecting), { rootMargin: '120px' });
-    io.observe(ref.current!);
-    return () => io.disconnect();
-  }, []);
-  return <div ref={ref} className="lazy">{on ? children : null}</div>;
 }
 
 // Giọng kể phần tóm tắt thời kỳ (tiếng Việt), tệp âm thanh nằm trong thư mục audio của trang
@@ -197,9 +217,11 @@ function Quiz({ slug, lang, earned, onPass }: { slug: string; lang: Lang; earned
 
 function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth: Depth; setDepth: (d: Depth) => void }) {
   const [open, setOpen] = useState(false);
+  const box = useRef<HTMLElement>(null);
+  const toggle = () => { if (open) requestAnimationFrame(() => foldTo(box.current)); setOpen(!open); };
   const i = periods.indexOf(p);
   return (
-    <section className="step era" id={'p-' + p.slug} data-step data-era={p.slug} style={{ ['--c' as string]: p.color }}>
+    <section ref={box} className="step era" id={'p-' + p.slug} data-step data-era={p.slug} style={{ ['--c' as string]: p.color }}>
       <div className="panel">
         <p className="eyebrow">{lang === 'vi' ? 'Thời kỳ' : 'Period'} {pad(i + 1)} / {periods.length + upcoming.length}</p>
         <h1>{p.name[lang]}</h1>
@@ -207,13 +229,13 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
         <p className="lead">{p.summary[lang]}</p>
         <div className="cta">
           <Narrate slug={p.slug} lang={lang} />
-          <button className="ghost" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc tổng quan' : 'Read overview')}</button>
+          <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc tổng quan' : 'Read overview')}</button>
         </div>
         <figure className="art">
           <img src={'img/' + p.slug + '.jpg'} loading="lazy" alt={lang === 'vi' ? 'Ảnh minh họa thời kỳ ' + p.name.vi : 'Illustration of the period ' + p.name.en} />
           <figcaption>{lang === 'vi' ? 'Ảnh minh họa do AI tạo để gợi không khí thời kỳ, không phải ảnh chụp hay tư liệu khảo cổ.' : 'AI-generated illustration to evoke the period, not a photograph or archaeological record.'}</figcaption>
         </figure>
-        {p.model && <Lazy><Model3D kind={p.model} lang={lang} /></Lazy>}
+        {p.model && <Model3D kind={p.model} lang={lang} />}
         {open && (
           <>
             <Depths depth={depth} setDepth={setDepth} lang={lang} />
@@ -222,6 +244,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
           </>
         )}
         <World slug={p.slug} lang={lang} />
+        {open && <div className="cta"><button className="ghost" onClick={toggle}>{lang === 'vi' ? 'Thu gọn tổng quan' : 'Collapse overview'}</button></div>}
       </div>
     </section>
   );
@@ -229,16 +252,18 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
 
 function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; depth: Depth; setDepth: (d: Depth) => void; seen: boolean }) {
   const [open, setOpen] = useState(false);
+  const box = useRef<HTMLElement>(null);
+  const toggle = () => { if (open) requestAnimationFrame(() => foldTo(box.current)); setOpen(!open); };
   const idx = journey.indexOf(e);
   return (
-    <section className="step" id={'e-' + e.slug} data-step data-era={e.period} data-focus={e.slug} style={{ ['--c' as string]: periodBySlug[e.period].color }}>
+    <section ref={box} className="step" id={'e-' + e.slug} data-step data-era={e.period} data-focus={e.slug} style={{ ['--c' as string]: periodBySlug[e.period].color }}>
       <div className={'panel' + (seen ? ' seen' : '')}>
         <p className="eyebrow">{pad(idx + 1)} / {journey.length} - {KIND[e.kind][lang]} - {e.date[lang]}</p>
         <h2>{e.name[lang]}</h2>
         <p className="hook">{hooks[e.slug][lang]}</p>
         <div className="meta"><Badges ev={e.evidence} lang={lang} />{e.place && <span>{e.place[lang]}</span>}</div>
         <p className="lead">{e.summary[lang]}</p>
-        {e.model && <Lazy><Model3D kind={e.model} lang={lang} /></Lazy>}
+        {e.model && <Model3D kind={e.model} lang={lang} />}
         {open && (
           <>
             <Depths depth={depth} setDepth={setDepth} lang={lang} />
@@ -247,14 +272,14 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
           </>
         )}
         <div className="cta">
-          <button className="ghost" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc chi tiết và nguồn' : 'Read details and sources')}</button>
+          <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc chi tiết và nguồn' : 'Read details and sources')}</button>
         </div>
       </div>
     </section>
   );
 }
 
-function Index({ lang, seen, got }: { lang: Lang; seen: Set<string>; got: Set<string> }) {
+function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<string>; got: Set<string>; here: string; onGo: (id: string) => void; bare?: boolean }) {
   const [q, setQ] = useState('');
   const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
   const k = norm(q.trim());
@@ -262,10 +287,11 @@ function Index({ lang, seen, got }: { lang: Lang; seen: Set<string>; got: Set<st
   const any = useMemo(() => entries.some(match), [k]);
   return (
     <>
-      <p className="eyebrow">{lang === 'vi' ? 'Lộ trình' : 'Roadmap'}</p>
-      <h2>{lang === 'vi' ? '23 thời kỳ, từ đồ đá đến hôm nay' : '23 periods, from stone to today'}</h2>
-      <input id="site-search" className="search" type="search" value={q} onChange={(e) => setQ(e.target.value)}
+      {!bare && <p className="eyebrow">{lang === 'vi' ? 'Lộ trình' : 'Roadmap'}</p>}
+      {!bare && <h2>{lang === 'vi' ? '23 thời kỳ, từ đồ đá đến hôm nay' : '23 periods, from stone to today'}</h2>}
+      <input className="search" aria-label={lang === 'vi' ? 'Tìm trong trang' : 'Search this site'} type="search" value={q} onChange={(e) => setQ(e.target.value)}
         placeholder={lang === 'vi' ? 'Tìm di tích, nhân vật, hiện vật' : 'Search sites, people, artefacts'} />
+      {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
       {!any && <p className="muted">{lang === 'vi' ? 'Chưa có mục nào khớp. Đợt 1 mới có nội dung đến hết Âu Lạc.' : 'No match yet. Release 1 covers up to Âu Lạc.'}</p>}
       <ol className="road">
         {periods.map((p, i) => {
@@ -273,14 +299,14 @@ function Index({ lang, seen, got }: { lang: Lang; seen: Set<string>; got: Set<st
           if (k && !list.length) return null;
           return (
             <li key={p.slug} className="ready" style={{ ['--c' as string]: p.color }}>
-              <button className="road-head" onClick={() => jump('p-' + p.slug)}>
+              <button className={'road-head' + (here === 'p-' + p.slug ? ' here' : '')} onClick={() => onGo('p-' + p.slug)}>
                 <em>{pad(i + 1)}</em><strong>{p.name[lang]}</strong><span>{p.range[lang]}</span>
               </button>
               <div className="road-items">
                 {list.map((e) => (
-                  <button key={e.slug} onClick={() => jump('e-' + e.slug)} className={seen.has(e.slug) ? 'seen' : ''}>{e.name[lang]}</button>
+                  <button key={e.slug} onClick={() => onGo('e-' + e.slug)} className={(seen.has(e.slug) ? 'seen' : '') + (here === 'e-' + e.slug ? ' here' : '')} aria-current={here === 'e-' + e.slug ? 'location' : undefined}>{e.name[lang]}</button>
                 ))}
-                {!k && <button onClick={() => jump('q-' + p.slug)} className={'quizlink' + (got.has(p.slug) ? ' got' : '')}>{got.has(p.slug) ? badges[p.slug][lang] : (lang === 'vi' ? '3 câu hỏi nhận huy hiệu' : '3 questions for a badge')}</button>}
+                {!k && <button onClick={() => onGo('q-' + p.slug)} className={'quizlink' + (got.has(p.slug) ? ' got' : '') + (here === 'q-' + p.slug ? ' here' : '')}>{got.has(p.slug) ? badges[p.slug][lang] : (lang === 'vi' ? '3 câu hỏi nhận huy hiệu' : '3 questions for a badge')}</button>}
               </div>
             </li>
           );
@@ -336,6 +362,33 @@ function Sources({ lang }: { lang: Lang }) {
   );
 }
 
+// Mục lục mở đè lên trang: chọn một mục là tới thẳng đó, đóng lại thì vẫn ở đúng chỗ đang đọc
+function Drawer({ lang, onClose, children }: { lang: Lang; onClose: () => void; children: ReactNode }) {
+  const x = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    x.current?.focus();
+    document.querySelector('.drawer .here')?.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
+    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', k);
+    document.documentElement.classList.add('locked');
+    return () => { window.removeEventListener('keydown', k); document.documentElement.classList.remove('locked'); };
+  }, []);
+  return (
+    <div className="drawer" role="dialog" aria-modal="true" aria-label={lang === 'vi' ? 'Mục lục' : 'Contents'}>
+      <button className="drawer-back" tabIndex={-1} aria-label={lang === 'vi' ? 'Đóng mục lục' : 'Close contents'} onClick={onClose} />
+      <div className="drawer-body">
+        <div className="drawer-top">
+          <strong>{lang === 'vi' ? 'Mục lục' : 'Contents'}</strong>
+          <button ref={x} className="pill icon" onClick={onClose} aria-label={lang === 'vi' ? 'Đóng mục lục' : 'Close contents'}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" className="wave" /></svg>
+          </button>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [lang, setLangS] = useState<Lang>(() => (store.get('annalis-lang', 'vi') === 'en' ? 'en' : 'vi'));
   const [depth, setDepthS] = useState<Depth>(() => store.get('annalis-depth', 'full') as Depth);
@@ -344,6 +397,9 @@ export default function App() {
   const [active, setActive] = useState<{ id: string; era: string | null; focus: string | null }>({ id: 'top', era: null, focus: null });
   const [auto, setAuto] = useState(false);
   const [snd, setSnd] = useState(false);
+  const [toc, setToc] = useState(false);
+  const [resume] = useState(() => { const r = store.get('annalis-last', ''); return STEPS.find((x) => x.id === r && x.id !== 'top') || null; });
+  const split = useMedia(SPLIT);
   const setLang = (l: Lang) => { setLangS(l); store.set('annalis-lang', l); };
   const setDepth = (d: Depth) => { setDepthS(d); store.set('annalis-depth', d); };
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
@@ -356,10 +412,26 @@ export default function App() {
         const d = (e.target as HTMLElement).dataset;
         setActive({ id: e.target.id, era: d.era || null, focus: d.focus || null });
       });
-    }, { rootMargin: '-45% 0px -45% 0px' });
+    }, { rootMargin: split ? '-55% 0px -45% 0px' : '-45% 0px -45% 0px' });
     document.querySelectorAll('[data-step]').forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [split]);
+  useEffect(() => { if (active.id !== 'top') store.set('annalis-last', active.id); }, [active.id]);
+
+  const idx = Math.max(0, STEPS.findIndex((x) => x.id === active.id));
+  const go = (d: number) => { const n = STEPS[idx + d]; if (n) jump(n.id); };
+  const goFromToc = (id: string) => { setToc(false); window.setTimeout(() => jump(id), 0); };
+  // Phím mũi tên trái, phải (hoặc J, K) để sang phần trước, phần kế tiếp
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement;
+      if (toc || e.metaKey || e.ctrlKey || e.altKey || /INPUT|TEXTAREA|SELECT/.test(t.tagName)) return;
+      if (e.key === 'ArrowRight' || e.key === 'j') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowLeft' || e.key === 'k') { e.preventDefault(); go(-1); }
+    };
+    window.addEventListener('keydown', k);
+    return () => window.removeEventListener('keydown', k);
+  }, [idx, toc]);
 
   useEffect(() => {
     const f = active.focus;
@@ -401,18 +473,18 @@ export default function App() {
 
   return (
     <div className="app" style={{ ['--c' as string]: color }}>
-      <Stage lang={lang} era={active.era} focus={active.focus} sheet={active.focus ? 1 : 0} onPick={(s) => jump('e-' + s)} />
+      <Stage lang={lang} era={active.era} focus={active.focus} sheet={!split && active.focus ? 1 : 0} split={split} onPick={(s) => jump('e-' + s)} />
       <div className="shade" />
 
       <header className="bar">
         <button className="brand" onClick={() => jump('top')}>VIỆT SỬ TOÀN ĐỒ</button>
-        <button className="pill progress" onClick={() => jump('lo-trinh')} aria-label={lang === 'vi' ? 'Lộ trình và tiến độ khám phá' : 'Roadmap and progress'}>
+        <button className="pill progress" onClick={() => setToc(true)} aria-haspopup="dialog" aria-label={lang === 'vi' ? `Mở mục lục, đã khám phá ${seen.size} trên ${journey.length} mục` : `Open contents, ${seen.size} of ${journey.length} explored`}>
           <svg viewBox="0 0 36 36" aria-hidden="true">
             <circle cx="18" cy="18" r="15" />
             <circle cx="18" cy="18" r="15" className="arc" strokeDasharray={`${(seen.size / journey.length) * 94.2} 94.2`} />
           </svg>
-          <b>{seen.size}/{journey.length}</b>
-          <span>{lang === 'vi' ? 'đã khám phá' : 'explored'}</span>
+          <b>{lang === 'vi' ? 'Mục lục' : 'Contents'}</b>
+          <span>{seen.size}/{journey.length}</span>
         </button>
         <button className={'pill icon' + (snd ? ' on' : '')} onClick={toggleSound} aria-pressed={snd} aria-label={lang === 'vi' ? 'Bật hoặc tắt âm thanh' : 'Toggle sound'}>
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -433,11 +505,12 @@ export default function App() {
             <h1>{lang === 'vi' ? <>800.000 năm<br />trên một bản đồ sống</> : <>800,000 years<br />on one living map</>}</h1>
             <p className="lead">
               {lang === 'vi'
-                ? 'Cuộn xuống để đi qua lịch sử Việt Nam từ chiếc rìu đá đầu tiên. Bản đồ phía sau sẽ đổi theo từng thời kỳ và bay tới từng di tích.'
-                : 'Scroll down to travel through the history of Vietnam from the first stone axe. The map behind changes with each period and flies to each site.'}
+                ? 'Cuộn xuống để đi qua lịch sử Việt Nam từ chiếc rìu đá đầu tiên. Bản đồ sẽ đổi theo từng thời kỳ và bay tới từng di tích. Bạn cũng có thể chạm vào một cột sáng trên bản đồ để tới thẳng di tích đó.'
+                : 'Scroll down to travel through the history of Vietnam from the first stone axe. The map changes with each period and flies to each site. You can also tap a beam of light on the map to go straight to that site.'}
             </p>
             <div className="cta">
-              <button className="primary" onClick={() => jump('p-' + periods[0].slug)}>{lang === 'vi' ? 'Bắt đầu từ thời đồ đá' : 'Start from the Stone Age'}</button>
+              {resume && <button className="primary" onClick={() => jump(resume.id)}>{lang === 'vi' ? 'Đọc tiếp: ' : 'Continue: '}{resume.title[lang]}</button>}
+              <button className={resume ? 'ghost' : 'primary'} onClick={() => jump('p-' + periods[0].slug)}>{lang === 'vi' ? 'Bắt đầu từ thời đồ đá' : 'Start from the Stone Age'}</button>
               <button className="ghost" onClick={startAuto}>{lang === 'vi' ? 'Tự chạy như phim' : 'Play as a film'}</button>
             </div>
             <div className="zones">
@@ -467,21 +540,43 @@ export default function App() {
         ))}
 
         <section className="step" id="lo-trinh" data-step>
-          <div className="panel"><Index lang={lang} seen={seen} got={got} /></div>
+          <div className="panel"><Index lang={lang} seen={seen} got={got} here="" onGo={jump} /></div>
         </section>
         <section className="step last" id="nguon" data-step>
           <div className="panel"><Sources lang={lang} /></div>
         </section>
       </main>
 
-      <nav className="scrub" aria-label={lang === 'vi' ? 'Chọn thời kỳ' : 'Choose a period'}>
-        {periods.map((p) => (
-          <button key={p.slug} onClick={() => jump('p-' + p.slug)} className={active.era === p.slug ? 'on' : ''} style={{ ['--c' as string]: p.color }}>
-            <i /><b>{p.name[lang]}</b><span>{START[p.slug][lang]}</span>
-          </button>
-        ))}
-        <button onClick={() => jump('lo-trinh')} className="more"><i /><b>+{upcoming.length}</b><span>{T.soon[lang]}</span></button>
+      <nav className="dock" aria-label={lang === 'vi' ? 'Di chuyển trong trang' : 'Page navigation'}>
+        <i className="prog" style={{ width: (idx / (STEPS.length - 1)) * 100 + '%' }} />
+        <button className="navb" onClick={() => go(-1)} disabled={idx <= 0} aria-label={lang === 'vi' ? 'Phần trước' : 'Previous section'}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg><span>{lang === 'vi' ? 'Trước' : 'Back'}</span>
+        </button>
+        <div className="scrub">
+          {periods.map((p) => (
+            <button key={p.slug} onClick={() => jump('p-' + p.slug)} className={active.era === p.slug ? 'on' : ''} style={{ ['--c' as string]: p.color }}>
+              <i /><b>{p.name[lang]}</b><span>{START[p.slug][lang]}</span>
+            </button>
+          ))}
+          <button onClick={() => jump('lo-trinh')} className="more"><i /><b>+{upcoming.length}</b><span>{T.soon[lang]}</span></button>
+        </div>
+        <button className="herebtn" onClick={() => setToc(true)} aria-haspopup="dialog">
+          <small>{idx + 1}/{STEPS.length} - {lang === 'vi' ? 'chạm để mở mục lục' : 'tap for contents'}</small>
+          <b>{STEPS[idx].title[lang]}</b>
+        </button>
+        <button className="navb next" onClick={() => go(1)} disabled={idx >= STEPS.length - 1} aria-label={lang === 'vi' ? 'Phần kế tiếp' : 'Next section'}>
+          <span>{lang === 'vi' ? 'Tiếp' : 'Next'}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
       </nav>
+      {toc && (
+        <Drawer lang={lang} onClose={() => setToc(false)}>
+          <Index lang={lang} seen={seen} got={got} here={active.id} onGo={goFromToc} bare />
+          <div className="cta">
+            <button className="ghost" onClick={() => goFromToc('nguon')}>{lang === 'vi' ? 'Nguồn và cách làm' : 'Sources and method'}</button>
+            <button className="ghost" onClick={() => goFromToc('top')}>{lang === 'vi' ? 'Về đầu trang' : 'Back to top'}</button>
+          </div>
+        </Drawer>
+      )}
       {auto && <button className="stopauto" onClick={() => setAuto(false)}>{lang === 'vi' ? 'Dừng tự chạy' : 'Stop autoplay'}</button>}
     </div>
   );

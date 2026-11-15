@@ -247,8 +247,17 @@ function buildJar(scene: THREE.Scene) {
 export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang }) {
   const host = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState(false);
+  // Khung và chú thích luôn giữ nguyên kích thước; chỉ phần dựng 3D là bật khi khung vào tầm nhìn.
+  // Nhờ vậy trang không bị xô lệch khi cuộn và không mở quá nhiều khung 3D cùng lúc.
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const io = new IntersectionObserver(([e]) => setOn(e.isIntersecting), { rootMargin: '160px' });
+    io.observe(host.current!);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!on) return;
     const el = host.current!;
     let renderer: THREE.WebGLRenderer;
     try {
@@ -288,7 +297,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
     const tick = (ms = 0) => { built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
     tick();
     return () => { cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); renderer.domElement.remove(); };
-  }, [kind, lang]);
+  }, [kind, lang, on]);
 
   const info = MODEL_INFO[kind];
   return (
