@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { BATTLES } from '../data/battles';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
@@ -369,6 +370,55 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     arc.frustumCulled = false;
     scene.add(arc);
     let arcT = 9, lastFocus: string | null = null;
+
+    // Sơ đồ trận đánh: các mũi tên hành quân vẽ dần trên mặt đất khi đang xem một trận đánh
+    const battleU = { uP: { value: 0 }, uT: { value: 0 } };
+    const tubeMat = (c: string, air = false) => new THREE.ShaderMaterial({
+      uniforms: { ...battleU, uC: { value: new THREE.Color(c) }, uAir: { value: air ? 1 : 0 } },
+      transparent: true, depthWrite: false,
+      vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+      fragmentShader: `uniform vec3 uC; uniform float uP; uniform float uT; uniform float uAir; varying vec2 vUv;
+        void main(){ if (vUv.x > uP) discard;
+          float dash = uAir > 0.5 ? step(0.5, fract(vUv.x * 18.0 - uT * 0.8)) : 1.0;
+          float flow = 0.55 + 0.45 * smoothstep(0.0, 0.08, fract(vUv.x * 4.0 - uT * 0.5)) * (1.0 - fract(vUv.x * 4.0 - uT * 0.5));
+          float head = smoothstep(uP - 0.06, uP, vUv.x) * step(uP, 0.999);
+          gl_FragColor = vec4(min(vec3(1.0), uC * (0.75 + 0.35 * flow) + head * 0.6), dash); }`,
+    });
+    let battleG: THREE.Group | null = null, battleArrows: { m: THREE.Mesh; curve: THREE.CatmullRomCurve3 }[] = [];
+    let battleBox: { cx: number; cz: number; r: number; k: number } | null = null;
+    const onGround = (lon: number, lat: number, up = 0.07) => new THREE.Vector3(X(lon), up + hAt(lon, lat) * EX, Z(lat));
+    const clearBattle = () => {
+      if (!battleG) return;
+      scene.remove(battleG);
+      battleG.traverse((o) => { const m = o as THREE.Mesh; m.geometry?.dispose?.(); const mt = m.material as THREE.Material & { map?: THREE.Texture }; mt?.map?.dispose?.(); mt?.dispose?.(); });
+      battleG = null; battleArrows = []; battleBox = null;
+    };
+    const showBattle = (slug: string | null) => {
+      clearBattle();
+      const b = slug ? BATTLES[slug] : null;
+      if (!b) return;
+      battleG = new THREE.Group(); battleU.uP.value = 0;
+      let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+      b.routes.forEach((rt) => rt.pts.forEach(([lon, lat]) => { x0 = Math.min(x0, X(lon)); x1 = Math.max(x1, X(lon)); z0 = Math.min(z0, Z(lat)); z1 = Math.max(z1, Z(lat)); }));
+      const span = Math.max(x1 - x0, z1 - z0) / 2, kz = Math.max(0.3, span / 1.4), rad = 0.03 * kz, sz = Math.min(0.95, 0.72 * kz);
+      b.routes.forEach((rt) => {
+        const pts = rt.pts.map(([lon, lat]) => onGround(lon, lat, rt.air ? 0.5 : 0.07));
+        if (rt.air) { pts[0].y = 0.15 + pts[0].y; pts[pts.length - 1].y = 0.12 + hAt(rt.pts[rt.pts.length - 1][0], rt.pts[rt.pts.length - 1][1]) * EX; }
+        const curve = new THREE.CatmullRomCurve3(pts, false, 'centripetal');
+        const col = rt.side === 'vn' ? '#ffcf5a' : '#5cc8ff';
+        const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(24, pts.length * 20), rad, 6, false), tubeMat(col, rt.air));
+        tube.renderOrder = 5; battleG!.add(tube);
+        const head = new THREE.Mesh(new THREE.ConeGeometry(rad * 2.6, rad * 7, 10), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0, depthWrite: false }));
+        head.renderOrder = 6; battleG!.add(head); battleArrows.push({ m: head, curve });
+      });
+      b.marks.forEach((mk) => {
+        const sp = label(mk.name[lang], '#fff2d0', 26, 700, 1);
+        sp.position.copy(onGround(mk.at[0], mk.at[1], 0.12 + sz * 0.3)); sp.scale.multiplyScalar(sz);
+        sp.material.opacity = 0; sp.renderOrder = 7; battleG!.add(sp);
+      });
+      battleBox = { cx: (x0 + x1) / 2, cz: (z0 + z1) / 2, r: span, k: kz };
+      scene.add(battleG);
+    };
     const setArc = (a: THREE.Vector3, b: THREE.Vector3) => {
       const mid = a.clone().add(b).multiplyScalar(0.5);
       mid.y = 0.6 + a.distanceTo(b) * 0.3;
@@ -418,15 +468,21 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     // Bản đồ nhìn vào đâu khi mở một thời kỳ: cả nước, miền Bắc, miền Trung hay miền Nam
     const CENTER: Record<string, [number, number]> = { north: [105.9, 20.6], central: [108.0, 15.3], south: [106.4, 10.7], sea: [111.2, 12.6] };
     const eraView = (era: string | null) => (!era ? 'all' : era === 'van-lang' || era === 'au-lac' ? 'north' : periodBySlug[era]?.view || 'all');
+    let battleFor: string | null = '-';
     const view = () => {
       const s = live.current;
+      if (s.focus !== battleFor) { battleFor = s.focus; showBattle(s.focus); }
       const vw = eraView(s.era), vc = CENTER[vw];
       const portrait = aspect < 0.9;
       const pin = s.focus ? pins.find((x) => x.slug === s.focus) : null;
       if (s.split) {
         // Khung bản đồ riêng: luôn đặt mục tiêu vào giữa khung, không chừa chỗ cho thẻ
         const k = Math.max(1, 1.25 / aspect) * (vw === 'sea' ? 1.9 : 1);
-        if (pin) {
+        if (pin && battleBox) {
+          const kb = k * battleBox.k * 1.1;
+          want.t.set(battleBox.cx, 0, battleBox.cz - 0.6 * kb);
+          want.p.set(want.t.x + 1.0 * kb, 5.2 * kb, want.t.z + 6.2 * kb);
+        } else if (pin) {
           want.t.copy(pin.pos).setY(0);
           want.t.z -= 1.0; // đẩy điểm đang xem xuống dưới thanh tiêu đề
           want.p.set(want.t.x + 1.2 * k, 5.4 * k, want.t.z + 6.4 * k);
@@ -439,7 +495,13 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         }
         return `${s.focus}|${s.era}|split|${Math.round(aspect * 10)}`;
       }
-      if (pin) {
+      if (pin && battleBox) {
+        // Đang xem một trận đánh: lùi máy quay để thấy trọn sơ đồ hành quân
+        const k = (portrait ? 1.5 : 1) * battleBox.k;
+        want.t.set(battleBox.cx, 0, battleBox.cz);
+        if (s.sheet) portrait ? (want.t.z -= 1.2 * k) : (want.t.x -= 2.4 * k);
+        want.p.set(want.t.x + 1.0 * k, 5.6 * k, want.t.z + 6.2 * k);
+      } else if (pin) {
         const k = portrait ? 1.15 : 1;
         want.t.copy(pin.pos).setY(0);
         if (s.sheet) portrait ? (want.t.z -= 1.2) : (want.t.x -= 2.6);
@@ -528,6 +590,19 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         camera.position.lerp(goal, a);
       }
       // Đường nối: vẽ dần trong hơn một giây rồi mờ bớt
+      if (battleG) {
+        battleU.uT.value = t;
+        battleU.uP.value = Math.min(1, battleU.uP.value + dt / (reduce ? 0.01 : 3.2));
+        const pp = battleU.uP.value;
+        battleArrows.forEach(({ m, curve }) => {
+          const u = Math.min(0.999, Math.max(0.001, pp));
+          m.position.copy(curve.getPointAt(u));
+          const tg = curve.getTangentAt(u);
+          m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tg);
+          (m.material as THREE.MeshBasicMaterial).opacity = pp > 0.02 ? 1 : 0;
+        });
+        battleG.children.forEach((o) => { if ((o as THREE.Sprite).isSprite) { const sm = (o as THREE.Sprite).material; sm.opacity += ((pp > 0.35 ? 1 : 0) - sm.opacity) * 0.08; } });
+      }
       arcT += dt;
       arcGeo.setDrawRange(0, Math.max(2, Math.round(Math.min(1, arcT / 1.1) * ARC)));
       arcMat.opacity = arcT > 8 ? 0 : arcT < 1.1 ? 0.95 : Math.max(0.3, 0.95 - (arcT - 1.1) * 0.4);
@@ -553,7 +628,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       if (tU.uSweep.value < 12) tU.uSweep.value += dt * 9;
       const fp = s.focus ? pins.find((x) => x.slug === s.focus) : null;
       if (fp) { disc.position.set(fp.pos.x, fp.pos.y + 0.04, fp.pos.z); discMat.color.set(periodBySlug[fp.period].color); }
-      discMat.opacity += ((fp ? 0.6 : 0) - discMat.opacity) * 0.07;
+      discMat.opacity += ((fp && !battleG ? 0.6 : 0) - discMat.opacity) * 0.07;
       const ds = 1.5 + discMat.opacity * 1.8;
       disc.scale.set(ds, ds, 1);
       if (!reduce) disc.rotation.z += dt * 0.12;
@@ -600,8 +675,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const gy = p.group.scale.y, tk = (isFocus ? 1 : 0.8) * Math.min(1.7, Math.max(1, camera.position.distanceTo(p.pos) / 9));
         p.tag.position.y = (isFocus ? 1.3 : p.tagY) / gy; // nhãn nằm ngay trên cột sáng của chính nó
         p.tag.scale.set(p.tag.userData.sx * tk, (p.tag.userData.sy * tk) / gy, 1);
-        const o = inEra ? 1 : 0; // ghim của thời kỳ khác ẩn hẳn để bản đồ không rối
-        p.group.visible = p.head.opacity > 0.02 || inEra;
+        const o = inEra && (!battleG || isFocus) ? 1 : 0; // ghim của thời kỳ khác ẩn hẳn để bản đồ không rối; khi xem sơ đồ trận đánh chỉ giữ ghim đang xem
+        p.group.visible = battleG ? false : p.head.opacity > 0.02 || inEra;
         p.head.opacity += (o - p.head.opacity) * 0.1;
         p.beam.opacity = p.head.opacity * (isFocus ? 1 : 0.75);
         const sc = isFocus ? 1.9 : 1;

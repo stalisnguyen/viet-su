@@ -1,10 +1,12 @@
 import { Rich, newSeen } from './components/Rich';
+import { BATTLES } from './data/battles';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Stage, { ZONES } from './components/Stage';
 import Model3D from './components/Model3D';
 import { entries, entryBySlug } from './data/entries';
 import { periodBySlug, periods, upcoming } from './data/periods';
 import { sourceById, sources } from './data/sources';
+import { CITE_EN } from './data/citeEn';
 import { hooks } from './data/hooks';
 import { badges, quiz, world } from './data/extras';
 import { photos } from './data/photos';
@@ -102,7 +104,7 @@ function SourceList({ ids, lang }: { ids: string[]; lang: Lang }) {
       <ol className="srclist">
         {ids.map((id) => {
           const s = sourceById[id];
-          return <li key={id}>{s.cite} {s.url && <a href={s.url} target="_blank" rel="noreferrer">{T.open[lang]}</a>}</li>;
+          return <li key={id}>{lang === 'en' ? CITE_EN[s.id] ?? s.cite : s.cite} {s.url && <a href={s.url} target="_blank" rel="noreferrer">{T.open[lang]}</a>}</li>;
         })}
       </ol>
     </section>
@@ -398,7 +400,7 @@ function Sources({ lang }: { lang: Lang }) {
           <summary>{name[lang]} ({sources.filter((s) => s.kind === g).length})</summary>
           <ol className="srclist">
             {sources.filter((s) => s.kind === g).map((s) => (
-              <li key={s.id}>{s.cite} {s.url && <a href={s.url} target="_blank" rel="noreferrer">{T.open[lang]}</a>}</li>
+              <li key={s.id}>{lang === 'en' ? CITE_EN[s.id] ?? s.cite : s.cite} {s.url && <a href={s.url} target="_blank" rel="noreferrer">{T.open[lang]}</a>}</li>
             ))}
           </ol>
         </details>
@@ -623,6 +625,7 @@ export default function App() {
             <>
               {coord && <p><span>{lang === 'vi' ? 'Tọa độ' : 'Position'}</span><b>{coord}</b></p>}
               <p><span>{lang === 'vi' ? 'Niên đại' : 'Date'}</span><b>{fe.date[lang]}</b></p>
+              {BATTLES[fe.slug] && <p className="legend"><span>{lang === 'vi' ? 'Sơ đồ trận đánh' : 'Battle sketch'}</span><b><i className="vn" />{lang === 'vi' ? 'Quân Việt' : 'Vietnamese'} <i className="foe" />{lang === 'vi' ? 'Quân xâm lược' : 'Invaders'}</b><em>{lang === 'vi' ? 'Minh họa, đường đi ước lượng' : 'Illustrative, routes approximate'}</em></p>}
             </>
           ) : (
             <p><span>{lang === 'vi' ? 'Thời kỳ' : 'Period'}</span><b>{fp!.range[lang]}</b></p>
