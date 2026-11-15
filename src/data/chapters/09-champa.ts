@@ -28,8 +28,8 @@ const chapter: Chapter = {
         `The Cham lived from the sea more than from rice fields. Ships sailing between China and India had to call at their ports, and the most important export was eaglewood, alongside gold, ivory and precious timber. In 1155 a Cham embassy carried about 33 tons of incense to the Song court. The histories of neighbouring states also record many Cham raids by ship on Jiaozhou and Đại Việt, and up the rivers into Khmer country.`,
       ),
       l(
-        `Từ thế kỷ 10, Đại Việt ở phía bắc và Angkor ở phía tây vừa buôn bán vừa đánh nhau với Champa. Britannica ghi quân Khmer chiếm Champa năm 1145 và quân Chăm đánh vào Angkor năm 1177. Năm 1471 vua Lê Thánh Tông hạ thành Vijaya. Phần còn lại ở phía nam tồn tại như một vùng tự trị dưới các chúa Nguyễn rồi triều Nguyễn, cho đến khi vua Minh Mạng xóa bỏ vào năm 1832. Lịch sử các triều đại Việt Nam được kể ở những chương khác.`,
-        `From the 10th century Đại Việt to the north and Angkor to the west both traded and fought with Champa. Britannica records that the Khmers conquered Champa in 1145 and that the Cham attacked Angkor in 1177. In 1471 Emperor Lê Thánh Tông took the city of Vijaya. What remained in the south survived as an autonomous territory under the Nguyễn lords and then the Nguyễn dynasty until Emperor Minh Mạng abolished it in 1832. The history of the Vietnamese dynasties is told in other chapters.`,
+        `Từ thế kỷ 10, Đại Việt ở phía bắc và Angkor ở phía tây vừa buôn bán vừa đánh nhau với Champa, và bên nào cũng từng đem quân vào đất bên kia. Britannica ghi quân Khmer chiếm Champa năm 1145 và quân Chăm đánh vào Angkor năm 1177. Năm 1471 vua Lê Thánh Tông hạ thành Vijaya. Vùng tự trị cuối cùng ở phía nam tồn tại đến năm 1832 thì bị vua Minh Mạng xóa bỏ. Lịch sử các triều đại Việt Nam được kể ở những chương khác.`,
+        `From the 10th century Đại Việt to the north and Angkor to the west both traded and fought with Champa, and each side at times sent armies into the other's land. Britannica records that the Khmers conquered Champa in 1145 and that the Cham attacked Angkor in 1177. In 1471 Emperor Lê Thánh Tông took the city of Vijaya. The last autonomous territory in the south survived until 1832, when Emperor Minh Mạng abolished it. The history of the Vietnamese dynasties is told in other chapters.`,
       ),
     ],
     scholarly: [
@@ -65,12 +65,12 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `Sử Trung Hoa dùng tên Lâm Ấp từ khoảng năm 192 đến giữa thế kỷ 8, sau đó gọi là Hoàn Vương, rồi từ thế kỷ 9 là Chiêm Thành. Năm 446, quân nhà Lưu Tống do Đàn Hòa Chi chỉ huy chiếm kinh đô Lâm Ấp. Năm 605, tướng nhà Tùy là Lưu Phương lại đánh vào và cướp phá kinh thành, nơi Vickery cho là Trà Kiệu. Chuyện Khu Liên lập nước được kể ở chương Bắc thuộc.`,
-          `Chinese histories use the name Linyi from about 192 to the mid-8th century, then Huanwang, and from the 9th century Zhancheng. In 446 Liu Song troops under Tan Hezhi captured the Linyi capital. In 605 the Sui general Liu Fang attacked again and plundered the capital, which Vickery takes to be Trà Kiệu. The story of Khu Liên's founding is told in the chapter on Chinese rule.`,
+          `Sử Trung Hoa dùng tên Lâm Ấp từ khoảng năm 192 đến giữa thế kỷ 8, sau đó gọi là Hoàn Vương, rồi từ thế kỷ 9 là Chiêm Thành. Năm 605, tướng nhà Tùy là Lưu Phương đánh vào và cướp phá kinh thành, nơi Vickery cho là Trà Kiệu. Chuyện Khu Liên lập nước và các cuộc đánh nhau giữa Lâm Ấp với Giao Châu ở thế kỷ 3 - 5 được kể ở chương Bắc thuộc lần thứ hai.`,
+          `Chinese histories use the name Linyi from about 192 to the mid-8th century, then Huanwang, and from the 9th century Zhancheng. In 605 the Sui general Liu Fang attacked and plundered the capital, which Vickery takes to be Trà Kiệu. Khu Liên's founding of the state and the fighting between Linyi and Jiaozhou in the 3rd - 5th centuries are told in the chapter on the second period of northern rule.`,
         ),
         l(
-          `Về phía người bản xứ, bia cổ nhất là các bia chữ Phạn của vua Bhadravarman ở vùng Thu Bồn, thế kỷ 5. Bia Đông Yên Châu, thế kỷ 4, là văn bản tiếng Chăm cổ nhất và cũng là chữ viết xưa nhất còn lại của một ngôn ngữ Nam Đảo. Tên Campā xuất hiện lần đầu trong bia C.96 ở Mỹ Sơn năm 658, gần như cùng lúc với một bia Khmer năm 667 nhắc đến "vua Campā".`,
-          `On the local side, the oldest inscriptions are the Sanskrit texts of King Bhadravarman in the Thu Bồn area, from the 5th century. The Đông Yên Châu inscription, 4th century, is the oldest text in Cham and also the earliest surviving writing in any Austronesian language. The name Campā first appears in inscription C.96 at Mỹ Sơn in 658, almost at the same time as a Khmer inscription of 667 that mentions a "ruler of Campā".`,
+          `Về phía người bản xứ, các bia sớm nhất ở vùng Thu Bồn là bia chữ Phạn của vua Bhadravarman, thường được xếp vào khoảng cuối thế kỷ 4 đến thế kỷ 5. Bia Đông Yên Châu, cùng khoảng thời gian ấy, là văn bản tiếng Chăm cổ nhất, cũng là văn bản Nam Đảo xưa nhất còn lại. Tên Campā xuất hiện lần đầu trong bia C.96 ở Mỹ Sơn năm 658; một bia Khmer năm 667 cũng nhắc đến "vua Campā".`,
+          `On the local side, the earliest inscriptions in the Thu Bồn area are the Sanskrit texts of King Bhadravarman, usually placed between the late 4th and the 5th century. The Đông Yên Châu inscription, of about the same time, is the oldest text in Cham and also the earliest surviving writing in any Austronesian language. The name Campā first appears in inscription C.96 at Mỹ Sơn in 658; a Khmer inscription of 667 also mentions a "ruler of Campā".`,
         ),
         l(
           `Britannica chia Champa thành bốn vùng: Amaravati (Quảng Nam), Vijaya (Bình Định), Kauthara (Nha Trang) và Panduranga (Phan Rang). Một số tài liệu thêm Indrapura quanh Đồng Dương như vùng thứ năm, và đặt thành Châu Sa của Amaravati ở Quảng Ngãi. Giữa các vùng là núi ăn ra sát biển, nên đi lại bằng thuyền dễ hơn đi bộ. Địa thế ấy giúp hiểu vì sao mỗi vùng dễ thành một trung tâm riêng.`,
@@ -87,8 +87,8 @@ const chapter: Chapter = {
           `On Cham origins, Vickery cites the view that their ancestors arrived by sea from Borneo some time between 500 BCE and the early Common Era and settled among Mon-Khmer speakers. The Sa Huỳnh culture has long been taken by many archaeologists as their first material trace. Yamagata notes that Sa Huỳnh jar burials end just as Trà Kiệu is first occupied, yet the material culture at Trà Kiệu looks very different, so the transition is not yet explained.`,
         ),
         l(
-          `Bia Võ Cạnh ở Nha Trang, xếp theo tự dạng vào thế kỷ 2 - 4, từng được Coedès và Maspero gán cho Phù Nam. Vickery viết rằng không thể gán chắc cho Phù Nam hay Champa, còn William Southworth đọc nội dung mẫu hệ của bia và đề nghị coi đó là bia đầu tiên của một thực thể Chăm, nhưng không phải của Lâm Ấp. Chương Phù Nam có một mục riêng về tấm bia này.`,
-          `The Võ Cạnh inscription at Nha Trang, placed by its script in the 2nd - 4th centuries, was once assigned to Funan by Coedès and Maspero. Vickery writes that it cannot be ascribed with certainty to either Funan or Champa, while William Southworth reads its matrilineal content and suggests it be reinstated as the first inscription of a Cham entity, though not of Linyi. The Funan chapter has a separate entry on this stone.`,
+          `Bia Võ Cạnh ở Nha Trang, thường được xếp theo tự dạng vào khoảng thế kỷ 3 - 4 (có ý kiến sớm hơn hoặc muộn hơn), từng được Coedès và Maspero gán cho Phù Nam. Vickery viết rằng không thể gán chắc cho Phù Nam hay Champa, còn William Southworth đọc nội dung mẫu hệ của bia và đề nghị coi đó là bia đầu tiên của một thực thể Chăm, nhưng không phải của Lâm Ấp. Chương Phù Nam có một mục riêng về tấm bia này.`,
+          `The Võ Cạnh inscription at Nha Trang, usually placed by its script around the 3rd - 4th centuries (some argue earlier or later), was once assigned to Funan by Coedès and Maspero. Vickery writes that it cannot be ascribed with certainty to either Funan or Champa, while William Southworth reads its matrilineal content and suggests it be reinstated as the first inscription of a Cham entity, though not of Linyi. The Funan chapter has a separate entry on this stone.`,
         ),
       ],
       sources: ['cp-vickery2005', 'cp-yamagata-linyi', 'cp-brit-champa', 'cp-wiki-lamap', 'cp-unicode-wcham'],
@@ -101,7 +101,7 @@ const chapter: Chapter = {
       date: l(`thế kỷ 4 - 13`, `4th - 13th century CE`),
       sort: 1600,
       place: l(`Duy Phú, Duy Xuyên (Quảng Nam cũ, nay thuộc thành phố Đà Nẵng)`, `Duy Phú, Duy Xuyên (formerly Quảng Nam, now Đà Nẵng City)`),
-      coord: [108.12, 15.77],
+      coord: [108.124, 15.764],
       evidence: ['arch', 'chron'],
       summary: l(
         `Mỹ Sơn là thung lũng đền tháp nơi các vua Champa thờ thần Shiva suốt gần một nghìn năm. Khoảng bảy mươi công trình gạch từng đứng ở đây, cách kinh thành Trà Kiệu chừng 10 km. Bom Mỹ năm 1969 đã phá sập tháp A1, ngọn tháp lớn của nhóm A. UNESCO ghi Mỹ Sơn vào danh mục Di sản thế giới năm 1999.`,
@@ -185,7 +185,7 @@ const chapter: Chapter = {
       date: l(`875`, `875 CE`),
       sort: 1125,
       place: l(`Làng Đồng Dương, Thăng Bình (Quảng Nam cũ, nay là xã Đồng Dương, thành phố Đà Nẵng)`, `Đồng Dương village, Thăng Bình (formerly Quảng Nam, now Đồng Dương commune, Đà Nẵng City)`),
-      coord: [108.383, 15.667],
+      coord: [108.283, 15.667],
       evidence: ['arch', 'chron'],
       summary: l(
         `Năm 875, vua Indravarman II dựng một tu viện Phật giáo Đại thừa ở kinh đô mới Indrapura. Đây là quần thể Phật giáo lớn nhất của Champa, một xứ vốn thờ Shiva. Chiến tranh và thời gian đã san phẳng gần hết, chỉ còn một mảng tường tháp. Những pho tượng đồng và đài thờ đá lấy từ đây nay là bảo vật quốc gia.`,
@@ -201,8 +201,8 @@ const chapter: Chapter = {
           `Louis Finot excavated in 1901 and published 229 objects. In 1902 Henri Parmentier dug on a large scale. In the central group stood four guardian figures, each about 2 m high. The Đồng Dương Altar, assembled from 24 sandstone blocks and carved with scenes from the life of the Buddha, is now in the Museum of Cham Sculpture. The bronze Buddha found here is now in the Museum of History in Ho Chi Minh City.`,
         ),
         l(
-          `Năm 1978, người dân xã Bình Định đang làm ruộng thì đào được một pho tượng nữ bằng đồng chôn gần khu di tích, niên đại cuối thế kỷ 9 - đầu thế kỷ 10. Tượng được công nhận là bảo vật quốc gia năm 2012. Di tích hiện chỉ còn một đoạn tường tháp mà dân gọi là Tháp Sáng, và được xếp hạng Di tích quốc gia đặc biệt theo Quyết định 2499/QĐ-TTg ngày 22 tháng 12 năm 2016.`,
-          `In 1978 farmers of Bình Định commune, working their fields, dug up a bronze female figure buried near the site, dated to the late 9th - early 10th century. It was recognised as a national treasure in 2012. Of the monument only a stretch of tower wall survives, which local people call Tháp Sáng, the Bright Tower. The site was ranked a Special National Monument by Decision 2499/QĐ-TTg of 22 December 2016.`,
+          `Năm 1978, người dân xã Bình Định (huyện Thăng Bình) đang làm ruộng thì đào được một pho tượng nữ bằng đồng chôn gần khu di tích, niên đại cuối thế kỷ 9 - đầu thế kỷ 10. Tượng được công nhận là bảo vật quốc gia năm 2012. Di tích hiện chỉ còn một đoạn tường tháp mà dân gọi là Tháp Sáng, và được xếp hạng Di tích quốc gia đặc biệt theo Quyết định 2499/QĐ-TTg ngày 22 tháng 12 năm 2016.`,
+          `In 1978 farmers of Bình Định commune (Thăng Bình district), working their fields, dug up a bronze female figure buried near the site, dated to the late 9th - early 10th century. It was recognised as a national treasure in 2012. Of the monument only a stretch of tower wall survives, which local people call Tháp Sáng, the Bright Tower. The site was ranked a Special National Monument by Decision 2499/QĐ-TTg of 22 December 2016.`,
         ),
       ],
       scholarly: [
@@ -261,7 +261,7 @@ const chapter: Chapter = {
       slug: 'gach-cham-va-dieu-khac',
       period: 'champa',
       kind: 'artifact',
-      name: l(`Kỹ thuật xây gạch Chăm và Bảo tàng Điêu khắc Chăm`, `Cham brick-building and the Museum of Cham Sculpture`),
+      name: l(`Gạch Chăm và Bảo tàng Điêu khắc Chăm`, `Cham brickwork and the Cham Sculpture Museum`),
       date: l(`thế kỷ 7 - 15; bảo tàng mở cửa năm 1919`, `7th - 15th century CE; museum opened 1919`),
       sort: 1050,
       place: l(`Bảo tàng Điêu khắc Chăm, số 2 đường 2 tháng 9, Đà Nẵng`, `Museum of Cham Sculpture, 2 Tháng 9 Street, Đà Nẵng`),
@@ -317,8 +317,8 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `Trước Vijaya là hai thế kỷ chiến tranh với cả hai láng giềng. Britannica ghi quân Khmer của Suryavarman II chiếm Champa năm 1145, Jaya Harivarman I lật đổ ách ấy năm 1147, và người kế vị ông đánh vào kinh đô Angkor năm 1177. Từ 1190 đến 1220 Champa lại nằm dưới quyền Campuchia. Năm 1284 quân Mông Cổ tấn công. Quanh Vijaya còn các tháp Cánh Tiên, Dương Long và Bánh Ít.`,
-          `Before the fall of Vijaya came two centuries of war with both neighbours. Britannica records that the Khmers under Suryavarman II conquered Champa in 1145, that Jaya Harivarman I threw off their rule in 1147, and that his successor sacked the Khmer capital at Angkor in 1177. From 1190 to 1220 Champa was again under Cambodian control. In 1284 the Mongols attacked. Around Vijaya the towers of Cánh Tiên, Dương Long and Bánh Ít still stand.`,
+          `Trước Vijaya là hai thế kỷ chiến tranh với cả hai láng giềng. Britannica ghi quân Khmer của Suryavarman II chiếm Champa năm 1145, Jaya Harivarman I lật đổ ách ấy năm 1147, và người kế vị ông đánh vào kinh đô Angkor năm 1177. Từ 1190 đến 1220 Champa lại nằm dưới quyền Campuchia. Năm 1283 quân Nguyên của Hốt Tất Liệt đánh vào Champa. Quanh Vijaya còn các tháp Cánh Tiên, Dương Long và Bánh Ít.`,
+          `Before the fall of Vijaya came two centuries of war with both neighbours. Britannica records that the Khmers under Suryavarman II conquered Champa in 1145, that Jaya Harivarman I threw off their rule in 1147, and that his successor sacked the Khmer capital at Angkor in 1177. From 1190 to 1220 Champa was again under Cambodian control. In 1283 the Mongol armies of Kublai Khan invaded Champa. Around Vijaya the towers of Cánh Tiên, Dương Long and Bánh Ít still stand.`,
         ),
         l(
           `Theo các nguồn Việt, năm 1470 vua Chăm Trà Toàn đem quân thủy bộ đánh Hóa Châu. Ngày 28 tháng 11 năm 1470 Lê Thánh Tông xuất quân. Ngày 26 tháng 2 năm 1471 quân Chăm thua ở Sa Kỳ. Ngày 18 tháng 3 thành Thị Nại mất, và ngày 22 tháng 3 tường thành Vijaya bị phá. Trà Toàn bị bắt sống cùng gia quyến và chết trên đường bị giải ra bắc.`,
@@ -331,11 +331,11 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          `Con số thương vong đều đến từ phía Việt Nam và Trung Hoa. Trang Wikipedia tiếng Anh dẫn Maspero: hơn 60.000 người bị giết và hơn 30.000 người bị bắt. R. C. Lutz (EBSCO) ghi khoảng 40.000 đến 60.000 người chết theo các ghi chép đương thời, và nhắc rằng không còn tư liệu Chăm nào kể lại sự việc từ phía họ. Con số 100.000 quân Chăm trong sử Việt bị ông coi là có thể quá cao. Số quân Đại Việt được ghi từ 100.000 đến 250.000 tùy nguồn.`,
-          `The casualty figures all come from the Vietnamese and Chinese side. English Wikipedia cites Maspero: more than 60,000 killed and more than 30,000 captured. R. C. Lutz (EBSCO) gives about 40,000 to 60,000 dead according to contemporary accounts and notes that no Cham record survives to give their side. He regards the figure of 100,000 Cham soldiers in Vietnamese histories as possibly too high. The size of the Đại Việt force is given as 100,000 to 250,000 depending on the source.`,
+          `Con số thương vong đều đến từ phía Việt Nam và Trung Hoa. Đại Việt sử ký toàn thư chép quân Lê bắt sống hơn 3 vạn người và chém hơn 4 vạn thủ cấp khi hạ thành. Trang Wikipedia tiếng Anh dẫn Maspero: hơn 60.000 người bị giết và hơn 30.000 người bị bắt. R. C. Lutz (EBSCO) ghi khoảng 40.000 đến 60.000 người chết theo các ghi chép đương thời, và nhắc rằng không còn tư liệu Chăm nào kể lại sự việc từ phía họ. Con số 100.000 quân Chăm trong sử Việt bị ông coi là có thể quá cao. Số quân Đại Việt được ghi từ 100.000 đến 250.000 tùy nguồn. Vì không có ghi chép nào của phía Chăm, mọi con số ở đây nên được đọc như con số của bên thắng.`,
+          `The casualty figures all come from the Vietnamese and Chinese side. The Đại Việt sử ký toàn thư says the Lê army took more than 30,000 prisoners and cut off more than 40,000 heads when the city fell. English Wikipedia cites Maspero: more than 60,000 killed and more than 30,000 captured. R. C. Lutz (EBSCO) gives about 40,000 to 60,000 dead according to contemporary accounts and notes that no Cham record survives to give their side. He regards the figure of 100,000 Cham soldiers in Vietnamese histories as possibly too high. The size of the Đại Việt force is given as 100,000 to 250,000 depending on the source. With no Cham record to set beside them, all these numbers should be read as the victors' figures.`,
         ),
         l(
-          `Cách gọi sự kiện cũng khác nhau. Sử Việt truyền thống kể đây là cuộc đánh trả các lần Champa quấy phá Hóa Châu và là một bước mở cõi. Trang Wikipedia tiếng Anh ghi rằng một số sử gia cho rằng bạo lực với thường dân năm 1471 đáp ứng định nghĩa hiện đại về diệt chủng. Vickery thì lưu ý rằng trong các năm 1360 - 1390 chính Champa suýt chinh phục Đại Việt, nên khái niệm "Nam tiến" như một dòng chảy liên tục chỉ nên dùng từ đầu thế kỷ 15.`,
+          `Cách gọi sự kiện cũng khác nhau. Sử Việt truyền thống kể đây là cuộc đánh trả các lần Champa tấn công Hóa Châu và là một bước mở cõi. Trang Wikipedia tiếng Anh ghi rằng một số sử gia cho rằng bạo lực với thường dân năm 1471 đáp ứng định nghĩa hiện đại về diệt chủng. Vickery thì lưu ý rằng trong các năm 1360 - 1390 chính Champa suýt chinh phục Đại Việt, nên khái niệm "Nam tiến" như một dòng chảy liên tục chỉ nên dùng từ đầu thế kỷ 15.`,
           `The event is also named differently. Traditional Vietnamese history presents it as a response to Cham attacks on Hóa Châu and as a step in opening new territory. English Wikipedia records that some historians consider the violence against civilians in 1471 to meet the modern definition of genocide. Vickery notes that in 1360 - 1390 it was Champa that nearly conquered Đại Việt, so the idea of a continuous "southward advance" should be applied only from the early 15th century.`,
         ),
         l(
@@ -343,16 +343,16 @@ const chapter: Chapter = {
           `Two other familiar points have been re-examined. Vickery writes that Vijaya as the name of a capital appears in inscriptions only from the 12th century, so the "move of the capital to Vijaya in 1000" is an inference. As for 1177, the story of Cham ships sailing upriver to surprise Angkor goes back to Chinese histories. The Khmer inscription K.485 says instead that the Cham king came "transporting his army on carts", and the Song huiyao says only that Champa attacked Cambodia with a boat-borne force, not that it took Angkor. Vickery therefore doubts the naval surprise itself.`,
         ),
       ],
-      sources: ['cp-ebsco-vijaya', 'cp-wiki-1471', 'cp-brit-champa', 'cp-vickery2005', 'cp-wiki-vijaya'],
+      sources: ['cp-ebsco-vijaya', 'cp-wiki-1471', 'cp-brit-champa', 'cp-vickery2005', 'cp-toanthu-bk12'],
     },
     {
       slug: 'panduranga-po-klong-garai',
       period: 'champa',
       kind: 'site',
-      name: l(`Panduranga, tháp Po Klong Garai và người Chăm hôm nay`, `Panduranga, the Po Klong Garai towers and the Cham today`),
-      date: l(`thế kỷ 13 - 1832 - nay`, `13th century - 1832 - present`),
+      name: l(`Panduranga và tháp Po Klong Garai`, `Panduranga and the Po Klong Garai towers`),
+      date: l(`cuối thế kỷ 13 - 1832`, `late 13th century - 1832`),
       sort: 168,
-      place: l(`Đồi Trầu, Phan Rang - Tháp Chàm (Ninh Thuận cũ, nay thuộc tỉnh Khánh Hòa)`, `Trầu hill, Phan Rang - Tháp Chàm (formerly Ninh Thuận, now Khánh Hòa province)`),
+      place: l(`Đồi Trầu, phường Đô Vinh, Phan Rang (Ninh Thuận cũ, nay thuộc tỉnh Khánh Hòa)`, `Trầu hill, Đô Vinh ward, Phan Rang (formerly Ninh Thuận, now Khánh Hòa province)`),
       coord: [108.9469, 11.6011],
       evidence: ['arch', 'chron', 'legend'],
       summary: l(
@@ -365,8 +365,8 @@ const chapter: Chapter = {
           `The group was built around the late 13th - 14th century, associated with King Jaya Simhavarman III, for the worship of Shiva. The three surviving buildings are the main tower, 20.5 m high, the fire tower, 9.31 m high with a curved saddle-shaped roof, and the gate tower, 8.65 m high. Inside the main tower is a mukhalinga, a linga with a human face, which the Cham regard as the image of King Po Klong Garai. It was recognised as a national treasure in 2024.`,
         ),
         l(
-          `Năm 1695 chúa Nguyễn Phúc Chu lập lại xứ này thành trấn Thuận Thành, và một hiệp ước năm điều năm 1712 đặt vua Chăm dưới quyền chúa Nguyễn. Dưới thời Gia Long, Panduranga được tự trị rộng và gần gũi với Tổng trấn Gia Định Lê Văn Duyệt. Tháng 8 năm 1832, ba ngày sau khi Lê Văn Duyệt mất, vua Minh Mạng sáp nhập Panduranga và giữ vua Po Phaok The ở Huế.`,
-          `In 1695 Lord Nguyễn Phúc Chu re-established the country as the principality of Thuận Thành, and a five-point treaty of 1712 placed the Cham king under the Nguyễn lord. Under Gia Long, Panduranga had wide autonomy and stood close to Lê Văn Duyệt, viceroy of Gia Định. In August 1832, three days after Lê Văn Duyệt died, Emperor Minh Mạng annexed Panduranga and held King Po Phaok The in Huế.`,
+          `Năm 1695 chúa Nguyễn Phúc Chu lập lại xứ này thành trấn Thuận Thành, và một hiệp ước năm điều năm 1712 đặt vua Chăm dưới quyền chúa Nguyễn. Dưới thời Gia Long, Panduranga được tự trị rộng và gần gũi với Tổng trấn Gia Định Lê Văn Duyệt. Tháng 8 năm 1832, chỉ vài ngày sau khi Lê Văn Duyệt mất, vua Minh Mạng sáp nhập Panduranga và giữ vua Po Phaok The ở Huế.`,
+          `In 1695 Lord Nguyễn Phúc Chu re-established the country as the principality of Thuận Thành, and a five-point treaty of 1712 placed the Cham king under the Nguyễn lord. Under Gia Long, Panduranga had wide autonomy and stood close to Lê Văn Duyệt, viceroy of Gia Định. In August 1832, only days after Lê Văn Duyệt died, Emperor Minh Mạng annexed Panduranga and held King Po Phaok The in Huế.`,
         ),
         l(
           `Hai cuộc nổi dậy nối tiếp nhau: Katip Sumat (1833 - 1834), mang màu sắc Hồi giáo, và Ja Thak Wa (1834 - 1835). Ja Thak Wa bị giết tháng 5 năm 1835, và tháng 7 năm ấy Po Phaok The bị xử tử. Theo điều tra ngày 1 tháng 4 năm 2019, Việt Nam có 178.948 người Chăm, sống ở vùng Ninh Thuận, Bình Thuận cũ và ở An Giang, Tây Ninh, Thành phố Hồ Chí Minh. Gia đình Chăm theo truyền thống mẫu hệ.`,
@@ -379,15 +379,15 @@ const chapter: Chapter = {
           `The events of 1832 are seen very differently. From the Nguyễn court's side this was part of Minh Mạng's centralisation: he made Panduranga pay taxes directly to Huế and removed the influence of Lê Văn Duyệt's faction. From the Cham side, according to Nicolas Weber (2012), the ariya poems speak of a new and foreign order imposed and of the sufferings of the population. English Wikipedia, drawing largely on Po Dharma, records that Cham temples, tombs and coastal villages were destroyed from the summer of 1835. Thiệu Trị and Tự Đức later eased the religious restrictions.`,
         ),
         l(
-          `Về ngọn tháp, lịch sử và truyền thuyết đan vào nhau. Trang của tỉnh Khánh Hòa ghi theo truyền thống Chăm rằng Po Klong Garai trị vì 54 năm (1151 - 1205) và làm các đập thủy lợi, còn người dân kể ông vốn là người chăn trâu, thắng quân Khmer bằng một cuộc thi xây tháp. Trang Wikipedia tiếng Anh lưu ý rằng các bia sớm hơn cho thấy Jaya Simhavarman III có lẽ chủ yếu trùng tu và mở rộng công trình đã có, rằng một bia năm 1050 tại đây ghi chiến thắng của hai hoàng thân Chăm trước dân Panduranga, và rằng mukhalinga hiện nay thuộc thế kỷ 16 hoặc 17.`,
-          `At the towers, history and legend are woven together. The Khánh Hòa provincial page follows Cham tradition in saying that Po Klong Garai reigned for 54 years (1151 - 1205) and built irrigation dams, while local people tell that he was a buffalo herder who defeated the Khmers in a tower-building contest. English Wikipedia notes that earlier inscriptions suggest Jaya Simhavarman III mainly restored and extended existing structures, that an inscription of 1050 here records a victory of two Cham princes over the people of Panduranga, and that the present mukhalinga dates from the 16th or 17th century.`,
+          `Về ngọn tháp, lịch sử và truyền thuyết đan vào nhau. Trang của tỉnh Khánh Hòa ghi theo truyền thống Chăm rằng vua Po Klong Garai trị vì 54 năm (1151 - 1205) và làm các đập thủy lợi Nha Trinh, Lâm Cấm. Cũng trang ấy ghi cụm tháp do vua Jaya Simhavarman III xây vào khoảng cuối thế kỷ 13 đến thế kỷ 14, tức muộn hơn vị vua được thờ khoảng một thế kỷ. Hai điều này không mâu thuẫn nếu hiểu Po Klong Garai là một vị vua được thần hóa trong ký ức người Chăm, còn ngôi đền là công trình của một triều vua về sau. Niên đại 1151 - 1205 là niên đại theo truyền thống, và trang này không dẫn bia ký nào cho niên đại ấy.`,
+          `At the towers, history and legend are woven together. The Khánh Hòa provincial page follows Cham tradition in saying that King Po Klong Garai reigned for 54 years (1151 - 1205) and built the Nha Trinh and Lâm Cấm irrigation dams. The same page says the towers were built by King Jaya Simhavarman III around the late 13th to 14th century, about a hundred years after the king they honour. The two statements fit together if Po Klong Garai is understood as a ruler deified in Cham memory and the temple as the work of a later reign. The dates 1151 - 1205 are traditional, and the page cites no inscription for them.`,
         ),
         l(
           `Người Chăm ngày nay không phải một khối thuần nhất. Trương Văn Món (Sakaya) phân biệt Chăm Ahiér, có đền tháp và tín ngưỡng pha Bà La Môn, Chăm Awal hay Bà Ni, theo một dạng Hồi giáo đã bản địa hóa, và Chăm Islam ở Nam Bộ. Con số của ông (khoảng 179.987 người) lệch nhẹ so với số của báo Nhân Dân. Chữ Chăm truyền thống thuộc họ chữ gốc Brahmi và còn hai dạng, một dùng ở Việt Nam, một ở Campuchia. Người Chăm theo Hồi giáo thường dùng chữ Jawi gốc Ả Rập.`,
           `The Cham today are not a single block. Trương Văn Món (Sakaya) distinguishes the Cham Ahiér, who have the temple-towers and a faith mixed with Brahmanism, the Cham Awal or Bani, who follow a localised form of Islam, and the Cham Islam of the south. His figure (about 179,987 people) differs slightly from that of the newspaper Nhân Dân. The traditional Cham script belongs to the Brahmi-derived family and survives in two forms, one used in Vietnam and one in Cambodia. Muslim Cham commonly use Jawi, an Arabic-based script.`,
         ),
       ],
-      sources: ['cp-kh-poklong', 'cp-wiki-thuanthanh', 'cp-weber2012', 'cp-nd-dantoccham', 'cp-sakaya', 'cp-unicode-wcham', 'cp-wiki-poklong'],
+      sources: ['cp-kh-poklong', 'cp-wiki-thuanthanh', 'cp-weber2012', 'cp-nd-dantoccham', 'cp-sakaya', 'cp-unicode-wcham'],
     },
   ],
 
@@ -397,7 +397,7 @@ const chapter: Chapter = {
     { id: 'cp-momoki2021', cite: 'Momoki Shiro (2021). Điểm sách: Griffiths, A., Hardy, A., Wade, G. (chủ biên), Champa: Territories and Networks of a Southeast Asian Kingdom (EFEO, 2019). Southeast Asian Studies 10(1), DOI 10.20495/seas.10.1_179.', url: 'https://englishkyoto-seas.org/2021/04/vol-10-no-1-book-reviews-momoki-shiro', kind: 'paper' },
     { id: 'cp-wiki-champa', cite: 'Wikipedia (tiếng Anh). "Champa". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Champa', kind: 'reference' },
     { id: 'cp-wiki-lamap', cite: 'Wikipedia (tiếng Anh). "Lâm Ấp". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/L%C3%A2m_%E1%BA%A4p', kind: 'reference' },
-    { id: 'cp-weber2012', cite: 'Weber, N. (2012). "The destruction and assimilation of Campā (1832-35) as seen from Cam sources". Journal of Southeast Asian Studies 43(1). Cambridge University Press (trang tóm tắt).', url: 'https://core-prod.cambridgecore.org/core/journals/journal-of-southeast-asian-studies/article/destruction-and-assimilation-of-campa-183235-as-seen-from-cam-sources/3BE62801898A772227D5E66235245065', kind: 'paper' },
+    { id: 'cp-weber2012', cite: 'Weber, N. (2012). "The destruction and assimilation of Campā (1832-35) as seen from Cam sources". Journal of Southeast Asian Studies 43(1), tr. 158-180. Cambridge University Press (trang tóm tắt, đăng trực tuyến 3/1/2012).', url: 'https://core-prod.cambridgecore.org/core/journals/journal-of-southeast-asian-studies/article/destruction-and-assimilation-of-campa-183235-as-seen-from-cam-sources/3BE62801898A772227D5E66235245065', kind: 'paper' },
     { id: 'cp-yamagata-linyi', cite: 'Yamagata Mariko. "Construction of Linyi Citadels: The Rise of Early Polity in Vietnam". Chương 2, tr. 28-54. Bản lưu tại kho Toyo Bunko.', url: 'https://toyo-bunko.repo.nii.ac.jp/record/3629/files/TBRL16_03_YAMAGATA%20Mariko.pdf', kind: 'paper' },
     { id: 'cp-unicode-wcham', cite: 'Pérez Pereiro, A., Ke, L., López Cortina, J., Cunningham, A. (2022). "Proposal to Encode Western Cham". ISO/IEC JTC1/SC2/WG2, tài liệu L2/22-095.', url: 'https://www.unicode.org/L2/L2022/22095-western-cham.pdf', kind: 'paper' },
     { id: 'cp-dharma-c72', cite: 'Griffiths, A. (biên tập). "C. 72: Stela from Mỹ Sơn A". DHARMA, Corpus of the Inscriptions of Campā (INSCIC00072).', url: 'https://dharmalekha.info/texts/INSCIC00072', kind: 'primary' },
@@ -421,9 +421,8 @@ const chapter: Chapter = {
     { id: 'cp-wiki-museum', cite: 'Wikipedia (tiếng Anh). "Museum of Cham Sculpture". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Museum_of_Cham_Sculpture', kind: 'reference' },
     { id: 'cp-ebsco-vijaya', cite: 'Lutz, R. C. (2022). "Battle of Vijaya". EBSCO Research Starters: History.', url: 'https://ebsco.com/research-starters/history/battle-vijaya', kind: 'reference' },
     { id: 'cp-wiki-1471', cite: 'Wikipedia (tiếng Anh). "Champa - Đại Việt War (1471)". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Champa%E2%80%93%C4%90%E1%BA%A1i_Vi%E1%BB%87t_War_(1471)', kind: 'reference' },
-    { id: 'cp-wiki-vijaya', cite: 'Wikipedia (tiếng Anh). "Vijaya (Champa)". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Vijaya_(Champa)', kind: 'reference' },
+    { id: 'cp-toanthu-bk12', cite: 'Ngô Sĩ Liên và các sử thần triều Lê. Đại Việt sử ký toàn thư, Bản kỷ thực lục, quyển 12, kỷ Lê Thánh Tông, năm Hồng Đức thứ 2 (1471): đoạn chép việc hạ thành Chà Bàn.', kind: 'primary' },
     { id: 'cp-kh-poklong', cite: 'Sở Văn hóa, Thể thao và Du lịch tỉnh Khánh Hòa. "Po Klong Garai Towers". Cổng du lịch số Khánh Hòa.', url: 'https://dulichso.khanhhoa.gov.vn/en/article/po-klong-garai-towers-0bc', kind: 'museum' },
-    { id: 'cp-wiki-poklong', cite: 'Wikipedia (tiếng Anh). "Po Klong Garai Temple". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Po_Klong_Garai_Temple', kind: 'reference' },
     { id: 'cp-wiki-thuanthanh', cite: 'Wikipedia (tiếng Anh). "Principality of Thuận Thành". Truy cập tháng 11 năm 2026.', url: 'https://en.wikipedia.org/wiki/Principality_of_Thu%E1%BA%ADn_Th%C3%A0nh', kind: 'reference' },
     { id: 'cp-nd-dantoccham', cite: 'Báo Nhân Dân (24/10/2022). "Dân tộc Chăm".', url: 'https://nhandan.vn/dan-toc-cham-post723909.html', kind: 'news' },
     { id: 'cp-sakaya', cite: 'Trương Văn Món (Sakaya). "Người Chăm và văn hóa Chăm ở Việt Nam trong mối quan hệ với một số tộc người, quốc gia khác ở khu vực châu Á". Bản lưu trong thư mục hội thảo 2023 trên trang cvs.twl.ncku.edu.tw (Đại học Quốc gia Thành Công, Đài Loan).', url: 'https://cvs.twl.ncku.edu.tw/conf/2023/TRUONG_Van_Mon.pdf', kind: 'paper' },
@@ -461,8 +460,8 @@ const chapter: Chapter = {
       `Every figure for the battle of 1471 was written down by the victor or by outsiders.`,
     ),
     'panduranga-po-klong-garai': l(
-      `Vị vua Chăm cuối cùng mất nước chỉ ba ngày sau khi người che chở ông qua đời.`,
-      `The last Cham king lost his country just three days after his protector died.`,
+      `Vị vua Chăm cuối cùng mất nước chỉ vài ngày sau khi người che chở ông qua đời.`,
+      `The last Cham king lost his country only days after his protector died.`,
     ),
   },
 
