@@ -94,6 +94,50 @@ const chapter: Chapter = {
       sources: ['wd-vgp-1945', 'wd-cs-uprising', 'wd-brit-ww2', 'wd-tt-baodai', 'wd-wiki-famine'],
     },
     {
+      slug: 'ho-chi-minh',
+      period: '1945-1975',
+      kind: 'figure',
+      name: l('Hồ Chí Minh (1890 - 1969)', 'Hồ Chí Minh (1890 - 1969)'),
+      date: l('1890 - 1969', '1890 - 1969'),
+      sort: 54.5,
+      place: l('Nhà sàn trong Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch, Ba Đình, Hà Nội', `Hồ Chí Minh's stilt house in the Presidential Palace relic site, Ba Đình, Hanoi`),
+      coord: [105.8336, 21.0392],
+      evidence: ['chron'],
+      summary: l(
+        `Hồ Chí Minh sáng lập Đảng Cộng sản Đông Dương năm 1930 và Mặt trận Việt Minh năm 1941, đọc Tuyên ngôn Độc lập năm 1945 và làm Chủ tịch nước Việt Nam Dân chủ Cộng hòa cho đến khi mất năm 1969. Trước đó ông đã sống ba mươi năm ở nước ngoài. Ở Việt Nam, người dân gọi ông một cách trìu mến là Bác Hồ.`,
+        `Hồ Chí Minh founded the Indochinese Communist Party in 1930 and the Việt Minh front in 1941, read the Declaration of Independence in 1945 and was President of the Democratic Republic of Vietnam until his death in 1969. Before that he had spent thirty years abroad. In Vietnam he is affectionately called Bác Hồ, Uncle Hồ.`,
+      ),
+      detail: [
+        l(
+          `Ông tên khai sinh là Nguyễn Sinh Cung, sinh ngày 19 tháng 5 năm 1890 ở làng Hoàng Trù, quê ngoại, thuộc huyện Nam Đàn, Nghệ An. Khoảng năm 1901, khi về quê nội ở làng Kim Liên gần đó, ông lấy tên Nguyễn Tất Thành. Ngày 5 tháng 6 năm 1911, ông rời bến Nhà Rồng ở Sài Gòn trên tàu Amiral Latouche-Tréville, làm phụ bếp, rồi đi qua châu Phi, Mỹ và Anh trước khi trở lại Pháp cuối năm 1917.`,
+          `He was born Nguyễn Sinh Cung on 19 May 1890 in Hoàng Trù, his mother's village in Nam Đàn district, Nghệ An. Around 1901, on returning to his father's nearby village of Kim Liên, he took the name Nguyễn Tất Thành. On 5 June 1911 he left Nhà Rồng wharf in Saigon as a kitchen hand on the Amiral Latouche-Tréville, and travelled through Africa, the United States and Britain before settling back in France in late 1917.`,
+        ),
+        l(
+          `Ở Paris ông lấy tên Nguyễn Ái Quốc, gửi bản yêu sách tám điểm tới Hội nghị Versailles ngày 18 tháng 6 năm 1919, và tháng 12 năm 1920 cùng lập Đảng Cộng sản Pháp tại Đại hội Tours. Ông làm việc ở Liên Xô từ 1923, Quảng Châu từ cuối 1924, Xiêm trong 1928 - 1929. Hội nghị hợp nhất năm 1930 do ông chủ trì được kể ở chương Pháp thuộc. Ông bị bắt ở Hồng Kông năm 1931, rồi ở Moskva trong 1934 - 1938.`,
+          `In Paris he took the name Nguyễn Ái Quốc. On 18 June 1919 he sent an eight-point petition to the Versailles conference, and in December 1920, at the Congress of Tours, he was among the founders of the French Communist Party. He then worked in the Soviet Union from 1923, in Guangzhou from late 1924 and in Siam in 1928 - 1929. The 1930 unification conference he chaired is told in the French colonial chapter. Arrested in Hong Kong in 1931, he was in Moscow in 1934 - 1938.`,
+        ),
+        l(
+          `Ngày 28 tháng 1 năm 1941, sau ba mươi năm xa quê, ông về Pác Bó (Cao Bằng), và tháng 5 năm ấy Việt Minh ra đời. Bản Tuyên ngôn Độc lập ông đọc năm 1945 được kể ở mục trước. Từ năm 1958 ông sống trong ngôi nhà sàn nhỏ ở Phủ Chủ tịch, và mất tại Hà Nội sáng 2 tháng 9 năm 1969. Bản Di chúc ông viết từ năm 1965 và sửa nhiều lần được công bố tại lễ truy điệu ngày 9 tháng 9.`,
+          `On 28 January 1941, after thirty years away, he returned to Pác Bó (Cao Bằng), and in May the Việt Minh was founded. His reading of the Declaration of Independence in 1945 is told in the previous entry. From 1958 he lived in a small stilt house in the Presidential Palace grounds, and he died in Hanoi on the morning of 2 September 1969. His testament, begun in 1965 and revised several times, was read out at the memorial service on 9 September.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Ngày sinh 19 tháng 5 năm 1890 là mốc chính thức, được Britannica và các nguồn Việt Nam cùng dùng, nhưng đời ông trước năm 1941 khó dựng lại trọn vẹn. Điểm cuốn tiểu sử của William J. Duiker (2000), Frances FitzGerald dẫn lời Jean Lacouture rằng mọi điều biết về ông trước năm 1941 đều rời rạc, còn tranh cãi và chỉ gần đúng. Sophie Quinn-Judge, dựa trên lưu trữ Quốc tế Cộng sản và tình báo Pháp, viết năm 2007 rằng chưa nhà viết tiểu sử nào được đọc lưu trữ của Đảng Cộng sản Việt Nam, và cho rằng vai trò của ông trong Quốc tế Cộng sản nhỏ hơn cách các tác giả Liên Xô và Việt Nam mô tả.`,
+          `The birth date of 19 May 1890 is the official one, used by Britannica and Vietnamese sources alike, but his life before 1941 is hard to reconstruct in full. Reviewing William J. Duiker's biography (2000), Frances FitzGerald quotes Jean Lacouture: everything known about his life before 1941 is fragmentary, controversial and approximate. Sophie Quinn-Judge, working from Comintern and French intelligence archives, wrote in 2007 that no biographer has had access to the archives of the Vietnamese Communist Party, and argues that his role in the Comintern was smaller than Soviet and Vietnamese authors have portrayed it.`,
+        ),
+        l(
+          `Những năm sau khi ra tù ở Hồng Kông cuối năm 1932 là quãng mờ nhất. Nguồn Việt Nam ghi ông ở Moskva từ 1934, dự Đại hội VII Quốc tế Cộng sản năm 1935 và rời đi ngày 29 tháng 9 năm 1938; FitzGerald tóm lược Duiker rằng ở đó ông bị phê bình, bị điều tra và bị gạt ra ngoài. Tên gọi cũng làm việc tra cứu khó thêm: ông dùng hơn 50 bí danh, từ Ba khi xuống tàu năm 1911, qua Lý Thụy, Thầu Chín, đến Hồ Chí Minh từ đầu thập niên 1940. Ngày mất cũng có hai mốc: năm 1969 thông cáo ghi ngày 3 tháng 9 để tránh trùng Quốc khánh, đến năm 1989 Bộ Chính trị công bố ngày 2 tháng 9 cùng toàn văn các bản Di chúc.`,
+          `The years after his release from prison in Hong Kong in late 1932 are the least clear. Vietnamese sources place him in Moscow from 1934, at the Comintern's Seventh Congress in 1935, and leaving on 29 September 1938; FitzGerald summarises Duiker as finding him criticised, investigated and sidelined there. His names complicate the search: he used more than 50 aliases, from Ba when he signed on as a ship's hand in 1911, through Lý Thụy and Thầu Chín, to Hồ Chí Minh from the early 1940s. Even his death has two dates: the 1969 announcement gave 3 September so as not to coincide with National Day, and in 1989 the Politburo published the true date, 2 September, together with the full drafts of the testament.`,
+        ),
+        l(
+          `Các bản Di chúc năm 1965 và 1968 có ý nguyện được hỏa táng; Bộ Chính trị giải thích việc giữ thi hài là để đồng bào cả nước và bạn bè quốc tế được viếng. Lăng Chủ tịch Hồ Chí Minh ở quảng trường Ba Đình khởi công ngày 2 tháng 9 năm 1973 và khánh thành ngày 29 tháng 8 năm 1975. Ngày 2 tháng 7 năm 1976 Quốc hội đặt tên Sài Gòn - Gia Định là Thành phố Hồ Chí Minh. Khu di tích ở Phủ Chủ tịch được xếp hạng di tích quốc gia đặc biệt năm 2009. Tại khóa họp thứ 24 năm 1987, Đại hội đồng UNESCO thông qua nghị quyết 24C/18.65 về kỷ niệm 100 năm ngày sinh của ông, tôn vinh ông là anh hùng giải phóng dân tộc và nhà văn hóa kiệt xuất của Việt Nam.`,
+          `The 1965 and 1968 drafts of the testament asked for cremation; the Politburo explained that his body was preserved so that people from the whole country and friends abroad could pay their respects. The Hồ Chí Minh Mausoleum on Ba Đình Square was begun on 2 September 1973 and opened on 29 August 1975. On 2 July 1976 the National Assembly named Saigon - Gia Định as Ho Chi Minh City. The relic site at the Presidential Palace was listed as a special national monument in 2009. At its 24th session in 1987, the UNESCO General Conference adopted resolution 24 C/18.65 on the centenary of his birth, honouring him as a Vietnamese hero of national liberation and great man of culture.`,
+        ),
+      ],
+      sources: ['hcm-brit', 'hcm-ebsco', 'hcm-baonghean', 'hcm-vnn-wharf', 'hcm-dbnd', 'hcm-vnn-dichuc', 'hcm-bvh-nhasan', 'hcm-tt-ditich', 'hcm-bvh-lang', 'hcm-vov-tphcm', 'hcm-nd-unesco', 'hcm-vgp-unesco', 'hcm-nyt-duiker', 'hcm-the-brocheux', 'hcm-hurst-qj'],
+    },
+    {
       slug: 'khang-chien-chong-phap-dien-bien-phu',
       period: '1945-1975',
       kind: 'event',
@@ -427,12 +471,31 @@ const chapter: Chapter = {
     { id: 'wd-renew', kind: 'reference', cite: 'Project RENEW (Dự án RENEW, Quảng Trị), "Our Origin Story".', url: 'https://renewvn.org/origin-story/' },
     { id: 'wd-tt-baodai', kind: 'news', cite: 'Báo Tuổi Trẻ (30/8/2025), "Tìm lại câu nói nổi tiếng của vua Bảo Đại 80 năm trước".', url: 'https://tuoitre.vn/tim-lai-cau-noi-noi-tieng-cua-vua-bao-dai-80-nam-truoc-20250830100125154.htm' },
     { id: 'wd-vne-thanhco', kind: 'news', cite: 'VnExpress (2025), "Thành cổ Quảng Trị xưa và nay".', url: 'https://vnexpress.net/thanh-co-quang-tri-xua-va-nay-4938680.html' },
+    { id: 'hcm-brit', kind: 'reference', cite: 'Encyclopaedia Britannica, "Ho Chi Minh" (tiểu sử), bản xem tháng 11/2026.', url: 'https://www.britannica.com/biography/Ho-Chi-Minh' },
+    { id: 'hcm-ebsco', kind: 'reference', cite: 'Andrew C. Skinner (2024), "Ho Chi Minh", EBSCO Research Starters: History.', url: 'https://ebsco.com/research-starters/history/ho-chi-minh' },
+    { id: 'hcm-baonghean', kind: 'news', cite: 'Báo Nghệ An (bản tiếng Anh), "Uncle Ho with his hometown Nghe An".', url: 'https://baonghean.vn/en/print/10273190.html' },
+    { id: 'hcm-vnn-wharf', kind: 'news', cite: 'VietNamNet (bản tiếng Anh), "President Ho Chi Minh: from Nha Rong Wharf to historic Ba Dinh Square".', url: 'https://vietnamnet.vn/en/president-ho-chi-minh-from-nha-rong-wharf-to-historic-ba-dinh-square-641119.html' },
+    { id: 'hcm-dbnd', kind: 'news', cite: 'Báo Đại biểu Nhân dân (2011), "Kỷ niệm 100 năm ngày Bác Hồ ra đi tìm đường cứu nước (5/6/1911 - 5/6/2011): Hồ Chí Minh, những hoạt động quốc tế vì sự nghiệp giải phóng dân tộc".', url: 'https://daibieunhandan.vn/ky-niem-100-nam-ngay-bac-ho-ra-di-tim-duong-cuu-nuoc-5-6-1911-5-6-2011-ho-chi-minh-nhung-hoat-dong-quoc-te-vi-su-nghiep-giai-phong-dan-toc-10096308.html' },
+    { id: 'hcm-vnn-dichuc', kind: 'news', cite: 'VietNamNet, "Giải mã Di chúc Hồ Chí Minh".', url: 'https://vietnamnet.vn/giai-ma-di-chuc-ho-chi-minh-194035.html' },
+    { id: 'hcm-bvh-nhasan', kind: 'news', cite: 'Báo Văn hóa, "65 năm nhà sàn Bác Hồ trong Khu Phủ Chủ tịch".', url: 'https://baovanhoa.vn/van-hoa/65-nam-nha-san-bac-ho-trong-khu-phu-chu-tich-67583.html' },
+    { id: 'hcm-tt-ditich', kind: 'news', cite: 'Báo Tuổi Trẻ (18/6/2024), "Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch đã được bảo tồn thế nào?".', url: 'https://tuoitre.vn/khu-di-tich-chu-tich-ho-chi-minh-tai-phu-chu-tich-da-duoc-bao-ton-the-nao-20240618172722627.htm' },
+    { id: 'hcm-bvh-lang', kind: 'news', cite: 'Báo Văn hóa, mục Ngày này năm xưa, "Khánh thành Lăng Chủ tịch Hồ Chí Minh".', url: 'https://baovanhoa.vn/chinh-tri/khanh-thanh-lang-chu-tich-ho-chi-minh-260475.html' },
+    { id: 'hcm-vov-tphcm', kind: 'news', cite: 'VOV, "Từ Sài Gòn - Gia Định đến Thành phố Hồ Chí Minh: Một quyết nghị lịch sử".', url: 'https://vov.vn/chinh-tri/tu-sai-gon-gia-dinh-den-thanh-pho-ho-chi-minh-mot-quyet-nghi-lich-su-post1311252.vov' },
+    { id: 'hcm-nd-unesco', kind: 'news', cite: 'Báo Nhân Dân, "Nghị quyết của UNESCO tôn vinh Chủ tịch Hồ Chí Minh" (về nghị quyết 24C/18.65, khóa họp 24 Đại hội đồng UNESCO, Paris, 20/10 - 20/11/1987).', url: 'https://nhandan.vn/nghi-quyet-cua-unesco-ton-vinh-chu-tich-ho-chi-minh-post714978.html' },
+    { id: 'hcm-vgp-unesco', kind: 'news', cite: 'Báo Điện tử Chính phủ (bản tiếng Anh, 24/11/2017), "VN celebrates 30th anniversary of UNESCO Resolution honoring President Ho Chi Minh".', url: 'https://en.baochinhphu.vn/vn-celebrates-30th-anniversary-of-unesco-resolution-honoring-president-ho-chi-minh-11130891.htm' },
+    { id: 'hcm-nyt-duiker', kind: 'paper', cite: 'Frances FitzGerald (15/10/2000), "Half Lenin, Half Gandhi", điểm sách William J. Duiker, Ho Chi Minh (Hyperion, 2000), The New York Times; bản đăng lại trên trang giảng dạy của De Anza College.', url: 'https://deanza.edu/faculty/swenssonjohn/ewrt2vn/bookreview_hochiminh.html' },
+    { id: 'hcm-the-brocheux', kind: 'paper', cite: 'Sophie Quinn-Judge (10/8/2007), "Leading light\'s past life still in the shadows", điểm sách Pierre Brocheux, Ho Chi Minh: A Biography (Cambridge University Press, 2007), Times Higher Education.', url: 'https://www.timeshighereducation.com/node/91621' },
+    { id: 'hcm-hurst-qj', kind: 'paper', cite: 'Hurst Publishers, trang giới thiệu sách Sophie Quinn-Judge, Ho Chi Minh: The Missing Years, 1919 - 41 (2003).', url: 'https://hurstpublishers.com/?p=6451' },
     { id: 'wd-wiki-famine', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "Vietnamese famine of 1944 - 1945", bản xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Vietnamese_famine_of_1944%E2%80%931945' },
   ],
   hooks: {
     'cach-mang-thang-tam-tuyen-ngon-doc-lap': l(
       `Vị vua cuối cùng của Việt Nam, sau khi thoái vị, được mời làm cố vấn cho chính phủ đã thay thế mình.`,
       `Vietnam's last emperor, after abdicating, was made an adviser to the government that replaced him.`,
+    ),
+    'ho-chi-minh': l(
+      `Ông dùng hơn 50 bí danh trong đời, và cái tên Hồ Chí Minh chỉ xuất hiện khi ông đã ngoài năm mươi tuổi.`,
+      `He used more than 50 aliases in his life, and the name Hồ Chí Minh appeared only when he was past fifty.`,
     ),
     'khang-chien-chong-phap-dien-bien-phu': l(
       `Trong hơn 10.000 tù binh Pháp ở Điện Biên Phủ, chỉ khoảng một phần ba trở về nhà.`,
