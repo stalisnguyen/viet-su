@@ -290,11 +290,11 @@ const chapter: Chapter = {
           `Vietnam's position is that China's use of force in 1956 and 1974 is an unlawful occupation that creates no sovereignty, so the fishing, patrols and administration described here are the exercise of a sovereign state's rights. China regards these waters as under its jurisdiction and calls the chasing and detentions law enforcement.`,
         ),
         l(
-          `Sự hiện diện này có giới hạn rõ. Ngư dân được RFA phỏng vấn năm 2011 và 2018 nói rằng khi bị tấn công ở Hoàng Sa họ thường không thấy tàu chấp pháp Việt Nam đến hỗ trợ. Các nghiệp đoàn nghề cá ở Lý Sơn vì thế tổ chức cho tàu ra khơi theo tổ 5 đến 10 chiếc để hỗ trợ nhau.`,
-          `This presence has clear limits. Fishermen interviewed by RFA in 2011 and 2018 said that when attacked in the Paracels they usually saw no Vietnamese enforcement vessel come to help. Fishing unions on Lý Sơn therefore organise boats to sail in groups of five to ten so they can help one another.`,
+          `Ngư dân cũng tự tổ chức để bám ngư trường. Theo VnExpress, các nghiệp đoàn nghề cá ở Lý Sơn chia tàu thành từng tổ 5 đến 10 chiếc cùng ra Hoàng Sa để hỗ trợ nhau khi gặp tàu Trung Quốc.`,
+          `Fishermen also organise themselves to keep working these grounds. According to VnExpress, the fishing unions on Lý Sơn group their boats into teams of five to ten that sail to the Paracels together, so they can help one another when Chinese vessels appear.`,
         ),
       ],
-      sources: ['bd-vne-lyson', 'bd-vne-2014', 'bd-rfa-2019sink', 'bd-rfa-2020sink', 'bd-vufo-2024', 'bd-plo-kiemngu', 'bd-vmrcc', 'bd-sggp-2025ban', 'bd-nq1659', 'bd-vov-dkhs', 'bd-nd-chauban', 'bd-tp-khaole', 'bd-rfa-2018'],
+      sources: ['bd-vne-lyson', 'bd-vne-2014', 'bd-rfa-2019sink', 'bd-rfa-2020sink', 'bd-vufo-2024', 'bd-plo-kiemngu', 'bd-vmrcc', 'bd-sggp-2025ban', 'bd-nq1659', 'bd-vov-dkhs', 'bd-nd-chauban', 'bd-tp-khaole'],
     },
     {
       slug: 'gac-ma-1988',
@@ -431,7 +431,6 @@ const chapter: Chapter = {
     { id: 'bd-vmrcc', kind: 'primary', cite: 'Trung tâm Phối hợp tìm kiếm cứu nạn hàng hải Việt Nam (VMRCC), "Vietnam MRCC successfully rescues fishermen in distress in the area of Tri Ton Island, Hoang Sa archipelago".', url: 'https://www.vmrcc.gov.vn/en/news/vietnam-mrcc-successfully-rescues-fishermen-in-distress-in-the-area-of-tri-ton-island-hoang-sa-archipelago-347.html' },
     { id: 'bd-sggp-2025ban', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng (2025), về lệnh cấm đánh bắt cá đơn phương của Trung Quốc năm 2025 và công hàm phản đối của Việt Nam ngày 15/5/2025.', url: 'https://www.sggp.org.vn/cang-thang-bien-dong-gia-tang-khi-lenh-cam-danh-bat-ca-cua-trung-quoc-gay-ra-su-phan-doi-trong-khu-vuc-va-lo-ngai-quoc-te-post809555.html' },
     { id: 'bd-vov-dkhs', kind: 'news', cite: 'VOV (12/2025), "Đà Nẵng: Bí thư phường Hải Châu làm Giám đốc Sở Nội vụ, Chủ tịch Đặc khu Hoàng Sa".', url: 'https://vov.vn/chinh-tri/da-nang-bi-thu-phuong-hai-chau-lam-giam-doc-so-noi-vu-chu-tich-dac-khu-hoang-sa-post1311325.vov' },
-    { id: 'bd-rfa-2018', kind: 'news', cite: 'RFA tiếng Việt (2/4/2018), "Ngư dân Việt lại kêu đau"; và RFA (16/5/2011), "Lệnh cấm đơn phương".', url: 'https://www.rfa.org/vietnamese/news/reportfromvn/viet-fishermen-complain-04022018070505.html' },
     { id: 'bd-nq1659', kind: 'primary', cite: 'Ủy ban Thường vụ Quốc hội, Nghị quyết 1659/NQ-UBTVQH15 năm 2025 về sắp xếp đơn vị hành chính cấp xã của thành phố Đà Nẵng (khoản 92: huyện Hoàng Sa thành đặc khu Hoàng Sa), hiệu lực từ 1/7/2025; trích theo Thư viện Pháp luật.', url: 'https://thuvienphapluat.vn/hoi-dap-phap-luat/huyen-dao-hoang-sa-tp-da-nang-doi-thanh-gi-sau-sap-nhap-2025-138064841.html' },
     { id: 'bd-brit-spratly', kind: 'reference', cite: 'Encyclopaedia Britannica, "Spratly Islands", bản in, xem tháng 11/2026.', url: 'https://www.britannica.com/print/article/561209' },
     { id: 'bd-mofa-hoangsa', kind: 'primary', cite: 'Bộ Ngoại giao Việt Nam, "The sovereignty of Viet Nam over the Hoang Sa archipelago" (phản hồi các thư của Trung Quốc gửi Liên Hợp Quốc ngày 22/5 và 9/6/2014, tài liệu A/68/887 và A/68/907).', url: 'https://mofa.gov.vn/en/nr040807104143/nr040807105001/ns140709161305' },
