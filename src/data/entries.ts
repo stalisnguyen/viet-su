@@ -180,6 +180,50 @@ export const entries: Entry[] = [
     sources: ['nmh-hoabinh', 'wiki-hoabinh', 'yi2008', 'kandyba2023'],
   },
   {
+    slug: 'thung-binh',
+    period: 'do-da',
+    kind: 'site',
+    name: l('Người Thung Bình 1 (Tràng An)', 'The Thung Bình 1 man (Tràng An)'),
+    date: l('khoảng 12.500 - 12.000 năm trước', 'c. 12,500 - 12,000 years ago'),
+    sort: 12500,
+    place: l('Hang Thung Bình 1, Tràng An, Ninh Bình', 'Thung Bình 1 cave, Tràng An, Ninh Bình'),
+    coord: [105.89, 20.25],
+    evidence: ['arch'],
+    summary: l(
+      'Bộ xương gần như nguyên vẹn của một người đàn ông sống vào cuối Kỷ Băng hà, tìm thấy trong hang đá vôi ở Tràng An. Đây là một trong số rất ít di cốt người thời này còn lại ở Đông Nam Á, và là bộ xương cổ nhất ở Việt Nam đã lấy được ADN.',
+      'The nearly complete skeleton of a man who lived at the end of the Ice Age, found in a limestone cave at Tràng An. It is one of very few human skeletons of this age surviving in Southeast Asia, and the oldest in Vietnam to have yielded DNA.',
+    ),
+    detail: [
+      l(
+        'Bộ xương, ký hiệu TBH1, được nhóm nghiên cứu quốc tế của dự án SUNDASIA phát hiện cuối năm 2017 và lấy lên dần đến năm 2018. Hộp sọ đã bị đá rơi đè bẹp nên các nhà nghiên cứu phải bốc cả khối đất về phòng thí nghiệm rồi ghép lại trong nhiều tháng.',
+        'The skeleton, labelled TBH1, was found in late 2017 by the international SUNDASIA project team and recovered gradually into 2018. The skull had been crushed by a rockfall, so researchers lifted whole blocks of sediment to the lab and spent months piecing it together.',
+      ),
+      l(
+        'Người này là nam, cao khoảng 1,7 m, mất lúc khoảng 35 tuổi, được chôn nằm co trong hang. Ông có một chiếc xương sườn thừa ở vùng cổ, điều chỉ gặp ở rất ít người. Chiếc xương ấy bị gãy và có dấu nhiễm trùng, còn ngay bên cạnh là một mũi nhọn bằng thạch anh dài khoảng 18 mm có vết gia công.',
+        'He was male, about 1.7 m tall, and died at around 35; he was buried in a flexed position inside the cave. He had an extra rib in the neck region, something very few people have. That rib was broken and shows signs of infection, and right beside it lay a worked quartz point about 18 mm long.',
+      ),
+      l(
+        'Theo nhóm nghiên cứu, mũi nhọn đã găm vào cổ và làm gãy xương sườn. Vết thương không gây chết ngay: ông còn sống thêm nhiều tuần đến vài tháng rồi mất vì nhiễm trùng. Việc ông sống được lâu như vậy và được chôn cất cẩn thận gợi ý rằng có người chăm sóc ông.',
+        'According to the team, the point struck the neck and broke the rib. The wound did not kill at once: he lived on for weeks to months before dying of infection. That he survived so long and was carefully buried suggests others were looking after him.',
+      ),
+    ],
+    scholarly: [
+      l(
+        'Xương không còn đủ collagen để định tuổi trực tiếp. Niên đại 12.500 - 12.000 năm là từ các mẫu than nằm cạnh mộ. Báo chí trong nước thường làm tròn thành "13.000 năm" và gọi là "chiến binh Tràng An"; đó là tên gọi của truyền thông, không phải kết luận của bài nghiên cứu.',
+        'The bones kept too little collagen for direct dating. The age of 12,500 - 12,000 years comes from charcoal samples beside the burial. Vietnamese media often round it to "13,000 years" and call him the "Tràng An warrior"; that is a media label, not a conclusion of the study.',
+      ),
+      l(
+        'Mũi thạch anh không giống công cụ đá nào khác ở hang này hay các di chỉ lân cận, nên nhóm tác giả cho rằng nó đến từ một nhóm người khác và đây có thể là bằng chứng sớm nhất về xung đột giữa người với người ở Đông Nam Á lục địa. Một số nhà nghiên cứu ngoài nhóm cho rằng chưa đủ chứng cứ để phân biệt bạo lực với tai nạn.',
+        'The quartz point matches no other stone tool from this cave or nearby sites, so the authors argue it came from another group and that this may be the earliest evidence of conflict between people in mainland Southeast Asia. Some researchers outside the team say the evidence cannot yet tell violence from accident.',
+      ),
+      l(
+        'ADN ty thể cho thấy dòng mẹ của ông thuộc nhóm săn bắt hái lượm bản địa, hậu duệ của những lớp người đến vùng này sớm nhất. Kết quả được công bố trên tạp chí Proceedings of the Royal Society B tháng 8/2025 và giới thiệu tại Ninh Bình tháng 9/2025.',
+        'Mitochondrial DNA places his maternal line among local hunter-gatherers descended from the earliest people to reach the region. The results were published in Proceedings of the Royal Society B in August 2025 and presented in Ninh Bình in September 2025.',
+      ),
+    ],
+    sources: ['stimpson2025', 'nhm-tbh1', 'ls-tbh1', 'vne-tbh1'],
+  },
+  {
     slug: 'bac-son',
     period: 'do-da',
     kind: 'culture',

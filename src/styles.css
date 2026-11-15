@@ -192,10 +192,13 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
 .scrub button.on i, .scrub button:hover i { background: var(--c); box-shadow: 0 0 14px var(--c); }
 .scrub button.on b, .scrub button:hover b { color: var(--text); }
 .scrub button.more { flex: 0 0 auto; min-width: 64px; border-top-style: dashed; }
-.stopauto {
-  position: fixed; z-index: 7; right: 16px; bottom: calc(84px + env(safe-area-inset-bottom)); height: 44px; padding: 0 18px; border-radius: 999px;
-  background: var(--c); color: #070a1c; font-weight: 700; font-size: 0.86rem; box-shadow: 0 0 24px color-mix(in srgb, var(--c) 55%, transparent);
+.autob {
+  position: fixed; z-index: 7; right: max(14px, env(safe-area-inset-right)); bottom: calc(80px + env(safe-area-inset-bottom));
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; min-width: 46px; padding: 0; border-radius: 999px;
+  background: rgba(10, 11, 22, 0.9); border: 1px solid var(--edge); font-weight: 700; font-size: 0.86rem;
 }
+.autob svg { width: 16px; height: 16px; fill: currentColor; }
+.autob.on { padding: 0 18px 0 14px; background: var(--c); color: #070a1c; border-color: transparent; box-shadow: 0 0 24px color-mix(in srgb, var(--c) 55%, transparent); }
 
 /* Mục lục mở đè */
 .drawer { position: fixed; inset: 0; z-index: 20; display: flex; justify-content: flex-end; }

@@ -10,7 +10,6 @@ import { sound } from './sound';
 import type { Entry, Evidence, L, Lang, Period } from './data/types';
 
 type Depth = 'quick' | 'full' | 'scholar';
-const AUTO_MS = 9000;
 
 const store = {
   get(k: string, d: string) { try { return localStorage.getItem(k) || d; } catch { return d; } },
@@ -442,29 +441,38 @@ export default function App() {
   }, [active.focus]);
   useEffect(() => { if (snd) sound.setEra(active.era); }, [snd, active.era]);
 
-  // Tự chạy: cứ vài giây cuộn sang phần kế tiếp, dừng khi người xem tự cuộn hoặc chạm
+  // Tự cuộn: trang trôi đều xuống như phụ đề phim, dừng ngay khi người xem chạm, lăn chuột hoặc bấm phím
   useEffect(() => {
     if (!auto) return;
-    const t = window.setTimeout(() => {
-      const steps = [...document.querySelectorAll<HTMLElement>('[data-step]')];
-      const i = steps.findIndex((s) => s.id === active.id);
-      const next = steps[i + 1];
-      if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' }); else setAuto(false);
-    }, active.id === 'top' ? 600 : AUTO_MS);
+    const speed = split ? 48 : 66; // điểm ảnh mỗi giây
+    let raf = 0, last = 0, acc = 0;
+    const tick = (ms: number) => {
+      if (last) {
+        acc += Math.min((ms - last) / 1000, 0.1) * speed;
+        const d = Math.floor(acc);
+        if (d >= 1) {
+          acc -= d;
+          window.scrollBy({ top: d, behavior: 'instant' as ScrollBehavior });
+          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) { setAuto(false); return; }
+        }
+      }
+      last = ms;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
     const stop = () => setAuto(false);
     window.addEventListener('wheel', stop, { passive: true });
     window.addEventListener('touchstart', stop, { passive: true });
     window.addEventListener('keydown', stop);
     return () => {
-      window.clearTimeout(t);
+      cancelAnimationFrame(raf);
       window.removeEventListener('wheel', stop);
       window.removeEventListener('touchstart', stop);
       window.removeEventListener('keydown', stop);
     };
-  }, [auto, active.id]);
+  }, [auto, split]);
 
   const toggleSound = () => { if (snd) { sound.disable(); setSnd(false); } else setSnd(sound.enable()); };
-  const startAuto = () => { if (!snd) setSnd(sound.enable()); setAuto(true); };
   const pass = (slug: string) => {
     if (got.has(slug)) return;
     const n = new Set(got); n.add(slug); setGot(n); store.set('annalis-badges', [...n].join(','));
@@ -511,7 +519,7 @@ export default function App() {
             <div className="cta">
               {resume && <button className="primary" onClick={() => jump(resume.id)}>{lang === 'vi' ? 'Đọc tiếp: ' : 'Continue: '}{resume.title[lang]}</button>}
               <button className={resume ? 'ghost' : 'primary'} onClick={() => jump('p-' + periods[0].slug)}>{lang === 'vi' ? 'Bắt đầu từ thời đồ đá' : 'Start from the Stone Age'}</button>
-              <button className="ghost" onClick={startAuto}>{lang === 'vi' ? 'Tự chạy như phim' : 'Play as a film'}</button>
+              <button className="ghost" onClick={() => setAuto(true)}>{lang === 'vi' ? 'Tự cuộn trang' : 'Auto-scroll'}</button>
             </div>
             <div className="zones">
               {ZONES.map((z) => <span key={z.id}><i style={{ background: z.color }} />{lang === 'vi' ? 'Vùng ' + z.vi : z.en + ' zone'}</span>)}
@@ -577,7 +585,10 @@ export default function App() {
           </div>
         </Drawer>
       )}
-      {auto && <button className="stopauto" onClick={() => setAuto(false)}>{lang === 'vi' ? 'Dừng tự chạy' : 'Stop autoplay'}</button>}
+      <button className={'autob' + (auto ? ' on' : '')} onClick={() => setAuto(!auto)} aria-pressed={auto} aria-label={auto ? (lang === 'vi' ? 'Dừng tự cuộn' : 'Stop auto-scroll') : (lang === 'vi' ? 'Tự cuộn trang' : 'Auto-scroll the page')}>
+        <svg viewBox="0 0 24 24" aria-hidden="true">{auto ? <path d="M7 5h4v14H7zM13 5h4v14h-4z" /> : <path d="M8 5l11 7-11 7z" />}</svg>
+        {auto && <span>{lang === 'vi' ? 'Dừng tự cuộn' : 'Stop'}</span>}
+      </button>
     </div>
   );
 }

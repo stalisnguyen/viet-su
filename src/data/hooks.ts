@@ -6,6 +6,7 @@ export const hooks: Record<string, L> = {
   'tham-khuyen': l('Mười chiếc răng là tất cả những gì còn lại của người cổ nhất Việt Nam.', 'Ten teeth are all that remains of the oldest humans in Vietnam.'),
   'nui-do': l('Nơi từng được coi là di chỉ cổ nhất Việt Nam. Giờ thì điều đó không còn chắc.', 'Once called the oldest site in Vietnam. That is no longer certain.'),
   'son-vi': l('Trước thời hang động Hòa Bình, ai đã sống trên những đồi gò trung du?', 'Before the Hòa Bình caves, who lived on the midland hills?'),
+  'thung-binh': l('Một mũi thạch anh 18 mm kể lại những tháng cuối đời của một người sống cách đây 12.000 năm.', 'An 18 mm quartz point tells of the last months of a man who lived 12,000 years ago.'),
   'hoa-binh': l('Một địa danh Việt Nam trở thành tên gọi chung cho cả Đông Nam Á.', 'A Vietnamese place name became a term used across Southeast Asia.'),
   'bac-son': l('Hai rãnh nhỏ trên một thỏi đá ghi lại lúc con người học cách mài.', 'Two small grooves on a stone record the moment people learned to grind.'),
   'cai-beo': l('Khi rời hang động, con người đi về phía biển.', 'When people left the caves, they headed for the sea.'),

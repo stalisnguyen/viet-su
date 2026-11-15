@@ -54,6 +54,10 @@ export const sources: Source[] = [
   { id: 'wiki-210s', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "210s BC" (CC BY-SA).', url: 'https://en.wikipedia.org/wiki/210s_BC' },
 
   // Báo chí
+  { id: 'stimpson2025', kind: 'paper', cite: 'Stimpson C.M. và cộng sự (2025), "TBH1: 12 000-year-old human skeleton and projectile point shed light on demographics and mortality in Terminal Pleistocene Southeast Asia", Proceedings of the Royal Society B 292: 20251819.', url: 'https://doi.org/10.1098/rspb.2025.1819' },
+  { id: 'nhm-tbh1', kind: 'museum', cite: 'Natural History Museum, London (2025), thông cáo báo chí về bộ xương TBH1 ở hang Thung Bình 1.', url: 'https://www.nhm.ac.uk/press-office/press-releases/ancient-cave-discovery-points-to-southeast-asia-s-earliest-human.html' },
+  { id: 'ls-tbh1', kind: 'news', cite: 'Live Science (2025), "An exotic quartz arrow may have killed a man 12,000 years ago in Vietnam".', url: 'https://www.livescience.com/archaeology/an-exotic-quartz-arrow-may-have-killed-a-man-12-000-years-ago-in-vietnam' },
+  { id: 'vne-tbh1', kind: 'news', cite: 'VnExpress (9/2025), "Phát hiện di cốt \'chiến binh\' hơn 12.000 năm tại Tràng An".', url: 'https://vnexpress.net/phat-hien-di-cot-chien-binh-hon-12-000-nam-tai-trang-an-4944373.html' },
   { id: 'bvh-ankhe', kind: 'news', cite: 'Báo Văn Hóa, "Những phát hiện khảo cổ tại An Khê (Gia Lai)".', url: 'https://baovanhoa.vn/di-san/nhung-phat-hien-khao-co-tai-an-khe-gia-lai-mot-cai-noi-co-xua-nhat-cua-loai-nguoi-tren-the-gioi-56784.html' },
   { id: 'tt-ankhe', kind: 'news', cite: 'Tuổi Trẻ (13/8/2025), "Lập hồ sơ đề nghị công nhận di tích Rộc Tưng - Gò Đá là di sản thế giới".', url: 'https://tuoitre.vn/lap-ho-so-de-nghi-cong-nhan-di-tich-roc-tung-go-da-la-di-san-the-gioi-20250813182701051.htm' },
   { id: 'nd-ankhe', kind: 'news', cite: 'Nhân Dân, "Dấu tích Buổi bình minh...".', url: 'https://nhandan.vn/dau-tich-buoi-binh-minh-post283697.html' },
