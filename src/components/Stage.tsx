@@ -83,7 +83,7 @@ interface Props {
 
 interface Pin {
   slug: string; period: string; pos: THREE.Vector3; group: THREE.Group;
-  head: THREE.MeshBasicMaterial; beam: THREE.MeshBasicMaterial; ring: THREE.Mesh; ringMat: THREE.MeshBasicMaterial; phase: number; tag: THREE.Sprite; tagY: number; solo: boolean;
+  head: THREE.MeshBasicMaterial; beam: THREE.MeshBasicMaterial; ring: THREE.Mesh; ringMat: THREE.MeshBasicMaterial; phase: number; tag: THREE.Sprite; tagY: number; solo: boolean; ll: [number, number];
 }
 
 export default function Stage({ lang, era, focus, sheet, onPick, split = false }: Props) {
@@ -134,34 +134,132 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     halo.position.set(0.6, -0.02, 0.2);
     scene.add(halo);
 
-    // Các nước láng giềng
-    const nbMat = new THREE.MeshStandardMaterial({ color: 0x0d1330, roughness: 1 });
-    const nbEdge = new THREE.LineBasicMaterial({ color: 0x33448f, transparent: true, opacity: 0.6 });
-    Object.values(G.nb).forEach((rings) =>
-      rings.forEach((r) => {
-        const m = new THREE.Mesh(new THREE.ExtrudeGeometry(shapeOf(r), { depth: 0.03, bevelEnabled: false }), nbMat);
-        m.rotation.x = -Math.PI / 2;
-        scene.add(m);
-        scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(r.map(([lon, lat]) => new THREE.Vector3(X(lon), 0.035, Z(lat)))), nbEdge));
-      }),
-    );
+    // ĐỊA HÌNH: một tấm lưới phủ cả vùng, nhô cao theo độ cao thật, vẽ theo kiểu bàn chiếu hologram
+    // (đường đồng mức, bóng đổ theo sườn núi). Việt Nam sáng theo màu vùng, các nước láng giềng mờ.
+    const LON0 = 101.25, LON1 = 112.5, LAT0 = 7.5, LAT1 = 24, NX = 250, NZ = 366, EX = 0.00036; // EX: mét -> đơn vị bản đồ
+    const mask = document.createElement('canvas');
+    mask.width = NX + 1; mask.height = NZ + 1;
+    const mx = mask.getContext('2d', { willReadFrequently: true })!;
+    const mpx = (lon: number) => ((lon - LON0) / (LON1 - LON0)) * NX, mpy = (lat: number) => ((LAT1 - lat) / (LAT1 - LAT0)) * NZ;
+    const fillRings = (rings: Ring[], v: number) => {
+      mx.fillStyle = `rgb(${v},0,0)`;
+      rings.forEach((r) => { mx.beginPath(); r.forEach(([lon, lat], i) => (i ? mx.lineTo(mpx(lon), mpy(lat)) : mx.moveTo(mpx(lon), mpy(lat)))); mx.closePath(); mx.fill(); });
+    };
+    mx.fillStyle = '#000'; mx.fillRect(0, 0, mask.width, mask.height);
+    Object.values(G.nb).forEach((r) => fillRings(r, 50));
+    ZONES.forEach((z, i) => fillRings(G.zones[z.id], 100 + i * 50));
+    const md = mx.getImageData(0, 0, mask.width, mask.height).data;
+    const nV = (NX + 1) * (NZ + 1);
+    const tPos = new Float32Array(nV * 3), tW = new Float32Array(nV * 4), tH = new Float32Array(nV);
+    for (let j = 0; j <= NZ; j++) for (let i = 0; i <= NX; i++) {
+      const k = j * (NX + 1) + i, lon = LON0 + (i / NX) * (LON1 - LON0), lat = LAT1 - (j / NZ) * (LAT1 - LAT0);
+      tPos[k * 3] = X(lon); tPos[k * 3 + 1] = 0.01; tPos[k * 3 + 2] = Z(lat);
+      const v = md[k * 4];
+      if (v >= 175) tW[k * 4 + 2] = 1; else if (v >= 125) tW[k * 4 + 1] = 1; else if (v >= 75) tW[k * 4] = 1; else if (v >= 25) tW[k * 4 + 3] = 1;
+    }
+    const tIdx = new Uint32Array(NX * NZ * 6);
+    for (let j = 0, q = 0; j < NZ; j++) for (let i = 0; i < NX; i++) {
+      const a0 = j * (NX + 1) + i, b0 = a0 + 1, c0 = a0 + NX + 1, d0 = c0 + 1;
+      tIdx[q++] = a0; tIdx[q++] = c0; tIdx[q++] = b0; tIdx[q++] = b0; tIdx[q++] = c0; tIdx[q++] = d0;
+    }
+    const tGeo = new THREE.BufferGeometry();
+    tGeo.setAttribute('position', new THREE.BufferAttribute(tPos, 3));
+    tGeo.setAttribute('aW', new THREE.BufferAttribute(tW, 4));
+    tGeo.setAttribute('aH', new THREE.BufferAttribute(tH, 1));
+    tGeo.setIndex(new THREE.BufferAttribute(tIdx, 1));
+    const tU = {
+      uZ1: { value: new THREE.Color() }, uZ2: { value: new THREE.Color() }, uZ3: { value: new THREE.Color() }, uNb: { value: new THREE.Color(0x1a2350) },
+      uLit: { value: new THREE.Vector3(1, 1, 1) }, uT: { value: 0 }, uSweep: { value: 99 }, uFocus: { value: new THREE.Vector3(0, 0, 0) },
+    };
+    const terrain = new THREE.Mesh(tGeo, new THREE.ShaderMaterial({
+      uniforms: tU, transparent: true,
+      vertexShader: `attribute vec4 aW; attribute float aH; varying vec4 vW; varying float vH; varying vec3 vP;
+        void main(){ vW=aW; vH=aH; vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+      fragmentShader: `uniform vec3 uZ1,uZ2,uZ3,uNb,uLit,uFocus; uniform float uT,uSweep; varying vec4 vW; varying float vH; varying vec3 vP;
+        void main(){
+          float land=vW.x+vW.y+vW.z+vW.w; if(land<0.5) discard;
+          float vn=(vW.x+vW.y+vW.z)/land;
+          vec3 zc=(uZ1*vW.x*uLit.x+uZ2*vW.y*uLit.y+uZ3*vW.z*uLit.z+uNb*vW.w)/land;
+          vec3 n=normalize(cross(dFdx(vP),dFdy(vP))); if(n.y<0.0) n=-n;
+          float sh=clamp(dot(n,normalize(vec3(-0.55,0.62,0.45))),0.0,1.0);
+          float c=vH/200.0; float line=1.0-clamp(abs(fract(c-0.5)-0.5)/max(fwidth(c),1e-4),0.0,1.0);
+          float elev=clamp(vH/2200.0,0.0,1.0);
+          vec3 col=zc*(0.10+0.62*sh*sh+0.22*elev);
+          col+=zc*line*step(40.0,vH)*mix(0.10,0.42,vn);
+          col+=zc*smoothstep(0.7,0.0,abs(vP.z-uSweep))*0.55*vn;
+          float d=distance(vP.xz,uFocus.xy);
+          col+=zc*smoothstep(0.86,1.0,sin(d*7.0-uT*2.2)*0.5+0.5)*smoothstep(3.6,0.3,d)*uFocus.z*0.4;
+          gl_FragColor=vec4(col,mix(0.5,0.97,vn));
+        }`,
+    }));
+    terrain.frustumCulled = false;
+    scene.add(terrain);
 
-    // Việt Nam: ba vùng văn hóa, viền phát sáng
-    const zones = ZONES.map((z) => {
+    // Đường biên: các nước láng giềng mờ, ba vùng văn hóa của Việt Nam viền sáng. Các đường này sẽ ôm theo địa hình khi có dữ liệu độ cao.
+    const borders: { geo: THREE.BufferGeometry; ll: Ring }[] = [];
+    const border = (r: Ring, mat: THREE.LineBasicMaterial) => {
+      const geo = new THREE.BufferGeometry().setFromPoints(r.map(([lon, lat]) => new THREE.Vector3(X(lon), 0.03, Z(lat))));
+      const ln = new THREE.LineLoop(geo, mat);
+      ln.renderOrder = 3;
+      scene.add(ln);
+      borders.push({ geo, ll: r });
+    };
+    const nbEdge = new THREE.LineBasicMaterial({ color: 0x33448f, transparent: true, opacity: 0.5, depthTest: false });
+    Object.values(G.nb).forEach((rings) => rings.forEach((r) => border(r, nbEdge)));
+    const zones = ZONES.map((z, zi) => {
       const full = new THREE.Color(z.color);
-      const mat = new THREE.MeshStandardMaterial({ color: 0x0b1030, emissive: full.clone(), emissiveIntensity: 0.2, roughness: 0.6 });
-      const edge = new THREE.LineBasicMaterial({ color: full.clone(), transparent: true });
-      G.zones[z.id].forEach((r) => {
-        const m = new THREE.Mesh(new THREE.ExtrudeGeometry(shapeOf(r), { depth: 0.24, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 2 }), mat);
-        m.rotation.x = -Math.PI / 2;
-        scene.add(m);
-        scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(r.map(([lon, lat]) => new THREE.Vector3(X(lon), 0.278, Z(lat)))), edge));
-      });
+      const edge = new THREE.LineBasicMaterial({ color: full.clone(), transparent: true, depthTest: false });
+      G.zones[z.id].forEach((r) => border(r, edge));
       const sp = label((lang === 'vi' ? z.vi : z.en).toUpperCase(), z.color, 40, 800, 3);
-      sp.position.set(X(z.at[0]), 1.5, Z(z.at[1]));
+      sp.position.set(X(z.at[0]), 1.9, Z(z.at[1]));
       scene.add(sp);
-      return { id: z.id, full, mat, edge, sp, cur: full.clone() };
+      return { id: z.id, full, edge, sp, cur: full.clone(), u: [tU.uZ1, tU.uZ2, tU.uZ3][zi].value, zi };
     });
+
+    // Độ cao thật: 8 ô dữ liệu Terrarium (bộ Terrain Tiles công khai trên AWS, tổng hợp từ SRTM và các nguồn mở khác).
+    // Không tải được thì bản đồ vẫn chạy, chỉ là phẳng.
+    const TZ = 6, TX0 = 50, TY0 = 27, TW = 2, TH = 4;
+    let heights: Float32Array | null = null, dead = false;
+    const hAt = (lon: number, lat: number) => {
+      if (!heights) return 0;
+      const fx = ((lon + 180) / 360) * 64 - TX0, r = (lat * Math.PI) / 180;
+      const fy = ((1 - Math.asinh(Math.tan(r)) / Math.PI) / 2) * 64 - TY0;
+      const px = Math.min(TW * 256 - 1.001, Math.max(0, fx * 256)), py = Math.min(TH * 256 - 1.001, Math.max(0, fy * 256));
+      const x0 = Math.floor(px), y0 = Math.floor(py), dx = px - x0, dy = py - y0, W = TW * 256;
+      const g = (x: number, y: number) => heights![y * W + x];
+      return Math.max(0, (g(x0, y0) * (1 - dx) + g(x0 + 1, y0) * dx) * (1 - dy) + (g(x0, y0 + 1) * (1 - dx) + g(x0 + 1, y0 + 1) * dx) * dy);
+    };
+    const tile = (x: number, y: number) => new Promise<HTMLImageElement>((ok, no) => {
+      const im = new Image();
+      im.crossOrigin = 'anonymous';
+      im.onload = () => ok(im); im.onerror = no;
+      im.src = `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${TZ}/${TX0 + x}/${TY0 + y}.png`;
+    });
+    const jobs: Promise<[number, number, HTMLImageElement]>[] = [];
+    for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) jobs.push(tile(x, y).then((im) => [x, y, im]));
+    Promise.all(jobs).then((tiles) => {
+      if (dead) return;
+      const c = document.createElement('canvas');
+      c.width = TW * 256; c.height = TH * 256;
+      const cx = c.getContext('2d')!;
+      tiles.forEach(([x, y, im]) => cx.drawImage(im, x * 256, y * 256));
+      const d = cx.getImageData(0, 0, c.width, c.height).data;
+      heights = new Float32Array(c.width * c.height);
+      for (let i = 0; i < heights.length; i++) heights[i] = d[i * 4] * 256 + d[i * 4 + 1] + d[i * 4 + 2] / 256 - 32768;
+      for (let j = 0; j <= NZ; j++) for (let i = 0; i <= NX; i++) {
+        const k = j * (NX + 1) + i;
+        const h = hAt(LON0 + (i / NX) * (LON1 - LON0), LAT1 - (j / NZ) * (LAT1 - LAT0));
+        tH[k] = h; tPos[k * 3 + 1] = 0.01 + h * EX;
+      }
+      tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aH.needsUpdate = true;
+      borders.forEach(({ geo, ll }) => {
+        const pos = geo.attributes.position as THREE.BufferAttribute;
+        ll.forEach(([lon, lat], i) => pos.setY(i, 0.035 + hAt(lon, lat) * EX));
+        pos.needsUpdate = true;
+      });
+      pins.forEach((p) => { p.pos.y = 0.03 + hAt(p.ll[0], p.ll[1]) * EX; p.group.position.y = p.pos.y; });
+      tU.uSweep.value = -10; // quét một lượt khi địa hình hiện ra
+    }).catch(() => { /* giữ bản đồ phẳng */ });
 
     // Hoàng Sa, Trường Sa, Biển Đông
     const isle = new THREE.MeshBasicMaterial({ color: 0x9fb4ff });
@@ -212,10 +310,10 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       tag.material.opacity = 0;
       tag.userData.sx = tag.scale.x; tag.userData.sy = tag.scale.y;
       g.add(b, h, ring, hit, tag);
-      const pos = new THREE.Vector3(X(e.coord![0]), 0.27, Z(e.coord![1]));
+      const pos = new THREE.Vector3(X(e.coord![0]), 0.03, Z(e.coord![1]));
       g.position.copy(pos);
       scene.add(g);
-      pins.push({ slug: e.slug, period: e.period, pos, group: g, head, beam, ring, ringMat, phase: i * 0.37, tag, tagY, solo: !pins.some((q) => q.period === e.period && q.solo && q.pos.distanceTo(pos) < 2.2) });
+      pins.push({ slug: e.slug, period: e.period, pos, group: g, head, beam, ring, ringMat, phase: i * 0.37, tag, tagY, ll: e.coord!, solo: !pins.some((q) => q.period === e.period && q.solo && q.pos.distanceTo(pos) < 2.2) });
     });
 
     // Đường cong sáng nối di tích vừa xem với di tích đang xem
@@ -254,7 +352,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     controls.enableDamping = true;
     let flying = true; // false khi người xem tự kéo xoay bản đồ, cho tới khi nội dung chuyển sang phần khác
     controls.addEventListener('start', () => { flying = false; });
-    let lift = 0, lastMs = 0;
+    let lift = 0, lastMs = 0, lastEra: string | null = null;
     const goal = new THREE.Vector3();
 
     let aspect = 1;
@@ -340,6 +438,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       const key = view();
       if (key !== s.key) {
         s.key = key; flying = true;
+        if (s.era !== lastEra) { lastEra = s.era; tU.uSweep.value = -10; } // sang thời kỳ khác thì quét lại một lượt
         // Bay xa thì nhấc máy quay lên cao rồi hạ xuống, bay gần thì lướt thẳng
         lift = reduce ? 0 : Math.min(5, controls.target.distanceTo(want.t) * 0.45);
         if (s.focus !== lastFocus) {
@@ -369,7 +468,11 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       (scene.background as THREE.Color).copy(cBg);
       scene.fog!.color.copy(cBg);
       (grid.material as THREE.LineBasicMaterial).color.copy(cGrid);
-      nbMat.color.copy(cBg).lerp(cGrid, 0.22);
+      tU.uNb.value.copy(cBg).lerp(cGrid, 0.5);
+      tU.uT.value = t;
+      if (tU.uSweep.value < 12) tU.uSweep.value += dt * 9;
+      const fp = s.focus ? pins.find((x) => x.slug === s.focus) : null;
+      tU.uFocus.value.set(fp ? fp.pos.x : 0, fp ? fp.pos.z : 0, tU.uFocus.value.z + ((fp ? 1 : 0) - tU.uFocus.value.z) * 0.08);
       nbEdge.color.copy(cGrid);
       const three = !s.era || s.era === 'kim-khi';
       zones.forEach((z) => {
@@ -378,8 +481,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         else if (lit) tmp.set(periodBySlug[s.era!].color);
         else tmp.set(th.land);
         z.cur.lerp(tmp, 0.08);
-        z.mat.emissive.copy(z.cur);
-        z.mat.emissiveIntensity = lit ? 0.2 : 0.12;
+        z.u.copy(z.cur);
+        tU.uLit.value.setComponent(z.zi, tU.uLit.value.getComponent(z.zi) + ((lit ? 1 : 0.5) - tU.uLit.value.getComponent(z.zi)) * 0.08);
         z.edge.color.copy(z.cur);
         z.edge.opacity = lit ? 1 : 0.55;
         const so = three ? (s.focus ? 0.22 : 1) : 0; // khi đang xem một di tích thì tên vùng lùi xuống, nhường chỗ cho tên di tích
@@ -414,6 +517,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     raf = requestAnimationFrame(tick);
 
     return () => {
+      dead = true;
       cancelAnimationFrame(raf);
       ro.disconnect();
       controls.dispose();
