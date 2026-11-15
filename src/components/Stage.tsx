@@ -323,7 +323,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       hits.push(hit);
       // Tên di tích ngay trên bản đồ, để người xem thấy bản đồ và thẻ nội dung đang nói về cùng một nơi
       const short = e.name[lang].split(' (')[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
-      const tag = label(short, '#ffffff', 30, 700);
+      const tag = label(short, '#d6ccb8', 30, 700); // màu ngà dịu để chữ không bị lóa
       const tagY = 1.75 + (i % 3) * 0.34;
       tag.position.y = tagY;
       tag.material.opacity = 0;
@@ -531,7 +531,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
         const to = isFocus ? 1 : s.era && inEra && !s.focus && p.solo ? 0.8 : 0; // các điểm nằm sát nhau chỉ hiện một nhãn để không chồng chữ
         p.tag.material.opacity += (to - p.tag.material.opacity) * 0.12;
         // Nhãn giữ cỡ chữ dễ đọc dù máy quay ở gần hay xa
-        const gy = p.group.scale.y, tk = (isFocus ? 1.2 : 1) * Math.min(2.8, Math.max(1, camera.position.distanceTo(p.pos) / 9));
+        const gy = p.group.scale.y, tk = (isFocus ? 1 : 0.85) * Math.min(2.4, Math.max(1, camera.position.distanceTo(p.pos) / 9));
         p.tag.position.y = (isFocus ? 1.3 : p.tagY * Math.min(2, tk)) / gy;
         p.tag.scale.set(p.tag.userData.sx * tk, (p.tag.userData.sy * tk) / gy, 1);
         const o = inEra ? 1 : 0.07;
