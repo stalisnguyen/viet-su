@@ -324,8 +324,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
       hit.userData.slug = e.slug;
       hits.push(hit);
       // Tên di tích ngay trên bản đồ, để người xem thấy bản đồ và thẻ nội dung đang nói về cùng một nơi
-      // Nhãn trên bản đồ phải ngắn: bỏ phần trong ngoặc, phần sau dấu hai chấm hoặc dấu phẩy, và cắt ở chữ "và" nếu còn dài
-      let short = e.name[lang].split(/ \(|: |, /)[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
+      // Nhãn trên bản đồ phải ngắn: bỏ phần trong ngoặc và phần sau dấu hai chấm, cắt ở chữ "và" nếu còn dài
+      let short = e.name[lang].split(/ \(|: /)[0].replace(/^Quần thể di chỉ |^Văn hóa /, '').replace(/ culture.*$/, '');
       if (short.length > 26) short = short.split(/ và | and /)[0];
       if (short.length > 30) short = short.slice(0, 28).replace(/\s+\S*$/, '') + '...';
       const tag = label(short, '#d6ccb8', 30, 700); // màu ngà dịu để chữ không bị lóa
