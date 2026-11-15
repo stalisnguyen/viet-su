@@ -163,6 +163,8 @@ h3 { font-size: 0.74rem; letter-spacing: 0.13em; text-transform: uppercase; colo
 .art figcaption a { color: var(--c); }
 .art figcaption { padding: 8px 14px 10px; font-size: 0.76rem; color: var(--muted); }
 .model3d { margin: 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--edge); background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--c) 14%, #0c0909), #070506 78%); }
+.model3d.piece { background: radial-gradient(circle at 50% 42%, #2a1f12, #0b0807 72%); }
+.model3d.piece .model3d-canvas { height: 300px; }
 .model3d-canvas { height: 270px; }
 .model3d.scene .model3d-canvas { height: 320px; }
 .model3d-canvas canvas { display: block; }

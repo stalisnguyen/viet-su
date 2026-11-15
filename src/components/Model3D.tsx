@@ -318,8 +318,29 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
       : kind === 'chamtower' ? buildChamTower(scene) : kind === 'pillar' ? buildPillar(scene) : kind === 'onepillar' ? buildOnePillar(scene)
       : kind === 'khuevan' ? buildKhueVanCac(scene) : kind === 'steles' ? buildSteles(scene) : kind === 'urn' ? buildUrn(scene) : buildDrum(scene);
     // Hiển thị kiểu hologram, cùng ngôn ngữ hình ảnh với bản đồ: khối trong mờ sáng viền, vân quét chạy dọc,
-    // nét cạnh rõ, màu theo thời kỳ của thẻ đang chứa mô hình.
-    const hc = new THREE.Color(getComputedStyle(el).getPropertyValue('--c').trim() || '#e6b450');
+    // nét cạnh rõ. Mọi hiện vật dùng chung một màu đồng để cả bộ trông như một bộ sưu tập.
+    const scene3d = SCENES.includes(kind);
+    const hc = new THREE.Color(scene3d ? getComputedStyle(el).getPropertyValue('--c').trim() || '#e6b450' : '#e8b85a');
+    // Hiện vật: đưa về cùng một khung. Thu phóng sao cho khối cầu bao quanh có bán kính 1, đặt đáy lên bệ chung.
+    let fit: { cy: number; elev: number } | null = null;
+    let bed: THREE.Group | null = null;
+    if (!scene3d) {
+      const obj = built.target;
+      scene.remove(obj);
+      const wrap = new THREE.Group(); wrap.add(obj); scene.add(wrap);
+      const box = new THREE.Box3().setFromObject(wrap), sph = box.getBoundingSphere(new THREE.Sphere());
+      const k = 1 / sph.radius;
+      wrap.scale.setScalar(k);
+      wrap.position.set(-sph.center.x * k, -box.min.y * k, -sph.center.z * k);
+      fit = { cy: (box.max.y - box.min.y) * k * 0.5, elev: kind === 'drum' ? 0.62 : 0.3 };
+      built.target = wrap;
+      // Bệ chung: đĩa mỏng, hai vành sáng và 14 vạch như ngôi sao mặt trống, thêm một vòng quét chậm
+      bed = new THREE.Group();
+      const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.15, 1.2, 0.05, 64), new THREE.MeshStandardMaterial());
+      disc.position.y = -0.03; bed.add(disc);
+      bed.userData.lines = true;
+      scene.add(bed);
+    }
     const uT = { value: 0 };
     const holo = new THREE.ShaderMaterial({
       uniforms: { uC: { value: hc }, uT }, transparent: true, side: THREE.DoubleSide,
@@ -362,25 +383,44 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
       m.material = om.map ? holoMap(om.map) : holo;
       m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 28), edge));
     });
+    const lineMat = new THREE.LineBasicMaterial({ color: hc, transparent: true, opacity: 0.5 });
+    let sweep: THREE.Object3D | null = null;
+    if (bed) {
+      const circle = (r: number, n = 128) => new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(Array.from({ length: n }, (_, i) => new THREE.Vector3(Math.cos((i / n) * Math.PI * 2) * r, 0.001, Math.sin((i / n) * Math.PI * 2) * r))), lineMat);
+      bed.add(circle(1.32), circle(1.42));
+      const ticks: THREE.Vector3[] = [];
+      for (let i = 0; i < 14; i++) { const a = (i / 14) * Math.PI * 2; ticks.push(new THREE.Vector3(Math.cos(a) * 1.25, 0.001, Math.sin(a) * 1.25), new THREE.Vector3(Math.cos(a) * 1.4, 0.001, Math.sin(a) * 1.4)); }
+      bed.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(ticks), lineMat));
+      const arc = new THREE.Mesh(new THREE.RingGeometry(1.32, 1.42, 48, 1, 0, Math.PI / 3), new THREE.MeshBasicMaterial({ color: hc, transparent: true, opacity: 0.35, side: THREE.DoubleSide, depthWrite: false }));
+      arc.rotation.x = -Math.PI / 2; arc.position.y = 0.002; bed.add(arc); sweep = arc;
+    }
     camera.position.set(built.cam[0], built.cam[1], built.cam[2]);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enablePan = false; controls.enableZoom = false; controls.enableDamping = true;
     controls.autoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    controls.autoRotateSpeed = kind === 'coloa' ? 0.9 : 1.6;
+    controls.autoRotateSpeed = kind === 'coloa' ? 0.9 : 1.2;
+    if (fit) { controls.target.set(0, fit.cy, 0); controls.minPolarAngle = 0.35; controls.maxPolarAngle = 1.5; }
     if (SCENES.includes(kind)) { controls.maxPolarAngle = 1.36; controls.autoRotateSpeed = 0.7; }
     if (kind === 'cave') { controls.autoRotate = false; controls.minAzimuthAngle = -0.75; controls.maxAzimuthAngle = 0.75; }
     renderer.domElement.style.touchAction = 'pan-y';
     const resize = () => {
       const w = el.clientWidth, h = el.clientHeight;
       renderer.setSize(w, h); camera.aspect = w / h;
-      const f = camera.aspect < 1.2 ? (kind === 'coloa' ? 1.75 : SCENES.includes(kind) ? 1.3 : 1) : 1;
-      camera.position.set(built.cam[0] * f, built.cam[1] * f, built.cam[2] * f);
+      if (fit) {
+        // Khoảng cách để khối cầu bán kính 1 (cộng phần bệ) vừa khung theo cả chiều dọc lẫn chiều ngang
+        const v = THREE.MathUtils.degToRad(camera.fov / 2), hz = Math.atan(Math.tan(v) * camera.aspect);
+        const d = 1.18 / Math.sin(Math.min(v, hz));
+        camera.position.set(0, fit.cy + Math.sin(fit.elev) * d, Math.cos(fit.elev) * d);
+      } else {
+        const f = camera.aspect < 1.2 ? (kind === 'coloa' ? 1.75 : SCENES.includes(kind) ? 1.3 : 1) : 1;
+        camera.position.set(built.cam[0] * f, built.cam[1] * f, built.cam[2] * f);
+      }
       camera.updateProjectionMatrix();
     };
     resize();
     const ro = new ResizeObserver(resize); ro.observe(el);
     let raf = 0;
-    const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
+    const tick = (ms = 0) => { uT.value = ms / 1000; built.update?.(ms / 1000); if (sweep) sweep.rotation.z = -ms / 2600; controls.update(); renderer.render(scene, camera); raf = requestAnimationFrame(tick); };
     tick();
     return () => {
       alive = false; cancelAnimationFrame(raf); ro.disconnect(); controls.dispose();
@@ -396,7 +436,7 @@ export default function Model3D({ kind, lang }: { kind: ModelKind; lang: Lang })
 
   const info = MODEL_INFO[kind];
   return (
-    <figure className={'model3d' + (SCENES.includes(kind) ? ' scene' : '')}>
+    <figure className={'model3d' + (SCENES.includes(kind) ? ' scene' : ' piece')}>
       <div className="model3d-canvas" ref={host} />
       {failed && <p className="map3d-fallback">{lang === 'vi' ? 'Thiết bị này không hiển thị được mô hình 3D.' : 'This device cannot display the 3D model.'}</p>}
       <figcaption>

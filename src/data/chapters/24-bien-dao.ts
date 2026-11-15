@@ -15,8 +15,8 @@ const chapter: Chapter = {
       `Over four centuries, from the Hoàng Sa company of the Nguyễn lords to today's Trường Sa special zone, what has Vietnam done to assert and exercise sovereignty over the two offshore archipelagos, and why does that record still matter in a sea that several states claim?`,
     ),
     summary: l(
-      `Hoàng Sa (Paracel) và Trường Sa (Spratly) là hai quần đảo san hô giữa Biển Đông. Việt Nam khẳng định cả hai thuộc chủ quyền của mình và dẫn bản đồ cổ, sử triều Nguyễn, văn bản thời Pháp và các tuyên bố quốc tế làm bằng chứng. Trung Quốc và Đài Loan cũng tuyên bố cả hai quần đảo; Philippines, Malaysia và Brunei tuyên bố một phần Trường Sa. Từ năm 1974 Trung Quốc chiếm đóng bằng vũ lực toàn bộ Hoàng Sa. Việt Nam không công nhận việc này và vẫn duy trì đơn vị hành chính Hoàng Sa thuộc thành phố Đà Nẵng, nay là đặc khu Hoàng Sa.`,
-      `Hoàng Sa (the Paracels) and Trường Sa (the Spratlys) are two coral archipelagos in the middle of the East Sea (South China Sea). Vietnam holds that both belong to it and cites old maps, Nguyễn court records, French colonial acts and international statements as evidence. China and Taiwan also claim both groups; the Philippines, Malaysia and Brunei claim parts of the Spratlys. Since 1974 China has occupied all of the Paracels by force. Vietnam does not recognise this and still keeps Hoàng Sa as an administrative unit of Đà Nẵng, now the Hoàng Sa special zone.`,
+      `Hoàng Sa (Paracel) và Trường Sa (Spratly) là hai quần đảo san hô giữa Biển Đông. Việt Nam khẳng định cả hai thuộc chủ quyền của mình và dẫn bản đồ cổ, sử triều Nguyễn, văn bản thời Pháp và các tuyên bố quốc tế làm bằng chứng. Trung Quốc và Đài Loan cũng tuyên bố cả hai quần đảo; Philippines, Malaysia và Brunei tuyên bố một phần Trường Sa. Từ năm 1974 Trung Quốc chiếm đóng bằng vũ lực toàn bộ Hoàng Sa. Việt Nam coi đây là sự chiếm đóng trái phép, không tạo ra chủ quyền, và vẫn duy trì Hoàng Sa là đặc khu thuộc thành phố Đà Nẵng; ngư dân Việt Nam vẫn ra đánh bắt quanh quần đảo.`,
+      `Hoàng Sa (the Paracels) and Trường Sa (the Spratlys) are two coral archipelagos in the middle of the East Sea (South China Sea). Vietnam holds that both belong to it and cites old maps, Nguyễn court records, French colonial acts and international statements as evidence. China and Taiwan also claim both groups; the Philippines, Malaysia and Brunei claim parts of the Spratlys. Since 1974 China has occupied all of the Paracels by force. Vietnam regards this as an unlawful occupation that creates no sovereignty, keeps Hoàng Sa as a special zone of Đà Nẵng, and its fishermen still work the waters around the islands.`,
     ),
     detail: [
       l(
@@ -257,6 +257,46 @@ const chapter: Chapter = {
       sources: ['mt-nbc-hoangsa', 'bd-bpl-1958', 'bd-mofa-hoangsa', 'bd-ncbd-legal', 'bd-rsis-li', 'bd-rsis-lananh', 'bd-rfa-7475', 'bd-jp-2014', 'bd-rfa-2024', 'ng-brit-paracel'],
     },
     {
+      slug: 'hoang-sa-sau-1974',
+      period: 'bien-dao',
+      kind: 'event',
+      name: l('Hoàng Sa sau năm 1974: người Việt vẫn ra khơi', 'Hoàng Sa after 1974: Vietnamese boats still go out'),
+      date: l('Từ năm 1974 đến nay', '1974 to the present'),
+      sort: 25.9,
+      place: l('Nhà trưng bày Hoàng Sa, 284 đường Hoàng Sa, Sơn Trà, Đà Nẵng', 'Hoàng Sa Exhibition House, 284 Hoàng Sa street, Sơn Trà, Đà Nẵng'),
+      coord: [108.2513, 16.0935],
+      evidence: ['chron'],
+      summary: l(
+        `Sau năm 1974, ngư dân Quảng Ngãi, Đà Nẵng vẫn ra đánh bắt quanh Hoàng Sa dù thường bị tàu Trung Quốc xua đuổi, đâm va. Kiểm ngư tuần tra, lực lượng cứu nạn hoạt động ở vùng biển này, Bộ Ngoại giao phản đối từng vụ việc, và Hoàng Sa vẫn là một đặc khu của Đà Nẵng.`,
+        `Losing the islands in 1974 did not mean Vietnamese people left the Paracels. Fishermen from Quảng Ngãi and Đà Nẵng still work the traditional grounds around the archipelago, though Chinese vessels often chase, ram and rob them. Fisheries patrols and other maritime forces patrol and run rescues in these waters; the Foreign Ministry protests each incident; and Hoàng Sa remains an administrative unit of Đà Nẵng, now the Hoàng Sa special zone.`,
+      ),
+      detail: [
+        l(
+          `Với ngư dân đảo Lý Sơn, Hoàng Sa là ngư trường gần nhất: theo VnExpress, tàu ra Hoàng Sa chỉ mất một ngày một đêm, còn đi Trường Sa tốn thời gian và chi phí gấp ba. Báo chí trong nước ghi lại nhiều vụ việc: năm 2019 tàu QNg 90819 bị tàu Trung Quốc xịt vòi rồng, ép vào đá ngầm và chìm; năm 2020 tàu QNg 90617 bị tàu hải cảnh Trung Quốc đâm chìm; năm 2024 ngư dân trên tàu QNg 95739 bị đánh bị thương và bị tịch thu tài sản. Sau mỗi vụ, ngư dân vẫn trở lại ngư trường này.`,
+          `For fishermen from Lý Sơn island, the Paracels are the nearest grounds: according to VnExpress, the trip takes a day and a night, while the Spratlys cost three times as much time and money. The Vietnamese press has recorded many incidents: in 2019 the boat QNg 90819 was hit with water cannon, forced onto a reef and sank; in 2020 QNg 90617 was rammed and sunk by a Chinese coast guard vessel; in 2024 the crew of QNg 95739 were beaten, injured and had their gear seized. After each one the fishermen went back to the same grounds.`,
+        ),
+        l(
+          `Nhà nước có mặt trên biển bằng các lực lượng dân sự và chấp pháp. Theo Báo Pháp luật, năm 2015 Cục Kiểm ngư điều 10 tàu tuần tra từ Vịnh Bắc Bộ đến vùng biển Hoàng Sa, Trường Sa và DK1, xua đuổi 361 lượt tàu cá nước ngoài. Trung tâm Phối hợp tìm kiếm cứu nạn hàng hải Việt Nam (VMRCC) nhiều lần cứu ngư dân gặp nạn gần đảo Tri Tôn của quần đảo Hoàng Sa. Mỗi năm Bộ Ngoại giao phản đối lệnh cấm đánh bắt đơn phương của Trung Quốc; năm 2025 Việt Nam gửi công hàm phản đối ngày 15 tháng 5.`,
+          `The state is present at sea through civilian and law-enforcement forces. According to Báo Pháp luật, in 2015 the Directorate of Fisheries Surveillance sent 10 vessels on patrol from the Gulf of Tonkin to the waters of the Paracels, the Spratlys and DK1, driving off foreign fishing boats 361 times. The Vietnam Maritime Search and Rescue Coordination Center (VMRCC) has repeatedly rescued fishermen in distress near Triton Island in the Paracels. Every year the Foreign Ministry protests China's unilateral fishing ban; in 2025 Vietnam sent a protest note on 15 May.`,
+        ),
+        l(
+          `Trên đất liền, Hoàng Sa được duy trì như một đơn vị hành chính: huyện đảo Hoàng Sa lập năm 1982, thuộc thành phố Đà Nẵng từ năm 1997, trở thành đặc khu Hoàng Sa từ ngày 1 tháng 7 năm 2025 và vẫn có Chủ tịch Ủy ban nhân dân. Nhà trưng bày Hoàng Sa ở Đà Nẵng giữ châu bản triều Nguyễn, bản đồ và tư liệu về quần đảo. Ở Lý Sơn, lễ Khao lề thế lính Hoàng Sa vẫn được tổ chức hằng năm.`,
+          `On land, Hoàng Sa is kept as an administrative unit: the island district created in 1982, part of Đà Nẵng city since 1997, became the Hoàng Sa special zone on 1 July 2025 and still has a People's Committee chairman. The Hoàng Sa Exhibition House in Đà Nẵng holds Nguyễn court documents, maps and records about the archipelago. On Lý Sơn, the Khao lề ceremony for the Hoàng Sa soldiers is still held every year.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Lập trường của Việt Nam là việc Trung Quốc dùng vũ lực năm 1956 và 1974 là chiếm đóng trái phép, không tạo ra chủ quyền, nên các hoạt động đánh bắt, tuần tra và quản lý hành chính kể trên là thực thi quyền của một quốc gia có chủ quyền. Phía Trung Quốc coi vùng biển này thuộc quyền tài phán của mình và gọi việc xua đuổi, bắt giữ là thực thi pháp luật.`,
+          `Vietnam's position is that China's use of force in 1956 and 1974 is an unlawful occupation that creates no sovereignty, so the fishing, patrols and administration described here are the exercise of a sovereign state's rights. China regards these waters as under its jurisdiction and calls the chasing and detentions law enforcement.`,
+        ),
+        l(
+          `Sự hiện diện này có giới hạn rõ. Ngư dân được RFA phỏng vấn năm 2011 và 2018 nói rằng khi bị tấn công ở Hoàng Sa họ thường không thấy tàu chấp pháp Việt Nam đến hỗ trợ. Các nghiệp đoàn nghề cá ở Lý Sơn vì thế tổ chức cho tàu ra khơi theo tổ 5 đến 10 chiếc để hỗ trợ nhau.`,
+          `This presence has clear limits. Fishermen interviewed by RFA in 2011 and 2018 said that when attacked in the Paracels they usually saw no Vietnamese enforcement vessel come to help. Fishing unions on Lý Sơn therefore organise boats to sail in groups of five to ten so they can help one another.`,
+        ),
+      ],
+      sources: ['bd-vne-lyson', 'bd-vne-2014', 'bd-rfa-2019sink', 'bd-rfa-2020sink', 'bd-vufo-2024', 'bd-plo-kiemngu', 'bd-vmrcc', 'bd-sggp-2025ban', 'bd-nq1659', 'bd-vov-dkhs', 'bd-nd-chauban', 'bd-tp-khaole', 'bd-rfa-2018'],
+    },
+    {
       slug: 'gac-ma-1988',
       period: 'bien-dao',
       kind: 'event',
@@ -382,6 +422,16 @@ const chapter: Chapter = {
     { id: 'mt-nqn-hoangsa', cite: 'Nguyễn Quang Ngọc (2011). "Tổ chức các đội Hoàng Sa và Bắc Hải, hình thức độc đáo duy nhất của quá trình xác lập và thực thi chủ quyền trên các vùng quần đảo ngoài Biển Đông trong các thế kỷ XVII - XVIII". Bản tin Đại học Quốc gia Hà Nội, số 245.', url: 'https://files.vnu.edu.vn/data/upload/2011/08/10856/245%20p30-p36_Hoang%20Sa%20Truong%20Sa%20Nhung%20trang%20su%20duoc%20viet%20bang%20mau%20%20_%20GS_TS%20Nguyen%20Quang%20Ngoc.pdf', kind: 'paper' },
     { id: 'ng-tt-hoangsa', kind: 'news', cite: 'Trần Đức Anh Sơn (12/10/2016), "Triều Nguyễn thực thi chủ quyền", Tuổi Trẻ (dẫn Đại Nam thực lục, các quyển 52, 104, 122, 154, 165).', url: 'https://tuoitre.vn/trieu-nguyen-thuc-thi-chu-quyen-1186624.htm' },
     { id: 'ng-brit-paracel', kind: 'reference', cite: 'Encyclopaedia Britannica, "Paracel Islands".', url: 'https://www.britannica.com/place/Paracel-Islands' },
+    { id: 'bd-vne-lyson', kind: 'news', cite: 'VnExpress, "Khao khát của những ngư dân bám biển" (về ngư dân Lý Sơn ở ngư trường Hoàng Sa).', url: 'https://vnexpress.net/khao-khat-cua-nhung-ngu-dan-bam-bien-2159381.html' },
+    { id: 'bd-vne-2014', kind: 'news', cite: 'VnExpress (5/2014), "Ngư dân Lý Sơn quyết bám biển" (các nghiệp đoàn tổ chức tàu đi theo tổ 5 đến 10 chiếc).', url: 'https://vnexpress.net/ngu-dan-ly-son-quyet-bam-bien-2988231.html' },
+    { id: 'bd-rfa-2019sink', kind: 'news', cite: 'RFA tiếng Việt (18/3/2019), "Tàu Trung Quốc xịt vòi rồng, ép tàu ngư dân Việt đụng đá ngầm chìm".', url: 'https://www.rfa.org/vietnamese/news/vietnamnews/chinese-ships-spray-cannons-forcing-vietnamese-ships-to-crash-into-reefs-03182019075059.html' },
+    { id: 'bd-rfa-2020sink', kind: 'news', cite: 'RFA tiếng Việt (3/4/2020), "Hà Nội xác nhận tàu hải cảnh Trung Quốc đâm chìm tàu cá Việt Nam".', url: 'https://www.rfa.org/vietnamese/news/vietnamnews/vn-cn-fi-sunk-04032020142029.html' },
+    { id: 'bd-vufo-2024', kind: 'news', cite: 'VUFO dẫn TTXVN (2/10/2024), "Kiên quyết phản đối hành xử thô bạo của lực lượng Trung Quốc với tàu cá Việt Nam" (tàu QNg 95739 TS).', url: 'https://www.vufo.org.vn/Kien-quyet-phan-doi-hanh-xu-tho-bao-cua-luc-luong-Trung-Quoc-voi-tau-ca-Viet-Nam-26-109191.html?lang=vn' },
+    { id: 'bd-plo-kiemngu', kind: 'news', cite: 'Báo Pháp luật Việt Nam, "Lực lượng kiểm ngư Việt Nam đảm bảo an toàn ngư trường biển, đảo" (số liệu tuần tra năm 2015).', url: 'https://baophapluat.vn/luc-luong-kiem-ngu-viet-nam-dam-bao-an-toan-ngu-truong-bien-dao-post226853.html' },
+    { id: 'bd-vmrcc', kind: 'primary', cite: 'Trung tâm Phối hợp tìm kiếm cứu nạn hàng hải Việt Nam (VMRCC), "Vietnam MRCC successfully rescues fishermen in distress in the area of Tri Ton Island, Hoang Sa archipelago".', url: 'https://www.vmrcc.gov.vn/en/news/vietnam-mrcc-successfully-rescues-fishermen-in-distress-in-the-area-of-tri-ton-island-hoang-sa-archipelago-347.html' },
+    { id: 'bd-sggp-2025ban', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng (2025), về lệnh cấm đánh bắt cá đơn phương của Trung Quốc năm 2025 và công hàm phản đối của Việt Nam ngày 15/5/2025.', url: 'https://www.sggp.org.vn/cang-thang-bien-dong-gia-tang-khi-lenh-cam-danh-bat-ca-cua-trung-quoc-gay-ra-su-phan-doi-trong-khu-vuc-va-lo-ngai-quoc-te-post809555.html' },
+    { id: 'bd-vov-dkhs', kind: 'news', cite: 'VOV (12/2025), "Đà Nẵng: Bí thư phường Hải Châu làm Giám đốc Sở Nội vụ, Chủ tịch Đặc khu Hoàng Sa".', url: 'https://vov.vn/chinh-tri/da-nang-bi-thu-phuong-hai-chau-lam-giam-doc-so-noi-vu-chu-tich-dac-khu-hoang-sa-post1311325.vov' },
+    { id: 'bd-rfa-2018', kind: 'news', cite: 'RFA tiếng Việt (2/4/2018), "Ngư dân Việt lại kêu đau"; và RFA (16/5/2011), "Lệnh cấm đơn phương".', url: 'https://www.rfa.org/vietnamese/news/reportfromvn/viet-fishermen-complain-04022018070505.html' },
     { id: 'bd-nq1659', kind: 'primary', cite: 'Ủy ban Thường vụ Quốc hội, Nghị quyết 1659/NQ-UBTVQH15 năm 2025 về sắp xếp đơn vị hành chính cấp xã của thành phố Đà Nẵng (khoản 92: huyện Hoàng Sa thành đặc khu Hoàng Sa), hiệu lực từ 1/7/2025; trích theo Thư viện Pháp luật.', url: 'https://thuvienphapluat.vn/hoi-dap-phap-luat/huyen-dao-hoang-sa-tp-da-nang-doi-thanh-gi-sau-sap-nhap-2025-138064841.html' },
     { id: 'bd-brit-spratly', kind: 'reference', cite: 'Encyclopaedia Britannica, "Spratly Islands", bản in, xem tháng 11/2026.', url: 'https://www.britannica.com/print/article/561209' },
     { id: 'bd-mofa-hoangsa', kind: 'primary', cite: 'Bộ Ngoại giao Việt Nam, "The sovereignty of Viet Nam over the Hoang Sa archipelago" (phản hồi các thư của Trung Quốc gửi Liên Hợp Quốc ngày 22/5 và 9/6/2014, tài liệu A/68/887 và A/68/907).', url: 'https://mofa.gov.vn/en/nr040807104143/nr040807105001/ns140709161305' },
@@ -427,6 +477,10 @@ const chapter: Chapter = {
     { id: 'bd-brit-falklands', kind: 'reference', cite: 'Encyclopaedia Britannica, "Falkland Islands War".', url: 'https://www.britannica.com/event/Falkland-Islands-War' },
   ],
   hooks: {
+    'hoang-sa-sau-1974': l(
+      `Từ đảo Lý Sơn ra Hoàng Sa chỉ mất một ngày một đêm đi tàu, nên đến nay đây vẫn là ngư trường quen thuộc nhất của ngư dân Quảng Ngãi.`,
+      `From Lý Sơn island the Paracels are just a day and a night away by boat, so they are still the most familiar fishing grounds for Quảng Ngãi's fishermen.`,
+    ),
     'bai-cat-vang-tren-ban-do-co': l(
       `Một bản đồ đường bộ vẽ cho chúa Trịnh lại ghi rằng đối thủ của họ, chúa Nguyễn, mỗi năm sai 18 chiếc thuyền ra một bãi cát giữa biển.`,
       `A road atlas drawn for the Trịnh lords notes that their rivals, the Nguyễn, sent 18 boats every year to a sandbank far out at sea.`,
