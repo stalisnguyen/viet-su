@@ -978,4 +978,11 @@ export const CITE_EN: Record<string, string> = {
   "tet-zn": "Znews, \"The Saigon commandos fighting at the Independence Palace during the Tết offensive\".",
   "tet-nd": "Nhân Dân, special feature \"Carrying on the spirit of Tết Mậu Thân 1968\".",
   "tet-gd": "Giáo dục Việt Nam, \"The attack on the 'White House of the East' at Tết 1968\" (part 5).",
+  "hm-toanthu-trungquang": "Đại Việt sử ký toàn thư (Complete Annals of Đại Việt), Institute of Social Sciences translation as reproduced reign by reign on nguoikesu.com, section \"Trần Trùng Quang\".",
+  "mt-toanthu-trangtong": "Đại Việt sử ký toàn thư (Complete Annals of Đại Việt), Institute of Social Sciences translation as reproduced reign by reign on nguoikesu.com, section \"Lê Trang Tông\".",
+  "mt-toanthu-anhtong": "Đại Việt sử ký toàn thư (Complete Annals of Đại Việt), Institute of Social Sciences translation as reproduced reign by reign on nguoikesu.com, section \"Lê Anh Tông\".",
+  "mt-toanthu-thantong": "Đại Việt sử ký toàn thư (Complete Annals of Đại Việt), Institute of Social Sciences translation as reproduced reign by reign on nguoikesu.com, section \"Lê Thần Tông (second reign)\".",
+  "ts-znews-ngochoi": "Znews, \"The battle of Ngọc Hồi - Đống Đa 230 years ago in Vietnamese and Chinese records\" (quoting the Đại Nam liệt truyện and the Draft History of Qing).",
+  "ts-bpl-votanh": "Pháp luật Việt Nam, \"The loyal general who burned himself to spare the people and soldiers\" (citing the Veritable Records of Đại Nam).",
+  "ng-vov-gialong-hoangsa": "VOV, \"Hoàng Sa under the rule of Emperor Gia Long\".",
 };

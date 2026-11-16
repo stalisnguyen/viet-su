@@ -204,15 +204,15 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          `Các nguồn tiếng Việt không hoàn toàn trùng nhau. Đỗ Danh Huấn đặt chuyến của Phạm Quang Ảnh vào năm 1815; Trần Đức Anh Sơn nêu lệnh năm 1816 và việc dựng miếu năm 1833. Cả hai đều tả bia năm 1835. Chi tiết năm thuyền và năm mươi người của chuyến năm 1836, cùng tên thật của Phạm Hữu Nhật, đến từ gia phả và truyền thống địa phương chứ không từ Thực lục.`,
-          `The Vietnamese sources do not agree in every detail. Đỗ Danh Huấn dates Phạm Quang Ảnh's voyage to 1815; Trần Đức Anh Sơn gives the 1816 order and the shrine of 1833. Both describe the 1835 stele. The figures of five boats and fifty men in 1836, and Phạm Hữu Nhật's real name, come from a genealogy and local tradition rather than the Veritable Records.`,
+          `Đỗ Danh Huấn nhấn vào chuyến năm 1815 của Phạm Quang Ảnh, còn Trần Đức Anh Sơn dẫn lệnh năm 1816 và việc dựng miếu năm 1833. Đại Nam thực lục chép cả hai chuyến năm 1815 và 1816, nên đây là hai lần sai phái nối tiếp nhau chứ không phải hai cách ghi lệch nhau. Cả hai đều tả bia năm 1835. Chi tiết năm thuyền và năm mươi người của chuyến năm 1836, cùng tên thật của Phạm Hữu Nhật, đến từ gia phả và truyền thống địa phương chứ không từ Thực lục.`,
+          `Đỗ Danh Huấn stresses Phạm Quang Ảnh's voyage of 1815, while Trần Đức Anh Sơn cites the 1816 order and the shrine of 1833. The Veritable Records list voyages in both 1815 and 1816, so these are two successive missions rather than two conflicting dates. Both describe the 1835 stele. The figures of five boats and fifty men in 1836, and Phạm Hữu Nhật's real name, come from a genealogy and local tradition rather than the Veritable Records.`,
         ),
         l(
           `Đây là một vấn đề đang tranh chấp. Britannica ghi quần đảo gồm khoảng 130 đảo san hô nhỏ, cách miền Trung Việt Nam khoảng 400 km, và bị Trung Quốc, Đài Loan, Việt Nam cùng tuyên bố chủ quyền. Pháp tuyên bố sáp nhập năm 1932; năm 1974 Trung Quốc dùng vũ lực đánh chiếm toàn bộ quần đảo. Các văn bản triều Nguyễn thuật lại ở đây là bằng chứng cho việc nhà nước Việt Nam thực thi chủ quyền liên tục; xem thêm chuyên đề Hoàng Sa và Trường Sa.`,
           `This is a disputed matter. Britannica describes the group as about 130 small coral islands some 400 km east of central Vietnam, claimed by China, Taiwan and Vietnam. France announced their annexation in 1932; in 1974 China seized the whole archipelago by force. The Nguyễn records set out here are evidence of the Vietnamese state's continuous exercise of sovereignty; see also the topic on Hoàng Sa and Trường Sa.`,
         ),
       ],
-      sources: ['ng-vlm-hoangsa', 'ng-tt-hoangsa', 'ng-bpl-phamhuunhat', 'ng-brit-paracel'],
+      sources: ['ng-vov-gialong-hoangsa', 'ng-vlm-hoangsa', 'ng-tt-hoangsa', 'ng-bpl-phamhuunhat', 'ng-brit-paracel'],
     },
     {
       slug: 'nguyen-du-truyen-kieu',
@@ -459,6 +459,7 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 'ng-vov-gialong-hoangsa', cite: 'VOV. "Hoàng Sa dưới thời cai quản của vua Gia Long".', url: 'https://vov.vn/van-hoa-giai-tri/hoang-sa-duoi-thoi-cai-quan-cua-vua-gia-long-331884.vov', kind: 'news' },
     { id: 'ng-brit-dynasty', kind: 'reference', cite: 'Encyclopaedia Britannica, "Nguyen Dynasty" (Vietnamese history).', url: 'https://www.britannica.com/topic/Nguyen-dynasty' },
     { id: 'ng-brit-gialong', kind: 'reference', cite: 'Encyclopaedia Britannica, "Gia Long" (emperor of Vietnam).', url: 'https://www.britannica.com/biography/Gia-Long' },
     { id: 'ng-brit-minhmang', kind: 'reference', cite: 'Encyclopaedia Britannica, "Minh Mang" (emperor of Vietnam).', url: 'https://www.britannica.com/biography/Minh-Mang' },

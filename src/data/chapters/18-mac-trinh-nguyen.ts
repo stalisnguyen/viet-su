@@ -69,8 +69,8 @@ const chapter: Chapter = {
           `Mạc Đăng Dung (1483 - 1541) came from Cổ Trai village, now in Kiến Thụy, Hải Phòng. The National Museum of History article says he started out as a fisherman and rose through military service under Lê Uy Mục. His path to power up to 1527 is told in the Early Lê chapter. Once on the throne, from 1529 he passed the crown to his son Mạc Đăng Doanh and ruled as senior emperor.`,
         ),
         l(
-          `Nhà Minh dọa đem quân sang đánh. Theo nghiên cứu của Yamazaki Takeshi dựa trên sử liệu nhà Minh, ngày 3 tháng 11 âm lịch năm 1540, Mạc Đăng Dung cùng các quan đi chân đất, mặc áo trắng, quỳ ở Trấn Nam Quan để dâng biểu đầu hàng. Năm 1541 nhà Minh công nhận họ Mạc, nhưng chỉ phong Mạc Phúc Hải chức An Nam đô thống sứ thay cho tước vua.`,
-          `The Ming threatened to invade. According to a study by Yamazaki Takeshi based on Ming records, on the 3rd day of the 11th lunar month of 1540 Mạc Đăng Dung and his officials, barefoot and dressed in white, knelt at the Zhennan pass (Trấn Nam Quan) to present a letter of surrender. In 1541 the Ming recognised the Mạc, but granted Mạc Phúc Hải only the title of Commander-in-chief of Annan (An Nam đô thống sứ) instead of king.`,
+          `Nhà Minh dọa đem quân sang đánh. Theo nghiên cứu của Yamazaki Takeshi dựa trên sử liệu nhà Minh, ngày 3 tháng 11 âm lịch năm 1540, Mạc Đăng Dung cùng các quan đi chân đất, mặc áo trắng, quỳ ở Trấn Nam Quan để dâng biểu đầu hàng. Năm 1541 nhà Minh công nhận họ Mạc, nhưng chỉ phong Mạc Đăng Dung chức An Nam đô thống sứ thay cho tước vua. Cũng năm ấy Mạc Đăng Dung mất, và chức này truyền cho cháu ông là Mạc Phúc Hải.`,
+          `The Ming threatened to invade. According to a study by Yamazaki Takeshi based on Ming records, on the 3rd day of the 11th lunar month of 1540 Mạc Đăng Dung and his officials, barefoot and dressed in white, knelt at the Zhennan pass (Trấn Nam Quan) to present a letter of surrender. In 1541 the Ming recognised the Mạc, but granted Mạc Đăng Dung only the title of Commander-in-chief of Annan (An Nam đô thống sứ) instead of king. Đăng Dung died later that year and the title passed to his grandson Mạc Phúc Hải.`,
         ),
         l(
           `Năm 1592 Trịnh Tùng chiếm Thăng Long và giết Mạc Mậu Hợp. Con cháu họ Mạc rút lên Cao Bằng, được nhà Minh công nhận năm 1598 và giữ vùng này đến năm 1677. Ở quê gốc, vùng các nguồn hiện nay gọi là Dương Kinh, vẫn còn Từ đường họ Mạc, chùa Trà Phương, chùa Nhân Trai, đền chùa Hòa Liễu và Khu tưởng niệm các vua nhà Mạc.`,
@@ -91,7 +91,7 @@ const chapter: Chapter = {
           `The reign dates of the Mạc rulers differ slightly between sources: Wikipedia gives Mạc Đăng Doanh 1529 - 1540, the Museum article 1530 - 1540. The name Dương Kinh is tied to the Mạc home district, but the size and exact location of its palaces are not set out in the sources cited here; the Vietnam+ report simply calls it a former capital with many surviving relics.`,
         ),
       ],
-      sources: ['mt-btls-mac', 'mt-yamazaki2013', 'mt-wiki-mac', 'mt-vnplus-duongkinh', 'mt-brit-macfamily', 'mt-brit-macdangdung', 'mt-bpl-nbk'],
+      sources: ['mt-toanthu-trangtong', 'mt-btls-mac', 'mt-yamazaki2013', 'mt-wiki-mac', 'mt-vnplus-duongkinh', 'mt-brit-macfamily', 'mt-brit-macdangdung', 'mt-bpl-nbk'],
     },
     {
       slug: 'le-trung-hung-nguyen-hoang-thuan-hoa',
@@ -113,8 +113,8 @@ const chapter: Chapter = {
           `According to Britannica, in 1533 a Lê emperor was restored to the throne with the help of the Nguyễn family. The revived Lê court sat in Thanh Hóa and Nghệ An, facing the Mạc in Thăng Long. In 1545 Nguyễn Kim was poisoned by a general who had defected from the Mạc. His son-in-law Trịnh Kiểm took command, and his eldest son Nguyễn Uông was killed by Trịnh Kiểm. The younger son, Nguyễn Hoàng (1525 - 1613), feared for his life.`,
         ),
         l(
-          `Năm 1558 Nguyễn Hoàng được cử vào trấn thủ Thuận Hóa, vùng đất cũ của Champa, lúc ấy còn có quân Mạc trấn giữ. Ông đóng dinh ở Ái Tử (1558 - 1570), rồi Trà Bát (1570 - 1600), rồi Dinh Cát. Ông kiêm cả Quảng Nam từ năm 1569 hoặc 1570. Năm 1593 ông ra Bắc giúp Trịnh Tùng đánh dư đảng Mạc, đến năm 1600 mới trở về Thuận Hóa, để con và cháu ở lại làm con tin.`,
-          `In 1558 Nguyễn Hoàng was sent to govern Thuận Hóa, a former Cham land then still held by Mạc forces. He set his base at Ái Tử (1558 - 1570), then Trà Bát (1570 - 1600), then Dinh Cát. He also took charge of Quảng Nam from 1569 or 1570. In 1593 he went north to help Trịnh Tùng fight the remaining Mạc forces, and only in 1600 did he return to Thuận Hóa, leaving a son and a grandson behind as hostages.`,
+          `Năm 1558 Nguyễn Hoàng được cử vào trấn thủ Thuận Hóa, vùng đất cũ của Champa, lúc ấy còn có quân Mạc trấn giữ. Ông đóng dinh ở Ái Tử (1558 - 1570), rồi Trà Bát (1570 - 1600), rồi Dinh Cát. Theo Toàn thư, ông kiêm cả Quảng Nam từ tháng Giêng năm 1570. Năm 1593 ông ra Bắc giúp Trịnh Tùng đánh dư đảng Mạc, đến năm 1600 mới trở về Thuận Hóa, để con và cháu ở lại làm con tin.`,
+          `In 1558 Nguyễn Hoàng was sent to govern Thuận Hóa, a former Cham land then still held by Mạc forces. He set his base at Ái Tử (1558 - 1570), then Trà Bát (1570 - 1600), then Dinh Cát. According to the Toàn thư he also took charge of Quảng Nam from the first lunar month of 1570. In 1593 he went north to help Trịnh Tùng fight the remaining Mạc forces, and only in 1600 did he return to Thuận Hóa, leaving a son and a grandson behind as hostages.`,
         ),
         l(
           `Năm 1592 Trịnh Tùng lấy lại Thăng Long, chấm dứt thời Nam - Bắc triều. Từ năm 1600 Nguyễn Hoàng không còn nghe lệnh họ Trịnh nữa. Năm 1611 ông đánh lui quân Chiêm Thành và lập phủ Phú Yên. Trước khi mất năm 1613, theo bài trên báo Pháp luật Việt Nam, ông dặn con là Nguyễn Phúc Nguyên rằng làm con phải hiếu, làm tôi phải trung.`,
@@ -127,11 +127,11 @@ const chapter: Chapter = {
           `The line "Hoành Sơn nhất đái, khả dĩ dung thân" (the Hoành Sơn range can shelter you) is a story, not a contemporary record. According to Nguyễn Khắc Thuần, it comes from Vũ Phương Đề's 18th-century Công dư tiệp ký: Nguyễn Hoàng's mother asked Nguyễn Bỉnh Khiêm for help, and he spoke the line while watching ants climb a miniature rock garden. A variant reads "vạn đại dung thân" (shelter for ten thousand generations), wording later readers could easily take as a prophecy of the Nguyễn house.`,
         ),
         l(
-          `Ngày Nguyễn Hoàng vào Thuận Hóa được ghi khác nhau: Wikipedia tiếng Anh ghi thời trị vì của ông bắt đầu ngày 14 tháng 2 năm 1558, còn bài báo Pháp luật Việt Nam ghi tháng 11 năm 1558. Sự chênh lệch có thể do cách đổi lịch âm sang dương, nhưng các nguồn đã dẫn không giải thích. Vị trí chính xác của dinh Ái Tử cũng chưa được xác định trong các nguồn này, nên tọa độ ở đây chỉ chỉ vào làng Ái Tử.`,
-          `The date Nguyễn Hoàng entered Thuận Hóa is given differently: English Wikipedia says his rule began on 14 February 1558, while the Pháp luật Việt Nam article gives November 1558. The gap may come from converting lunar to solar dates, but the sources cited do not explain it. The exact site of the Ái Tử headquarters is not fixed in these sources either, so the coordinates here point only to Ái Tử village.`,
+          `Ngày Nguyễn Hoàng vào Thuận Hóa được ghi khác nhau. Toàn thư chép việc ông được sai vào trấn thủ Thuận Hóa vào tháng 10 năm Mậu Ngọ, tức khoảng tháng 11 năm 1558, khớp với bài báo Pháp luật Việt Nam. Ngày 14 tháng 2 năm 1558 mà Wikipedia tiếng Anh ghi không có căn cứ trong chính sử. Vị trí chính xác của dinh Ái Tử cũng chưa được xác định trong các nguồn này, nên tọa độ ở đây chỉ chỉ vào làng Ái Tử.`,
+          `The date Nguyễn Hoàng entered Thuận Hóa is given differently. The Toàn thư records his posting to Thuận Hóa in the 10th lunar month of the Mậu Ngọ year, about November 1558, which matches the Pháp luật Việt Nam article. The date of 14 February 1558 given by English Wikipedia has no basis in the chronicles. The exact site of the Ái Tử headquarters is not fixed in these sources either, so the coordinates here point only to Ái Tử village.`,
         ),
       ],
-      sources: ['mt-brit-laterle', 'mt-bpl-nguyenhoang', 'mt-dbnd-nbk', 'mt-wiki-nguyenhoang', 'mt-countrystudies'],
+      sources: ['mt-toanthu-anhtong', 'mt-brit-laterle', 'mt-bpl-nguyenhoang', 'mt-dbnd-nbk', 'mt-wiki-nguyenhoang', 'mt-countrystudies'],
     },
     {
       slug: 'hoi-an-pho-hien',
@@ -273,8 +273,8 @@ const chapter: Chapter = {
           `In 1620 Lord Nguyễn Phúc Nguyên refused to send taxes to the court in Thăng Long. War broke out in 1627: the Trịnh army fought for four months without success. According to VietNamNet, from 1630 the Nguyễn built walls to Đào Duy Từ's design, a job of about three years. The system had three walls, Trường Dục, Nhật Lệ and Trường Sa, on average 3 - 6 m high and 6 m wide on top, made of earth and stone with ironwood stakes on the outer face.`,
         ),
         l(
-          `Năm 1633 thủy quân Nguyễn đánh bại một cuộc đổ bộ của quân Trịnh ở cửa Nhật Lệ. Năm 1642 - 1643 quân Trịnh dùng đại bác mua của Hà Lan phá được lũy thứ nhất nhưng không qua được lũy thứ hai, còn các tàu Hà Lan đến giúp bị thủy quân Nguyễn đánh tan. Năm 1653 họ Nguyễn đánh ra Bắc, chiếm tới Hà Tĩnh, nhưng năm 1656 bị đẩy lùi về lũy cũ.`,
-          `In 1633 the Nguyễn fleet defeated a Trịnh landing at the Nhật Lệ estuary. In 1642 - 1643 the Trịnh, using cannon bought from the Dutch, broke through the first wall but not the second, and the Dutch ships sent to help were destroyed by the Nguyễn navy. In 1653 the Nguyễn went on the offensive, reaching as far as Hà Tĩnh, but in 1656 they were pushed back to their old walls.`,
+          `Năm 1633 thủy quân Nguyễn đánh bại một cuộc đổ bộ của quân Trịnh ở cửa Nhật Lệ. Năm 1642 - 1643 quân Trịnh dùng đại bác mua của Hà Lan phá được lũy thứ nhất nhưng không qua được lũy thứ hai, còn các tàu Hà Lan đến giúp bị thủy quân Nguyễn đánh tan. Năm 1655 quân Nguyễn vượt sông Gianh đánh ra Bắc và chiếm bảy huyện phía nam sông Lam, tức vùng Hà Tĩnh và nam Nghệ An ngày nay. Đến cuối năm 1660 quân Trịnh mới lấy lại được vùng này và đẩy quân Nguyễn về nam sông Gianh.`,
+          `In 1633 the Nguyễn fleet defeated a Trịnh landing at the Nhật Lệ estuary. In 1642 - 1643 the Trịnh, using cannon bought from the Dutch, broke through the first wall but not the second, and the Dutch ships sent to help were destroyed by the Nguyễn navy. In 1655 the Nguyễn crossed the Gianh river and took the seven districts south of the Lam river, roughly today's Hà Tĩnh and southern Nghệ An. Only at the end of 1660 did the Trịnh win the area back and push the Nguyễn south of the Gianh.`,
         ),
         l(
           `Cuộc tấn công lớn cuối cùng diễn ra năm 1672 dưới sự chỉ huy của Trịnh Tạc và Trịnh Căn, rồi thất bại. Năm 1673 hai bên ngừng chiến. Lũy được giữ yên gần một trăm năm, đến cuối năm 1774 quân Trịnh Sâm mới vượt qua được, nhân lúc họ Nguyễn đang phải đối phó với Tây Sơn. Đoạn lũy còn lại ở Quảng Bình Quan, Đồng Hới, được xếp hạng di tích quốc gia năm 1992.`,
@@ -291,7 +291,7 @@ const chapter: Chapter = {
           `Troop numbers are hard to check as well. Wikipedia gives 80,000 Trịnh soldiers for the 1671 - 1672 campaign, losing 17,000 men in three days against 25,000 Nguyễn troops, and dates the offensive to 1671 rather than 1672. On the border, Wikipedia calls the Gianh the dividing line from 1627 and the Linh River the boundary of 1673; but Linh Giang is simply the Sino-Vietnamese name of the Gianh, so both names refer to one river. Britannica calls 1673 a de facto truce, not a peace treaty.`,
         ),
       ],
-      sources: ['mt-vnn-luythay', 'mt-wiki-trinhnguyen', 'mt-countrystudies', 'mt-brit-laterle', 'mt-brit-trinh'],
+      sources: ['mt-toanthu-thantong', 'mt-vnn-luythay', 'mt-wiki-trinhnguyen', 'mt-countrystudies', 'mt-brit-laterle', 'mt-brit-trinh'],
     },
     {
       slug: 'tuong-quan-am-but-thap',
@@ -495,6 +495,9 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 'mt-toanthu-thantong', cite: 'Đại Việt sử ký toàn thư, bản dịch Viện Khoa học xã hội, chép lại theo từng đời vua trên nguoikesu.com, mục "Lê Thần Tông (lần hai)".', url: 'https://nguoikesu.com/dong-lich-su/trinh-nguyen-phan-tranh/nha-le-trung-hung/le-than-tong-le-duy-ky-ha', kind: 'primary' },
+    { id: 'mt-toanthu-anhtong', cite: 'Đại Việt sử ký toàn thư, bản dịch Viện Khoa học xã hội, chép lại theo từng đời vua trên nguoikesu.com, mục "Lê Anh Tông".', url: 'https://nguoikesu.com/dong-lich-su/nam-bac-trieu/nha-le-trung-hung/le-anh-tong-le-duy-bang', kind: 'primary' },
+    { id: 'mt-toanthu-trangtong', cite: 'Đại Việt sử ký toàn thư, bản dịch Viện Khoa học xã hội, chép lại theo từng đời vua trên nguoikesu.com, mục "Lê Trang Tông".', url: 'https://nguoikesu.com/dong-lich-su/nam-bac-trieu/nha-le-trung-hung/le-trang-tong-le-duy-ninh', kind: 'primary' },
     { id: 'mt-brit-laterle', cite: 'Encyclopaedia Britannica. "Later Le dynasty: Vietnamese history".', url: 'https://www.britannica.com/topic/Later-Le-dynasty', kind: 'reference' },
     { id: 'mt-brit-trinh', cite: 'Encyclopaedia Britannica. "Trinh family: Vietnamese family".', url: 'https://www.britannica.com/topic/Trinh-family', kind: 'reference' },
     { id: 'mt-brit-tayson', cite: 'Encyclopaedia Britannica. "Tay Son rebellion: Vietnamese history".', url: 'https://www.britannica.com/topic/Tay-Son-rebellion', kind: 'reference' },

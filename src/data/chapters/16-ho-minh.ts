@@ -282,8 +282,8 @@ const chapter: Chapter = {
           `The two sides met at Bô Cô on the Đáy river. The Ming Veritable Records, under 9 January 1409, report Mu Sheng's defeat; the commissioner Lü Yi died in the fighting, and the Minister of War Liu Jun, surrounded, took his own life. After the victory Giản Định wanted to strike at Đông Quan at once while Đặng Tất preferred to wait and gather more men. The king grew suspicious and had both Đặng Tất and Nguyễn Cảnh Chân killed, and the army's cohesion broke.`,
         ),
         l(
-          `Tháng Ba năm Kỷ Sửu (1409), Trần Quý Khoáng lên ngôi ở Chi La, nay thuộc Hà Tĩnh, lấy niên hiệu Trùng Quang, rồi tôn Giản Định làm Thượng hoàng để hợp sức. Trương Phụ được cử sang lần nữa với khoảng 47.000 quân. Cuối năm 1409 Giản Định bị bắt, giải về Nam Kinh và bị giết. Tháng Chín năm 1413, Đặng Dung đánh úp trong đêm ở Thái Già, suýt bắt sống Trương Phụ. Vài tháng sau vua tôi Trùng Quang đều bị bắt.`,
-          `In the third lunar month of 1409 Trần Quý Khoáng took the throne at Chi La, now in Hà Tĩnh, as Trùng Quang, and then honoured Giản Định as senior emperor so as to join forces. Zhang Fu was sent south again with about 47,000 men. Late in 1409 Giản Định was captured, taken to Nanjing and put to death. In the ninth lunar month of 1413 Đặng Dung made a night raid at Thái Già and nearly took Zhang Fu alive. A few months later Trùng Quang and his officers were all captured.`,
+          `Tháng Ba năm Kỷ Sửu (1409), Trần Quý Khoáng lên ngôi ở Chi La, nay thuộc Hà Tĩnh, lấy niên hiệu Trùng Quang, rồi tôn Giản Định làm Thượng hoàng để hợp sức. Trương Phụ được cử sang lần nữa với khoảng 47.000 quân. Cuối năm 1409 Giản Định bị bắt, giải về Nam Kinh và bị giết. Tháng Chín năm 1413, Đặng Dung đánh úp trong đêm ở cửa Sái Già (sách phổ thông thường ghi là Thái Già), suýt bắt sống Trương Phụ. Vài tháng sau vua tôi Trùng Quang đều bị bắt.`,
+          `In the third lunar month of 1409 Trần Quý Khoáng took the throne at Chi La, now in Hà Tĩnh, as Trùng Quang, and then honoured Giản Định as senior emperor so as to join forces. Zhang Fu was sent south again with about 47,000 men. Late in 1409 Giản Định was captured, taken to Nanjing and put to death. In the ninth lunar month of 1413 Đặng Dung made a night raid at the Sái Già estuary (often written Thái Già in popular books) and nearly took Zhang Fu alive. A few months later Trùng Quang and his officers were all captured.`,
         ),
       ],
       scholarly: [
@@ -296,7 +296,7 @@ const chapter: Chapter = {
           `Dates and endings differ as well. Vietnamese histories count the Later Trần from the tenth month of 1407, some English-language surveys from 1408. For Trùng Quang, Vietnamese chronicles put his capture at the end of the Quý Tị year, while accounts based on Ming records give 30 March 1414. The Toàn thư says that on the way north he threw himself into the water; the Ming-based account has him executed in Nanjing on 16 August 1414.`,
         ),
       ],
-      sources: ['hm-toanthu', 'hm-msl-1409', 'hm-wiki-latertran', 'hm-bpl-trungquang'],
+      sources: ['hm-toanthu-trungquang', 'hm-toanthu', 'hm-msl-1409', 'hm-wiki-latertran', 'hm-bpl-trungquang'],
     },
     {
       slug: 'khoi-nghia-lam-son',
@@ -388,6 +388,7 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 'hm-toanthu-trungquang', cite: 'Đại Việt sử ký toàn thư, bản dịch Viện Khoa học xã hội, chép lại theo từng đời vua trên nguoikesu.com, mục "Trần Trùng Quang".', url: 'https://nguoikesu.com/dong-lich-su/nha-hau-tran/tran-trung-quang-tran-quy-khoang', kind: 'primary' },
     { id: 'hm-toanthu', kind: 'primary', cite: 'Ngô Sĩ Liên và các sử thần triều Lê, Đại Việt sử ký toàn thư, Bản kỷ, quyển 8 (kỷ nhà Trần, phụ Hồ Quý Ly và Hồ Hán Thương), quyển 9 (kỷ Hậu Trần, kỷ thuộc Minh), quyển 10 (kỷ Lê Thái Tổ; có toàn văn Bình Ngô đại cáo). Hoàn thành 1479, khắc in 1697.' },
     { id: 'hm-msl-capture', kind: 'primary', cite: 'Minh Thái Tông thực lục, Vĩnh Lạc năm 5, tháng 5, ngày 11 (16/6/1407), trong Geoff Wade (dịch), Southeast Asia in the Ming Shi-lu: an open access resource, Asia Research Institute và Singapore E-Press, National University of Singapore.', url: 'https://epress.nus.edu.sg/msl/reign/yong-le/year-5-month-5-day-11' },
     { id: 'hm-msl-1409', kind: 'primary', cite: 'Minh Thái Tông thực lục, Vĩnh Lạc năm 6, tháng 12, ngày 24 (9/1/1409), trong Geoff Wade (dịch), Southeast Asia in the Ming Shi-lu: an open access resource, National University of Singapore.', url: 'https://epress.nus.edu.sg/msl/reign/yong-le/year-6-month-12-day-24' },

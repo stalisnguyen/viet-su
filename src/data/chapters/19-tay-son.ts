@@ -233,8 +233,8 @@ const chapter: Chapter = {
           `The Qing army under Sun Shiyi (Tôn Sĩ Nghị) crossed the border late in 1788 and took Thăng Long unopposed. Nguyễn Huệ took the throne at Phú Xuân and led his army north. According to the Nghệ An newspaper he reached Nghệ An on 26 December 1788 and stayed more than ten days to recruit. On 15 January 1789 the Tây Sơn reached Tam Điệp, and they attacked during the Tết holiday.`,
         ),
         l(
-          `Theo Đại Nam liệt truyện, quân Tây Sơn dùng ván gỗ che chắn để đánh vào đồn Ngọc Hồi, phá đồn rồi tiến lấy Văn Điển, Yên Quyết. Đêm mùng 4, cánh quân của Đặng Tiến Đông đánh đồn Khương Thượng. Các tướng Thanh Hứa Thế Hanh, Trương Triều Long, Thượng Duy Thăng và Sầm Nghi Đống, tri phủ Điền Châu, đều chết. Tôn Sĩ Nghị cho chặt cầu phao qua sông Hồng, nhiều quân Thanh chết đuối, còn ông mất cả ấn tín.`,
-          `According to the Đại Nam liệt truyện, the Tây Sơn advanced on the Ngọc Hồi fort behind wooden shields, broke it and went on to take Văn Điển and Yên Quyết. On the night of the fourth, Đặng Tiến Đông's column attacked the Khương Thượng fort. The Qing officers Xu Shiheng (Hứa Thế Hanh), Trương Triều Long, Thượng Duy Thăng and Cen Yidong (Sầm Nghi Đống), prefect of Điền Châu, were all killed. Sun Shiyi had the pontoon bridge over the Red River cut, many of his men drowned, and he lost his seal of office.`,
+          `Theo Đại Nam liệt truyện, rạng sáng mùng 5 quân Tây Sơn đội ván gỗ xông vào lũy Ngọc Hồi, phá đồn rồi tiến lấy Văn Điển, Yên Quyết. Các tướng Thanh Hứa Thế Hanh, Trương Triều Long, Thượng Duy Thăng và tri phủ Điền Châu Sầm Nghi Đống đều chết. Tôn Sĩ Nghị một mình cưỡi ngựa chạy về Bắc, còn quân Thanh tranh nhau qua cầu, cầu gãy và hàng vạn người chết đuối. Những chi tiết khác quen thuộc trong sách phổ thông đến từ nguồn khác: trận đánh đồn Khương Thượng trong đêm mùng 4 được kể trong Hoàng Lê nhất thống chí, tên tướng Đặng Tiến Đông lấy từ gia phả họ Đặng, còn việc Tôn Sĩ Nghị cho chặt cầu phao được chép trong Thanh sử cảo.`,
+          `According to the Đại Nam liệt truyện, at dawn on the fifth the Tây Sơn charged the Ngọc Hồi fort behind wooden boards, broke it and went on to take Văn Điển and Yên Quyết. The Qing officers Xu Shiheng (Hứa Thế Hanh), Trương Triều Long, Thượng Duy Thăng and Cen Yidong (Sầm Nghi Đống), prefect of Điền Châu, were all killed. Sun Shiyi fled north alone on horseback, while his men crowded onto the bridge, which broke, and tens of thousands drowned. Other details familiar from popular books come from elsewhere: the night attack on the Khương Thượng fort on the fourth is told in the Hoàng Lê nhất thống chí, the general's name Đặng Tiến Đông comes from the Đặng family genealogy, and Sun Shiyi ordering the pontoon bridge cut is recorded in the Draft History of Qing.`,
         ),
         l(
           `Gò Đống Đa ở làng Khương Thượng cũ gắn với tích xác quân Thanh được gom thành nhiều gò lớn. Năm 1962 nơi đây là một trong mười hai di tích đầu tiên của Hà Nội được công nhận cấp quốc gia, năm 2018 thành di tích quốc gia đặc biệt. Tượng Quang Trung cao 15 mét, nặng 200 tấn, dựng năm 1989 nhân dịp 200 năm chiến thắng. Lễ hội gò Đống Đa diễn ra vào mùng 5 Tết hằng năm.`,
@@ -255,7 +255,7 @@ const chapter: Chapter = {
           `Nguyễn Duy Chính (2020) published the memorial Sun Shiyi wrote on the sixth day of the first month of 1789 while retreating. It differs from the Vietnamese histories on many points, probably because Sun wanted to excuse his defeat. The author argues that Qing archives allow a more rounded view of the 1789 battle. The details of Sầm Nghi Đống's death found in popular tales do not appear in the Đại Nam liệt truyện passage cited here.`,
         ),
       ],
-      sources: ['ts-znews-ngochoi2019', 'ts-chinh2020', 'ts-baonghean2020', 'ts-vnn-dongda2020', 'ts-vne-dongda2026', 'ts-dbnd-dongda2026', 'ts-loc', 'ts-wiki-ngochoi'],
+      sources: ['ts-znews-ngochoi', 'ts-znews-ngochoi2019', 'ts-chinh2020', 'ts-baonghean2020', 'ts-vnn-dongda2020', 'ts-vne-dongda2026', 'ts-dbnd-dongda2026', 'ts-loc', 'ts-wiki-ngochoi'],
     },
     {
       slug: 'cai-cach-quang-trung',
@@ -321,8 +321,8 @@ const chapter: Chapter = {
           `According to the Library of Congress study, Bishop Pigneau de Béhaine went to Paris in 1786. Louis XVI promised four warships and 1,650 men in return for Tourane (Đà Nẵng) and Poulo Condore, but the French authorities in India never delivered. Pigneau raised money privately, hired men and sailed back in 1789. With these advisers, ships and arms Nguyễn Ánh built forts, shipyards and foundries in Gia Định.`,
         ),
         l(
-          `Năm 1799 Nguyễn Ánh chiếm thành Quy Nhơn, đổi tên là Bình Định và giao cho Võ Tánh giữ. Đầu năm 1800 Trần Quang Diệu và Vũ Văn Dũng đem đại quân vây thành. Trong lúc quân chủ lực Tây Sơn bị giữ chân ở đây, Nguyễn Ánh đánh thẳng vào Phú Xuân vào tháng 6 năm 1801, Quang Toản phải chạy ra Bắc. Cũng tháng 6 năm ấy thành Bình Định hết lương, Võ Tánh tự sát.`,
-          `In 1799 Nguyễn Ánh took the Quy Nhơn citadel, renamed it Bình Định and left Võ Tánh in charge. Early in 1800 Trần Quang Diệu and Vũ Văn Dũng besieged it with a large army. While the main Tây Sơn force was pinned down there, Nguyễn Ánh struck at Phú Xuân in June 1801, and Quang Toản fled north. In the same month the Bình Định garrison ran out of food and Võ Tánh killed himself.`,
+          `Năm 1799 Nguyễn Ánh chiếm thành Quy Nhơn, đổi tên là Bình Định và giao cho Võ Tánh giữ. Đầu năm 1800 Trần Quang Diệu và Vũ Văn Dũng đem đại quân vây thành. Trong lúc quân chủ lực Tây Sơn bị giữ chân ở đây, Nguyễn Ánh đánh thẳng vào Phú Xuân vào tháng 6 năm 1801, Quang Toản phải chạy ra Bắc. Chưa đầy một tháng sau, đầu tháng 7 năm 1801, thành Bình Định hết lương và Võ Tánh tự thiêu.`,
+          `In 1799 Nguyễn Ánh took the Quy Nhơn citadel, renamed it Bình Định and left Võ Tánh in charge. Early in 1800 Trần Quang Diệu and Vũ Văn Dũng besieged it with a large army. While the main Tây Sơn force was pinned down there, Nguyễn Ánh struck at Phú Xuân in June 1801, and Quang Toản fled north. Less than a month later, in early July 1801, the Bình Định garrison ran out of food and Võ Tánh burned himself to death.`,
         ),
         l(
           `Năm 1802 Nguyễn Ánh lấy niên hiệu Gia Long, tiến ra Bắc và lấy Thăng Long. Britannica viết rằng đến năm 1802, nhờ vũ khí Pháp, ông đã diệt hết con cháu nhà Tây Sơn. Thư viện Quốc hội Mỹ cũng nêu nạn đói và thiên tai trong những năm cuối làm Tây Sơn suy yếu. Triều đại Gia Long được kể ở thời kỳ kế tiếp.`,
@@ -339,7 +339,7 @@ const chapter: Chapter = {
           `Sources also differ on why the regime fell. The Nguyễn histories saw it as the inevitable end of rebels. The Library of Congress study stresses Quang Trung's death without a strong heir and the factional strife that followed. According to the IIAS review, Dutton argues that the burden of conscription, taxes and forced labour led peasants to look to the Nguyễn in the south.`,
         ),
       ],
-      sources: ['ts-loc', 'ts-brit-gialong', 'ts-brit-tayson', 'ts-iias-dutton', 'ts-dntl', 'ts-wiki-votanh'],
+      sources: ['ts-bpl-votanh', 'ts-loc', 'ts-brit-gialong', 'ts-brit-tayson', 'ts-iias-dutton', 'ts-dntl', 'ts-wiki-votanh'],
     },
     {
       slug: 'su-hoc-ve-tay-son',
@@ -382,6 +382,8 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 'ts-bpl-votanh', cite: 'Báo Pháp luật Việt Nam. "Vị tướng trung dũng tự thiêu để xin chết thay cho lương dân và binh lính" (dẫn Đại Nam thực lục).', url: 'https://baophapluat.vn/vi-tuong-trung-dung-tu-thieu-de-xin-chet-thay-cho-luong-dan-va-binh-linh-post429286.html', kind: 'news' },
+    { id: 'ts-znews-ngochoi', cite: 'Znews. "Trận Ngọc Hồi - Đống Đa 230 năm trước trong sử sách Việt - Trung" (trích Đại Nam liệt truyện và Thanh sử cảo).', url: 'https://znews.vn/tran-ngoc-hoi-dong-da-230-nam-truoc-trong-su-sach-viet-trung-post914995.html', kind: 'news' },
     { id: 'ts-dntl', kind: 'primary', cite: 'Quốc sử quán triều Nguyễn, Đại Nam thực lục, Tiền biên và Chính biên kỷ thứ nhất (thế kỷ 19); dẫn theo các bài nghiên cứu và báo chí hiện đại nêu trong từng mục.' },
     { id: 'ts-hlntc', kind: 'primary', cite: 'Ngô gia văn phái, Hoàng Lê nhất thống chí (tiểu thuyết lịch sử chữ Hán, đầu thế kỷ 19); dẫn theo các bài viết hiện đại.' },
     { id: 'ts-brit-tayson', kind: 'reference', cite: 'Encyclopaedia Britannica, "Tay Son Brothers" (Vietnamese rebel leaders).', url: 'https://www.britannica.com/EBchecked/topic/584756/Tay-Son-Brothers' },
