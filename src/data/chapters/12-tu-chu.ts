@@ -193,7 +193,7 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `Ba bãi cọc đã khai quật ở vùng Quảng Yên là Yên Giang, Đồng Vạn Muối và Đồng Má Ngựa. Số cọc, năm phát hiện và cách cọc được cắm được kể ở mục trận Bạch Đằng năm 1288 trong thời kỳ nhà Trần. Điều đáng chú ý ở đây là cả ba bãi đều nằm ở các nhánh sông phía trong, trong khi sử sách tả trận năm 938 ở cửa sông gần biển, nên chúng không trả lời được câu hỏi trận Ngô Quyền diễn ra chính xác ở đâu.`,
+          `Ba bãi cọc đã khai quật ở vùng Quảng Yên là Yên Giang, Đồng Vạn Muối và Đồng Má Ngựa. Số cọc, năm phát hiện và cách cọc được cắm được kể ở mục trận Bạch Đằng năm 1288 trong thời kỳ nhà Trần. Cần lưu ý rằng cả ba bãi đều nằm ở các nhánh sông phía trong, trong khi sử sách tả trận năm 938 ở cửa sông gần biển, nên chúng không trả lời được câu hỏi trận Ngô Quyền diễn ra chính xác ở đâu.`,
           `The three stake fields excavated around Quảng Yên are Yên Giang, Đồng Vạn Muối and Đồng Má Ngựa. Their stake counts, discovery dates and the way the stakes were set are covered in the entry on the 1288 battle of Bạch Đằng in the Trần chapter. What matters here is that all three lie in inner branches of the river, whereas the chronicles place the 938 battle near the river mouth, so they cannot tell us exactly where Ngô Quyền fought.`,
         ),
         l(
@@ -294,7 +294,7 @@ const chapter: Chapter = {
           `This narrative follows mainly the Toàn thư and the Cương mục. Chinese histories are thinner and use different names for the people involved; the Nguyễn court historians themselves noted where the names of the Southern Han rulers and of Ngô Xương Văn fail to match between sources. Britannica says the Ngô dynasty collapsed in 954, taking Xương Ngập's death as the end, while Vietnamese chronicles carry it to Xương Văn's death in 965. The difference depends on when one judges the court to have lost real power.`,
         ),
         l(
-          `Việc Xương Văn nhận chức tiết độ sứ của Nam Hán năm 954 đáng chú ý. Cha ông đã bỏ danh hiệu đó để xưng vương, còn ông vừa giữ tước vương trong nước vừa nhận chức quan của nước láng giềng. Các sách hiện đại ghi ông xin chức mà không tiếp sứ Nam Hán. Cách dùng hai danh hiệu, một cho trong nước và một cho quan hệ với phương Bắc, về sau trở thành thông lệ của các triều đại Việt.`,
+          `Năm 954 Xương Văn nhận chức tiết độ sứ của Nam Hán, một việc thoạt nhìn đi ngược với cha mình. Cha ông đã bỏ danh hiệu đó để xưng vương, còn ông vừa giữ tước vương trong nước vừa nhận chức quan của nước láng giềng. Các sách hiện đại ghi ông xin chức mà không tiếp sứ Nam Hán. Cách dùng hai danh hiệu, một cho trong nước và một cho quan hệ với phương Bắc, về sau trở thành thông lệ của các triều đại Việt.`,
           `Xương Văn's acceptance of the Southern Han title of jiedushi in 954 deserves notice. His father had dropped that title to become king, while he kept the royal style at home and took an office from the neighbouring state. Modern works record that he sought the title without receiving the Southern Han envoys. The use of two titles, one at home and one for dealings with the north, later became standard practice for Vietnamese dynasties.`,
         ),
       ],

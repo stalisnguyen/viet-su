@@ -17,7 +17,7 @@ const base: Period[] = [
         'The earliest phase is the Lower Palaeolithic. At An Khê (Gia Lai), layers containing bifacial handaxes lie together with tektites dated to about 800,000 years. At Thẩm Khuyên cave (Lạng Sơn), teeth of Homo erectus are dated to about 475,000 years. Núi Đọ (Thanh Hóa) was once regarded as the oldest site, but its age is still debated.',
       ),
       l(
-        'Từ khoảng 20.000 năm trước, dấu vết dày lên rõ rệt. Cư dân Sơn Vi dùng công cụ cuội ghè trên các đồi gò trung du. Cư dân Hòa Bình và Bắc Sơn sống trong hang và mái đá, săn bắt, hái lượm, bắt ốc suối, và bắt đầu mài lưỡi rìu. Kỹ thuật mài là một bước chuyển quan trọng vì nó tạo ra công cụ sắc và bền hơn hẳn.',
+        'Từ khoảng 20.000 năm trước, dấu vết dày lên rõ rệt. Cư dân Sơn Vi dùng công cụ cuội ghè trên các đồi gò trung du. Cư dân Hòa Bình và Bắc Sơn sống trong hang và mái đá, săn bắt, hái lượm, bắt ốc suối, và bắt đầu mài lưỡi rìu. Kỹ thuật mài là một bước chuyển quan trọng, vì lưỡi mài sắc và bền hơn hẳn lưỡi ghè.',
         'From about 20,000 years ago the record becomes much denser. Sơn Vi groups used flaked pebble tools on the midland hills. Hòa Bình and Bắc Sơn groups lived in caves and rock shelters, hunted, gathered, collected stream snails, and began to grind the edges of their axes. Edge grinding was a major step because it produced sharper and more durable tools.',
       ),
       l(
@@ -43,7 +43,7 @@ const base: Period[] = [
     range: l('khoảng 2000 TCN - thế kỷ 2 SCN', 'c. 2000 BCE - 2nd century CE'),
     color: '#f2a531',
     summary: l(
-      'Con người biết luyện đồng, rồi luyện sắt. Trên đất Việt Nam hình thành ba trung tâm văn hóa lớn: Đông Sơn ở miền Bắc, Sa Huỳnh ở miền Trung và Đồng Nai ở miền Nam. Trống đồng Đông Sơn và mộ chum Sa Huỳnh là hai dấu ấn dễ nhận ra nhất của thời kỳ này.',
+      'Con người biết luyện đồng, rồi luyện sắt. Trên đất Việt Nam hình thành ba trung tâm văn hóa lớn: Đông Sơn ở miền Bắc, Sa Huỳnh ở miền Trung và Đồng Nai ở miền Nam. Trống đồng Đông Sơn và mộ chum Sa Huỳnh là hai loại hiện vật dễ nhận ra nhất của thời kỳ này.',
       'People learned to work bronze, then iron. Three major cultural centres formed in what is now Vietnam: Đông Sơn in the north, Sa Huỳnh in the centre and Đồng Nai in the south. Đông Sơn bronze drums and Sa Huỳnh jar burials are the most recognisable marks of this period.',
     ),
     detail: [

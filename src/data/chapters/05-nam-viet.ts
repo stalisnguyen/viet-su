@@ -15,7 +15,7 @@ const chapter: Chapter = {
       'When power passed to rulers from the north, how much did life in the Red River and Mã River plains really change, and what stayed the same?',
     ),
     summary: l(
-      'Sau khi Âu Lạc thất thủ, vùng đất này thuộc nước Nam Việt của Triệu Đà, rồi từ năm 111 TCN thuộc nhà Hán với ba quận Giao Chỉ, Cửu Chân, Nhật Nam. Trong khoảng một thế kỷ rưỡi, các Lạc tướng vẫn giữ đất của mình và văn hóa Đông Sơn vẫn tiếp tục, cho đến khi quan lại nhà Hán siết chặt dần ách đô hộ.',
+      'Sau khi Âu Lạc thất thủ, vùng đất này thuộc nước Nam Việt của Triệu Đà, rồi từ năm 111 TCN thuộc nhà Hán với ba quận Giao Chỉ, Cửu Chân, Nhật Nam. Trong khoảng một thế kỷ rưỡi, các Lạc tướng vẫn giữ đất của mình và văn hóa Đông Sơn vẫn tiếp tục, cho đến khi quan lại nhà Hán dần can thiệp sâu hơn vào đời sống bản địa.',
       'After the fall of Âu Lạc the land belonged to Zhao Tuo\'s (Triệu Đà) kingdom of Nanyue, and from 111 BCE to the Han empire as the commanderies of Jiaozhi (Giao Chỉ), Jiuzhen (Cửu Chân) and Rinan (Nhật Nam). For about a century and a half the Lạc lords kept their lands and Đông Sơn culture carried on, until Han officials gradually tightened their grip.',
     ),
     detail: [

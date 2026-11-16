@@ -24,7 +24,7 @@ const chapter: Chapter = {
         `In the early 6th century Jiaozhou (Giao Châu) was a distant province of the Liang, whose capital was Jiankang (modern Nanjing). Families of northern origin that had lived here for generations held local military and civil posts but found the court closed to them. Lý Bí came from such a family. According to Keith Taylor he had gone to the Liang capital in search of office and had been disappointed.`,
       ),
       l(
-        `Năm 541 ông cùng Tinh Thiều và Triệu Túc khởi binh. Thứ sử Tiêu Tư bỏ chạy về Quảng Châu. Tháng Giêng năm 544, Lý Bí xưng Nam Việt Đế, đặt niên hiệu Thiên Đức, đặt tên nước là Vạn Xuân, nghĩa là muôn mùa xuân. Một năm sau, nhà Lương đem quân sang xâm lược; tướng Lương là Trần Bá Tiên kéo sang. Sau các trận thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, ông lui vào động Khuất Lão và mất ở đó năm 548.`,
+        `Năm 541 ông cùng Tinh Thiều và Triệu Túc khởi binh. Thứ sử Tiêu Tư bỏ chạy về Quảng Châu. Tháng Giêng năm 544, Lý Bí xưng Nam Việt Đế, đặt niên hiệu Thiên Đức, đặt tên nước là Vạn Xuân, nghĩa là muôn mùa xuân. Một năm sau, nhà Lương sai tướng Trần Bá Tiên đem quân sang đánh. Sau các trận thua ở Chu Diên, cửa sông Tô Lịch, thành Gia Ninh và hồ Điển Triệt, ông lui vào động Khuất Lão và mất ở đó năm 548.`,
         `In 541 he took up arms with Tinh Thiều and Triệu Túc. The inspector Xiao Zi fled to Guangzhou. In the first month of 544 Lý Bí declared himself Emperor of Nam Việt, proclaimed the reign name Thiên Đức and named the realm Vạn Xuân, "ten thousand springs". Only a year later the Liang general Chen Baxian (Trần Bá Tiên) arrived. After defeats at Chu Diên, the mouth of the Tô Lịch river, Gia Ninh citadel and Điển Triệt lake, he withdrew to Khuất Lão cave and died there in 548.`,
       ),
       l(
@@ -452,7 +452,7 @@ const chapter: Chapter = {
   ],
   hooks: {
     'ly-bi': l(
-      `Tổ tiên từ phương Bắc sang, bảy đời sau con cháu đứng lên đuổi quan phương Bắc.`,
+      `Tổ tiên ông từ phương Bắc sang, và bảy đời sau con cháu lại đứng lên đuổi quan phương Bắc.`,
       `His ancestors came from the north; seven generations later their descendant drove the northern officials out.`,
     ),
     'nuoc-van-xuan-544': l(

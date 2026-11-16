@@ -574,7 +574,7 @@ const chapter: Chapter = {
       `The name Annam, still used by the French in the 20th century, was born from an administrative decision of 679.`,
     ),
     'mai-thuc-loan': l(
-      `Sử cũ gọi ông là vua Hắc Đế ở xứ Nghệ, và đến nay giới nghiên cứu vẫn chưa thống nhất cuộc khởi nghĩa nổ ra năm 713 hay 722.`,
+      `Sử cũ gọi ông là Mai Hắc Đế, vị vua da đen ở xứ Nghệ, và đến nay giới nghiên cứu vẫn chưa thống nhất cuộc khởi nghĩa nổ ra năm 713 hay 722.`,
       `A dark-skinned emperor from Nghệ An, and a dispute not yet settled: 713 or 722?`,
     ),
     'phung-hung': l(

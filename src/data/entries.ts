@@ -438,7 +438,7 @@ const base: Entry[] = [
     coord: [109.07, 14.66],
     evidence: ['arch'],
     summary: l(
-      'Văn hóa của cư dân ven biển miền Trung, nổi bật với tục chôn người chết trong chum gốm, đồ sắt và đồ trang sức bằng thủy tinh, mã não, đá ngọc. Sa Huỳnh thường được coi là tiền thân của Champa.',
+      'Văn hóa của cư dân ven biển miền Trung, có đặc trưng là tục chôn người chết trong chum gốm, đồ sắt và đồ trang sức bằng thủy tinh, mã não, đá ngọc. Sa Huỳnh thường được coi là tiền thân của Champa.',
       'A culture of the central coast, notable for burying the dead in pottery jars, for iron tools and for ornaments of glass, carnelian and nephrite. Sa Huỳnh is usually seen as the forerunner of Champa.',
     ),
     detail: [
@@ -561,7 +561,7 @@ const base: Entry[] = [
         'The French scholar Henri Maspero and the Vietnamese scholar Nguyễn Văn Tố proposed that the character Hùng (雄) is a scribal error for Lạc (雒), since earlier Chinese texts write "Lạc king", "Lạc lords" and "Lạc generals". If so, the original title was "Lạc king". The hypothesis is persuasive on textual grounds but not universally accepted.',
       ),
       l(
-        'Con số 18 đời cho hơn 2.600 năm không khớp với thực tế. Một số tác giả hiểu đó là 18 chi (ngành) vua chứ không phải 18 cá nhân. Khảo cổ học chưa tìm thấy kinh đô hay lăng mộ nào có thể gắn chắc chắn với các vua Hùng, nhưng mật độ di tích Đông Sơn quanh Việt Trì cho thấy đây đúng là một trung tâm đông dân thời đó.',
+        'Con số 18 đời vua trong hơn 2.600 năm không thể đúng với thực tế. Một số tác giả hiểu đó là 18 chi (ngành) vua chứ không phải 18 cá nhân. Khảo cổ học chưa tìm thấy kinh đô hay lăng mộ nào có thể gắn chắc chắn với các vua Hùng, nhưng mật độ di tích Đông Sơn quanh Việt Trì cho thấy đây đúng là một trung tâm đông dân thời đó.',
         'Eighteen reigns for more than 2,600 years does not match reality. Some authors read them as 18 lines of kings, not 18 individuals. Archaeology has found no capital or tomb that can be firmly tied to the Hùng kings, but the density of Đông Sơn sites around Việt Trì shows that it was indeed a populous centre at the time.',
       ),
     ],

@@ -135,7 +135,7 @@ const chapter: Chapter = {
       coord: [106.0396, 21.0378],
       evidence: ['arch', 'chron'],
       summary: l(
-        'Luy Lâu là tòa thành đất bên sông Dâu, được sử cũ coi là thủ phủ quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Các lũy đất còn lại được đắp trong chính thời kỳ này. Điều bất ngờ là ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
+        'Luy Lâu là tòa thành đất bên sông Dâu, được sử cũ coi là thủ phủ quận Giao Chỉ và là đô thị lớn nhất miền Bắc trong những thế kỷ đầu Công nguyên. Các lũy đất còn lại được đắp trong chính thời kỳ này. Ngay trong thành của bộ máy cai trị, các nhà khảo cổ lại tìm thấy xưởng đúc trống đồng Đông Sơn.',
         'Luy Lâu is an earthen citadel on the Dâu river, treated by the old histories as the seat of Jiaozhi commandery and the largest town in the north in the first centuries CE. Its surviving ramparts were raised in this very period. The surprise is that inside this seat of the ruling administration archaeologists found a workshop casting Đông Sơn bronze drums.',
       ),
       detail: [

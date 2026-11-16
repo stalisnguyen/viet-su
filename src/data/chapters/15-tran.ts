@@ -675,7 +675,7 @@ const chapter: Chapter = {
       `The man honoured as the father of Vietnamese herbal medicine died abroad, and his temple at home grew up around a copy of a gravestone brought back across the border.`,
     ),
     'tran-thu-do-thuong-hoang': l(
-      'Người dựng nên một vương triều mà chưa một ngày làm vua.',
+      'Ông dựng nên cả một vương triều nhưng chưa một ngày làm vua.',
       `The man who built a dynasty without reigning for a single day.`,
     ),
     'khang-chien-mong-nguyen': l(
