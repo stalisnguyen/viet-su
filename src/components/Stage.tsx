@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { BATTLES } from '../data/battles';
+import { FRONTIERS, FRONTIER_BY_ERA } from '../data/frontiers';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
@@ -468,10 +469,36 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
     // Bản đồ nhìn vào đâu khi mở một thời kỳ: cả nước, miền Bắc, miền Trung hay miền Nam
     const CENTER: Record<string, [number, number]> = { north: [105.9, 20.6], central: [108.0, 15.3], south: [106.4, 10.7], sea: [111.2, 12.6] };
     const eraView = (era: string | null) => (!era ? 'all' : era === 'van-lang' || era === 'au-lac' ? 'north' : periodBySlug[era]?.view || 'all');
+    // Ranh giới phía nam qua các mốc mở đất: đường đứt nét vẽ theo thời kỳ đang xem
+    let frontG: THREE.Group | null = null, frontFor: string | null = '-', frontT = 0;
+    const showFrontier = (era: string | null) => {
+      if (frontG) { scene.remove(frontG); frontG.traverse((o) => { const m = o as THREE.Mesh; m.geometry?.dispose?.(); const mt = m.material as THREE.Material & { map?: THREE.Texture }; mt?.map?.dispose?.(); mt?.dispose?.(); }); frontG = null; }
+      const years = era ? FRONTIER_BY_ERA[era] : null;
+      if (!years) return;
+      frontG = new THREE.Group(); frontT = 0;
+      years.forEach((y, i) => {
+        const f = FRONTIERS.find((x) => x.year === y)!;
+        const last = i === years.length - 1;
+        const pts: THREE.Vector3[] = [];
+        for (let k = 0; k <= 40; k++) { const lon = f.a[0] + (f.b[0] - f.a[0]) * (k / 40), lat = f.a[1] + (f.b[1] - f.a[1]) * (k / 40); pts.push(new THREE.Vector3(X(lon), 0.06 + hAt(lon, lat) * EX, Z(lat))); }
+        const fm = new THREE.ShaderMaterial({
+          uniforms: { uC: { value: new THREE.Color(last ? '#fff0c8' : '#c9b88f') }, opacity: { value: 0 } }, transparent: true, depthWrite: false,
+          vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+          fragmentShader: 'uniform vec3 uC; uniform float opacity; varying vec2 vUv; void main(){ if (fract(vUv.x * 26.0) > 0.6) discard; gl_FragColor = vec4(uC, opacity); }',
+        });
+        const line = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 60, last ? 0.045 : 0.026, 5, false), fm);
+        line.renderOrder = 4; line.userData.max = last ? 0.95 : 0.45; frontG!.add(line);
+        const sp = label(f.name[lang], last ? '#fff0c8' : '#c9b88f', 30, 700, 1);
+        sp.position.set(X(f.b[0]) + 0.15, 0.25, Z(f.b[1])); sp.center.set(0, 0.5); sp.scale.multiplyScalar(last ? 1.3 : 1);
+        sp.material.opacity = 0; sp.userData.max = last ? 0.95 : 0.45; sp.renderOrder = 4; frontG!.add(sp);
+      });
+      scene.add(frontG);
+    };
     let battleFor: string | null = '-';
     const view = () => {
       const s = live.current;
       if (s.focus !== battleFor) { battleFor = s.focus; showBattle(s.focus); }
+      if (s.era !== frontFor) { frontFor = s.era; showFrontier(s.era); }
       const vw = eraView(s.era), vc = CENTER[vw];
       const portrait = aspect < 0.9;
       const pin = s.focus ? pins.find((x) => x.slug === s.focus) : null;
@@ -602,6 +629,14 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false }
           (m.material as THREE.MeshBasicMaterial).opacity = pp > 0.02 ? 1 : 0;
         });
         battleG.children.forEach((o) => { if ((o as THREE.Sprite).isSprite) { const sm = (o as THREE.Sprite).material; sm.opacity += ((pp > 0.35 ? 1 : 0) - sm.opacity) * 0.08; } });
+      }
+      if (frontG) {
+        frontT += dt;
+        frontG.children.forEach((o) => {
+          const want = battleG ? 0 : (o.userData.max as number) * Math.min(1, frontT * 1.5), a = Math.min(1, dt * 4);
+          const sm = (o as THREE.Mesh).material as THREE.ShaderMaterial & { opacity: number };
+          if (sm.uniforms) sm.uniforms.opacity.value += (want - sm.uniforms.opacity.value) * a; else sm.opacity += (want - sm.opacity) * a;
+        });
       }
       arcT += dt;
       arcGeo.setDrawRange(0, Math.max(2, Math.round(Math.min(1, arcT / 1.1) * ARC)));
