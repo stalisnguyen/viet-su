@@ -441,7 +441,7 @@ const chapter: Chapter = {
           `He was born on 25 August 1911 in An Xá village, Lệ Thủy, Quảng Bình. In 1930 he was arrested in Huế for his part in the student movement; he later studied law in Hanoi and in 1939 taught history at the private Thăng Long school. He once said that had he not been a soldier he would still be a teacher, perhaps of philosophy or history. In June 1940 he met Nguyễn Ái Quốc in Kunming and joined the Indochinese Communist Party.`,
         ),
         l(
-          `Ngày 22 tháng 12 năm 1944, ở Cao Bằng, ông lập đội Việt Nam Tuyên truyền Giải phóng quân gồm 34 chiến sĩ, tiền thân của Quân đội nhân dân Việt Nam. Tháng 9 năm 1945 ông là Bộ trưởng Bộ Nội vụ trong chính phủ đầu tiên. Ông được phong Đại tướng năm 1948, lễ thụ phong có Chủ tịch Hồ Chí Minh dự ở Định Hóa ngày 28 tháng 5. Chiến dịch Điện Biên Phủ do ông chỉ huy được kể ở chương 1945 - 1975.`,
+          `Ngày 22 tháng 12 năm 1944, ở Cao Bằng, ông lập đội Việt Nam Tuyên truyền Giải phóng quân gồm 34 chiến sĩ, tiền thân của Quân đội nhân dân Việt Nam. Tháng 9 năm 1945 ông là Bộ trưởng Bộ Nội vụ trong chính phủ đầu tiên. Ông được phong Đại tướng năm 1948, lễ thụ phong có Chủ tịch Hồ Chí Minh dự ở Định Hóa ngày 28 tháng 5. Chiến dịch Điện Biên Phủ do ông chỉ huy được kể ở mục Kháng chiến chống Pháp và trận Điện Biên Phủ.`,
           `On 22 December 1944 in Cao Bằng he founded the Armed Propaganda Brigade for the Liberation of Vietnam with 34 soldiers, the forerunner of the Vietnam People's Army. In September 1945 he became Minister of Home Affairs in the first government. He was made a full general in 1948, at a ceremony in Định Hóa on 28 May attended by President Hồ Chí Minh. The Điện Biên Phủ campaign he commanded is told in the 1945 - 1975 chapter.`,
         ),
         l(
@@ -740,7 +740,7 @@ const chapter: Chapter = {
       `The commando team that hit the US Embassy at Tết 1968 had just 17 members, and was given the target only two days before the attack.`,
     ),
     'hiep-dinh-paris-30-thang-4-1975': l(
-      `Mất Buôn Ma Thuột, chính quyền Sài Gòn bỏ cả Tây Nguyên, và chưa đầy tám tuần sau xe tăng đã vào Dinh Độc Lập.`,
+      `Sau khi mất Buôn Ma Thuột, chính quyền Sài Gòn bỏ cả Tây Nguyên, và chưa đầy tám tuần sau xe tăng đã vào Dinh Độc Lập.`,
       `After losing Buôn Ma Thuột, the Saigon government abandoned the whole Central Highlands, and less than eight weeks later tanks rolled into the Independence Palace.`,
     ),
     'cai-gia-con-nguoi-cua-chien-tranh': l(
