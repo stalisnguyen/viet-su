@@ -772,7 +772,7 @@ export default function App() {
       })()}
       {eraCard && <EraCard key={eraCard.n} era={eraCard.era} prev={eraCard.prev} lang={lang} mark={mark} />}
       {(fe || fp) && (
-        <aside className="hud" aria-hidden="true" key={active.id}>
+        <aside className={`hud${active.focus && BATTLES[active.focus] ? ' in-battle' : ''}`} aria-hidden="true" key={active.id}>
           {fe ? (
             <>
               {coord && <p><span>{lang === 'vi' ? 'Tọa độ' : 'Position'}</span><b>{coord}</b></p>}

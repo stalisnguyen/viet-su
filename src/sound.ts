@@ -26,7 +26,11 @@ class Sound {
         const c = (this.ctx = new C());
         this.master = c.createGain();
         this.master.gain.value = 0;
-        this.master.connect(c.destination);
+        // nén nhẹ để âm lượng đều và đủ to trên loa điện thoại
+        const comp = c.createDynamicsCompressor();
+        comp.threshold.value = -20; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = 0.005; comp.release.value = 0.2;
+        const boost = c.createGain(); boost.gain.value = 1.6;
+        this.master.connect(comp).connect(boost).connect(c.destination);
         const make = (brown: boolean) => {
           const b = c.createBuffer(1, c.sampleRate * 2, c.sampleRate);
           const d = b.getChannelData(0);
@@ -40,6 +44,8 @@ class Sound {
         this.brown = make(true);
         this.white = make(false);
       }
+      // iPhone: cho phép phát cả khi máy đang gạt nút im lặng
+      try { const nav = navigator as unknown as { audioSession?: { type: string } }; if (nav.audioSession) nav.audioSession.type = 'playback'; } catch { /* trình duyệt cũ */ }
       void this.ctx.resume();
       this.master.gain.cancelScheduledValues(this.ctx.currentTime);
       this.master.gain.linearRampToValueAtTime(0.6, this.ctx.currentTime + 0.8);
@@ -105,7 +111,17 @@ class Sound {
     o.connect(g).connect(dest);
     o.start(t);
     o.stop(t + 0.65);
-    this.burst(dest, 0.04, gain * 0.5, 'lowpass', 900);
+    // lớp giữa 200 - 400 Hz để loa điện thoại vẫn nghe được tiếng trống
+    const o2 = c.createOscillator(), g2 = c.createGain();
+    o2.type = 'triangle';
+    o2.frequency.setValueAtTime(260, t);
+    o2.frequency.exponentialRampToValueAtTime(150, t + 0.2);
+    g2.gain.setValueAtTime(gain * 0.55, t);
+    g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.32);
+    o2.connect(g2).connect(dest);
+    o2.start(t);
+    o2.stop(t + 0.35);
+    this.burst(dest, 0.06, gain * 0.6, 'bandpass', 1300, 500);
   }
 
   private build(key: string): Amb {
@@ -162,6 +178,7 @@ class Sound {
   // và tiếng cồng ở bước cuối. Tất cả tổng hợp bằng Web Audio.
   battle(o: { army: boolean; fleet: boolean; air: boolean; clash: boolean; lose: boolean; tide?: 'high' | 'low'; modern: boolean; last: boolean; dur?: number }) {
     if (!this.ctx || !this.on) return;
+    if (this.ctx.state !== 'running') void this.ctx.resume();
     const c = this.ctx, d = this.master, at = (ms: number, fn: () => void) => window.setTimeout(() => { if (this.on) fn(); }, ms);
     const end = o.dur ?? 3000; // lúc các đạo quân tới nơi: tiếng giao chiến, tiếng chìm, tiếng cồng dời theo mốc này
     if (o.army) {
@@ -172,10 +189,14 @@ class Sound {
     if (o.fleet) {
       // sóng vỗ và mái chèo
       const n = c.createBufferSource(), lp = c.createBiquadFilter(), g = c.createGain(), t = c.currentTime;
-      n.buffer = this.brown; n.loop = true; lp.type = 'lowpass'; lp.frequency.value = 700;
-      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.5, t + 0.8); g.gain.linearRampToValueAtTime(0.25, t + 2); g.gain.linearRampToValueAtTime(0, t + 3.2);
-      n.connect(lp).connect(g).connect(d); n.start(t, Math.random()); n.stop(t + 3.3);
-      for (let k = 0; k < 6; k++) at(200 + k * 430, () => this.burst(d, 0.18, 0.12, 'bandpass', 900, 400));
+      const len = Math.max(3.3, end / 1000);
+      n.buffer = this.white; n.loop = true; lp.type = 'bandpass'; lp.Q.value = 0.7;
+      // sóng: dải nhiễu dâng lên rút xuống từng đợt
+      for (let k = 0; k * 1.6 < len; k++) { lp.frequency.setValueAtTime(450, t + k * 1.6); lp.frequency.linearRampToValueAtTime(1500, t + k * 1.6 + 0.7); lp.frequency.linearRampToValueAtTime(450, t + k * 1.6 + 1.6); }
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.22, t + 0.8); g.gain.linearRampToValueAtTime(0.14, t + len - 0.8); g.gain.linearRampToValueAtTime(0, t + len);
+      n.connect(lp).connect(g).connect(d); n.start(t, Math.random()); n.stop(t + len + 0.1);
+      // mái chèo khua nước đều nhịp, kèm tiếng gõ mạn thuyền
+      for (let k = 0; k * 520 < end; k++) at(150 + k * 520, () => { this.burst(d, 0.22, 0.22, 'bandpass', 1600, 500); this.tone(d, 330, 0.12, 0.06, 'triangle'); });
     }
     if (o.air) {
       // tiếng động cơ máy bay bay ngang
@@ -185,8 +206,8 @@ class Sound {
       [92, 93.7, 138].forEach((f) => { const os = c.createOscillator(); os.type = 'sawtooth'; os.frequency.setValueAtTime(f, t); os.frequency.linearRampToValueAtTime(f * 0.92, t + 3.4); os.connect(lp); os.start(t); os.stop(t + 3.5); });
       lp.connect(g).connect(d);
     }
-    if (o.tide === 'high') this.burst(d, 2.2, 0.2, 'lowpass', 300, 1200);
-    if (o.tide === 'low') this.burst(d, 2.2, 0.2, 'lowpass', 1200, 250);
+    if (o.tide === 'high') this.burst(d, 2.2, 0.25, 'bandpass', 400, 1600);
+    if (o.tide === 'low') this.burst(d, 2.2, 0.25, 'bandpass', 1600, 350);
     if (o.clash) {
       if (o.modern) {
         // pháo nổ xa gần
@@ -205,9 +226,9 @@ class Sound {
   // Tù và: tiếng kèn trầm, lên chậm, lọc bớt âm cao để không chói
   private horn(dest: AudioNode) {
     const c = this.ctx!, t = c.currentTime, g = c.createGain(), lp = c.createBiquadFilter();
-    lp.type = 'lowpass'; lp.frequency.value = 380; lp.Q.value = 0.7;
-    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.09, t + 0.6); g.gain.linearRampToValueAtTime(0.07, t + 1.6); g.gain.linearRampToValueAtTime(0, t + 2.6);
-    [73.4, 73.9, 110].forEach((f, i) => { const o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.setValueAtTime(f * 0.96, t); o.frequency.linearRampToValueAtTime(f, t + 0.4); const og = c.createGain(); og.gain.value = i === 2 ? 0.4 : 1; o.connect(og).connect(lp); o.start(t); o.stop(t + 2.7); });
+    lp.type = 'lowpass'; lp.frequency.value = 1000; lp.Q.value = 0.7;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.07, t + 0.6); g.gain.linearRampToValueAtTime(0.055, t + 1.6); g.gain.linearRampToValueAtTime(0, t + 2.6);
+    [146.8, 147.7, 220].forEach((f, i) => { const o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.setValueAtTime(f * 0.96, t); o.frequency.linearRampToValueAtTime(f, t + 0.4); const og = c.createGain(); og.gain.value = i === 2 ? 0.4 : 1; o.connect(og).connect(lp); o.start(t); o.stop(t + 2.7); });
     lp.connect(g).connect(dest);
   }
 
@@ -215,9 +236,9 @@ class Sound {
   private roar(dest: AudioNode, dur: number) {
     const c = this.ctx!, t = c.currentTime;
     const n = c.createBufferSource(), bp = c.createBiquadFilter(), g = c.createGain(), lfo = c.createOscillator(), lg = c.createGain();
-    n.buffer = this.white; n.loop = true; bp.type = 'bandpass'; bp.frequency.value = 650; bp.Q.value = 0.8;
-    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.16, t + 0.5); g.gain.linearRampToValueAtTime(0.12, t + dur - 0.6); g.gain.linearRampToValueAtTime(0, t + dur);
-    lfo.frequency.value = 3.3; lg.gain.value = 0.05; lfo.connect(lg).connect(g.gain);
+    n.buffer = this.white; n.loop = true; bp.type = 'bandpass'; bp.frequency.value = 800; bp.Q.value = 0.6;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.26, t + 0.5); g.gain.linearRampToValueAtTime(0.2, t + dur - 0.6); g.gain.linearRampToValueAtTime(0, t + dur);
+    lfo.frequency.value = 3.3; lg.gain.value = 0.08; lfo.connect(lg).connect(g.gain);
     n.connect(bp).connect(g).connect(dest); n.start(t, Math.random()); n.stop(t + dur + 0.05); lfo.start(t); lfo.stop(t + dur);
   }
 

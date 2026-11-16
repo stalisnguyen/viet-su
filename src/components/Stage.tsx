@@ -412,30 +412,90 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
     const iconCache = new Map<string, THREE.Texture>();
     const paint = (key: string, f: (x: CanvasRenderingContext2D) => void) => {
       if (iconCache.has(key)) return iconCache.get(key)!;
-      const c = document.createElement('canvas'); c.width = c.height = 128;
-      const x = c.getContext('2d')!; x.lineJoin = 'round'; x.lineCap = 'round'; f(x);
+      const c = document.createElement('canvas'); c.width = c.height = 256;
+      const x = c.getContext('2d')!; x.scale(2, 2); x.lineJoin = 'round'; x.lineCap = 'round'; f(x);
       const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; iconCache.set(key, t); return t;
     };
-    const unitIcon = (kind: string, col: string) => paint(kind + col, (x) => {
-      const ink = '#120b07';
+    const dk = (h: string, k: number) => { const n = parseInt(h.slice(1), 16); return `rgb(${((n >> 16) & 255) * k | 0},${((n >> 8) & 255) * k | 0},${(n & 255) * k | 0})`; };
+    const unitIcon = (kind: string, col: string, vn: boolean, modern: boolean) => paint(kind + col + vn + modern, (x) => {
+      const ink = '#120b07', P2 = Math.PI * 2;
       x.strokeStyle = ink; x.fillStyle = col; x.lineWidth = 8;
-      const shape = (f: () => void) => { x.beginPath(); f(); x.stroke(); x.fill(); };
+      const shape = (f: () => void, fill = col, lw = 6) => { x.beginPath(); f(); x.lineWidth = lw; x.strokeStyle = ink; x.stroke(); x.fillStyle = fill; x.fill(); };
+      const line = (pts: number[], w: number, c: string) => { x.beginPath(); x.moveTo(pts[0], pts[1]); for (let k = 2; k < pts.length; k += 2) x.lineTo(pts[k], pts[k + 1]); x.lineWidth = w; x.strokeStyle = c; x.stroke(); };
+      const limb = (pts: number[], c: string) => { line(pts, 13, ink); line(pts, 7, c); };
       if (kind === 'fleet') {
-        shape(() => { x.moveTo(14, 84); x.lineTo(114, 84); x.lineTo(98, 106); x.lineTo(30, 106); x.closePath(); });
-        shape(() => { x.moveTo(60, 18); x.lineTo(60, 78); x.lineTo(24, 78); x.closePath(); });
-        shape(() => { x.moveTo(68, 30); x.lineTo(68, 78); x.lineTo(98, 78); x.closePath(); });
-      } else if (kind === 'air') {
+        shape(() => { x.moveTo(14, 84); x.lineTo(114, 84); x.lineTo(98, 106); x.lineTo(30, 106); x.closePath(); }, dk(col, 0.75));
+        line([22, 92, 106, 92], 3, dk(col, 0.45));
+        shape(() => { x.moveTo(60, 18); x.lineTo(60, 78); x.lineTo(24, 78); x.closePath(); }, '#f1e2bd');
+        shape(() => { x.moveTo(68, 30); x.lineTo(68, 78); x.lineTo(98, 78); x.closePath(); }, col);
+        return;
+      }
+      if (kind === 'air') {
         shape(() => { x.moveTo(64, 14); x.lineTo(73, 50); x.lineTo(114, 66); x.lineTo(114, 76); x.lineTo(72, 68); x.lineTo(70, 98); x.lineTo(86, 108); x.lineTo(86, 114); x.lineTo(42, 114); x.lineTo(42, 108); x.lineTo(58, 98); x.lineTo(56, 68); x.lineTo(14, 76); x.lineTo(14, 66); x.lineTo(55, 50); x.closePath(); });
+        return;
+      }
+      // Người lính: áo theo màu phe, mũ và vũ khí theo thời đại
+      const skin = '#e8b88a', cloth = col, clothD = dk(col, 0.66), pants = vn ? '#3d2c1d' : dk(col, 0.42);
+      x.fillStyle = 'rgba(0,0,0,0.38)'; x.beginPath(); x.ellipse(62, 121, 34, 6, 0, 0, P2); x.fill();
+      // vũ khí phía sau thân
+      if (!modern) {
+        line([88, 122, 98, 8], 9, ink); line([88, 122, 98, 8], 4, '#c08f55');
+        shape(() => { x.moveTo(99, 0); x.lineTo(106, 17); x.lineTo(98, 24); x.lineTo(91, 16); x.closePath(); }, '#eef1f4', 5);
+        if (vn) shape(() => { x.moveTo(91, 24); x.lineTo(105, 25); x.lineTo(97, 38); x.closePath(); }, '#d3392b', 4);
       } else {
-        // người lính cầm giáo và khiên
-        x.lineWidth = 9; x.strokeStyle = ink; x.beginPath(); x.moveTo(84, 118); x.lineTo(96, 6); x.stroke();
-        x.lineWidth = 4; x.strokeStyle = '#d8c7a4'; x.beginPath(); x.moveTo(84, 118); x.lineTo(96, 6); x.stroke();
-        x.lineWidth = 7; x.strokeStyle = ink;
-        shape(() => { x.moveTo(96, 2); x.lineTo(104, 22); x.lineTo(90, 20); x.closePath(); });
-        shape(() => { x.arc(60, 30, 15, 0, Math.PI * 2); });
-        shape(() => { x.moveTo(42, 50); x.lineTo(78, 50); x.lineTo(84, 98); x.lineTo(36, 98); x.closePath(); });
-        shape(() => { x.moveTo(42, 98); x.lineTo(40, 122); x.lineTo(54, 122); x.lineTo(58, 98); x.moveTo(64, 98); x.lineTo(68, 122); x.lineTo(80, 122); x.lineTo(78, 98); });
-        shape(() => { x.ellipse(36, 74, 20, 27, 0, 0, Math.PI * 2); });
+        line([74, 100, 104, 14], 10, ink); line([74, 100, 104, 14], 5, '#7a5332');
+        line([104, 14, 109, 0], 5, ink); line([104, 14, 109, 0], 2, '#e4e8ec');
+      }
+      // chân
+      shape(() => { x.rect(45, 92, 14, 24); x.rect(67, 92, 14, 24); }, pants, 5);
+      shape(() => { x.rect(41, 113, 20, 7); x.rect(65, 113, 20, 7); }, '#2a1d14', 4);
+      // thân áo, nửa phải tối hơn cho có khối
+      const torso = () => { x.moveTo(44, 50); x.lineTo(80, 50); x.lineTo(86, 100); x.lineTo(38, 100); x.closePath(); };
+      shape(torso, cloth);
+      x.save(); x.beginPath(); torso(); x.clip(); x.fillStyle = clothD; x.fillRect(64, 40, 40, 70);
+      if (!vn && !modern) { x.strokeStyle = dk(col, 0.4); x.lineWidth = 2.5; [58, 64, 70, 86, 92].forEach((y) => { x.beginPath(); x.moveTo(36, y); x.lineTo(90, y); x.stroke(); }); }
+      if (modern) { x.fillStyle = dk(col, 0.45); x.fillRect(46, 60, 10, 8); x.fillRect(68, 60, 10, 8); }
+      x.restore(); x.beginPath(); torso(); x.lineWidth = 6; x.strokeStyle = ink; x.stroke();
+      shape(() => { x.rect(40, 74, 45, 8); }, vn ? '#b3271d' : '#2b2622', 4);
+      // tay cầm vũ khí
+      limb(modern ? [76, 56, 86, 74] : [77, 56, 91, 72], cloth);
+      shape(() => { x.arc(modern ? 87 : 92, modern ? 75 : 72, 5.5, 0, P2); }, skin, 4);
+      // đầu
+      shape(() => { x.arc(62, 38, 12.5, 0, P2); }, skin, 5);
+      x.fillStyle = ink; x.beginPath(); x.arc(67, 38, 1.8, 0, P2); x.fill();
+      if (!modern && vn) {
+        // nón lá chóp
+        shape(() => { x.moveTo(32, 33); x.lineTo(62, 8); x.lineTo(92, 33); x.quadraticCurveTo(62, 39, 32, 33); x.closePath(); }, '#ead49a', 5);
+        line([62, 11, 50, 33], 2, '#b49b5c'); line([62, 11, 74, 33], 2, '#b49b5c'); line([62, 11, 62, 35], 2, '#b49b5c');
+      } else if (!modern) {
+        // mũ trụ có chỏm lông đỏ
+        line([62, 22, 58, 6], 9, ink); line([62, 22, 58, 6], 5, '#d3392b');
+        shape(() => { x.arc(62, 35, 15, Math.PI, 0); x.lineTo(77, 40); x.lineTo(70, 40); x.lineTo(70, 35); x.lineTo(54, 35); x.lineTo(54, 40); x.lineTo(47, 40); x.closePath(); }, '#9aa6b2', 5);
+        line([47, 30, 77, 30], 3, dk(col, 0.6));
+      } else if (vn) {
+        // mũ cối
+        shape(() => { x.ellipse(62, 33, 22, 5.5, 0, 0, P2); }, '#5f6b38', 4);
+        shape(() => { x.ellipse(62, 31, 16, 14, 0, Math.PI, 0); x.closePath(); }, '#7d8a4a', 5);
+        x.fillStyle = '#ffd23a'; x.beginPath(); x.arc(62, 25, 3, 0, P2); x.fill();
+      } else {
+        // mũ sắt
+        shape(() => { x.ellipse(62, 33, 18, 4.5, 0, 0, P2); }, '#3f4a36', 4);
+        shape(() => { x.ellipse(62, 31, 14, 13, 0, Math.PI, 0); x.closePath(); }, '#5b6a4c', 5);
+        line([62, 19, 62, 30], 2.5, '#3a4530');
+      }
+      // khiên ở tay trái (thời cổ), hoặc tay buông xuống (thời hiện đại)
+      if (!modern && vn) {
+        shape(() => { x.arc(36, 74, 21, 0, P2); }, '#b98a45', 6);
+        x.strokeStyle = '#7d5a2a'; x.lineWidth = 2.5; [15, 9].forEach((r) => { x.beginPath(); x.arc(36, 74, r, 0, P2); x.stroke(); });
+        x.strokeStyle = col; x.lineWidth = 3.5; x.beginPath(); x.arc(36, 74, 18.5, 0, P2); x.stroke();
+        shape(() => { x.arc(36, 74, 4, 0, P2); }, '#3d2c1d', 3);
+      } else if (!modern) {
+        shape(() => { x.roundRect(20, 50, 32, 50, 6); }, dk(col, 0.6), 6);
+        x.strokeStyle = col; x.lineWidth = 3; x.beginPath(); x.roundRect(25, 55, 22, 40, 4); x.stroke();
+        shape(() => { x.arc(36, 75, 5, 0, P2); }, '#d9dee3', 3);
+      } else {
+        limb([47, 56, 42, 82], cloth);
+        shape(() => { x.arc(42, 84, 5.5, 0, P2); }, skin, 4);
       }
     });
     type Act = 'attack' | 'ambush' | 'siege' | 'hold' | 'retreat' | 'beaten';
@@ -457,9 +517,9 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
       fleet: [[0, 0], [-1.1, 0.5], [1.0, -0.4], [-0.2, 1.1]],
       air: [[0, 0], [-0.9, 0.7], [0.9, 0.7]],
     };
-    const squad = (kind: string, col: string) => {
+    const squad = (kind: string, col: string, vn: boolean, modern: boolean) => {
       const g = new THREE.Group();
-      const tex = unitIcon(kind, col);
+      const tex = unitIcon(kind, col, vn, modern);
       FORM[kind].forEach(([dx, dz]) => {
         const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
         sp.center.set(0.5, 0.1); sp.userData.off = new THREE.Vector2(dx, dz); sp.renderOrder = 9; g.add(sp);
@@ -491,6 +551,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
       battleG = new THREE.Group();
       const all = boxOf(b.steps.flatMap((st) => st.units.flatMap((u) => u.path)));
       bSize = Math.max(0.35, all.r / 1.4);
+      const modern = b.steps.some((st) => st.units.some((u) => u.kind === 'air'));
       bSteps = b.steps.map((st) => {
         const pts: [number, number][] = [];
         const units = st.units.map((u, k) => {
@@ -511,10 +572,11 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
           const hg = new THREE.BufferGeometry().setFromPoints([tip, bl, br].map((v) => v.setY(y0)));
           const head = new THREE.Mesh(hg, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.9, depthWrite: false, side: THREE.DoubleSide }));
           head.visible = false; head.renderOrder = 5; battleG!.add(head);
-          const sq = squad(u.kind, col); sq.visible = false; battleG!.add(sq);
+          const sq = squad(u.kind, col, u.side === 'vn', modern); sq.visible = false; battleG!.add(sq);
           const badge = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false, depthTest: false })); badge.center.set(0.5, -0.9); badge.visible = false; badge.renderOrder = 11; battleG!.add(badge);
           const tag = label(u.name[lang], u.side === 'vn' ? '#ffe39a' : '#bfe9ff', 26, 700, 1);
-          tag.center.set(0.5, u.side === 'vn' ? -2.2 : 1.6); tag.renderOrder = 10; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
+          const before = st.units.slice(0, k), dup = before.some((v) => v.name.vi === u.name.vi), nth = new Set(before.filter((v) => v.side === u.side).map((v) => v.name.vi)).size; // các đạo quân cùng phe xếp nhãn so le để không đè nhau
+          tag.center.set(0.5, u.side === 'vn' ? -1.8 - nth * 1.15 : 1.4 + nth * 1.15); tag.renderOrder = 10; tag.userData.dup = dup; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
           const ring = new THREE.Mesh(new THREE.RingGeometry(0.6, 1, 32), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.9, side: THREE.DoubleSide, depthWrite: false }));
           ring.rotation.x = -Math.PI / 2; ring.position.copy(vs[0]).setY(vs[0].y + 0.01); ring.visible = false; ring.renderOrder = 6; battleG!.add(ring);
           const act: Act | undefined = u.act;
@@ -553,6 +615,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
         sp.position.copy(onGround(mk.at[0], mk.at[1], 0.12 + 0.25 * Math.min(0.95, bSize))); sp.scale.multiplyScalar(Math.min(0.95, 0.72 * bSize));
         sp.material.opacity = 0; sp.renderOrder = 7; sp.userData.base = sp.scale.clone().divideScalar(Math.min(0.95, 0.72 * bSize)); sp.userData.gy = onGround(mk.at[0], mk.at[1], 0).y; battleG!.add(sp); bMarks.push(sp);
       });
+      // các biểu tượng của trận giữ cỡ cố định trên màn hình, không phụ thuộc mức thu phóng
+      battleG.traverse((o) => { if ((o as THREE.Sprite).isSprite) ((o as THREE.Sprite).material as THREE.SpriteMaterial).sizeAttenuation = false; });
       scene.add(battleG);
     };
     // Khung máy quay cho bước đang xem
@@ -761,8 +825,11 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
         const want = Math.min(bSteps.length - 1, Math.max(0, live.current.bstep));
         if (want !== bCur) { bCur = want; bT = 0; frameStep(bCur); battleKey = bCur; }
         bT += reduce ? 30 : dt;
-        // Khung bản đồ nhỏ trên điện thoại thì phóng to nhãn và quân để còn đọc được
-        const kz = (battleBox ? battleBox.k : 1) * (live.current.split ? 1.8 : 1);
+        // Giữ kích thước lính, nhãn và huy hiệu theo điểm ảnh trên màn hình, để máy tính và điện thoại nhìn như nhau
+        const pxPerUnit = el.clientHeight / (2 * Math.tan((camera.fov * Math.PI) / 360) * Math.max(0.5, camera.position.distanceTo(controls.target)));
+        const soldierPx = Math.min(44, Math.max(22, Math.min(el.clientWidth, el.clientHeight) * 0.055));
+        const kzAt = (v: THREE.Vector3) => (soldierPx * 2 * Math.tan((camera.fov * Math.PI) / 360) * Math.max(0.3, camera.position.distanceTo(v))) / (0.42 * el.clientHeight);
+        const kz = soldierPx / (0.42 * pxPerUnit), kS = (soldierPx * 2 * Math.tan((camera.fov * Math.PI) / 360)) / (0.42 * el.clientHeight);
         bSteps.forEach((st, i) => {
           const total = (st.units.length - 1) * UNIT_GAP + UNIT_DUR;
           const cur = i === bCur;
@@ -779,24 +846,24 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
             (u.head.material as THREE.MeshBasicMaterial).opacity = i < bCur ? 0.3 : 0.9;
             const started = cur && bT >= u.delay - 0.4;
             u.ring.visible = started && own < 1; u.ring.scale.setScalar(0.06 * kz * (1 + 0.15 * Math.sin(t * 4)));
-            u.sq.visible = started; u.tag.visible = started; u.badge.visible = false;
+            u.sq.visible = started; u.tag.visible = started && !u.tag.userData.dup; u.badge.visible = false;
             if (!started) return;
             const at = Math.min(0.999, Math.max(0.001, ease));
-            const p = u.curve.getPointAt(at);
+            const p = u.curve.getPointAt(at), kp = kzAt(p);
             const arrived = own >= 1, since = bT - u.delay - UNIT_DUR;
             // bên thua: tốp quân tản ra và mờ dần sau khi tới nơi
             const scatter = u.lose && arrived ? Math.min(1, Math.max(0, since / 1.6)) : 0;
-            const spread = 0.17 * kz * (1 + scatter * 2.5);
+            const spread = 0.17 * kp * (1 + scatter * 2.5);
             u.sq.children.forEach((c, n) => {
               const sp = c as THREE.Sprite, off = sp.userData.off as THREE.Vector2;
               // bước chân: các tốp lính nhấp nhô nhẹ khi đang đi
-              const bob = !arrived ? Math.abs(Math.sin(t * 9 + n)) * 0.006 * kz : 0;
+              const bob = !arrived ? Math.abs(Math.sin(t * 9 + n)) * 0.006 * kp : 0;
               sp.position.set(p.x + off.x * spread, p.y + bob, p.z + off.y * spread);
-              sp.scale.setScalar(0.42 * kz);
+              sp.scale.setScalar(0.42 * kS);
               sp.material.opacity = 1 - scatter * 0.85;
             });
             u.tag.position.copy(p);
-            u.tag.scale.copy(u.tag.userData.base).multiplyScalar(0.55 * kz);
+            u.tag.scale.copy(u.tag.userData.base).multiplyScalar(0.82 * kS);
             (u.tag.material as THREE.SpriteMaterial).opacity = Math.min(1, (bT - u.delay + 0.4) * 2) * (1 - scatter * 0.7);
             // huy hiệu hành động: rút chạy hiện suốt đường đi, các hành động khác hiện khi tới nơi, bị đánh tan hiện ở cuối
             const act: Act | undefined = u.lose && arrived ? 'beaten' : u.act === 'retreat' ? 'retreat' : arrived ? u.act : undefined;
@@ -807,7 +874,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
               if (bm.map !== tex) { bm.map = tex; bm.needsUpdate = true; }
               u.badge.visible = true; u.badge.position.copy(p);
               const pulse = act === 'attack' ? 1 + 0.12 * Math.sin(t * 8) : 1;
-              u.badge.scale.setScalar(0.3 * kz * pulse);
+              u.badge.scale.setScalar(0.3 * kS * pulse);
               bm.opacity = act === 'retreat' && !arrived ? 0.95 : Math.min(1, Math.max(0, since + 0.3) * 3);
             }
           });
@@ -818,8 +885,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
             f.visible = done; sw.visible = done;
             if (!done) return;
             const k = (t * 0.9 + j * 0.37) % 1, fade = Math.min(1, (bT - total + 0.4) * 2);
-            const sc = (0.8 + k * 1.0) * kz; f.scale.set(sc, sc * 0.75, 1); f.material.opacity = 0.6 * (1 - k) * fade;
-            sw.scale.setScalar(0.38 * kz * (1 + 0.1 * Math.sin(t * 7 + j))); sw.material.opacity = fade;
+            const sc = (0.8 + k * 1.0) * kS; f.scale.set(sc, sc * 0.75, 1); f.material.opacity = 0.6 * (1 - k) * fade;
+            sw.scale.setScalar(0.38 * kS * (1 + 0.1 * Math.sin(t * 7 + j))); sw.material.opacity = fade;
           });
         });
         if (bStakes) {
@@ -828,7 +895,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
           bStakes.scale.y += ((tideUp ? 0.12 : 1) - bStakes.scale.y) * Math.min(1, dt * 2);
         }
         // Nhãn địa danh giữ cỡ nhìn được ổn định theo mức thu phóng của bước đang xem
-        bMarks.forEach((m) => { m.material.opacity += (0.8 - m.material.opacity) * 0.08; m.scale.copy(m.userData.base).multiplyScalar(0.45 * kz); m.position.y = m.userData.gy + 0.06 + 0.12 * kz; });
+        bMarks.forEach((m) => { m.material.opacity += (0.8 - m.material.opacity) * 0.08; const km = kzAt(m.position); m.scale.copy(m.userData.base).multiplyScalar(0.45 * kS); m.position.y = m.userData.gy + 0.06 + 0.12 * km; });
       }
       if (frontG) {
         frontT += dt;
