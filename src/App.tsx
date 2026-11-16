@@ -457,8 +457,8 @@ function Sources({ lang }: { lang: Lang }) {
         <p><span className="badge legend">{EV.legend[lang]}</span> {lang === 'vi' ? 'Chuyện kể truyền miệng, có giá trị văn hóa nhưng không dùng làm chứng cứ cho niên đại.' : 'Oral tradition, culturally valuable but not used as evidence for dates.'}</p>
         <p className="muted">
           {lang === 'vi'
-            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Các đường đứt nét đánh dấu những mốc mở đất về phía nam (1069, 1306, 1471, 1611) và sơ đồ hành quân của các trận đánh cũng là đường ước lượng, vẽ theo các địa danh được nêu trong bài. Địa hình trên bản đồ dùng dữ liệu độ cao mở (Terrain Tiles trên AWS, tổng hợp từ SRTM và các nguồn khác). Các mô hình 3D là phỏng dựng giản lược, hiển thị kiểu hologram. Hoa văn mặt trống đồng dùng làm biểu tượng là bản vẽ mặt trống Ngọc Lũ thuộc phạm vi công cộng trên Wikimedia Commons (NgocLu2.gif). Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ. Nền bản đồ: Natural Earth.'
-            : 'Zone boundaries on the map are illustrative. The dashed lines marking the southward expansion (1069, 1306, 1471, 1611) and the battle sketches are approximate too, drawn through the places named in the text. Map terrain uses open elevation data (Terrain Tiles on AWS, compiled from SRTM and other sources). The 3D models are simplified reconstructions shown as holograms. The bronze-drum motif used as the site emblem is a public-domain drawing of the Ngọc Lũ drum face from Wikimedia Commons (NgocLu2.gif). Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound is synthesised, not a recording of ancient instruments. Base map: Natural Earth.'}
+            ? 'Ranh giới ba vùng trên bản đồ là ước lượng để minh họa. Các đường đứt nét đánh dấu những mốc mở đất về phía nam (1069, 1306, 1471, 1611) và sơ đồ hành quân của các trận đánh cũng là đường ước lượng, vẽ theo các địa danh được nêu trong bài. Địa hình trên bản đồ dùng dữ liệu độ cao mở (Terrain Tiles trên AWS, tổng hợp từ SRTM và các nguồn khác). Các mô hình 3D là phỏng dựng giản lược, hiển thị kiểu hologram. Hoa văn mặt trống đồng dùng làm biểu tượng là bản vẽ mặt trống Ngọc Lũ thuộc phạm vi công cộng trên Wikimedia Commons (NgocLu2.gif). Ảnh ở các mục từ là ảnh thật từ Wikimedia Commons, có ghi tác giả và giấy phép dưới mỗi ảnh. Ảnh minh họa đầu mỗi thời kỳ và giọng kể do AI tạo. Âm nền và âm thanh trận đánh được tổng hợp bằng máy, không phải bản ghi nhạc cụ cổ hay trận đánh thật. Nền bản đồ: Natural Earth.'
+            : 'Zone boundaries on the map are illustrative. The dashed lines marking the southward expansion (1069, 1306, 1471, 1611) and the battle sketches are approximate too, drawn through the places named in the text. Map terrain uses open elevation data (Terrain Tiles on AWS, compiled from SRTM and other sources). The 3D models are simplified reconstructions shown as holograms. The bronze-drum motif used as the site emblem is a public-domain drawing of the Ngọc Lũ drum face from Wikimedia Commons (NgocLu2.gif). Photos in the entries are real photographs from Wikimedia Commons, credited with author and licence under each one. The illustration opening each period and the narration are AI-generated. Ambient sound and battle sounds are synthesised, not recordings of ancient instruments or real battles. Base map: Natural Earth.'}
         </p>
       </section>
       {groups.map(([g, name]) => (
@@ -622,6 +622,18 @@ export default function App() {
     const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), bs.i === 0 ? 4200 : 5600);
     return () => window.clearTimeout(t);
   }, [bs]);
+  // Âm thanh theo từng bước trận đánh (chỉ khi người xem đã bật âm thanh)
+  useEffect(() => {
+    if (!snd || bs.slug !== active.focus) return;
+    const b = BATTLES[bs.slug]; if (!b) return;
+    const st = b.steps[bs.i]; if (!st) return;
+    const kinds = new Set(st.units.map((u) => u.kind));
+    sound.battle({
+      army: kinds.has('army'), fleet: kinds.has('fleet'), air: kinds.has('air'), clash: !!st.clash?.length,
+      lose: st.units.some((u) => u.fate === 'lose'), tide: st.tide, modern: b.steps.some((x) => x.units.some((u) => u.kind === 'air')),
+      last: bs.i === b.steps.length - 1,
+    });
+  }, [bs.slug, bs.i, snd, active.focus]); // eslint-disable-line react-hooks/exhaustive-deps
   const bpFor = (slug: string): BP | undefined => {
     const b = BATTLES[slug]; if (!b) return undefined;
     const mine = bs.slug === slug;

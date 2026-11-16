@@ -157,6 +157,49 @@ class Sound {
     };
   }
 
+  // Âm thanh cho từng bước diễn biến trận đánh: trống trận khi bộ binh hành quân, sóng và mái chèo cho thủy quân,
+  // tiếng máy bay, nước triều lên xuống, binh khí va nhau hoặc tiếng pháo ở chỗ giao chiến, tiếng chìm khi một bên thua,
+  // và tiếng cồng ở bước cuối. Tất cả tổng hợp bằng Web Audio.
+  battle(o: { army: boolean; fleet: boolean; air: boolean; clash: boolean; lose: boolean; tide?: 'high' | 'low'; modern: boolean; last: boolean }) {
+    if (!this.ctx || !this.on) return;
+    const c = this.ctx, d = this.master, at = (ms: number, fn: () => void) => window.setTimeout(() => { if (this.on) fn(); }, ms);
+    if (o.army) {
+      // trống trận dồn dần
+      [0, 520, 960, 1330, 1640, 1900, 2120].forEach((ms, i) => at(ms, () => this.thump(d, 0.35 + i * 0.05)));
+      if (!o.modern) at(150, () => this.tone(d, 98, 2.4, 0.07, 'sawtooth', [1, 1.5]));
+    }
+    if (o.fleet) {
+      // sóng vỗ và mái chèo
+      const n = c.createBufferSource(), lp = c.createBiquadFilter(), g = c.createGain(), t = c.currentTime;
+      n.buffer = this.brown; n.loop = true; lp.type = 'lowpass'; lp.frequency.value = 700;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.5, t + 0.8); g.gain.linearRampToValueAtTime(0.25, t + 2); g.gain.linearRampToValueAtTime(0, t + 3.2);
+      n.connect(lp).connect(g).connect(d); n.start(t, Math.random()); n.stop(t + 3.3);
+      for (let k = 0; k < 6; k++) at(200 + k * 430, () => this.burst(d, 0.18, 0.12, 'bandpass', 900, 400));
+    }
+    if (o.air) {
+      // tiếng động cơ máy bay bay ngang
+      const t = c.currentTime, g = c.createGain(), lp = c.createBiquadFilter();
+      lp.type = 'lowpass'; lp.frequency.value = 600;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.12, t + 1.2); g.gain.linearRampToValueAtTime(0, t + 3.4);
+      [92, 93.7, 138].forEach((f) => { const os = c.createOscillator(); os.type = 'sawtooth'; os.frequency.setValueAtTime(f, t); os.frequency.linearRampToValueAtTime(f * 0.92, t + 3.4); os.connect(lp); os.start(t); os.stop(t + 3.5); });
+      lp.connect(g).connect(d);
+    }
+    if (o.tide === 'high') this.burst(d, 2.2, 0.2, 'lowpass', 300, 1200);
+    if (o.tide === 'low') this.burst(d, 2.2, 0.2, 'lowpass', 1200, 250);
+    if (o.clash) {
+      if (o.modern) {
+        // pháo nổ xa gần
+        for (let k = 0; k < 7; k++) at(1900 + k * 260 + Math.random() * 200, () => { this.thump(d, 0.5 + Math.random() * 0.4); this.burst(d, 0.6, 0.22, 'lowpass', 900, 120); });
+      } else {
+        // binh khí va nhau, tiếng hô
+        for (let k = 0; k < 10; k++) at(1900 + k * 150 + Math.random() * 120, () => this.tone(d, 900 + Math.random() * 1500, 0.25, 0.05, 'square', [1, 2.71, 4.13]));
+        at(2000, () => this.burst(d, 1.4, 0.16, 'bandpass', 500, 900));
+      }
+    }
+    if (o.lose) at(2900, () => { this.burst(d, 1.2, 0.25, 'lowpass', 600, 90); this.thump(d, 0.3); });
+    if (o.last) at(3200, () => { this.tone(d, 98, 4.5, 0.16, 'sine', [1, 2.01, 2.76, 4.1]); this.thump(d, 0.6); });
+  }
+
   hit(kind: 'drum' | 'step' | 'ok' | 'no') {
     if (!this.ctx || !this.on) return;
     const d = this.master;
