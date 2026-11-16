@@ -553,10 +553,12 @@ function Drawer({ lang, onClose, children }: { lang: Lang; onClose: () => void; 
 
 export default function App() {
   const [lang, setLangS] = useState<Lang>(() => {
-    // Chưa chọn ngôn ngữ thì theo trình duyệt: máy tiếng Việt xem bản Việt, còn lại xem bản Anh
+    // Mặc định tiếng Việt. Bản Anh mở bằng ?lang=en hoặc khi người xem đã tự chọn EN trước đó
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q === 'vi' || q === 'en') return q;
     const saved = store.get('annalis-lang', '');
     if (saved === 'vi' || saved === 'en') return saved;
-    return (navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en';
+    return 'vi';
   });
   const [depth, setDepthS] = useState<Depth>(() => store.get('annalis-depth', 'full') as Depth);
   const [seen, setSeen] = useState<Set<string>>(() => new Set(store.get('annalis-seen', '').split(',').filter((s) => entryBySlug[s])));
