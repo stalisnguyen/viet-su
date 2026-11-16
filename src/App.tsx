@@ -53,6 +53,40 @@ const START: Record<string, L> = {
   'au-lac': { vi: '257 TCN', en: '257 BCE' },
 };
 
+// Màn mở đầu thời kỳ: khi cuộn sang thời kỳ mới, tên thời kỳ hiện lớn trên bản đồ kèm năm số chạy, rồi tự tắt
+const yearOf = (t: string) => {
+  const m = t.match(/^(?:khoảng |c\. )?(\d{1,4})(?:\s*(TCN|BCE))?$/);
+  return m ? Number(m[1]) * (m[2] ? -1 : 1) : null;
+};
+const fmtYear = (y: number, lang: Lang) => (y < 0 ? `${-y} ${lang === 'vi' ? 'TCN' : 'BCE'}` : String(y));
+function EraCard({ era, prev, lang, mark }: { era: string; prev: string | null; lang: Lang; mark: string }) {
+  const p = periodBySlug[era];
+  const idx = periods.findIndex((x) => x.slug === era);
+  const label = (START[era] || p.start || p.range)[lang];
+  const to = yearOf(label), from = prev ? yearOf((START[prev] || periodBySlug[prev].start || periodBySlug[prev].range)[lang]) : null;
+  const [shown, setShown] = useState(from !== null && to !== null ? fmtYear(from, lang) : label);
+  useEffect(() => {
+    if (from === null || to === null || matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(label); return; }
+    let raf = 0; const t0 = performance.now();
+    const step = (now: number) => {
+      const k = Math.min(1, (now - t0) / 1100), e = 1 - Math.pow(1 - k, 3);
+      const y = Math.round(from + (to - from) * e);
+      setShown(k < 1 ? fmtYear(y === 0 ? 1 : y, lang) : label);
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [era]); // eslint-disable-line react-hooks/exhaustive-deps
+  return (
+    <div className="eracard" aria-hidden="true" style={{ ['--c' as string]: p.color }}>
+      <img src={mark} alt="" />
+      <p className="n">{p.theme ? (lang === 'vi' ? 'Chuyên đề' : 'Topic') : `${lang === 'vi' ? 'Thời kỳ' : 'Period'} ${pad(idx + 1)}`}</p>
+      <h2>{p.name[lang]}</h2>
+      <p className="y">{shown}</p>
+    </div>
+  );
+}
+
 // Thứ tự hành trình: theo thời kỳ, trong mỗi thời kỳ đi từ xưa đến gần
 const journey = periods.flatMap((p) => entries.filter((e) => e.period === p.slug).sort((a, b) => b.sort - a.sort));
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -464,6 +498,9 @@ export default function App() {
   const split = useMedia(SPLIT);
   // Biểu tượng mặt trống: dùng bản vẽ giản lược trước, đổi sang hoa văn thật của trống Ngọc Lũ khi tải xong
   const [mark, setMark] = useState(drumUrl);
+  // Màn mở đầu thời kỳ: hiện khi thời kỳ đang xem đổi sang một thời kỳ khác (không hiện ở phần mở đầu trang)
+  const [eraCard, setEraCard] = useState<{ era: string; prev: string | null; n: number } | null>(null);
+  const lastEra = useRef<string | null>(null);
   useEffect(() => { let on = true; loadDrumFace().then((cv) => { if (on) setMark(cv.toDataURL('image/png')); }); return () => { on = false; }; }, []);
   const [intro, setIntro] = useState(() => { try { return !sessionStorage.getItem('vstd-intro') && !location.hash; } catch { return false; } });
   useEffect(() => {
@@ -541,6 +578,18 @@ export default function App() {
     if (f && snd) sound.hit(/trong-dong|dong-son/.test(f) ? 'drum' : 'step');
   }, [active.focus]);
   useEffect(() => { if (snd) sound.setEra(active.era); }, [snd, active.era]);
+  useEffect(() => {
+    // Chờ thời kỳ đứng yên một chút rồi mới hiện, để khi nhảy xa qua nhiều thời kỳ chỉ hiện một lần
+    if (!active.era || active.era === lastEra.current) return;
+    const era = active.era;
+    const t1 = window.setTimeout(() => {
+      const prev = lastEra.current; lastEra.current = era;
+      setEraCard((c) => ({ era, prev, n: (c?.n || 0) + 1 }));
+      if (snd) sound.hit('drum');
+    }, 280);
+    const t2 = window.setTimeout(() => setEraCard((c) => (c && c.era === era ? null : c)), 280 + 2600);
+    return () => { window.clearTimeout(t1); window.clearTimeout(t2); };
+  }, [active.era]); // eslint-disable-line react-hooks/exhaustive-deps
   // Kéo dải thời kỳ tới thời kỳ đang xem. Chỉ cuộn ngang bên trong dải, không dùng scrollIntoView vì nó có thể làm xê dịch cả trang.
   useEffect(() => {
     const btn = document.querySelector<HTMLElement>('.scrub button.on'), sc = btn?.parentElement;
@@ -619,6 +668,7 @@ export default function App() {
         </div>
       </header>
 
+      {eraCard && <EraCard key={eraCard.n} era={eraCard.era} prev={eraCard.prev} lang={lang} mark={mark} />}
       {(fe || fp) && (
         <aside className="hud" aria-hidden="true" key={active.id}>
           {fe ? (

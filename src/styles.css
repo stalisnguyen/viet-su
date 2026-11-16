@@ -340,3 +340,19 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
 .hud .legend i.foe { background: #5cc8ff; box-shadow: 0 0 6px #5cc8ff; margin-left: 6px; }
 .hud .legend em { font-style: normal; font-size: 0.66rem; color: #b5ab9c; }
 @media (max-width: 700px) { .hud .legend span, .hud .legend em { display: none; } .hud .legend b { font-size: 0.7rem; justify-content: flex-start; } }
+
+/* Màn mở đầu thời kỳ: hiện trên bản đồ khoảng hai giây rưỡi rồi tắt, không chặn thao tác */
+.eracard { position: fixed; z-index: 6; pointer-events: none; left: 46vw; right: 0; top: 18vh; display: grid; justify-items: center; text-align: center; gap: 4px; animation: eraout 2.6s ease-in-out both; }
+.eracard img { position: absolute; top: 50%; left: 50%; width: min(52vh, 460px); height: auto; transform: translate(-50%, -50%); opacity: 0.16; filter: drop-shadow(0 0 30px var(--c)) sepia(1) saturate(3); animation: eradrum 2.6s ease-out both; z-index: -1; }
+.eracard .n { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--c); font-weight: 700; animation: fadeup 0.6s 0.1s ease-out both; }
+.eracard h2 { margin: 0; max-width: 16ch; font-size: clamp(1.8rem, 4.2vw, 3.4rem); line-height: 1.05; font-weight: 800; color: #fff6e3; text-shadow: 0 0 24px #000, 0 0 40px color-mix(in srgb, var(--c) 60%, transparent); animation: erain 0.8s 0.15s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.eracard .y { margin: 6px 0 0; font-size: clamp(1.1rem, 2.4vw, 1.6rem); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: 0.08em; color: var(--c); text-shadow: 0 0 14px #000; animation: fadeup 0.6s 0.3s ease-out both; }
+.eracard::before { content: ''; position: absolute; left: 50%; top: 50%; width: 70%; height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--c), transparent); top: auto; bottom: -14px; animation: eraline 1.2s 0.2s ease-out both; }
+@keyframes eraout { 0% { opacity: 0; } 10% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes eradrum { from { transform: translate(-50%, -50%) scale(0.6) rotate(-40deg); opacity: 0; } to { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 0.16; } }
+@keyframes erain { from { opacity: 0; transform: translateY(14px) scale(0.96); letter-spacing: 0.08em; } to { opacity: 1; transform: none; letter-spacing: 0; } }
+@keyframes eraline { from { width: 0; } }
+@media (max-width: 899px) and (orientation: portrait) { .eracard { left: 0; top: 64px; height: calc(38svh - 64px); align-content: center; } .eracard img { width: 30svh; } .eracard h2 { font-size: 1.6rem; } .eracard::before { bottom: 8%; } }
+@media (max-width: 899px) and (orientation: landscape) { .eracard { left: 0; top: 14vh; } }
+@media (prefers-reduced-motion: reduce) { .eracard, .eracard * { animation-duration: 0.01s !important; animation-delay: 0s !important; } .eracard { animation: eraout 2.6s linear both !important; } }
+.eracard::after { content: ''; position: absolute; inset: -30% -10%; z-index: -2; background: radial-gradient(closest-side, rgba(9, 7, 8, 0.82), rgba(9, 7, 8, 0.5) 60%, transparent); }
