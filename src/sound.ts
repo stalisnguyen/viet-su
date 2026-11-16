@@ -160,9 +160,10 @@ class Sound {
   // Âm thanh cho từng bước diễn biến trận đánh: trống trận khi bộ binh hành quân, sóng và mái chèo cho thủy quân,
   // tiếng máy bay, nước triều lên xuống, binh khí va nhau hoặc tiếng pháo ở chỗ giao chiến, tiếng chìm khi một bên thua,
   // và tiếng cồng ở bước cuối. Tất cả tổng hợp bằng Web Audio.
-  battle(o: { army: boolean; fleet: boolean; air: boolean; clash: boolean; lose: boolean; tide?: 'high' | 'low'; modern: boolean; last: boolean }) {
+  battle(o: { army: boolean; fleet: boolean; air: boolean; clash: boolean; lose: boolean; tide?: 'high' | 'low'; modern: boolean; last: boolean; dur?: number }) {
     if (!this.ctx || !this.on) return;
     const c = this.ctx, d = this.master, at = (ms: number, fn: () => void) => window.setTimeout(() => { if (this.on) fn(); }, ms);
+    const end = o.dur ?? 3000; // lúc các đạo quân tới nơi: tiếng giao chiến, tiếng chìm, tiếng cồng dời theo mốc này
     if (o.army) {
       // trống trận dồn dần
       [0, 520, 960, 1330, 1640, 1900, 2120].forEach((ms, i) => at(ms, () => this.thump(d, 0.35 + i * 0.05)));
@@ -189,15 +190,15 @@ class Sound {
     if (o.clash) {
       if (o.modern) {
         // pháo nổ xa gần
-        for (let k = 0; k < 7; k++) at(1900 + k * 260 + Math.random() * 200, () => { this.thump(d, 0.5 + Math.random() * 0.4); this.burst(d, 0.6, 0.22, 'lowpass', 900, 120); });
+        for (let k = 0; k < 7; k++) at(end - 400 + k * 260 + Math.random() * 200, () => { this.thump(d, 0.5 + Math.random() * 0.4); this.burst(d, 0.6, 0.22, 'lowpass', 900, 120); });
       } else {
         // binh khí va nhau, tiếng hô
-        for (let k = 0; k < 10; k++) at(1900 + k * 150 + Math.random() * 120, () => this.tone(d, 900 + Math.random() * 1500, 0.25, 0.05, 'square', [1, 2.71, 4.13]));
-        at(2000, () => this.burst(d, 1.4, 0.16, 'bandpass', 500, 900));
+        for (let k = 0; k < 10; k++) at(end - 400 + k * 150 + Math.random() * 120, () => this.tone(d, 900 + Math.random() * 1500, 0.25, 0.05, 'square', [1, 2.71, 4.13]));
+        at(end - 300, () => this.burst(d, 1.4, 0.16, 'bandpass', 500, 900));
       }
     }
-    if (o.lose) at(2900, () => { this.burst(d, 1.2, 0.25, 'lowpass', 600, 90); this.thump(d, 0.3); });
-    if (o.last) at(3200, () => { this.tone(d, 98, 4.5, 0.16, 'sine', [1, 2.01, 2.76, 4.1]); this.thump(d, 0.6); });
+    if (o.lose) at(end + 300, () => { this.burst(d, 1.2, 0.25, 'lowpass', 600, 90); this.thump(d, 0.3); });
+    if (o.last) at(end + 1800, () => { this.tone(d, 98, 4.5, 0.16, 'sine', [1, 2.01, 2.76, 4.1]); this.thump(d, 0.6); });
   }
 
   hit(kind: 'drum' | 'step' | 'ok' | 'no') {

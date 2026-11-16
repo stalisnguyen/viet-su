@@ -326,8 +326,11 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
   );
 }
 
+// Thời gian một bước trận đánh trên bản đồ (khớp với Stage: các đạo quân lần lượt đi, cách nhau 1,3 giây, mỗi đạo 3 giây)
+const stepMs = (n: number) => ((Math.max(1, n) - 1) * 1.3 + 3.0) * 1000;
+
 // Trình phát diễn biến trận đánh: từng bước có mốc thời gian và một câu thuật lại; bản đồ chạy theo bước đang chọn
-interface BP { i: number; play: boolean; go: (i: number) => void; toggle: () => void }
+interface BP { i: number; play: boolean; done: boolean; go: (i: number) => void; toggle: () => void }
 function BattlePlayer({ slug, lang, bp }: { slug: string; lang: Lang; bp: BP }) {
   const b = BATTLES[slug];
   const st = b.steps[bp.i];
@@ -351,6 +354,9 @@ function BattlePlayer({ slug, lang, bp }: { slug: string; lang: Lang; bp: BP }) 
         <div className="dots">{b.steps.map((x, k) => <button key={k} className={k === bp.i ? 'on' : k < bp.i ? 'done' : ''} onClick={() => bp.go(k)} aria-label={x.t[lang]} />)}</div>
         <button onClick={() => bp.go(Math.min(last, bp.i + 1))} disabled={bp.i === last} aria-label={lang === 'vi' ? 'Bước sau' : 'Next step'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></button>
       </div>
+      {bp.i === last && bp.done && (
+        <div className="battle-result"><b>{lang === 'vi' ? 'Kết thúc trận đánh' : 'End of the battle'}</b><p>{b.result[lang]}</p></div>
+      )}
       <p className="battle-note">{lang === 'vi' ? 'Sơ đồ minh họa, đường hành quân là ước lượng theo các địa danh trong bài.' : 'Illustrative sketch; routes are approximate, drawn through the places named in the text.'}</p>
     </section>
   );
@@ -532,6 +538,13 @@ export default function App() {
   const [mark, setMark] = useState(drumUrl);
   // Diễn biến trận đánh: bước đang xem và tự phát
   const [bs, setBs] = useState({ slug: '', i: 0, play: false });
+  const [bDone, setBDone] = useState(false);
+  useEffect(() => {
+    setBDone(false);
+    const b = BATTLES[bs.slug]; if (!b) return;
+    const t = window.setTimeout(() => setBDone(true), matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : stepMs(b.steps[bs.i].units.length) + 1200);
+    return () => window.clearTimeout(t);
+  }, [bs.slug, bs.i]);
   // Màn mở đầu thời kỳ: hiện khi thời kỳ đang xem đổi sang một thời kỳ khác (không hiện ở phần mở đầu trang)
   const [eraCard, setEraCard] = useState<{ era: string; prev: string | null; n: number } | null>(null);
   const lastEra = useRef<string | null>(null);
@@ -619,7 +632,7 @@ export default function App() {
   useEffect(() => {
     if (!bs.play || !BATTLES[bs.slug]) return;
     const last = BATTLES[bs.slug].steps.length - 1;
-    const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), bs.i === 0 ? 4200 : 5600);
+    const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), stepMs(BATTLES[bs.slug].steps[bs.i].units.length) + 3200);
     return () => window.clearTimeout(t);
   }, [bs]);
   // Âm thanh theo từng bước trận đánh (chỉ khi người xem đã bật âm thanh)
@@ -631,14 +644,14 @@ export default function App() {
     sound.battle({
       army: kinds.has('army'), fleet: kinds.has('fleet'), air: kinds.has('air'), clash: !!st.clash?.length,
       lose: st.units.some((u) => u.fate === 'lose'), tide: st.tide, modern: b.steps.some((x) => x.units.some((u) => u.kind === 'air')),
-      last: bs.i === b.steps.length - 1,
+      last: bs.i === b.steps.length - 1, dur: stepMs(st.units.length),
     });
   }, [bs.slug, bs.i, snd, active.focus]); // eslint-disable-line react-hooks/exhaustive-deps
   const bpFor = (slug: string): BP | undefined => {
     const b = BATTLES[slug]; if (!b) return undefined;
     const mine = bs.slug === slug;
     return {
-      i: mine ? bs.i : 0, play: mine && bs.play,
+      i: mine ? bs.i : 0, play: mine && bs.play, done: mine && bDone,
       go: (i) => setBs({ slug, i, play: false }),
       toggle: () => setBs((x) => {
         const cur = x.slug === slug ? x : { slug, i: 0, play: false };
@@ -737,6 +750,26 @@ export default function App() {
         </div>
       </header>
 
+      {(() => {
+        const b = active.focus && bs.slug === active.focus ? BATTLES[active.focus] : null;
+        if (!b) return null;
+        const st = b.steps[bs.i], last = bs.i === b.steps.length - 1;
+        return (
+          <>
+            <div className="bcap" key={bs.slug + bs.i} aria-hidden="true" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
+              <p className="n">{bs.i === 0 ? (lang === 'vi' ? 'Bắt đầu - ' : 'Start - ') : ''}{lang === 'vi' ? 'Bước' : 'Step'} {bs.i + 1}/{b.steps.length} - {st.t[lang]}</p>
+              <p>{st.text[lang]}</p>
+            </div>
+            {last && bDone && (
+              <div className="bresult" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
+                <p className="n">{lang === 'vi' ? 'Kết thúc trận đánh' : 'End of the battle'}</p>
+                <p>{b.result[lang]}</p>
+                <button onClick={() => setBs({ slug: bs.slug, i: 0, play: true })}>{lang === 'vi' ? 'Xem lại từ đầu' : 'Watch again'}</button>
+              </div>
+            )}
+          </>
+        );
+      })()}
       {eraCard && <EraCard key={eraCard.n} era={eraCard.era} prev={eraCard.prev} lang={lang} mark={mark} />}
       {(fe || fp) && (
         <aside className="hud" aria-hidden="true" key={active.id}>
