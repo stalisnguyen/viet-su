@@ -149,8 +149,8 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          'Theo sử Việt, năm 1069 vua Lý Thánh Tông thân chinh với khoảng năm vạn quân, Lý Thường Kiệt làm tiên phong. Lúc đầu quân Lý chưa hạ được kinh đô Chăm, vua đã rút về rồi quay lại và thắng trận. Chế Củ bị bắt cùng khoảng năm vạn người. Ông xin dâng ba châu Địa Lý, Ma Linh, Bố Chính để chuộc thân và được tha về nước.',
-          'According to Vietnamese chronicles, in 1069 King Lý Thánh Tông led about fifty thousand men in person, with Lý Thường Kiệt in the vanguard. At first the Lý army could not take the Cham capital; the king withdrew, then returned and won. Chế Củ was captured along with some fifty thousand people. He offered the three districts of Địa Lý, Ma Linh and Bố Chính as ransom and was allowed to go home.',
+          'Theo Toàn thư, mùa xuân tháng Hai năm 1069 vua Lý Thánh Tông thân chinh đánh Champa. Toàn thư không ghi quân số nhà Lý và không nhắc Lý Thường Kiệt trong chiến dịch này, dù nhiều sách hiện đại coi ông là tướng tiên phong. Lúc đầu quân Lý chưa hạ được kinh đô Chăm, vua đã rút về rồi quay lại và thắng trận. Chế Củ bị bắt cùng khoảng năm vạn người. Ông xin dâng ba châu Địa Lý, Ma Linh, Bố Chính để chuộc thân và được tha về nước.',
+          'According to the Toàn thư, in the second month of 1069 King Lý Thánh Tông led a campaign against Champa in person. The chronicle gives no figure for the Lý army and does not mention Lý Thường Kiệt in this campaign, though many modern books make him the vanguard commander. At first the Lý army could not take the Cham capital; the king withdrew, then returned and won. Chế Củ was captured along with some fifty thousand people. He offered the three districts of Địa Lý, Ma Linh and Bố Chính as ransom and was allowed to go home.',
         ),
         l(
           'Ba châu này ứng với vùng Quảng Bình và phía bắc Quảng Trị ngày nay. Năm 1075, Lý Thường Kiệt vẽ bản đồ hình thế ba châu, đổi Địa Lý thành Lâm Bình, Ma Linh thành Minh Linh và chiêu mộ dân đến ở, theo Khâm định Việt sử thông giám cương mục. Việc giữ đất không dễ: đầu thế kỷ 12 Champa lấy lại, và phải sau trận đánh năm 1104 của Lý Thường Kiệt ba châu mới trở về tay nhà Lý.',
@@ -163,8 +163,8 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          'Chuyện năm 1069 gần như chỉ được biết từ phía Việt. Georges Maspero đồng nhất Chế Củ với vua Rudravarman III và cho rằng vua Chăm gây hấn trước vào cuối năm 1068. Michael Vickery phản bác: theo ông, cuộc tấn công không nhắm vào Rudravarman hay Vijaya mà có thể vào một thủ lĩnh Chăm địa phương ở vùng Amaravati phía bắc. Việc Toàn thư chép Champa triều cống hằng năm từ 1071 đến 1074 cũng chưa có chứng cứ nào khác xác nhận.',
-          'The events of 1069 are known almost wholly from the Vietnamese side. Georges Maspero identified Chế Củ with King Rudravarman III and held that the Cham king provoked the war in late 1068. Michael Vickery disagrees: in his view the attack was not aimed at Rudravarman or Vijaya but possibly at a local Cham chief in the northern region of Amaravati. The Toàn thư claim that Champa paid yearly tribute from 1071 to 1074 is likewise not confirmed by any other evidence.',
+          'Chuyện năm 1069 gần như chỉ được biết từ phía Việt. Georges Maspero đồng nhất Chế Củ với vua Rudravarman III và cho rằng vua Chăm gây hấn trước vào cuối năm 1068. Michael Vickery phản bác: theo ông, cuộc tấn công không nhắm vào Rudravarman hay Vijaya mà có thể vào một thủ lĩnh Chăm địa phương ở vùng Amaravati phía bắc. Toàn thư chỉ chép Champa sang cống năm 1071, còn đến năm 1074 thì chép Champa lại quấy nhiễu biên giới; việc triều cống này cũng chưa có chứng cứ nào khác xác nhận.',
+          'The events of 1069 are known almost wholly from the Vietnamese side. Georges Maspero identified Chế Củ with King Rudravarman III and held that the Cham king provoked the war in late 1068. Michael Vickery disagrees: in his view the attack was not aimed at Rudravarman or Vijaya but possibly at a local Cham chief in the northern region of Amaravati. The Toàn thư records Champa tribute only in 1071, and in 1074 notes that Champa raided the border again; that tribute is likewise not confirmed by any other evidence.',
         ),
         l(
           'Cách nhìn về sự kiện cũng khác nhau. Sử Việt truyền thống coi đây là việc mở cõi và ổn định biên giới phía nam. Từ phía lịch sử Champa, sau năm 1069 có lẽ đã xảy ra nội chiến giữa các thế lực ở Nha Trang và Phan Rang, cho đến khi Harivarman IV thống nhất lại vào năm 1074. Champa khi đó là một tập hợp nhiều vùng quyền lực chứ không phải một nhà nước tập trung, nên "ba châu" có thể chỉ thuộc về một thủ lĩnh vùng.',
@@ -238,8 +238,8 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          'Chuyện kể rằng năm 1063 vua Lý Thánh Tông đã bốn mươi tuổi mà chưa có con trai. Khi xa giá qua làng Thổ Lỗi, vua thấy một cô gái đứng tựa gốc cây lan, không chạy ra xem như mọi người, nên đưa về cung và đặt tên là Ỷ Lan, nghĩa là tựa cây lan. Tháng Giêng năm 1066 bà sinh hoàng tử Càn Đức, được lập làm thái tử, còn bà được phong Nguyên phi.',
-          'The story goes that in 1063 King Lý Thánh Tông was forty and had no son. As his procession passed Thổ Lỗi village he noticed a girl leaning against an orchid tree instead of running out to watch like everyone else, so he took her to the palace and named her Ỷ Lan, "leaning on the orchid". In the first month of 1066 she bore Prince Càn Đức, who was made heir, and she was raised to Nguyên phi, first-rank consort.',
+          'Chuyện kể rằng năm 1063 vua Lý Thánh Tông đã bốn mươi tuổi mà chưa có con trai. Khi xa giá qua làng Thổ Lỗi, vua thấy một cô gái đứng tựa gốc cây lan, không chạy ra xem như mọi người, nên đưa về cung và đặt tên là Ỷ Lan, nghĩa là tựa cây lan. Tháng Giêng năm 1066 bà sinh hoàng tử Càn Đức, cậu bé được lập làm thái tử, còn bà được phong Thần phi; đến năm 1069 sử đã gọi bà là Nguyên phi.',
+          'The story goes that in 1063 King Lý Thánh Tông was forty and had no son. As his procession passed Thổ Lỗi village he noticed a girl leaning against an orchid tree instead of running out to watch like everyone else, so he took her to the palace and named her Ỷ Lan, "leaning on the orchid". In the first month of 1066 she bore Prince Càn Đức, who was made heir, and she was raised to Thần phi; by 1069 the chronicle calls her Nguyên phi, first-rank consort.',
         ),
         l(
           'Năm 1069 vua thân chinh đánh Champa và giao việc triều chính cho bà. Năm 1072 vua mất, Càn Đức lên ngôi khi mới sáu tuổi, tức Lý Nhân Tông. Từ năm 1073 bà cùng vua nhỏ coi việc nước, bên cạnh Lý Đạo Thành và Lý Thường Kiệt, cho đến khi mất năm 1117. Sử chép năm 1103 bà phát tiền chuộc những phụ nữ nghèo phải bán mình, và năm 1117 xin vua cấm giết trâu vì trâu cần cho việc cày.',
@@ -337,16 +337,16 @@ const chapter: Chapter = {
       ],
       scholarly: [
         l(
-          `Toàn thư không nói Lý Thường Kiệt làm bài thơ "Nam quốc sơn hà". Sách chỉ chép là tục truyền: một đêm quân sĩ nghe trong đền thờ Trương Hống, Trương Hát có tiếng ngâm bốn câu thơ, và Đền Xà bên sông Cầu ngày nay vẫn thờ hai vị thần này. Cuộc tranh luận về tác giả, dị bản và niên đại của bài thơ được trình bày ở mục riêng về bài thơ trong thời Đinh - Tiền Lê.`,
-          `The Toàn thư does not say that Lý Thường Kiệt wrote "Nam quốc sơn hà". It reports only a tradition that one night the soldiers heard the four lines chanted in the shrine of Trương Hống and Trương Hát, the spirits still worshipped at the Xà Temple by the Cầu river. The debate over the poem's author, variants and date is set out in its own entry under the Đinh and Early Lê period.`,
+          `Toàn thư không nói Lý Thường Kiệt làm bài thơ "Nam quốc sơn hà". Sách chỉ chép là tục truyền: một đêm quân sĩ nghe trong đền Trương tướng quân có tiếng ngâm bốn câu thơ. Truyền thống đời sau coi đó là đền thờ hai anh em Trương Hống, Trương Hát, và Đền Xà bên sông Cầu ngày nay vẫn thờ hai vị thần này. Cuộc tranh luận về tác giả, dị bản và niên đại của bài thơ được trình bày ở mục riêng về bài thơ trong thời Đinh - Tiền Lê.`,
+          `The Toàn thư does not say that Lý Thường Kiệt wrote "Nam quốc sơn hà". It reports only a tradition that one night the soldiers heard the four lines chanted in the shrine of General Trương. Later tradition identifies him with the brothers Trương Hống and Trương Hát, still worshipped at the Xà Temple by the Cầu river. The debate over the poem's author, variants and date is set out in its own entry under the Đinh and Early Lê period.`,
         ),
         l(
           `Cuộc tiến công năm 1075 - 1076 được sử Tống chép kỹ hơn sử Việt, vì đó là một thất bại lớn của nhà Tống. Tri châu Ung Châu là Tô Giám giữ thành hơn bốn mươi ngày, và khi thành vỡ thì ông cùng người nhà tự sát. Sử Tống cũng chép quân Lý giết nhiều dân trong thành, điều mà Toàn thư không nhắc. Hai phía vì vậy kể cùng một chiến dịch bằng hai giọng rất khác nhau, và số thương vong của mỗi bên đều khó kiểm chứng.`,
           `The campaign of 1075 - 1076 is recorded in more detail by Song historians than by Vietnamese ones, since it was a serious Song defeat. The prefect of Yongzhou, Su Jian (Tô Giám), held the city for more than forty days and, when it fell, took his own life together with his household. Song sources also say that the Lý troops killed many of the city's inhabitants, which the Toàn thư does not mention. The two sides thus tell the same campaign in very different voices, and the casualty figures on either side are hard to check.`,
         ),
         l(
-          'Kết cục cuộc chiến không gọn như ký ức về nó. Khi rút, quân Tống vẫn giữ năm vùng biên giới gồm Quảng Nguyên, Tư Lang, Môn, Tô Mậu và Quảng Lăng. Nhà Lý đòi lại bằng thương lượng: năm 1079 Tống trả Quảng Nguyên để đổi tù binh, và năm 1084 Lê Văn Thịnh dự hội nghị ở trại Vĩnh Bình, nhận về thêm sáu huyện, hai động, trừ Vật Dương và Vật Ác. Về quân số Tống, báo chí trong nước thường ghi 30 vạn, tức gộp cả lính lẫn dân phu trong ước tính của Anderson.',
-          'The outcome was less tidy than the memory of it. On withdrawing, the Song still held five border regions: Quảng Nguyên, Tư Lang, Môn, Tô Mậu and Quảng Lăng. The Lý recovered them by negotiation: in 1079 the Song returned Quảng Nguyên in exchange for prisoners, and in 1084 Lê Văn Thịnh attended talks at Yongping (Vĩnh Bình) and received six more districts and two valleys, all but Vật Dương and Vật Ác. On Song numbers, Vietnamese media usually say 300,000, which combines the soldiers and porters of Anderson\'s estimate.',
+          'Kết cục cuộc chiến không gọn như ký ức về nó. Khi rút, quân Tống vẫn giữ năm vùng biên giới gồm Quảng Nguyên, Tư Lang, Môn, Tô Mậu và Quảng Lăng. Nhà Lý đòi lại bằng thương lượng: năm 1079 Tống trả Quảng Nguyên để đổi tù binh, và năm 1084 Lê Văn Thịnh dự hội nghị ở trại Vĩnh Bình. Toàn thư chép Tống trả sáu huyện, ba động, còn sử Tống cho biết hai động Vật Dương và Vật Ác vẫn bị giữ lại. Về quân số Tống, báo chí trong nước thường ghi 30 vạn, tức gộp cả lính lẫn dân phu trong ước tính của Anderson.',
+          'The outcome was less tidy than the memory of it. On withdrawing, the Song still held five border regions: Quảng Nguyên, Tư Lang, Môn, Tô Mậu and Quảng Lăng. The Lý recovered them by negotiation: in 1079 the Song returned Quảng Nguyên in exchange for prisoners, and in 1084 Lê Văn Thịnh attended talks at Yongping (Vĩnh Bình). The Toàn thư says the Song returned six districts and three valleys, while Song records say the valleys of Vật Dương and Vật Ác were kept back. On Song numbers, Vietnamese media usually say 300,000, which combines the soldiers and porters of Anderson\'s estimate.',
         ),
       ],
       sources: ['ly-toanthu', 'ly-wiki-nhunguyet', 'ly-vov-nhunguyet', 'ly-bpl-denxa', 'ly-ncpt-nqsh', 'ly-vlm-border'],
@@ -656,7 +656,7 @@ const chapter: Chapter = {
       ),
       options: [
         l('Lý Thường Kiệt tự viết rồi cho đọc trước trận', 'Lý Thường Kiệt wrote it and had it read before battle'),
-        l('Tục truyền quân sĩ nghe tiếng ngâm trong đền thờ Trương Hống, Trương Hát', 'By tradition, soldiers heard it chanted in the shrine of Trương Hống and Trương Hát'),
+        l('Tục truyền quân sĩ nghe tiếng ngâm trong đền Trương tướng quân', 'By tradition, soldiers heard it chanted in the shrine of General Trương'),
         l('Vua Lý Nhân Tông ban xuống từ Thăng Long', 'King Lý Nhân Tông sent it down from Thăng Long'),
       ],
       answer: 1,

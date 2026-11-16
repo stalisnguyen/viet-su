@@ -42,15 +42,15 @@ const chapter: Chapter = {
         `The record for this period was written mostly on the Tang side: the Old and New Tang Histories, the Zizhi tongjian, and the account of Fan Chuo, who was inside the protectorate seat when Nanzhao besieged it in 863. Vietnamese chronicles such as the Đại Việt sử ký toàn thư and the Khâm định Việt sử thông giám cương mục were compiled centuries later and largely copy the Chinese histories, adding commentary. The stories of Phùng Hưng and Gao Pian also pass through 14th-century collections of spirit tales, the Việt điện u linh and Lĩnh Nam chích quái.`,
       ),
       l(
-        `Các mốc đầu và cuối đều có chỗ lệch. Về năm lập An Nam đô hộ phủ, Vi An Lu (2025) cho biết một số nguồn Việt ghi năm 650 nhưng bà coi năm 679 của Cựu Đường thư là đáng tin nhất. Về điểm kết thúc, có tài liệu lấy năm 866 khi đô hộ phủ đổi thành Tĩnh Hải quân, có tài liệu lấy năm 880 khi Tăng Cổn bỏ chạy, sử Việt quen lấy năm 905 hoặc 906 gắn với Khúc Thừa Dụ, còn về danh nghĩa nhà Đường mất năm 907. Trang này dùng mốc 905.`,
-        `Both ends of the period are dated differently. On the founding of the protectorate, Vi An Lu (2025) notes that some Vietnamese sources give 650 but judges the Old Tang History's 679 the most reliable. For the end, some works take 866, when the protectorate became the Jinghai command, others 880, when Zeng Gun fled; Vietnamese histories usually take 905 or 906 with Khúc Thừa Dụ, while formally the Tang itself fell in 907. This site uses 905.`,
+        `Các mốc đầu và cuối đều có chỗ lệch. Về năm lập An Nam đô hộ phủ, Toàn thư chép vào năm 622; Vi An Lu (2025) cho biết một số nguồn Việt khác ghi năm 650, còn bà coi năm 679 của Cựu Đường thư, cũng là năm Cương mục chép, là đáng tin nhất. Về điểm kết thúc, có tài liệu lấy năm 866 khi đô hộ phủ đổi thành Tĩnh Hải quân, có tài liệu lấy năm 880 khi Tăng Cổn bỏ chạy, sử Việt quen lấy năm 905 hoặc 906 gắn với Khúc Thừa Dụ, còn về danh nghĩa nhà Đường mất năm 907. Trang này dùng mốc 905.`,
+        `Both ends of the period are dated differently. On the founding of the protectorate, the Toàn thư gives 622; Vi An Lu (2025) notes that some other Vietnamese sources give 650, and judges 679, the year in the Old Tang History and also in the Cương mục, the most reliable. For the end, some works take 866, when the protectorate became the Jinghai command, others 880, when Zeng Gun fled; Vietnamese histories usually take 905 or 906 with Khúc Thừa Dụ, while formally the Tang itself fell in 907. This site uses 905.`,
       ),
       l(
         `Tên gọi "Bắc thuộc lần thứ ba" là cách phân kỳ của sử học Việt Nam, nhìn từ phía người bị cai trị. Sử nhà Đường thì coi An Nam là một phủ biên viễn của mình. Mức độ Hán hóa cũng được đánh giá khác nhau. Một viên quan nhà Đường năm 845 nhận xét rằng An Nam sinh ra không quá tám người làm quan ở triều và không quá mười người đỗ cao. Keith Taylor lại cho rằng cuộc chiến với Nam Chiếu đã gắn giới tinh hoa châu thổ chặt hơn với văn minh Trung Hoa, và nhiều người Việt coi Cao Biền là người giải thoát họ khỏi nạn cướp phá.`,
         `"Third northern domination" is a periodisation of Vietnamese historiography, seen from the side of the governed. The Tang histories treat Annan as a frontier prefecture of their own. The depth of sinicisation is also judged differently. A Tang official remarked in 845 that Annan had produced no more than eight court officials and no more than ten senior graduates. Keith Taylor, on the other hand, holds that the Nanzhao war tied the delta elite more firmly to Chinese civilisation, and that many Vietnamese saw Gao Pian as their deliverer from plunder.`,
       ),
     ],
-    sources: ['bt3-cuongmuc-4', 'bt3-cuongmuc-5', 'bt3-lu-2025', 'bt3-wiki-third', 'bt3-nd-18hd'],
+    sources: ['bt3-toanthu-tuyduong', 'bt3-cuongmuc-4', 'bt3-cuongmuc-5', 'bt3-lu-2025', 'bt3-wiki-third', 'bt3-nd-18hd'],
   },
   entries: [
     {
@@ -238,8 +238,8 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `Theo Đại Việt sử ký toàn thư, như báo chí dẫn lại, ông người xã Cổ Hiển, nay là xã Định Thành, huyện Yên Định. Các truyện trong Cựu Đường thư và Tân Đường thư chép ông đỗ khoa thi, làm hiệu thư lang, rồi đỗ tiếp một khoa chế sách và được bổ tả thập di, hàn lâm học sĩ. Sau đó ông xin một chức lo hộ tịch ở vùng kinh đô vì lương cao hơn, đủ nuôi gia đình.`,
-          `According to the Đại Việt sử ký toàn thư, as cited in the press, he came from Cổ Hiển, now Định Thành commune in Yên Định district. His biographies in the Old and New Tang Histories say he passed the examinations, served as an editor in the Palace Library, then passed a special policy examination and became an adviser and Hanlin scholar. He later asked for a household-registry post in the capital region because it paid better and could support his family.`,
+          `Toàn thư chép ông là người Cửu Chân. Tên xã Cổ Hiển, nay là xã Định Thành, huyện Yên Định, đến từ tài liệu đời sau và truyền thống địa phương được báo chí dẫn lại. Các truyện trong Cựu Đường thư và Tân Đường thư chép ông đỗ khoa thi, làm hiệu thư lang, rồi đỗ tiếp một khoa chế sách và được bổ tả thập di, hàn lâm học sĩ. Sau đó ông xin một chức lo hộ tịch ở vùng kinh đô vì lương cao hơn, đủ nuôi gia đình.`,
+          `The Toàn thư says only that he came from Cửu Chân. The village name Cổ Hiển, now Định Thành commune in Yên Định district, comes from later writings and local tradition cited in the press. His biographies in the Old and New Tang Histories say he passed the examinations, served as an editor in the Palace Library, then passed a special policy examination and became an adviser and Hanlin scholar. He later asked for a household-registry post in the capital region because it paid better and could support his family.`,
         ),
         l(
           `Năm 783, quân Kinh Nguyên nổi loạn, vua Đức Tông chạy khỏi Trường An. Khương Công Phụ khuyên vua đừng để tướng Chu Thử ở lại kinh đô, hoặc giết đi hoặc đem theo. Vua không nghe, Chu Thử xưng đế và vây vua ở Phụng Thiên. Giữa lúc ấy ông được phong đồng trung thư môn hạ bình chương sự, tức hàm tể tướng.`,
@@ -260,7 +260,7 @@ const chapter: Chapter = {
           `His case is an exception. According to Vi An Lu, the key posts in Annan, above all that of protector general, were filled by men sent from the north, and among the 77 officials she lists a locally born head appears only at the very end, with Khúc Thừa Dụ. A man of Annan who wanted high office had to leave home, sit the examinations and live in Chang'an. The birth year 731 appears only in Vietnamese works; the Tang biographies do not give it. The map point is placed in Định Thành commune and is accurate only to commune level.`,
         ),
       ],
-      sources: ['bt3-wiki-jiang', 'bt3-vtc-khuong', 'bt3-lu-2025'],
+      sources: ['bt3-toanthu-tuyduong', 'bt3-wiki-jiang', 'bt3-vtc-khuong', 'bt3-lu-2025'],
     },
     {
       slug: 'nam-chieu-danh-an-nam',
@@ -389,6 +389,7 @@ const chapter: Chapter = {
     },
   ],
   sources: [
+    { id: 'bt3-toanthu-tuyduong', cite: 'Đại Việt sử ký toàn thư, Ngoại kỷ quyển 5, "Đời thuộc Tùy và Đường" (bản dịch trên Wikisource tiếng Việt).', url: 'https://vi.wikisource.org/wiki/%C4%90%E1%BA%A1i_Vi%E1%BB%87t_s%E1%BB%AD_k%C3%BD_to%C3%A0n_th%C6%B0/T%E1%BA%ADp_II/Cu%E1%BB%91n_th%E1%BB%A9_n%C4%83m/%C4%90%E1%BB%9Di_thu%E1%BB%99c_T%C3%B9y_v%C3%A0_%C4%90%C6%B0%E1%BB%9Dng', kind: 'primary' },
     {
       id: 'bt3-cuongmuc-4',
       kind: 'primary',

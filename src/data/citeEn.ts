@@ -985,4 +985,5 @@ export const CITE_EN: Record<string, string> = {
   "ts-znews-ngochoi": "Znews, \"The battle of Ngọc Hồi - Đống Đa 230 years ago in Vietnamese and Chinese records\" (quoting the Đại Nam liệt truyện and the Draft History of Qing).",
   "ts-bpl-votanh": "Pháp luật Việt Nam, \"The loyal general who burned himself to spare the people and soldiers\" (citing the Veritable Records of Đại Nam).",
   "ng-vov-gialong-hoangsa": "VOV, \"Hoàng Sa under the rule of Emperor Gia Long\".",
+  "bt3-toanthu-tuyduong": "Đại Việt sử ký toàn thư (Complete Annals of Đại Việt), Outer Annals book 5, \"The Sui and Tang period\" (Vietnamese translation on Wikisource).",
 };
