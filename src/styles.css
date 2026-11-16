@@ -442,3 +442,11 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
 .life-track em { position: absolute; top: 19px; font-style: normal; font-size: 0.66rem; opacity: 0.65; white-space: nowrap; }
 @keyframes lifeGrow { from { transform: scaleX(0); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .life-bar, .otd button { animation: none; } }
+
+/* Liên kết ra ngoài: văn bản gốc và bản quét 3D */
+.outl { display: grid; gap: 10px; margin: 14px 0 4px; }
+.outt { margin: 0 0 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted, #b9a9a4); }
+.outr { display: flex; flex-wrap: wrap; gap: 8px; }
+.outa { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--c) 55%, transparent); background: color-mix(in srgb, var(--c) 12%, transparent); color: inherit; text-decoration: none; font-size: 14px; line-height: 1.2; }
+.outa:hover, .outa:focus-visible { background: color-mix(in srgb, var(--c) 26%, transparent); }
+.outg.text .outa { font-style: italic; }

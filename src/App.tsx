@@ -3,6 +3,7 @@ import { BATTLES } from './data/battles';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Stage, { ZONES } from './components/Stage';
 import Model3D from './components/Model3D';
+import { outLinks } from './data/links';
 import { Lifelines, OnThisDay } from './components/Timelines';
 import { entries, entryBySlug } from './data/entries';
 import { periodBySlug, periods, upcoming } from './data/periods';
@@ -381,6 +382,7 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
         {/* Mỗi thẻ một hình chính: có mô hình 3D thì ảnh thật nằm trong phần chi tiết, không thì ảnh thật là hình chính */}
         {!e.model && <RealPhoto slug={e.slug} lang={lang} />}
         {e.model && <Model3D kind={e.model} lang={lang} />}
+        <OutLinks slug={e.slug} lang={lang} />
         {open && (
           <>
             {e.model && <RealPhoto slug={e.slug} lang={lang} />}
@@ -394,6 +396,26 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
         </div>
       </div>
     </section>
+  );
+}
+
+function OutLinks({ slug, lang }: { slug: string; lang: Lang }) {
+  const ls = outLinks[slug];
+  if (!ls) return null;
+  const groups: ['text' | '3d', string][] = [['text', lang === 'vi' ? 'Văn bản gốc - Wikisource' : 'Original text - Wikisource'], ['3d', lang === 'vi' ? 'Bản quét 3D - Bảo tàng Lịch sử quốc gia' : '3D scan - National Museum of History']];
+  return (
+    <div className="outl">
+      {groups.map(([k, t]) => {
+        const g = ls.filter(x => x.kind === k);
+        if (!g.length) return null;
+        return (
+          <div key={k} className={'outg ' + k}>
+            <p className="outt">{t}</p>
+            <div className="outr">{g.map(x => <a key={x.url} href={x.url} target="_blank" rel="noopener noreferrer" className="outa">{x.label[lang]}<svg aria-hidden="true" viewBox="0 0 12 12" width="11" height="11"><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" strokeWidth="1.6" /></svg></a>)}</div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
