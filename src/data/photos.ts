@@ -196,3 +196,25 @@ Object.assign(photos, {
   'cai-gia-con-nguoi-cua-chien-tranh': { file: 'Thành cổ Quảng Trị 4.jpg', by: 'Bùi Thụy Đào Nguyên', license: 'CC BY-SA 3.0',
     caption: l('Thành cổ Quảng Trị, nơi diễn ra trận đánh năm 1972.', 'The Quảng Trị citadel, scene of the 1972 battle.') },
 });
+
+// Ảnh thật cho ba chuyên đề nhân vật, văn hóa, phụ nữ (đã xem trên Wikimedia Commons)
+Object.assign(photos, {
+  'mua-roi-nuoc-thuy-dinh-chua-thay': { file: 'Chùa Thầy (9414542634).jpg', by: 'BemPhoto', license: 'CC BY 2.0',
+    caption: l('Chùa Thầy, Sài Sơn, Hà Nội, nơi có thủy đình biểu diễn múa rối nước.', 'Thầy pagoda, Sài Sơn, Hanoi, home of a water-puppet pavilion.') },
+  'ca-tru-lang-lo-khe': { file: 'Ca trù.jpg', by: 'Kien1980v', license: 'phạm vi công cộng',
+    caption: l('Một buổi biểu diễn ca trù.', 'A ca trù performance.') },
+  'nha-nhac-va-duyet-thi-duong': { file: 'Duyệt Thị Đường (hoàng thành Huế).jpg', by: 'Francisco Anzola', license: 'CC BY 2.0',
+    caption: l('Duyệt Thị Đường, nhà hát cung đình trong Hoàng thành Huế.', 'Duyệt Thị Đường, the royal theatre in the Huế citadel.') },
+  'tranh-dan-gian-dong-ho': { file: 'Tranh Đông Hồ vẽ Phù Đổng Thiên Vương.jpg', by: 'nghệ nhân làng Đông Hồ', license: 'phạm vi công cộng',
+    caption: l('Tranh Đông Hồ vẽ Phù Đổng Thiên Vương.', 'A Đông Hồ print of the hero Phù Đổng.') },
+  'quan-ho-bac-ninh-lang-diem': { file: 'Quan Ho-Ensemble.JPG', by: 'Chrisvomberg', license: 'CC BY-SA 3.0',
+    caption: l('Liền anh, liền chị hát quan họ Bắc Ninh.', 'Quan họ singers of Bắc Ninh.') },
+  'ao-dai-tu-1744-den-le-mur': { file: 'Ao dai le hoi.JPG', by: 'thành viên nuocnga.net', license: 'CC0',
+    caption: l('Áo dài trong một dịp lễ hội.', 'Áo dài at a festival.') },
+  'nguyen-dinh-chieu': { file: 'Tượng Nguyễn Đình Chiểu.jpg', by: 'Bùi Thụy Đào Nguyên', license: 'CC BY-SA 3.0',
+    caption: l('Tượng Nguyễn Đình Chiểu trong khu lăng mộ ở Ba Tri.', 'Statue of Nguyễn Đình Chiểu at his memorial in Ba Tri.') },
+  'nguyen-trung-truc': { file: 'Đền thờ Nguyễn Trung Trực (Rạch Giá).jpg', by: 'Bùi Thụy Đào Nguyên', license: 'CC BY-SA 3.0',
+    caption: l('Đình thờ Nguyễn Trung Trực ở Rạch Giá.', 'The Nguyễn Trung Trực temple in Rạch Giá.') },
+  'vo-nguyen-giap': { file: 'Tomb of Vo Nguyen Giap.jpg', by: 'Genghiskhan', license: 'CC BY-SA 3.0',
+    caption: l('Mộ Đại tướng Võ Nguyên Giáp ở Vũng Chùa - Đảo Yến.', 'General Võ Nguyên Giáp\'s grave at Vũng Chùa - Đảo Yến.') },
+});
