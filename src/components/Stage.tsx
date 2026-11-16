@@ -373,52 +373,101 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
     scene.add(arc);
     let arcT = 9, lastFocus: string | null = null;
 
-    // Diễn biến trận đánh: mỗi bước có các đạo quân (thuyền, lá cờ, máy bay) chạy dọc đường hành quân,
-    // để lại vệt đường đi; chỗ giao chiến lóe sáng; bãi cọc nhô lên khi triều rút.
+    // Diễn biến trận đánh, vẽ kiểu bản đồ chiến dịch trong game chiến thuật: mỗi đạo quân là một tốp lính (hoặc đoàn thuyền,
+    // máy bay) đi theo một mũi tên lớn nằm trên mặt đất; trên đầu tốp có biểu tượng hành động: tấn công, mai phục, vây thành,
+    // giữ phòng tuyến, rút chạy, bị đánh tan.
     const UNIT_GAP = 1.3, UNIT_DUR = 3.0; // các đạo quân trong một bước lần lượt xuất phát, mỗi đạo đi trong 3 giây
-    const tubeMat = (c: string, air = false) => new THREE.ShaderMaterial({
-      uniforms: { uP: { value: 0 }, uT: { value: 0 }, uO: { value: 1 }, uC: { value: new THREE.Color(c) }, uAir: { value: air ? 1 : 0 } },
-      transparent: true, depthWrite: false,
+    const arrowMat = (c: string, air = false) => new THREE.ShaderMaterial({
+      uniforms: { uP: { value: 0 }, uT: { value: 0 }, uO: { value: 1 }, uC: { value: new THREE.Color(c) }, uAir: { value: air ? 1 : 0 }, uLen: { value: 1 } },
+      transparent: true, depthWrite: false, side: THREE.DoubleSide,
       vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
-      fragmentShader: `uniform vec3 uC; uniform float uP; uniform float uT; uniform float uO; uniform float uAir; varying vec2 vUv;
-        void main(){ if (vUv.x > uP) discard;
-          float dash = uAir > 0.5 ? step(0.5, fract(vUv.x * 18.0 - uT * 0.8)) : 1.0;
-          float flow = 0.55 + 0.45 * smoothstep(0.0, 0.08, fract(vUv.x * 4.0 - uT * 0.5)) * (1.0 - fract(vUv.x * 4.0 - uT * 0.5));
-          gl_FragColor = vec4(min(vec3(1.0), uC * (0.75 + 0.35 * flow)), dash * uO); }`,
+      fragmentShader: `uniform vec3 uC; uniform float uP; uniform float uT; uniform float uO; uniform float uAir; uniform float uLen; varying vec2 vUv;
+        void main(){
+          if (vUv.x > uP) discard;
+          float a = abs(vUv.y - 0.5) * 2.0;
+          float edge = smoothstep(0.62, 0.95, a);
+          // các vạch hình chữ V chạy theo hướng tiến quân
+          float v = fract(vUv.x * uLen * 2.2 - a * 0.35 - uT * 0.9);
+          float chev = smoothstep(0.0, 0.12, v) * (1.0 - smoothstep(0.3, 0.42, v));
+          float dash = uAir > 0.5 ? step(0.45, fract(vUv.x * uLen * 3.0 - uT * 0.8)) : 1.0;
+          float tail = smoothstep(0.0, 0.08, vUv.x);
+          float alpha = (0.28 + 0.5 * chev + 0.55 * edge) * dash * tail * uO * (1.0 - smoothstep(0.96, 1.0, a));
+          gl_FragColor = vec4(mix(uC, vec3(1.0), 0.25 * chev), alpha); }`,
     });
-    // Quân cờ: biểu tượng luôn quay về phía máy quay (thuyền buồm cho thủy quân, lá cờ cho bộ binh, máy bay),
-    // có viền tối và quầng sáng để nổi trên mọi màu nền
-    const iconCache = new Map<string, THREE.Texture>();
-    const icon = (kind: string, col: string) => {
-      const key = kind + col;
-      if (iconCache.has(key)) return iconCache.get(key)!;
-      const c = document.createElement('canvas'); c.width = c.height = 128;
-      const x = c.getContext('2d')!;
-      const g = x.createRadialGradient(64, 70, 4, 64, 70, 60); g.addColorStop(0, col + 'aa'); g.addColorStop(1, col + '00');
-      x.fillStyle = g; x.beginPath(); x.arc(64, 70, 60, 0, Math.PI * 2); x.fill();
-      x.lineJoin = 'round'; x.lineWidth = 7; x.strokeStyle = '#140d08'; x.fillStyle = col;
-      const draw = (f: () => void) => { x.beginPath(); f(); x.stroke(); x.fill(); };
-      if (kind === 'fleet') {
-        draw(() => { x.moveTo(22, 82); x.lineTo(106, 82); x.lineTo(94, 100); x.lineTo(34, 100); x.closePath(); });
-        draw(() => { x.moveTo(62, 24); x.lineTo(62, 78); x.lineTo(30, 78); x.closePath(); });
-        draw(() => { x.moveTo(68, 34); x.lineTo(68, 78); x.lineTo(94, 78); x.closePath(); });
-      } else if (kind === 'air') {
-        draw(() => { x.moveTo(64, 18); x.lineTo(72, 50); x.lineTo(112, 66); x.lineTo(112, 74); x.lineTo(72, 66); x.lineTo(70, 96); x.lineTo(84, 106); x.lineTo(84, 112); x.lineTo(44, 112); x.lineTo(44, 106); x.lineTo(58, 96); x.lineTo(56, 66); x.lineTo(16, 74); x.lineTo(16, 66); x.lineTo(56, 50); x.closePath(); });
-      } else {
-        x.fillStyle = '#140d08'; x.fillRect(36, 18, 9, 92);
-        x.fillStyle = col; draw(() => { x.moveTo(45, 22); x.lineTo(104, 30); x.lineTo(90, 46); x.lineTo(104, 62); x.lineTo(45, 62); x.closePath(); });
-        x.fillStyle = col; draw(() => { x.ellipse(40, 108, 22, 8, 0, 0, Math.PI * 2); });
+    // Dải mũi tên phẳng bám theo đường đi
+    const ribbon = (curve: THREE.CatmullRomCurve3, w: number) => {
+      const N = 80, pos: number[] = [], uv: number[] = [], idx: number[] = [];
+      for (let i = 0; i <= N; i++) {
+        const u = i / N, p = curve.getPointAt(u), tg = curve.getTangentAt(u);
+        const side = new THREE.Vector3(-tg.z, 0, tg.x).normalize().multiplyScalar(w * (1 - 0.35 * Math.pow(u, 3)));
+        pos.push(p.x + side.x, p.y + 0.01, p.z + side.z, p.x - side.x, p.y + 0.01, p.z - side.z);
+        uv.push(u, 0, u, 1);
+        if (i < N) { const k = i * 2; idx.push(k, k + 1, k + 2, k + 1, k + 3, k + 2); }
       }
-      const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; iconCache.set(key, t); return t;
-    };
-    const token = (kind: string, col: string) => {
-      const g = new THREE.Group();
-      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: icon(kind, col), transparent: true, depthWrite: false, depthTest: false }));
-      sp.center.set(0.5, 0.15); sp.scale.setScalar(0.24); sp.renderOrder = 9; g.add(sp);
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx);
       return g;
     };
-    const flashTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d')!; const gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, 'rgba(255,255,240,1)'); gr.addColorStop(0.3, 'rgba(255,190,90,0.8)'); gr.addColorStop(1, 'rgba(255,90,40,0)'); x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); })();
-    interface BUnit { tube: THREE.Mesh; tok: THREE.Group; curve: THREE.CatmullRomCurve3; lose: boolean; tag: THREE.Sprite; ring: THREE.Mesh; head: THREE.Mesh; delay: number }
+    // Biểu tượng vẽ bằng canvas: lính, thuyền, máy bay và các huy hiệu hành động
+    const iconCache = new Map<string, THREE.Texture>();
+    const paint = (key: string, f: (x: CanvasRenderingContext2D) => void) => {
+      if (iconCache.has(key)) return iconCache.get(key)!;
+      const c = document.createElement('canvas'); c.width = c.height = 128;
+      const x = c.getContext('2d')!; x.lineJoin = 'round'; x.lineCap = 'round'; f(x);
+      const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; iconCache.set(key, t); return t;
+    };
+    const unitIcon = (kind: string, col: string) => paint(kind + col, (x) => {
+      const ink = '#120b07';
+      x.strokeStyle = ink; x.fillStyle = col; x.lineWidth = 8;
+      const shape = (f: () => void) => { x.beginPath(); f(); x.stroke(); x.fill(); };
+      if (kind === 'fleet') {
+        shape(() => { x.moveTo(14, 84); x.lineTo(114, 84); x.lineTo(98, 106); x.lineTo(30, 106); x.closePath(); });
+        shape(() => { x.moveTo(60, 18); x.lineTo(60, 78); x.lineTo(24, 78); x.closePath(); });
+        shape(() => { x.moveTo(68, 30); x.lineTo(68, 78); x.lineTo(98, 78); x.closePath(); });
+      } else if (kind === 'air') {
+        shape(() => { x.moveTo(64, 14); x.lineTo(73, 50); x.lineTo(114, 66); x.lineTo(114, 76); x.lineTo(72, 68); x.lineTo(70, 98); x.lineTo(86, 108); x.lineTo(86, 114); x.lineTo(42, 114); x.lineTo(42, 108); x.lineTo(58, 98); x.lineTo(56, 68); x.lineTo(14, 76); x.lineTo(14, 66); x.lineTo(55, 50); x.closePath(); });
+      } else {
+        // người lính cầm giáo và khiên
+        x.lineWidth = 9; x.strokeStyle = ink; x.beginPath(); x.moveTo(84, 118); x.lineTo(96, 6); x.stroke();
+        x.lineWidth = 4; x.strokeStyle = '#d8c7a4'; x.beginPath(); x.moveTo(84, 118); x.lineTo(96, 6); x.stroke();
+        x.lineWidth = 7; x.strokeStyle = ink;
+        shape(() => { x.moveTo(96, 2); x.lineTo(104, 22); x.lineTo(90, 20); x.closePath(); });
+        shape(() => { x.arc(60, 30, 15, 0, Math.PI * 2); });
+        shape(() => { x.moveTo(42, 50); x.lineTo(78, 50); x.lineTo(84, 98); x.lineTo(36, 98); x.closePath(); });
+        shape(() => { x.moveTo(42, 98); x.lineTo(40, 122); x.lineTo(54, 122); x.lineTo(58, 98); x.moveTo(64, 98); x.lineTo(68, 122); x.lineTo(80, 122); x.lineTo(78, 98); });
+        shape(() => { x.ellipse(36, 74, 20, 27, 0, 0, Math.PI * 2); });
+      }
+    });
+    type Act = 'attack' | 'ambush' | 'siege' | 'hold' | 'retreat' | 'beaten';
+    const badgeIcon = (act: Act, col: string) => paint('b' + act + col, (x) => {
+      x.fillStyle = 'rgba(14,9,6,0.92)'; x.beginPath(); x.arc(64, 64, 56, 0, Math.PI * 2); x.fill();
+      x.lineWidth = 8; x.strokeStyle = act === 'beaten' ? '#9a8f84' : col; x.stroke();
+      x.strokeStyle = '#fff4dc'; x.fillStyle = '#fff4dc'; x.lineWidth = 9;
+      const ln = (a: number, b: number, c: number, d: number) => { x.beginPath(); x.moveTo(a, b); x.lineTo(c, d); x.stroke(); };
+      if (act === 'attack') { ln(36, 36, 90, 90); ln(92, 36, 38, 90); x.lineWidth = 7; ln(30, 78, 48, 96); ln(80, 96, 98, 78); }
+      else if (act === 'ambush') { x.beginPath(); x.moveTo(24, 64); x.quadraticCurveTo(64, 26, 104, 64); x.quadraticCurveTo(64, 102, 24, 64); x.stroke(); x.beginPath(); x.arc(64, 64, 12, 0, Math.PI * 2); x.fill(); }
+      else if (act === 'siege') { x.fillRect(40, 50, 48, 46); x.fillRect(36, 34, 12, 18); x.fillRect(58, 34, 12, 18); x.fillRect(80, 34, 12, 18); x.fillStyle = 'rgba(14,9,6,1)'; x.fillRect(56, 70, 16, 26); }
+      else if (act === 'hold') { x.beginPath(); x.moveTo(64, 28); x.lineTo(94, 40); x.quadraticCurveTo(92, 82, 64, 100); x.quadraticCurveTo(36, 82, 34, 40); x.closePath(); x.stroke(); }
+      else if (act === 'retreat') { x.beginPath(); x.arc(64, 70, 24, Math.PI * 1.05, Math.PI * 0.05, false); x.stroke(); x.beginPath(); x.moveTo(26, 46); x.lineTo(40, 76); x.lineTo(56, 52); x.closePath(); x.fill(); x.lineWidth = 6; ln(80, 30, 102, 30); ln(84, 40, 106, 40); }
+      else { x.strokeStyle = '#d8cfc4'; ln(34, 94, 58, 70); ln(70, 58, 94, 34); x.lineWidth = 6; ln(44, 60, 68, 84); ln(52, 30, 50, 44); ln(84, 82, 98, 86); }
+    });
+    // Tốp quân: vài biểu tượng xếp thành đội hình quanh một điểm
+    const FORM: Record<string, [number, number][]> = {
+      army: [[0, 0], [-1, 0.2], [1, -0.2], [-0.5, -0.9], [0.5, -1.1], [-0.5, 0.95], [0.5, 0.8]],
+      fleet: [[0, 0], [-1.1, 0.5], [1.0, -0.4], [-0.2, 1.1]],
+      air: [[0, 0], [-0.9, 0.7], [0.9, 0.7]],
+    };
+    const squad = (kind: string, col: string) => {
+      const g = new THREE.Group();
+      const tex = unitIcon(kind, col);
+      FORM[kind].forEach(([dx, dz]) => {
+        const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
+        sp.center.set(0.5, 0.1); sp.userData.off = new THREE.Vector2(dx, dz); sp.renderOrder = 9; g.add(sp);
+      });
+      return g;
+    };
+    const flashTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d')!; const gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, 'rgba(255,235,200,0.9)'); gr.addColorStop(0.35, 'rgba(200,140,80,0.55)'); gr.addColorStop(1, 'rgba(120,80,50,0)'); x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); })();
+    interface BUnit { arrow: THREE.Mesh; head: THREE.Mesh; sq: THREE.Group; badge: THREE.Sprite; tag: THREE.Sprite; ring: THREE.Mesh; curve: THREE.CatmullRomCurve3; lose: boolean; act?: Act; delay: number; side: string }
     interface BStep { units: BUnit[]; flashes: THREE.Sprite[]; box: { cx: number; cz: number; r: number }; tide?: string }
     let battleG: THREE.Group | null = null, bSteps: BStep[] = [], bStakes: THREE.Group | null = null, bStakeFrom = 99, bMarks: THREE.Sprite[] = [];
     let battleBox: { cx: number; cz: number; r: number; k: number } | null = null, bCur = -1, bT = 0, bSize = 1;
@@ -426,7 +475,8 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
     const clearBattle = () => {
       if (!battleG) return;
       scene.remove(battleG);
-      battleG.traverse((o) => { const m = o as THREE.Mesh; m.geometry?.dispose?.(); const mt = m.material as THREE.Material & { map?: THREE.Texture }; if (mt?.map && mt.map !== flashTex && ![...iconCache.values()].includes(mt.map)) mt.map.dispose(); mt?.dispose?.(); });
+      const keep = new Set<THREE.Texture>([flashTex, ...iconCache.values()]);
+      battleG.traverse((o) => { const m = o as THREE.Mesh; m.geometry?.dispose?.(); const mt = m.material as THREE.Material & { map?: THREE.Texture }; if (mt?.map && !keep.has(mt.map)) mt.map.dispose(); mt?.dispose?.(); });
       battleG = null; bSteps = []; bStakes = null; bMarks = []; battleBox = null; bCur = -1;
     };
     const boxOf = (pts: [number, number][]) => {
@@ -439,38 +489,46 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
       const b = slug ? BATTLES[slug] : null;
       if (!b) return;
       battleG = new THREE.Group();
-      // Cỡ quân cờ và nét vẽ theo quy mô cả trận để nhìn rõ ở mọi mức thu phóng
       const all = boxOf(b.steps.flatMap((st) => st.units.flatMap((u) => u.path)));
       bSize = Math.max(0.35, all.r / 1.4);
       bSteps = b.steps.map((st) => {
         const pts: [number, number][] = [];
-        const units = st.units.map((u) => {
+        const units = st.units.map((u, k) => {
           pts.push(...u.path);
           const air = u.kind === 'air';
-          const vs = u.path.map(([lon, lat]) => onGround(lon, lat, air ? 0.5 : 0.06));
+          const vs = u.path.map(([lon, lat]) => onGround(lon, lat, air ? 0.45 : 0.035));
           if (air) { vs[0].y -= 0.3; vs[vs.length - 1].y -= 0.35; }
           const curve = new THREE.CatmullRomCurve3(vs, false, 'centripetal');
           const col = u.side === 'vn' ? '#ffcf5a' : '#5cc8ff';
-          const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(24, vs.length * 24), 0.013 * bSize, 6, false), tubeMat(col, air));
-          tube.renderOrder = 5; tube.visible = false; battleG!.add(tube);
-          const tok = token(u.kind, col); tok.visible = false; battleG!.add(tok);
-          // Nhãn tên đạo quân đi theo quân cờ, vòng tròn ở điểm xuất phát, mũi tên ở điểm đến
+          const w = 0.045 * Math.max(0.5, bSize);
+          const arrow = new THREE.Mesh(ribbon(curve, w), arrowMat(col, air));
+          (arrow.material as THREE.ShaderMaterial).uniforms.uLen.value = curve.getLength() / w / 6;
+          arrow.renderOrder = 5; arrow.visible = false; battleG!.add(arrow);
+          // đầu mũi tên phẳng ở điểm đến
+          const e0 = curve.getPointAt(1), te = curve.getTangentAt(1); te.y = 0; te.normalize();
+          const sd = new THREE.Vector3(-te.z, 0, te.x), y0 = e0.y + 0.012;
+          const tip = e0.clone().addScaledVector(te, w * 2.2), bl = e0.clone().addScaledVector(te, -w * 0.3).addScaledVector(sd, w * 1.7), br = e0.clone().addScaledVector(te, -w * 0.3).addScaledVector(sd, -w * 1.7);
+          const hg = new THREE.BufferGeometry().setFromPoints([tip, bl, br].map((v) => v.setY(y0)));
+          const head = new THREE.Mesh(hg, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.9, depthWrite: false, side: THREE.DoubleSide }));
+          head.visible = false; head.renderOrder = 5; battleG!.add(head);
+          const sq = squad(u.kind, col); sq.visible = false; battleG!.add(sq);
+          const badge = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false, depthTest: false })); badge.center.set(0.5, -0.9); badge.visible = false; badge.renderOrder = 11; battleG!.add(badge);
           const tag = label(u.name[lang], u.side === 'vn' ? '#ffe39a' : '#bfe9ff', 26, 700, 1);
-          tag.center.set(0.5, u.side === 'vn' ? -0.6 : 1.5); tag.renderOrder = 10; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
+          tag.center.set(0.5, u.side === 'vn' ? -2.2 : 1.6); tag.renderOrder = 10; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
           const ring = new THREE.Mesh(new THREE.RingGeometry(0.6, 1, 32), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.9, side: THREE.DoubleSide, depthWrite: false }));
           ring.rotation.x = -Math.PI / 2; ring.position.copy(vs[0]).setY(vs[0].y + 0.01); ring.visible = false; ring.renderOrder = 6; battleG!.add(ring);
-          const head = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1.3, 12), new THREE.MeshBasicMaterial({ color: col, transparent: true, depthWrite: false }));
-          const e0 = curve.getPointAt(1), te = curve.getTangentAt(1);
-          head.position.copy(e0); head.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), te.clone().normalize()); head.visible = false; head.renderOrder = 6; battleG!.add(head);
-          return { tube, tok, curve, lose: u.fate === 'lose', tag, ring, head, delay: 0 };
+          const act: Act | undefined = u.act;
+          return { arrow, head, sq, badge, tag, ring, curve, lose: u.fate === 'lose', act, delay: k * UNIT_GAP, side: u.side };
         });
         const flashes = (st.clash || []).map((c) => {
           pts.push(c);
-          const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: flashTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0 }));
-          sp.position.copy(onGround(c[0], c[1], 0.15)); sp.visible = false; sp.renderOrder = 8; battleG!.add(sp);
+          const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: flashTex, transparent: true, depthWrite: false, opacity: 0 }));
+          sp.position.copy(onGround(c[0], c[1], 0.05)); sp.visible = false; sp.renderOrder = 8; battleG!.add(sp);
+          const sw = new THREE.Sprite(new THREE.SpriteMaterial({ map: badgeIcon('attack', '#ff9f5a'), transparent: true, depthWrite: false, depthTest: false, opacity: 0 }));
+          sw.position.copy(onGround(c[0], c[1], 0.05)); sw.center.set(0.5, -0.4); sw.visible = false; sw.renderOrder = 12; sw.userData.swords = true; battleG!.add(sw);
+          sp.userData.sw = sw;
           return sp;
         });
-        units.forEach((u, k) => { u.delay = k * UNIT_GAP; });
         return { units, flashes, box: boxOf(pts), tide: st.tide };
       });
       // Bãi cọc: các cọc nghiêng, ẩn dưới nước lúc triều lên, nhô lên khi triều rút
@@ -703,43 +761,65 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
         const want = Math.min(bSteps.length - 1, Math.max(0, live.current.bstep));
         if (want !== bCur) { bCur = want; bT = 0; frameStep(bCur); battleKey = bCur; }
         bT += reduce ? 30 : dt;
-        // Khung bản đồ nhỏ trên điện thoại thì phóng to nhãn và quân cờ để còn đọc được
+        // Khung bản đồ nhỏ trên điện thoại thì phóng to nhãn và quân để còn đọc được
         const kz = (battleBox ? battleBox.k : 1) * (live.current.split ? 1.8 : 1);
         bSteps.forEach((st, i) => {
           const total = (st.units.length - 1) * UNIT_GAP + UNIT_DUR;
+          const cur = i === bCur;
           st.units.forEach((u) => {
-            const um = u.tube.material as THREE.ShaderMaterial;
-            um.uniforms.uT.value = t;
+            const am = u.arrow.material as THREE.ShaderMaterial;
+            am.uniforms.uT.value = t;
             // Tiến độ riêng của đạo quân: chờ tới lượt mình rồi mới đi
-            const own = i < bCur ? 1 : i === bCur ? Math.min(1, Math.max(0, (bT - u.delay) / UNIT_DUR)) : 0;
+            const own = i < bCur ? 1 : cur ? Math.min(1, Math.max(0, (bT - u.delay) / UNIT_DUR)) : 0;
             const ease = 1 - Math.pow(1 - own, 2);
-            u.tube.visible = i <= bCur && own > 0;
-            um.uniforms.uP.value = ease;
-            um.uniforms.uO.value = i < bCur ? 0.3 : 1;
-            const cur = i === bCur;
+            u.arrow.visible = i <= bCur && own > 0;
+            am.uniforms.uP.value = ease;
+            am.uniforms.uO.value = i < bCur ? 0.35 : 1;
+            u.head.visible = i <= bCur && own >= 0.98;
+            (u.head.material as THREE.MeshBasicMaterial).opacity = i < bCur ? 0.3 : 0.9;
             const started = cur && bT >= u.delay - 0.4;
-            u.ring.visible = started; u.ring.scale.setScalar(0.07 * kz * (1 + 0.15 * Math.sin(t * 4)));
-            u.head.visible = (i < bCur || own >= 1) && i <= bCur;
-            u.head.scale.setScalar(0.09 * kz);
-            (u.head.material as THREE.MeshBasicMaterial).opacity = i < bCur ? 0.35 : 1;
-            u.tok.visible = started;
-            u.tag.visible = started;
-            if (started) {
-              const at = Math.min(0.999, Math.max(0.001, ease));
-              u.tok.position.copy(u.curve.getPointAt(at));
-              const sink = u.lose ? Math.min(1, Math.max(0, (bT - u.delay - UNIT_DUR) / 1.4)) : 0;
-              u.tok.position.y -= sink * 0.12 * bSize;
-              u.tok.children.forEach((c) => { ((c as THREE.Mesh).material as THREE.MeshBasicMaterial).opacity = 1 - sink; });
-              u.tok.scale.setScalar(3.4 * kz);
-              u.tag.position.copy(u.tok.position);
-              u.tag.scale.copy(u.tag.userData.base).multiplyScalar(0.55 * kz);
-              (u.tag.material as THREE.SpriteMaterial).opacity = Math.min(1, (bT - u.delay + 0.4) * 2) * (1 - sink * 0.7);
+            u.ring.visible = started && own < 1; u.ring.scale.setScalar(0.06 * kz * (1 + 0.15 * Math.sin(t * 4)));
+            u.sq.visible = started; u.tag.visible = started; u.badge.visible = false;
+            if (!started) return;
+            const at = Math.min(0.999, Math.max(0.001, ease));
+            const p = u.curve.getPointAt(at);
+            const arrived = own >= 1, since = bT - u.delay - UNIT_DUR;
+            // bên thua: tốp quân tản ra và mờ dần sau khi tới nơi
+            const scatter = u.lose && arrived ? Math.min(1, Math.max(0, since / 1.6)) : 0;
+            const spread = 0.17 * kz * (1 + scatter * 2.5);
+            u.sq.children.forEach((c, n) => {
+              const sp = c as THREE.Sprite, off = sp.userData.off as THREE.Vector2;
+              // bước chân: các tốp lính nhấp nhô nhẹ khi đang đi
+              const bob = !arrived ? Math.abs(Math.sin(t * 9 + n)) * 0.006 * kz : 0;
+              sp.position.set(p.x + off.x * spread, p.y + bob, p.z + off.y * spread);
+              sp.scale.setScalar(0.42 * kz);
+              sp.material.opacity = 1 - scatter * 0.85;
+            });
+            u.tag.position.copy(p);
+            u.tag.scale.copy(u.tag.userData.base).multiplyScalar(0.55 * kz);
+            (u.tag.material as THREE.SpriteMaterial).opacity = Math.min(1, (bT - u.delay + 0.4) * 2) * (1 - scatter * 0.7);
+            // huy hiệu hành động: rút chạy hiện suốt đường đi, các hành động khác hiện khi tới nơi, bị đánh tan hiện ở cuối
+            const act: Act | undefined = u.lose && arrived ? 'beaten' : u.act === 'retreat' ? 'retreat' : arrived ? u.act : undefined;
+            if (act) {
+              const col = u.side === 'vn' ? '#ffcf5a' : '#5cc8ff';
+              const bm = u.badge.material as THREE.SpriteMaterial;
+              const tex = badgeIcon(act, col);
+              if (bm.map !== tex) { bm.map = tex; bm.needsUpdate = true; }
+              u.badge.visible = true; u.badge.position.copy(p);
+              const pulse = act === 'attack' ? 1 + 0.12 * Math.sin(t * 8) : 1;
+              u.badge.scale.setScalar(0.3 * kz * pulse);
+              bm.opacity = act === 'retreat' && !arrived ? 0.95 : Math.min(1, Math.max(0, since + 0.3) * 3);
             }
           });
-          const done = i === bCur && bT > total - 0.4;
+          // chỗ giao chiến: bụi khói và hai thanh kiếm chéo, hiện khi các đạo quân đã tới
+          const done = cur && bT > total - 0.4;
           st.flashes.forEach((f, j) => {
-            f.visible = done;
-            if (f.visible) { const k = (t * 1.6 + j * 0.37) % 1; const sc = (0.25 + k * 0.55) * kz; f.scale.set(sc, sc, 1); f.material.opacity = 0.75 * (1 - k) * Math.min(1, (bT - total + 0.4) * 3); }
+            const sw = f.userData.sw as THREE.Sprite;
+            f.visible = done; sw.visible = done;
+            if (!done) return;
+            const k = (t * 0.9 + j * 0.37) % 1, fade = Math.min(1, (bT - total + 0.4) * 2);
+            const sc = (0.8 + k * 1.0) * kz; f.scale.set(sc, sc * 0.75, 1); f.material.opacity = 0.6 * (1 - k) * fade;
+            sw.scale.setScalar(0.38 * kz * (1 + 0.1 * Math.sin(t * 7 + j))); sw.material.opacity = fade;
           });
         });
         if (bStakes) {
@@ -748,7 +828,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
           bStakes.scale.y += ((tideUp ? 0.12 : 1) - bStakes.scale.y) * Math.min(1, dt * 2);
         }
         // Nhãn địa danh giữ cỡ nhìn được ổn định theo mức thu phóng của bước đang xem
-        bMarks.forEach((m) => { m.material.opacity += (0.85 - m.material.opacity) * 0.08; m.scale.copy(m.userData.base).multiplyScalar(0.5 * kz); m.position.y = m.userData.gy + 0.08 + 0.15 * kz; });
+        bMarks.forEach((m) => { m.material.opacity += (0.8 - m.material.opacity) * 0.08; m.scale.copy(m.userData.base).multiplyScalar(0.45 * kz); m.position.y = m.userData.gy + 0.06 + 0.12 * kz; });
       }
       if (frontG) {
         frontT += dt;

@@ -167,7 +167,7 @@ class Sound {
     if (o.army) {
       // trống trận dồn dần
       [0, 520, 960, 1330, 1640, 1900, 2120].forEach((ms, i) => at(ms, () => this.thump(d, 0.35 + i * 0.05)));
-      if (!o.modern) at(150, () => this.tone(d, 98, 2.4, 0.07, 'sawtooth', [1, 1.5]));
+      if (!o.modern) at(150, () => this.horn(d));
     }
     if (o.fleet) {
       // sóng vỗ và mái chèo
@@ -192,13 +192,33 @@ class Sound {
         // pháo nổ xa gần
         for (let k = 0; k < 7; k++) at(end - 400 + k * 260 + Math.random() * 200, () => { this.thump(d, 0.5 + Math.random() * 0.4); this.burst(d, 0.6, 0.22, 'lowpass', 900, 120); });
       } else {
-        // binh khí va nhau, tiếng hô
-        for (let k = 0; k < 10; k++) at(end - 400 + k * 150 + Math.random() * 120, () => this.tone(d, 900 + Math.random() * 1500, 0.25, 0.05, 'square', [1, 2.71, 4.13]));
-        at(end - 300, () => this.burst(d, 1.4, 0.16, 'bandpass', 500, 900));
+        // tiếng hò reo của đám đông, trống dồn và tiếng binh khí va đục (không có cao độ)
+        at(end - 500, () => this.roar(d, 2.6));
+        for (let k = 0; k < 6; k++) at(end - 400 + k * 330, () => this.thump(d, 0.55));
+        for (let k = 0; k < 14; k++) at(end - 300 + k * 140 + Math.random() * 120, () => this.burst(d, 0.05, 0.09 + Math.random() * 0.06, 'bandpass', 2600 + Math.random() * 1800));
       }
     }
     if (o.lose) at(end + 300, () => { this.burst(d, 1.2, 0.25, 'lowpass', 600, 90); this.thump(d, 0.3); });
     if (o.last) at(end + 1800, () => { this.tone(d, 98, 4.5, 0.16, 'sine', [1, 2.01, 2.76, 4.1]); this.thump(d, 0.6); });
+  }
+
+  // Tù và: tiếng kèn trầm, lên chậm, lọc bớt âm cao để không chói
+  private horn(dest: AudioNode) {
+    const c = this.ctx!, t = c.currentTime, g = c.createGain(), lp = c.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = 380; lp.Q.value = 0.7;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.09, t + 0.6); g.gain.linearRampToValueAtTime(0.07, t + 1.6); g.gain.linearRampToValueAtTime(0, t + 2.6);
+    [73.4, 73.9, 110].forEach((f, i) => { const o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.setValueAtTime(f * 0.96, t); o.frequency.linearRampToValueAtTime(f, t + 0.4); const og = c.createGain(); og.gain.value = i === 2 ? 0.4 : 1; o.connect(og).connect(lp); o.start(t); o.stop(t + 2.7); });
+    lp.connect(g).connect(dest);
+  }
+
+  // Tiếng ồn của trận: nhiễu lọc dải giữa, cường độ lên xuống thất thường như đám đông
+  private roar(dest: AudioNode, dur: number) {
+    const c = this.ctx!, t = c.currentTime;
+    const n = c.createBufferSource(), bp = c.createBiquadFilter(), g = c.createGain(), lfo = c.createOscillator(), lg = c.createGain();
+    n.buffer = this.white; n.loop = true; bp.type = 'bandpass'; bp.frequency.value = 650; bp.Q.value = 0.8;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.16, t + 0.5); g.gain.linearRampToValueAtTime(0.12, t + dur - 0.6); g.gain.linearRampToValueAtTime(0, t + dur);
+    lfo.frequency.value = 3.3; lg.gain.value = 0.05; lfo.connect(lg).connect(g.gain);
+    n.connect(bp).connect(g).connect(dest); n.start(t, Math.random()); n.stop(t + dur + 0.05); lfo.start(t); lfo.stop(t + dur);
   }
 
   hit(kind: 'drum' | 'step' | 'ok' | 'no') {

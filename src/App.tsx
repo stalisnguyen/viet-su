@@ -756,10 +756,10 @@ export default function App() {
         const st = b.steps[bs.i], last = bs.i === b.steps.length - 1;
         return (
           <>
-            <div className="bcap" key={bs.slug + bs.i} aria-hidden="true" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
+            {!(last && bDone) && <div className="bcap" key={bs.slug + bs.i} aria-hidden="true" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
               <p className="n">{bs.i === 0 ? (lang === 'vi' ? 'Bắt đầu - ' : 'Start - ') : ''}{lang === 'vi' ? 'Bước' : 'Step'} {bs.i + 1}/{b.steps.length} - {st.t[lang]}</p>
               <p>{st.text[lang]}</p>
-            </div>
+            </div>}
             {last && bDone && (
               <div className="bresult" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
                 <p className="n">{lang === 'vi' ? 'Kết thúc trận đánh' : 'End of the battle'}</p>
