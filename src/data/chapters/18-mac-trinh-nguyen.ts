@@ -373,6 +373,126 @@ const chapter: Chapter = {
       ],
       sources: ['mt-nbc-hoangsa', 'mt-nqn-hoangsa', 'mt-nd-amlinh', 'mt-wiki-phubien', 'mt-rfa-paracel'],
     },
+    {
+      slug: 'nguyen-binh-khiem',
+      period: 'mac-trinh-nguyen',
+      kind: 'figure',
+      name: l('Nguyễn Bỉnh Khiêm (Trạng Trình)', 'Nguyễn Bỉnh Khiêm (Trạng Trình)'),
+      date: l('1491 - 1585', '1491 - 1585'),
+      sort: 465,
+      place: l('Khu di tích đền thờ Trạng Trình, làng Trung Am, xã Nguyễn Bỉnh Khiêm, Hải Phòng', 'Trạng Trình temple complex, Trung Am village, Nguyễn Bỉnh Khiêm commune, Hải Phòng'),
+      coord: [106.5313, 20.6609],
+      evidence: ['chron', 'legend'],
+      summary: l(
+        `Nguyễn Bỉnh Khiêm đỗ trạng nguyên năm 1535 dưới triều Mạc khi đã 45 tuổi, làm quan khoảng tám năm rồi dâng sớ xin chém 18 kẻ lộng thần. Vua không nghe, ông về quê dựng am Bạch Vân dạy học. Dân gian gọi ông là Trạng Trình và gán cho ông nhiều lời sấm, nên ông vừa là nhà thơ, nhà giáo vừa là một nhân vật huyền thoại.`,
+        `Nguyễn Bỉnh Khiêm came first in the 1535 palace examination under the Mạc at the age of 45, served about eight years, then asked the king to execute 18 corrupt courtiers. When the king refused, he went home and founded the Bạch Vân hermitage school. Popular tradition calls him Trạng Trình and credits him with many prophecies, so he is at once poet, teacher and legend.`,
+      ),
+      detail: [
+        l(
+          `Ông sinh năm 1491 ở làng Trung Am, huyện Vĩnh Lại, phủ Hạ Hồng, nay thuộc Hải Phòng. Theo Báo Pháp luật Việt Nam, khoa Ất Mùi năm 1535 ông đỗ Hội nguyên rồi Trạng nguyên, sau đó giữ các chức Đông các hiệu thư, Tả thị lang bộ Lại kiêm Đông các Đại học sĩ, tước Trình Tuyên hầu. Triều Mạc khi ấy đang lục đục, như đã kể ở chương Mạc, Trịnh, Nguyễn.`,
+          `He was born in 1491 in Trung Am village, Vĩnh Lại district, Hạ Hồng prefecture, now part of Hải Phòng. According to Báo Pháp luật Việt Nam, in the examination of 1535 he came first in both the metropolitan and the palace rounds, then served as an academician of the Eastern Hall and deputy minister of personnel, with the title Marquis of Trình Tuyên. The Mạc court was already troubled, as told in the Mạc, Trịnh and Nguyễn chapter.`,
+        ),
+        l(
+          `Sau khoảng tám năm làm quan, ông dâng sớ vạch tội 18 lộng thần nhưng không được chấp thuận. Mùa thu năm 1542 ông từ quan về quê, dựng am Bạch Vân mở trường dạy học và dựng quán Trung Tân bên sông Tuyết Giang. Tập thơ tiêu biểu của ông là Bạch Vân thi tập. Ông mất năm 1585, thọ 95 tuổi, được nhà Mạc truy tặng tước Trình quốc công, vì vậy dân gọi là Trạng Trình.`,
+          `After about eight years in office he submitted a memorial denouncing 18 courtiers, which was rejected. In autumn 1542 he resigned, built the Bạch Vân hermitage to teach, and put up the Trung Tân inn on the Tuyết Giang river. His best-known collection is the Bạch Vân thi tập (Poems of the White Cloud). He died in 1585 at 95 and was posthumously made Duke of Trình by the Mạc, hence the name Trạng Trình.`,
+        ),
+        l(
+          `Năm 1586 vua Mạc cấp tiền và ruộng để lập đền thờ ông; đền được tu sửa các năm 1735, 1833 và 1928. Am Bạch Vân được phục dựng năm 2004. Khu di tích được xếp hạng quốc gia đặc biệt năm 2015, lễ hội đền là di sản văn hóa phi vật thể quốc gia từ năm 2019. Ngày 16 tháng 1 năm 2026, lễ hội kỷ niệm 440 năm ngày mất của ông được tổ chức tại đây.`,
+          `In 1586 the Mạc king granted money and land to build a temple to him; it was restored in 1735, 1833 and 1928. The Bạch Vân hermitage was rebuilt in 2004. The complex was ranked a special national monument in 2015, and its festival has been national intangible heritage since 2019. On 16 January 2026 a festival marking the 440th anniversary of his death was held there.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Phần chắc chắn nhất về ông là khoa thi năm 1535, các chức quan và việc từ quan năm 1542, được nhiều nguồn chép thống nhất. Danh sách 18 người trong tờ sớ không còn, giống trường hợp Thất trảm sớ của Chu Văn An. Các bài báo được dẫn ở đây không nêu số bài thơ trong Bạch Vân thi tập nên trang này không đưa con số.`,
+          `The firmest facts are the 1535 examination, his offices and his resignation in 1542, which the sources report consistently. The list of 18 names in his memorial does not survive, much like Chu Văn An's Seven Beheadings memorial. The articles cited here give no count of the poems in the Bạch Vân collection, so this page gives none.`,
+        ),
+        l(
+          `Các lời "sấm Trạng" là lớp truyền thuyết dày nhất quanh ông. Câu "Hoành Sơn nhất đái khả dĩ dung thân", tương truyền là lời ông khuyên Nguyễn Hoàng tìm đất phía nam dãy Hoành Sơn, được báo chí nhắc như một ví dụ điển hình. Không có văn bản đương thời nào xác nhận những lời ấy; chúng cho thấy hậu thế coi ông là người nhìn xa, hơn là ghi chép về lời ông nói.`,
+          `The "Trạng prophecies" are the thickest layer of legend around him. The line "Hoành Sơn nhất đái khả dĩ dung thân", said to be his advice to Nguyễn Hoàng to seek refuge south of the Hoành Sơn range, is cited in the press as a typical example. No contemporary text confirms these sayings; they show that later generations saw him as far-sighted, rather than recording what he actually said.`,
+        ),
+      ],
+      sources: ['nvt-bpl-nbk', 'nvt-plo-nbk', 'nvt-nd-nbk', 'nvt-mia-nbk'],
+    },
+    {
+      slug: 'hai-thuong-lan-ong-le-huu-trac',
+      period: 'mac-trinh-nguyen',
+      kind: 'figure',
+      name: l('Hải Thượng Lãn Ông Lê Hữu Trác', 'Hải Thượng Lãn Ông (Lê Hữu Trác)'),
+      date: l('1724 - 1791', '1724 - 1791'),
+      sort: 276,
+      place: l('Mộ và khu lưu niệm Lê Hữu Trác, núi Minh Tự bên sông Ngàn Phố, Hương Sơn, Hà Tĩnh', 'Tomb and memorial of Lê Hữu Trác, Minh Tự mountain by the Ngàn Phố river, Hương Sơn, Hà Tĩnh'),
+      coord: [105.4339, 18.5295],
+      evidence: ['chron', 'arch'],
+      summary: l(
+        `Lê Hữu Trác, hiệu Hải Thượng Lãn Ông, là danh y lớn nhất của Việt Nam thế kỷ 18. Ông bỏ đường quan chức, về quê mẹ ở Hương Sơn chữa bệnh, trồng thuốc, dạy học và viết bộ Hải Thượng y tông tâm lĩnh gồm 28 tập, 66 quyển. UNESCO vinh danh ông năm 2023, và năm 2024 mộ cùng khu lưu niệm của ông thành di tích quốc gia đặc biệt.`,
+        `Lê Hữu Trác, known as Hải Thượng Lãn Ông, the Lazy Old Man of Hải Thượng, was Vietnam's greatest physician of the 18th century. He left official life for his mother's village in Hương Sơn, where he treated patients, grew herbs, taught and wrote the Hải Thượng y tông tâm lĩnh in 28 parts and 66 books. UNESCO honoured him in 2023, and in 2024 his tomb and memorial became a special national monument.`,
+      ),
+      detail: [
+        l(
+          `Ông sinh năm 1724 ở làng Liêu Xá, huyện Đường Hào, Hải Dương, nay thuộc Hưng Yên, là con thứ bảy của tiến sĩ Lê Hữu Mưu và bà Bùi Thị Thưởng, người làng Bàu Thượng, Hương Sơn. Theo Wikipedia, ông đi lính khoảng năm 1740 và bỏ binh nghiệp năm 1746 sau khi người anh cả mất, về Hương Sơn nuôi mẹ già. Báo Đại biểu Nhân dân ghi ông rời con đường làm quan năm 26 tuổi.`,
+          `He was born in 1724 in Liêu Xá village, Đường Hào district, Hải Dương, now in Hưng Yên, the seventh son of the doctoral graduate Lê Hữu Mưu and of Bùi Thị Thưởng from Bàu Thượng village in Hương Sơn. According to Wikipedia, he joined the army around 1740 and left it in 1746 after his eldest brother died, moving to Hương Sơn to care for his elderly mother. Đại biểu Nhân dân says he gave up an official career at 26.`,
+        ),
+        l(
+          `Ở Bàu Thượng hơn 40 năm, ông vừa chữa bệnh vừa soạn sách. Bộ Hải Thượng y tông tâm lĩnh được khắc in năm 1885, gồm 28 tập, 66 quyển; ít nhất 8 tập đã được dịch ra tiếng Pháp từ những năm 1950. Ông nêu tám đức của người thầy thuốc là nhân ái, sáng suốt, đức độ, hiểu biết, rộng lượng, thành thực, khiêm tốn và cần cù, và dạy rằng thầy thuốc chỉ lấy việc cứu người làm nhiệm vụ, không cầu lợi kể công.`,
+          `Over more than 40 years in Bàu Thượng he both practised and wrote. The Hải Thượng y tông tâm lĩnh was printed from woodblocks in 1885 in 28 parts and 66 books; at least eight parts were translated into French from the 1950s. He listed eight virtues of a physician: compassion, clear judgement, integrity, knowledge, generosity, honesty, modesty and diligence, and taught that a doctor's only task is to save lives, not to seek profit or credit.`,
+        ),
+        l(
+          `Ngày 12 tháng Giêng năm Cảnh Hưng thứ 43 (1782), chúa Trịnh triệu ông về kinh chữa bệnh cho nhà chúa; ông ghi lại chuyến đi trong Thượng kinh ký sự, một tập ký sắc sảo về phủ chúa. Ông mất ngày 15 tháng Giêng năm Tân Hợi (1791), được chôn ở núi Minh Tự bên sông Ngàn Phố, dân quen gọi là núi Cánh Diều. Mộ và khu lưu niệm được xếp hạng di tích quốc gia đặc biệt cuối năm 2024.`,
+          `On the 12th day of the first lunar month of Cảnh Hưng 43 (1782) the Trịnh lord summoned him to the capital to treat his household; he recorded the journey in the Thượng kinh ký sự, a sharp-eyed account of life in the lord's palace. He died on the 15th day of the first lunar month of the Tân Hợi year (1791) and was buried on Minh Tự mountain by the Ngàn Phố river, locally called Kite Mountain. His tomb and memorial were ranked a special national monument in late 2024.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Năm sinh của ông từng được ghi là 1720. Trong quá trình làm hồ sơ UNESCO, giới nghiên cứu khẳng định năm 1724, và giáo sư Makoto Mayanagi cũng ghi 1724 - 1791. Wikipedia tiếng Anh vẫn để cả hai năm mà không giải thích. Đại hội đồng UNESCO lần thứ 42 thông qua nghị quyết vinh danh ông ngày 21 tháng 11 năm 2023, sau quyết định 216 EX của Hội đồng chấp hành.`,
+          `His birth year was long given as 1720. While preparing the UNESCO dossier, researchers established 1724, and Professor Makoto Mayanagi also gives 1724 - 1791. English Wikipedia still carries both years without reconciling them. UNESCO's 42nd General Conference adopted the resolution honouring him on 21 November 2023, following Executive Board decision 216 EX.`,
+        ),
+        l(
+          `Các nguồn chép tên mẹ ông là Bùi Thị Thường hoặc Bùi Thị Thưởng, và tên xã nơi có mộ là Quang Diệm, Sơn Trung hay Tĩnh Diệm tùy bài. Chuyện người được ông chữa năm 1782 cũng được kể khác nhau: Wikipedia nói là thế tử theo lệnh chúa Trịnh Sâm, Báo Nhân Dân nói chung là nhà chúa. Tên hiệu Hải Thượng có thể ghép từ Hải Dương và Thượng Hồng, hoặc lấy từ làng Bàu Thượng.`,
+          `Sources give his mother's name as Bùi Thị Thường or Bùi Thị Thưởng, and the commune of the tomb as Quang Diệm, Sơn Trung or Tĩnh Diệm depending on the article. The patient of 1782 is also described differently: Wikipedia says the crown prince, on lord Trịnh Sâm's order, while Nhân Dân says simply the lord's household. The name Hải Thượng may combine Hải Dương and Thượng Hồng, or come from Bàu Thượng village.`,
+        ),
+      ],
+      sources: ['nvt-dbnd-lho', 'nvt-nd-lho', 'nvt-hatinh-lho-unesco', 'nvt-nd-lho300', 'nvt-vnn-unesco7'],
+    },
+    {
+      slug: 'le-quy-don',
+      period: 'mac-trinh-nguyen',
+      kind: 'figure',
+      name: l('Lê Quý Đôn, nhà bác học thế kỷ 18', 'Lê Quý Đôn, 18th-century polymath'),
+      date: l('1726 - 1784', '1726 - 1784'),
+      sort: 274,
+      place: l('Khu lưu niệm Lê Quý Đôn, thôn Đồng Phú, xã Lê Quý Đôn, Hưng Yên (trước thuộc Hưng Hà, Thái Bình)', 'Lê Quý Đôn Memorial, Đồng Phú village, Lê Quý Đôn commune, Hưng Yên (formerly Hưng Hà, Thái Bình)'),
+      coord: [106.1875, 20.5468],
+      evidence: ['chron'],
+      summary: l(
+        `Lê Quý Đôn đỗ đầu kỳ thi Đình năm 1752 với danh hiệu Bảng nhãn, làm quan hơn ba mươi năm dưới thời Lê trung hưng và để lại khoảng 40 bộ sách về sử, địa lý, triết học, nông học và thơ văn. Phủ biên tạp lục của ông là một trong những nguồn chính về Đàng Trong và đội Hoàng Sa. UNESCO vinh danh ông nhân 300 năm ngày sinh.`,
+        `Lê Quý Đôn topped the palace examination of 1752 with the title Bảng nhãn, served more than thirty years under the Revival Lê and left some 40 works on history, geography, philosophy, agriculture and poetry. His Phủ biên tạp lục is one of the main sources on the southern Nguyễn realm and the Hoàng Sa company. UNESCO honoured him on the 300th anniversary of his birth.`,
+      ),
+      detail: [
+        l(
+          `Ông sinh ngày 2 tháng 8 năm 1726 ở làng Diên Hà, trấn Sơn Nam, tên lúc nhỏ là Lê Danh Phương, tự Doãn Hậu, hiệu Quế Đường. Năm 17 tuổi ông đỗ đầu thi Hương, 24 tuổi đỗ đầu thi Hội, 26 tuổi đỗ đầu thi Đình. Từ năm 1752 ông làm quan, từng giữ các chức Hiệp trấn Thuận Hóa và Công bộ Thượng thư; năm 1760 ông đi sứ sang nhà Thanh.`,
+          `He was born on 2 August 1726 in Diên Hà village, Sơn Nam region, as Lê Danh Phương, with the courtesy name Doãn Hậu and the pen name Quế Đường. At 17 he came first in the provincial examination, at 24 first in the metropolitan examination and at 26 first in the palace examination. From 1752 he held office, serving among other posts as deputy governor of Thuận Hóa and minister of works; in 1760 he went on an embassy to the Qing court.`,
+        ),
+        l(
+          `Các tác phẩm lớn của ông gồm Đại Việt thông sử 30 quyển, Quần thư khảo biện, Bắc sứ thông lục 4 quyển viết sau chuyến đi sứ, Toàn Việt thi lục 20 quyển, Vân đài loại ngữ, Phủ biên tạp lục 6 quyển năm 1776 và Kiến văn tiểu lục 12 quyển năm 1777. Phủ biên tạp lục chép đội Hoàng Sa, như đã kể ở chương Mạc, Trịnh, Nguyễn và chuyên đề Biển đảo. Ông mất ngày 11 tháng 6 năm 1784.`,
+          `His major works include the 30-volume Đại Việt thông sử, the Quần thư khảo biện, the four-volume Bắc sứ thông lục written after his embassy, the 20-volume Toàn Việt thi lục, the Vân đài loại ngữ, the six-volume Phủ biên tạp lục of 1776 and the 12-volume Kiến văn tiểu lục of 1777. The Phủ biên tạp lục records the Hoàng Sa company, as told in the Mạc, Trịnh and Nguyễn chapter and the sea and islands topic. He died on 11 June 1784.`,
+        ),
+        l(
+          `Khu lưu niệm ở quê ông rộng gần 9,7 ha, là di tích lịch sử văn hóa quốc gia từ năm 1986. Ở đây có nhà thờ họ do chính thân phụ ông dựng, đến nay gần 300 năm tuổi, mộ thân phụ Lê Trọng Thứ, hồ Lê Quý và một thư viện tư liệu về ông. Tối 31 tháng 7 năm 2026, lễ kỷ niệm 300 năm ngày sinh tại đây có khoảng 30.000 người dự.`,
+          `The memorial in his home village covers nearly 9.7 hectares and has been a national historical and cultural monument since 1986. It contains the family ancestral house built by his father, now nearly 300 years old, the tomb of his father Lê Trọng Thứ, Lê Quý Lake and a library of material about him. On the evening of 31 July 2026 about 30,000 people attended the 300th anniversary ceremony there.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Số tác phẩm của ông được ghi khác nhau: Việt Nam News lúc viết "hơn 40", lúc viết "khoảng 40", tùy cách tính các tập thơ văn lẻ và sách chú giải. Cổng thông tin Hà Tĩnh ghi niên đại từng bộ, chẳng hạn Đại Việt thông sử soạn năm 1749 - 1753 và Bắc sứ thông lục năm 1763, lời tựa năm 1780. Việc ông được gọi là "nhà bác học" phản ánh độ rộng của các đề tài này.`,
+          `The count of his works varies: Việt Nam News says "more than 40" in one article and "about 40" in another, depending on how loose poems and commentaries are counted. The Hà Tĩnh provincial portal dates individual works, for example the Đại Việt thông sử to 1749 - 1753 and the Bắc sứ thông lục to 1763, with a preface of 1780. Calling him a polymath reflects the sheer range of these subjects.`,
+        ),
+        l(
+          `Với sử học, giá trị của Phủ biên tạp lục là ở chỗ người viết là một quan chức Đàng Ngoài từng giữ chức Hiệp trấn Thuận Hóa, tức là ghi chép ngay trên vùng đất trước đó do chúa Nguyễn cai quản. UNESCO thông qua nghị quyết vinh danh ông tại kỳ họp thứ 43 Đại hội đồng ở Samarkand, Uzbekistan.`,
+          `For historians, the value of the Phủ biên tạp lục lies in its author being a northern official who served as deputy governor of Thuận Hóa, writing on the spot about land the Nguyễn lords had previously ruled. UNESCO adopted the resolution honouring him at the 43rd session of its General Conference in Samarkand, Uzbekistan.`,
+        ),
+      ],
+      sources: ['nvt-vns-lqd-unesco', 'nvt-vns-lqd-memorial', 'nvt-hatinh-lqd', 'nvt-vov-lqd', 'nvt-wiki-lqd'],
+    },
   ],
   sources: [
     { id: 'mt-brit-laterle', cite: 'Encyclopaedia Britannica. "Later Le dynasty: Vietnamese history".', url: 'https://www.britannica.com/topic/Later-Le-dynasty', kind: 'reference' },
@@ -417,8 +537,34 @@ const chapter: Chapter = {
     { id: 'mt-rfa-paracel', cite: 'Luna Pham (3/10/2024). "EXPLAINED: What are the Paracel Islands and why are they disputed?". Radio Free Asia.', url: 'https://rfa.org/english/news/southchinasea/explainer-paracel-islands-vietnam-china-10032024050046.html', kind: 'news' },
     { id: 'mt-wh-voc', cite: 'Martins, K. (31/10/2023). "Dutch East India Company". World History Encyclopedia.', url: 'https://worldhistory.org/Dutch_East_India_Company', kind: 'reference' },
     { id: 'mt-brit-qing', cite: 'Encyclopaedia Britannica. "When was the Qing dynasty established?".', url: 'https://www.britannica.com:443/question/When-was-the-Qing-dynasty-established', kind: 'reference' },
+    { id: 'nvt-bpl-nbk', kind: 'news', cite: 'Báo Pháp luật Việt Nam, "Danh nhân văn hóa, Trạng Trình Nguyễn Bỉnh Khiêm (Bài 1): Thuở nhỏ thông Kinh văn, lớn lên vịn ngai vàng".', url: 'https://baophapluat.vn/danh-nhan-van-hoa-trang-trinh-nguyen-binh-khiem-bai-1-thuo-nho-thong-kinh-van-lon-len-vin-ngai-vang-post379046.html' },
+    { id: 'nvt-plo-nbk', kind: 'news', cite: 'Báo Pháp Luật TP Hồ Chí Minh (PLO), "Hải Phòng vận động UNESCO vinh danh Trạng Trình Nguyễn Bỉnh Khiêm vào năm 2035".', url: 'https://plo.vn/hai-phong-van-dong-unesco-vinh-danh-trang-trinh-nguyen-binh-khiem-vao-nam-2035-post747062.html' },
+    { id: 'nvt-nd-nbk', kind: 'news', cite: 'Báo Nhân Dân (16/1/2026), "Trang trọng Lễ hội Đền Trạng Trình Nguyễn Bỉnh Khiêm".', url: 'https://nhandan.vn/trang-trong-le-hoi-den-trang-trinh-nguyen-binh-khiem-post937368.html' },
+    { id: 'nvt-mia-nbk', kind: 'news', cite: 'Mia.vn, cẩm nang du lịch "Đền Trạng Trình Nguyễn Bỉnh Khiêm" (các hạng mục và năm tu bổ của khu di tích).', url: 'https://mia.vn/cam-nang-du-lich/den-trang-trinh-nguyen-binh-khiem-21309' },
+    { id: 'nvt-dbnd-lho', kind: 'news', cite: 'Báo Đại biểu Nhân dân (11/2024), "Mộ và Khu lưu niệm Lê Hữu Trác được xếp hạng Di tích quốc gia đặc biệt".', url: 'https://daibieunhandan.vn/mo-va-khu-luu-niem-le-huu-trac-duoc-xep-hang-di-tich-quoc-gia-dac-biet-post397612.html' },
+    { id: 'nvt-nd-lho', kind: 'news', cite: 'Báo Nhân Dân, "Đại danh y Lê Hữu Trác, tấm gương sáng về y đức, y thuật".', url: 'https://nhandan.vn/dai-danh-y-le-huu-trac-tam-guong-sang-ve-y-duc-y-thuat-post527321.html' },
+    { id: 'nvt-hatinh-lho-unesco', kind: 'primary', cite: 'Cổng thông tin điện tử tỉnh Hà Tĩnh, "Hành trình vận động và xây dựng hồ sơ UNESCO kỷ niệm năm sinh Lê Hữu Trác".', url: 'https://hatinh.gov.vn/vi/bai-viet/hanh-trinh-van-dong-va-xay-dung-ho-so-unesco-ky-niem-nam-sinh-le-huu-trac' },
+    { id: 'nvt-nd-lho300', kind: 'news', cite: 'Báo Nhân Dân (27/12/2024), "Long trọng kỷ niệm 300 năm Ngày sinh Đại danh y Lê Hữu Trác".', url: 'https://nhandan.vn/long-trong-ky-niem-300-nam-ngay-sinh-dai-danh-y-le-huu-trac-post852983.html' },
+    { id: 'nvt-vnn-unesco7', kind: 'news', cite: 'VietNamNet (bản tiếng Anh), "Seven Vietnamese figures celebrated by UNESCO".', url: 'https://vietnamnet.vn/en/seven-vietnamese-figures-celebrated-by-unesco-2222503.html' },
+    { id: 'nvt-vns-lqd-unesco', kind: 'news', cite: 'Việt Nam News, "UNESCO adopts resolution honouring Vietnamese scholar Lê Quý Đôn".', url: 'https://vietnamnews.vn/life-style/1728710/unesco-adopts-resolution-honouring-vietnamese-scholar-le-quy-don.html' },
+    { id: 'nvt-vns-lqd-memorial', kind: 'news', cite: 'Việt Nam News (2026), "Lê Quý Đôn Memorial nurtures patriotism and lifelong learning".', url: 'https://vietnamnews.vn/life-style/1798091/le-quy-don-memorial-nurtures-patriotism-and-lifelong-learning.html' },
+    { id: 'nvt-hatinh-lqd', kind: 'primary', cite: 'Cổng thông tin điện tử tỉnh Hà Tĩnh (2026), "Kỷ niệm 300 năm Ngày sinh danh nhân văn hóa Lê Quý Đôn: Tôn vinh một trí tuệ Bách khoa Đại Việt".', url: 'https://hatinh.gov.vn/vi/bai-viet/ky-niem-300-nam-ngay-sinh-le-quy-don-ton-vinh-mot-tri-tue-bach-khoa-dai-viet' },
+    { id: 'nvt-vov-lqd', kind: 'news', cite: 'VOV (31/7/2026), "Hưng Yên tổ chức lễ kỷ niệm 300 năm Ngày sinh Danh nhân văn hóa Lê Quý Đôn".', url: 'https://vov.vn/van-hoa/hung-yen-to-chuc-le-ky-niem-300-nam-ngay-sinh-danh-nhan-van-hoa-le-quy-don-post1320278.vov' },
+    { id: 'nvt-wiki-lqd', kind: 'reference', cite: 'Wikipedia tiếng Anh, "Lê Quý Đôn", xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/L%C3%AA_Qu%C3%BD_%C4%90%C3%B4n' },
   ],
   hooks: {
+    'le-quy-don': l(
+      `Một quan chức Đàng Ngoài từng làm Hiệp trấn Thuận Hóa đã để lại một trong những ghi chép sớm nhất về đội Hoàng Sa của chúa Nguyễn.`,
+      `A northern official who served as deputy governor of Thuận Hóa left one of the earliest accounts of the Nguyễn lords' Hoàng Sa company.`,
+    ),
+    'hai-thuong-lan-ong-le-huu-trac': l(
+      `Vị danh y lớn nhất thế kỷ 18 tự gọi mình là "ông già lười", rồi viết bộ sách thuốc dài 66 quyển.`,
+      `The greatest physician of 18th-century Vietnam called himself "the lazy old man", then wrote a medical work in 66 books.`,
+    ),
+    'nguyen-binh-khiem': l(
+      `Ông đỗ trạng nguyên năm 45 tuổi, làm quan chỉ khoảng tám năm, nhưng người ta vẫn gán cho ông những lời sấm suốt bốn thế kỷ sau.`,
+      `He came top in the palace examination at 45 and served only about eight years, yet people kept attributing prophecies to him for four centuries.`,
+    ),
     'nha-mac-duong-kinh': l(
       `Một ông vua xuất thân từ làng chài đã đi chân đất ra cửa ải để giữ cho đất nước khỏi một cuộc chiến.`,
       `A king who began as a fisherman walked barefoot to a border pass to spare his country a war.`,

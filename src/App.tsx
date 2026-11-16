@@ -398,24 +398,30 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
 
 function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<string>; got: Set<string>; here: string; onGo: (id: string) => void; bare?: boolean }) {
   const [q, setQ] = useState('');
+  const [who, setWho] = useState(false); // bộ lọc chỉ hiện các mục nhân vật
   const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
   const k = norm(q.trim());
   // Khớp theo đầu từ (gõ "hùng" không ra "Phùng Nguyên"); tên thời kỳ khớp thì hiện mọi mục của thời kỳ đó
   const hit = (text: string) => (' ' + norm(text)).includes(' ' + k);
-  const match = (e: Entry) => !k || hit(e.name.vi + ' ' + e.name.en + ' ' + (e.place?.vi || '')) || hit(periodBySlug[e.period].name.vi + ' ' + periodBySlug[e.period].name.en);
-  const any = useMemo(() => entries.some(match), [k]);
+  const match = (e: Entry) => (!who || e.kind === 'figure') && (!k || hit(e.name.vi + ' ' + e.name.en + ' ' + (e.place?.vi || '')) || hit(periodBySlug[e.period].name.vi + ' ' + periodBySlug[e.period].name.en));
+  const any = useMemo(() => entries.some(match), [k, who]);
+  const nPeriods = periods.filter((p) => !p.theme).length;
   return (
     <>
       {!bare && <p className="eyebrow">{lang === 'vi' ? 'Mục lục toàn bộ' : 'Full index'}</p>}
-      {!bare && <h2>{lang === 'vi' ? '23 thời kỳ, từ đồ đá đến hôm nay' : '23 periods, from stone to today'}</h2>}
+      {!bare && <h2>{lang === 'vi' ? `${nPeriods} thời kỳ, từ đồ đá đến hôm nay` : `${nPeriods} periods, from stone to today`}</h2>}
       <input className="search" aria-label={lang === 'vi' ? 'Tìm trong trang' : 'Search this site'} type="search" value={q} onChange={(e) => setQ(e.target.value)}
         placeholder={lang === 'vi' ? 'Tìm di tích, nhân vật, hiện vật' : 'Search sites, people, artefacts'} />
+      <div className="filters" role="group" aria-label={lang === 'vi' ? 'Lọc mục lục' : 'Filter the index'}>
+        <button className={'chip' + (!who ? ' on' : '')} aria-pressed={!who} onClick={() => setWho(false)}>{lang === 'vi' ? 'Tất cả' : 'Everything'}</button>
+        <button className={'chip' + (who ? ' on' : '')} aria-pressed={who} onClick={() => setWho(true)}>{lang === 'vi' ? `Nhân vật (${entries.filter((e) => e.kind === 'figure').length})` : `People (${entries.filter((e) => e.kind === 'figure').length})`}</button>
+      </div>
       {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
       {!any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
       <ol className="road">
         {periods.map((p, i) => {
           const list = journey.filter((e) => e.period === p.slug && match(e));
-          if (k && !list.length) return null;
+          if ((k || who) && !list.length) return null;
           return (
             <li key={p.slug} className="ready" style={{ ['--c' as string]: p.color }}>
               <button className={'road-head' + (here === 'p-' + p.slug ? ' here' : '')} onClick={() => onGo('p-' + p.slug)}>
@@ -425,12 +431,12 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
                 {list.map((e) => (
                   <button key={e.slug} onClick={() => onGo('e-' + e.slug)} className={(seen.has(e.slug) ? 'seen' : '') + (here === 'e-' + e.slug ? ' here' : '')} aria-current={here === 'e-' + e.slug ? 'location' : undefined}>{e.name[lang]}</button>
                 ))}
-                {!k && <button onClick={() => onGo('q-' + p.slug)} className={'quizlink' + (got.has(p.slug) ? ' got' : '') + (here === 'q-' + p.slug ? ' here' : '')}>{got.has(p.slug) ? badges[p.slug][lang] : (lang === 'vi' ? '3 câu hỏi nhận huy hiệu' : '3 questions for a badge')}</button>}
+                {!k && !who && <button onClick={() => onGo('q-' + p.slug)} className={'quizlink' + (got.has(p.slug) ? ' got' : '') + (here === 'q-' + p.slug ? ' here' : '')}>{got.has(p.slug) ? badges[p.slug][lang] : (lang === 'vi' ? '3 câu hỏi nhận huy hiệu' : '3 questions for a badge')}</button>}
               </div>
             </li>
           );
         })}
-        {!k && upcoming.map((u, i) => (
+        {!k && !who && upcoming.map((u, i) => (
           <li key={i}>
             <div className="road-head"><em>{pad(i + 1 + periods.length)}</em><strong>{u.name[lang]}</strong><span>{lang === 'vi' ? u.range : u.range.replace(/TCN/g, 'BCE').replace(/tk /g, 'c. ').replace('nay', 'present')} - {T.soon[lang]}</span></div>
           </li>
@@ -643,7 +649,7 @@ export default function App() {
     const kinds = new Set(st.units.map((u) => u.kind));
     sound.battle({
       army: kinds.has('army'), fleet: kinds.has('fleet'), air: kinds.has('air'), clash: !!st.clash?.length,
-      lose: st.units.some((u) => u.fate === 'lose'), tide: st.tide, modern: b.steps.some((x) => x.units.some((u) => u.kind === 'air')),
+      lose: st.units.some((u) => u.fate === 'lose'), tide: st.tide, modern: !!b.modern || b.steps.some((x) => x.units.some((u) => u.kind === 'air')),
       last: bs.i === b.steps.length - 1, dur: stepMs(st.units.length),
     });
   }, [bs.slug, bs.i, snd, active.focus]); // eslint-disable-line react-hooks/exhaustive-deps

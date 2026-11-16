@@ -18,7 +18,9 @@ Thẻ thời kỳ (`period`) cũng có `summary`, `detail`, `scholarly` theo cù
 - `regions`: vùng nào sáng lên và tên vùng lúc đó, ví dụ `{ north: l('Giao Chỉ', 'Jiaozhi') }`. Ba vùng là ước lượng thô (bắc: từ Hoành Sơn trở ra; trung: Hoành Sơn đến khoảng Phan Rang; nam: Nam Bộ và cực Nam Trung Bộ), chỉ đặt tên khi tên đó đúng với phần lớn vùng trong thời kỳ.
 - `color`: dùng đúng mã màu được giao.
 
-## Mục (entries): 5 đến 8 mục mỗi thời kỳ
+## Mục (entries): 5 đến 8 mục mỗi thời kỳ (tối đa 14 với thời kỳ dày sự kiện)
+
+Nhân vật đặt vào đúng thời kỳ họ sống và hoạt động, không gom thành chuyên đề riêng. Mục lục có bộ lọc Nhân vật để tìm nhanh mọi mục `figure`. Chuyên đề chỉ dành cho chủ đề xuyên suốt nhiều thời kỳ (biển đảo, văn hóa, phụ nữ).
 
 Chọn những gì một người cần biết để hiểu thời kỳ: nhân vật, sự kiện, di tích, hiện vật, văn hóa, truyền thuyết. Ưu tiên thứ có địa điểm cụ thể để hiện trên bản đồ. `kind`: `site`, `culture`, `artifact`, `figure`, `legend`, `event`.
 

@@ -268,8 +268,8 @@ const chapter: Chapter = {
       coord: [108.8863, 15.1802],
       evidence: ['chron', 'arch'],
       summary: l(
-        `Từ năm 1964 Hoa Kỳ chuyển từ cố vấn sang trực tiếp tham chiến: ném bom miền Bắc, đưa hơn nửa triệu quân vào miền Nam và rải chất diệt cỏ trên nhiều vùng rừng. Miền Bắc đưa người và vũ khí vào Nam theo đường Trường Sơn. Vụ thảm sát ở Sơn Mỹ năm 1968 trở thành biểu tượng của những tổn thất mà thường dân phải chịu.`,
-        `From 1964 the United States moved from advising to fighting: it bombed the North, sent more than half a million troops to the South and sprayed herbicides over large areas of forest. The North sent men and weapons south along the Trường Sơn route, the Hồ Chí Minh trail. The massacre at Mỹ Lai (Sơn Mỹ) in 1968 became a symbol of what civilians suffered.`,
+        `Từ năm 1964 Hoa Kỳ chuyển từ cố vấn sang trực tiếp tiến hành chiến tranh xâm lược: ném bom miền Bắc, đưa hơn nửa triệu quân vào miền Nam và rải chất độc hóa học trên nhiều vùng rừng. Miền Bắc chi viện người và vũ khí cho miền Nam theo đường Trường Sơn. Vụ thảm sát Sơn Mỹ năm 1968 trở thành biểu tượng cho tội ác chiến tranh mà thường dân phải gánh chịu.`,
+        `From 1964 the United States moved from advising to waging a war of aggression itself: it bombed the North, sent more than half a million troops to the South and sprayed toxic herbicides over large areas of forest. The North sent men and weapons south along the Trường Sơn route, the Hồ Chí Minh trail. The massacre at Mỹ Lai (Sơn Mỹ) in 1968 became a symbol of the war crimes civilians suffered.`,
       ),
       detail: [
         l(
@@ -308,8 +308,8 @@ const chapter: Chapter = {
       coord: [107.5792, 16.4677],
       evidence: ['chron'],
       summary: l(
-        `Đêm giao thừa Tết Mậu Thân 1968, Quân Giải phóng và quân đội miền Bắc đồng loạt tấn công hầu hết các đô thị miền Nam. Về quân sự, họ chịu tổn thất rất nặng; về chính trị, cuộc tổng tiến công làm dư luận Mỹ quay lưng với chiến tranh. Ở Huế, sau gần một tháng giao tranh, người ta tìm thấy những mồ chôn tập thể thường dân.`,
-        `On the eve of the lunar new year of 1968, NLF and North Vietnamese forces attacked almost every town and city in the South at once. Militarily they suffered very heavy losses; politically the offensive turned American opinion against the war. In Huế, after nearly a month of fighting, mass graves of civilians were found.`,
+        `Đêm giao thừa Tết Mậu Thân 1968, Quân Giải phóng đồng loạt tiến công hầu hết các đô thị miền Nam. Ở Sài Gòn, các đội biệt động đánh vào Đại sứ quán Mỹ, Dinh Độc Lập và Đài phát thanh; ở Huế, quân Giải phóng làm chủ thành phố gần một tháng. Tổn thất rất lớn, nhưng đòn đánh làm nước Mỹ hết tin vào chiến thắng: Tổng thống Johnson phải ngừng ném bom phần lớn miền Bắc và chấp nhận đàm phán.`,
+        `On the eve of the lunar new year of 1968, Liberation forces attacked almost every town and city in the South at once. In Saigon, commando teams struck the US Embassy, the Independence Palace and the radio station; in Huế, Liberation troops held the city for nearly a month. The losses were very heavy, but the blow destroyed American faith in victory: President Johnson halted the bombing of most of the North and accepted talks.`,
       ),
       detail: [
         l(
@@ -317,8 +317,8 @@ const chapter: Chapter = {
           `The Vietnamese side calls it the General Offensive and Uprising of Tết Mậu Thân. According to the Government portal, on the night of 30 - 31 January 1968 its forces attacked 4 of 6 cities and 37 of 42 provincial towns. Country Studies lists 5 major cities, 36 provincial capitals and 64 district capitals, and estimates the attackers lost about 32,000 killed and 5,800 captured. In Huế some 12,000 troops held the city until late February.`,
         ),
         l(
-          `Khi quân Mỹ và Việt Nam Cộng hòa chiếm lại Huế, từ ngày 26 tháng 2 người ta phát hiện các mồ chôn tập thể. Country Studies ghi có tin 2.000 đến 3.000 viên chức, cảnh sát và người khác bị hành quyết như phần tử phản cách mạng; tổng cộng gần 2.800 thi thể được tìm thấy trong 1968 - 1969. Country Studies cũng ghi bom và pháo binh Mỹ trong các cuộc phản công đã tàn phá nặng các đô thị, và kinh thành Huế cũng bị hư hại nặng.`,
-          `When US and South Vietnamese troops retook Huế, mass graves were found from 26 February onward. Country Studies reports that some 2,000 to 3,000 officials, police and others were executed as counter-revolutionaries; in all, nearly 2,800 bodies were recovered in 1968 - 1969. Country Studies also notes that US bombing and artillery in the counter-attacks extensively damaged urban areas, and the Huế citadel too was badly damaged.`,
+          `Ở Sài Gòn, theo VOV, rạng sáng 31 tháng 1 các đội biệt động đánh trúng 5 trong 9 mục tiêu chính: Đại sứ quán Mỹ, Dinh Độc Lập, Bộ Tư lệnh Hải quân, Đài phát thanh và một mục tiêu khác. Đội 5 gồm 15 người do Tô Hoài Thanh chỉ huy phá cổng nhỏ vào Dinh Độc Lập rồi cầm cự trong vòng vây đến sáng mùng 3 Tết. Mười hai chiến sĩ Đội 3 đánh chiếm Đài phát thanh. Đội đánh Đại sứ quán Mỹ chỉ có 17 người, được lập gấp vì mục tiêu này chỉ được giao 48 giờ trước giờ nổ súng.`,
+          `In Saigon, according to VOV, before dawn on 31 January commando teams hit 5 of their 9 main targets: the US Embassy, the Independence Palace, the Navy headquarters, the radio station and one other. Team 5, 15 people under Tô Hoài Thanh, broke through a side gate of the Independence Palace and held out under siege until the morning of the third day of Tết. Twelve fighters of Team 3 seized the radio station. The team that attacked the US Embassy had only 17 members, hastily assembled because the target was added just 48 hours before the attack.`,
         ),
         l(
           `Ở Mỹ, Tết Mậu Thân làm lung lay niềm tin rằng chiến thắng đã gần. Thăm dò của Gallup cho thấy tỷ lệ người cho rằng gửi quân sang Việt Nam là một sai lầm tăng từ 45% tháng 12 năm 1967 lên 49% cuối tháng 2 năm 1968, và tháng 8 năm 1968 lần đầu vượt quá nửa. Ngày 31 tháng 3, Tổng thống Johnson ngừng ném bom phần lớn miền Bắc, mời đàm phán và tuyên bố không ra tranh cử nhiệm kỳ mới.`,
@@ -326,6 +326,10 @@ const chapter: Chapter = {
         ),
       ],
       scholarly: [
+        l(
+          `Khi quân Mỹ và Việt Nam Cộng hòa chiếm lại Huế, từ ngày 26 tháng 2 người ta phát hiện các mồ chôn tập thể. Country Studies ghi có tin 2.000 đến 3.000 viên chức, cảnh sát và người khác bị hành quyết như phần tử phản cách mạng; tổng cộng gần 2.800 thi thể được tìm thấy trong 1968 - 1969. Country Studies cũng ghi bom và pháo binh Mỹ trong các cuộc phản công đã tàn phá nặng các đô thị, và kinh thành Huế cũng bị hư hại nặng.`,
+          `When US and South Vietnamese troops retook Huế, mass graves were found from 26 February onward. Country Studies reports that some 2,000 to 3,000 officials, police and others were executed as counter-revolutionaries; in all, nearly 2,800 bodies were recovered in 1968 - 1969. Country Studies also notes that US bombing and artillery in the counter-attacks extensively damaged urban areas, and the Huế citadel too was badly damaged.`,
+        ),
         l(
           `Số nạn nhân ở Huế vẫn là đề tài tranh cãi. History.com dẫn con số khoảng 2.800 thường dân và một ước tính lên đến 5.700; chính quyền Việt Nam Cộng hòa liệt kê 4.062 người bị giết hoặc bắt đi. Gareth Porter cho rằng chỉ có vài trăm vụ hành quyết chính trị và một số thi thể là lính chết vì không kích; Ngô Vĩnh Long ước tính 710 người. Một tài liệu thu được của phía tấn công ghi đã diệt khoảng 2.720 người thuộc bộ máy chính quyền và cảnh sát.`,
           `The number of victims in Huế is still disputed. History.com cites about 2,800 civilians and one estimate of up to 5,700; the Republic of Vietnam government listed 4,062 people killed or abducted. Gareth Porter argued there were only a few hundred political executions and that some bodies were soldiers killed in air strikes; Ngô Vĩnh Long estimates 710. A captured document from the attacking side claimed the elimination of about 2,720 government personnel and police.`,
@@ -335,34 +339,34 @@ const chapter: Chapter = {
           `The Vietnamese side has not denied it entirely: according to Wikipedia, in 1988 leaders admitted "mistakes" in Huế, and Bùi Tín, a former People's Army colonel, wrote in a 2002 memoir that civilians had been executed. Vietnamese historiography sees Tết as the blow that forced America to de-escalate; the Vietnam Center at Texas Tech University calls it a military defeat but a political victory. Both readings agree that the war changed course after 1968.`,
         ),
       ],
-      sources: ['wd-cs-tet', 'wd-vgp-tet', 'wd-ttu-tet', 'wd-gallup', 'wd-hist-hue', 'wd-wiki-hue'],
+      sources: ['tet-vov', 'tet-zn', 'tet-nd', 'tet-gd', 'wd-cs-tet', 'wd-vgp-tet', 'wd-ttu-tet', 'wd-gallup', 'wd-hist-hue', 'wd-wiki-hue'],
     },
     {
       slug: 'hiep-dinh-paris-30-thang-4-1975',
       period: '1945-1975',
       kind: 'site',
-      name: l('Hiệp định Paris và ngày 30 tháng 4 năm 1975', 'The Paris Agreement and 30 April 1975'),
-      date: l('27/1/1973 - 30/4/1975', '27 January 1973 - 30 April 1975'),
-      sort: 27,
+      name: l('Đại thắng mùa Xuân 1975 và ngày 30 tháng 4', 'The spring offensive of 1975 and 30 April'),
+      date: l('10/3 - 30/4/1975', '10 March - 30 April 1975'),
+      sort: 25.5,
       place: l('Dinh Độc Lập, TP Hồ Chí Minh', 'Independence Palace, Ho Chi Minh City'),
       coord: [106.6953, 10.777],
       evidence: ['chron', 'arch'],
       summary: l(
-        `Hiệp định Paris ký ngày 27 tháng 1 năm 1973 đưa những người lính Mỹ cuối cùng về nước, nhưng hai bên Việt Nam tiếp tục đánh nhau. Mùa xuân 1975 quân đội miền Bắc tổng tấn công, và trưa 30 tháng 4 xe tăng vào Dinh Độc Lập. Ngày ấy được nhớ rất khác nhau: thống nhất, giải phóng, Sài Gòn thất thủ, Tháng Tư Đen.`,
-        `The Paris Agreement, signed on 27 January 1973, brought the last American troops home, but the two Vietnamese sides kept fighting. In spring 1975 northern forces launched a general offensive, and at midday on 30 April tanks entered the Independence Palace. The day is remembered in very different ways: reunification, liberation, the fall of Saigon, Black April.`,
+        `Mùa xuân 1975, Quân Giải phóng mở cuộc Tổng tiến công và nổi dậy: đánh Buôn Ma Thuột ngày 10 tháng 3, làm chủ Huế ngày 26 tháng 3 và Đà Nẵng cuối tháng 3, rồi mở chiến dịch Hồ Chí Minh với năm cánh quân vây Sài Gòn. Trưa 30 tháng 4 xe tăng vào Dinh Độc Lập, Tổng thống Dương Văn Minh đầu hàng không điều kiện. Miền Nam hoàn toàn giải phóng, đất nước thống nhất.`,
+        `In spring 1975 the Liberation forces launched their General Offensive and Uprising: they struck Buôn Ma Thuột on 10 March, took Huế on 26 March and Đà Nẵng at the end of the month, then opened the Hồ Chí Minh campaign with five columns closing on Saigon. At midday on 30 April tanks entered the Independence Palace and President Dương Văn Minh surrendered unconditionally. The South was liberated and the country reunified.`,
       ),
       detail: [
         l(
-          `Đàm phán ở Paris bắt đầu ngày 13 tháng 5 năm 1968 giữa Việt Nam Dân chủ Cộng hòa và Hoa Kỳ, sau có thêm Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam và Việt Nam Cộng hòa. Tổng thống Nguyễn Văn Thiệu bác bản dự thảo tháng 10 năm 1972. Sau đợt ném bom Hà Nội, Hải Phòng cuối tháng 12, mà Mỹ gọi là Linebacker II còn phía Việt Nam gọi là Điện Biên Phủ trên không, hiệp định được ký ngày 27 tháng 1 năm 1973.`,
-          `Talks in Paris began on 13 May 1968 between the Democratic Republic and the United States, later joined by the Provisional Revolutionary Government of the Republic of South Vietnam and the Republic of Vietnam. President Nguyễn Văn Thiệu rejected the October 1972 draft. After the bombing of Hanoi and Hải Phòng in late December, which the US called Linebacker II and the Vietnamese side calls the Điện Biên Phủ of the air, the agreement was signed on 27 January 1973.`,
+          `Hiệp định Paris không chấm dứt chiến tranh giữa hai bên Việt Nam, và tháng 1 năm 1974 Trung Quốc dùng vũ lực chiếm phần còn lại của quần đảo Hoàng Sa (xem chuyên đề Hoàng Sa và Trường Sa). Mùa xuân 1975 mở màn bằng Chiến dịch Tây Nguyên: ngày 5 tháng 3 Quân Giải phóng cắt đường 21 nối Buôn Ma Thuột với Nha Trang, ngày 7 chiếm Chư Sê, cô lập thị xã. 2 giờ sáng 10 tháng 3 đặc công nổ súng, và ngày 11 Buôn Ma Thuột được giải phóng. Ngày 14, Tổng thống Thiệu quyết định bỏ Pleiku, Kon Tum; cuộc rút quân biến thành tháo chạy hỗn loạn.`,
+          `The Paris Agreement did not end the war between the two Vietnamese sides, and in January 1974 China seized the rest of the Paracel (Hoàng Sa) Islands by force (see the topic on Hoàng Sa and Trường Sa). Spring 1975 opened with the Central Highlands campaign: on 5 March Liberation forces cut Route 21 between Buôn Ma Thuột and Nha Trang, on the 7th they took Chư Sê, isolating the town. Sappers opened fire at 2 a.m. on 10 March, and Buôn Ma Thuột was liberated on the 11th. On the 14th President Thiệu decided to abandon Pleiku and Kon Tum; the withdrawal turned into a chaotic rout.`,
         ),
         l(
-          `Văn phòng Sử học Bộ Ngoại giao Mỹ viết rằng không bên Việt Nam nào tuân thủ hiệp định. Tháng 1 năm 1974 Trung Quốc chiếm phần còn lại của quần đảo Hoàng Sa từ tay Việt Nam Cộng hòa (xem chuyên đề Hoàng Sa và Trường Sa). Tháng 3 năm 1975 quân đội miền Bắc chiếm Buôn Ma Thuột, rồi Huế và Đà Nẵng. Theo Dinh Độc Lập, sáng 30 tháng 4 xe tăng 843 húc cổng phụ lúc 10 giờ 45, và 11 giờ 30 cờ Mặt trận Dân tộc Giải phóng được cắm trên nóc dinh.`,
-          `The US Office of the Historian writes that neither Vietnamese party abided by the agreement. In January 1974 China seized the rest of the Paracel (Hoàng Sa) Islands from South Vietnam (see the topic chapter on Hoàng Sa and Trường Sa). In March 1975 northern forces took Buôn Ma Thuột, then Huế and Đà Nẵng. On 30 April, according to the Independence Palace, tank 843 rammed the side gate at 10:45, and at 11:30 the flag of the National Liberation Front was raised over the palace.`,
+          `Trên mặt trận Trị Thiên, Quân đoàn 2 cùng lực lượng địa phương giải phóng Quảng Trị ngày 19 tháng 3 và làm chủ Huế cùng toàn tỉnh Thừa Thiên ngày 26. Ngay chiều 25, khi biết Quân đoàn 2 đã vào nội thành Huế, Bộ Tổng Tư lệnh ra lệnh tiến công Đà Nẵng. Ngày 28, pháo binh mở đầu trận đánh, và ngày 29 Quân Giải phóng qua cầu Nguyễn Tri Phương vào thành phố. Quân đoàn 1 và Quân khu 1 của Việt Nam Cộng hòa tan rã.`,
+          `On the Trị Thiên front, the 2nd Army Corps and local forces liberated Quảng Trị on 19 March and took Huế and the whole of Thừa Thiên on the 26th. On the afternoon of the 25th, hearing that the 2nd Corps was inside Huế, the High Command ordered an attack on Đà Nẵng. Artillery opened the assault on the 28th, and on the 29th Liberation troops crossed the Nguyễn Tri Phương bridge into the city. The Republic of Vietnam's I Corps and 1st Military Region fell apart.`,
         ),
         l(
-          `Tổng thống cuối cùng Dương Văn Minh tuyên bố đầu hàng không điều kiện. Dinh Độc Lập dựng trên nền dinh Norodom thời Pháp (1868 - 1871); sau khi dinh cũ bị hai phi công ném bom năm 1962, Ngô Đình Diệm cho xây dinh mới theo thiết kế của kiến trúc sư Ngô Viết Thụ, khánh thành năm 1966. Dinh được công nhận là di tích lịch sử văn hóa quốc gia năm 1976 và di tích quốc gia đặc biệt năm 2009.`,
-          `The last president, Dương Văn Minh, announced an unconditional surrender. The Independence Palace stands on the site of the French-era Norodom Palace (1868 - 1871); after two pilots bombed the old palace in 1962, Ngô Đình Diệm had a new one built to a design by the architect Ngô Viết Thụ, inaugurated in 1966. It was listed as a national historical and cultural relic in 1976 and as a special national monument in 2009.`,
+          `Ngày 14 tháng 4, Bộ Chính trị đặt tên trận cuối là Chiến dịch Hồ Chí Minh, do Đại tướng Văn Tiến Dũng làm tư lệnh. 17 giờ ngày 26 tháng 4 chiến dịch mở màn với năm cánh quân vây Sài Gòn: Quân đoàn 3 ở hướng tây bắc, Quân đoàn 1 hướng bắc, Quân đoàn 4 hướng đông, Quân đoàn 2 hướng đông nam, Đoàn 232 và Sư đoàn 8 hướng tây và tây nam. Sáng 30 tháng 4 các cánh quân đánh vào nội đô; 11 giờ 30, lá cờ cách mạng được cắm trên nóc Dinh Độc Lập, và Tổng thống Dương Văn Minh tuyên bố đầu hàng không điều kiện.`,
+          `On 14 April the Politburo named the final battle the Hồ Chí Minh campaign, under General Văn Tiến Dũng. It opened at 17:00 on 26 April with five columns around Saigon: the 3rd Army Corps from the northwest, the 1st from the north, the 4th from the east, the 2nd from the southeast, and Group 232 with the 8th Division from the west and southwest. On the morning of 30 April the columns drove into the city; at 11:30 the revolutionary flag was raised over the Independence Palace, and President Dương Văn Minh announced an unconditional surrender.`,
         ),
       ],
       scholarly: [
@@ -371,11 +375,11 @@ const chapter: Chapter = {
           `30 April has many names. Official texts in Vietnam call it the day the South was completely liberated and the country reunified, and it is a national holiday. In the United States it is usually called the fall of Saigon. According to The World (2017), for the Vietnamese community in Boston it is Black April, a day of collective mourning, when they raise the yellow flag with three red stripes and sing the anthem of the Republic of Vietnam; one man who grew up in postwar Vietnam recalls that as a child he knew it as the day to celebrate victory over America.`,
         ),
         l(
-          `Các nguồn kể ngày cuối hơi khác nhau. Văn phòng Sử học Mỹ chỉ viết xe tăng đi qua cổng dinh, trang Dinh Độc Lập ghi xe 843 húc cổng phụ lúc 10 giờ 45, còn Cổng thông tin Chính phủ nhấn vào mốc 11 giờ 30. Từ vựng cũng khác: trang Chính phủ nói về giải phóng và gọi đối phương là "Mỹ - ngụy", sách báo Mỹ thường nói Sài Gòn thất thủ, còn người Việt hải ngoại nói về ngày mất nước.`,
-          `Accounts of the last day differ slightly. The US Office of the Historian says only that tanks rolled through the palace gate, the Independence Palace site says tank 843 rammed the side gate at 10:45, and the Government portal stresses 11:30. The vocabulary differs too: the Government page speaks of liberation and calls the other side "Mỹ - ngụy" (Americans and puppets), American accounts usually speak of the fall of Saigon, and overseas Vietnamese speak of the day the country was lost.`,
+          `Các nguồn kể ngày cuối hơi khác nhau. Văn phòng Sử học Mỹ chỉ viết xe tăng đi qua cổng dinh, trang Dinh Độc Lập ghi xe 843 húc cổng phụ lúc 10 giờ 45, báo Nhân Dân nhắc xe tăng 390 húc đổ cổng chính, còn Cổng thông tin Chính phủ nhấn vào mốc 11 giờ 30. Từ vựng cũng khác: trang Chính phủ nói về giải phóng và gọi đối phương là "Mỹ - ngụy", sách báo Mỹ thường nói Sài Gòn thất thủ, còn người Việt hải ngoại nói về ngày mất nước.`,
+          `Accounts of the last day differ slightly. The US Office of the Historian says only that tanks rolled through the palace gate, the Independence Palace site says tank 843 rammed the side gate at 10:45, Nhân Dân mentions tank 390 smashing the main gate, and the Government portal stresses 11:30. The vocabulary differs too: the Government page speaks of liberation and calls the other side "Mỹ - ngụy" (Americans and puppets), American accounts usually speak of the fall of Saigon, and overseas Vietnamese speak of the day the country was lost.`,
         ),
       ],
-      sources: ['wd-vgp-paris', 'wd-osh-ending', 'wd-vgp-1975', 'wd-ddl', 'wd-world-blackapril'],
+      sources: ['wd-vgp-1975', 'x75-nd-bmt', 'x75-nd-hue', 'x75-blc', 'x75-nd-btlm', 'x75-qdnd', 'x75-sggp', 'x75-nd-dinhcao', 'wd-ddl', 'wd-osh-ending', 'wd-world-blackapril'],
     },
     {
       slug: 'cai-gia-con-nguoi-cua-chien-tranh',
@@ -416,6 +420,166 @@ const chapter: Chapter = {
         ),
       ],
       sources: ['wd-wiki-casualties', 'wd-brit-howmany', 'wd-nara', 'wd-hirschman', 'wd-ihme', 'wd-tufts', 'wd-renew', 'wd-vne-thanhco', 'wd-crs-ao'],
+    },
+    {
+      slug: 'vo-nguyen-giap',
+      period: '1945-1975',
+      kind: 'figure',
+      name: l('Đại tướng Võ Nguyên Giáp', 'General Võ Nguyên Giáp'),
+      date: l('1911 - 2013', '1911 - 2013'),
+      sort: 53.9,
+      place: l('Mộ Đại tướng ở Vũng Chùa - Đảo Yến, Quảng Đông, Quảng Trạch, Quảng Trị (trước thuộc Quảng Bình)', "The general's grave at Vũng Chùa - Yến Island, Quảng Đông, Quảng Trạch, Quảng Trị (formerly Quảng Bình)"),
+      coord: [106.4950, 17.9249],
+      evidence: ['chron'],
+      summary: l(
+        `Võ Nguyên Giáp từ một thầy giáo dạy sử trở thành vị tướng chỉ huy Quân đội nhân dân Việt Nam trong hai cuộc kháng chiến. Ông lập đội Việt Nam Tuyên truyền Giải phóng quân với 34 người năm 1944 và chỉ huy chiến dịch Điện Biên Phủ năm 1954. Ông mất năm 2013, thọ 102 tuổi, và an nghỉ ở Vũng Chùa nhìn ra Biển Đông.`,
+        `Võ Nguyên Giáp went from history teacher to commander of the Vietnam People's Army through two wars of resistance. He founded the Armed Propaganda Brigade for the Liberation of Vietnam with 34 soldiers in 1944 and commanded the Điện Biên Phủ campaign in 1954. He died in 2013 at the age of 102 and rests at Vũng Chùa, facing the East Sea.`,
+      ),
+      detail: [
+        l(
+          `Ông sinh ngày 25 tháng 8 năm 1911 ở làng An Xá, Lệ Thủy, Quảng Bình. Năm 1930 ông bị bắt ở Huế vì tham gia phong trào học sinh, sau đó học luật ở Hà Nội và năm 1939 dạy sử ở trường tư thục Thăng Long. Ông từng nói nếu không làm người lính thì ông vẫn là thầy giáo, có lẽ dạy triết học hoặc lịch sử. Tháng 6 năm 1940 ông gặp Nguyễn Ái Quốc ở Côn Minh và vào Đảng Cộng sản Đông Dương.`,
+          `He was born on 25 August 1911 in An Xá village, Lệ Thủy, Quảng Bình. In 1930 he was arrested in Huế for his part in the student movement; he later studied law in Hanoi and in 1939 taught history at the private Thăng Long school. He once said that had he not been a soldier he would still be a teacher, perhaps of philosophy or history. In June 1940 he met Nguyễn Ái Quốc in Kunming and joined the Indochinese Communist Party.`,
+        ),
+        l(
+          `Ngày 22 tháng 12 năm 1944, ở Cao Bằng, ông lập đội Việt Nam Tuyên truyền Giải phóng quân gồm 34 chiến sĩ, tiền thân của Quân đội nhân dân Việt Nam. Tháng 9 năm 1945 ông là Bộ trưởng Bộ Nội vụ trong chính phủ đầu tiên. Ông được phong Đại tướng năm 1948, lễ thụ phong có Chủ tịch Hồ Chí Minh dự ở Định Hóa ngày 28 tháng 5. Chiến dịch Điện Biên Phủ do ông chỉ huy được kể ở chương 1945 - 1975.`,
+          `On 22 December 1944 in Cao Bằng he founded the Armed Propaganda Brigade for the Liberation of Vietnam with 34 soldiers, the forerunner of the Vietnam People's Army. In September 1945 he became Minister of Home Affairs in the first government. He was made a full general in 1948, at a ceremony in Định Hóa on 28 May attended by President Hồ Chí Minh. The Điện Biên Phủ campaign he commanded is told in the 1945 - 1975 chapter.`,
+        ),
+        l(
+          `Ông mất ngày 4 tháng 10 năm 2013 ở Bệnh viện Trung ương Quân đội 108, thọ 102 tuổi. Sau quốc tang, chiều ngày 13 tháng 10, ông được an táng ở Vũng Chùa - Đảo Yến, Quảng Đông, Quảng Trạch, Quảng Bình, trong khi hàng trăm nghìn người đứng dọc đường tiễn đưa. Mộ nằm dưới chân núi Thọ, nhìn ra Biển Đông, với đảo Yến cách bờ khoảng 500 m.`,
+          `He died on 4 October 2013 at Central Military Hospital 108, aged 102. After a state funeral he was buried on the afternoon of 13 October at Vũng Chùa - Yến Island in Quảng Đông commune, Quảng Trạch, Quảng Bình, as hundreds of thousands of people lined the route. The grave lies at the foot of Thọ mountain, facing the East Sea, with Yến Island about 500 m offshore.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Theo con trai ông kể với Tuổi Trẻ, chính Đại tướng chọn khu Vũng Chùa - Đảo Yến năm 2006 sau khi xem bản đồ và đến tận nơi; năm 2007 gia đình trình lại bản đồ và ông ký xác nhận, bút tích vẫn được giữ. Ngày phong Đại tướng được ghi là sắc lệnh ngày 20 tháng 1 năm 1948 và lễ thụ phong ngày 28 tháng 5 năm 1948.`,
+          `According to his son, speaking to Tuổi Trẻ, the general himself chose the Vũng Chùa - Yến Island site in 2006 after studying a map and visiting the site; in 2007 the family showed him the map again and he signed to confirm, and the handwritten record is kept. His promotion is dated to a decree of 20 January 1948, with the ceremony on 28 May 1948.`,
+        ),
+        l(
+          `Một số chi tiết đời tư còn lệch giữa các nguồn. Người vợ đầu của ông, Nguyễn Thị Quang Thái, bị giam ở nhà tù Hỏa Lò và mất trong tù; Wikipedia tiếng Anh vừa ghi ông nghe tin năm 1943 vừa ghi bà mất năm 1944. Wikipedia cũng nêu ý kiến của một số tác giả phương Tây về vai trò của ông sau năm 1972; các nguồn Việt Nam được dẫn ở đây không bàn đến điều này.`,
+          `Some details of his private life differ between sources. His first wife, Nguyễn Thị Quang Thái, was held in Hỏa Lò prison and died there; English Wikipedia says both that he learned of her death in 1943 and that she died in 1944. Wikipedia also reports some Western writers' views on his role after 1972; the Vietnamese sources cited here do not discuss this.`,
+        ),
+      ],
+      sources: ['nvt-htl-giap', 'nvt-bcp-giap', 'nvt-tt-giap', 'nvt-wiki-giap'],
+    },
+    {
+      slug: 'ap-bac-1963',
+      period: '1945-1975',
+      kind: 'event',
+      name: l('Trận Ấp Bắc', 'The battle of Ấp Bắc'),
+      date: l('2/1/1963', '2 January 1963'),
+      sort: 37,
+      place: l('Khu di tích chiến thắng Ấp Bắc, xã Tân Phú, huyện Cai Lậy cũ, Tiền Giang (nay thuộc Đồng Tháp)', 'Ấp Bắc victory memorial site, Tân Phú commune, former Cai Lậy district, Tiền Giang (now part of Đồng Tháp)'),
+      coord: [106.1958, 10.4381],
+      evidence: ['chron'],
+      summary: l(
+        `Ngày 2 tháng 1 năm 1963, ở Ấp Bắc gần Mỹ Tho, khoảng 350 chiến sĩ Quân Giải phóng chặn đánh cuộc càn của Sư đoàn 7 quân đội Việt Nam Cộng hòa do cố vấn Mỹ chỉ đạo, đông gấp nhiều lần và có trực thăng, xe bọc thép M113 yểm trợ. Năm trực thăng Mỹ bị bắn rơi, cuộc càn thất bại. Đây là trận đầu tiên đánh bại chiến thuật trực thăng vận và thiết xa vận của Mỹ.`,
+        `On 2 January 1963, at Ấp Bắc near Mỹ Tho, about 350 Liberation Army (NLF) fighters held off a sweep by the Republic of Vietnam's 7th Division, directed by American advisers, many times their number and backed by helicopters and M113 armoured carriers. Five US helicopters were shot down and the sweep failed. It was the first defeat of the American tactics of moving troops by helicopter and armoured carrier.`,
+      ),
+      detail: [
+        l(
+          `Cuối năm 1962, một máy bay nghe lén của Mỹ dò được một đài phát tín hiệu ở ấp Tân Thới, tỉnh Định Tường. Kế hoạch tấn công đánh vào ấp từ ba hướng, có pháo binh, xe M113 và trực thăng yểm trợ. Ở Ấp Bắc và Tân Thới, Đại đội 1 Tiểu đoàn 261 và Đại đội 1 Tiểu đoàn 514, tổng cộng khoảng 320 người, đã đào công sự dọc bờ kênh chờ sẵn. Sáng 2 tháng 1, lực lượng Bảo an đi từ phía nam lên thì bị chặn lại ngay trước Ấp Bắc.`,
+          `In late 1962 an American eavesdropping aircraft located a radio transmitter in the hamlet of Tân Thới, Định Tường province. The plan was to attack it from three directions with artillery, M113s and helicopters in support. At Ấp Bắc and Tân Thới, the 1st Company of the 261st Battalion and the 1st Company of the 514th Battalion, about 320 men in all, had dug in along the canal banks. On the morning of 2 January, Civil Guard troops advancing from the south were pinned down just short of Ấp Bắc.`,
+        ),
+        l(
+          `Trực thăng chở quân tiếp viện đáp xuống cánh đồng sát trận địa. Theo báo Quân đội Nhân dân, chỉ trong năm phút quân Giải phóng bắn rơi ba chiếc H-21 và hai chiếc HU-1. Đến trưa, xe M113 theo Quốc lộ 4 qua Tân Hội, Tân Phú tiến vào nhưng bị chặn ở các bờ kênh; theo báo Sài Gòn Giải Phóng, ba chiến sĩ đã nhảy lên một chiếc xe ném thủ pháo rồi hy sinh khi quay về công sự. Đêm xuống, quân Giải phóng rút khỏi trận địa an toàn.`,
+          `Helicopters bringing reinforcements landed in the fields right beside the defences. According to the People's Army newspaper, within five minutes the defenders shot down three H-21s and two HU-1s. Around noon the M113s came down Highway 4 through Tân Hội and Tân Phú but were held at the canal banks; according to Sài Gòn Giải Phóng, three fighters leapt onto one carrier and threw grenades, then were killed on their way back to the trenches. After dark the Liberation fighters withdrew safely.`,
+        ),
+        l(
+          `Phía Việt Nam ghi đã loại khỏi vòng chiến đấu 450 quân đối phương, trong đó có 11 cố vấn và nhân viên kỹ thuật Mỹ, bắn rơi 5 máy bay và phá hủy 3 xe M113. Ngay hôm sau báo chí Mỹ gọi đây là một thất bại lớn, và phóng viên Neil Sheehan đưa tin các cố vấn Mỹ tức giận vì binh sĩ Việt Nam Cộng hòa không chịu tiến lên. Sau trận này, khắp miền Nam dấy lên phong trào thi đua Ấp Bắc.`,
+          `The Vietnamese side records 450 enemy troops put out of action, including 11 American advisers and technicians, 5 aircraft shot down and 3 M113s destroyed. The next day the American press called it a major defeat, and the correspondent Neil Sheehan reported American advisers angry that South Vietnamese soldiers had refused to advance. Afterwards an "emulate Ấp Bắc" movement spread across the South.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Số liệu lệch nhau. Các nguồn phương Tây như Wikipedia, chủ yếu dựa vào sách của Neil Sheehan, ghi phía Việt Nam Cộng hòa có 83 người chết, phía Mỹ 3 cố vấn chết, còn quân Giải phóng mất 18 người và 39 người bị thương. Một bài trên báo Sài Gòn Giải Phóng ghi bắn rơi và bắn hỏng 16 máy bay, trong khi các nguồn Mỹ thống nhất là 5 trực thăng bị bắn rơi và nhiều chiếc khác trúng đạn.`,
+          `The figures differ. Western sources such as Wikipedia, drawing mainly on Neil Sheehan, give 83 South Vietnamese and 3 American advisers killed, and 18 Liberation fighters killed and 39 wounded. One article in Sài Gòn Giải Phóng counts 16 aircraft shot down or damaged, while American sources agree on 5 helicopters shot down and many more hit.`,
+        ),
+        l(
+          `Sử học Việt Nam coi Ấp Bắc là trận báo hiệu sự phá sản của chiến lược Chiến tranh đặc biệt. Trang kỷ niệm của Bộ Quốc phòng Mỹ gọi đây là một trận nhỏ, nhưng thừa nhận nó là một trong những lý do khiến Mỹ mất niềm tin vào Ngô Đình Diệm và đưa thêm quân sang. Hai cách nhìn gặp nhau ở chỗ Ấp Bắc phơi bày điểm yếu của cách đánh dựa vào trực thăng và xe bọc thép.`,
+          `Vietnamese historiography sees Ấp Bắc as the first sign that the "special war" strategy would fail. The US Department of Defense commemoration site calls it a minor engagement, yet counts it among the reasons the United States lost confidence in Ngô Đình Diệm and sent more troops. Both readings agree that Ấp Bắc exposed the weakness of fighting by helicopter and armoured carrier.`,
+        ),
+      ],
+      sources: ['ab-qdnd', 'ab-sggp', 'ab-sggp2', 'ab-nd', 'ab-wgbh', 'ab-frus', 'ab-wiki', 'ab-vw50'],
+    },
+    {
+      slug: 'van-tuong-1965',
+      period: '1945-1975',
+      kind: 'event',
+      name: l('Chiến thắng Vạn Tường', 'The battle of Vạn Tường'),
+      date: l('18/8/1965', '18 August 1965'),
+      sort: 35,
+      place: l('Bảo tàng Chiến thắng Vạn Tường, xã Vạn Tường, Quảng Ngãi', 'Vạn Tường Victory Museum, Vạn Tường commune, Quảng Ngãi'),
+      coord: [108.8562, 15.3213],
+      evidence: ['chron'],
+      summary: l(
+        `Ngày 18 tháng 8 năm 1965, chỉ năm tháng sau khi đổ bộ vào Đà Nẵng, quân Mỹ mở cuộc hành quân lớn đầu tiên do riêng lính Mỹ tiến hành: khoảng 5.500 lính thủy đánh bộ, có xe tăng, tàu chiến và máy bay, đánh vào Vạn Tường, Quảng Ngãi để diệt Trung đoàn 1 Quân Giải phóng. Trung đoàn 1 cùng du kích địa phương đánh trả suốt một ngày rồi rút đi an toàn.`,
+        `On 18 August 1965, only five months after landing at Đà Nẵng, American forces launched their first large operation fought by US troops alone: about 5,500 Marines, with tanks, warships and aircraft, struck Vạn Tường in Quảng Ngãi to destroy the Liberation Army's 1st Regiment. The regiment and local guerrillas fought back all day, then slipped away intact.`,
+      ),
+      detail: [
+        l(
+          `Đêm 17 tháng 8, hơn chục tàu chiến của Hạm đội 7 dàn thành vòng cung ngoài khơi, nã pháo vào thôn Vạn Tường và các điểm cao. Sáng 18, một tiểu đoàn lính thủy đánh bộ đổ bộ từ biển, các đơn vị khác được trực thăng chở vào ba bãi đáp phía tây thôn, định ép đối phương ra phía biển. Theo báo Sài Gòn Giải Phóng, lực lượng Mỹ gồm 4 tiểu đoàn lính thủy đánh bộ, 1 tiểu đoàn xe tăng và xe bọc thép, 2 tiểu đoàn pháo 105 ly và 6 tàu đổ bộ.`,
+          `On the night of 17 August more than ten ships of the Seventh Fleet lined up offshore in an arc and shelled Vạn Tường and the surrounding hills. On the 18th one Marine battalion landed from the sea while others were flown by helicopter into three landing zones west of the village, to drive the defenders toward the coast. According to Sài Gòn Giải Phóng, the American force comprised 4 Marine battalions, 1 battalion of tanks and armoured vehicles, 2 battalions of 105 mm guns and 6 landing ships.`,
+        ),
+        l(
+          `Giao tranh ác liệt nhất ở đồi đất đỏ Ngọc Hương, nơi Trung đội 2 thuộc Tiểu đoàn 60 đánh giáp lá cà, và ở chiến hào Lộc Tự, nơi xe tăng Mỹ bị bắn cháy. Một cựu chiến binh kể đơn vị ông để địch đến thật gần mới nổ súng. Rạng sáng 19, Trung đoàn 1 bí mật rút khỏi Vạn Tường. Quần thể di tích nay gồm 8 điểm, trong đó có sở chỉ huy Trung đoàn 1 và bãi biển Phước Thiện, nơi còn trục cánh một trực thăng Mỹ.`,
+          `The fiercest fighting was on the red-earth hill of Ngọc Hương, where the 2nd Platoon of the 60th Battalion fought hand to hand, and at the Lộc Tự trenches, where American tanks were set on fire. One veteran recalls his unit holding fire until the enemy was very close. Before dawn on the 19th the 1st Regiment slipped out of Vạn Tường. The memorial complex now has 8 sites, among them the regiment's command post and Phước Thiện beach, where part of an American helicopter's rotor remains.`,
+        ),
+        l(
+          `Phía Việt Nam ghi quân Mỹ bị loại khỏi vòng chiến đấu 919 người, 22 xe tăng và xe bọc thép bị bắn hỏng, 13 máy bay bị bắn rơi. Vạn Tường được coi là trận mở đầu cho phong trào tìm Mỹ mà đánh ở miền Nam, khẳng định quân dân Việt Nam có thể đánh thắng quân viễn chinh Mỹ ngay trên chiến trường bộ.`,
+          `The Vietnamese side records 919 Americans put out of action, 22 tanks and armoured vehicles knocked out and 13 aircraft shot down. Vạn Tường is regarded as the battle that launched the "seek out the Americans and fight them" movement in the South, showing that Vietnamese forces could beat American expeditionary troops on the ground.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Phía Mỹ gọi đây là chiến dịch Starlite, kéo dài từ 18 đến 24 tháng 8, và coi đó là thắng lợi của mình: theo các tài liệu Mỹ, quân Giải phóng mất 614 người chết và 9 người bị bắt, còn lính thủy đánh bộ Mỹ có khoảng 45 người chết. Wikipedia ghi rằng cả hai bên đều tuyên bố thắng trận.`,
+          `The Americans call it Operation Starlite, which lasted from 18 to 24 August, and count it as their success: by American records the Liberation Army lost 614 killed and 9 captured, while the Marines lost about 45 killed. Wikipedia notes that both sides claim victory.`,
+        ),
+        l(
+          `Trang này kể Vạn Tường theo cách nhìn của Việt Nam, nơi trận đánh được coi là bước ngoặt: theo mục từ của Viện Hàn lâm Khoa học xã hội, Lê Duẩn từng ví Vạn Tường với trận Stalingrad, chứng tỏ quân Mỹ không phải là không đánh được. Trang kỷ niệm của Bộ Quốc phòng Mỹ thì xem việc kết thúc Starlite là khởi đầu cho sự leo thang toàn diện của cuộc chiến. Hai cách nhìn khác nhau về kết quả nhưng cùng coi đây là một mốc mở đầu.`,
+          `This site tells Vạn Tường from the Vietnamese side, where it is seen as a turning point: according to an entry by the Vietnam Academy of Social Sciences, Lê Duẩn likened it to Stalingrad, proof that the Americans could be beaten. The US Department of Defense commemoration site sees the end of Starlite as the start of full-scale American escalation. The two readings differ on the outcome but both treat it as a beginning.`,
+        ),
+      ],
+      sources: ['vt-sggp24', 'vt-sggp25', 'vt-dbnd', 'vt-vass', 'vt-osprey', 'vt-usmc', 'vt-wiki', 'vt-vw50'],
+    },
+    {
+      slug: 'ha-noi-dien-bien-phu-tren-khong-1972',
+      period: '1945-1975',
+      kind: 'event',
+      name: l('Hà Nội - Điện Biên Phủ trên không và Hiệp định Paris', '"Điện Biên Phủ in the air" and the Paris Agreement'),
+      date: l('18 - 29/12/1972; Hiệp định Paris 27/1/1973', '18 - 29 December 1972; Paris Agreement 27 January 1973'),
+      sort: 28,
+      place: l('Hồ Hữu Tiệp (hồ B-52), phường Ngọc Hà, Hà Nội', 'Hữu Tiệp lake (the B-52 lake), Ngọc Hà, Hanoi'),
+      coord: [105.827, 21.038],
+      evidence: ['chron'],
+      summary: l(
+        `Tháng 12 năm 1972, khi đàm phán ở Paris bế tắc, Tổng thống Nixon cho máy bay ném bom chiến lược B-52 đánh phá Hà Nội, Hải Phòng suốt 12 ngày đêm. Quân và dân miền Bắc đánh trả bằng tên lửa, pháo cao xạ và máy bay MiG-21. Phía Việt Nam ghi bắn rơi 81 máy bay, trong đó có 34 chiếc B-52. Mỹ phải ngừng ném bom, trở lại bàn đàm phán và ký Hiệp định Paris ngày 27 tháng 1 năm 1973.`,
+        `In December 1972, with the Paris talks deadlocked, President Nixon sent B-52 strategic bombers against Hanoi and Hải Phòng for twelve days and nights. The North fought back with missiles, anti-aircraft guns and MiG-21s. The Vietnamese side records 81 aircraft shot down, 34 of them B-52s. The United States halted the bombing, returned to the table and signed the Paris Agreement on 27 January 1973.`,
+      ),
+      detail: [
+        l(
+          `Đàm phán ở Paris bắt đầu từ ngày 13 tháng 5 năm 1968. Tháng 10 năm 1972 đã có bản dự thảo, nhưng Tổng thống Nguyễn Văn Thiệu bác bỏ và phía Mỹ đòi sửa lại. Ngày 18 tháng 12, Mỹ mở chiến dịch Linebacker II: các máy bay B-52 cất cánh từ đảo Guam và căn cứ U-Tapao ở Thái Lan, thực hiện 729 lượt xuất kích, chủ yếu vào Hà Nội và Hải Phòng. 19 giờ 10 phút tối 18, ra-đa phát hiện tốp B-52 đầu tiên, và ngay đêm ấy ba chiếc bị bắn rơi.`,
+          `Talks in Paris had begun on 13 May 1968. A draft existed by October 1972, but President Nguyễn Văn Thiệu rejected it and Washington demanded changes. On 18 December the United States launched Linebacker II: B-52s took off from Guam and from U-Tapao in Thailand and flew 729 sorties, mostly against Hanoi and Hải Phòng. At 19:10 that evening radar picked up the first B-52 formation, and three were shot down that very night.`,
+        ),
+        l(
+          `Bom B-52 rơi cả xuống khu dân cư. Đêm 26 tháng 12, phố Khâm Thiên bị ném bom rải thảm: 278 người chết, trong đó có 91 phụ nữ, 40 cụ già và 55 trẻ em, 290 người bị thương. Bệnh viện Bạch Mai cũng bị tàn phá. Đêm 27, Tiểu đoàn 72 Trung đoàn tên lửa 285 bắn rơi một chiếc B-52 xuống hồ Hữu Tiệp ở làng hoa Ngọc Hà; theo TTXVN, hai chiếc B-52 bị MiG-21 bắn hạ, một chiếc do phi công Phạm Tuân bắn rơi tại chỗ. Xác máy bay ở hồ nay là di tích quốc gia.`,
+          `B-52 bombs also fell on homes. On the night of 26 December, Khâm Thiên street was carpet-bombed: 278 people died, among them 91 women, 40 elderly people and 55 children, and 290 were injured. Bạch Mai hospital was wrecked too. On the night of the 27th, the 72nd Battalion of the 285th Missile Regiment brought down a B-52 into Hữu Tiệp lake in the flower village of Ngọc Hà; according to the Vietnam News Agency, two B-52s were downed by MiG-21s, one of them by the pilot Phạm Tuân. The wreck in the lake is now a national monument.`,
+        ),
+        l(
+          `Theo VOV, sáng 30 tháng 12 Nixon phải tuyên bố chấm dứt cuộc ném bom Hà Nội, Hải Phòng và chấp nhận nối lại đàm phán. Hiệp định Paris được ký ngày 27 tháng 1 năm 1973; bà Nguyễn Thị Bình ký thay Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam. Hoa Kỳ rút hết quân khỏi miền Nam, dù Văn phòng Sử học Bộ Ngoại giao Mỹ ghi rằng không bên Việt Nam nào tuân thủ đầy đủ hiệp định.`,
+          `According to VOV, on the morning of 30 December Nixon announced the end of the bombing of Hanoi and Hải Phòng and agreed to resume talks. The Paris Agreement was signed on 27 January 1973; Nguyễn Thị Bình signed for the Provisional Revolutionary Government of the Republic of South Vietnam. The United States withdrew all its troops from the South, though the US Office of the Historian notes that neither Vietnamese party fully abided by the agreement.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Số máy bay bị bắn rơi lệch nhau. Phía Việt Nam ghi 81 máy bay, trong đó có 34 chiếc B-52 và 5 chiếc F-111, với 16 chiếc B-52 rơi tại chỗ. Tài liệu chính thức của Không quân Mỹ ghi mất 15 chiếc B-52, 2 chiếc F-4, 2 chiếc F-111 và một trực thăng cứu hộ, cộng thêm 6 máy bay của Hải quân. Về thường dân, VOV ghi đợt ném bom giết 2.368 người và làm bị thương 1.355 người ở Hà Nội.`,
+          `The number of aircraft downed differs. The Vietnamese side records 81, including 34 B-52s and 5 F-111s, with 16 B-52s falling on the spot. The official US Air Force account lists 15 B-52s, 2 F-4s, 2 F-111s and one rescue helicopter lost, plus 6 Navy aircraft. As for civilians, VOV says the bombing killed 2,368 people and injured 1,355 in Hanoi.`,
+        ),
+        l(
+          `Ý nghĩa cũng được đọc khác nhau. Việt Nam coi đây là đòn quyết định buộc Mỹ ký Hiệp định Paris; theo VOV, tên gọi Điện Biên Phủ trên không xuất phát từ cách dư luận phương Tây so sánh với trận năm 1954. Nhiều sử gia và tướng lĩnh Không quân Mỹ lại cho rằng chính đợt ném bom đã buộc Hà Nội trở lại bàn đàm phán, còn trang kỷ niệm của Bộ Quốc phòng Mỹ ghi nhận nó bị chỉ trích là cuộc ném bom Giáng sinh.`,
+          `Its meaning is read differently too. Vietnam sees it as the decisive blow that forced the United States to sign in Paris; according to VOV, the name "Điện Biên Phủ in the air" came from Western commentators comparing it with 1954. Many historians and former US Air Force commanders argue instead that the bombing drove Hanoi back to the table, while the US Department of Defense commemoration site notes that it was derided as the "Christmas bombings".`,
+        ),
+      ],
+      sources: ['dbk-vov', 'dbk-blc', 'dbk-vks', 'dbk-kt', 'dbk-vovkt', 'dbk-dti', 'dbk-vnplus', 'dbk-bvh', 'dbk-af', 'dbk-asf', 'dbk-vw50', 'wd-vgp-paris', 'wd-osh-ending'],
     },
   ],
   sources: [
@@ -487,8 +651,66 @@ const chapter: Chapter = {
     { id: 'hcm-the-brocheux', kind: 'paper', cite: 'Sophie Quinn-Judge (10/8/2007), "Leading light\'s past life still in the shadows", điểm sách Pierre Brocheux, Ho Chi Minh: A Biography (Cambridge University Press, 2007), Times Higher Education.', url: 'https://www.timeshighereducation.com/node/91621' },
     { id: 'hcm-hurst-qj', kind: 'paper', cite: 'Hurst Publishers, trang giới thiệu sách Sophie Quinn-Judge, Ho Chi Minh: The Missing Years, 1919 - 41 (2003).', url: 'https://hurstpublishers.com/?p=6451' },
     { id: 'wd-wiki-famine', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "Vietnamese famine of 1944 - 1945", bản xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Vietnamese_famine_of_1944%E2%80%931945' },
+    { id: 'nvt-htl-giap', kind: 'museum', cite: 'Trung tâm Bảo tồn Di sản Thăng Long - Hà Nội, triển lãm trực tuyến "A Legendary General" nhân 110 năm ngày sinh Đại tướng Võ Nguyên Giáp.', url: 'https://trungbayonline.hoangthanhthanglong.vn/VoNguyenGiap/IndexEng' },
+    { id: 'nvt-bcp-giap', kind: 'news', cite: 'Báo Điện tử Chính phủ (bản tiếng Anh, 13/10/2013), "General Giap rests in peace in hometown".', url: 'https://en.baochinhphu.vn/print/general-giap-rests-in-peace-in-hometown-11118019.htm' },
+    { id: 'nvt-tt-giap', kind: 'news', cite: 'Tuổi Trẻ (10/2013), "Nơi an nghỉ của Đại tướng hướng ra biển Đông".', url: 'https://tuoitre.vn/noi-an-nghi-cua-dai-tuong-huong-ra-bien-dong-573543.htm' },
+    { id: 'nvt-wiki-giap', kind: 'reference', cite: 'Wikipedia tiếng Anh, "Võ Nguyên Giáp", xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/V%C3%B5_Nguy%C3%AAn_Gi%C3%A1p' },
+    { id: 'ab-qdnd', kind: 'news', cite: 'Báo Quân đội Nhân dân (bản tiếng Anh), "Ap Bac victory leads the enemy to a tactic crisis".', url: 'https://en.qdnd.vn/70-years-of-the-vietnam-people-s-army/ap-bac-victory-leads-the-enemy-to-a-tactic-crisis-454982' },
+    { id: 'ab-sggp', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng, "Kỷ niệm 60 năm Ngày chiến thắng Ấp Bắc (2-1-1963 - 2-1-2023): Ký ức hào hùng, không thể nào quên".', url: 'https://www.sggp.org.vn/ky-niem-60-nam-ngay-chien-thang-ap-bac-2-1-1963-2-1-2023-ky-uc-hao-hung-khong-the-nao-quen-post673811.html' },
+    { id: 'ab-sggp2', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng, "Kỷ niệm 60 năm ngày chiến thắng Ấp Bắc (2-1-1963 - 2-1-2023): Chiến thắng của mưu trí và dũng cảm".', url: 'https://www.sggp.org.vn/ky-niem-60-nam-ngay-chien-thang-ap-bac-2-1-1963-2-1-2023-chien-thang-cua-muu-tri-va-dung-cam-post673947.html' },
+    { id: 'ab-nd', kind: 'news', cite: 'Báo Nhân Dân, chuyên đề "Trận Ấp Bắc báo hiệu sự thất bại của chiến lược chiến tranh đặc biệt".', url: 'https://special.nhandan.vn/tran_apbac_thatbai_chientranhdacbiet/index.html' },
+    { id: 'ab-wgbh', kind: 'primary', cite: 'WGBH Open Vault, phỏng vấn đại úy Nguyễn Công Danh về trận Ấp Bắc, tư liệu của loạt phim Vietnam: A Television History.', url: 'https://openvault.wgbh.org/transcripts/V_4A1A6DC2A3224416B061D44BF99CB91D' },
+    { id: 'ab-frus', kind: 'primary', cite: 'U.S. Department of State, Office of the Historian, Foreign Relations of the United States 1961 - 1963, tập III, tài liệu 1, "Editorial Note" về trận Ấp Bắc.', url: 'https://history.state.gov/historicaldocuments/frus1961-63v03/d1' },
+    { id: 'ab-wiki', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "Battle of Ap Bac", bản xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Battle_of_Ap_Bac' },
+    { id: 'ab-vw50', kind: 'reference', cite: 'United States of America Vietnam War Commemoration (Bộ Quốc phòng Mỹ), "Battle of Ap Bac, January 2, 1963".', url: 'https://vietnamwar50th.com/1945-1964_the_road_to_war/Battle-Of-Ap-Bac' },
+    { id: 'vt-sggp24', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng (8/2024), "Lễ giỗ tưởng niệm các anh hùng liệt sĩ trong Chiến thắng Vạn Tường".', url: 'https://www.sggp.org.vn/le-gio-tuong-niem-cac-anh-hung-liet-si-trong-chien-thang-van-tuong-post754665.html' },
+    { id: 'vt-sggp25', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng (18/8/2025), "Kỷ niệm 60 năm Chiến thắng Vạn Tường".', url: 'https://www.sggp.org.vn/ky-niem-60-nam-chien-thang-van-tuong-post808919.html' },
+    { id: 'vt-dbnd', kind: 'news', cite: 'Báo Đại biểu Nhân dân (18/8/2025), "Quảng Ngãi kỷ niệm 60 năm Chiến thắng Vạn Tường".', url: 'https://daibieunhandan.vn/quang-ngai-ky-niem-60-nam-chien-thang-van-tuong-10383709.html' },
+    { id: 'vt-vass', kind: 'reference', cite: 'Viện Hàn lâm Khoa học xã hội Việt Nam, mục từ "Vạn Tường" (tệp văn bản trên cổng thông tin của Viện).', url: 'https://storage-vnportal.vnpt.vn/vass/6475/FileQuanTriTinTuc/V%E1%BA%A0N%20T%C6%AF%E1%BB%9CNG.docx' },
+    { id: 'vt-osprey', kind: 'news', cite: 'Osprey Publishing blog (18/8/2015), "Operation Starlite: the first US ground fight in Vietnam".', url: 'https://ospreypublishing.com/us/osprey-blog/2015/operation-starlite-the-first-us-ground-fight-in-vietnam' },
+    { id: 'vt-usmc', kind: 'paper', cite: 'Rod Andrew Jr. (2015), The First Fight: U.S. Marines in Operation Starlite, August 1965, Marine Corps History Division, Quantico.', url: 'https://govinfo.gov/content/pkg/GOVPUB-D214-PURL-gpo62355/pdf/GOVPUB-D214-PURL-gpo62355.pdf' },
+    { id: 'vt-wiki', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "Operation Starlite", bản xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Operation_Starlite' },
+    { id: 'vt-vw50', kind: 'reference', cite: 'United States of America Vietnam War Commemoration (Bộ Quốc phòng Mỹ), "Week of August 25" về chiến dịch STARLITE.', url: 'https://www.vietnamwar50th.com/education/week_of_august_25' },
+    { id: 'dbk-vov', kind: 'news', cite: 'VOV, đăng lại trên báo Thanh tra (19/12/2020), "Hà Nội - Điện Biên Phủ trên không 1972: Thắng lợi của bản lĩnh Việt Nam".', url: 'https://thanhtra.com.vn/xa-hoi-C5ACF42DB/ha-noi-dien-bien-phu-tren-khong-1972-thang-loi-cua-ban-linh-viet-nam-B5A5AAD2.html' },
+    { id: 'dbk-blc', kind: 'news', cite: 'Báo Lào Cai, "Đại tướng Võ Nguyên Giáp với Chiến thắng Hà Nội - Điện Biên Phủ trên không".', url: 'https://baolaocai.vn/dai-tuong-vo-nguyen-giap-voi-chien-thang-ha-noi-dien-bien-phu-tren-khong-post362959.html' },
+    { id: 'dbk-vks', kind: 'news', cite: 'Viện Kiểm sát nhân dân tối cao, "Nghệ thuật tác chiến phòng không - không quân" trong 12 ngày đêm tháng 12/1972.', url: 'https://vksndtc.gov.vn/tin-vks/nghe-thuat-tac-chien-phong-khong---khong-quan-rut--d6-t1690.html' },
+    { id: 'dbk-kt', kind: 'news', cite: 'Báo Mới (đăng lại), "Khâm Thiên - một thời đạn bom nuôi khát vọng hòa bình", tháng 12/2024.', url: 'https://baomoi.com/kham-thien-mot-thoi-dan-bom-nuoi-khat-vong-hoa-binh-c51049680.epi' },
+    { id: 'dbk-vovkt', kind: 'news', cite: 'VOV, "Hà Nội tưởng niệm đồng bào bị bom Mỹ sát hại tháng 12 năm 1972", 26/12/2017.', url: 'https://vov.vn/xa-hoi/ha-noi-tuong-niem-dong-bao-bi-bom-my-sat-hai-thang-12-nam-1972-711782.vov' },
+    { id: 'dbk-dti', kind: 'news', cite: 'DTiNews (theo VOV, 12/2012), "Photos recall Hanoi\'s 12 days and nights in 1972".', url: 'https://dtinews.dantri.com.vn/print/20121220101120153.htm' },
+    { id: 'dbk-vnplus', kind: 'news', cite: 'VietnamPlus (TTXVN), "Hà Nội - Điện Biên Phủ trên không: quật cờ siêu pháo đài bay Mỹ", ảnh tư liệu TTXVN.', url: 'https://www.vietnamplus.vn/ha-noi-dien-bien-phu-tren-khong-quat-co-sieu-phao-dai-bay-my-post837934.vnp' },
+    { id: 'dbk-bvh', kind: 'news', cite: 'Báo Văn hóa, "Hồi sinh hồ Hữu Tiệp", về dự án tu bổ di tích quốc gia hồ Hữu Tiệp và xác máy bay B-52.', url: 'https://baovanhoa.vn/di-san/hoi-sinh-ho-huu-tiep-58112.html' },
+    { id: 'dbk-af', kind: 'reference', cite: 'Air Force Historical Support Division (Không quân Mỹ), "1972 - Operation Linebacker II".', url: 'https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458991/operation-linebacker-ii' },
+    { id: 'dbk-asf', kind: 'news', cite: 'Air & Space Forces Magazine (12/2012), "Linebacker II".', url: 'https://www.airandspaceforces.com/article/1212linebacker/' },
+    { id: 'dbk-vw50', kind: 'reference', cite: 'United States of America Vietnam War Commemoration (Bộ Quốc phòng Mỹ), "Operation LINEBACKER II, December 18, 1972".', url: 'https://vietnamwar50th.com/1972-1974_negotiations_and_passing_the_torch/Operation-LINEBACKER-II' },
+    { id: 'x75-nd-bmt', kind: 'news', cite: 'Báo Nhân Dân, "Chiến thắng Buôn Ma Thuột, mốc son lịch sử quân sự thời kỳ chống Mỹ, cứu nước" (phỏng vấn).', url: 'https://nhandan.vn/chien-thang-buon-ma-thuot-moc-son-lich-su-quan-su-thoi-ky-chong-my-cuu-nuoc-post515893.html' },
+    { id: 'x75-nd-hue', kind: 'news', cite: 'Trần Quang Chương, "Giải phóng Huế - Đà Nẵng, tạo đà trực tiếp cho Chiến dịch Hồ Chí Minh lịch sử", báo Nhân Dân.', url: 'https://nhandan.vn/special/giai-phong-Hue-Da-Nang/index.html' },
+    { id: 'x75-blc', kind: 'news', cite: 'Báo Lào Cai, "Đại thắng mùa Xuân 1975 - nơi ghi dấu ấn đậm nét của những vị tướng".', url: 'https://baolaocai.vn/dai-thang-mua-xuan-1975-noi-ghi-dau-an-dam-net-cua-nhung-vi-tuong-post367829.html' },
+    { id: 'x75-nd-btlm', kind: 'news', cite: 'Báo Nhân Dân, "Bộ Tư lệnh Miền trong cuộc Tổng tiến công và nổi dậy mùa xuân năm 1975".', url: 'https://nhandan.vn/post-230199.html' },
+    { id: 'x75-qdnd', kind: 'news', cite: 'Báo Quân đội Nhân dân (bản tiếng Anh), "Ho Chi Minh Campaign: historic decisive strategic battle".', url: 'https://en.qdnd.vn/70-years-of-the-vietnam-people-s-army/ho-chi-minh-campaign-historic-decisive-strategic-battle-455409' },
+    { id: 'x75-sggp', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng, "Ngày 26-4-1975: Mở màn chiến dịch Hồ Chí Minh".', url: 'https://www.sggp.org.vn/ngay-26-4-1975-mo-man-chien-dich-ho-chi-minh-post283259.html' },
+    { id: 'x75-nd-dinhcao', kind: 'news', cite: 'Báo Nhân Dân, chuyên đề "Đỉnh cao nghệ thuật quân sự Việt Nam".', url: 'https://special.nhandan.vn/dinh-cao-nghe-thuat-quan-su-viet-nam/index.html' },
+    { id: 'tet-vov', kind: 'news', cite: 'VOV, "Ký ức của những người làm nên chiến dịch Tết Mậu Thân".', url: 'https://vov.vn/xa-hoi/ky-uc-cua-nhung-nguoi-lam-nen-chien-dich-tet-mau-than-246390.vov' },
+    { id: 'tet-zn', kind: 'news', cite: 'Tri thức trực tuyến (Znews), "Biệt động Sài Gòn chiến đấu ở Dinh Độc Lập trong chiến dịch Mậu Thân".', url: 'https://znews.vn/biet-dong-sai-gon-chien-dau-o-dinh-doc-lap-trong-chien-dich-mau-than-post1659674.html' },
+    { id: 'tet-nd', kind: 'news', cite: 'Báo Nhân Dân, chuyên đề "Phát huy khí thế Tết Mậu Thân 1968".', url: 'https://special.nhandan.vn/phat-huy-khi-the-Tet-Mau-Than-1968/index.html' },
+    { id: 'tet-gd', kind: 'news', cite: 'Báo Giáo dục Việt Nam, "Trận đánh vào Nhà trắng phương Đông Tết năm 1968" (kỳ 5).', url: 'https://giaoduc.net.vn/tieu-diem/tran-danh-vao-nha-trang-phuong-dong-tet-nam-1968-5-post183590.gd' },
   ],
   hooks: {
+    'ap-bac-1963': l(
+      `Một trận đánh chỉ từ sáng đến tối ở một ấp nhỏ miền Tây làm báo chí Mỹ lần đầu viết về một thất bại lớn ở Việt Nam.`,
+      `A single day's fighting at a small Mekong delta hamlet made the American press write, for the first time, of a major defeat in Vietnam.`,
+    ),
+    'van-tuong-1965': l(
+      `Trận lớn đầu tiên với lính Mỹ nổ ra chỉ năm tháng sau khi những đơn vị lính thủy đánh bộ Mỹ đầu tiên đổ bộ lên Đà Nẵng.`,
+      `The first big battle with American troops came only five months after the first US Marines landed at Đà Nẵng.`,
+    ),
+    'ha-noi-dien-bien-phu-tren-khong-1972': l(
+      `Giữa một con hẻm ở Hà Nội, xác một chiếc B-52 vẫn nằm trong lòng hồ hơn nửa thế kỷ.`,
+      `In a Hanoi back street, the wreck of a B-52 has lain in a small lake for more than half a century.`,
+    ),
+    'vo-nguyen-giap': l(
+      `Vị tướng của Điện Biên Phủ từng nói nếu không làm người lính, ông vẫn là thầy giáo dạy lịch sử.`,
+      `The general of Điện Biên Phủ once said that had he not been a soldier, he would still be teaching history.`,
+    ),
     'cach-mang-thang-tam-tuyen-ngon-doc-lap': l(
       `Vị vua cuối cùng của Việt Nam, sau khi thoái vị, được mời làm cố vấn cho chính phủ đã thay thế mình.`,
       `Vietnam's last emperor, after abdicating, was made an adviser to the government that replaced him.`,
@@ -514,12 +736,12 @@ const chapter: Chapter = {
       `Of 25 men charged over Mỹ Lai, only one was convicted.`,
     ),
     'tet-mau-than-1968': l(
-      `Thua đậm trên chiến trường nhưng lại làm đổi chiều dư luận nước Mỹ: đó là nghịch lý của Tết Mậu Thân.`,
-      `A heavy defeat on the battlefield that still turned American opinion: that is the paradox of Tết 1968.`,
+      `Đội biệt động đánh vào Đại sứ quán Mỹ đêm Tết Mậu Thân chỉ có 17 người, và mục tiêu ấy được giao trước giờ nổ súng có hai ngày.`,
+      `The commando team that hit the US Embassy at Tết 1968 had just 17 members, and was given the target only two days before the attack.`,
     ),
     'hiep-dinh-paris-30-thang-4-1975': l(
-      `Cùng một ngày 30 tháng 4, có người mở hội, có người để tang.`,
-      `On the same day, 30 April, some people celebrate and others mourn.`,
+      `Mất Buôn Ma Thuột, chính quyền Sài Gòn bỏ cả Tây Nguyên, và chưa đầy tám tuần sau xe tăng đã vào Dinh Độc Lập.`,
+      `After losing Buôn Ma Thuột, the Saigon government abandoned the whole Central Highlands, and less than eight weeks later tanks rolled into the Independence Palace.`,
     ),
     'cai-gia-con-nguoi-cua-chien-tranh': l(
       `Các ước tính số người Việt chết trong chiến tranh chênh nhau đến ba lần, một phần vì mỗi nghiên cứu tính một giai đoạn khác.`,

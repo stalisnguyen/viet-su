@@ -389,6 +389,46 @@ const chapter: Chapter = {
       ],
       sources: ['tr-toanthu-q78', 'tr-wiki-champawar', 'tr-ebsco-champa', 'tr-countrystudy', 'tr-britannica-tran', 'tr-vgp-thanhnhaho'],
     },
+    {
+      slug: 'tue-tinh',
+      period: 'tran',
+      kind: 'figure',
+      name: l('Tuệ Tĩnh, ông tổ thuốc Nam', 'Tuệ Tĩnh, father of Southern medicine'),
+      date: l('Sinh năm 1330; sang nhà Minh năm 1385', 'Born 1330; sent to Ming China in 1385'),
+      sort: 670,
+      place: l('Đền Bia, thôn Văn Thai, xã Cẩm Văn cũ, Cẩm Giàng, Hải Phòng (trước thuộc Hải Dương)', 'Đền Bia temple, Văn Thai village, former Cẩm Văn commune, Cẩm Giàng, Hải Phòng (formerly Hải Dương)'),
+      coord: [106.2536, 20.9778],
+      evidence: ['chron', 'legend'],
+      summary: l(
+        `Tuệ Tĩnh, tên thật Nguyễn Bá Tĩnh, là thiền sư và thầy thuốc thế kỷ 14, người được coi là ông tổ của nghề thuốc Nam. Ông chủ trương dùng thuốc nước mình chữa bệnh cho người nước mình. Năm 1385 ông bị đưa sang nhà Minh và mất ở đó; tấm bia mộ chép từ đất khách là nguồn gốc của đền Bia ở quê ông.`,
+        `Tuệ Tĩnh, born Nguyễn Bá Tĩnh, was a 14th-century Buddhist monk and physician regarded as the founder of Vietnamese herbal medicine. He held that the country's own plants should treat its own people. In 1385 he was sent to Ming China and died there; a copy of his gravestone brought home from abroad gave rise to the Đền Bia temple in his home district.`,
+      ),
+      detail: [
+        l(
+          `Theo Báo Nhân Dân, ông sinh năm 1330 ở làng Nghĩa Phú, Cẩm Giàng, mồ côi mẹ năm 6 tuổi và được các nhà sư nuôi dạy. Năm 22 tuổi ông đỗ Thái học sinh dưới triều Trần Dụ Tông nhưng không ra làm quan mà đi tu, lấy pháp hiệu Tuệ Tĩnh. Theo một tài liệu được báo này dẫn, trong khoảng 30 năm ở nông thôn ông dựng 24 ngôi chùa vừa để tu hành vừa để chữa bệnh.`,
+          `According to Nhân Dân, he was born in 1330 in Nghĩa Phú village, Cẩm Giàng, lost his mother at six and was raised by monks. At 22 he passed the Thái học sinh examination under King Trần Dụ Tông but chose the monastery over office, taking the religious name Tuệ Tĩnh. One account cited by the paper says that in some 30 years in the countryside he built 24 pagodas that served both as places of worship and as clinics.`,
+        ),
+        l(
+          `Tác phẩm gắn với tên ông là Nam dược thần hiệu, chia làm 10 khoa, và Hồng nghĩa giác tư y thư hai quyển, có phần viết bằng chữ Nôm. Bài "Phú thuốc Nam" kể 630 vị thuốc. Câu "Nam dược trị Nam nhân", nghĩa là thuốc Nam chữa bệnh cho người Nam, được coi là tư tưởng của ông. Nguyên tác các sách này không còn trọn vẹn.`,
+          `The works attached to his name are the Nam dược thần hiệu (Miraculous Drugs of the South), in 10 sections, and the two-volume Hồng nghĩa giác tư y thư, partly in Nôm verse. A rhymed text on Southern drugs lists 630 remedies. The phrase "Nam dược trị Nam nhân", Southern medicine for Southern people, is taken as his guiding idea. None of these works survives complete in its original form.`,
+        ),
+        l(
+          `Năm 1385, khi đã 55 tuổi, ông bị triều Trần đưa sang nhà Minh và giữ lại ở đó đến cuối đời. Tương truyền trên mộ ông có dòng chữ xin người nước Nam đưa hài cốt về. Cuối thế kỷ 17, tiến sĩ Nguyễn Danh Nho đi sứ, thấy mộ và mang bản chép bia về; dân làng lập đền Bia ở nơi tấm bia được tìm thấy. Đền Bia, đền Xưa và chùa Giám được xếp hạng di tích quốc gia đặc biệt ngày 25 tháng 12 năm 2017.`,
+          `In 1385, at 55, he was sent by the Trần court to Ming China and kept there for the rest of his life. Tradition says his grave bore a plea for someone from the South to carry his bones home. In the late 17th century the doctoral graduate Nguyễn Danh Nho, on an embassy, found the grave and brought back a copy of the inscription; villagers built Đền Bia where the stone came to rest. Đền Bia, Đền Xưa and Giám pagoda were ranked a special national monument on 25 December 2017.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Thông tin về đời Tuệ Tĩnh rất ít, như chính Báo Nhân Dân thừa nhận, và hầu hết đến từ thần tích, truyền thống làng và các bản in đời sau. Các nguồn lệch nhau về nơi ông mất: Nhân Dân ghi chung là Trung Hoa, Báo Pháp luật Việt Nam ghi Giang Nam, còn Wikipedia tiếng Anh ghi Nam Kinh và năm mất khoảng 1389. Năm mất thực ra không được xác định.`,
+          `Very little is known about Tuệ Tĩnh's life, as Nhân Dân itself admits, and most of it comes from temple legends, village tradition and later printed editions. Sources differ on where he died: Nhân Dân says simply China, Báo Pháp luật Việt Nam says Jiangnan, and English Wikipedia says Nanjing, with a death date of about 1389. In fact the year of his death is not established.`,
+        ),
+        l(
+          `Câu chuyện tấm bia cũng có hai lớp. Báo Pháp luật Việt Nam kể thuyền chở bia bị lật ở chỗ giáp ranh hai làng Văn Thai và Nghĩa Phú, dân thấy linh thiêng nên lập đền; Wikipedia lại ghi đền được dựng giữa thế kỷ 19. Tấm bia hiện cao khoảng 80 cm, không còn đọc được chữ nào. Việc gán trọn hai bộ sách cho Tuệ Tĩnh cũng dựa trên truyền bản đời sau.`,
+          `The story of the stele also has two layers. Báo Pháp luật Việt Nam says the boat carrying it capsized at the boundary of Văn Thai and Nghĩa Phú villages, and villagers built the temple on the spot they saw as sacred; Wikipedia says the temple was built in the mid-19th century. The stele, about 80 cm tall, is now illegible. Attributing both books wholly to Tuệ Tĩnh also rests on later textual transmission.`,
+        ),
+      ],
+      sources: ['nvt-nd-tt', 'nvt-bpl-tt-cum', 'nvt-bpl-denbia', 'nvt-wiki-tt'],
+    },
   ],
   sources: [
     {
@@ -624,8 +664,16 @@ const chapter: Chapter = {
       url: 'https://www.historytoday.com/archive/months-past/baghdad-sacked-mongols',
     },
     { id: 'tr-brit-blackdeath', kind: 'reference', cite: 'Encyclopaedia Britannica, "Black Death".', url: 'https://www.britannica.com/event/Black-Death' },
+    { id: 'nvt-nd-tt', kind: 'news', cite: 'Báo Nhân Dân, "Tuệ Tĩnh - Ba giá trị của một nhân cách lớn".', url: 'https://nhandan.vn/tue-tinh-ba-gia-tri-cua-mot-nhan-cach-lon-post740612.html' },
+    { id: 'nvt-bpl-tt-cum', kind: 'news', cite: 'Báo Pháp luật Việt Nam, "Thăm cụm di tích cấp Quốc gia thờ đại Danh y Tuệ Tĩnh".', url: 'https://baophapluat.vn/tham-cum-di-tich-cap-quoc-gia-tho-dai-danh-y-tue-tinh-post406916.html' },
+    { id: 'nvt-bpl-denbia', kind: 'news', cite: 'Báo Pháp luật Việt Nam, "Sự tích xúc động ở đền Bia".', url: 'https://baophapluat.vn/su-tich-xuc-dong-o-den-bia-post144996.html' },
+    { id: 'nvt-wiki-tt', kind: 'reference', cite: 'Wikipedia tiếng Anh, "Tuệ Tĩnh", xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Tu%E1%BB%87_T%C4%A9nh' },
   ],
   hooks: {
+    'tue-tinh': l(
+      `Người được coi là ông tổ thuốc Nam lại mất ở đất khách, và đền thờ ông ở quê mọc lên quanh một tấm bia mộ chép từ bên kia biên giới.`,
+      `The man honoured as the father of Vietnamese herbal medicine died abroad, and his temple at home grew up around a copy of a gravestone brought back across the border.`,
+    ),
     'tran-thu-do-thuong-hoang': l(
       'Người dựng nên một vương triều mà chưa một ngày làm vua.',
       `The man who built a dynasty without reigning for a single day.`,

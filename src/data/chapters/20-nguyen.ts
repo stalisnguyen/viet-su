@@ -377,6 +377,86 @@ const chapter: Chapter = {
       ],
       sources: ['ng-brit-conquest', 'ng-vns-danang1858', 'ng-historicvn-dienhai', 'ng-wiki-conquest', 'ng-tt-phanthanhgian', 'ng-sggp-truongdinh'],
     },
+    {
+      slug: 'nguyen-dinh-chieu',
+      period: 'nguyen',
+      kind: 'figure',
+      name: l('Nguyễn Đình Chiểu, nhà thơ mù đất Nam Bộ', 'Nguyễn Đình Chiểu, the blind poet of the South'),
+      date: l('1822 - 1888', '1822 - 1888'),
+      sort: 138,
+      place: l('Mộ và khu lưu niệm Nguyễn Đình Chiểu, xã An Đức cũ, Ba Tri, Vĩnh Long (trước thuộc Bến Tre)', 'Tomb and memorial of Nguyễn Đình Chiểu, former An Đức commune, Ba Tri, Vĩnh Long (formerly Bến Tre)'),
+      coord: [106.5824, 10.0372],
+      evidence: ['chron', 'arch'],
+      summary: l(
+        `Nguyễn Đình Chiểu bị mù từ tuổi hai mươi mấy nhưng vẫn trở thành một thầy giáo, thầy thuốc và nhà thơ lớn của Nam Bộ thế kỷ 19. Lục Vân Tiên của ông được xếp cạnh Truyện Kiều, còn Văn tế nghĩa sĩ Cần Giuộc khóc những nông dân đứng lên chống Pháp xâm lược. UNESCO vinh danh ông nhân 200 năm ngày sinh.`,
+        `Nguyễn Đình Chiểu went blind in his twenties yet became a major teacher, healer and poet of 19th-century southern Vietnam. His verse novel Lục Vân Tiên ranks with the Tale of Kiều as one of the two best-loved Vietnamese verse tales, and his Funeral Oration for the Righteous Partisans of Cần Giuộc mourns the farmers who rose against the French invasion. UNESCO honoured him on the 200th anniversary of his birth.`,
+      ),
+      detail: [
+        l(
+          `Ông sinh ngày 1 tháng 7 năm 1822 ở làng Tân Thới, tỉnh Gia Định, nay thuộc quận 1, TP Hồ Chí Minh. Năm 1843 ông đỗ thi Hương ở trường Gia Định, rồi ra Huế chờ thi tiếp thì nghe tin mẹ mất. Trên đường về chịu tang, ông lâm bệnh và mù cả hai mắt; tương truyền vì khóc mẹ quá nhiều. Từ đó ông mở trường dạy học, học nghề thuốc và được dân gọi là cụ đồ Chiểu.`,
+          `He was born on 1 July 1822 in Tân Thới village, Gia Định province, now District 1 of Hồ Chí Minh City. In 1843 he passed the provincial examination at Gia Định and went to Huế for the next round, where he learned that his mother had died. On the way home to mourn he fell ill and lost his sight in both eyes; tradition says he wept himself blind. He then opened a school, learned medicine and became known as Teacher Chiểu.`,
+        ),
+        l(
+          `Lục Vân Tiên là truyện thơ Nôm dài 2.076 câu, viết trong những năm 1850, kể chàng trai giữ trọn nhân nghĩa qua hoạn nạn. Năm 1859 ông dời về Thanh Ba, Long An; năm 1861 ông viết Văn tế nghĩa sĩ Cần Giuộc. Khi Pháp chiếm Cần Giuộc, ông lánh về Ba Tri và sống ở đó đến cuối đời. Ở Ba Tri ông soạn Ngư Tiều y thuật vấn đáp dài 3.642 câu, một sách thuốc viết bằng thơ.`,
+          `Lục Vân Tiên is a Nôm verse tale of 2,076 lines written in the 1850s about a young man who keeps faith with righteousness through every misfortune. In 1859 he moved to Thanh Ba in Long An; in 1861 he wrote the Funeral Oration for the Partisans of Cần Giuộc. When the French occupied Cần Giuộc he withdrew to Ba Tri, where he lived for the rest of his life. There he composed the Ngư Tiều y thuật vấn đáp, a medical text in 3,642 lines of verse.`,
+        ),
+        l(
+          `Ông mất ngày 3 tháng 7 năm 1888 ở làng An Đức, Ba Tri, và được chôn ở ấp 3 An Đức. Khu mộ và khu lưu niệm nay là di tích quốc gia đặc biệt. Tối 30 tháng 6 năm 2022, lễ kỷ niệm 200 năm ngày sinh của ông được tổ chức tại đây, và trưởng đại diện UNESCO tại Việt Nam Christian Manhart trao nghị quyết vinh danh.`,
+          `He died on 3 July 1888 in An Đức village, Ba Tri, and was buried in hamlet 3 of An Đức. The tomb and memorial are now a special national monument. On the evening of 30 June 2022 the 200th anniversary of his birth was celebrated there, and Christian Manhart, head of the UNESCO office in Viet Nam, presented the resolution honouring him.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Chuyện ông mù vì khóc mẹ là lời truyền; các nguồn ghi ông bị bệnh mắt trên đường từ Huế về. Bản Lục Vân Tiên chữ Nôm được Thư viện Quốc gia Việt Nam và Quỹ Bảo tồn chữ Nôm số hóa (ký hiệu R.403). Nhiều bản in khác nhau lưu hành ở Nam Kỳ, nên số câu của truyện có thể lệch chút ít giữa các bản.`,
+          `The idea that he went blind from grief is tradition; the sources record an eye illness on the journey back from Huế. A Nôm copy of Lục Vân Tiên has been digitised by the National Library of Vietnam and the Vietnamese Nôm Preservation Foundation (shelf mark R.403). Many printed editions circulated in Cochinchina, so the line count can differ slightly between versions.`,
+        ),
+        l(
+          `Các nguồn có chỗ sai lệch cần lưu ý. Một bài của Việt Nam News năm 2022 viết ông mất ở Cần Giuộc, trong khi chính các nguồn khác, gồm Báo Nhân Dân và Quỹ Bảo tồn chữ Nôm, đều ghi ông mất ở An Đức, Ba Tri, nơi có mộ. Nghị quyết UNESCO được thông qua tại kỳ họp thứ 41 tháng 11 năm 2021, cho năm kỷ niệm 2022.`,
+          `Some errors in the sources need flagging. A 2022 Việt Nam News article says he died in Cần Giuộc, while other sources, including Nhân Dân and the Nôm Preservation Foundation, agree that he died in An Đức, Ba Tri, where his tomb is. The UNESCO resolution was adopted at the 41st General Conference in November 2021, for the anniversary year 2022.`,
+        ),
+      ],
+      sources: ['nvt-nd-ndc-fr', 'nvt-vns-ndc', 'nvt-sggp-ndc', 'nvt-nom-lvt', 'nvt-vnn-unesco7'],
+    },
+    {
+      slug: 'nguyen-trung-truc',
+      period: 'nguyen',
+      kind: 'figure',
+      name: l('Nguyễn Trung Trực', 'Nguyễn Trung Trực'),
+      date: l('1838 - 1868', '1838 - 1868'),
+      sort: 139,
+      place: l('Đình Nguyễn Trung Trực, 14 Nguyễn Công Trứ, Rạch Giá, An Giang (trước thuộc Kiên Giang)', 'Nguyễn Trung Trực temple, 14 Nguyễn Công Trứ street, Rạch Giá, An Giang (formerly Kiên Giang)'),
+      coord: [105.0794, 10.0117],
+      evidence: ['chron', 'legend'],
+      summary: l(
+        `Nguyễn Trung Trực là thủ lĩnh nghĩa quân Nam Kỳ chống Pháp xâm lược. Ngày 10 tháng 12 năm 1861 ông đốt cháy tàu Espérance trên vàm Nhựt Tảo; năm 1868 ông đánh chiếm đồn Kiên Giang ở Rạch Giá. Bị bắt, ông bị Pháp xử chém ngày 27 tháng 10 năm 1868. Đình thờ ông ở Rạch Giá vẫn là nơi hành hương lớn của miền Tây.`,
+        `Nguyễn Trung Trực led partisans in Cochinchina against the French invasion. On 10 December 1861 he burned the warship L'Espérance at the mouth of the Nhựt Tảo; in 1868 he seized the French post at Kiên Giang in Rạch Giá. Captured, he was beheaded by the French on 27 October 1868. His temple in Rạch Giá remains a major pilgrimage site of the Mekong delta.`,
+      ),
+      detail: [
+        l(
+          `Theo Tuổi Trẻ, ông tên thật là Nguyễn Văn Lịch, còn gọi Quản Chơn hay Quản Lịch, sinh năm 1838 ở Bình Nhựt, nay thuộc Bến Lức, Long An, trong một gia đình làm nghề chài lưới và làm ruộng. Ông giỏi võ, thông sách vở và tập hợp nghĩa sĩ khi quân Pháp đánh thành Gia Định. Báo Pháp luật Việt Nam kể ông vốn là dân chài, bỏ lưới cầm vũ khí khi đất nước bị xâm lược.`,
+          `According to Tuổi Trẻ, his birth name was Nguyễn Văn Lịch, also known as Quản Chơn or Quản Lịch, and he was born in 1838 in Bình Nhựt, now Bến Lức in Long An, to a family of fishermen and farmers. Skilled in martial arts and well read, he gathered volunteers when the French attacked the Gia Định citadel. Báo Pháp luật Việt Nam describes him as a fisherman who put down his nets to take up arms when the country was invaded.`,
+        ),
+        l(
+          `Tối ngày 10 tháng 12 năm 1861, tức mùng 9 tháng 11 năm Tân Dậu, nghĩa quân của ông áp sát và đốt cháy tàu L'Espérance của Pháp ở vàm Nhựt Tảo, một nhánh sông Vàm Cỏ Đông. Bốn giờ sáng ngày 16 tháng 6 năm 1868, ông đánh úp đồn Kiên Giang ở Rạch Giá, làm chủ tình hình trong năm ngày rồi rút ra đảo Phú Quốc.`,
+          `On the evening of 10 December 1861, the 9th day of the 11th lunar month of the Tân Dậu year, his partisans closed in on the French ship L'Espérance at the mouth of the Nhựt Tảo, a branch of the Vàm Cỏ Đông river, and set it ablaze. At four in the morning of 16 June 1868 he took the French post at Kiên Giang in Rạch Giá by surprise, held the town for five days and then withdrew to Phú Quốc island.`,
+        ),
+        l(
+          `Ông bị xử chém công khai ở Rạch Giá ngày 27 tháng 10 năm 1868, khi mới 30 tuổi. Câu nói gắn với tên ông là "Bao giờ người Tây nhổ hết cỏ nước Nam thì mới hết người Nam đánh Tây". Đình thờ ông ở Rạch Giá được công nhận di tích quốc gia ngày 23 tháng 3 năm 1988; lễ hội diễn ra các ngày 26 đến 28 tháng 8 âm lịch và được ghi vào danh mục di sản văn hóa phi vật thể quốc gia năm 2023.`,
+          `He was publicly beheaded at Rạch Giá on 27 October 1868, aged just 30. The saying attached to his name is "Only when the French pull up every blade of grass in our land will the Southerners stop fighting them." His temple in Rạch Giá was recognised as a national monument on 23 March 1988; its festival, held on the 26th to 28th of the eighth lunar month, was added to the national intangible heritage list in 2023.`,
+        ),
+      ],
+      scholarly: [
+        l(
+          `Các nguồn kể khác nhau về việc ông sa vào tay Pháp. Wikipedia tiếng Anh viết Pháp bắt mẹ ông làm con tin để ép ông ra; Báo Pháp luật Việt Nam, dựa trên lời khai trong hồ sơ, viết ông tự nộp mình cho Lãnh binh Tấn để cứu nghĩa quân đang bị vây ở Phú Quốc. Câu "nhổ hết cỏ nước Nam" theo báo này nằm trong một bài thơ tuyệt mệnh mà chỉ một số tài liệu chép.`,
+          `The sources differ on how he fell into French hands. English Wikipedia says the French took his mother hostage to force him out; Báo Pháp luật Việt Nam, drawing on his recorded deposition, says he gave himself up to the officer Tấn to save his followers, who were surrounded on Phú Quốc. According to the same paper, the "blades of grass" line comes from a farewell poem that only some documents record.`,
+        ),
+        l(
+          `Quê quán cũng có hai cách ghi: VietnamPlus viết ông sinh trưởng ở Phù Cát, Bình Định rồi theo gia đình vào Nam, còn Tuổi Trẻ và Wikipedia ghi ông sinh ở Long An. Năm sinh được ghi là 1838, có chú thích ghi 1837. Theo Wikipedia, ở vùng Kiên Giang cũ có 13 ngôi đình thờ ông.`,
+          `His origin is recorded in two ways: VietnamPlus says he grew up in Phù Cát, Bình Định before his family moved south, while Tuổi Trẻ and Wikipedia say he was born in Long An. His birth year is given as 1838, with one note giving 1837. According to Wikipedia, 13 communal temples in the former Kiên Giang province worship him.`,
+        ),
+      ],
+      sources: ['nvt-tt-ntt', 'nvt-bpl-ntt', 'nvt-vnp-ntt', 'nvt-wiki-ntt'],
+    },
   ],
   sources: [
     { id: 'ng-brit-dynasty', kind: 'reference', cite: 'Encyclopaedia Britannica, "Nguyen Dynasty" (Vietnamese history).', url: 'https://www.britannica.com/topic/Nguyen-dynasty' },
@@ -416,8 +496,25 @@ const chapter: Chapter = {
     { id: 'ng-wiki-conquest', kind: 'reference', cite: 'Wikipedia (tiếng Anh), "French conquest of Vietnam", bản xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/French_conquest_of_Vietnam' },
     { id: 'ng-tt-phanthanhgian', kind: 'news', cite: 'Ngô Minh (29/9/2008), "Phan Thanh Giản, nỗi oan 150 năm", Tuổi Trẻ (đăng lại từ Tiền Phong).', url: 'https://tuoitre.vn/phan-thanh-gian---noi-oan-150-nam-280837.htm' },
     { id: 'ng-sggp-truongdinh', kind: 'news', cite: 'Nguyễn Trang (18/8/2024), "Tưởng niệm 160 năm ngày Anh hùng Trương Định tuẫn tiết", Báo Sài Gòn Giải Phóng.', url: 'https://www.sggp.org.vn/tuong-niem-160-nam-ngay-anh-hung-truong-dinh-tuan-tiet-post754612.html' },
+    { id: 'nvt-nd-ndc-fr', kind: 'news', cite: 'Báo Nhân Dân (bản tiếng Pháp, chuyên trang 2022), "Le célèbre Nguyên Dinh Chiêu".', url: 'https://special.nhandan.vn/nguyendinhchieu_fr/index.html' },
+    { id: 'nvt-vns-ndc', kind: 'news', cite: 'Việt Nam News (18/6/2022), "Việt Nam celebrates 200th birthday of poet Chiểu".', url: 'https://vietnamnews.vn/life-style/1251412/viet-nam-celebrates-200th-birthday-of-poet-chieu.html' },
+    { id: 'nvt-sggp-ndc', kind: 'news', cite: 'Báo Sài Gòn Giải Phóng (1/7/2022), "Kỷ niệm 200 năm ngày sinh Danh nhân văn hóa thế giới Nguyễn Đình Chiểu".', url: 'https://www.sggp.org.vn/ky-niem-200-nam-ngay-sinh-danh-nhan-van-hoa-the-gioi-nguyen-dinh-chieu-post642267.html' },
+    { id: 'nvt-nom-lvt', kind: 'museum', cite: 'Thư viện Quốc gia Việt Nam và Quỹ Bảo tồn chữ Nôm (VNPF), "Lục Vân Tiên Introduction" (bản số hóa nlvnpf-0059, ký hiệu R.403).', url: 'https://nomfoundation.org/nom-project/Luc-Van-Tien?uiLang=en' },
+    { id: 'nvt-vnn-unesco7', kind: 'news', cite: 'VietNamNet (bản tiếng Anh), "Seven Vietnamese figures celebrated by UNESCO".', url: 'https://vietnamnet.vn/en/seven-vietnamese-figures-celebrated-by-unesco-2222503.html' },
+    { id: 'nvt-tt-ntt', kind: 'news', cite: 'Tuổi Trẻ (10/10/2023), "\'Lễ hội Đình thần Nguyễn Trung Trực\' nhận bằng Di sản văn hóa phi vật thể".', url: 'https://tuoitre.vn/le-hoi-dinh-than-nguyen-trung-truc-nhan-bang-di-san-van-hoa-phi-vat-the-20231010193054044.htm' },
+    { id: 'nvt-bpl-ntt', kind: 'news', cite: 'Báo Pháp luật Việt Nam, "Anh hùng họ Nguyễn tự nạp mình cho giặc cứu đồng chí".', url: 'https://baophapluat.vn/anh-hung-ho-nguyen-tu-nap-minh-cho-giac-cuu-dong-chi-post241635.html' },
+    { id: 'nvt-vnp-ntt', kind: 'news', cite: 'VietnamPlus (2013), "Kỷ niệm ngày hy sinh anh hùng Nguyễn Trung Trực".', url: 'https://www.vietnamplus.vn/ky-niem-ngay-hy-sinh-anh-hung-nguyen-trung-truc-post225569.vnp' },
+    { id: 'nvt-wiki-ntt', kind: 'reference', cite: 'Wikipedia tiếng Anh, "Nguyễn Trung Trực", xem tháng 11/2026.', url: 'https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_Trung_Tr%E1%BB%B1c' },
   ],
   hooks: {
+    'nguyen-trung-truc': l(
+      `Một người xuất thân dân chài đã đốt cháy một chiến hạm Pháp trên sông, và hôm nay hơn chục ngôi đình miền Tây thờ ông như thần làng.`,
+      `A man from a fishing family set a French warship ablaze on a river, and today more than a dozen communal temples in the delta worship him as their village god.`,
+    ),
+    'nguyen-dinh-chieu': l(
+      `Bị mù từ tuổi hai mươi mấy, ông vẫn dạy học, bốc thuốc và còn soạn một cuốn sách thuốc dài 3.642 câu thơ.`,
+      `Blind from his twenties, he still taught, practised medicine and composed a medical book in 3,642 lines of verse.`,
+    ),
     'gia-long-quoc-hieu-viet-nam': l(
       `Cái tên Việt Nam ra đời từ một cuộc mặc cả: triều Huế xin một tên, nhà Thanh muốn tên khác.`,
       `The name Việt Nam came out of a bargain: Huế asked for one name, the Qing wanted another.`,

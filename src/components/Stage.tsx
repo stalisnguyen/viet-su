@@ -528,7 +528,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
     };
     const flashTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d')!; const gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, 'rgba(255,235,200,0.9)'); gr.addColorStop(0.35, 'rgba(200,140,80,0.55)'); gr.addColorStop(1, 'rgba(120,80,50,0)'); x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); })();
     interface BUnit { arrow: THREE.Mesh; head: THREE.Mesh; sq: THREE.Group; badge: THREE.Sprite; tag: THREE.Sprite; ring: THREE.Mesh; curve: THREE.CatmullRomCurve3; lose: boolean; act?: Act; delay: number; side: string }
-    interface BStep { units: BUnit[]; flashes: THREE.Sprite[]; box: { cx: number; cz: number; r: number }; tide?: string }
+    interface BStep { units: BUnit[]; flashes: THREE.Sprite[]; box: { cx: number; cz: number; r: number }; tide?: string; sk: number }
     let battleG: THREE.Group | null = null, bSteps: BStep[] = [], bStakes: THREE.Group | null = null, bStakeFrom = 99, bMarks: THREE.Sprite[] = [];
     let battleBox: { cx: number; cz: number; r: number; k: number } | null = null, bCur = -1, bT = 0, bSize = 1;
     const onGround = (lon: number, lat: number, up = 0.07) => new THREE.Vector3(X(lon), up + hAt(lon, lat) * EX, Z(lat));
@@ -551,17 +551,20 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
       battleG = new THREE.Group();
       const all = boxOf(b.steps.flatMap((st) => st.units.flatMap((u) => u.path)));
       bSize = Math.max(0.35, all.r / 1.4);
-      const modern = b.steps.some((st) => st.units.some((u) => u.kind === 'air'));
+      const modern = !!b.modern || b.steps.some((st) => st.units.some((u) => u.kind === 'air'));
       bSteps = b.steps.map((st) => {
         const pts: [number, number][] = [];
+        // cỡ của riêng bước này: mũi tên và độ bay cao của máy bay theo khung nhìn bước đó, trận nhỏ không bị mũi tên quá to
+        const sk = Math.max(0.3, boxOf(st.units.flatMap((u) => u.path)).r / 1.3);
         const units = st.units.map((u, k) => {
           pts.push(...u.path);
           const air = u.kind === 'air';
-          const vs = u.path.map(([lon, lat]) => onGround(lon, lat, air ? 0.45 : 0.035));
-          if (air) { vs[0].y -= 0.3; vs[vs.length - 1].y -= 0.35; }
+          const lift = 0.45 * Math.min(1, sk);
+          const vs = u.path.map(([lon, lat]) => onGround(lon, lat, air ? lift : 0.035));
+          if (air) { vs[0].y -= lift * 0.67; vs[vs.length - 1].y -= lift * 0.78; }
           const curve = new THREE.CatmullRomCurve3(vs, false, 'centripetal');
           const col = u.side === 'vn' ? '#ffcf5a' : '#5cc8ff';
-          const w = 0.045 * Math.max(0.5, bSize);
+          const w = 0.05 * Math.max(0.4, Math.min(sk, bSize));
           const arrow = new THREE.Mesh(ribbon(curve, w), arrowMat(col, air));
           (arrow.material as THREE.ShaderMaterial).uniforms.uLen.value = curve.getLength() / w / 6;
           arrow.renderOrder = 5; arrow.visible = false; battleG!.add(arrow);
@@ -576,7 +579,9 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
           const badge = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false, depthTest: false })); badge.center.set(0.5, -0.9); badge.visible = false; badge.renderOrder = 11; battleG!.add(badge);
           const tag = label(u.name[lang], u.side === 'vn' ? '#ffe39a' : '#bfe9ff', 26, 700, 1);
           const before = st.units.slice(0, k), dup = before.some((v) => v.name.vi === u.name.vi), nth = new Set(before.filter((v) => v.side === u.side).map((v) => v.name.vi)).size; // các đạo quân cùng phe xếp nhãn so le để không đè nhau
-          tag.center.set(0.5, u.side === 'vn' ? -1.8 - nth * 1.15 : 1.4 + nth * 1.15); tag.renderOrder = 10; tag.userData.dup = dup; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
+          const lvl = Math.floor(nth / 2), up = (nth % 2 === 0) === (u.side === 'vn'); // xen kẽ trên dưới để nhiều đạo quân không xếp chồng quá cao
+          const own = up === (u.side === 'vn'), l2 = own ? lvl : lvl + 1; // phía của phe kia thì lùi thêm một bậc
+          tag.center.set(0.5, up ? -1.8 - l2 * 1.15 : 1.4 + l2 * 1.15); tag.renderOrder = 10; tag.userData.dup = dup; (tag.material as THREE.SpriteMaterial).depthTest = false; tag.visible = false; tag.userData.base = tag.scale.clone(); battleG!.add(tag);
           const ring = new THREE.Mesh(new THREE.RingGeometry(0.6, 1, 32), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.9, side: THREE.DoubleSide, depthWrite: false }));
           ring.rotation.x = -Math.PI / 2; ring.position.copy(vs[0]).setY(vs[0].y + 0.01); ring.visible = false; ring.renderOrder = 6; battleG!.add(ring);
           const act: Act | undefined = u.act;
@@ -591,7 +596,7 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
           sp.userData.sw = sw;
           return sp;
         });
-        return { units, flashes, box: boxOf(pts), tide: st.tide };
+        return { units, flashes, box: boxOf(pts), tide: st.tide, sk };
       });
       // Bãi cọc: các cọc nghiêng, ẩn dưới nước lúc triều lên, nhô lên khi triều rút
       if (b.stakes) {
@@ -839,10 +844,12 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
             // Tiến độ riêng của đạo quân: chờ tới lượt mình rồi mới đi
             const own = i < bCur ? 1 : cur ? Math.min(1, Math.max(0, (bT - u.delay) / UNIT_DUR)) : 0;
             const ease = 1 - Math.pow(1 - own, 2);
-            u.arrow.visible = i <= bCur && own > 0;
+            // đường của bước trước chỉ giữ lại khi cùng tầm nhìn, tránh mũi tên khổng lồ khi camera đã zoom gần
+            const sameScale = i === bCur || st.sk <= (bSteps[bCur]?.sk ?? st.sk) * 2.2;
+            u.arrow.visible = i <= bCur && own > 0 && sameScale;
             am.uniforms.uP.value = ease;
             am.uniforms.uO.value = i < bCur ? 0.35 : 1;
-            u.head.visible = i <= bCur && own >= 0.98;
+            u.head.visible = i <= bCur && own >= 0.98 && sameScale;
             (u.head.material as THREE.MeshBasicMaterial).opacity = i < bCur ? 0.3 : 0.9;
             const started = cur && bT >= u.delay - 0.4;
             u.ring.visible = started && own < 1; u.ring.scale.setScalar(0.06 * kz * (1 + 0.15 * Math.sin(t * 4)));
