@@ -367,3 +367,27 @@ button.road-head.here strong::after { content: ''; display: inline-block; width:
 .art.photo .frame::after { right: 8px; bottom: 8px; border-left: 0; border-top: 0; }
 @keyframes kenburns { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.08) translate(-1.5%, -1%); } }
 @media (prefers-reduced-motion: reduce) { .panel[data-in] .art.photo .frame.ok img { animation: none; } .art.photo .frame img { transition: opacity 0.3s; transform: none; } }
+
+/* Trình phát diễn biến trận đánh */
+.battle { margin: 14px 0 6px; padding: 12px 14px 10px; border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); border-radius: 6px; background: linear-gradient(180deg, color-mix(in srgb, var(--c) 10%, #120d0b), #0d0a09); }
+.battle-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.battle-top .eyebrow { margin: 0; }
+.battle .legend { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--muted); }
+.battle .legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.battle .legend i.vn { background: #ffcf5a; box-shadow: 0 0 6px #ffcf5a; }
+.battle .legend i.foe { background: #5cc8ff; box-shadow: 0 0 6px #5cc8ff; margin-left: 6px; }
+.battle-step { margin: 10px 0 8px; min-height: 5.6em; animation: fadeup 0.45s ease-out both; }
+.battle-step b { display: block; color: var(--c); font-size: 0.86rem; letter-spacing: 0.04em; margin-bottom: 4px; }
+.battle-step p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+.battle-ctl { display: flex; align-items: center; gap: 8px; }
+.battle-ctl button { pointer-events: auto; display: inline-flex; align-items: center; gap: 6px; height: 34px; min-width: 34px; justify-content: center; border-radius: 17px; border: 1px solid var(--edge); background: rgba(255, 255, 255, 0.04); color: var(--text); font: inherit; font-size: 0.82rem; cursor: pointer; padding: 0 10px; }
+.battle-ctl button:disabled { opacity: 0.35; cursor: default; }
+.battle-ctl button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.battle-ctl .play { background: var(--c); color: #120d0b; border-color: transparent; font-weight: 700; }
+.battle-ctl .play svg { fill: currentColor; stroke-width: 0; }
+.battle-ctl .play svg path[d^="M8 5v14"] { fill: none; stroke: currentColor; stroke-width: 3; }
+.battle-ctl .dots { flex: 1; display: flex; gap: 6px; justify-content: center; }
+.battle-ctl .dots button { height: 10px; min-width: 10px; width: 10px; padding: 0; border-radius: 5px; border: 0; background: rgba(255, 255, 255, 0.18); }
+.battle-ctl .dots button.done { background: color-mix(in srgb, var(--c) 55%, transparent); }
+.battle-ctl .dots button.on { width: 26px; background: var(--c); }
+.battle-note { margin: 8px 0 0; font-size: 0.7rem; color: var(--muted); }

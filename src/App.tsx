@@ -326,7 +326,37 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
   );
 }
 
-function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; depth: Depth; setDepth: (d: Depth) => void; seen: boolean }) {
+// Trình phát diễn biến trận đánh: từng bước có mốc thời gian và một câu thuật lại; bản đồ chạy theo bước đang chọn
+interface BP { i: number; play: boolean; go: (i: number) => void; toggle: () => void }
+function BattlePlayer({ slug, lang, bp }: { slug: string; lang: Lang; bp: BP }) {
+  const b = BATTLES[slug];
+  const st = b.steps[bp.i];
+  const last = b.steps.length - 1;
+  return (
+    <section className="battle" aria-label={lang === 'vi' ? 'Diễn biến trận đánh' : 'How the battle unfolded'}>
+      <div className="battle-top">
+        <p className="eyebrow">{lang === 'vi' ? 'Diễn biến trên bản đồ' : 'On the map'} - {bp.i + 1} / {b.steps.length}</p>
+        <span className="legend"><i className="vn" />{lang === 'vi' ? 'Quân Việt' : 'Vietnamese'} <i className="foe" />{lang === 'vi' ? 'Quân xâm lược' : 'Invaders'}</span>
+      </div>
+      <div className="battle-step" key={bp.i} aria-live="polite">
+        <b>{st.t[lang]}</b>
+        <p>{st.text[lang]}</p>
+      </div>
+      <div className="battle-ctl">
+        <button onClick={() => bp.go(Math.max(0, bp.i - 1))} disabled={bp.i === 0} aria-label={lang === 'vi' ? 'Bước trước' : 'Previous step'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg></button>
+        <button className="play" onClick={bp.toggle} aria-label={bp.play ? (lang === 'vi' ? 'Tạm dừng' : 'Pause') : (lang === 'vi' ? 'Phát diễn biến' : 'Play')}>
+          {bp.play ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg> : <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" /></svg>}
+          <span>{bp.play ? (lang === 'vi' ? 'Tạm dừng' : 'Pause') : bp.i === last ? (lang === 'vi' ? 'Xem lại' : 'Replay') : (lang === 'vi' ? 'Phát' : 'Play')}</span>
+        </button>
+        <div className="dots">{b.steps.map((x, k) => <button key={k} className={k === bp.i ? 'on' : k < bp.i ? 'done' : ''} onClick={() => bp.go(k)} aria-label={x.t[lang]} />)}</div>
+        <button onClick={() => bp.go(Math.min(last, bp.i + 1))} disabled={bp.i === last} aria-label={lang === 'vi' ? 'Bước sau' : 'Next step'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></button>
+      </div>
+      <p className="battle-note">{lang === 'vi' ? 'Sơ đồ minh họa, đường hành quân là ước lượng theo các địa danh trong bài.' : 'Illustrative sketch; routes are approximate, drawn through the places named in the text.'}</p>
+    </section>
+  );
+}
+
+function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lang; depth: Depth; setDepth: (d: Depth) => void; seen: boolean; bp?: BP }) {
   const gl = newSeen();
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLElement>(null);
@@ -340,6 +370,7 @@ function EntryStep({ e, lang, depth, setDepth, seen }: { e: Entry; lang: Lang; d
         <p className="hook">{hooks[e.slug][lang]}</p>
         <div className="meta"><Badges ev={e.evidence} lang={lang} /><span className="srcn">{lang === 'vi' ? `${e.sources.length} nguồn` : `${e.sources.length} sources`}</span>{e.place && <span>{e.place[lang]}</span>}</div>
         <p className="lead"><Rich text={e.summary[lang]} lang={lang} seen={gl} /></p>
+        {bp && <BattlePlayer slug={e.slug} lang={lang} bp={bp} />}
         {/* Mỗi thẻ một hình chính: có mô hình 3D thì ảnh thật nằm trong phần chi tiết, không thì ảnh thật là hình chính */}
         {!e.model && <RealPhoto slug={e.slug} lang={lang} />}
         {e.model && <Model3D kind={e.model} lang={lang} />}
@@ -499,6 +530,8 @@ export default function App() {
   const split = useMedia(SPLIT);
   // Biểu tượng mặt trống: dùng bản vẽ giản lược trước, đổi sang hoa văn thật của trống Ngọc Lũ khi tải xong
   const [mark, setMark] = useState(drumUrl);
+  // Diễn biến trận đánh: bước đang xem và tự phát
+  const [bs, setBs] = useState({ slug: '', i: 0, play: false });
   // Màn mở đầu thời kỳ: hiện khi thời kỳ đang xem đổi sang một thời kỳ khác (không hiện ở phần mở đầu trang)
   const [eraCard, setEraCard] = useState<{ era: string; prev: string | null; n: number } | null>(null);
   const lastEra = useRef<string | null>(null);
@@ -580,6 +613,29 @@ export default function App() {
   }, [active.focus]);
   useEffect(() => { if (snd) sound.setEra(active.era); }, [snd, active.era]);
   useEffect(() => {
+    const f = active.focus;
+    if (f && BATTLES[f] && bs.slug !== f) setBs({ slug: f, i: 0, play: !matchMedia('(prefers-reduced-motion: reduce)').matches });
+  }, [active.focus]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!bs.play || !BATTLES[bs.slug]) return;
+    const last = BATTLES[bs.slug].steps.length - 1;
+    const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), bs.i === 0 ? 4200 : 5600);
+    return () => window.clearTimeout(t);
+  }, [bs]);
+  const bpFor = (slug: string): BP | undefined => {
+    const b = BATTLES[slug]; if (!b) return undefined;
+    const mine = bs.slug === slug;
+    return {
+      i: mine ? bs.i : 0, play: mine && bs.play,
+      go: (i) => setBs({ slug, i, play: false }),
+      toggle: () => setBs((x) => {
+        const cur = x.slug === slug ? x : { slug, i: 0, play: false };
+        if (cur.play) return { ...cur, play: false };
+        return { slug, i: cur.i >= b.steps.length - 1 ? 0 : cur.i, play: true };
+      }),
+    };
+  };
+  useEffect(() => {
     // Chờ thời kỳ đứng yên một chút rồi mới hiện, để khi nhảy xa qua nhiều thời kỳ chỉ hiện một lần
     if (!active.era || active.era === lastEra.current) return;
     const era = active.era;
@@ -644,7 +700,7 @@ export default function App() {
 
   return (
     <div className="app" style={{ ['--c' as string]: color }}>
-      <Stage lang={lang} era={active.era} focus={active.focus} sheet={!split && active.focus ? 1 : 0} split={split} onPick={(s) => jump('e-' + s)} />
+      <Stage lang={lang} era={active.era} focus={active.focus} sheet={!split && active.focus ? 1 : 0} split={split} onPick={(s) => jump('e-' + s)} bstep={bs.slug === active.focus ? bs.i : 0} />
       <div className="shade" />
 
       <header className="bar">
@@ -676,7 +732,6 @@ export default function App() {
             <>
               {coord && <p><span>{lang === 'vi' ? 'Tọa độ' : 'Position'}</span><b>{coord}</b></p>}
               <p><span>{lang === 'vi' ? 'Niên đại' : 'Date'}</span><b>{fe.date[lang]}</b></p>
-              {BATTLES[fe.slug] && <p className="legend"><span>{lang === 'vi' ? 'Sơ đồ trận đánh' : 'Battle sketch'}</span><b><i className="vn" />{lang === 'vi' ? 'Quân Việt' : 'Vietnamese'} <i className="foe" />{lang === 'vi' ? 'Quân xâm lược' : 'Invaders'}</b><em>{lang === 'vi' ? 'Minh họa, đường đi ước lượng' : 'Illustrative, routes approximate'}</em></p>}
             </>
           ) : (
             <p><span>{lang === 'vi' ? 'Thời kỳ' : 'Period'}</span><b>{fp!.range[lang]}</b></p>
@@ -710,7 +765,7 @@ export default function App() {
           <div key={p.slug}>
             <PeriodStep p={p} lang={lang} depth={depth} setDepth={setDepth} />
             {journey.filter((e) => e.period === p.slug).map((e) => (
-              <EntryStep key={e.slug} e={e} lang={lang} depth={depth} setDepth={setDepth} seen={seen.has(e.slug)} />
+              <EntryStep key={e.slug} e={e} lang={lang} depth={depth} setDepth={setDepth} seen={seen.has(e.slug)} bp={bpFor(e.slug)} />
             ))}
             <section className="step" id={'q-' + p.slug} data-step data-era={p.slug} style={{ ['--c' as string]: p.color }}>
               <div className="panel">
