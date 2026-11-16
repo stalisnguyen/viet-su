@@ -10,8 +10,9 @@ import { periodBySlug, periods, upcoming } from './data/periods';
 import { sourceById, sources } from './data/sources';
 import { CITE_EN } from './data/citeEn';
 import { hooks } from './data/hooks';
-import { badges, quiz, world } from './data/extras';
+import { badges, quiz, world, type Q } from './data/extras';
 import { photos } from './data/photos';
+import { grades } from './data/grades';
 import { drumUrl, loadDrumFace } from './drum';
 import { sound } from './sound';
 import type { Entry, Evidence, L, Lang, Period } from './data/types';
@@ -290,6 +291,47 @@ function Quiz({ slug, lang, earned, onPass }: { slug: string; lang: Lang; earned
   );
 }
 
+// Bài ôn nhiều thời kỳ: như Quiz nhưng không có huy hiệu, mỗi câu ghi thời kỳ mà câu hỏi thuộc về
+function ReviewQuiz({ qs, lang, onAgain }: { qs: (Q & { from: string })[]; lang: Lang; onAgain: () => void }) {
+  const [i, setI] = useState(0);
+  const [pick, setPick] = useState<number | null>(null);
+  const [score, setScore] = useState(0);
+  const nextBtn = useRef<HTMLButtonElement>(null);
+  useEffect(() => { if (pick !== null && nextBtn.current) { nextBtn.current.focus({ preventScroll: true }); nextBtn.current.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } }, [pick]);
+  if (i >= qs.length) {
+    return (
+      <>
+        <h3>{score}/{qs.length} {lang === 'vi' ? 'câu đúng' : 'correct'}</h3>
+        <div className="cta"><button className="ghost" onClick={onAgain}>{lang === 'vi' ? 'Làm bộ câu hỏi khác' : 'Try another set'}</button></div>
+      </>
+    );
+  }
+  const q = qs[i];
+  return (
+    <>
+      <p className="eyebrow">{lang === 'vi' ? 'Câu' : 'Question'} {i + 1}/{qs.length} - {periodBySlug[q.from].name[lang]}</p>
+      <h3 className="q">{q.q[lang]}</h3>
+      <div className="opts">
+        {q.options.map((o, k) => {
+          const cls = pick === null ? '' : k === q.answer ? ' right' : k === pick ? ' wrong' : ' off';
+          return (
+            <button key={k} className={'opt' + cls} disabled={pick !== null} onClick={() => {
+              setPick(k);
+              if (k === q.answer) { setScore(score + 1); sound.hit('ok'); } else sound.hit('no');
+            }}>{o[lang]}</button>
+          );
+        })}
+      </div>
+      {pick !== null && (
+        <>
+          <p className="why">{q.why[lang]}</p>
+          <div className="cta"><button ref={nextBtn} className="primary qnext" onClick={() => { setI(i + 1); setPick(null); }}>{i + 1 < qs.length ? (lang === 'vi' ? 'Câu tiếp theo' : 'Next question') : (lang === 'vi' ? 'Xem kết quả' : 'See result')}</button></div>
+        </>
+      )}
+    </>
+  );
+}
+
 function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth: Depth; setDepth: (d: Depth) => void }) {
   const gl = newSeen();
   const [open, setOpen] = useState(false);
@@ -393,9 +435,29 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
         )}
         <div className="cta">
           <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc chi tiết và nguồn' : 'Read details and sources')}</button>
+          <ShareBtn path={'e/' + e.slug} title={e.name[lang]} lang={lang} />
         </div>
       </div>
     </section>
+  );
+}
+
+// Nút chia sẻ: mở bảng chia sẻ của máy nếu có, không thì chép đường dẫn. Đường dẫn trỏ tới trang riêng của mục để ảnh xem trước đúng mục đó.
+function ShareBtn({ path, title, lang }: { path: string; title: string; lang: Lang }) {
+  const [done, setDone] = useState(false);
+  const url = 'https://vietsutoando.com/' + path + '/';
+  const go = async () => {
+    try {
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) { await navigator.share({ title: title + ' - Việt Sử Toàn Đồ', url }); return; }
+      await navigator.clipboard.writeText(url);
+      setDone(true); window.setTimeout(() => setDone(false), 2000);
+    } catch { /* người xem đóng bảng chia sẻ */ }
+  };
+  return (
+    <button className="ghost share" onClick={go} aria-live="polite">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      {done ? (lang === 'vi' ? 'Đã chép đường dẫn' : 'Link copied') : (lang === 'vi' ? 'Chia sẻ' : 'Share')}
+    </button>
   );
 }
 
@@ -419,10 +481,39 @@ function OutLinks({ slug, lang }: { slug: string; lang: Lang }) {
   );
 }
 
+// Học theo lớp: các thời kỳ ứng với chương trình từng lớp và một bài ôn 10 câu lấy ngẫu nhiên từ câu hỏi của các thời kỳ đó
+function GradeView({ lang, onGo }: { lang: Lang; onGo: (id: string) => void }) {
+  const [n, setN] = useState(() => Number(store.get('annalis-grade', '6')) || 6);
+  const [run, setRun] = useState(0); // đổi số này để bốc lại bộ câu hỏi
+  const g = grades.find((x) => x.n === n)!;
+  const pick = (k: number) => { setN(k); setRun(0); store.set('annalis-grade', String(k)); };
+  const qs = useMemo(() => {
+    if (!run) return [];
+    const all = g.periods.flatMap((s) => (quiz[s] || []).map((q) => ({ ...q, from: s })));
+    for (let i = all.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [all[i], all[j]] = [all[j], all[i]]; }
+    return all.slice(0, 10);
+  }, [n, run]);
+  return (
+    <div className="grade">
+      <div className="filters" role="group" aria-label={lang === 'vi' ? 'Chọn lớp' : 'Choose a grade'}>
+        {grades.map((x) => <button key={x.n} className={'chip' + (x.n === n ? ' on' : '')} aria-pressed={x.n === n} onClick={() => pick(x.n)}>{lang === 'vi' ? 'Lớp ' + x.n : 'Grade ' + x.n}</button>)}
+      </div>
+      <p className="lead">{g.topic[lang]}</p>
+      <div className="road-items">
+        {g.periods.map((s) => <button key={s} onClick={() => onGo('p-' + s)} style={{ ['--c' as string]: periodBySlug[s].color }}>{periodBySlug[s].name[lang]}</button>)}
+      </div>
+      {!run
+        ? <div className="cta"><button className="primary" onClick={() => setRun(1)}>{lang === 'vi' ? `Ôn tập lớp ${n}: 10 câu hỏi` : `Grade ${n} review: 10 questions`}</button></div>
+        : <div className="gquiz"><ReviewQuiz key={n + '-' + run} qs={qs} lang={lang} onAgain={() => setRun(run + 1)} /></div>}
+      <p className="muted">{lang === 'vi' ? 'Ghép theo phần lịch sử Việt Nam trong Chương trình giáo dục phổ thông 2018 (Thông tư 32/2018/TT-BGDĐT), ở mức chủ đề. Trang không bám một bộ sách giáo khoa cụ thể nên chỉ dùng để đọc thêm và ôn tập, không thay bài học trên lớp.' : 'Matched at topic level to the Vietnamese history content of the 2018 national curriculum (Circular 32/2018/TT-BGDĐT). It follows no particular textbook, so use it for extra reading and review, not in place of lessons.'}</p>
+    </div>
+  );
+}
+
 function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<string>; got: Set<string>; here: string; onGo: (id: string) => void; bare?: boolean }) {
   const [q, setQ] = useState('');
-  const [mode, setMode] = useState<'all' | 'who' | 'life'>('all'); // tất cả, chỉ nhân vật, hoặc biểu đồ dòng đời nhân vật
-  const who = mode !== 'all';
+  const [mode, setMode] = useState<'all' | 'who' | 'life' | 'grade'>('all'); // tất cả, chỉ nhân vật, hoặc biểu đồ dòng đời nhân vật
+  const who = mode === 'who' || mode === 'life';
   const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
   const k = norm(q.trim());
   // Khớp theo đầu từ (gõ "hùng" không ra "Phùng Nguyên"); tên thời kỳ khớp thì hiện mọi mục của thời kỳ đó
@@ -441,11 +532,13 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
         <button className={'chip' + (mode === 'all' ? ' on' : '')} aria-pressed={mode === 'all'} onClick={() => setMode('all')}>{lang === 'vi' ? 'Tất cả' : 'Everything'}</button>
         <button className={'chip' + (mode === 'who' ? ' on' : '')} aria-pressed={mode === 'who'} onClick={() => setMode('who')}>{lang === 'vi' ? `Nhân vật (${entries.filter((e) => e.kind === 'figure').length})` : `People (${entries.filter((e) => e.kind === 'figure').length})`}</button>
         <button className={'chip' + (mode === 'life' ? ' on' : '')} aria-pressed={mode === 'life'} onClick={() => setMode('life')}>{lang === 'vi' ? 'Dòng đời nhân vật' : 'Lifelines'}</button>
+        <button className={'chip' + (mode === 'grade' ? ' on' : '')} aria-pressed={mode === 'grade'} onClick={() => setMode('grade')}>{lang === 'vi' ? 'Theo lớp học' : 'By school grade'}</button>
       </div>
       {mode === 'life' && <Lifelines lang={lang} onGo={onGo} />}
+      {mode === 'grade' && <GradeView lang={lang} onGo={onGo} />}
       {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
-      {mode !== 'life' && !any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
-      {mode !== 'life' && <ol className="road">
+      {mode !== 'life' && mode !== 'grade' && !any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
+      {mode !== 'life' && mode !== 'grade' && <ol className="road">
         {periods.map((p, i) => {
           const list = journey.filter((e) => e.period === p.slug && match(e));
           if ((k || who) && !list.length) return null;
@@ -605,7 +698,11 @@ export default function App() {
     window.addEventListener('hashchange', h);
     return () => window.removeEventListener('hashchange', h);
   }, []);
+  // Lần đầu mở trang bằng đường dẫn có #id thì giữ nguyên địa chỉ cho tới khi phần đó hiện ra
+  const keepHash = useRef(!!location.hash);
   useEffect(() => {
+    if (active.id === 'top' && keepHash.current) return;
+    keepHash.current = false;
     try { history.replaceState(null, '', active.id === 'top' ? location.pathname : '#' + active.id); } catch { /* bỏ qua */ }
   }, [active.id]);
   // Thẻ nội dung hiện dần lên khi cuộn tới

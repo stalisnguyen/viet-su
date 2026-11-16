@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "geo": "node scripts/geo.mjs",
-    "build": "node scripts/geo.mjs && vite build",
+    "build": "node scripts/geo.mjs && vite build && node scripts/share.mjs",
     "dev": "vite"
   },
   "keywords": [],
