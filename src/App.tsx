@@ -3,6 +3,7 @@ import { BATTLES } from './data/battles';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Stage, { ZONES } from './components/Stage';
 import Model3D from './components/Model3D';
+import { Lifelines, OnThisDay } from './components/Timelines';
 import { entries, entryBySlug } from './data/entries';
 import { periodBySlug, periods, upcoming } from './data/periods';
 import { sourceById, sources } from './data/sources';
@@ -398,7 +399,8 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
 
 function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<string>; got: Set<string>; here: string; onGo: (id: string) => void; bare?: boolean }) {
   const [q, setQ] = useState('');
-  const [who, setWho] = useState(false); // bộ lọc chỉ hiện các mục nhân vật
+  const [mode, setMode] = useState<'all' | 'who' | 'life'>('all'); // tất cả, chỉ nhân vật, hoặc biểu đồ dòng đời nhân vật
+  const who = mode !== 'all';
   const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
   const k = norm(q.trim());
   // Khớp theo đầu từ (gõ "hùng" không ra "Phùng Nguyên"); tên thời kỳ khớp thì hiện mọi mục của thời kỳ đó
@@ -410,15 +412,18 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
     <>
       {!bare && <p className="eyebrow">{lang === 'vi' ? 'Mục lục toàn bộ' : 'Full index'}</p>}
       {!bare && <h2>{lang === 'vi' ? `${nPeriods} thời kỳ, từ đồ đá đến hôm nay` : `${nPeriods} periods, from stone to today`}</h2>}
+      {!q && mode === 'all' && <OnThisDay lang={lang} onGo={onGo} />}
       <input className="search" aria-label={lang === 'vi' ? 'Tìm trong trang' : 'Search this site'} type="search" value={q} onChange={(e) => setQ(e.target.value)}
         placeholder={lang === 'vi' ? 'Tìm di tích, nhân vật, hiện vật' : 'Search sites, people, artefacts'} />
       <div className="filters" role="group" aria-label={lang === 'vi' ? 'Lọc mục lục' : 'Filter the index'}>
-        <button className={'chip' + (!who ? ' on' : '')} aria-pressed={!who} onClick={() => setWho(false)}>{lang === 'vi' ? 'Tất cả' : 'Everything'}</button>
-        <button className={'chip' + (who ? ' on' : '')} aria-pressed={who} onClick={() => setWho(true)}>{lang === 'vi' ? `Nhân vật (${entries.filter((e) => e.kind === 'figure').length})` : `People (${entries.filter((e) => e.kind === 'figure').length})`}</button>
+        <button className={'chip' + (mode === 'all' ? ' on' : '')} aria-pressed={mode === 'all'} onClick={() => setMode('all')}>{lang === 'vi' ? 'Tất cả' : 'Everything'}</button>
+        <button className={'chip' + (mode === 'who' ? ' on' : '')} aria-pressed={mode === 'who'} onClick={() => setMode('who')}>{lang === 'vi' ? `Nhân vật (${entries.filter((e) => e.kind === 'figure').length})` : `People (${entries.filter((e) => e.kind === 'figure').length})`}</button>
+        <button className={'chip' + (mode === 'life' ? ' on' : '')} aria-pressed={mode === 'life'} onClick={() => setMode('life')}>{lang === 'vi' ? 'Dòng đời nhân vật' : 'Lifelines'}</button>
       </div>
+      {mode === 'life' && <Lifelines lang={lang} onGo={onGo} />}
       {bare && <p className="muted">{lang === 'vi' ? 'Chạm một mục để tới thẳng đó. Mục có dấu ✓ là mục bạn đã xem.' : 'Tap an item to go straight there. Items marked ✓ are ones you have seen.'}</p>}
-      {!any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
-      <ol className="road">
+      {mode !== 'life' && !any && <p className="muted">{lang === 'vi' ? 'Không có mục nào khớp. Thử gõ tên khác, ví dụ tên địa danh hoặc tên thời kỳ.' : 'No match. Try another name, such as a place or a period.'}</p>}
+      {mode !== 'life' && <ol className="road">
         {periods.map((p, i) => {
           const list = journey.filter((e) => e.period === p.slug && match(e));
           if ((k || who) && !list.length) return null;
@@ -441,7 +446,7 @@ function Index({ lang, seen, got, here, onGo, bare }: { lang: Lang; seen: Set<st
             <div className="road-head"><em>{pad(i + 1 + periods.length)}</em><strong>{u.name[lang]}</strong><span>{lang === 'vi' ? u.range : u.range.replace(/TCN/g, 'BCE').replace(/tk /g, 'c. ').replace('nay', 'present')} - {T.soon[lang]}</span></div>
           </li>
         ))}
-      </ol>
+      </ol>}
     </>
   );
 }

@@ -691,15 +691,15 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
         const pts: THREE.Vector3[] = [];
         for (let k = 0; k <= 40; k++) { const lon = f.a[0] + (f.b[0] - f.a[0]) * (k / 40), lat = f.a[1] + (f.b[1] - f.a[1]) * (k / 40); pts.push(new THREE.Vector3(X(lon), 0.06 + hAt(lon, lat) * EX, Z(lat))); }
         const fm = new THREE.ShaderMaterial({
-          uniforms: { uC: { value: new THREE.Color(last ? '#fff0c8' : '#c9b88f') }, opacity: { value: 0 } }, transparent: true, depthWrite: false,
+          uniforms: { uC: { value: new THREE.Color(last ? '#fff0c8' : '#c9b88f') }, opacity: { value: 0 }, uP: { value: 0 } }, transparent: true, depthWrite: false,
           vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
-          fragmentShader: 'uniform vec3 uC; uniform float opacity; varying vec2 vUv; void main(){ if (fract(vUv.x * 26.0) > 0.6) discard; gl_FragColor = vec4(uC, opacity); }',
+          fragmentShader: 'uniform vec3 uC; uniform float opacity; uniform float uP; varying vec2 vUv; void main(){ if (vUv.x > uP || fract(vUv.x * 26.0) > 0.6) discard; float tip = smoothstep(uP - 0.08, uP, vUv.x) * step(uP, 0.999); gl_FragColor = vec4(mix(uC, vec3(1.0), tip), opacity); }',
         });
         const line = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 60, last ? 0.045 : 0.026, 5, false), fm);
-        line.renderOrder = 4; line.userData.max = last ? 0.95 : 0.45; frontG!.add(line);
+        line.renderOrder = 4; line.userData.max = last ? 0.95 : 0.45; line.userData.delay = 0.4 + i * 0.75; frontG!.add(line);
         const sp = label(f.name[lang], last ? '#fff0c8' : '#c9b88f', 30, 700, 1);
         sp.position.set(X(f.b[0]) + 0.15, 0.25, Z(f.b[1])); sp.center.set(0, 0.5); sp.scale.multiplyScalar(last ? 1.3 : 1);
-        sp.material.opacity = 0; sp.userData.max = last ? 0.95 : 0.45; sp.renderOrder = 4; frontG!.add(sp);
+        sp.material.opacity = 0; sp.userData.max = last ? 0.95 : 0.45; sp.userData.delay = 0.4 + i * 0.75 + 0.5; sp.userData.y0 = sp.position.y; sp.renderOrder = 4; frontG!.add(sp);
       });
       scene.add(frontG);
     };
@@ -907,9 +907,12 @@ export default function Stage({ lang, era, focus, sheet, onPick, split = false, 
       if (frontG) {
         frontT += dt;
         frontG.children.forEach((o) => {
-          const want = battleG ? 0 : (o.userData.max as number) * Math.min(1, frontT * 1.5), a = Math.min(1, dt * 4);
+          // từng mốc hiện lần lượt từ bắc xuống nam: đường kẻ tự vẽ từ tây sang đông, nhãn nổi lên sau
+          const t = reduce ? 9 : frontT - (o.userData.delay as number);
+          const want = battleG ? 0 : (o.userData.max as number) * Math.min(1, Math.max(0, t) * 2), a = Math.min(1, dt * 4);
           const sm = (o as THREE.Mesh).material as THREE.ShaderMaterial & { opacity: number };
-          if (sm.uniforms) sm.uniforms.opacity.value += (want - sm.uniforms.opacity.value) * a; else sm.opacity += (want - sm.opacity) * a;
+          if (sm.uniforms) { sm.uniforms.opacity.value += (want - sm.uniforms.opacity.value) * a; sm.uniforms.uP.value = Math.min(1, Math.max(0, t) / 0.6); }
+          else { sm.opacity += (want - sm.opacity) * a; o.position.y = (o.userData.y0 as number) - 0.12 * (1 - Math.min(1, Math.max(0, t) * 1.5)); }
         });
       }
       arcT += dt;
