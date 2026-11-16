@@ -679,7 +679,7 @@ const chapter: Chapter = {
       `The man who built a dynasty without reigning for a single day.`,
     ),
     'khang-chien-mong-nguyen': l(
-      'Ba lần mất kinh đô, ba lần thắng cuộc chiến.',
+      'Nhà Trần ba lần mất kinh đô, nhưng cả ba lần đều thắng cuộc chiến.',
       `The capital was lost three times, and the war was won three times.`,
     ),
     'tran-hung-dao': l(
@@ -699,7 +699,7 @@ const chapter: Chapter = {
       `The most famous crocodile text in Vietnamese history has no original, and the chronicle never says what script it was in.`,
     ),
     'huyen-tran-chau-o-ly': l(
-      'Một đám cưới đổi lấy hai châu, và một cuộc trở về bằng đường biển còn nhiều lời đồn.',
+      'Nhà Trần gả một công chúa để đổi lấy hai châu, và chuyến trở về bằng đường biển của bà đến nay còn nhiều lời đồn.',
       `A wedding in exchange for two districts, and a voyage home that still feeds rumours.`,
     ),
     'che-bong-nga-ho-quy-ly': l(

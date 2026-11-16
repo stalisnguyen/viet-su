@@ -356,7 +356,7 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `Sau năm 1802, theo Đại Nam thực lục mà Wikipedia dẫn, lăng mộ Nguyễn Nhạc và Nguyễn Huệ bị san phẳng. Báo Nhân Dân kể Nguyễn Ánh cho phá từ đường Tây Sơn ở Kiên Mỹ; dân làng dựng đình thờ thần để thờ lén ba anh em. Sử triều Nguyễn gọi họ là giặc và coi họ là kẻ phản nghịch; bài điểm sách trên IIAS nhận xét triều Nguyễn mô tả phong trào như một cuộc nổi loạn của trộm cướp và phủ nhận tính chính danh của nó.`,
+          `Sau năm 1802, theo Đại Nam thực lục mà Wikipedia dẫn, lăng mộ Nguyễn Nhạc và Nguyễn Huệ bị san phẳng. Báo Nhân Dân kể Nguyễn Ánh cho phá từ đường Tây Sơn ở Kiên Mỹ; dân làng dựng đình thờ thần để thờ lén ba anh em. Sử triều Nguyễn gọi họ là giặc và coi họ là kẻ phản nghịch; bài điểm sách trên IIAS nhận xét triều Nguyễn mô tả phong trào như một cuộc nổi loạn của trộm cướp và phủ nhận tính chính danh của phong trào.`,
           `After 1802, according to the Đại Nam thực lục as cited on Wikipedia, the tombs of Nguyễn Nhạc and Nguyễn Huệ were razed. Nhân Dân reports that Nguyễn Ánh destroyed the Tây Sơn ancestral hall at Kiên Mỹ; villagers built a communal house there to worship the brothers in secret. Nguyễn histories call them bandits and treat them as rebels; the IIAS review notes that the Nguyễn depicted the movement as a bandit uprising and denied its legitimacy.`,
         ),
         l(

@@ -456,7 +456,7 @@ const chapter: Chapter = {
       `His ancestors came from the north; seven generations later their descendant drove the northern officials out.`,
     ),
     'nuoc-van-xuan-544': l(
-      `Một chữ "đế" và một niên hiệu: hai thứ mà trước đó chỉ hoàng đế Trung Hoa mới dùng.`,
+      `Lý Bí xưng đế và đặt niên hiệu, hai việc mà trước đó chỉ hoàng đế Trung Hoa mới làm.`,
       `One word, "emperor", and one reign name: two things only the Chinese emperor had used before.`,
     ),
     'chua-khai-quoc-tran-quoc': l(

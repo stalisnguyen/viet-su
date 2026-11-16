@@ -765,7 +765,7 @@ export default function App() {
 
       <header className="bar">
         <button className="brand" onClick={() => jump('top')}><img className="mark" src={mark} alt="" /><span>VIỆT SỬ TOÀN ĐỒ</span></button>
-        <button className="pill progress" onClick={() => setToc(true)} aria-haspopup="dialog" aria-label={lang === 'vi' ? `Mở mục lục, đã khám phá ${seen.size} trên ${journey.length} mục` : `Open contents, ${seen.size} of ${journey.length} explored`}>
+        <button className="pill progress" onClick={() => setToc(true)} aria-haspopup="dialog" aria-label={lang === 'vi' ? `Mở mục lục, đã xem ${seen.size} trên ${journey.length} mục` : `Open contents, ${seen.size} of ${journey.length} explored`}>
           <svg viewBox="0 0 36 36" aria-hidden="true">
             <circle cx="18" cy="18" r="15" />
             <circle cx="18" cy="18" r="15" className="arc" strokeDasharray={`${(seen.size / journey.length) * 94.2} 94.2`} />

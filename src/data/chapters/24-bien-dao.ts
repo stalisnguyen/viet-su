@@ -206,7 +206,7 @@ const chapter: Chapter = {
           `The vote on the amendment is reported differently: Vietnam's Foreign Ministry gives 46 against, 3 in favour and 2 abstentions; the journal Quốc phòng toàn dân (2015) gives 45 against out of 51. The point that "no one objected" is Vietnam's reading of the conference record; the sources cited here do not set out China's reading of the conference.`,
         ),
         l(
-          `Điều cần ghi rõ là bản thân hòa ước im lặng về nước nhận Hoàng Sa và Trường Sa. Vì vậy hội nghị 1951 không tự nó giải quyết chủ quyền; giá trị của nó với Việt Nam là một tuyên bố công khai trước cộng đồng quốc tế, nối tiếp các hành vi quản lý từ thời Nguyễn và thời Pháp.`,
+          `Điều cần ghi rõ là bản thân hòa ước im lặng về nước nhận Hoàng Sa và Trường Sa. Vì vậy hội nghị 1951 không tự nó giải quyết chủ quyền; giá trị của hội nghị với Việt Nam là một tuyên bố công khai trước cộng đồng quốc tế, nối tiếp các hành vi quản lý từ thời Nguyễn và thời Pháp.`,
           `It should be stated plainly that the treaty itself is silent on who receives the Paracels and Spratlys. The 1951 conference therefore did not settle sovereignty on its own; its value for Vietnam is as a public statement before the international community, continuing the acts of administration of the Nguyễn and French periods.`,
         ),
       ],

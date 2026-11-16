@@ -104,7 +104,7 @@ const chapter: Chapter = {
       coord: [105.8336, 21.0392],
       evidence: ['chron'],
       summary: l(
-        `Hồ Chí Minh sáng lập Đảng Cộng sản Đông Dương năm 1930 và Mặt trận Việt Minh năm 1941, đọc Tuyên ngôn Độc lập năm 1945 và làm Chủ tịch nước Việt Nam Dân chủ Cộng hòa cho đến khi mất năm 1969. Trước đó ông đã sống ba mươi năm ở nước ngoài. Ở Việt Nam, người dân gọi ông một cách trìu mến là Bác Hồ.`,
+        `Hồ Chí Minh sáng lập Đảng Cộng sản Đông Dương năm 1930 và Mặt trận Việt Minh năm 1941, đọc Tuyên ngôn Độc lập năm 1945 và làm Chủ tịch nước Việt Nam Dân chủ Cộng hòa cho đến khi mất năm 1969. Trước đó ông đã sống ba mươi năm ở nước ngoài. Ở Việt Nam, người dân thường gọi ông là Bác Hồ.`,
         `Hồ Chí Minh founded the Indochinese Communist Party in 1930 and the Việt Minh front in 1941, read the Declaration of Independence in 1945 and was President of the Democratic Republic of Vietnam until his death in 1969. Before that he had spent thirty years abroad. In Vietnam he is affectionately called Bác Hồ, Uncle Hồ.`,
       ),
       detail: [

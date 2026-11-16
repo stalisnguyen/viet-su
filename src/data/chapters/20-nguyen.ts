@@ -225,7 +225,7 @@ const chapter: Chapter = {
       coord: [105.7668, 18.665],
       evidence: ['chron'],
       summary: l(
-        `Nguyễn Du (1765 - 1820) làm quan dưới triều Gia Long và để lại Truyện Kiều, truyện thơ 3.254 câu lục bát viết bằng chữ Nôm, kể đời nàng Kiều dựa trên một tiểu thuyết Trung Hoa. Cùng thời có Hồ Xuân Hương với những bài thơ hai nghĩa. Đây là lúc tiếng Việt viết bằng chữ Nôm đạt tới đỉnh cao văn chương của nó.`,
+        `Nguyễn Du (1765 - 1820) làm quan dưới triều Gia Long và để lại Truyện Kiều, truyện thơ 3.254 câu lục bát viết bằng chữ Nôm, kể đời nàng Kiều dựa trên một tiểu thuyết Trung Hoa. Cùng thời có Hồ Xuân Hương với những bài thơ hai nghĩa. Đây là lúc tiếng Việt viết bằng chữ Nôm đạt tới đỉnh cao về văn chương.`,
         `Nguyễn Du (1765 - 1820) served the Gia Long court and left the Tale of Kiều, a verse narrative of 3,254 lines in lục bát metre written in Nôm script, telling Kiều's life from a Chinese novel. His contemporary Hồ Xuân Hương wrote poems with double meanings. This was the high point of Vietnamese literature written in Nôm.`,
       ),
       detail: [
@@ -248,7 +248,7 @@ const chapter: Chapter = {
           `No manuscript in Nguyễn Du's hand survives, and the date of the Tale is still debated. In Lê Thành Lân's survey (2006), Đào Duy Anh placed it around 1805 - 1809, Hoàng Xuân Hãn in the Tây Sơn years, Nguyễn Tài Cẩn and others around 1785 - 1790 on the evidence of tabooed characters, while Nguyễn Quảng Tuân and Mai Quốc Liên put it after the 1813 - 1814 embassy. The earliest known printing is the Liễu Văn Đường edition of 1866; editions differ in many words and even in line count (3,254 or 3,253).`,
         ),
         l(
-          `Về Hồ Xuân Hương, nguồn tin cậy còn ít hơn. Britannica chỉ ghi bà là một người vợ lẽ làm thơ, không nêu năm sinh, năm mất, nên trang này chỉ nói về lối thơ gắn với tên bà. Country Studies còn cho rằng Minh Mạng ra lệnh quay về dùng chữ Hán trong giấy tờ nhà nước; điều này nhắc rằng chữ Nôm phát triển rực rỡ trong văn chương nhưng chưa bao giờ là chữ chính thức lâu dài của triều đình.`,
+          `Về Hồ Xuân Hương, nguồn tin cậy còn ít hơn. Britannica chỉ ghi bà là một người vợ lẽ làm thơ, không nêu năm sinh, năm mất, nên trang này chỉ nói về lối thơ gắn với tên bà. Country Studies còn cho rằng Minh Mạng ra lệnh quay về dùng chữ Hán trong giấy tờ nhà nước; điều này nhắc rằng chữ Nôm phát triển mạnh trong văn chương nhưng chưa bao giờ là chữ chính thức lâu dài của triều đình.`,
           `On Hồ Xuân Hương the reliable evidence is thinner still. Britannica records only that she was a concubine who wrote poetry, and gives no dates, so this page speaks only of the style attached to her name. Country Studies also says Minh Mạng ordered a return to Chinese characters in state papers, a reminder that Nôm flourished in literature but never became the court's lasting official script.`,
         ),
       ],

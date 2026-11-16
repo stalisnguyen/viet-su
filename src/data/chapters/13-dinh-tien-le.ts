@@ -657,7 +657,7 @@ const chapter: Chapter = {
       'The country\'s name had three words, and nobody can yet say for certain what the middle one means.',
     ),
     'kinh-do-hoa-lu': l(
-      'Một kinh thành mà phần lớn tường là núi, người chỉ phải đắp mười đoạn nối.',
+      'Kinh thành Hoa Lư lấy núi làm tường, người xưa chỉ phải đắp thêm mười đoạn nối.',
       'A capital whose walls were mostly mountains; people had to build only ten linking stretches.',
     ),
     'vu-an-979-va-le-hoan-len-ngoi': l(

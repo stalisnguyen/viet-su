@@ -377,7 +377,7 @@ const chapter: Chapter = {
       `Three generations of the Khúc ran the country and none of them claimed a throne.`,
     ),
     'duong-dinh-nghe-931': l(
-      `Một đạo quân dựng từ ba nghìn người con nuôi.`,
+      `Dương Đình Nghệ dựng đạo quân của mình từ ba nghìn người con nuôi.`,
       `An army built from three thousand adopted sons.`,
     ),
     'tran-bach-dang-938': l(

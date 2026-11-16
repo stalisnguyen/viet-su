@@ -15,7 +15,7 @@ const chapter: Chapter = {
       `Who lived in the Mekong delta before the Vietnamese arrived, and what did they leave behind?`,
     ),
     summary: l(
-      `Trong bảy thế kỷ đầu Công nguyên, đồng bằng sông Cửu Long thuộc một vương quốc buôn bán đường biển mà sử Trung Hoa gọi là Phù Nam. Dấu vết của nó là văn hóa Óc Eo: kênh đào, đền gạch, vàng lá, hàng hóa từ La Mã, Ấn Độ và Ba Tư. Cư dân ở đây khi ấy không phải là người Việt. Từ thế kỷ 7, vùng này thuộc Chân Lạp.`,
+      `Trong bảy thế kỷ đầu Công nguyên, đồng bằng sông Cửu Long thuộc một vương quốc buôn bán đường biển mà sử Trung Hoa gọi là Phù Nam. Dấu vết còn lại của vương quốc ấy là văn hóa Óc Eo: kênh đào, đền gạch, vàng lá, hàng hóa từ La Mã, Ấn Độ và Ba Tư. Cư dân ở đây khi ấy không phải là người Việt. Từ thế kỷ 7, vùng này thuộc Chân Lạp.`,
       `For the first seven centuries CE the Mekong delta belonged to a seafaring trading kingdom that Chinese histories call Funan. Its trace on the ground is the Óc Eo culture: canals, brick temples, gold leaf, and goods from Rome, India and Persia. The people here were not Vietnamese at that time. From the 7th century the region came under Chenla.`,
     ),
     detail: [
@@ -61,7 +61,7 @@ const chapter: Chapter = {
       coord: [104.975, 10.995],
       evidence: ['chron', 'legend'],
       summary: l(
-        `Phù Nam là tên người Trung Hoa đặt cho một vương quốc ở hạ lưu sông Mê Kông. Sử cũ kể rằng một người từ xa đến tên là Hỗn Điền đã lấy nữ chúa bản địa Liễu Diệp và lập ra dòng vua. Tên thật của nước này, kinh đô và biên giới của nó đến nay vẫn chưa ai biết chắc.`,
+        `Phù Nam là tên người Trung Hoa đặt cho một vương quốc ở hạ lưu sông Mê Kông. Sử cũ kể rằng một người từ xa đến tên là Hỗn Điền đã lấy nữ chúa bản địa Liễu Diệp và lập ra dòng vua. Tên thật của nước này, kinh đô và biên giới đến nay vẫn chưa ai biết chắc.`,
         `Funan is the name the Chinese gave to a kingdom on the lower Mekong. Old histories tell that a newcomer named Hun Tian married the local queen Liuye (Liễu Diệp) and founded the royal line. The kingdom's own name, its capital and its borders are still not known for certain.`,
       ),
       detail: [

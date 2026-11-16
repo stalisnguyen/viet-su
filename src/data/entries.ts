@@ -234,7 +234,7 @@ const base: Entry[] = [
     coord: [106.32, 21.9],
     evidence: ['arch'],
     summary: l(
-      'Văn hóa sơ kỳ đá mới ở vùng núi đá vôi Đông Bắc, đặc trưng bởi rìu mài lưỡi và những viên đá có rãnh song song gọi là "dấu Bắc Sơn".',
+      'Văn hóa sơ kỳ đá mới ở vùng núi đá vôi Đông Bắc, có đặc trưng là rìu mài lưỡi và những viên đá có rãnh song song gọi là "dấu Bắc Sơn".',
       'An Early Neolithic culture of the northeastern limestone mountains, marked by edge-ground axes and grooved stones known as "Bắc Sơn marks".',
     ),
     detail: [
@@ -249,7 +249,7 @@ const base: Entry[] = [
     ],
     scholarly: [
       l(
-        'Quan điểm quen thuộc coi Bắc Sơn là bước phát triển tiếp theo của Hòa Bình. Trình Năng Chung (2022) đưa ra giả thuyết khác: Bắc Sơn hình thành độc lập, có nguồn gốc riêng, và chủ nhân của nó đã ở vùng núi Đông Bắc trước khi cư dân Hòa Bình tới. Ông cũng nêu rõ giả thuyết này cần thêm niên đại tuyệt đối để kiểm chứng.',
+        'Quan điểm quen thuộc coi Bắc Sơn là bước phát triển tiếp theo của Hòa Bình. Trình Năng Chung (2022) đưa ra giả thuyết khác: Bắc Sơn hình thành độc lập, có nguồn gốc riêng, và chủ nhân văn hóa này đã ở vùng núi Đông Bắc trước khi cư dân Hòa Bình tới. Ông cũng nêu rõ giả thuyết này cần thêm niên đại tuyệt đối để kiểm chứng.',
         'The familiar view treats Bắc Sơn as the next stage after Hòa Bình. Trình Năng Chung (2022) proposes otherwise: Bắc Sơn arose independently with its own origin, and its makers lived in the northeastern mountains before Hoabinhian groups arrived. He also states that this hypothesis needs more absolute dates to be tested.',
       ),
     ],
@@ -365,7 +365,7 @@ const base: Entry[] = [
     model: 'situla',
     evidence: ['arch'],
     summary: l(
-      'Văn hóa đồ đồng rực rỡ nhất Đông Nam Á cổ đại, phân bố ở lưu vực sông Hồng, sông Mã và sông Cả. Trống đồng Đông Sơn là biểu tượng của nó.',
+      'Văn hóa thời đồ đồng tiêu biểu nhất của Đông Nam Á cổ đại, phân bố ở lưu vực sông Hồng, sông Mã và sông Cả. Hiện vật tiêu biểu nhất của văn hóa này là trống đồng Đông Sơn.',
       'The most brilliant bronze culture of ancient Southeast Asia, spread across the Red, Mã and Cả river basins. The Đông Sơn bronze drum is its emblem.',
     ),
     detail: [

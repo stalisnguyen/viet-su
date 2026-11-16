@@ -383,7 +383,7 @@ const chapter: Chapter = {
       'Han mirrors entered the graves, but the dead still lay in boat-shaped coffins.',
     ),
     'tich-quang-nham-dien-to-dinh': l(
-      'Hơn 2.000 người được cho cưới theo lệnh một viên thái thú: việc tốt hay sự áp đặt?',
+      'Một viên thái thú ra lệnh cho hơn 2.000 người cưới nhau, và đến nay vẫn còn tranh luận đó là việc tốt hay sự áp đặt.',
       'More than 2,000 people were married on a governor\'s orders: a kindness or an imposition?',
     ),
   },

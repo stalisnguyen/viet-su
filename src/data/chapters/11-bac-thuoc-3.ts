@@ -358,7 +358,7 @@ const chapter: Chapter = {
       sort: 1150,
       evidence: ['chron'],
       summary: l(
-        `Khi người Việt đọc "quốc gia", "độc lập" hay "tự do", họ đang dùng cách đọc chữ Hán hình thành từ tiếng Hán thời Đường. Lớp âm Hán Việt này là di sản bền nhất của ba thế kỷ An Nam đô hộ phủ. Điều đáng chú ý không kém là tiếng Việt đã vay hàng nghìn từ mà vẫn không trở thành một phương ngữ của tiếng Hán.`,
+        `Khi người Việt đọc "quốc gia", "độc lập" hay "tự do", họ đang dùng cách đọc chữ Hán hình thành từ tiếng Hán thời Đường. Lớp âm Hán Việt này là di sản bền nhất của ba thế kỷ An Nam đô hộ phủ. Cũng cần nói thêm là tiếng Việt đã vay hàng nghìn từ mà vẫn không trở thành một phương ngữ của tiếng Hán.`,
         `When Vietnamese speakers say quốc gia (nation), độc lập (independence) or tự do (freedom), they use readings of Chinese characters that took shape from Tang-period Chinese. This Sino-Vietnamese layer is the most durable legacy of three centuries of the Annan Protectorate. Just as notable is that Vietnamese borrowed thousands of words without becoming a dialect of Chinese.`,
       ),
       detail: [
@@ -574,7 +574,7 @@ const chapter: Chapter = {
       `The name Annam, still used by the French in the 20th century, was born from an administrative decision of 679.`,
     ),
     'mai-thuc-loan': l(
-      `Một ông vua da đen ở xứ Nghệ, và một cuộc tranh luận chưa dứt: 713 hay 722?`,
+      `Sử cũ gọi ông là vua Hắc Đế ở xứ Nghệ, và đến nay giới nghiên cứu vẫn chưa thống nhất cuộc khởi nghĩa nổ ra năm 713 hay 722.`,
       `A dark-skinned emperor from Nghệ An, and a dispute not yet settled: 713 or 722?`,
     ),
     'phung-hung': l(
@@ -598,7 +598,7 @@ const chapter: Chapter = {
       `The general who beat Nanzhao lost to a dragon-riding spirit above the Tô Lịch river.`,
     ),
     'am-han-viet': l(
-      `Mùi và vị, vợ và phụ: một chữ Hán, hai lần đi vào tiếng Việt.`,
+      `Những cặp từ như mùi và vị, vợ và phụ cho thấy cùng một chữ Hán đã đi vào tiếng Việt hai lần.`,
       `Mùi and vị, vợ and phụ: one Chinese character, borrowed into Vietnamese twice.`,
     ),
   },

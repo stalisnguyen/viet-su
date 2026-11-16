@@ -412,7 +412,7 @@ const chapter: Chapter = {
   ],
   hooks: {
     'hiep-uoc-1884-lien-bang-dong-duong': l(
-      'Một chiếc ấn bị nấu chảy trước mặt hai đoàn sứ thần, và một vương triều còn ngai vàng nhưng mất quyền thu thuế.',
+      'Một chiếc ấn bị nấu chảy trước mặt hai đoàn sứ thần, và từ đó triều Nguyễn còn ngai vàng nhưng mất quyền thu thuế.',
       `A seal melted down before two delegations, and a dynasty that kept its throne but lost the power to tax.`,
     ),
     'can-vuong-ham-nghi': l(
@@ -420,7 +420,7 @@ const chapter: Chapter = {
       `A young king fled his capital for the hills, then spent more than fifty years in exile in Algeria.`,
     ),
     'hoang-hoa-tham-yen-the': l(
-      'Ba mươi năm cầm quân, hai lần giảng hòa với Pháp, và hai nguồn ghi hai ngày chết khác nhau.',
+      'Hoàng Hoa Thám cầm quân ba mươi năm, hai lần giảng hòa với Pháp, và đến nay hai nguồn vẫn ghi hai ngày mất khác nhau.',
       `Thirty years in arms, two truces with the French, and two sources giving two different dates of death.`,
     ),
     'kinh-te-thuoc-dia-cau-long-bien': l(

@@ -13,7 +13,7 @@ const base: Period[] = [
     ),
     detail: [
       l(
-        'Giai đoạn sớm nhất là sơ kỳ đá cũ. Ở An Khê (Gia Lai), các lớp đất chứa rìu tay ghè hai mặt nằm cùng những mảnh thiên thạch được định tuổi khoảng 800.000 năm. Ở hang Thẩm Khuyên (Lạng Sơn), răng của người đứng thẳng Homo erectus được định tuổi khoảng 475.000 năm. Núi Đọ (Thanh Hóa) từng được xem là di chỉ cổ nhất, nhưng niên đại của nó đến nay vẫn còn tranh luận.',
+        'Giai đoạn sớm nhất là sơ kỳ đá cũ. Ở An Khê (Gia Lai), các lớp đất chứa rìu tay ghè hai mặt nằm cùng những mảnh thiên thạch được định tuổi khoảng 800.000 năm. Ở hang Thẩm Khuyên (Lạng Sơn), răng của người đứng thẳng Homo erectus được định tuổi khoảng 475.000 năm. Núi Đọ (Thanh Hóa) từng được xem là di chỉ cổ nhất, nhưng niên đại của di chỉ này đến nay vẫn còn tranh luận.',
         'The earliest phase is the Lower Palaeolithic. At An Khê (Gia Lai), layers containing bifacial handaxes lie together with tektites dated to about 800,000 years. At Thẩm Khuyên cave (Lạng Sơn), teeth of Homo erectus are dated to about 475,000 years. Núi Đọ (Thanh Hóa) was once regarded as the oldest site, but its age is still debated.',
       ),
       l(

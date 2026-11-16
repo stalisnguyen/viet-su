@@ -141,7 +141,7 @@ const chapter: Chapter = {
       ),
       detail: [
         l(
-          `UNESCO tả nhã nhạc là nhiều thể loại nhạc và múa của triều đình Việt Nam từ thế kỷ 15 đến giữa thế kỷ 20, mở đầu và kết thúc các lễ lớn. Nhã nhạc phát triển dưới thời Lê (1427 - 1788) và được thể chế hóa chặt chẽ dưới triều Nguyễn (1802 - 1945), trở thành biểu tượng cho quyền lực và sự trường tồn của vương triều. Dàn nhạc lớn có bộ gõ nổi bật cùng nhiều nhạc cụ hơi và dây.`,
+          `UNESCO tả nhã nhạc là nhiều thể loại nhạc và múa của triều đình Việt Nam từ thế kỷ 15 đến giữa thế kỷ 20, mở đầu và kết thúc các lễ lớn. Nhã nhạc phát triển dưới thời Lê (1427 - 1788) và được thể chế hóa chặt chẽ dưới triều Nguyễn (1802 - 1945), được dùng để thể hiện quyền lực của vương triều. Dàn nhạc lớn có nhiều bộ gõ, cùng các nhạc cụ hơi và dây.`,
           `UNESCO describes Nhã nhạc as a broad range of music and dance performed at the Vietnamese court from the 15th to the mid-20th century, opening and closing its great ceremonies. It developed under the Lê (1427 - 1788) and was tightly institutionalised under the Nguyễn (1802 - 1945), becoming a symbol of the dynasty's power and permanence. Large ensembles had a prominent drum section and many wind and string instruments.`,
         ),
         l(
