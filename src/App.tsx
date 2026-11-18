@@ -196,8 +196,9 @@ function RealPhoto({ slug, lang }: { slug: string; lang: Lang }) {
   );
 }
 
-// Giọng kể phần tóm tắt thời kỳ (tiếng Việt), tệp âm thanh nằm trong thư mục audio của trang
+// Giọng kể phần tóm tắt thời kỳ và mục (tiếng Việt, giọng Thiện Minh của VieNeu-TTS), tệp nằm trên Vercel Blob ở audio/<id>.mp3 (scripts/sync-audio.mjs)
 // Chỉ một giọng kể phát tại một thời điểm: bật cái mới thì cái đang phát dừng lại
+const AUDIO = 'https://dvdthc55l697fm61.public.blob.vercel-storage.com/audio/';
 let speaking: HTMLAudioElement | null = null;
 function Narrate({ slug, lang }: { slug: string; lang: Lang }) {
   const ref = useRef<HTMLAudioElement | null>(null);
@@ -205,7 +206,7 @@ function Narrate({ slug, lang }: { slug: string; lang: Lang }) {
   useEffect(() => () => { ref.current?.pause(); }, []);
   const toggle = () => {
     if (!ref.current) {
-      ref.current = new Audio('audio/' + slug + '.mp3');
+      ref.current = new Audio(AUDIO + slug + '.mp3');
       ref.current.addEventListener('ended', () => setOn(false));
       ref.current.addEventListener('pause', () => setOn(false));
     }
@@ -347,7 +348,7 @@ function PeriodStep({ p, lang, depth, setDepth }: { p: Period; lang: Lang; depth
         {p.question && <p className="ask">{p.question[lang]}</p>}
         <p className="lead"><Rich text={p.summary[lang]} lang={lang} seen={gl} /></p>
         <div className="cta">
-          {LEGACY.has(p.slug) && <Narrate slug={p.slug} lang={lang} />}
+          <Narrate slug={'p-' + p.slug} lang={lang} />
           <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc tổng quan' : 'Read overview')}</button>
         </div>
         {!LEGACY.has(p.slug) && <RealPhoto slug={p.slug} lang={lang} />}
@@ -434,6 +435,7 @@ function EntryStep({ e, lang, depth, setDepth, seen, bp }: { e: Entry; lang: Lan
           </>
         )}
         <div className="cta">
+          <Narrate slug={'e-' + e.slug} lang={lang} />
           <button className="ghost" onClick={toggle} aria-expanded={open}>{open ? (lang === 'vi' ? 'Thu gọn' : 'Collapse') : (lang === 'vi' ? 'Đọc chi tiết và nguồn' : 'Read details and sources')}</button>
           <ShareBtn path={'e/' + e.slug} title={e.name[lang]} lang={lang} />
         </div>

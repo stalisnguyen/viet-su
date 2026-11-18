@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "geo": "node scripts/geo.mjs",
-    "build": "node scripts/geo.mjs && vite build && node scripts/share.mjs",
+    "build": "node scripts/geo.mjs && vite build && node scripts/share.mjs && node scripts/sync-audio.mjs",
     "dev": "vite"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/three": "^0.187.0",
+    "@vercel/blob": "^2.9.0",
     "@vitejs/plugin-react": "^6.3.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
