@@ -38,7 +38,7 @@ def month(m):
     return {1: 'giêng', 4: 'tư'}.get(m, num(m)) if False else ('tư' if m == 4 else num(m))
 
 ROMAN = {'II': 'hai', 'III': 'ba', 'IV': 'bốn', 'V': 'năm', 'VI': 'sáu', 'VII': 'bảy', 'VIII': 'tám', 'IX': 'chín', 'X': 'mười', 'XI': 'mười một', 'XII': 'mười hai', 'XIII': 'mười ba', 'XIV': 'mười bốn', 'XV': 'mười lăm', 'XVI': 'mười sáu', 'XVII': 'mười bảy', 'XVIII': 'mười tám', 'XIX': 'mười chín', 'XX': 'hai mươi'}
-WORDS = {'TCN': 'trước Công nguyên', 'UNESCO': 'U-nét-xcô', 'ASEAN': 'A-xê-an', 'WTO': 'Tổ chức Thương mại Thế giới', 'ADN': 'a-đê-en', 'K.5': 'Ka năm', 'COC': 'Bộ quy tắc ứng xử', 'Indravarman II': 'Indravarman đệ nhị', 'Simhavarman III': 'Simhavarman đệ tam', 'km': 'ki-lô-mét', 'km²': 'ki-lô-mét vuông', 'ha': 'héc-ta'}
+WORDS = {'TCN': 'trước Công nguyên', 'UNESCO': 'U-nét-xcô', 'ASEAN': 'A-xê-an', 'WTO': 'Tổ chức Thương mại Thế giới', 'ADN': 'a-đê-en', 'K.5': 'Ka năm', 'COC': 'Bộ quy tắc ứng xử', 'H-21': 'Hát hai mốt', 'HU-1': 'Hát U một', 'Indravarman II': 'Indravarman đệ nhị', 'Simhavarman III': 'Simhavarman đệ tam', 'km': 'ki-lô-mét', 'km²': 'ki-lô-mét vuông', 'ha': 'héc-ta'}
 
 def norm(t):
     t = t.replace('–', '-').replace('—', '-')
@@ -61,6 +61,7 @@ def norm(t):
     t = re.sub(r'\d+', lambda m: num(int(m.group(0))), t)
     # dấu câu
     t = re.sub(r'\s*\(\s*', ', ', t).replace(')', ',')
+    t = re.sub(r'(^|[.!?]\s+)([a-zàáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ])', lambda m: m.group(1) + m.group(2).upper(), t)
     t = re.sub(r',\s*$', '', t)
     t = t.replace('"', '').replace('“', '').replace('”', '').replace(';', ',').replace(':', ',')
     t = re.sub(r'\s*/\s*', ' ', t)
