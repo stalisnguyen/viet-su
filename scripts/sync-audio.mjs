@@ -6,11 +6,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { head, put } from '@vercel/blob';
 
-const src = (process.env.AUDIO_SRC || '').split(/\s+/).filter(Boolean);
+const src = (process.env.AUDIO_SRC || '').split(/\s+/).filter((u) => u.startsWith('http'));
 if (!src.length || !process.env.BLOB_READ_WRITE_TOKEN) { console.log('sync-audio: bỏ qua'); process.exit(0); }
 const dir = fs.mkdtempSync('/tmp/audio-');
 for (const u of src) {
-  const r = await fetch(u);
+  let r;
+  try { r = await fetch(u, { signal: AbortSignal.timeout(60000) }); } catch (e) { console.log('sync-audio: không tải được', u, String(e)); continue; }
   if (!r.ok) { console.log('sync-audio: không tải được', u, r.status); continue; }
   fs.writeFileSync(path.join(dir, 'a.tar'), Buffer.from(await r.arrayBuffer()));
   execSync(`tar xf a.tar`, { cwd: dir });
