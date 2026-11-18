@@ -667,7 +667,10 @@ export default function App() {
   // Biểu tượng mặt trống: dùng bản vẽ giản lược trước, đổi sang hoa văn thật của trống Ngọc Lũ khi tải xong
   const [mark, setMark] = useState(drumUrl);
   // Diễn biến trận đánh: bước đang xem và tự phát
-  const [bs, setBs] = useState({ slug: '', i: 0, play: false });
+  // voice: người xem đã tự bấm điều khiển trận đánh, nên được phép phát giọng kể từng bước
+  const [bs, setBs] = useState<{ slug: string; i: number; play: boolean; voice?: boolean }>({ slug: '', i: 0, play: false });
+  const [vWait, setVWait] = useState(false); // giọng kể của bước hiện tại đang phát
+  const stepAt = useRef(0);
   const [bDone, setBDone] = useState(false);
   useEffect(() => {
     setBDone(false);
@@ -763,12 +766,27 @@ export default function App() {
     const f = active.focus;
     if (f && BATTLES[f] && bs.slug !== f) setBs({ slug: f, i: 0, play: !matchMedia('(prefers-reduced-motion: reduce)').matches });
   }, [active.focus]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Giọng kể từng bước trận đánh (tiếng Việt): phát khi đã bật âm thanh hoặc người xem tự bấm điều khiển trận đánh
   useEffect(() => {
-    if (!bs.play || !BATTLES[bs.slug]) return;
+    stepAt.current = Date.now();
+    setVWait(false);
+    if (lang !== 'vi' || !(snd || bs.voice) || !BATTLES[bs.slug] || bs.slug !== active.focus) return;
+    if (speaking) speaking.pause();
+    const a = new Audio(AUDIO + 'b-' + bs.slug + '-' + bs.i + '.mp3');
+    const end = () => setVWait(false);
+    a.addEventListener('ended', end); a.addEventListener('error', end);
+    setVWait(true);
+    a.play().catch(end);
+    return () => { a.pause(); a.removeEventListener('ended', end); a.removeEventListener('error', end); };
+  }, [bs.slug, bs.i, bs.voice, snd, active.focus, lang]);
+  useEffect(() => {
+    if (!bs.play || !BATTLES[bs.slug] || vWait) return;
     const last = BATTLES[bs.slug].steps.length - 1;
-    const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), stepMs(BATTLES[bs.slug].steps[bs.i].units.length) + 3200);
+    // Chờ đủ thời gian quân di chuyển, và nếu có giọng kể thì chờ đọc xong thêm một nhịp ngắn
+    const left = Math.max(900, stepMs(BATTLES[bs.slug].steps[bs.i].units.length) + 3200 - (Date.now() - stepAt.current));
+    const t = window.setTimeout(() => setBs((b) => (b.i < last ? { ...b, i: b.i + 1 } : { ...b, play: false })), left);
     return () => window.clearTimeout(t);
-  }, [bs]);
+  }, [bs, vWait]);
   // Âm thanh theo từng bước trận đánh (chỉ khi người xem đã bật âm thanh)
   useEffect(() => {
     if (!snd || bs.slug !== active.focus) return;
@@ -786,11 +804,11 @@ export default function App() {
     const mine = bs.slug === slug;
     return {
       i: mine ? bs.i : 0, play: mine && bs.play, done: mine && bDone,
-      go: (i) => setBs({ slug, i, play: false }),
+      go: (i) => setBs({ slug, i, play: false, voice: true }),
       toggle: () => setBs((x) => {
         const cur = x.slug === slug ? x : { slug, i: 0, play: false };
         if (cur.play) return { ...cur, play: false };
-        return { slug, i: cur.i >= b.steps.length - 1 ? 0 : cur.i, play: true };
+        return { slug, i: cur.i >= b.steps.length - 1 ? 0 : cur.i, play: true, voice: true };
       }),
     };
   };
@@ -898,7 +916,7 @@ export default function App() {
               <div className="bresult" style={{ ['--c' as string]: periodBySlug[active.era || '']?.color || '#e6b450' }}>
                 <p className="n">{lang === 'vi' ? 'Kết thúc trận đánh' : 'End of the battle'}</p>
                 <p>{b.result[lang]}</p>
-                <button onClick={() => setBs({ slug: bs.slug, i: 0, play: true })}>{lang === 'vi' ? 'Xem lại từ đầu' : 'Watch again'}</button>
+                <button onClick={() => setBs({ slug: bs.slug, i: 0, play: true, voice: true })}>{lang === 'vi' ? 'Xem lại từ đầu' : 'Watch again'}</button>
               </div>
             )}
           </>
