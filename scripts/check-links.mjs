@@ -6,7 +6,7 @@ import path from 'node:path';
 const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : /\.tsx?$/.test(f) && files.push(p); } })('src/data');
 const where = new Map();
-for (const f of files) for (const m of fs.readFileSync(f, 'utf8').matchAll(/https?:\/\/[^'"`\s)]+/g)) { if (!where.has(m[0])) where.set(m[0], f); }
+for (const f of files) for (const m of fs.readFileSync(f, 'utf8').matchAll(/['"`](https?:\/\/[^'"`\s]+)['"`]/g)) { if (!where.has(m[1])) where.set(m[1], f); }
 const urls = [...where.keys()].filter((u) => !/\$\{/.test(u));
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
 async function one(u) {
@@ -22,6 +22,9 @@ async function one(u) {
 const out = [];
 let i = 0;
 await Promise.all(Array.from({ length: 10 }, async () => { while (i < urls.length) out.push(await one(urls[i++])); }));
+// 401, 403, 429 thường là trang chặn máy chủ tự động chứ không phải link hỏng; ghi riêng
 const bad = out.filter((x) => x.s !== 200 || x.note);
+const real = bad.filter((x) => x.note || ![202, 401, 403, 429].includes(x.s));
+for (const x of real) console.log([x.s, x.note, x.file.replace('src/data/', ''), x.u].join(' | '));
 fs.writeFileSync(process.argv[2] || 'link-report.json', JSON.stringify(bad, null, 1));
-console.log('Tổng', out.length, 'link, lỗi', bad.length);
+console.log('Tổng', out.length, 'link; nghi hỏng', real.length, '; bị chặn máy tự động', bad.length - real.length);
